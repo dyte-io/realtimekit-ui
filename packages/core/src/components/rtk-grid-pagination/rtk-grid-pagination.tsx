@@ -162,7 +162,7 @@ export class RtkGridPagination {
     const isAudioRoom = meta?.viewType === 'AUDIO_ROOM';
 
     if (isAudioRoom || !this.showPagination) {
-      return;
+      return <Host data-hidden />;
     }
 
     return (

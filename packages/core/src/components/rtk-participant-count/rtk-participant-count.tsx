@@ -85,7 +85,7 @@ export class RtkParticipantCount {
   }
 
   render() {
-    if (this.isViewer) return null;
+    if (this.isViewer) return <Host data-hidden />;
     return (
       <Host
         tabIndex={0}

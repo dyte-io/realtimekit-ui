@@ -1,7 +1,12 @@
 @import '../../styles/reset.css';
 
 :host {
-  @apply mx-2 block;
+  @apply block;
+}
+
+/* useful for removing from layouts that may have gap */
+:host([data-hidden]) {
+  display: none;
 }
 
 :host[size='sm'] {
