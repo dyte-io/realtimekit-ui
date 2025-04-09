@@ -76,7 +76,7 @@ export class RtkConfirmationModal {
               {state.header ? this.t(state.header) : this.t('cta.confirmation')}
             </h2>
           </div>
-          <p class="message">{state.content ? this.t(state.content) : ''}</p>
+          {state.content && <p class="message">{this.t(state.content)}</p>}
           <div class="content">
             <div class="leave-meeting">
               <rtk-button
