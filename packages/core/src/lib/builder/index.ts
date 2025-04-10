@@ -8,7 +8,7 @@ type KeyValuePair = { [key: string]: string };
 /* eslint-disable no-console */
 /*
     Elements can be of two types
-    'dyte-mic-toggle' or ['dyte-mic-toggle', {prop: 1}]
+    'rtk-mic-toggle' or ['rtk-mic-toggle', {prop: 1}]
     Custom findByName function to check for both
 */
 function getFinder(query: string) {
@@ -22,7 +22,7 @@ function getFinder(query: string) {
 
 /*
     Elements can be of two types
-    'dyte-mic-toggle' or ['dyte-mic-toggle', {prop: 1}]
+    'rtk-mic-toggle' or ['rtk-mic-toggle', {prop: 1}]
     Custom filterByName function to check for both
 */
 function getFilter(query: string) {
@@ -36,7 +36,7 @@ function getFilter(query: string) {
 
 /*
     transform JSX Component Name -> web component format
-    eg. DyteMicToggle -> dyte-mic-toggle
+    eg. RtkMicToggle -> rtk-mic-toggle
 */
 function convertComponentName(jsxName: string) {
   return jsxName.replace(/([a-z])([A-Z])/g, (g) => `${g[0]}-${g[1]}`.toLowerCase());
@@ -55,7 +55,7 @@ export class UIElemEditor {
 
   /**
    * Adds an element to the chilren
-   * @param el :Name of the element - `dyte-mic-toggle`
+   * @param el :Name of the element - `rtk-mic-toggle`
    * @param props :Optional props for the element `{variant: 'solid'}`
    */
   add(el: string, props: KeyValuePair = {}) {
@@ -85,7 +85,7 @@ export class UIElemEditor {
 
   /**
    * Removes an element from the chilren
-   * @param el :Name of the element to remove - `dyte-mic-toggle`
+   * @param el :Name of the element to remove - `rtk-mic-toggle`
    */
   remove(el: string) {
     el = convertComponentName(el);
@@ -134,7 +134,7 @@ export class UIElemEditor {
 }
 /* eslint-enable no-console */
 
-export class DyteUIBuilder {
+export class RTKUIBuilder {
   private config: UIConfig;
 
   constructor(config?: UIConfig) {
@@ -142,8 +142,8 @@ export class DyteUIBuilder {
   }
 
   /**
-   * Find an element anywhere in the Dyte hierarachy and returns an editor object
-   * @param elem = 'dyte-participant-tile'
+   * Find an element anywhere in the hierarachy and returns an editor object
+   * @param elem = 'rtk-participant-tile'
    * @param states = { activeSidebar: true, activeSettings: true, meeting: 'joined'}
    * @returns `UIElemEditor`
    */
@@ -171,7 +171,7 @@ export class DyteUIBuilder {
     if (booleanStates.length > 0) {
       // eg. '.activeSettings.activeSidebar'
       booleanStateString = `.${booleanStates.join('.')}`;
-      // eg. 'dyte-participant-tile.activeSettings.activeSidebar'
+      // eg. 'rtk-participant-tile.activeSettings.activeSidebar'
       keyString = `${elem}${booleanStateString}`;
 
       // An element will only re-render when a state described in its `states` key changes
@@ -197,7 +197,7 @@ export class DyteUIBuilder {
       nonBooleanStates.forEach((k) => {
         // eg. '[meeting=joined]'
         const v = `[${k[0]}=${k[1]}]`;
-        // eg. 'dyte-participant-tile[meeting=joined].activeSettings.activeSidebar'
+        // eg. 'rtk-participant-tile[meeting=joined].activeSettings.activeSidebar'
         keyString = `${elem}${v}${booleanStateString}`;
 
         // An element will only re-render when a state described in its `states` key changes

@@ -1,0 +1,93 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply pointer-events-none block h-10;
+  @apply text-text-1000;
+  animation: show 0.4s ease;
+  transition: 0.4s;
+  z-index: 100;
+}
+
+.ctr {
+  @apply min-w-40 box-border inline-flex h-full items-center px-3;
+  @apply bg-background-600 select-none rounded-md;
+  @apply shadow-background-1000 shadow-md;
+  @apply pointer-events-auto;
+}
+
+img {
+  @apply mr-2 h-0 w-0 rounded-full;
+}
+
+img.loaded {
+  @apply h-6 w-6;
+}
+
+.message {
+  @apply max-w-72 mr-3;
+  @apply truncate;
+
+  p {
+    @apply m-0 mr-1;
+    @apply inline-block;
+  }
+
+  blockquote {
+    @apply hidden;
+  }
+}
+
+rtk-icon.icon {
+  @apply mr-2 h-6 w-6;
+  @apply text-text-900;
+}
+
+rtk-icon.dismiss {
+  @apply ml-auto h-5 w-5;
+  @apply text-text-600 hover:text-text-1000 rounded-md hover:cursor-pointer;
+  @apply transition-colors;
+}
+
+rtk-button {
+  @apply ml-4 mr-2 rounded-sm;
+}
+
+.right {
+  @apply ml-auto flex items-center;
+
+  & > * {
+    @apply ml-2 first:ml-0;
+  }
+}
+
+:host(.exit) {
+  animation: exit 0.4s ease;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes exit {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+}
+
+:host([size='sm']) {
+  @apply text-text-md;
+}

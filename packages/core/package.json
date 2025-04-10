@@ -1,7 +1,7 @@
 {
-  "name": "@dytesdk/ui-kit",
-  "version": "3.0.0-staging.2",
-  "description": "Dyte's UI kit to support easy UI development over the core web library.",
+  "name": "@cloudflare/realtimekit-ui",
+  "version": "0.0.0",
+  "description": "UI kit to support easy UI development over the core web library.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/dyte-ui-kit/dyte-ui-kit.esm.js",
+  "unpkg": "dist/realtimekit-ui/realtimekit-ui.esm.js",
   "files": [
     "dist/",
     "loader/"
@@ -33,13 +33,6 @@
       "require": "./loader/index.cjs.js",
       "types": "./loader/index.d.ts"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dyte-io/ui-kit.git"
-  },
-  "bugs": {
-    "email": "support@dyte.io"
   },
   "scripts": {
     "build": "stencil build && rollup --config rollup.config.mjs",

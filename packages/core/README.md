@@ -1,10 +1,6 @@
 <!-- PROJECT LOGO -->
 <p align="center">
-  <a href="https://dyte.io">
-    <img src="https://assets.dyte.io/logo-outlined.png" alt="Logo" width="120" />
-  </a>
-
-  <h2 align="center">UI Kit by dyte</h3>
+  <h2 align="center">RealtimeKit UI by Cloudflare</h3>
 
   <p align="center">
     A set of UI components to truly customize your meeting UI
@@ -32,12 +28,12 @@
 
 > There are separate UI Kit packages for React and Angular because they don't fully support Web Components natively yet. Check out the links to the packages below
 
-> [React UI Kit](https://npmjs.com/package/@dytesdk/react-ui-kit) · [Angular UI Kit](https://npmjs.com/package/@dytesdk/angular-ui-kit)
+> [React UI Kit](https://npmjs.com/package/@cloudflare/realtimekit-react-ui) · [Angular UI Kit](https://npmjs.com/package/@cloudflare/realtimekit-angular-ui)
 
 First, you will need to install the ui-kit along with the [web-core](https://npmjs.com/package/@dytesdk/web-core) package:
 
 ```sh
-npm i @dytesdk/ui-kit @dytesdk/web-core
+npm i @cloudflare/realtimekit-ui @dytesdk/web-core
 ```
 
 The `web-core` package is the package which handles all the low level logic required for a meeting by interating with our servers. Use it to create a meeting object, which you can pass along to the UI Kit components.
@@ -61,7 +57,7 @@ You can now pass this object to most of the components, like so (with Vanilla JS
 
 ```html
 <!-- Load the component -->
-<dyte-meeting id="my-meeting"></dyte-meeting>
+<rtk-meeting id="my-meeting"></rtk-meeting>
 
 <script>
   const init = async () => {
@@ -84,8 +80,4 @@ You can now pass this object to most of the components, like so (with Vanilla JS
 
 ## About
 
-`ui-kit` is created & maintained by Dyte, Inc. You can find us on Twitter - [@dyte_io](https://twitter.com/dyte_io) or write to us at `dev [at] dyte.io`.
-
-The names and logos for Dyte are trademarks of Dyte, Inc.
-
-We love open source software! See [our other projects](https://github.com/dyte-io) and [our products](https://dyte.io).
+`realtimekit-ui` is created & maintained by Cloudflare.

@@ -1,0 +1,41 @@
+@import '../../styles/reset.css';
+@import '../../styles/scrollbar.css';
+
+:host {
+  @apply my-2 flex h-full w-full flex-col;
+  @apply text-text-md text-text-1000;
+}
+
+h3 {
+  @apply mx-0 my-4 block p-0;
+  @apply text-text-lg text-text-900 font-normal;
+  @apply text-center;
+}
+
+ul {
+  @apply overflow-y-auto p-0;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.metadata {
+  @apply flex items-center;
+  img {
+    @apply h-8 w-8 rounded-sm;
+  }
+
+  .name {
+    @apply ml-2 font-medium;
+  }
+}
+
+.plugin {
+  @apply flex items-center justify-between px-4 py-2;
+  .buttons {
+    @apply flex items-center;
+  }
+}
+
+rtk-button:hover {
+  @apply ring-brand-500 ring-offset-background-1000 ring-2 ring-offset-2;
+}

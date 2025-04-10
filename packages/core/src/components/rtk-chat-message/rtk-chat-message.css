@@ -1,0 +1,285 @@
+.message-wrapper {
+  @apply flex gap-2;
+  @apply mx-4 mt-4;
+}
+
+[is-continued] .message-wrapper {
+  @apply mt-0;
+}
+
+.message-wrapper.align-right {
+  @apply flex-row-reverse;
+}
+
+.file-picker {
+  @apply hidden;
+}
+
+.message {
+  @apply relative flex;
+}
+
+.show-on-hover {
+  rtk-menu {
+    @apply invisible;
+  }
+  &:hover {
+    rtk-menu {
+      @apply visible;
+    }
+  }
+}
+.align-right {
+  .message {
+    @apply justify-end;
+    @apply ml-auto;
+
+    .head {
+      @apply mr-1 ml-0 flex-row-reverse gap-4;
+    }
+
+    rtk-text-message,
+    rtk-image-message,
+    rtk-file-message {
+      .bubble {
+        @apply pr-5;
+        @apply bg-brand-300 text-text-on-brand;
+      }
+    }
+
+    .actions rtk-icon {
+      @apply text-text-on-brand;
+    }
+  }
+
+  rtk-menu {
+    @apply left-auto right-0;
+  }
+}
+
+.head {
+  @apply mb-2 ml-1 flex items-center gap-2;
+
+  .name {
+    @apply text-text-md font-semibold;
+  }
+
+  .time {
+    @apply text-text-sm text-text-800;
+  }
+}
+
+rtk-menu {
+  @apply absolute left-0 top-6 rounded-lg;
+
+  rtk-icon {
+    @apply h-4 w-4;
+    @apply cursor-pointer;
+  }
+}
+
+[is-continued] rtk-menu {
+  @apply top-2;
+}
+
+.actions {
+  @apply flex items-center justify-center p-0.5;
+  @apply border-none bg-transparent;
+
+  rtk-icon {
+    @apply h-4 w-4;
+    @apply text-text-1000;
+  }
+}
+
+.body {
+  @apply text-text-md my-1 break-words leading-snug;
+
+  .emoji {
+    @apply text-heading-md;
+  }
+
+  &.bubble {
+    @apply max-w-96 mt-0 mb-1 py-3 px-5;
+    @apply text-text-md break-words leading-snug;
+    @apply bg-background-800 rounded-md;
+
+    p {
+      @apply m-0;
+      word-break: break-word;
+    }
+  }
+}
+
+p {
+  @apply mt-0 mb-3;
+}
+
+rtk-text-message,
+rtk-image-message,
+rtk-file-message {
+  @apply text-text-900 block font-sans;
+  @apply box-border;
+}
+
+*[is-continued] {
+  @apply mt-0;
+}
+
+.image {
+  @apply max-w-64 relative h-40;
+  @apply cursor-pointer;
+
+  img {
+    @apply hidden h-full w-full;
+    @apply rounded-sm object-cover;
+  }
+
+  .image-spinner {
+    @apply flex h-full w-full flex-col items-center justify-center;
+    @apply bg-background-800 rounded-sm;
+
+    rtk-spinner {
+      @apply text-brand-500;
+    }
+  }
+
+  .image-errored {
+    @apply flex h-full w-full flex-col items-center justify-center;
+    @apply bg-danger/10 text-danger rounded-sm;
+  }
+
+  .actions {
+    @apply hidden h-8 items-center;
+    @apply absolute top-2 right-2;
+    @apply bg-background-900 text-text-1000 rounded-sm;
+    @apply overflow-hidden shadow-lg;
+
+    .action {
+      @apply h-8 w-8 rounded-none border-none bg-transparent shadow-none;
+      @apply hover:bg-background-600;
+    }
+  }
+}
+
+.image.loaded {
+  img {
+    @apply block;
+  }
+  .image-spinner {
+    @apply hidden;
+  }
+}
+
+.image:hover .actions,
+.image:focus .actions {
+  @apply flex;
+}
+
+.file {
+  @apply flex items-center gap-1 px-2 py-1.5;
+  @apply bg-background-700 text-text-700 rounded-sm;
+
+  .file-data {
+    @apply flex-1;
+
+    .name {
+      @apply text-text-1000 line-clamp-1 break-all;
+    }
+
+    .file-data-split {
+      @apply text-text-sm mt-0.5 flex items-center;
+
+      .ext {
+        @apply line-clamp-1 mr-2 uppercase;
+      }
+      .divider {
+        @apply bg-background-600 h-4 w-0.5;
+      }
+      .size {
+        @apply ml-2;
+      }
+    }
+  }
+}
+
+a {
+  @apply text-brand-300 no-underline hover:underline;
+}
+
+.new-chat-marker {
+  @apply text-brand-300 flex w-full items-center gap-2;
+}
+
+.new-chat-marker::before {
+  content: '';
+  height: 1px;
+  @apply flex-1;
+  @apply bg-brand-300/50;
+}
+
+.show-new-messages-ctr {
+  @apply pointer-events-none flex justify-end p-3;
+  @apply z-0 -mt-14;
+}
+
+.show-new-messages {
+  @apply pointer-events-auto;
+  @apply -translate-y-6 opacity-0 transition;
+}
+
+.show-new-messages.active {
+  @apply translate-y-0 opacity-100;
+}
+
+blockquote {
+  @apply m-0 mb-3;
+  @apply bg-transparent;
+}
+
+.block-quote,
+blockquote {
+  @apply border-l-text-900 border-l-md border-r-none border-y-none border-spacing-[1px] border-solid p-0.5 pl-2;
+  @apply !mb-2 rounded-sm rounded-tl-none rounded-bl-none;
+}
+.link {
+  @apply text-text-900;
+}
+
+.align-right {
+  .block-quote {
+    @apply border-text-on-brand-600 bg-brand-300;
+  }
+  .link {
+    @apply text-text-on-brand;
+  }
+  .image .actions {
+    rtk-icon {
+      @apply text-brand-300;
+    }
+  }
+}
+
+.avatar {
+  @apply flex w-6;
+
+  rtk-avatar {
+    @apply text-text-xs h-6 w-6;
+  }
+}
+
+.message {
+  @apply w-3/4;
+}
+
+.left-align .body {
+  @apply mt-4;
+}
+
+.left-align [is-continued] .body {
+  @apply mt-0;
+}
+
+.left-align .body {
+  @apply -translate-x-8;
+}

@@ -1,0 +1,123 @@
+@import '../../styles/reset.css';
+
+:host {
+  --background-color: var(
+    --rtk-controlbar-button-background-color,
+    theme('colors.background.1000')
+  );
+  --icon-size: var(--rtk-controlbar-button-icon-size, theme('spacing.7'));
+
+  @apply relative box-border inline-flex;
+  @apply min-w-20 h-full w-auto;
+  @apply select-none transition-colors;
+  @apply text-text-1000;
+
+  background-color: var(--background-color);
+}
+
+button {
+  @apply p-1;
+}
+
+:host(.red-icon) #icon {
+  @apply text-danger;
+}
+
+:host([disabled]) {
+  @apply text-text-600;
+}
+
+button {
+  @apply box-border inline-flex h-full w-full flex-1 flex-col gap-1 px-1;
+  @apply items-center justify-center;
+  @apply cursor-pointer rounded-md border-none bg-transparent text-inherit outline-offset-[-2px];
+  border: theme('borderWidth.md') solid theme('colors.transparent');
+}
+
+.label {
+  @apply text-text-sm line-clamp-1 text-center;
+}
+
+#warning-indicator {
+  @apply absolute top-1 right-2;
+  @apply h-4 w-4;
+  @apply text-warning;
+}
+
+:host([size='sm']) #warning-indicator {
+  @apply right-0 top-0;
+  @apply h-3 w-3;
+}
+
+:host(:hover) button {
+  @apply bg-background-800;
+}
+
+#icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+:host(.leave:hover) button {
+  @apply bg-background-1000 text-danger;
+  border: theme('borderWidth.md') solid theme('colors.danger');
+}
+
+:host(.active) button {
+  @apply text-brand-400;
+  border: theme('borderWidth.md') solid theme('colors.brand.400');
+}
+
+button:focus-visible {
+  outline: 2px solid theme('colors.brand.400');
+}
+
+:host(.active-livestream) {
+  @apply text-danger;
+}
+
+:host([size='sm']) {
+  @apply min-w-14;
+  .label {
+    @apply hidden;
+  }
+}
+
+:host([variant='horizontal']) {
+  @apply w-full;
+
+  button {
+    /* 7px because the parent container has an 8px radius, but a 1px thick border */
+    @apply rounded-[7px];
+    @apply h-12 w-full px-5 py-3;
+    @apply flex-row justify-start gap-3;
+  }
+
+  #icon {
+    @apply w-6;
+  }
+
+  .label {
+    @apply text-button-md block leading-5;
+  }
+}
+
+:host([variant='horizontal']) #warning-indicator {
+  @apply right-auto left-4;
+}
+
+:host([brand-icon]) rtk-icon#icon {
+  @apply text-brand;
+}
+
+@media only screen and (max-device-height: 480px) and (orientation: landscape) {
+  :host {
+    .label {
+      @apply hidden;
+    }
+  }
+
+  :slotted(rtk-icon) {
+    @apply h-4 w-4;
+  }
+}

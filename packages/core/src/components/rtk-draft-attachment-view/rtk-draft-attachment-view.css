@@ -1,0 +1,50 @@
+:host {
+  @apply flex;
+  @apply bg-background-800;
+  @apply rounded-t-md;
+}
+.preview-overlay {
+  @apply absolute inset-0;
+  @apply bg-inherit;
+}
+
+.preview {
+  @apply absolute top-4 left-4 max-w-fit;
+  @apply max-h-20;
+
+  &:hover {
+    rtk-tooltip {
+      @apply block;
+    }
+  }
+
+  rtk-tooltip {
+    @apply absolute -top-1 -left-1 hidden;
+    @apply -ml-1 -mt-1;
+  }
+
+  rtk-button {
+    @apply flex h-4 w-4 items-center justify-center rounded-full;
+    @apply bg-background-600;
+    border: 1px solid theme(colors.text.1000);
+  }
+
+  rtk-icon {
+    @apply h-3 w-3;
+    @apply text-text-1000;
+  }
+}
+
+.preview-image {
+  @apply h-16 w-16 object-cover;
+  @apply max-h-full max-w-full;
+  @apply overflow-clip rounded-md;
+}
+
+.preview-file {
+  @apply px-3 py-2;
+  @apply bg-background-600 text-text-900;
+  @apply truncate;
+  @apply rounded-md;
+  max-width: 200px;
+}

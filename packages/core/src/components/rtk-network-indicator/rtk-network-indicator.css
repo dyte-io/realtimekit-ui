@@ -1,0 +1,35 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply relative block h-7 w-7;
+}
+
+rtk-icon {
+  @apply absolute inset-0 z-10;
+  @apply h-full w-full;
+  @apply text-success;
+}
+
+rtk-icon.good {
+  @apply text-success;
+}
+
+rtk-icon.poor {
+  @apply text-warning;
+}
+
+rtk-icon.poorest {
+  @apply text-danger;
+}
+
+:host([size='md']) {
+  @apply h-6 w-6;
+}
+
+:host([size='sm']) {
+  @apply h-5 w-5;
+}
+
+.bg-signal {
+  @apply text-text-600 absolute inset-0 z-0;
+}

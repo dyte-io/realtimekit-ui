@@ -1,0 +1,56 @@
+@import '../../styles/reset.css';
+@import '../../styles/scrollbar.css';
+
+:host {
+  @apply relative h-full w-full;
+  @apply box-border;
+}
+
+.content {
+  @apply relative flex h-full w-full flex-col overflow-y-auto;
+}
+
+.waitlist-area {
+  @apply flex flex-col;
+  @apply bg-background-800;
+}
+
+.listening-title {
+  @apply text-center;
+  @apply mt-5 mb-4;
+}
+
+.waitlist-grid {
+  @apply flex-1;
+}
+
+.grid {
+  @apply box-border flex-1 gap-6;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+:host([size='md']) .grid {
+  @apply gap-4;
+}
+
+:host([size='sm']) .grid {
+  @apply gap-3;
+}
+
+rtk-audio-tile {
+  @apply aspect-square flex-none;
+  width: calc(20%);
+  @apply max-w-48;
+  transition: all 0.3s;
+}
+
+rtk-audio-tile[size='md'] {
+  @apply max-w-36 w-full;
+}
+
+rtk-audio-tile[size='sm'] {
+  @apply max-w-24 w-full;
+}

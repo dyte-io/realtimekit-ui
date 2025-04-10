@@ -1,0 +1,229 @@
+@import '../../styles/reset.css';
+
+.color-brand {
+  @apply text-brand-300;
+}
+
+.color-danger {
+  @apply text-danger;
+}
+
+.loading-content {
+  @apply h-60 w-96 p-9;
+  @apply bg-background-1000;
+  @apply flex items-center justify-center;
+}
+
+.room-config {
+  @apply bg-background-1000 overflow-hidden rounded-md;
+  @apply flex flex-col;
+  @apply w-96 px-9 py-10;
+}
+
+header {
+  @apply mb-8 flex items-center gap-2;
+  @apply text-heading-md font-semibold;
+
+  rtk-icon {
+    @apply h-7 w-7;
+  }
+}
+
+.create-room {
+  @apply mb-4 flex items-center gap-3;
+  @apply w-full;
+}
+
+.create-room p {
+  @apply text-text-lg m-0 mb-1;
+}
+
+.distribution-hint {
+  @apply mb-8;
+  @apply text-text-md text-text-600 font-normal;
+
+  em {
+    @apply text-text-800 not-italic;
+  }
+}
+
+footer {
+  @apply flex flex-row align-middle;
+  @apply justify-center;
+
+  rtk-button {
+    @apply text-text-1000 w-full;
+  }
+}
+
+label {
+  @apply text-text-1000 mb-3 font-normal opacity-40;
+}
+
+.participant-config-wrapper {
+  width: 850px;
+  height: 595px;
+  max-width: 100%;
+  max-height: 100%;
+  @apply bg-background-900 rounded-md;
+  @apply flex flex-col;
+}
+.participant-config-actions {
+  @apply flex justify-between px-8 py-5;
+  @apply bg-background-1000 rounded-br-md rounded-bl-md;
+}
+
+.participant-config {
+  @apply flex flex-grow flex-row overflow-hidden;
+}
+
+aside {
+  @apply box-border flex w-96 flex-grow flex-col;
+  @apply pl-8 pr-4;
+  @apply border-r-background-600 border-r-sm border-t-none border-b-none border-l-none border-solid;
+
+  header {
+    @apply mb-4 w-full px-0 pt-8;
+    @apply text-heading-sm font-medium leading-8;
+  }
+}
+
+/* .top-border-wrapper {
+
+  @apply border-t-background-600 border-t-sm border-b-none border-r-none border-l-none border-solid;
+} */
+
+.shuffle-button {
+  @apply flex flex-row items-center;
+  rtk-icon {
+    @apply h-8;
+  }
+}
+.participants-assign-actions {
+  @apply flex flex-row items-center justify-between;
+  @apply text-text-md;
+  @apply pl-8 pr-2;
+  @apply -ml-8 -mr-4 py-0.5;
+  @apply bg-background-700;
+
+  .deselect-button {
+    @apply h-6;
+
+    &:hover {
+      @apply bg-background-700;
+    }
+  }
+}
+
+.assign-rooms {
+  @apply p-8;
+  @apply flex w-full flex-col;
+
+  .disabled {
+    @apply opacity-20;
+  }
+
+  .back {
+    @apply flex cursor-pointer flex-row items-center justify-start p-4 pb-0;
+    @apply text-text-800 text-text-md;
+
+    rtk-icon {
+      @apply h-5;
+    }
+  }
+
+  .row {
+    @apply flex flex-row items-center justify-start gap-3;
+    @apply mb-4;
+    @apply text-text-md;
+  }
+
+  .row-header {
+    @apply m-0;
+    @apply text-text-lg leading-8;
+  }
+
+  .cta-buttons {
+    @apply flex items-center justify-start gap-2;
+
+    rtk-button {
+      div {
+        @apply flex flex-row items-center;
+        rtk-icon {
+          @apply h-4 w-4;
+        }
+      }
+    }
+  }
+}
+.rooms {
+  @apply mb-2 overflow-y-auto pr-1;
+  @apply flex flex-grow flex-col gap-2 overflow-y-auto;
+  @apply max-h-[500px];
+}
+
+.rooms::-webkit-scrollbar {
+  @apply w-1.5 rounded-sm;
+}
+
+.rooms::-webkit-scrollbar-thumb {
+  @apply bg-background-600 rounded-sm;
+}
+
+.rooms::-webkit-scrollbar-track {
+  @apply bg-background-800 rounded-sm;
+}
+
+.breakout-actions {
+  @apply flex flex-row items-center justify-end gap-2;
+
+  .start-breakout-button {
+    @apply text-text-1000;
+  }
+
+  .close-breakout-button {
+    @apply text-text-1000;
+    @apply bg-danger;
+  }
+  .update-breakout-button {
+    @apply text-brand-500 bg-transparent;
+    @apply border-brand-500 border-sm border-solid;
+  }
+}
+
+.status-bar {
+  @apply flex items-center;
+  @apply text-text-md text-text-700;
+  @apply w-80;
+}
+
+.ephemeral-status {
+  @apply text-success;
+  rtk-icon {
+    @apply h-4 w-4;
+  }
+}
+
+.room-switcher-container {
+  @apply bg-background-1000 rounded-md;
+  @apply w-[468px] p-8;
+}
+
+.add-room-jumbo-btn {
+  div {
+    @apply flex items-center gap-1;
+    @apply text-text-md text-brand-300;
+
+    rtk-icon {
+      @apply h-4 w-4;
+    }
+  }
+}
+
+.br-primary-btn:not([disabled]) {
+  @apply bg-background-800 hover:bg-brand-600;
+}
+
+.br-secondary-btn:not([disabled]) {
+  @apply bg-background-800 hover:bg-background-600;
+}

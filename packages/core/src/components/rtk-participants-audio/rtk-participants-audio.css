@@ -1,0 +1,23 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply text-text-1000 block break-words;
+  word-wrap: break-word;
+}
+
+.modal {
+  @apply max-w-96 box-border w-full p-4;
+  @apply bg-background-1000 rounded-md;
+
+  h3 {
+    @apply text-heading-md m-0 p-0 font-medium;
+  }
+
+  p {
+    @apply mt-4 mb-6;
+  }
+
+  rtk-button {
+    @apply w-full;
+  }
+}

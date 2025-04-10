@@ -1,0 +1,61 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply box-border block max-h-full w-[600px] overflow-y-auto p-6;
+  @apply bg-background-1000 rounded-md;
+  @apply text-text-1000 break-words;
+  word-wrap: break-word;
+}
+
+.actions {
+  @apply flex items-center gap-2;
+}
+
+.text-icon {
+  @apply inline-block align-middle;
+}
+
+h2 {
+  @apply mt-0 mb-4;
+}
+
+h2 .text-icon {
+  @apply text-danger mr-2 h-8 w-8;
+}
+
+p {
+  @apply my-0 mb-4;
+}
+
+.need-help-link {
+  @apply mt-2 inline-block underline-offset-2;
+  @apply text-brand-400 hover:text-brand-600;
+}
+
+a rtk-icon {
+  @apply mr-2 h-5 w-5;
+}
+
+:host([size='sm']) .actions {
+  @apply flex-col items-start justify-center;
+}
+
+:host([size='sm']) .action {
+  @apply w-full py-2;
+}
+
+.actions {
+  @apply mt-6;
+}
+
+.actions rtk-button {
+  @apply flex-1;
+}
+
+.svg-container {
+  @apply flex w-full !justify-center;
+}
+
+.svg-ins {
+  @apply w-[80%] rounded-md bg-[#fff];
+}

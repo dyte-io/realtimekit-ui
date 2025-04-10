@@ -53,7 +53,7 @@ export const computeSelectors = ({
     }
 
     if (typeof state === 'string') {
-      // dyte-meeting[meeting=joined]
+      // rtk-meeting[meeting=joined]
       const keyValueSelector = `${element}[${state}=${states[state]}]`;
       add(keyValueSelector);
 

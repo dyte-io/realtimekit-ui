@@ -14,7 +14,7 @@ export default {
     {
       inlineDynamicImports: true,
       file: 'dist/browser.js',
-      name: 'DyteUIKit',
+      name: 'RtkUiKit',
       format: 'iife',
       plugins: [terser()],
     },

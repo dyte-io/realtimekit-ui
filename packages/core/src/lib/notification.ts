@@ -1,4 +1,4 @@
-import { Meeting } from '../types/dyte-client';
+import { Meeting } from '../types/rtk-client';
 import { disableSettingSinkId } from '../utils/flags';
 import logger from '../utils/logger';
 
@@ -13,7 +13,7 @@ export type Sound = keyof typeof SOUNDS;
 /**
  * Handles notification sounds in a meeting
  */
-export default class DyteNotificationsAudio {
+export default class RTKNotificationsAudio {
   private audio: HTMLAudioElement;
   private playing: boolean;
   private meeting: Meeting;
@@ -32,7 +32,7 @@ export default class DyteNotificationsAudio {
     this.audio.src = SOUNDS[sound];
     this.audio.volume = 0.3;
     this.audio.play()?.catch((err) => {
-      logger.error('[dyte-notifications] play() failed\n', { sound, duration }, err);
+      logger.error('[rtk-notifications] play() failed\n', { sound, duration }, err);
     });
 
     setTimeout(() => {
@@ -43,7 +43,7 @@ export default class DyteNotificationsAudio {
   async setDevice(id: string) {
     if (disableSettingSinkId(this.meeting)) return;
     await (this.audio as any)?.setSinkId?.(id)?.catch((err) => {
-      logger.error('[dyte-notifications] setSinkId() error\n', err);
+      logger.error('[rtk-notifications] setSinkId() error\n', err);
     });
   }
 }

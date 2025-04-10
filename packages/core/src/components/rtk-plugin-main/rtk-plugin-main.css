@@ -1,0 +1,43 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply flex h-full w-full flex-col overflow-hidden rounded-lg;
+  @apply text-text-1000;
+}
+
+header {
+  @apply flex h-8 items-center justify-between px-3;
+  @apply bg-background-900;
+
+  & > div {
+    @apply flex items-center;
+  }
+}
+
+rtk-button {
+  @apply flex h-5 w-5 flex-col items-center rounded-full;
+
+  rtk-icon {
+    @apply h-3 w-3;
+  }
+}
+
+iframe {
+  @apply block flex-1;
+  @apply m-0 border-none p-0 outline-none;
+
+  @apply bg-video-bg;
+}
+
+.iframe-container {
+  @apply relative h-full w-full;
+}
+
+.block-inputs {
+  @apply absolute z-10 h-full w-full;
+  @apply border-danger border-l-none border-t-lg border-solid;
+}
+
+iframe {
+  @apply h-full w-full;
+}

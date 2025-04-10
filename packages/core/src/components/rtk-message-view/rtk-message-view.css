@@ -1,0 +1,117 @@
+@import '../../styles/reset.css';
+@import '../../styles/scrollbar.css';
+
+.message-wrapper {
+  @apply flex flex-row-reverse gap-2;
+  &.incoming {
+    @apply flex-row;
+  }
+}
+.message {
+  @apply flex flex-col;
+}
+.header {
+  @apply mb-1;
+  @apply self-end;
+  @apply text-text-900;
+  @apply text-text-md font-semibold;
+}
+
+.incoming {
+  .header {
+    @apply self-start;
+  }
+}
+
+.body {
+  @apply flex flex-col;
+  @apply min-w-24;
+  @apply text-text-900 font-sans;
+  @apply text-text-md leading-snug;
+  @apply relative;
+
+  .metadata {
+    @apply mt-2;
+    @apply self-end;
+    @apply text-text-xs;
+  }
+}
+
+.bubble {
+  @apply max-w-96 p-2;
+  @apply bg-brand-300 text-text-on-brand;
+  @apply rounded-md;
+}
+
+.incoming {
+  .bubble {
+    @apply bg-background-800 text-text-900;
+  }
+}
+
+.avatar {
+  @apply hidden;
+}
+
+rtk-menu {
+  @apply absolute right-0 top-0 rounded-lg;
+
+  rtk-icon {
+    @apply h-4 w-4;
+    @apply cursor-pointer;
+  }
+}
+.actions {
+  @apply flex items-center justify-center pl-2 pb-2 pt-1 pr-1;
+  @apply rounded-md border-none;
+  background: radial-gradient(
+    at top right,
+    theme(colors.brand.300) 60%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  rtk-icon {
+    @apply h-4 w-4;
+    @apply text-text-on-brand;
+  }
+}
+.incoming {
+  .actions {
+    background: radial-gradient(
+      at top right,
+      theme(colors.background.800) 60%,
+      rgba(255, 255, 255, 0) 80%
+    );
+
+    rtk-icon {
+      @apply text-text-900;
+    }
+  }
+
+  rtk-avatar {
+    @apply bg-background-600 text-text-900;
+  }
+}
+
+@media (min-width: 400px) {
+  .avatar {
+    @apply flex w-6;
+
+    rtk-avatar {
+      @apply text-text-xs h-6 w-6;
+      @apply overflow-clip rounded-full;
+    }
+  }
+}
+
+@media (hover: hover) {
+  rtk-menu {
+    @apply invisible;
+  }
+  .body {
+    &:hover {
+      rtk-menu {
+        @apply visible;
+      }
+    }
+  }
+}

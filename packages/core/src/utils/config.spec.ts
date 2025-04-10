@@ -12,11 +12,11 @@ describe('extendConfig()', () => {
   it('should work with root property', () => {
     const newConfig = extendConfig({
       root: {
-        'dyte-name-tag.someState': ['dyte-avatar'],
+        'rtk-name-tag.someState': ['rtk-avatar'],
       },
     });
 
     expect(newConfig.designTokens.spacingBase).toBe(4);
-    expect(newConfig.root['dyte-name-tag.someState'][0]).toBe('dyte-avatar');
+    expect(newConfig.root['rtk-name-tag.someState'][0]).toBe('rtk-avatar');
   });
 });

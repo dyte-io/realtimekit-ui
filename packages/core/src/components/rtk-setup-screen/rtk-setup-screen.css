@@ -1,0 +1,77 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply box-border p-4;
+  @apply h-full min-h-full w-full;
+  @apply flex place-items-center justify-center;
+
+  --rtk-controlbar-button-background-color: theme('colors.background.700');
+}
+
+.container {
+  @apply w-full max-w-screen-lg;
+  @apply flex items-center justify-evenly gap-4;
+}
+
+.metadata {
+  @apply max-w-80 w-full;
+}
+
+.label {
+  @apply text-text-md flex flex-col items-center;
+
+  p {
+    @apply text-text-lg mt-0 mb-2 inline-block;
+  }
+}
+
+.container-tile {
+  @apply flex h-full w-full max-w-[584px] flex-col gap-2;
+}
+
+.name {
+  @apply text-heading-lg m-0 mb-6 text-center font-medium tracking-tight;
+  @apply line-clamp-1;
+}
+
+input {
+  @apply max-w-80 bg-background-1000 text-text-1000 mb-6 block h-10 w-full rounded-sm px-3;
+  @apply box-border;
+  @apply text-text-lg placeholder:text-text-600 outline-none transition;
+  border: theme('borderWidth.sm') solid theme('colors.background.600');
+  @apply focus:border-brand-500;
+}
+
+rtk-spinner {
+  @apply text-text-1000;
+  --icon-size: theme('spacing.8');
+}
+
+:host([size='sm']) .container,
+:host([size='md']) .container {
+  @apply h-full flex-col justify-evenly;
+}
+
+:host([size='sm']) .container-tile,
+:host([size='md']) .container-tile {
+  @apply h-min flex-col justify-center;
+}
+
+rtk-participant-tile {
+  @apply h-auto w-full max-w-[584px];
+}
+
+.media-selectors {
+  @apply flex flex-col justify-between;
+}
+
+.media-selectors .row {
+  @apply grid grid-cols-2;
+}
+
+.no-network-badge {
+  @apply bg-brand-500 text-text-sm text-danger/75 bg-danger/10 mt-2 flex w-full flex-row items-center justify-start rounded-sm py-1;
+  rtk-icon {
+    @apply mx-2;
+  }
+}

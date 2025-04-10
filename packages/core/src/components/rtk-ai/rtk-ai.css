@@ -1,0 +1,29 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply max-w-80 relative box-border flex w-full flex-col;
+  @apply text-text-1000 bg-background-1000;
+  @apply overflow-hidden;
+}
+
+.close {
+  @apply absolute top-3 left-3;
+}
+
+.title {
+  @apply text-text-md mx-0 mt-4 mb-2 select-none p-0 text-center font-normal;
+}
+
+rtk-ai-transcriptions {
+  flex: 1;
+}
+
+:host([view='sidebar']) {
+  @apply bg-background-900 mx-2 rounded-lg;
+}
+
+:host([view='full-screen']) {
+  @apply absolute;
+  @apply inset-0 z-50 max-w-full;
+  border: none;
+}

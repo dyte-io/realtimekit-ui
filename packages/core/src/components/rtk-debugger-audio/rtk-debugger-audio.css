@@ -1,0 +1,127 @@
+@import '../../styles/reset.css';
+@import '../../styles/scrollbar.css';
+
+:host {
+  @apply relative flex flex-col overflow-hidden;
+  @apply h-full w-full;
+  @apply text-text-1000;
+  @apply bg-background-600;
+}
+
+.tab-body::-webkit-scrollbar {
+  @apply bg-background-1000 w-1.5 rounded-md;
+}
+
+.tab-body::-webkit-scrollbar-thumb {
+  @apply bg-background-700 rounded-md;
+}
+
+h3 {
+  @apply text-text-lg m-0 p-0 font-semibold;
+}
+
+#header {
+  @apply mt-2 mb-5 flex items-center justify-evenly;
+}
+
+.tab-body {
+  @apply flex h-full flex-col justify-between overflow-y-auto m-4;
+}
+
+.status-container {
+  border: theme('borderWidth.sm') solid theme('colors.background.600');
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.status-section {
+  margin-bottom: 12px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  /* cursor: pointer; */
+  padding: 8px 0;
+}
+
+.section-header.only-child{
+  justify-content: center;
+}
+
+.section-body.missing-stats{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.section-header .status {
+  color: rgba(var(--rtk-colors-success));
+  font-weight: bold;
+}
+
+.section-header .arrow {
+  font-size: 14px;
+}
+
+.network-table {
+  border: theme('borderWidth.sm') solid theme('colors.background.600');
+  border-radius: 8px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.network-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: theme('borderWidth.sm') solid theme('colors.background.600');
+}
+
+.network-row:last-child {
+  border-bottom: none;
+}
+
+.network-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.network-cell.label strong {
+  font-size: 14px;
+}
+
+.network-cell.label .description {
+  font-size: 12px;
+  @apply text-text-700;
+  margin-top: 4px;
+}
+
+.network-cell.value {
+  text-align: right;
+}
+
+.status.good {
+  color: rgba(var(--rtk-colors-success));
+}
+
+.status.average {
+  color: rgba(var(--rtk-colors-warning));
+}
+
+.status.poor {
+  color: rgba(var(--rtk-colors-danger));
+}
+
+.value {
+  font-size: 14px;
+  @apply text-text-700;
+  margin-top: 4px;
+}
+
+rtk-settings-audio {
+  display: flex;
+  flex-direction: column;
+}

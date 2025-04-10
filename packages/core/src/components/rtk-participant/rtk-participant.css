@@ -1,0 +1,51 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply relative flex h-14 items-center justify-between;
+  @apply text-text-1000 cursor-pointer;
+
+  rtk-avatar {
+    @apply text-text-md h-8 w-8;
+  }
+}
+
+.left {
+  @apply flex items-center;
+
+  & > * {
+    @apply mr-2 last:mr-0;
+  }
+}
+
+.right {
+  @apply flex items-center justify-end;
+
+  & > * {
+    @apply ml-2 first:ml-0;
+  }
+}
+
+.name {
+  @apply line-clamp-1;
+}
+
+rtk-icon {
+  @apply h-6 w-6;
+}
+
+rtk-icon.red {
+  @apply text-danger;
+}
+
+rtk-icon.more {
+  @apply cursor-pointer;
+}
+
+.menu {
+  @apply relative inline-block;
+  @apply text-text-1000;
+}
+
+#menu-list {
+  @apply absolute !top-8 !right-4 z-20;
+}

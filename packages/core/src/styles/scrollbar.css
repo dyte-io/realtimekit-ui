@@ -1,17 +1,17 @@
 .scrollbar {
   /* For Firefox */
   scrollbar-width: thin;
-  scrollbar-color: var(--dyte-scrollbar-color, theme('colors.background.600'))
-    var(--dyte-scrollbar-background, theme('colors.transparent'));
+  scrollbar-color: var(--rtk-scrollbar-color, theme('colors.background.600'))
+    var(--rtk-scrollbar-background, theme('colors.transparent'));
 }
 
 /* For WebKit */
 .scrollbar::-webkit-scrollbar {
   @apply h-1.5 w-1.5 rounded-full;
-  background-color: var(--dyte-scrollbar-background, theme('colors.transparent'));
+  background-color: var(--rtk-scrollbar-background, theme('colors.transparent'));
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
   @apply rounded-full;
-  background-color: var(--dyte-scrollbar-color, theme('colors.background.600'));
+  background-color: var(--rtk-scrollbar-color, theme('colors.background.600'));
 }

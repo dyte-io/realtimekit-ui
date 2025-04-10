@@ -1,0 +1,40 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply h-full w-full select-none;
+  @apply flex flex-col items-center justify-center;
+}
+
+.ctr {
+  @apply flex flex-col items-center gap-8;
+}
+
+rtk-logo.loaded {
+  @apply h-12;
+}
+
+.rejoin-button {
+  @apply my-4 py-6 px-16;
+}
+
+.rejoin-icon {
+  @apply mr-2;
+}
+
+p {
+  @apply text-text-lg;
+  @apply bg-background-800 text-text-1000 rounded-lg px-8 py-4;
+}
+
+p.breakout {
+  @apply text-heading-sm;
+  @apply flex flex-col items-center;
+
+  span {
+    @apply text-text-600 mt-1 mb-0;
+  }
+}
+
+span {
+  @apply text-text-md my-4;
+}

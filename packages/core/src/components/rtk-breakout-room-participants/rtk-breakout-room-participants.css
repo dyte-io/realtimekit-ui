@@ -1,0 +1,132 @@
+@import '../../styles/reset.css';
+@import '../../styles/scrollbar.css';
+
+:host {
+  @apply flex h-full flex-col;
+  @apply text-text-md;
+
+  /**  custom checkbox styles */
+  input[type='checkbox'] {
+    @apply m-0 cursor-pointer appearance-none rounded-sm;
+    @apply border-sm border-text-600 relative h-4 w-4 border-solid;
+  }
+  input[type='checkbox']:checked {
+    @apply bg-brand border-brand;
+  }
+  input[type='checkbox']:checked::before {
+    @apply bg-text absolute top-[1px] left-[1px] h-3 w-3;
+    content: '';
+    clip-path: polygon(5% 60%, 35% 93%, 100% 19%, 86% 4%, 36% 62%, 19% 44%);
+  }
+}
+
+* {
+  @apply box-border;
+}
+
+.participants {
+  @apply mt-2 p-0;
+}
+
+.ctr {
+  @apply box-border py-0;
+  @apply overflow-y-auto;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.empty-message {
+  @apply text-text-md text-text-700 my-10 text-center;
+}
+.empty-room {
+  @apply flex flex-col items-center justify-center gap-2;
+  @apply h-full;
+  @apply text-text-700 text-center;
+
+  rtk-icon {
+    @apply h-7 w-7;
+  }
+  p {
+    @apply text-text-lg font-medium;
+    @apply m-0;
+  }
+  span {
+    @apply text-text-600 text-text-sm;
+  }
+}
+
+.search-wrapper {
+  @apply mb-1 flex items-center gap-2;
+}
+
+.search {
+  @apply bg-background-800 sticky box-border flex items-center rounded-sm;
+  @apply my-0 h-8;
+
+  .search-icon {
+    @apply text-text-600 mx-2 h-5 w-5;
+  }
+
+  input {
+    @apply box-border w-full pr-2;
+    @apply text-text-1000 border-none bg-inherit outline-none;
+    @apply text-text-md placeholder:text-text-800 rounded-sm;
+  }
+}
+
+.header {
+  @apply ml-2 mr-1.5 h-9 py-3 pr-0.5;
+  @apply border-b-background-600 border-b-sm border-t-none border-r-none border-l-none border-solid;
+  @apply text-text-sm text-text-900;
+  @apply flex items-center justify-between;
+}
+.title-wrapper {
+  @apply flex items-center gap-2;
+}
+.participant-count {
+  @apply flex items-center;
+  @apply text-text-md;
+
+  rtk-icon {
+    @apply mr-0.5 w-3;
+  }
+}
+
+.participant-item {
+  @apply flex items-center justify-between;
+  @apply my-1 rounded-sm px-2;
+  @apply cursor-pointer;
+
+  input.hide-checkbox {
+    @apply hidden;
+  }
+  input:checked {
+    @apply inline-block;
+  }
+}
+.dragging {
+  input {
+    @apply hidden;
+  }
+}
+.participant-item:hover {
+  @apply bg-background-600;
+
+  input {
+    @apply inline-block;
+  }
+}
+
+.peer-ui-container {
+  @apply relative flex items-center gap-2;
+  @apply h-10 cursor-pointer rounded-sm;
+  @apply text-text-700;
+
+  rtk-avatar {
+    @apply text-button-md text-text-1000 h-7 w-7;
+  }
+
+  .name {
+    @apply line-clamp-1 text-text-md;
+  }
+}

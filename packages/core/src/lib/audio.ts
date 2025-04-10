@@ -1,4 +1,4 @@
-import { Meeting } from '../types/dyte-client';
+import { Meeting } from '../types/rtk-client';
 import { disableSettingSinkId } from '../utils/flags';
 import logger from '../utils/logger';
 
@@ -10,7 +10,7 @@ interface PeerAudio {
 /**
  * Handles audio from participants in a meeting
  */
-export default class DyteAudio {
+export default class RTKAudio {
   private audio: HTMLAudioElement;
   private audioStream: MediaStream;
   private meeting: Meeting;
@@ -56,7 +56,7 @@ export default class DyteAudio {
           this._onError();
         }
       } else if (err.name !== 'AbortError') {
-        logger.error('[dyte-audio] play() error\n', err);
+        logger.error('[rtk-audio] play() error\n', err);
       }
     });
   }
@@ -64,7 +64,7 @@ export default class DyteAudio {
   async setDevice(id: string) {
     if (disableSettingSinkId(this.meeting)) return;
     await (this.audio as any).setSinkId?.(id)?.catch((err) => {
-      logger.error('[dyte-audio] setSinkId() error\n', err);
+      logger.error('[rtk-audio] setSinkId() error\n', err);
     });
   }
 

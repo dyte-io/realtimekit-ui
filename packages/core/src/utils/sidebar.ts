@@ -1,4 +1,4 @@
-import { Meeting } from '../types/dyte-client';
+import { Meeting } from '../types/rtk-client';
 import { isLiveStreamViewer } from './livestream';
 
 export const canViewChat = (meeting: Meeting) => {

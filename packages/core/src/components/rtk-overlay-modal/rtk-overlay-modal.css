@@ -1,0 +1,19 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply flex h-full w-full flex-col items-center justify-center;
+  @apply bg-background-1000/60;
+  @apply fixed top-0 right-0 z-50;
+}
+
+rtk-icon {
+  @apply h-20;
+}
+
+h2 {
+  @apply m-2 font-medium;
+}
+
+p {
+  @apply text-text-lg m-0;
+}

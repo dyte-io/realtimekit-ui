@@ -1,0 +1,79 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply box-border flex flex-col;
+}
+
+.avatar-ctr {
+  @apply box-border w-full flex-1 p-1.5;
+  border: 2px solid transparent;
+  border-radius: calc(theme(borderRadius.xl) + theme(spacing[1.5]));
+}
+
+.avatar-ctr.speaking {
+  @apply border-brand-500;
+  @apply transition-shadow;
+}
+
+.bar-0 {
+  box-shadow: none;
+}
+
+.bar-1 {
+  box-shadow: 0 0 4px theme(colors.brand.500);
+}
+
+.bar-2 {
+  box-shadow: 0 0 8px theme(colors.brand.500);
+}
+
+.bar-3 {
+  box-shadow: 0 0 16px 1px theme(colors.brand.500);
+}
+
+.bar-4 {
+  box-shadow: 0 0 20px 3px theme(colors.brand.500);
+}
+
+.bar-5 {
+  box-shadow: 0 0 24px 6px theme(colors.brand.500);
+}
+
+rtk-avatar {
+  @apply aspect-square h-full w-full;
+  @apply relative rounded-xl;
+}
+
+rtk-name-tag {
+  @apply block h-10 w-full text-center leading-10;
+}
+
+:host([size='sm']) .avatar-ctr {
+  border-radius: calc(theme(borderRadius.lg) + theme(spacing[1.5]));
+}
+
+:host([size='sm']) rtk-name-tag {
+  @apply h-7 leading-7;
+}
+
+:host([size='sm']) rtk-avatar {
+  @apply rounded-lg;
+}
+
+.mic-icon {
+  @apply absolute -bottom-1 -right-1;
+  @apply bg-background-600 text-text rounded-full p-2;
+  @apply shadow-sm;
+
+  rtk-icon {
+    @apply h-7 w-7;
+  }
+}
+
+:host([size='sm']) .mic-icon rtk-icon {
+  @apply h-4 w-4;
+}
+
+:host([size='md']) .mic-icon rtk-icon {
+  @apply h-5 w-5;
+}

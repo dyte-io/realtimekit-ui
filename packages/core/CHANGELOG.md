@@ -2209,7 +2209,7 @@
 - audio-visualizaer colour and name tag for screenshare view ([86e21db](https://github.com/dyte-in/ui-kit/commit/86e21db3231d19abcc7fb8eb2d357563881f8e71))
 - auto scroll logic ([67ad4d2](https://github.com/dyte-in/ui-kit/commit/67ad4d2ab87f1a9e97202489e771b6ab0399fae8))
 - build ([6372558](https://github.com/dyte-in/ui-kit/commit/6372558c11b0034b57e47f08f951604791333934))
-- **dyte-chat:** autoscroll state persistance, text wrap and text with only numbers ([8942e98](https://github.com/dyte-in/ui-kit/commit/8942e989edc5b29dba316060b73bf70eda4e7b3b))
+- **rtk-chat:** autoscroll state persistance, text wrap and text with only numbers ([8942e98](https://github.com/dyte-in/ui-kit/commit/8942e989edc5b29dba316060b73bf70eda4e7b3b))
 - fullscreen global types ([a58824f](https://github.com/dyte-in/ui-kit/commit/a58824f2dd6ee2f4ef595ae559a4b64191f43aca))
 - **name-tag:** use i18n method for "Screen" ([04fa24e](https://github.com/dyte-in/ui-kit/commit/04fa24e0e63a05858343f3c24dfd2afb51ed4f24))
 
@@ -2229,7 +2229,7 @@
 ### Bug Fixes
 
 - auto scroll logic ([67ad4d2](https://github.com/dyte-in/ui-kit/commit/67ad4d2ab87f1a9e97202489e771b6ab0399fae8))
-- **dyte-chat:** autoscroll state persistance, text wrap and text with only numbers ([8942e98](https://github.com/dyte-in/ui-kit/commit/8942e989edc5b29dba316060b73bf70eda4e7b3b))
+- **rtk-chat:** autoscroll state persistance, text wrap and text with only numbers ([8942e98](https://github.com/dyte-in/ui-kit/commit/8942e989edc5b29dba316060b73bf70eda4e7b3b))
 
 # [@dyte-in/ui-kit-v1.2.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.1.1-staging.1...@dyte-in/ui-kit-v1.2.0-staging.1) (2022-05-06)
 

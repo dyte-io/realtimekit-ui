@@ -1,11 +1,11 @@
 import type { ImageMessage, Message } from '@dytesdk/web-core';
-import { ButtonVariant } from '../components/dyte-button/dyte-button';
-import { RoomLeftState } from './dyte-client';
+import { ButtonVariant } from '../components/rtk-button/rtk-button';
+import { RoomLeftState } from './rtk-client';
 import { LangDict } from '../exports';
 import type { ChatChannel as ChatChannelWebCore } from '@dytesdk/web-core';
-import { DyteSidebarSection } from '../components/dyte-sidebar/dyte-sidebar';
-import { IconVariant } from '../components/dyte-icon/dyte-icon';
-import { ParticipantsTabId } from '../components/dyte-participants/dyte-participants';
+import { RtkSidebarSection } from '../components/rtk-sidebar/rtk-sidebar';
+import { IconVariant } from '../components/rtk-icon/rtk-icon';
+import { ParticipantsTabId } from '../components/rtk-participants/rtk-participants';
 
 /**
  * Screen breakpoints
@@ -81,7 +81,7 @@ export interface States {
   activeChannelCreator?: boolean;
   image?: ImageMessage;
   prefs?: UserPreferences;
-  sidebar?: DyteSidebarSection;
+  sidebar?: RtkSidebarSection;
   roomLeftState?: RoomLeftState | 'unauthorized';
   sidebarFloating?: boolean;
   participantsTabId?: ParticipantsTabId;
@@ -91,7 +91,7 @@ export interface States {
 export type PartialStateEvent = Partial<States>;
 
 /**
- * Notification object type, which is used in `<dyte-notification />`.
+ * Notification object type, which is used in `<rtk-notification />`.
  */
 export interface Notification {
   id: string;

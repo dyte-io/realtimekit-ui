@@ -3,7 +3,7 @@ const pkg = require('./package.json');
 
 const dependencies = {
   ...pkg.dependencies,
-  '@dytesdk/ui-kit': pkg.version,
+  '@cloudflare/realtimekit-ui': pkg.version,
 };
 
 const env = (process.env.ENVIRONMENT || 'staging').replace('refs/heads/', '');
@@ -22,7 +22,6 @@ fs.writeFileSync(
       ...pkg,
       license: undefined,
       dependencies,
-      name: process.env.GHR === 'true' ? '@dyte-in/angular-ui-kit' : '@dytesdk/angular-ui-kit',
       publishConfig:
         process.env.GHR === 'true' || !env.includes('main') ? { tag } : pkg.publishConfig,
     },

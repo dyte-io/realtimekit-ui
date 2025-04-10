@@ -1,0 +1,35 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply flex w-full flex-col;
+}
+
+select {}
+
+audio {
+  @apply invisible;
+}
+
+.group {
+  @apply my-2;
+
+  &>* {
+    @apply mb-2 last:mb-0;
+  }
+
+  select {
+    @apply flex-1;
+  }
+}
+
+rtk-audio-visualizer {
+  @apply flex-shrink-0;
+}
+
+rtk-button {
+  @apply bg-background-700 rounded-sm shadow-none;
+
+  rtk-icon {
+    @apply mr-2;
+  }
+}

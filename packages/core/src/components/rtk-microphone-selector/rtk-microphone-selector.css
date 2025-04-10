@@ -1,0 +1,41 @@
+@import '../../styles/html-select.css';
+
+.rtk-select {
+    @apply w-full max-w-full text-ellipsis;
+}
+
+.inline .rtk-select {
+    @apply py-1 px-1.5 pr-8 w-full mt-1 text-text-md;
+}
+
+.row {
+    @apply flex items-center justify-between gap-3 mb-2 w-full;
+}
+
+.group {
+    @apply my-2;
+
+    &>* {
+        @apply mb-2 last:mb-0;
+    }
+
+    select {
+        @apply flex-1;
+    }
+}
+
+.inline.group {
+    @apply mt-0 mb-0.5;
+
+    &>* {
+        @apply mb-0;
+    }
+}
+
+label {
+    @apply text-text-md select-none flex items-center gap-1;
+}
+
+.inline.container {
+    @apply flex items-center justify-start gap-2 px-2;
+}

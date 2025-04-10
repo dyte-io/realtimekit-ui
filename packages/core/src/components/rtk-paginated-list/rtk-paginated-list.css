@@ -1,0 +1,202 @@
+@import '../../styles/scrollbar.css';
+
+:host {
+  @apply relative flex flex-col;
+  flex: 1;
+}
+
+.container {
+  @apply box-border flex flex-col-reverse py-4;
+  flex: 1 0 0px;
+  overflow-y: scroll;
+  /* overflow-anchor: none; */
+}
+.file-picker {
+  @apply hidden;
+}
+
+.chat {
+  *:first-child {
+    @apply mt-0;
+  }
+
+  .head {
+    @apply flex items-center;
+
+    .name {
+      @apply text-text-sm mr-4 font-bold;
+    }
+
+    .time {
+      @apply text-text-sm text-text-800;
+    }
+  }
+
+  .body {
+    @apply text-text-md my-2 break-words leading-snug;
+
+    .emoji {
+      @apply text-heading-md;
+    }
+  }
+}
+
+p {
+  @apply mt-0 mb-3;
+}
+
+rtk-text-message,
+rtk-image-message,
+rtk-file-message {
+  @apply mt-4;
+  @apply text-text-900 block px-3 font-sans;
+  @apply box-border;
+}
+
+*[is-continued] {
+  @apply mt-3;
+}
+
+rtk-text-message[is-continued] {
+  @apply mt-2;
+}
+
+.chat .image {
+  @apply max-w-64 relative h-40;
+  @apply cursor-pointer;
+
+  img {
+    @apply hidden h-full w-full;
+    @apply rounded-sm object-cover;
+  }
+
+  .image-spinner {
+    @apply flex h-full w-full flex-col items-center justify-center;
+    @apply bg-background-800 rounded-sm;
+
+    rtk-spinner {
+      @apply text-brand-500;
+    }
+  }
+
+  .image-errored {
+    @apply flex h-full w-full flex-col items-center justify-center;
+    @apply bg-danger/10 text-danger rounded-sm;
+  }
+
+  .actions {
+    @apply hidden h-8 items-center;
+    @apply absolute top-2 right-2;
+    @apply bg-background-900 text-text-1000 rounded-sm;
+    @apply overflow-hidden shadow-lg;
+
+    .action {
+      @apply h-8 w-8 rounded-none border-none bg-transparent shadow-none;
+      @apply hover:bg-background-600;
+    }
+  }
+}
+
+.image.loaded {
+  img {
+    @apply block;
+  }
+  .image-spinner {
+    @apply hidden;
+  }
+}
+
+.image:hover .actions,
+.image:focus .actions {
+  @apply flex;
+}
+
+.chat .file {
+  @apply flex items-center gap-1 px-2 py-1.5;
+  @apply bg-background-700 text-text-700 rounded-sm;
+
+  .file-data {
+    @apply flex-1;
+
+    .name {
+      @apply text-text-1000 line-clamp-1 break-all;
+    }
+
+    .file-data-split {
+      @apply text-text-sm mt-0.5 flex items-center;
+
+      .ext {
+        @apply line-clamp-1 mr-2 uppercase;
+      }
+      .divider {
+        @apply bg-background-600 h-4 w-0.5;
+      }
+      .size {
+        @apply ml-2;
+      }
+    }
+  }
+}
+.smallest-dom-element {
+  width: 1px;
+}
+
+#top-scroll {
+  transform: translateY(20vh);
+}
+#bottom-scroll {
+  transform: translateY(-20vh);
+}
+
+a {
+  @apply text-brand-300 no-underline hover:underline;
+}
+
+.show-new-messages-ctr {
+  @apply pointer-events-none absolute bottom-2 right-4;
+  @apply z-10 -mt-14;
+  @apply translate-y-28 opacity-0 transition;
+}
+
+.show-new-messages-ctr.active {
+  @apply translate-y-0 opacity-100;
+}
+
+.show-new-messages {
+  @apply pointer-events-auto;
+  @apply rounded-full;
+
+  &:hover {
+    @apply ring-background-600 rounded-full ring-2;
+    @apply bg-background-600;
+  }
+}
+
+rtk-spinner,
+.empty-list {
+  @apply m-auto;
+}
+
+.page-wrapper {
+  @apply mx-1;
+}
+
+.message-wrapper {
+  @apply mb-2;
+}
+
+.pinned {
+  .message-wrapper {
+    @apply relative;
+  }
+
+  .pin-icon {
+    @apply absolute -right-1 -top-1 flex;
+    @apply rounded-sm;
+  }
+
+  rtk-message-view {
+    @apply bg-background-700;
+    @apply py-1;
+  }
+}

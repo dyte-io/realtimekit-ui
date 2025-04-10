@@ -10,7 +10,7 @@ const webCorePath = require.resolve('@dytesdk/web-core/inlined');
 const esModules = ['lodash-es'].join('|');
 
 export const config: Config = {
-  namespace: 'dyte-ui-kit',
+  namespace: 'realtimekit-ui',
   sourceMap: false,
   devServer: {
     openBrowser: false,
@@ -30,7 +30,7 @@ export const config: Config = {
       esmLoaderPath: '../loader',
     },
     angularOutputTarget({
-      componentCorePackage: '@dytesdk/ui-kit',
+      componentCorePackage: '@cloudflare/realtimekit-ui',
       outputType: 'component',
       directivesProxyFile:
         '../angular-library/projects/components/src/lib/stencil-generated/components.ts',
@@ -38,11 +38,11 @@ export const config: Config = {
         '../angular-library/projects/components/src/lib/stencil-generated/index.ts',
     }),
     vueOutputTarget({
-      componentCorePackage: '@dytesdk/ui-kit',
+      componentCorePackage: '@cloudflare/realtimekit-ui',
       proxiesFile: '../vue-library/lib/components.ts',
     }),
     reactOutputTarget({
-      componentCorePackage: '@dytesdk/ui-kit',
+      componentCorePackage: '@cloudflare/realtimekit-ui',
       proxiesFile: '../react-library/src/components/stencil-generated/index.ts',
       includeDefineCustomElements: true,
     }),

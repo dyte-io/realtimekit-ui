@@ -3,7 +3,7 @@ const pkg = require('./package.json');
 
 const dependencies = {
   ...pkg.dependencies,
-  '@dytesdk/ui-kit': `^${pkg.version}`,
+  '@cloudflare/realtimekit-ui': `^${pkg.version}`,
 };
 
 const env = (process.env.ENVIRONMENT || 'staging').replace('refs/heads/', '');
@@ -16,7 +16,6 @@ fs.writeFileSync(
     {
       ...pkg,
       license: undefined,
-      name: process.env.GHR === 'true' ? '@dyte-in/vue-ui-kit' : '@dytesdk/vue-ui-kit',
       dependencies,
       scripts: {
         postpublish: pkg.scripts.postpublish,

@@ -1,11 +1,11 @@
 import { h, FunctionalComponent, Host } from '@stencil/core';
-import { Meeting } from '../../types/dyte-client';
+import { Meeting } from '../../types/rtk-client';
 import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { Element } from '../../types/ui-config/root';
 import { computeSelectors, getComputedChildren, getComputedStyles } from './utils';
 import { IconPack } from '../icons';
-import { DyteI18n } from '../lang';
+import { RtkI18n } from '../lang';
 
 export interface DefaultProps {
   meeting: Meeting;
@@ -13,7 +13,7 @@ export interface DefaultProps {
   size: Size;
   states: States;
   iconPack: IconPack;
-  t: DyteI18n;
+  t: RtkI18n;
 }
 
 export interface Props {
@@ -72,7 +72,7 @@ export const lenChildren = ({ element, defaults, props = {}, elementProps = {} }
 
   if (Array.isArray(element)) {
     // get props if element is passed in array form:
-    // ['dyte-participant-tile', { variant: 'gradient' }]
+    // ['rtk-participant-tile', { variant: 'gradient' }]
     [Tag, configProps, ...configChildren] = element;
   } else {
     Tag = element;
@@ -119,7 +119,7 @@ export const Render: FunctionalComponent<RenderProps> = (
 
   if (Array.isArray(element)) {
     // get props if element is passed in array form:
-    // ['dyte-participant-tile', { variant: 'gradient' }]
+    // ['rtk-participant-tile', { variant: 'gradient' }]
     [Tag, configProps, ...configChildren] = element;
   } else {
     Tag = element;
@@ -178,11 +178,11 @@ export const Render: FunctionalComponent<RenderProps> = (
     );
   }
 
-  if (['dyte-header', 'dyte-controlbar'].includes(Tag)) {
+  if (['rtk-header', 'rtk-controlbar'].includes(Tag)) {
     props['disableRender'] = true;
   }
 
-  if (Tag.startsWith('dyte-')) {
+  if (Tag.startsWith('rtk-')) {
     return (
       <Tag {...defaults} style={styles} {...props}>
         <RenderChildren

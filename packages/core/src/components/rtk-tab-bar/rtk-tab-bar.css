@@ -1,0 +1,126 @@
+@import '../../styles/scrollbar.css';
+
+:host {
+  @apply box-border flex h-full w-16 flex-col gap-2 overflow-y-auto font-sans;
+}
+
+rtk-button {
+  /* Note(callmetarush): Making sure indicator doesn't hamper with tab clicks */
+  @apply z-10;
+}
+
+.col {
+  @apply flex flex-col items-center;
+}
+
+.tab {
+  @apply flex h-16 w-16 items-center justify-center;
+  @apply text-text-sm mb-2;
+  @apply bg-background-700;
+}
+
+.tab.active {
+  @apply bg-brand;
+}
+
+.tab img {
+  @apply h-7 w-7 rounded-sm;
+}
+
+.tab .name {
+  @apply mt-0.5;
+}
+
+:host([size='sm']) {
+  @apply flex-col;
+}
+
+:host([size='sm']) {
+  @apply mt-4 h-16 w-full flex-row gap-2 overflow-x-auto;
+}
+
+:host([size='sm']) .tab {
+  @apply m-0 text-clip;
+  min-width: 100px;
+  height: 40px;
+
+  .col {
+    @apply flex flex-row items-center gap-2;
+
+    img,
+    rtk-icon {
+      @apply h-6 w-6;
+    }
+
+    .name {
+      @apply gap-1;
+    }
+  }
+}
+
+:host([layout='column']) {
+  @apply flex-col;
+
+  .aside {
+    flex: 2;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Mobile breakpoint */
+
+/* Use mobile styling for portrait views */
+
+@media (orientation: portrait) {
+  :host([size='sm']) {
+    @apply mt-2 h-16 w-full flex-row;
+    transition: all 0.3s linear;
+  }
+
+  :host([size='md']) {
+    @apply h-24 w-full flex-row;
+    transition: all 0.3s linear;
+  }
+
+  :host .tab {
+    @apply m-0;
+  }
+}
+
+/* Use mobile styling for landscape views */
+
+@media (orientation: landscape) {
+  :host([size='sm']) {
+    @apply mr-4 h-full w-14 flex-row gap-2 overflow-y-auto overflow-x-hidden;
+    transition: all 0.3s linear;
+  }
+
+  :host([size='md']) {
+    @apply mr-4 h-full w-14 flex-row gap-2 overflow-y-auto overflow-x-hidden;
+    transition: all 0.3s linear;
+  }
+
+  :host .tab {
+    @apply m-0;
+  }
+
+  :host([size='sm']) .tab {
+    @apply m-0 w-full text-clip;
+    min-width: 0px;
+    min-height: 40px;
+
+    .col {
+      @apply text-text-xs flex flex-col items-center gap-2;
+
+      img,
+      rtk-icon {
+        @apply h-3 w-3;
+      }
+
+      .name {
+        @apply gap-1;
+      }
+    }
+  }
+}

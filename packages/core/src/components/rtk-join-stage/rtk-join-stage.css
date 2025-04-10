@@ -1,0 +1,69 @@
+@import '../../styles/reset.css';
+@import '../../styles/scrollbar.css';
+:host::-webkit-scrollbar {
+  @apply bg-background-1000 w-1.5 rounded-md;
+}
+
+:host::-webkit-scrollbar-thumb {
+  @apply bg-background-700 rounded-md;
+}
+
+:host(.stage) {
+  @apply bg-background-800 box-border block w-[512px] p-6;
+  @apply select-none overflow-auto rounded-md leading-tight;
+
+  rtk-participant-setup {
+    @apply flex flex-1 items-center justify-around;
+    @apply mx-auto;
+  }
+
+  .container rtk-button {
+    @apply flex-grow p-1;
+    width: 50%;
+  }
+
+  .container rtk-button:nth-child(1) {
+    @apply mr-1.5;
+  }
+  .container rtk-button:nth-child(2) {
+    @apply ml-1.5;
+  }
+
+  h2 {
+    @apply text-text-1000 text-heading-md font-medium;
+  }
+
+  header {
+    @apply px-4;
+  }
+
+  .summary {
+    @apply p-4;
+  }
+}
+
+.deny-access {
+  @apply bg-background-700;
+}
+
+.container {
+  @apply w-full max-w-screen-lg;
+  @apply flex flex-1 items-center justify-around;
+}
+
+header {
+  @apply flex items-center justify-between;
+}
+
+/* Mobile breakpoint */
+
+/* Use mobile styling for portrait views */
+
+@media (orientation: portrait) {
+  /* :host {
+    @apply p-0;
+  }
+  .summary {
+    @apply w-full p-0;
+  } */
+}

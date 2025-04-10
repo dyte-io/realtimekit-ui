@@ -1,4 +1,4 @@
-import { GridSize } from '../components/dyte-grid/dyte-grid';
+import { GridSize } from '../components/rtk-grid/rtk-grid';
 
 export type Dimensions = {
   width: number;

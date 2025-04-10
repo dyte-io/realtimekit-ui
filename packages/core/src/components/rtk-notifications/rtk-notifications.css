@@ -1,0 +1,11 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply absolute inset-4 top-auto z-10 flex flex-col;
+  @apply pointer-events-none;
+  z-index: 100;
+}
+
+rtk-notification {
+  @apply mt-2;
+}

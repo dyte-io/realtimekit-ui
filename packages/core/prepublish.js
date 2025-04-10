@@ -12,7 +12,6 @@ fs.writeFileSync(
   JSON.stringify(
     {
       ...pkg,
-      name: process.env.GHR === 'true' ? '@dyte-in/ui-kit' : '@dytesdk/ui-kit',
       publishConfig: process.env.GHR === 'true' || !env.includes('main') ? { tag } : publishConfig,
       scripts: {
         postpublish: pkg.scripts.postpublish,

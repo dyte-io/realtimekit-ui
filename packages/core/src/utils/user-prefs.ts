@@ -1,11 +1,11 @@
 import gracefulStorage from './graceful-storage';
 
-const KEY = 'dyte-prefs';
+const KEY = 'rtk-prefs';
 
 export const setPreference = (key: string, value: any): void => {
   const data = JSON.parse(gracefulStorage.getItem(KEY) || '{}');
   data[key] = JSON.stringify(value);
-  gracefulStorage.setItem('dyte-prefs', JSON.stringify(data));
+  gracefulStorage.setItem('rtk-prefs', JSON.stringify(data));
 };
 
 export const getPreference = (key: string): string | undefined => {

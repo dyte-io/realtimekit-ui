@@ -1,0 +1,60 @@
+@import '../../styles/reset.css';
+
+.image-spinner {
+  @apply cursor-wait;
+}
+
+.image-errored {
+  @apply cursor-not-allowed;
+}
+
+.image {
+  @apply text-text-900 block font-sans;
+  @apply max-w-64 relative h-40;
+  @apply cursor-pointer;
+
+  img {
+    @apply hidden h-full w-full;
+    @apply rounded-sm object-cover;
+  }
+
+  .image-spinner {
+    @apply flex h-full w-full flex-col items-center justify-center;
+    @apply bg-background-800 rounded-sm;
+
+    rtk-spinner {
+      @apply text-brand-500;
+    }
+  }
+
+  .image-errored {
+    @apply flex h-full w-full flex-col items-center justify-center;
+    @apply bg-danger/10 text-danger rounded-sm;
+  }
+
+  .actions {
+    @apply hidden h-8 items-center;
+    @apply absolute top-2 right-2;
+    @apply bg-background-900 text-text-1000 rounded-sm;
+    @apply overflow-hidden shadow-lg;
+
+    .action {
+      @apply h-8 w-8 rounded-none border-none bg-transparent shadow-none;
+      @apply hover:bg-background-600;
+    }
+  }
+}
+
+.image.loaded {
+  img {
+    @apply block;
+  }
+  .image-spinner {
+    @apply hidden;
+  }
+}
+
+.image:hover .actions,
+.image:focus .actions {
+  @apply flex;
+}

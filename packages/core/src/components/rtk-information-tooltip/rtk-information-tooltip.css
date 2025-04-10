@@ -1,0 +1,19 @@
+:host {
+  @apply mx-2 cursor-pointer;
+}
+
+.tooltip-container {
+  @apply relative flex flex-row items-center;
+  rtk-icon {
+    @apply text-text-600 cursor-pointer;
+  }
+  rtk-icon:hover + .tooltip {
+    @apply !flex;
+  }
+}
+
+.tooltip {
+  @apply text-text-600 bg-background-700 absolute ml-2  !hidden rounded-md p-2 font-normal;
+  @apply min-w-60 z-50 flex flex-col shadow-md;
+  left: 14px;
+}

@@ -1,0 +1,60 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply block h-full w-full;
+}
+
+.offline-grid {
+  @apply flex h-full w-full flex-col items-center justify-center;
+  h3 {
+    @apply text-text-900 text-heading-sm my-2 mx-0 font-medium;
+  }
+  p {
+    @apply text-text-700 text-text-lg my-1 mx-0 text-center font-normal;
+  }
+  rtk-icon {
+    @apply mb-2;
+  }
+}
+
+.webinar-stage {
+  @apply box-border h-full;
+  @apply flex content-center items-center justify-center;
+  @apply text-center;
+}
+
+.webinar-stage h2 {
+  @apply m-0;
+  font-weight: normal;
+}
+
+rtk-viewer-count {
+  @apply hidden;
+}
+
+.ctr {
+  @apply flex flex-col items-center;
+}
+
+.message {
+  @apply text-text-lg;
+  @apply bg-background-800 text-text-1000 rounded-lg px-8 py-4;
+}
+
+.description {
+  @apply text-text-md my-4;
+}
+
+rtk-livestream-indicator {
+  @apply hidden;
+}
+
+@media only screen and (max-device-height: 480px) and (orientation: landscape) {
+  rtk-viewer-count[variant='embedded'] {
+    @apply absolute top-0 right-2 z-20 mt-0 ml-0 flex;
+  }
+
+  rtk-livestream-indicator {
+    @apply absolute top-0 left-2 z-20 mt-0 ml-0 flex;
+  }
+}

@@ -13,7 +13,7 @@ module.exports = {
   spacing,
   colors,
   fontFamily: {
-    sans: ['var(--dyte-font-family, sans-serif)'],
+    sans: ['var(--rtk-font-family, sans-serif)'],
   },
   screens: Object.fromEntries(
     Object.entries(breakpoints).map(([screen, width]) => [screen, `${width}px`])
@@ -31,17 +31,17 @@ module.exports = {
     'text-xs': ['10px'],
   },
   borderWidth: {
-    none: 'var(--dyte-border-width-none, 0)',
-    sm: 'var(--dyte-border-width-sm, 1px)',
-    md: 'var(--dyte-border-width-md, 2px)',
-    lg: 'var(--dyte-border-width-lg, 4px)',
+    none: 'var(--rtk-border-width-none, 0)',
+    sm: 'var(--rtk-border-width-sm, 1px)',
+    md: 'var(--rtk-border-width-md, 2px)',
+    lg: 'var(--rtk-border-width-lg, 4px)',
   },
   borderRadius: {
-    none: 'var(--dyte-border-radius-none, 0)',
-    sm: 'var(--dyte-border-radius-sm, 4px)',
-    md: 'var(--dyte-border-radius-md, 8px)',
-    lg: 'var(--dyte-border-radius-lg, 12px)',
-    xl: 'var(--dyte-border-radius-xl, 40px)',
+    none: 'var(--rtk-border-radius-none, 0)',
+    sm: 'var(--rtk-border-radius-sm, 4px)',
+    md: 'var(--rtk-border-radius-md, 8px)',
+    lg: 'var(--rtk-border-radius-lg, 12px)',
+    xl: 'var(--rtk-border-radius-xl, 40px)',
     full: '9999px',
   },
   maxWidth: (theme, { breakpoints }) => ({

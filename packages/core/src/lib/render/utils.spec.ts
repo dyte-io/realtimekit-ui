@@ -10,18 +10,18 @@ const arraysAreEqual = (result: any, expected: any) => {
 };
 
 describe('computeSelectors()', () => {
-  const element = 'dyte-meeting';
+  const element = 'rtk-meeting';
   let size: Size = 'sm';
 
   it('should work with simple arrays', () => {
     const states: States = { meeting: 'joined' };
     const config: UIConfig = {
       root: {
-        'dyte-meeting': ['dyte-header'],
+        'rtk-meeting': ['rtk-header'],
       },
     };
     const selectors = computeSelectors({ element, states, config, size });
-    const expected = ['dyte-meeting', 'dyte-meeting.sm'];
+    const expected = ['rtk-meeting', 'rtk-meeting.sm'];
 
     arraysAreEqual(selectors, expected);
   });
@@ -31,16 +31,16 @@ describe('computeSelectors()', () => {
     const states: States = { meeting: 'joined' };
     const config: UIConfig = {
       root: {
-        'dyte-meeting': { state: 'meeting' },
+        'rtk-meeting': { state: 'meeting' },
       },
     };
 
     const selectors = computeSelectors({ element, states, config, size });
     const expected = [
-      'dyte-meeting',
-      'dyte-meeting.md',
-      'dyte-meeting[meeting=joined]',
-      'dyte-meeting[meeting=joined].md',
+      'rtk-meeting',
+      'rtk-meeting.md',
+      'rtk-meeting[meeting=joined]',
+      'rtk-meeting[meeting=joined].md',
     ];
 
     arraysAreEqual(selectors, expected);
@@ -51,16 +51,16 @@ describe('computeSelectors()', () => {
     const states: States = { activeSettings: true };
     const config: UIConfig = {
       root: {
-        'dyte-meeting': { states: ['activeSettings'] },
+        'rtk-meeting': { states: ['activeSettings'] },
       },
     };
 
     const selectors = computeSelectors({ element, states, config, size });
     const expected = [
-      'dyte-meeting',
-      'dyte-meeting.lg',
-      'dyte-meeting.activeSettings',
-      'dyte-meeting.activeSettings.lg',
+      'rtk-meeting',
+      'rtk-meeting.lg',
+      'rtk-meeting.activeSettings',
+      'rtk-meeting.activeSettings.lg',
     ];
 
     arraysAreEqual(selectors, expected);
@@ -71,20 +71,20 @@ describe('computeSelectors()', () => {
     const states: States = { meeting: 'joined', activeSettings: true };
     const config: UIConfig = {
       root: {
-        'dyte-meeting': { states: ['activeSettings'], state: 'meeting' },
+        'rtk-meeting': { states: ['activeSettings'], state: 'meeting' },
       },
     };
 
     const selectors = computeSelectors({ element, states, config, size });
     const expected = [
-      'dyte-meeting',
-      'dyte-meeting.lg',
-      'dyte-meeting.activeSettings',
-      'dyte-meeting.activeSettings.lg',
-      'dyte-meeting[meeting=joined]',
-      'dyte-meeting[meeting=joined].lg',
-      'dyte-meeting[meeting=joined].activeSettings',
-      'dyte-meeting[meeting=joined].activeSettings.lg',
+      'rtk-meeting',
+      'rtk-meeting.lg',
+      'rtk-meeting.activeSettings',
+      'rtk-meeting.activeSettings.lg',
+      'rtk-meeting[meeting=joined]',
+      'rtk-meeting[meeting=joined].lg',
+      'rtk-meeting[meeting=joined].activeSettings',
+      'rtk-meeting[meeting=joined].activeSettings.lg',
     ];
 
     arraysAreEqual(selectors, expected);

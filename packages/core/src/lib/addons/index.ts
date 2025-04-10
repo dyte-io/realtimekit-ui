@@ -1,7 +1,7 @@
-import { Meeting } from '../../types/dyte-client';
+import { Meeting } from '../../types/rtk-client';
 import type { UIConfig } from '../../types/ui-config';
 import { generateConfig } from '../../utils/config';
-import { DyteUIBuilder } from '../builder';
+import { RTKUIBuilder } from '../builder';
 
 export type ExtendConfig = (config: Partial<UIConfig>, baseConfig: UIConfig) => UIConfig;
 export interface Addon {
@@ -15,7 +15,7 @@ export interface Addon {
   register: (
     config: UIConfig,
     meeting: Meeting,
-    getBuilder: (config: UIConfig) => DyteUIBuilder
+    getBuilder: (config: UIConfig) => RTKUIBuilder
   ) => UIConfig;
   /**
    * Unregister the addon, cleanup any event listeners, etc.
@@ -41,7 +41,7 @@ export function registerAddons(addons: Addon[], meeting: Meeting, config?: UICon
     config = addon.register(
       config as UIConfig,
       meeting,
-      (c) => new DyteUIBuilder(c) as DyteUIBuilder
+      (c) => new RTKUIBuilder(c) as RTKUIBuilder
     );
   });
 

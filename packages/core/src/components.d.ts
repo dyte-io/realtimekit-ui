@@ -5,86 +5,86 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Meeting, Peer, WaitlistedParticipant } from "./types/dyte-client";
+import { Meeting, Peer, WaitlistedParticipant } from "./types/rtk-client";
 import { Chat, ChatChannel, Notification, PartialStateEvent, Poll, PollObject, Size, States, Transcript } from "./types/props";
 import { UIConfig } from "./types/ui-config";
 import { IconPack } from "./lib/icons";
-import { DyteI18n } from "./lib/lang";
-import { AIView } from "./components/dyte-ai/dyte-ai";
-import { ControlBarVariant } from "./components/dyte-controlbar-button/dyte-controlbar-button";
-import { DyteI18n as DyteI18n1, IconPack as IconPack1, Size as Size1, States as States1, UIConfig as UIConfig1 } from "./exports";
-import { AudioVisualizerVariant } from "./components/dyte-audio-visualizer/dyte-audio-visualizer";
-import { AvatarVariant } from "./components/dyte-avatar/dyte-avatar";
+import { RtkI18n } from "./lib/lang";
+import { AIView } from "./components/rtk-ai/rtk-ai";
+import { ControlBarVariant } from "./components/rtk-controlbar-button/rtk-controlbar-button";
+import { IconPack as IconPack1, RtkI18n as RtkI18n1, Size as Size1, States as States1, UIConfig as UIConfig1 } from "./exports";
+import { AudioVisualizerVariant } from "./components/rtk-audio-visualizer/rtk-audio-visualizer";
+import { AvatarVariant } from "./components/rtk-avatar/rtk-avatar";
 import { DraftMeeting } from "./utils/breakout-rooms-manager";
-import { ButtonKind, ButtonVariant } from "./components/dyte-button/dyte-button";
+import { ButtonKind, ButtonVariant } from "./components/rtk-button/rtk-button";
 import { DyteBasicParticipant, DytePermissionsPreset, DytePlugin, FileMessage, ImageMessage, Message, TextMessage } from "@dytesdk/web-core";
-import { ChatFilter } from "./components/dyte-chat/dyte-chat";
-import { DyteNewMessageEvent } from "./components/dyte-chat-composer-ui/dyte-chat-composer-ui";
-import { NewMessageEvent } from "./components/dyte-chat-composer-view/dyte-chat-composer-view";
-import { ChatGroup, ChatGroupChangedType } from "./components/dyte-chat-selector-ui/dyte-chat-selector-ui";
-import { ControlBarVariant as ControlBarVariant1 } from "./components/dyte-controlbar-button/dyte-controlbar-button";
-import { GridLayout, GridSize } from "./components/dyte-grid/dyte-grid";
-import { GridPaginationVariants } from "./components/dyte-grid-pagination/dyte-grid-pagination";
-import { IconVariant } from "./components/dyte-icon/dyte-icon";
-import { ModalDataConfig } from "./components/dyte-join-stage/dyte-join-stage";
-import { MeetingMode } from "./components/dyte-meeting/dyte-meeting";
-import { GridLayout as GridLayout1, GridSize as GridSize1 } from "./components/dyte-grid/dyte-grid";
+import { ChatFilter } from "./components/rtk-chat/rtk-chat";
+import { RtkNewMessageEvent } from "./components/rtk-chat-composer-ui/rtk-chat-composer-ui";
+import { NewMessageEvent } from "./components/rtk-chat-composer-view/rtk-chat-composer-view";
+import { ChatGroup, ChatGroupChangedType } from "./components/rtk-chat-selector-ui/rtk-chat-selector-ui";
+import { ControlBarVariant as ControlBarVariant1 } from "./components/rtk-controlbar-button/rtk-controlbar-button";
+import { GridLayout, GridSize } from "./components/rtk-grid/rtk-grid";
+import { GridPaginationVariants } from "./components/rtk-grid-pagination/rtk-grid-pagination";
+import { IconVariant } from "./components/rtk-icon/rtk-icon";
+import { ModalDataConfig } from "./components/rtk-join-stage/rtk-join-stage";
+import { MeetingMode } from "./components/rtk-meeting/rtk-meeting";
+import { GridLayout as GridLayout1, GridSize as GridSize1 } from "./components/rtk-grid/rtk-grid";
 import { Placement } from "./types/floating-ui";
-import { MessageAction } from "./components/dyte-message-view/dyte-message-view";
-import { DyteNameTagVariant } from "./components/dyte-name-tag/dyte-name-tag";
+import { MessageAction } from "./components/rtk-message-view/rtk-message-view";
+import { RtkNameTagVariant } from "./components/rtk-name-tag/rtk-name-tag";
 import { VNode } from "@stencil/core";
-import { DataNode } from "./components/dyte-paginated-list/dyte-paginated-list";
-import { ParticipantViewMode } from "./components/dyte-participant/dyte-participant";
-import { ParticipantsTabId } from "./components/dyte-participants/dyte-participants";
-import { ParticipantsViewMode } from "./components/dyte-participants/dyte-participants";
-import { DyteSidebarTab, DyteSidebarView } from "./components/dyte-sidebar-ui/dyte-sidebar-ui";
-import { DyteSidebarSection } from "./components/dyte-sidebar/dyte-sidebar";
-import { DyteSidebarTab as DyteSidebarTab1, DyteSidebarView as DyteSidebarView1 } from "./components/dyte-sidebar-ui/dyte-sidebar-ui";
-import { Tab } from "./components/dyte-tab-bar/dyte-tab-bar";
-import { TooltipKind, TooltipVariant } from "./components/dyte-tooltip/dyte-tooltip";
-import { ViewerCountVariant } from "./components/dyte-viewer-count/dyte-viewer-count";
+import { DataNode } from "./components/rtk-paginated-list/rtk-paginated-list";
+import { ParticipantViewMode } from "./components/rtk-participant/rtk-participant";
+import { ParticipantsTabId } from "./components/rtk-participants/rtk-participants";
+import { ParticipantsViewMode } from "./components/rtk-participants/rtk-participants";
+import { RtkSidebarTab, RtkSidebarView } from "./components/rtk-sidebar-ui/rtk-sidebar-ui";
+import { RtkSidebarSection } from "./components/rtk-sidebar/rtk-sidebar";
+import { RtkSidebarTab as RtkSidebarTab1, RtkSidebarView as RtkSidebarView1 } from "./components/rtk-sidebar-ui/rtk-sidebar-ui";
+import { Tab } from "./components/rtk-tab-bar/rtk-tab-bar";
+import { TooltipKind, TooltipVariant } from "./components/rtk-tooltip/rtk-tooltip";
+import { ViewerCountVariant } from "./components/rtk-viewer-count/rtk-viewer-count";
 import { Peer as Peer1 } from ".";
-export { Meeting, Peer, WaitlistedParticipant } from "./types/dyte-client";
+export { Meeting, Peer, WaitlistedParticipant } from "./types/rtk-client";
 export { Chat, ChatChannel, Notification, PartialStateEvent, Poll, PollObject, Size, States, Transcript } from "./types/props";
 export { UIConfig } from "./types/ui-config";
 export { IconPack } from "./lib/icons";
-export { DyteI18n } from "./lib/lang";
-export { AIView } from "./components/dyte-ai/dyte-ai";
-export { ControlBarVariant } from "./components/dyte-controlbar-button/dyte-controlbar-button";
-export { DyteI18n as DyteI18n1, IconPack as IconPack1, Size as Size1, States as States1, UIConfig as UIConfig1 } from "./exports";
-export { AudioVisualizerVariant } from "./components/dyte-audio-visualizer/dyte-audio-visualizer";
-export { AvatarVariant } from "./components/dyte-avatar/dyte-avatar";
+export { RtkI18n } from "./lib/lang";
+export { AIView } from "./components/rtk-ai/rtk-ai";
+export { ControlBarVariant } from "./components/rtk-controlbar-button/rtk-controlbar-button";
+export { IconPack as IconPack1, RtkI18n as RtkI18n1, Size as Size1, States as States1, UIConfig as UIConfig1 } from "./exports";
+export { AudioVisualizerVariant } from "./components/rtk-audio-visualizer/rtk-audio-visualizer";
+export { AvatarVariant } from "./components/rtk-avatar/rtk-avatar";
 export { DraftMeeting } from "./utils/breakout-rooms-manager";
-export { ButtonKind, ButtonVariant } from "./components/dyte-button/dyte-button";
+export { ButtonKind, ButtonVariant } from "./components/rtk-button/rtk-button";
 export { DyteBasicParticipant, DytePermissionsPreset, DytePlugin, FileMessage, ImageMessage, Message, TextMessage } from "@dytesdk/web-core";
-export { ChatFilter } from "./components/dyte-chat/dyte-chat";
-export { DyteNewMessageEvent } from "./components/dyte-chat-composer-ui/dyte-chat-composer-ui";
-export { NewMessageEvent } from "./components/dyte-chat-composer-view/dyte-chat-composer-view";
-export { ChatGroup, ChatGroupChangedType } from "./components/dyte-chat-selector-ui/dyte-chat-selector-ui";
-export { ControlBarVariant as ControlBarVariant1 } from "./components/dyte-controlbar-button/dyte-controlbar-button";
-export { GridLayout, GridSize } from "./components/dyte-grid/dyte-grid";
-export { GridPaginationVariants } from "./components/dyte-grid-pagination/dyte-grid-pagination";
-export { IconVariant } from "./components/dyte-icon/dyte-icon";
-export { ModalDataConfig } from "./components/dyte-join-stage/dyte-join-stage";
-export { MeetingMode } from "./components/dyte-meeting/dyte-meeting";
-export { GridLayout as GridLayout1, GridSize as GridSize1 } from "./components/dyte-grid/dyte-grid";
+export { ChatFilter } from "./components/rtk-chat/rtk-chat";
+export { RtkNewMessageEvent } from "./components/rtk-chat-composer-ui/rtk-chat-composer-ui";
+export { NewMessageEvent } from "./components/rtk-chat-composer-view/rtk-chat-composer-view";
+export { ChatGroup, ChatGroupChangedType } from "./components/rtk-chat-selector-ui/rtk-chat-selector-ui";
+export { ControlBarVariant as ControlBarVariant1 } from "./components/rtk-controlbar-button/rtk-controlbar-button";
+export { GridLayout, GridSize } from "./components/rtk-grid/rtk-grid";
+export { GridPaginationVariants } from "./components/rtk-grid-pagination/rtk-grid-pagination";
+export { IconVariant } from "./components/rtk-icon/rtk-icon";
+export { ModalDataConfig } from "./components/rtk-join-stage/rtk-join-stage";
+export { MeetingMode } from "./components/rtk-meeting/rtk-meeting";
+export { GridLayout as GridLayout1, GridSize as GridSize1 } from "./components/rtk-grid/rtk-grid";
 export { Placement } from "./types/floating-ui";
-export { MessageAction } from "./components/dyte-message-view/dyte-message-view";
-export { DyteNameTagVariant } from "./components/dyte-name-tag/dyte-name-tag";
+export { MessageAction } from "./components/rtk-message-view/rtk-message-view";
+export { RtkNameTagVariant } from "./components/rtk-name-tag/rtk-name-tag";
 export { VNode } from "@stencil/core";
-export { DataNode } from "./components/dyte-paginated-list/dyte-paginated-list";
-export { ParticipantViewMode } from "./components/dyte-participant/dyte-participant";
-export { ParticipantsTabId } from "./components/dyte-participants/dyte-participants";
-export { ParticipantsViewMode } from "./components/dyte-participants/dyte-participants";
-export { DyteSidebarTab, DyteSidebarView } from "./components/dyte-sidebar-ui/dyte-sidebar-ui";
-export { DyteSidebarSection } from "./components/dyte-sidebar/dyte-sidebar";
-export { DyteSidebarTab as DyteSidebarTab1, DyteSidebarView as DyteSidebarView1 } from "./components/dyte-sidebar-ui/dyte-sidebar-ui";
-export { Tab } from "./components/dyte-tab-bar/dyte-tab-bar";
-export { TooltipKind, TooltipVariant } from "./components/dyte-tooltip/dyte-tooltip";
-export { ViewerCountVariant } from "./components/dyte-viewer-count/dyte-viewer-count";
+export { DataNode } from "./components/rtk-paginated-list/rtk-paginated-list";
+export { ParticipantViewMode } from "./components/rtk-participant/rtk-participant";
+export { ParticipantsTabId } from "./components/rtk-participants/rtk-participants";
+export { ParticipantsViewMode } from "./components/rtk-participants/rtk-participants";
+export { RtkSidebarTab, RtkSidebarView } from "./components/rtk-sidebar-ui/rtk-sidebar-ui";
+export { RtkSidebarSection } from "./components/rtk-sidebar/rtk-sidebar";
+export { RtkSidebarTab as RtkSidebarTab1, RtkSidebarView as RtkSidebarView1 } from "./components/rtk-sidebar-ui/rtk-sidebar-ui";
+export { Tab } from "./components/rtk-tab-bar/rtk-tab-bar";
+export { TooltipKind, TooltipVariant } from "./components/rtk-tooltip/rtk-tooltip";
+export { ViewerCountVariant } from "./components/rtk-viewer-count/rtk-viewer-count";
 export { Peer as Peer1 } from ".";
 export namespace Components {
-    interface DyteAi {
+    interface RtkAi {
         /**
           * Config
          */
@@ -108,13 +108,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * View type
          */
         "view": AIView;
     }
-    interface DyteAiToggle {
+    interface RtkAiToggle {
         /**
           * Icon pack
          */
@@ -134,13 +134,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
         "variant": ControlBarVariant;
     }
-    interface DyteAiTranscriptions {
+    interface RtkAiTranscriptions {
         /**
           * Initial transcriptions
          */
@@ -152,9 +152,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteAudioGrid {
+    interface RtkAudioGrid {
         /**
           * Config
          */
@@ -182,9 +182,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteAudioTile {
+    interface RtkAudioTile {
         /**
           * Config
          */
@@ -212,13 +212,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
     /**
      * An audio visualizer component which visualizes a participants audio.
-     * Commonly used inside `dyte-name-tag`.
+     * Commonly used inside `rtk-name-tag`.
      */
-    interface DyteAudioVisualizer {
+    interface RtkAudioVisualizer {
         /**
           * Hide when there is no audio / audio is muted
          */
@@ -242,7 +242,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -251,7 +251,7 @@ export namespace Components {
     /**
      * Avatar component which renders a participant's image or their initials.
      */
-    interface DyteAvatar {
+    interface RtkAvatar {
         /**
           * Icon pack
          */
@@ -267,13 +267,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Avatar type
          */
         "variant": AvatarVariant;
     }
-    interface DyteBreakoutRoomManager {
+    interface RtkBreakoutRoomManager {
         /**
           * allow room delete
          */
@@ -313,13 +313,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which lists all participants, with ability to
      * run privileged actions on each participant according to your permissions.
      */
-    interface DyteBreakoutRoomParticipants {
+    interface RtkBreakoutRoomParticipants {
         /**
           * Icon pack
          */
@@ -339,9 +339,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteBreakoutRoomsManager {
+    interface RtkBreakoutRoomsManager {
         /**
           * Icon pack
          */
@@ -357,13 +357,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A button which toggles visibility of breakout rooms.
      * You need to pass the `meeting` object to it.
      */
-    interface DyteBreakoutRoomsToggle {
+    interface RtkBreakoutRoomsToggle {
         /**
           * Icon pack
          */
@@ -383,13 +383,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
         "variant": ControlBarVariant;
     }
-    interface DyteBroadcastMessageModal {
+    interface RtkBroadcastMessageModal {
         /**
           * Icon pack
          */
@@ -405,12 +405,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
-     * A button that follows Dyte's Design System.
+     * A button that follows RTK Design System.
      */
-    interface DyteButton {
+    interface RtkButton {
         /**
           * Where the button is disabled or not
          */
@@ -438,7 +438,7 @@ export namespace Components {
     }
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -447,7 +447,7 @@ export namespace Components {
      * }
      * ```
      */
-    interface DyteCameraSelector {
+    interface RtkCameraSelector {
         /**
           * Icon pack
          */
@@ -463,7 +463,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * variant
          */
@@ -472,7 +472,7 @@ export namespace Components {
     /**
      * A button which toggles your camera.
      */
-    interface DyteCameraToggle {
+    interface RtkCameraToggle {
         /**
           * Icon pack
          */
@@ -488,13 +488,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
         "variant": ControlBarVariant;
     }
-    interface DyteCaptionToggle {
+    interface RtkCaptionToggle {
         /**
           * Config
          */
@@ -518,13 +518,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
         "variant": ControlBarVariant;
     }
-    interface DyteChannelCreator {
+    interface RtkChannelCreator {
         /**
           * Icon pack
          */
@@ -536,9 +536,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteChannelDetails {
+    interface RtkChannelDetails {
         /**
           * Channel object
          */
@@ -554,9 +554,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteChannelHeader {
+    interface RtkChannelHeader {
         /**
           * Channel object
          */
@@ -576,9 +576,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteChannelSelectorUi {
+    interface RtkChannelSelectorUi {
         /**
           * Channels
          */
@@ -598,9 +598,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteChannelSelectorView {
+    interface RtkChannelSelectorView {
         /**
           * Channels
          */
@@ -632,7 +632,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
         /**
           * Render as dropdown or list (default = list)
          */
@@ -641,7 +641,7 @@ export namespace Components {
     /**
      * Fully featured chat component with image & file upload, emoji picker and auto-scroll.
      */
-    interface DyteChat {
+    interface RtkChat {
         /**
           * Config
          */
@@ -673,9 +673,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteChatComposerUi {
+    interface RtkChatComposerUi {
         /**
           * Whether user can send file messages
          */
@@ -715,12 +715,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which renders a chat composer
      */
-    interface DyteChatComposerView {
+    interface RtkChatComposerView {
         /**
           * Whether user can send file messages
          */
@@ -768,9 +768,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteChatMessage {
+    interface RtkChatMessage {
         /**
           * aligns message to right
          */
@@ -838,9 +838,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteChatMessagesUi {
+    interface RtkChatMessagesUi {
         /**
           * Can current user pin/unpin messages
          */
@@ -868,9 +868,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteChatMessagesUiPaginated {
+    interface RtkChatMessagesUiPaginated {
         /**
           * Icon pack
          */
@@ -898,9 +898,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteChatSearchResults {
+    interface RtkChatSearchResults {
         /**
           * Channel id
          */
@@ -920,9 +920,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteChatSelectorUi {
+    interface RtkChatSelectorUi {
         /**
           * Participants
          */
@@ -942,7 +942,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Unread counts
          */
@@ -951,12 +951,12 @@ export namespace Components {
     /**
      * A button which toggles visibility of chat.
      * You need to pass the `meeting` object to it to see the unread messages count badge.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'chat' }
      * ```
      */
-    interface DyteChatToggle {
+    interface RtkChatToggle {
         /**
           * Icon pack
          */
@@ -976,7 +976,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -985,7 +985,7 @@ export namespace Components {
     /**
      * Shows the time elapsed in a meeting.
      */
-    interface DyteClock {
+    interface RtkClock {
         /**
           * Icon pack
          */
@@ -998,7 +998,7 @@ export namespace Components {
     /**
      * A confirmation modal.
      */
-    interface DyteConfirmationModal {
+    interface RtkConfirmationModal {
         /**
           * Icon pack
          */
@@ -1014,12 +1014,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * Controlbar component provides you with various designs as variants.
      */
-    interface DyteControlbar {
+    interface RtkControlbar {
         /**
           * Config
          */
@@ -1047,7 +1047,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -1056,7 +1056,7 @@ export namespace Components {
     /**
      * A skeleton component used for composing custom controlbar buttons.
      */
-    interface DyteControlbarButton {
+    interface RtkControlbarButton {
         /**
           * Whether icon requires brand color
          */
@@ -1097,7 +1097,7 @@ export namespace Components {
     /**
      * A number picker with increment and decrement buttons.
      */
-    interface DyteCounter {
+    interface RtkCounter {
         /**
           * Icon pack
          */
@@ -1113,7 +1113,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Initial value
          */
@@ -1122,7 +1122,7 @@ export namespace Components {
     /**
      * A troubleshooting component to identify and fix any issues in the meeting.
      */
-    interface DyteDebugger {
+    interface RtkDebugger {
         /**
           * Icon pack
          */
@@ -1142,9 +1142,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteDebuggerAudio {
+    interface RtkDebuggerAudio {
         /**
           * Icon pack
          */
@@ -1164,9 +1164,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteDebuggerScreenshare {
+    interface RtkDebuggerScreenshare {
         /**
           * Icon pack
          */
@@ -1186,9 +1186,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteDebuggerSystem {
+    interface RtkDebuggerSystem {
         /**
           * Icon pack
          */
@@ -1208,9 +1208,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteDebuggerToggle {
+    interface RtkDebuggerToggle {
         /**
           * Icon pack
          */
@@ -1230,13 +1230,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
         "variant": ControlBarVariant;
     }
-    interface DyteDebuggerVideo {
+    interface RtkDebuggerVideo {
         /**
           * Icon pack
          */
@@ -1256,12 +1256,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
     /**
      * A dialog component.
      */
-    interface DyteDialog {
+    interface RtkDialog {
         /**
           * UI Config
          */
@@ -1297,18 +1297,18 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which handles all dialog elements in a component such as:
-     * - dyte-settings
-     * - dyte-leave-meeting
-     * - dyte-permissions-message
-     * - dyte-image-viewer
-     * - dyte-breakout-rooms-manager
+     * - rtk-settings
+     * - rtk-leave-meeting
+     * - rtk-permissions-message
+     * - rtk-image-viewer
+     * - rtk-breakout-rooms-manager
      * This components depends on the values from `states` object.
      */
-    interface DyteDialogManager {
+    interface RtkDialogManager {
         /**
           * UI Config
          */
@@ -1332,12 +1332,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which renders the draft attachment to send
      */
-    interface DyteDraftAttachmentView {
+    interface RtkDraftAttachmentView {
         /**
           * Attachment to display
          */
@@ -1352,12 +1352,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
     /**
      * A very simple emoji picker component.
      */
-    interface DyteEmojiPicker {
+    interface RtkEmojiPicker {
         /**
           * Controls whether or not to focus on mount
          */
@@ -1369,9 +1369,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteEmojiPickerButton {
+    interface RtkEmojiPickerButton {
         /**
           * Icon pack
          */
@@ -1383,12 +1383,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
     /**
      * A screen which shows a meeting has ended.
      */
-    interface DyteEndedScreen {
+    interface RtkEndedScreen {
         /**
           * Config object
          */
@@ -1412,9 +1412,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteFileDropzone {
+    interface RtkFileDropzone {
         /**
           * Host element on which drop events to attach
          */
@@ -1426,12 +1426,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
     /**
      * A component which renders a file message from chat.
      */
-    interface DyteFileMessage {
+    interface RtkFileMessage {
         /**
           * Icon pack
          */
@@ -1455,12 +1455,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which renders a file message.
      */
-    interface DyteFileMessageView {
+    interface RtkFileMessageView {
         /**
           * Icon pack
          */
@@ -1478,7 +1478,7 @@ export namespace Components {
          */
         "url": string;
     }
-    interface DyteFilePickerButton {
+    interface RtkFilePickerButton {
         /**
           * File type filter to open file picker with
          */
@@ -1498,13 +1498,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
     /**
      * A button which toggles full screen mode for any
-     * existing `dyte-meeting` component in the DOM.
+     * existing `rtk-meeting` component in the DOM.
      */
-    interface DyteFullscreenToggle {
+    interface RtkFullscreenToggle {
         /**
           * Icon pack
          */
@@ -1520,7 +1520,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Target Element to fullscreen
          */
@@ -1533,7 +1533,7 @@ export namespace Components {
     /**
      * The main grid component which abstracts all the grid handling logic and renders it for you.
      */
-    interface DyteGrid {
+    interface RtkGrid {
         /**
           * The aspect ratio of each participant
          */
@@ -1577,13 +1577,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which allows you to change current page and view mode
-     * of active participants list. This is reflected in the `dyte-grid` component.
+     * of active participants list. This is reflected in the `rtk-grid` component.
      */
-    interface DyteGridPagination {
+    interface RtkGridPagination {
         /**
           * Icon Pack
          */
@@ -1603,7 +1603,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -1612,7 +1612,7 @@ export namespace Components {
     /**
      * A component that houses all the header components.
      */
-    interface DyteHeader {
+    interface RtkHeader {
         /**
           * Config
          */
@@ -1640,7 +1640,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -1649,7 +1649,7 @@ export namespace Components {
     /**
      * An icon component which accepts an svg string and renders it.
      */
-    interface DyteIcon {
+    interface RtkIcon {
         /**
           * Icon
          */
@@ -1667,7 +1667,7 @@ export namespace Components {
      * A screen that handles the idle state,
      * i.e; when you are waiting for data about the meeting, specifically the `meeting` object.
      */
-    interface DyteIdleScreen {
+    interface RtkIdleScreen {
         /**
           * Config object
          */
@@ -1683,12 +1683,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which renders an image message from chat.
      */
-    interface DyteImageMessage {
+    interface RtkImageMessage {
         /**
           * Icon pack
          */
@@ -1712,12 +1712,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which renders an image message.
      */
-    interface DyteImageMessageView {
+    interface RtkImageMessageView {
         /**
           * Icon pack
          */
@@ -1725,7 +1725,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
         /**
           * Url of the image
          */
@@ -1734,7 +1734,7 @@ export namespace Components {
     /**
      * A component which shows an image sent via chat.
      */
-    interface DyteImageViewer {
+    interface RtkImageViewer {
         /**
           * Icon pack
          */
@@ -1750,15 +1750,15 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteInformationTooltip {
+    interface RtkInformationTooltip {
         /**
           * Icon pack
          */
         "iconPack": IconPack1;
     }
-    interface DyteJoinStage {
+    interface RtkJoinStage {
         /**
           * UI Config
          */
@@ -1786,12 +1786,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A button which toggles visilibility of the leave confirmation dialog.
      */
-    interface DyteLeaveButton {
+    interface RtkLeaveButton {
         /**
           * Icon pack
          */
@@ -1803,7 +1803,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -1813,7 +1813,7 @@ export namespace Components {
      * A component which allows you to leave a meeting or
      * end meeting for all, if you have the permission.
      */
-    interface DyteLeaveMeeting {
+    interface RtkLeaveMeeting {
         /**
           * Icon pack
          */
@@ -1829,9 +1829,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteLivestreamIndicator {
+    interface RtkLivestreamIndicator {
         /**
           * Icon pack
          */
@@ -1847,9 +1847,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteLivestreamPlayer {
+    interface RtkLivestreamPlayer {
         /**
           * Icon pack
          */
@@ -1865,9 +1865,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
-    interface DyteLivestreamToggle {
+    interface RtkLivestreamToggle {
         /**
           * Icon pack
          */
@@ -1883,7 +1883,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -1892,7 +1892,7 @@ export namespace Components {
     /**
      * A component which loads the logo from your config, or via the `logo-url` attribute.
      */
-    interface DyteLogo {
+    interface RtkLogo {
         /**
           * Config object
          */
@@ -1908,9 +1908,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteMarkdownView {
+    interface RtkMarkdownView {
         /**
           * max length of text to render as markdown
          */
@@ -1926,7 +1926,7 @@ export namespace Components {
      * With this component, you don't have to handle all the states,
      * dialogs and other smaller bits of managing the application.
      */
-    interface DyteMeeting {
+    interface RtkMeeting {
         /**
           * Whether to apply the design system on the document root from config
          */
@@ -1970,12 +1970,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * Displays the title of the meeting.
      */
-    interface DyteMeetingTitle {
+    interface RtkMeetingTitle {
         /**
           * Icon pack
          */
@@ -1987,12 +1987,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A menu component.
      */
-    interface DyteMenu {
+    interface RtkMenu {
         /**
           * Icon pack
          */
@@ -2012,12 +2012,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A menu item component.
      */
-    interface DyteMenuItem {
+    interface RtkMenuItem {
         /**
           * Icon pack
          */
@@ -2029,12 +2029,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A menu list component.
      */
-    interface DyteMenuList {
+    interface RtkMenuList {
         /**
           * Icon pack
          */
@@ -2042,12 +2042,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which renders list of messages.
      */
-    interface DyteMessageListView {
+    interface RtkMessageListView {
         /**
           * Estimated height of an item
          */
@@ -2073,7 +2073,7 @@ export namespace Components {
          */
         "visibleItemsCount": number;
     }
-    interface DyteMessageView {
+    interface RtkMessageView {
         /**
           * List of actions to show in menu
          */
@@ -2118,7 +2118,7 @@ export namespace Components {
     /**
      * A button which toggles your microphone.
      */
-    interface DyteMicToggle {
+    interface RtkMicToggle {
         /**
           * Icon pack
          */
@@ -2134,7 +2134,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -2142,7 +2142,7 @@ export namespace Components {
     }
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -2151,7 +2151,7 @@ export namespace Components {
      * }
      * ```
      */
-    interface DyteMicrophoneSelector {
+    interface RtkMicrophoneSelector {
         /**
           * Icon pack
          */
@@ -2167,7 +2167,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * variant
          */
@@ -2176,7 +2176,7 @@ export namespace Components {
     /**
      * A grid component which handles screenshares, plugins and participants.
      */
-    interface DyteMixedGrid {
+    interface RtkMixedGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
          */
@@ -2232,16 +2232,16 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A button which toggles visibility of a more menu.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeMoreMenu: boolean; }
      * ```
      */
-    interface DyteMoreToggle {
+    interface RtkMoreToggle {
         /**
           * Icon pack
          */
@@ -2257,9 +2257,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteMuteAllButton {
+    interface RtkMuteAllButton {
         /**
           * Icon pack
          */
@@ -2275,13 +2275,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
         "variant": ControlBarVariant;
     }
-    interface DyteMuteAllConfirmation {
+    interface RtkMuteAllConfirmation {
         /**
           * Icon pack
          */
@@ -2297,12 +2297,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which shows a participant's name.
      */
-    interface DyteNameTag {
+    interface RtkNameTag {
         /**
           * Icon pack
          */
@@ -2326,13 +2326,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Name tag variant
          */
-        "variant": DyteNameTagVariant;
+        "variant": RtkNameTagVariant;
     }
-    interface DyteNetworkIndicator {
+    interface RtkNetworkIndicator {
         /**
           * Icon pack
          */
@@ -2352,14 +2352,14 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
     /**
      * A component which shows a notification.
      * You need to remove the element after you receive the
-     * `dyteNotificationDismiss` event.
+     * `rtkNotificationDismiss` event.
      */
-    interface DyteNotification {
+    interface RtkNotification {
         /**
           * Icon pack
          */
@@ -2375,14 +2375,14 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which handles notifications.
      * You can configure which notifications you want to see and which ones you want to hear.
      * There are also certain limits which you can set as well.
      */
-    interface DyteNotifications {
+    interface RtkNotifications {
         /**
           * Config object
          */
@@ -2406,12 +2406,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A confirmation modal.
      */
-    interface DyteOverlayModal {
+    interface RtkOverlayModal {
         /**
           * Icon pack
          */
@@ -2427,9 +2427,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DytePaginatedList {
+    interface RtkPaginatedList {
         /**
           * auto scroll list to bottom
          */
@@ -2477,14 +2477,14 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
-     * A participant entry component used inside `dyte-participants` which shows data like:
+     * A participant entry component used inside `rtk-participants` which shows data like:
      * name, picture and media device status.
      * You can perform privileged actions on the participant too.
      */
-    interface DyteParticipant {
+    interface RtkParticipant {
         /**
           * Config object
          */
@@ -2508,7 +2508,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Show participant summary
          */
@@ -2517,7 +2517,7 @@ export namespace Components {
     /**
      * A component which shows count of total joined participants in a meeting.
      */
-    interface DyteParticipantCount {
+    interface RtkParticipantCount {
         /**
           * Icon pack
          */
@@ -2533,9 +2533,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteParticipantSetup {
+    interface RtkParticipantSetup {
         /**
           * Config object
          */
@@ -2572,7 +2572,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -2580,9 +2580,9 @@ export namespace Components {
     }
     /**
      * A component which plays a participants video and allows for placement
-     * of components like `dyte-name-tag`, `dyte-audio-visualizer` or any other component.
+     * of components like `rtk-name-tag`, `rtk-audio-visualizer` or any other component.
      */
-    interface DyteParticipantTile {
+    interface RtkParticipantTile {
         /**
           * Config object
          */
@@ -2623,7 +2623,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -2633,7 +2633,7 @@ export namespace Components {
      * A component which lists all participants, with ability to
      * run privileged actions on each participant according to your permissions.
      */
-    interface DyteParticipants {
+    interface RtkParticipants {
         /**
           * Config
          */
@@ -2661,12 +2661,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which plays all the audio from participants and screenshares.
      */
-    interface DyteParticipantsAudio {
+    interface RtkParticipantsAudio {
         /**
           * Icon pack
          */
@@ -2682,13 +2682,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which lists all participants, with ability to
      * run privileged actions on each participant according to your permissions.
      */
-    interface DyteParticipantsStageList {
+    interface RtkParticipantsStageList {
         /**
           * Config
          */
@@ -2720,13 +2720,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * View mode for participants list
          */
         "view": ParticipantsViewMode;
     }
-    interface DyteParticipantsStageQueue {
+    interface RtkParticipantsStageQueue {
         /**
           * Config
          */
@@ -2746,7 +2746,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
         /**
           * View mode for participants list
          */
@@ -2754,12 +2754,12 @@ export namespace Components {
     }
     /**
      * A button which toggles visibility of participants.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'participants' }
      * ```
      */
-    interface DyteParticipantsToggle {
+    interface RtkParticipantsToggle {
         /**
           * Icon pack
          */
@@ -2779,13 +2779,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
         "variant": ControlBarVariant;
     }
-    interface DyteParticipantsViewerList {
+    interface RtkParticipantsViewerList {
         /**
           * Config
          */
@@ -2813,13 +2813,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
         /**
           * View mode for participants list
          */
         "view": ParticipantsViewMode;
     }
-    interface DyteParticipantsWaitingList {
+    interface RtkParticipantsWaitingList {
         /**
           * Config
          */
@@ -2839,7 +2839,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
         /**
           * View mode for participants list
          */
@@ -2849,7 +2849,7 @@ export namespace Components {
      * A component which shows permission related troubleshooting
      * information.
      */
-    interface DytePermissionsMessage {
+    interface RtkPermissionsMessage {
         /**
           * Icon Pack
          */
@@ -2865,9 +2865,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DytePipToggle {
+    interface RtkPipToggle {
         /**
           * Config
          */
@@ -2891,7 +2891,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -2900,7 +2900,7 @@ export namespace Components {
     /**
      * A component which loads a plugin.
      */
-    interface DytePluginMain {
+    interface RtkPluginMain {
         /**
           * Icon pack
          */
@@ -2916,13 +2916,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which lists all available plugins from their preset,
      * and ability to enable or disable plugins.
      */
-    interface DytePlugins {
+    interface RtkPlugins {
         /**
           * Config
          */
@@ -2942,16 +2942,16 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A button which toggles visibility of plugins.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'plugins' }
      * ```
      */
-    interface DytePluginsToggle {
+    interface RtkPluginsToggle {
         /**
           * Icon pack
          */
@@ -2971,7 +2971,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -2981,7 +2981,7 @@ export namespace Components {
      * A poll component.
      * Shows a poll where a user can vote.
      */
-    interface DytePoll {
+    interface RtkPoll {
         /**
           * Icon pack
          */
@@ -3001,12 +3001,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component that lets you create a poll.
      */
-    interface DytePollForm {
+    interface RtkPollForm {
         /**
           * Icon pack
          */
@@ -3014,13 +3014,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which lists all available plugins a user can access with
      * the ability to enable or disable them as per their permissions.
      */
-    interface DytePolls {
+    interface RtkPolls {
         /**
           * Config
          */
@@ -3040,17 +3040,17 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A button which toggles visibility of polls.
      * You need to pass the `meeting` object to it to see the unread polls count badge.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'polls' }
      * ```
      */
-    interface DytePollsToggle {
+    interface RtkPollsToggle {
         /**
           * Icon pack
          */
@@ -3070,7 +3070,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -3080,7 +3080,7 @@ export namespace Components {
      * A component which indicates the recording status of a meeting.
      * It will not render anything if no recording is taking place.
      */
-    interface DyteRecordingIndicator {
+    interface RtkRecordingIndicator {
         /**
           * Icon pack
          */
@@ -3096,7 +3096,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A button which toggles recording state of a meeting.
@@ -3104,7 +3104,7 @@ export namespace Components {
      * thus the button will not be visible for participants
      * who don't have the permission to record a meeting.
      */
-    interface DyteRecordingToggle {
+    interface RtkRecordingToggle {
         /**
           * Disable the button
          */
@@ -3124,7 +3124,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -3133,7 +3133,7 @@ export namespace Components {
     /**
      * A button which toggles your screenshare.
      */
-    interface DyteScreenShareToggle {
+    interface RtkScreenShareToggle {
         /**
           * Icon pack
          */
@@ -3153,7 +3153,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -3161,10 +3161,10 @@ export namespace Components {
     }
     /**
      * A component which plays a participant's screenshared video.
-     * It also allows for placement of other components similar to `dyte-participant-tile`.
+     * It also allows for placement of other components similar to `rtk-participant-tile`.
      * This component will not render anything if the participant hasn't start screensharing.
      */
-    interface DyteScreenshareView {
+    interface RtkScreenshareView {
         /**
           * Hide full screen button
          */
@@ -3197,7 +3197,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -3207,7 +3207,7 @@ export namespace Components {
      * A settings component to see and change your audio/video devices
      * as well as see your connection quality.
      */
-    interface DyteSettings {
+    interface RtkSettings {
         /**
           * Icon pack
          */
@@ -3227,11 +3227,11 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -3240,7 +3240,7 @@ export namespace Components {
      * }
      * ```
      */
-    interface DyteSettingsAudio {
+    interface RtkSettingsAudio {
         /**
           * Icon pack
          */
@@ -3260,16 +3260,16 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A button which toggles visibility of settings module.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSettings: boolean; }
      * ```
      */
-    interface DyteSettingsToggle {
+    interface RtkSettingsToggle {
         /**
           * Icon pack
          */
@@ -3285,7 +3285,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Variant
          */
@@ -3293,7 +3293,7 @@ export namespace Components {
     }
     /**
      * A component which lets to manage your camera devices and your video preferences.
-     * Emits `dyteStateUpdate` event with data for toggling mirroring of self video:
+     * Emits `rtkStateUpdate` event with data for toggling mirroring of self video:
      * ```ts
      * {
      *  prefs: {
@@ -3302,7 +3302,7 @@ export namespace Components {
      * }
      * ```
      */
-    interface DyteSettingsVideo {
+    interface RtkSettingsVideo {
         /**
           * Icon pack
          */
@@ -3322,13 +3322,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A screen shown before joining the meeting, where you can edit your display name,
      * and media settings.
      */
-    interface DyteSetupScreen {
+    interface RtkSetupScreen {
         /**
           * Config object
          */
@@ -3352,13 +3352,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which handles the sidebar and
      * you can customize which sections you want, and which section you want as the default.
      */
-    interface DyteSidebar {
+    interface RtkSidebar {
         /**
           * Config
          */
@@ -3366,11 +3366,11 @@ export namespace Components {
         /**
           * Default section
          */
-        "defaultSection": DyteSidebarSection;
+        "defaultSection": RtkSidebarSection;
         /**
           * Enabled sections in sidebar
          */
-        "enabledSections": DyteSidebarTab[];
+        "enabledSections": RtkSidebarTab[];
         /**
           * Icon pack
          */
@@ -3390,13 +3390,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * View type
          */
-        "view": DyteSidebarView;
+        "view": RtkSidebarView;
     }
-    interface DyteSidebarUi {
+    interface RtkSidebarUi {
         /**
           * Default tab to open
          */
@@ -3416,20 +3416,20 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
         /**
           * Tabs
          */
-        "tabs": DyteSidebarTab1[];
+        "tabs": RtkSidebarTab1[];
         /**
           * View
          */
-        "view": DyteSidebarView1;
+        "view": RtkSidebarView1;
     }
     /**
      * A grid component which renders only the participants in a simple grid.
      */
-    interface DyteSimpleGrid {
+    interface RtkSimpleGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
          */
@@ -3465,11 +3465,11 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -3478,7 +3478,7 @@ export namespace Components {
      * }
      * ```
      */
-    interface DyteSpeakerSelector {
+    interface RtkSpeakerSelector {
         /**
           * Icon pack
          */
@@ -3498,7 +3498,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * variant
          */
@@ -3507,7 +3507,7 @@ export namespace Components {
     /**
      * A component which shows an animating spinner.
      */
-    interface DyteSpinner {
+    interface RtkSpinner {
         /**
           * Icon pack
          */
@@ -3523,7 +3523,7 @@ export namespace Components {
      * - Participants from `pinnedParticipants[]` are rendered inside a larger grid.
      * - Participants from `participants[]` array are rendered in a smaller grid.
      */
-    interface DyteSpotlightGrid {
+    interface RtkSpotlightGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
          */
@@ -3571,9 +3571,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteSpotlightIndicator {
+    interface RtkSpotlightIndicator {
         /**
           * Icon pack
          */
@@ -3589,13 +3589,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component used as a stage that commonly houses
      * the `grid` and `sidebar` components.
      */
-    interface DyteStage {
+    interface RtkStage {
         /**
           * Icon pack
          */
@@ -3603,9 +3603,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteStageToggle {
+    interface RtkStageToggle {
         /**
           * Icon pack
          */
@@ -3625,16 +3625,16 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
         /**
           * Variant
          */
         "variant": ControlBarVariant;
     }
     /**
-     * A switch component which follows Dyte's Design System.
+     * A switch component which follows RTK Design System.
      */
-    interface DyteSwitch {
+    interface RtkSwitch {
         /**
           * Whether the switch is enabled/checked
          */
@@ -3654,9 +3654,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteTabBar {
+    interface RtkTabBar {
         /**
           * Active tab
          */
@@ -3688,7 +3688,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Tabs
          */
@@ -3697,7 +3697,7 @@ export namespace Components {
     /**
      * A component which renders a text composer
      */
-    interface DyteTextComposerView {
+    interface RtkTextComposerView {
         /**
           * Disable the text input (default = false)
          */
@@ -3729,7 +3729,7 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
         /**
           * Default value for text input
          */
@@ -3738,7 +3738,7 @@ export namespace Components {
     /**
      * A component which renders a text message from chat.
      */
-    interface DyteTextMessage {
+    interface RtkTextMessage {
         /**
           * Icon pack
          */
@@ -3762,12 +3762,12 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
     /**
      * A component which renders a text message from chat.
      */
-    interface DyteTextMessageView {
+    interface RtkTextMessageView {
         /**
           * Renders text as markdown (default = true)
          */
@@ -3778,9 +3778,9 @@ export namespace Components {
         "text": string;
     }
     /**
-     * Tooltip component which follows Dyte's Design System.
+     * Tooltip component which follows RTK Design System.
      */
-    interface DyteTooltip {
+    interface RtkTooltip {
         /**
           * Delay before showing the tooltip
          */
@@ -3817,13 +3817,13 @@ export namespace Components {
     /**
      * A component which shows a transcript.
      * You need to remove the element after you receive the
-     * `dyteTranscriptDismiss` event.
+     * `rtkTranscriptDismiss` event.
      */
-    interface DyteTranscript {
+    interface RtkTranscript {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Message
          */
@@ -3834,7 +3834,7 @@ export namespace Components {
      * You can configure which transcripts you want to see and which ones you want to hear.
      * There are also certain limits which you can set as well.
      */
-    interface DyteTranscripts {
+    interface RtkTranscripts {
         /**
           * Config object
          */
@@ -3850,9 +3850,9 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
-    interface DyteUiProvider {
+    interface RtkUiProvider {
         /**
           * Config
          */
@@ -3881,12 +3881,12 @@ export namespace Components {
         /**
           * Language utility
          */
-        "t": DyteI18n1;
+        "t": RtkI18n1;
     }
     /**
      * A component which shows count of total joined participants in a meeting.
      */
-    interface DyteViewerCount {
+    interface RtkViewerCount {
         /**
           * Icon pack
          */
@@ -3898,13 +3898,13 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
         /**
           * Viewer count variant
          */
         "variant": ViewerCountVariant;
     }
-    interface DyteVirtualizedParticipantList {
+    interface RtkVirtualizedParticipantList {
         /**
           * Buffer items to render before and after the visible area
          */
@@ -3926,7 +3926,7 @@ export namespace Components {
          */
         "renderItem": (item: Peer1, index: number) => HTMLElement;
     }
-    interface DyteWaitingScreen {
+    interface RtkWaitingScreen {
         /**
           * Config
          */
@@ -3942,398 +3942,398 @@ export namespace Components {
         /**
           * Language
          */
-        "t": DyteI18n;
+        "t": RtkI18n;
     }
 }
-export interface DyteAiCustomEvent<T> extends CustomEvent<T> {
+export interface RtkAiCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteAiElement;
+    target: HTMLRtkAiElement;
 }
-export interface DyteAiToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkAiToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteAiToggleElement;
+    target: HTMLRtkAiToggleElement;
 }
-export interface DyteBreakoutRoomManagerCustomEvent<T> extends CustomEvent<T> {
+export interface RtkBreakoutRoomManagerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteBreakoutRoomManagerElement;
+    target: HTMLRtkBreakoutRoomManagerElement;
 }
-export interface DyteBreakoutRoomParticipantsCustomEvent<T> extends CustomEvent<T> {
+export interface RtkBreakoutRoomParticipantsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteBreakoutRoomParticipantsElement;
+    target: HTMLRtkBreakoutRoomParticipantsElement;
 }
-export interface DyteBreakoutRoomsManagerCustomEvent<T> extends CustomEvent<T> {
+export interface RtkBreakoutRoomsManagerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteBreakoutRoomsManagerElement;
+    target: HTMLRtkBreakoutRoomsManagerElement;
 }
-export interface DyteBreakoutRoomsToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkBreakoutRoomsToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteBreakoutRoomsToggleElement;
+    target: HTMLRtkBreakoutRoomsToggleElement;
 }
-export interface DyteBroadcastMessageModalCustomEvent<T> extends CustomEvent<T> {
+export interface RtkBroadcastMessageModalCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteBroadcastMessageModalElement;
+    target: HTMLRtkBroadcastMessageModalElement;
 }
-export interface DyteCameraToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkCameraToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteCameraToggleElement;
+    target: HTMLRtkCameraToggleElement;
 }
-export interface DyteCaptionToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkCaptionToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteCaptionToggleElement;
+    target: HTMLRtkCaptionToggleElement;
 }
-export interface DyteChannelCreatorCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChannelCreatorCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChannelCreatorElement;
+    target: HTMLRtkChannelCreatorElement;
 }
-export interface DyteChannelHeaderCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChannelHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChannelHeaderElement;
+    target: HTMLRtkChannelHeaderElement;
 }
-export interface DyteChannelSelectorUiCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChannelSelectorUiCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChannelSelectorUiElement;
+    target: HTMLRtkChannelSelectorUiElement;
 }
-export interface DyteChannelSelectorViewCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChannelSelectorViewCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChannelSelectorViewElement;
+    target: HTMLRtkChannelSelectorViewElement;
 }
-export interface DyteChatCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChatCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChatElement;
+    target: HTMLRtkChatElement;
 }
-export interface DyteChatComposerUiCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChatComposerUiCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChatComposerUiElement;
+    target: HTMLRtkChatComposerUiElement;
 }
-export interface DyteChatComposerViewCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChatComposerViewCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChatComposerViewElement;
+    target: HTMLRtkChatComposerViewElement;
 }
-export interface DyteChatMessageCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChatMessageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChatMessageElement;
+    target: HTMLRtkChatMessageElement;
 }
-export interface DyteChatMessagesUiCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChatMessagesUiCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChatMessagesUiElement;
+    target: HTMLRtkChatMessagesUiElement;
 }
-export interface DyteChatMessagesUiPaginatedCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChatMessagesUiPaginatedCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChatMessagesUiPaginatedElement;
+    target: HTMLRtkChatMessagesUiPaginatedElement;
 }
-export interface DyteChatSelectorUiCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChatSelectorUiCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChatSelectorUiElement;
+    target: HTMLRtkChatSelectorUiElement;
 }
-export interface DyteChatToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkChatToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteChatToggleElement;
+    target: HTMLRtkChatToggleElement;
 }
-export interface DyteConfirmationModalCustomEvent<T> extends CustomEvent<T> {
+export interface RtkConfirmationModalCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteConfirmationModalElement;
+    target: HTMLRtkConfirmationModalElement;
 }
-export interface DyteCounterCustomEvent<T> extends CustomEvent<T> {
+export interface RtkCounterCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteCounterElement;
+    target: HTMLRtkCounterElement;
 }
-export interface DyteDebuggerCustomEvent<T> extends CustomEvent<T> {
+export interface RtkDebuggerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteDebuggerElement;
+    target: HTMLRtkDebuggerElement;
 }
-export interface DyteDebuggerToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkDebuggerToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteDebuggerToggleElement;
+    target: HTMLRtkDebuggerToggleElement;
 }
-export interface DyteDialogCustomEvent<T> extends CustomEvent<T> {
+export interface RtkDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteDialogElement;
+    target: HTMLRtkDialogElement;
 }
-export interface DyteDialogManagerCustomEvent<T> extends CustomEvent<T> {
+export interface RtkDialogManagerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteDialogManagerElement;
+    target: HTMLRtkDialogManagerElement;
 }
-export interface DyteDraftAttachmentViewCustomEvent<T> extends CustomEvent<T> {
+export interface RtkDraftAttachmentViewCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteDraftAttachmentViewElement;
+    target: HTMLRtkDraftAttachmentViewElement;
 }
-export interface DyteEmojiPickerCustomEvent<T> extends CustomEvent<T> {
+export interface RtkEmojiPickerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteEmojiPickerElement;
+    target: HTMLRtkEmojiPickerElement;
 }
-export interface DyteFileDropzoneCustomEvent<T> extends CustomEvent<T> {
+export interface RtkFileDropzoneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteFileDropzoneElement;
+    target: HTMLRtkFileDropzoneElement;
 }
-export interface DyteFilePickerButtonCustomEvent<T> extends CustomEvent<T> {
+export interface RtkFilePickerButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteFilePickerButtonElement;
+    target: HTMLRtkFilePickerButtonElement;
 }
-export interface DyteFullscreenToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkFullscreenToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteFullscreenToggleElement;
+    target: HTMLRtkFullscreenToggleElement;
 }
-export interface DyteGridCustomEvent<T> extends CustomEvent<T> {
+export interface RtkGridCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteGridElement;
+    target: HTMLRtkGridElement;
 }
-export interface DyteImageMessageCustomEvent<T> extends CustomEvent<T> {
+export interface RtkImageMessageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteImageMessageElement;
+    target: HTMLRtkImageMessageElement;
 }
-export interface DyteImageMessageViewCustomEvent<T> extends CustomEvent<T> {
+export interface RtkImageMessageViewCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteImageMessageViewElement;
+    target: HTMLRtkImageMessageViewElement;
 }
-export interface DyteImageViewerCustomEvent<T> extends CustomEvent<T> {
+export interface RtkImageViewerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteImageViewerElement;
+    target: HTMLRtkImageViewerElement;
 }
-export interface DyteJoinStageCustomEvent<T> extends CustomEvent<T> {
+export interface RtkJoinStageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteJoinStageElement;
+    target: HTMLRtkJoinStageElement;
 }
-export interface DyteLeaveButtonCustomEvent<T> extends CustomEvent<T> {
+export interface RtkLeaveButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteLeaveButtonElement;
+    target: HTMLRtkLeaveButtonElement;
 }
-export interface DyteLeaveMeetingCustomEvent<T> extends CustomEvent<T> {
+export interface RtkLeaveMeetingCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteLeaveMeetingElement;
+    target: HTMLRtkLeaveMeetingElement;
 }
-export interface DyteLivestreamPlayerCustomEvent<T> extends CustomEvent<T> {
+export interface RtkLivestreamPlayerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteLivestreamPlayerElement;
+    target: HTMLRtkLivestreamPlayerElement;
 }
-export interface DyteLivestreamToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkLivestreamToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteLivestreamToggleElement;
+    target: HTMLRtkLivestreamToggleElement;
 }
-export interface DyteMeetingCustomEvent<T> extends CustomEvent<T> {
+export interface RtkMeetingCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteMeetingElement;
+    target: HTMLRtkMeetingElement;
 }
-export interface DyteMessageViewCustomEvent<T> extends CustomEvent<T> {
+export interface RtkMessageViewCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteMessageViewElement;
+    target: HTMLRtkMessageViewElement;
 }
-export interface DyteMicToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkMicToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteMicToggleElement;
+    target: HTMLRtkMicToggleElement;
 }
-export interface DyteMoreToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkMoreToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteMoreToggleElement;
+    target: HTMLRtkMoreToggleElement;
 }
-export interface DyteMuteAllButtonCustomEvent<T> extends CustomEvent<T> {
+export interface RtkMuteAllButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteMuteAllButtonElement;
+    target: HTMLRtkMuteAllButtonElement;
 }
-export interface DyteMuteAllConfirmationCustomEvent<T> extends CustomEvent<T> {
+export interface RtkMuteAllConfirmationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteMuteAllConfirmationElement;
+    target: HTMLRtkMuteAllConfirmationElement;
 }
-export interface DyteNotificationCustomEvent<T> extends CustomEvent<T> {
+export interface RtkNotificationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteNotificationElement;
+    target: HTMLRtkNotificationElement;
 }
-export interface DyteOverlayModalCustomEvent<T> extends CustomEvent<T> {
+export interface RtkOverlayModalCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteOverlayModalElement;
+    target: HTMLRtkOverlayModalElement;
 }
-export interface DyteParticipantCustomEvent<T> extends CustomEvent<T> {
+export interface RtkParticipantCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteParticipantElement;
+    target: HTMLRtkParticipantElement;
 }
-export interface DyteParticipantTileCustomEvent<T> extends CustomEvent<T> {
+export interface RtkParticipantTileCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteParticipantTileElement;
+    target: HTMLRtkParticipantTileElement;
 }
-export interface DyteParticipantsCustomEvent<T> extends CustomEvent<T> {
+export interface RtkParticipantsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteParticipantsElement;
+    target: HTMLRtkParticipantsElement;
 }
-export interface DyteParticipantsAudioCustomEvent<T> extends CustomEvent<T> {
+export interface RtkParticipantsAudioCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteParticipantsAudioElement;
+    target: HTMLRtkParticipantsAudioElement;
 }
-export interface DyteParticipantsToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkParticipantsToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteParticipantsToggleElement;
+    target: HTMLRtkParticipantsToggleElement;
 }
-export interface DytePermissionsMessageCustomEvent<T> extends CustomEvent<T> {
+export interface RtkPermissionsMessageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDytePermissionsMessageElement;
+    target: HTMLRtkPermissionsMessageElement;
 }
-export interface DytePipToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkPipToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDytePipToggleElement;
+    target: HTMLRtkPipToggleElement;
 }
-export interface DytePluginsCustomEvent<T> extends CustomEvent<T> {
+export interface RtkPluginsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDytePluginsElement;
+    target: HTMLRtkPluginsElement;
 }
-export interface DytePluginsToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkPluginsToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDytePluginsToggleElement;
+    target: HTMLRtkPluginsToggleElement;
 }
-export interface DytePollCustomEvent<T> extends CustomEvent<T> {
+export interface RtkPollCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDytePollElement;
+    target: HTMLRtkPollElement;
 }
-export interface DytePollFormCustomEvent<T> extends CustomEvent<T> {
+export interface RtkPollFormCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDytePollFormElement;
+    target: HTMLRtkPollFormElement;
 }
-export interface DytePollsToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkPollsToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDytePollsToggleElement;
+    target: HTMLRtkPollsToggleElement;
 }
-export interface DyteRecordingToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkRecordingToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteRecordingToggleElement;
+    target: HTMLRtkRecordingToggleElement;
 }
-export interface DyteScreenShareToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkScreenShareToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteScreenShareToggleElement;
+    target: HTMLRtkScreenShareToggleElement;
 }
-export interface DyteScreenshareViewCustomEvent<T> extends CustomEvent<T> {
+export interface RtkScreenshareViewCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteScreenshareViewElement;
+    target: HTMLRtkScreenshareViewElement;
 }
-export interface DyteSettingsCustomEvent<T> extends CustomEvent<T> {
+export interface RtkSettingsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteSettingsElement;
+    target: HTMLRtkSettingsElement;
 }
-export interface DyteSettingsAudioCustomEvent<T> extends CustomEvent<T> {
+export interface RtkSettingsAudioCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteSettingsAudioElement;
+    target: HTMLRtkSettingsAudioElement;
 }
-export interface DyteSettingsToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkSettingsToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteSettingsToggleElement;
+    target: HTMLRtkSettingsToggleElement;
 }
-export interface DyteSettingsVideoCustomEvent<T> extends CustomEvent<T> {
+export interface RtkSettingsVideoCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteSettingsVideoElement;
+    target: HTMLRtkSettingsVideoElement;
 }
-export interface DyteSetupScreenCustomEvent<T> extends CustomEvent<T> {
+export interface RtkSetupScreenCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteSetupScreenElement;
+    target: HTMLRtkSetupScreenElement;
 }
-export interface DyteSidebarCustomEvent<T> extends CustomEvent<T> {
+export interface RtkSidebarCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteSidebarElement;
+    target: HTMLRtkSidebarElement;
 }
-export interface DyteSidebarUiCustomEvent<T> extends CustomEvent<T> {
+export interface RtkSidebarUiCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteSidebarUiElement;
+    target: HTMLRtkSidebarUiElement;
 }
-export interface DyteStageCustomEvent<T> extends CustomEvent<T> {
+export interface RtkStageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteStageElement;
+    target: HTMLRtkStageElement;
 }
-export interface DyteStageToggleCustomEvent<T> extends CustomEvent<T> {
+export interface RtkStageToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteStageToggleElement;
+    target: HTMLRtkStageToggleElement;
 }
-export interface DyteSwitchCustomEvent<T> extends CustomEvent<T> {
+export interface RtkSwitchCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteSwitchElement;
+    target: HTMLRtkSwitchElement;
 }
-export interface DyteTabBarCustomEvent<T> extends CustomEvent<T> {
+export interface RtkTabBarCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteTabBarElement;
+    target: HTMLRtkTabBarElement;
 }
-export interface DyteTextComposerViewCustomEvent<T> extends CustomEvent<T> {
+export interface RtkTextComposerViewCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteTextComposerViewElement;
+    target: HTMLRtkTextComposerViewElement;
 }
-export interface DyteTooltipCustomEvent<T> extends CustomEvent<T> {
+export interface RtkTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteTooltipElement;
+    target: HTMLRtkTooltipElement;
 }
-export interface DyteTranscriptCustomEvent<T> extends CustomEvent<T> {
+export interface RtkTranscriptCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteTranscriptElement;
+    target: HTMLRtkTranscriptElement;
 }
-export interface DyteUiProviderCustomEvent<T> extends CustomEvent<T> {
+export interface RtkUiProviderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDyteUiProviderElement;
+    target: HTMLRtkUiProviderElement;
 }
 declare global {
-    interface HTMLDyteAiElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkAiElementEventMap {
+        "rtkStateUpdate": States;
     }
-    interface HTMLDyteAiElement extends Components.DyteAi, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteAiElementEventMap>(type: K, listener: (this: HTMLDyteAiElement, ev: DyteAiCustomEvent<HTMLDyteAiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkAiElement extends Components.RtkAi, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkAiElementEventMap>(type: K, listener: (this: HTMLRtkAiElement, ev: RtkAiCustomEvent<HTMLRtkAiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteAiElementEventMap>(type: K, listener: (this: HTMLDyteAiElement, ev: DyteAiCustomEvent<HTMLDyteAiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkAiElementEventMap>(type: K, listener: (this: HTMLRtkAiElement, ev: RtkAiCustomEvent<HTMLRtkAiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteAiElement: {
-        prototype: HTMLDyteAiElement;
-        new (): HTMLDyteAiElement;
+    var HTMLRtkAiElement: {
+        prototype: HTMLRtkAiElement;
+        new (): HTMLRtkAiElement;
     };
-    interface HTMLDyteAiToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkAiToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
-    interface HTMLDyteAiToggleElement extends Components.DyteAiToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteAiToggleElementEventMap>(type: K, listener: (this: HTMLDyteAiToggleElement, ev: DyteAiToggleCustomEvent<HTMLDyteAiToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkAiToggleElement extends Components.RtkAiToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkAiToggleElementEventMap>(type: K, listener: (this: HTMLRtkAiToggleElement, ev: RtkAiToggleCustomEvent<HTMLRtkAiToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteAiToggleElementEventMap>(type: K, listener: (this: HTMLDyteAiToggleElement, ev: DyteAiToggleCustomEvent<HTMLDyteAiToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkAiToggleElementEventMap>(type: K, listener: (this: HTMLRtkAiToggleElement, ev: RtkAiToggleCustomEvent<HTMLRtkAiToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteAiToggleElement: {
-        prototype: HTMLDyteAiToggleElement;
-        new (): HTMLDyteAiToggleElement;
+    var HTMLRtkAiToggleElement: {
+        prototype: HTMLRtkAiToggleElement;
+        new (): HTMLRtkAiToggleElement;
     };
-    interface HTMLDyteAiTranscriptionsElement extends Components.DyteAiTranscriptions, HTMLStencilElement {
+    interface HTMLRtkAiTranscriptionsElement extends Components.RtkAiTranscriptions, HTMLStencilElement {
     }
-    var HTMLDyteAiTranscriptionsElement: {
-        prototype: HTMLDyteAiTranscriptionsElement;
-        new (): HTMLDyteAiTranscriptionsElement;
+    var HTMLRtkAiTranscriptionsElement: {
+        prototype: HTMLRtkAiTranscriptionsElement;
+        new (): HTMLRtkAiTranscriptionsElement;
     };
-    interface HTMLDyteAudioGridElement extends Components.DyteAudioGrid, HTMLStencilElement {
+    interface HTMLRtkAudioGridElement extends Components.RtkAudioGrid, HTMLStencilElement {
     }
-    var HTMLDyteAudioGridElement: {
-        prototype: HTMLDyteAudioGridElement;
-        new (): HTMLDyteAudioGridElement;
+    var HTMLRtkAudioGridElement: {
+        prototype: HTMLRtkAudioGridElement;
+        new (): HTMLRtkAudioGridElement;
     };
-    interface HTMLDyteAudioTileElement extends Components.DyteAudioTile, HTMLStencilElement {
+    interface HTMLRtkAudioTileElement extends Components.RtkAudioTile, HTMLStencilElement {
     }
-    var HTMLDyteAudioTileElement: {
-        prototype: HTMLDyteAudioTileElement;
-        new (): HTMLDyteAudioTileElement;
+    var HTMLRtkAudioTileElement: {
+        prototype: HTMLRtkAudioTileElement;
+        new (): HTMLRtkAudioTileElement;
     };
     /**
      * An audio visualizer component which visualizes a participants audio.
-     * Commonly used inside `dyte-name-tag`.
+     * Commonly used inside `rtk-name-tag`.
      */
-    interface HTMLDyteAudioVisualizerElement extends Components.DyteAudioVisualizer, HTMLStencilElement {
+    interface HTMLRtkAudioVisualizerElement extends Components.RtkAudioVisualizer, HTMLStencilElement {
     }
-    var HTMLDyteAudioVisualizerElement: {
-        prototype: HTMLDyteAudioVisualizerElement;
-        new (): HTMLDyteAudioVisualizerElement;
+    var HTMLRtkAudioVisualizerElement: {
+        prototype: HTMLRtkAudioVisualizerElement;
+        new (): HTMLRtkAudioVisualizerElement;
     };
     /**
      * Avatar component which renders a participant's image or their initials.
      */
-    interface HTMLDyteAvatarElement extends Components.DyteAvatar, HTMLStencilElement {
+    interface HTMLRtkAvatarElement extends Components.RtkAvatar, HTMLStencilElement {
     }
-    var HTMLDyteAvatarElement: {
-        prototype: HTMLDyteAvatarElement;
-        new (): HTMLDyteAvatarElement;
+    var HTMLRtkAvatarElement: {
+        prototype: HTMLRtkAvatarElement;
+        new (): HTMLRtkAvatarElement;
     };
-    interface HTMLDyteBreakoutRoomManagerElementEventMap {
+    interface HTMLRtkBreakoutRoomManagerElementEventMap {
         "participantsAdd": null;
         "participantDelete": {
     customParticipantId: string;
@@ -4345,21 +4345,21 @@ declare global {
     id: string;
   };
     }
-    interface HTMLDyteBreakoutRoomManagerElement extends Components.DyteBreakoutRoomManager, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteBreakoutRoomManagerElementEventMap>(type: K, listener: (this: HTMLDyteBreakoutRoomManagerElement, ev: DyteBreakoutRoomManagerCustomEvent<HTMLDyteBreakoutRoomManagerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkBreakoutRoomManagerElement extends Components.RtkBreakoutRoomManager, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkBreakoutRoomManagerElementEventMap>(type: K, listener: (this: HTMLRtkBreakoutRoomManagerElement, ev: RtkBreakoutRoomManagerCustomEvent<HTMLRtkBreakoutRoomManagerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteBreakoutRoomManagerElementEventMap>(type: K, listener: (this: HTMLDyteBreakoutRoomManagerElement, ev: DyteBreakoutRoomManagerCustomEvent<HTMLDyteBreakoutRoomManagerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkBreakoutRoomManagerElementEventMap>(type: K, listener: (this: HTMLRtkBreakoutRoomManagerElement, ev: RtkBreakoutRoomManagerCustomEvent<HTMLRtkBreakoutRoomManagerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteBreakoutRoomManagerElement: {
-        prototype: HTMLDyteBreakoutRoomManagerElement;
-        new (): HTMLDyteBreakoutRoomManagerElement;
+    var HTMLRtkBreakoutRoomManagerElement: {
+        prototype: HTMLRtkBreakoutRoomManagerElement;
+        new (): HTMLRtkBreakoutRoomManagerElement;
     };
-    interface HTMLDyteBreakoutRoomParticipantsElementEventMap {
+    interface HTMLRtkBreakoutRoomParticipantsElementEventMap {
         "selectedParticipantsUpdate": string[];
         "allParticipantsToggleUpdate": string[];
         "participantsDragging": boolean;
@@ -4368,87 +4368,87 @@ declare global {
      * A component which lists all participants, with ability to
      * run privileged actions on each participant according to your permissions.
      */
-    interface HTMLDyteBreakoutRoomParticipantsElement extends Components.DyteBreakoutRoomParticipants, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteBreakoutRoomParticipantsElementEventMap>(type: K, listener: (this: HTMLDyteBreakoutRoomParticipantsElement, ev: DyteBreakoutRoomParticipantsCustomEvent<HTMLDyteBreakoutRoomParticipantsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkBreakoutRoomParticipantsElement extends Components.RtkBreakoutRoomParticipants, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkBreakoutRoomParticipantsElementEventMap>(type: K, listener: (this: HTMLRtkBreakoutRoomParticipantsElement, ev: RtkBreakoutRoomParticipantsCustomEvent<HTMLRtkBreakoutRoomParticipantsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteBreakoutRoomParticipantsElementEventMap>(type: K, listener: (this: HTMLDyteBreakoutRoomParticipantsElement, ev: DyteBreakoutRoomParticipantsCustomEvent<HTMLDyteBreakoutRoomParticipantsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkBreakoutRoomParticipantsElementEventMap>(type: K, listener: (this: HTMLRtkBreakoutRoomParticipantsElement, ev: RtkBreakoutRoomParticipantsCustomEvent<HTMLRtkBreakoutRoomParticipantsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteBreakoutRoomParticipantsElement: {
-        prototype: HTMLDyteBreakoutRoomParticipantsElement;
-        new (): HTMLDyteBreakoutRoomParticipantsElement;
+    var HTMLRtkBreakoutRoomParticipantsElement: {
+        prototype: HTMLRtkBreakoutRoomParticipantsElement;
+        new (): HTMLRtkBreakoutRoomParticipantsElement;
     };
-    interface HTMLDyteBreakoutRoomsManagerElementEventMap {
-        "dyteStateUpdate": PartialStateEvent;
+    interface HTMLRtkBreakoutRoomsManagerElementEventMap {
+        "rtkStateUpdate": PartialStateEvent;
     }
-    interface HTMLDyteBreakoutRoomsManagerElement extends Components.DyteBreakoutRoomsManager, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteBreakoutRoomsManagerElementEventMap>(type: K, listener: (this: HTMLDyteBreakoutRoomsManagerElement, ev: DyteBreakoutRoomsManagerCustomEvent<HTMLDyteBreakoutRoomsManagerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkBreakoutRoomsManagerElement extends Components.RtkBreakoutRoomsManager, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkBreakoutRoomsManagerElementEventMap>(type: K, listener: (this: HTMLRtkBreakoutRoomsManagerElement, ev: RtkBreakoutRoomsManagerCustomEvent<HTMLRtkBreakoutRoomsManagerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteBreakoutRoomsManagerElementEventMap>(type: K, listener: (this: HTMLDyteBreakoutRoomsManagerElement, ev: DyteBreakoutRoomsManagerCustomEvent<HTMLDyteBreakoutRoomsManagerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkBreakoutRoomsManagerElementEventMap>(type: K, listener: (this: HTMLRtkBreakoutRoomsManagerElement, ev: RtkBreakoutRoomsManagerCustomEvent<HTMLRtkBreakoutRoomsManagerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteBreakoutRoomsManagerElement: {
-        prototype: HTMLDyteBreakoutRoomsManagerElement;
-        new (): HTMLDyteBreakoutRoomsManagerElement;
+    var HTMLRtkBreakoutRoomsManagerElement: {
+        prototype: HTMLRtkBreakoutRoomsManagerElement;
+        new (): HTMLRtkBreakoutRoomsManagerElement;
     };
-    interface HTMLDyteBreakoutRoomsToggleElementEventMap {
-        "dyteStateUpdate": PartialStateEvent;
+    interface HTMLRtkBreakoutRoomsToggleElementEventMap {
+        "rtkStateUpdate": PartialStateEvent;
     }
     /**
      * A button which toggles visibility of breakout rooms.
      * You need to pass the `meeting` object to it.
      */
-    interface HTMLDyteBreakoutRoomsToggleElement extends Components.DyteBreakoutRoomsToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteBreakoutRoomsToggleElementEventMap>(type: K, listener: (this: HTMLDyteBreakoutRoomsToggleElement, ev: DyteBreakoutRoomsToggleCustomEvent<HTMLDyteBreakoutRoomsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkBreakoutRoomsToggleElement extends Components.RtkBreakoutRoomsToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkBreakoutRoomsToggleElementEventMap>(type: K, listener: (this: HTMLRtkBreakoutRoomsToggleElement, ev: RtkBreakoutRoomsToggleCustomEvent<HTMLRtkBreakoutRoomsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteBreakoutRoomsToggleElementEventMap>(type: K, listener: (this: HTMLDyteBreakoutRoomsToggleElement, ev: DyteBreakoutRoomsToggleCustomEvent<HTMLDyteBreakoutRoomsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkBreakoutRoomsToggleElementEventMap>(type: K, listener: (this: HTMLRtkBreakoutRoomsToggleElement, ev: RtkBreakoutRoomsToggleCustomEvent<HTMLRtkBreakoutRoomsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteBreakoutRoomsToggleElement: {
-        prototype: HTMLDyteBreakoutRoomsToggleElement;
-        new (): HTMLDyteBreakoutRoomsToggleElement;
+    var HTMLRtkBreakoutRoomsToggleElement: {
+        prototype: HTMLRtkBreakoutRoomsToggleElement;
+        new (): HTMLRtkBreakoutRoomsToggleElement;
     };
-    interface HTMLDyteBroadcastMessageModalElementEventMap {
-        "dyteStateUpdate": States1;
+    interface HTMLRtkBroadcastMessageModalElementEventMap {
+        "rtkStateUpdate": States1;
     }
-    interface HTMLDyteBroadcastMessageModalElement extends Components.DyteBroadcastMessageModal, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteBroadcastMessageModalElementEventMap>(type: K, listener: (this: HTMLDyteBroadcastMessageModalElement, ev: DyteBroadcastMessageModalCustomEvent<HTMLDyteBroadcastMessageModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkBroadcastMessageModalElement extends Components.RtkBroadcastMessageModal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkBroadcastMessageModalElementEventMap>(type: K, listener: (this: HTMLRtkBroadcastMessageModalElement, ev: RtkBroadcastMessageModalCustomEvent<HTMLRtkBroadcastMessageModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteBroadcastMessageModalElementEventMap>(type: K, listener: (this: HTMLDyteBroadcastMessageModalElement, ev: DyteBroadcastMessageModalCustomEvent<HTMLDyteBroadcastMessageModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkBroadcastMessageModalElementEventMap>(type: K, listener: (this: HTMLRtkBroadcastMessageModalElement, ev: RtkBroadcastMessageModalCustomEvent<HTMLRtkBroadcastMessageModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteBroadcastMessageModalElement: {
-        prototype: HTMLDyteBroadcastMessageModalElement;
-        new (): HTMLDyteBroadcastMessageModalElement;
+    var HTMLRtkBroadcastMessageModalElement: {
+        prototype: HTMLRtkBroadcastMessageModalElement;
+        new (): HTMLRtkBroadcastMessageModalElement;
     };
     /**
-     * A button that follows Dyte's Design System.
+     * A button that follows RTK Design System.
      */
-    interface HTMLDyteButtonElement extends Components.DyteButton, HTMLStencilElement {
+    interface HTMLRtkButtonElement extends Components.RtkButton, HTMLStencilElement {
     }
-    var HTMLDyteButtonElement: {
-        prototype: HTMLDyteButtonElement;
-        new (): HTMLDyteButtonElement;
+    var HTMLRtkButtonElement: {
+        prototype: HTMLRtkButtonElement;
+        new (): HTMLRtkButtonElement;
     };
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -4457,110 +4457,110 @@ declare global {
      * }
      * ```
      */
-    interface HTMLDyteCameraSelectorElement extends Components.DyteCameraSelector, HTMLStencilElement {
+    interface HTMLRtkCameraSelectorElement extends Components.RtkCameraSelector, HTMLStencilElement {
     }
-    var HTMLDyteCameraSelectorElement: {
-        prototype: HTMLDyteCameraSelectorElement;
-        new (): HTMLDyteCameraSelectorElement;
+    var HTMLRtkCameraSelectorElement: {
+        prototype: HTMLRtkCameraSelectorElement;
+        new (): HTMLRtkCameraSelectorElement;
     };
-    interface HTMLDyteCameraToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkCameraToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles your camera.
      */
-    interface HTMLDyteCameraToggleElement extends Components.DyteCameraToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteCameraToggleElementEventMap>(type: K, listener: (this: HTMLDyteCameraToggleElement, ev: DyteCameraToggleCustomEvent<HTMLDyteCameraToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkCameraToggleElement extends Components.RtkCameraToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkCameraToggleElementEventMap>(type: K, listener: (this: HTMLRtkCameraToggleElement, ev: RtkCameraToggleCustomEvent<HTMLRtkCameraToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteCameraToggleElementEventMap>(type: K, listener: (this: HTMLDyteCameraToggleElement, ev: DyteCameraToggleCustomEvent<HTMLDyteCameraToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkCameraToggleElementEventMap>(type: K, listener: (this: HTMLRtkCameraToggleElement, ev: RtkCameraToggleCustomEvent<HTMLRtkCameraToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteCameraToggleElement: {
-        prototype: HTMLDyteCameraToggleElement;
-        new (): HTMLDyteCameraToggleElement;
+    var HTMLRtkCameraToggleElement: {
+        prototype: HTMLRtkCameraToggleElement;
+        new (): HTMLRtkCameraToggleElement;
     };
-    interface HTMLDyteCaptionToggleElementEventMap {
-        "dyteStateUpdate": States1;
+    interface HTMLRtkCaptionToggleElementEventMap {
+        "rtkStateUpdate": States1;
     }
-    interface HTMLDyteCaptionToggleElement extends Components.DyteCaptionToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteCaptionToggleElementEventMap>(type: K, listener: (this: HTMLDyteCaptionToggleElement, ev: DyteCaptionToggleCustomEvent<HTMLDyteCaptionToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkCaptionToggleElement extends Components.RtkCaptionToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkCaptionToggleElementEventMap>(type: K, listener: (this: HTMLRtkCaptionToggleElement, ev: RtkCaptionToggleCustomEvent<HTMLRtkCaptionToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteCaptionToggleElementEventMap>(type: K, listener: (this: HTMLDyteCaptionToggleElement, ev: DyteCaptionToggleCustomEvent<HTMLDyteCaptionToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkCaptionToggleElementEventMap>(type: K, listener: (this: HTMLRtkCaptionToggleElement, ev: RtkCaptionToggleCustomEvent<HTMLRtkCaptionToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteCaptionToggleElement: {
-        prototype: HTMLDyteCaptionToggleElement;
-        new (): HTMLDyteCaptionToggleElement;
+    var HTMLRtkCaptionToggleElement: {
+        prototype: HTMLRtkCaptionToggleElement;
+        new (): HTMLRtkCaptionToggleElement;
     };
-    interface HTMLDyteChannelCreatorElementEventMap {
-        "dyteStateUpdate": States1;
+    interface HTMLRtkChannelCreatorElementEventMap {
+        "rtkStateUpdate": States1;
         "switchChannel": string;
     }
-    interface HTMLDyteChannelCreatorElement extends Components.DyteChannelCreator, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChannelCreatorElementEventMap>(type: K, listener: (this: HTMLDyteChannelCreatorElement, ev: DyteChannelCreatorCustomEvent<HTMLDyteChannelCreatorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChannelCreatorElement extends Components.RtkChannelCreator, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChannelCreatorElementEventMap>(type: K, listener: (this: HTMLRtkChannelCreatorElement, ev: RtkChannelCreatorCustomEvent<HTMLRtkChannelCreatorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChannelCreatorElementEventMap>(type: K, listener: (this: HTMLDyteChannelCreatorElement, ev: DyteChannelCreatorCustomEvent<HTMLDyteChannelCreatorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChannelCreatorElementEventMap>(type: K, listener: (this: HTMLRtkChannelCreatorElement, ev: RtkChannelCreatorCustomEvent<HTMLRtkChannelCreatorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChannelCreatorElement: {
-        prototype: HTMLDyteChannelCreatorElement;
-        new (): HTMLDyteChannelCreatorElement;
+    var HTMLRtkChannelCreatorElement: {
+        prototype: HTMLRtkChannelCreatorElement;
+        new (): HTMLRtkChannelCreatorElement;
     };
-    interface HTMLDyteChannelDetailsElement extends Components.DyteChannelDetails, HTMLStencilElement {
+    interface HTMLRtkChannelDetailsElement extends Components.RtkChannelDetails, HTMLStencilElement {
     }
-    var HTMLDyteChannelDetailsElement: {
-        prototype: HTMLDyteChannelDetailsElement;
-        new (): HTMLDyteChannelDetailsElement;
+    var HTMLRtkChannelDetailsElement: {
+        prototype: HTMLRtkChannelDetailsElement;
+        new (): HTMLRtkChannelDetailsElement;
     };
-    interface HTMLDyteChannelHeaderElementEventMap {
+    interface HTMLRtkChannelHeaderElementEventMap {
         "search": string;
         "searchDismissed": any;
         "back": void;
     }
-    interface HTMLDyteChannelHeaderElement extends Components.DyteChannelHeader, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChannelHeaderElementEventMap>(type: K, listener: (this: HTMLDyteChannelHeaderElement, ev: DyteChannelHeaderCustomEvent<HTMLDyteChannelHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChannelHeaderElement extends Components.RtkChannelHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChannelHeaderElementEventMap>(type: K, listener: (this: HTMLRtkChannelHeaderElement, ev: RtkChannelHeaderCustomEvent<HTMLRtkChannelHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChannelHeaderElementEventMap>(type: K, listener: (this: HTMLDyteChannelHeaderElement, ev: DyteChannelHeaderCustomEvent<HTMLDyteChannelHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChannelHeaderElementEventMap>(type: K, listener: (this: HTMLRtkChannelHeaderElement, ev: RtkChannelHeaderCustomEvent<HTMLRtkChannelHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChannelHeaderElement: {
-        prototype: HTMLDyteChannelHeaderElement;
-        new (): HTMLDyteChannelHeaderElement;
+    var HTMLRtkChannelHeaderElement: {
+        prototype: HTMLRtkChannelHeaderElement;
+        new (): HTMLRtkChannelHeaderElement;
     };
-    interface HTMLDyteChannelSelectorUiElementEventMap {
+    interface HTMLRtkChannelSelectorUiElementEventMap {
         "channelChanged": string;
     }
-    interface HTMLDyteChannelSelectorUiElement extends Components.DyteChannelSelectorUi, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChannelSelectorUiElementEventMap>(type: K, listener: (this: HTMLDyteChannelSelectorUiElement, ev: DyteChannelSelectorUiCustomEvent<HTMLDyteChannelSelectorUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChannelSelectorUiElement extends Components.RtkChannelSelectorUi, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChannelSelectorUiElementEventMap>(type: K, listener: (this: HTMLRtkChannelSelectorUiElement, ev: RtkChannelSelectorUiCustomEvent<HTMLRtkChannelSelectorUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChannelSelectorUiElementEventMap>(type: K, listener: (this: HTMLDyteChannelSelectorUiElement, ev: DyteChannelSelectorUiCustomEvent<HTMLDyteChannelSelectorUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChannelSelectorUiElementEventMap>(type: K, listener: (this: HTMLRtkChannelSelectorUiElement, ev: RtkChannelSelectorUiCustomEvent<HTMLRtkChannelSelectorUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChannelSelectorUiElement: {
-        prototype: HTMLDyteChannelSelectorUiElement;
-        new (): HTMLDyteChannelSelectorUiElement;
+    var HTMLRtkChannelSelectorUiElement: {
+        prototype: HTMLRtkChannelSelectorUiElement;
+        new (): HTMLRtkChannelSelectorUiElement;
     };
-    interface HTMLDyteChannelSelectorViewElementEventMap {
+    interface HTMLRtkChannelSelectorViewElementEventMap {
         "channelChange": {
     id: string;
     name: string;
@@ -4571,64 +4571,64 @@ declare global {
     unreadCount?: number;
   };
     }
-    interface HTMLDyteChannelSelectorViewElement extends Components.DyteChannelSelectorView, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChannelSelectorViewElementEventMap>(type: K, listener: (this: HTMLDyteChannelSelectorViewElement, ev: DyteChannelSelectorViewCustomEvent<HTMLDyteChannelSelectorViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChannelSelectorViewElement extends Components.RtkChannelSelectorView, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChannelSelectorViewElementEventMap>(type: K, listener: (this: HTMLRtkChannelSelectorViewElement, ev: RtkChannelSelectorViewCustomEvent<HTMLRtkChannelSelectorViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChannelSelectorViewElementEventMap>(type: K, listener: (this: HTMLDyteChannelSelectorViewElement, ev: DyteChannelSelectorViewCustomEvent<HTMLDyteChannelSelectorViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChannelSelectorViewElementEventMap>(type: K, listener: (this: HTMLRtkChannelSelectorViewElement, ev: RtkChannelSelectorViewCustomEvent<HTMLRtkChannelSelectorViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChannelSelectorViewElement: {
-        prototype: HTMLDyteChannelSelectorViewElement;
-        new (): HTMLDyteChannelSelectorViewElement;
+    var HTMLRtkChannelSelectorViewElement: {
+        prototype: HTMLRtkChannelSelectorViewElement;
+        new (): HTMLRtkChannelSelectorViewElement;
     };
-    interface HTMLDyteChatElementEventMap {
-        "dyteStateUpdate": States1;
+    interface HTMLRtkChatElementEventMap {
+        "rtkStateUpdate": States1;
     }
     /**
      * Fully featured chat component with image & file upload, emoji picker and auto-scroll.
      */
-    interface HTMLDyteChatElement extends Components.DyteChat, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChatElementEventMap>(type: K, listener: (this: HTMLDyteChatElement, ev: DyteChatCustomEvent<HTMLDyteChatElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChatElement extends Components.RtkChat, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChatElementEventMap>(type: K, listener: (this: HTMLRtkChatElement, ev: RtkChatCustomEvent<HTMLRtkChatElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChatElementEventMap>(type: K, listener: (this: HTMLDyteChatElement, ev: DyteChatCustomEvent<HTMLDyteChatElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChatElementEventMap>(type: K, listener: (this: HTMLRtkChatElement, ev: RtkChatCustomEvent<HTMLRtkChatElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChatElement: {
-        prototype: HTMLDyteChatElement;
-        new (): HTMLDyteChatElement;
+    var HTMLRtkChatElement: {
+        prototype: HTMLRtkChatElement;
+        new (): HTMLRtkChatElement;
     };
-    interface HTMLDyteChatComposerUiElementEventMap {
-        "dyteNewMessage": DyteNewMessageEvent;
-        "dyteEditMessage": {
+    interface HTMLRtkChatComposerUiElementEventMap {
+        "rtkNewMessage": RtkNewMessageEvent;
+        "rtkEditMessage": {
     id: string;
     message: string;
     channelId?: string;
   };
-        "dyteEditCancelled": any;
+        "rtkEditCancelled": any;
     }
-    interface HTMLDyteChatComposerUiElement extends Components.DyteChatComposerUi, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChatComposerUiElementEventMap>(type: K, listener: (this: HTMLDyteChatComposerUiElement, ev: DyteChatComposerUiCustomEvent<HTMLDyteChatComposerUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChatComposerUiElement extends Components.RtkChatComposerUi, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChatComposerUiElementEventMap>(type: K, listener: (this: HTMLRtkChatComposerUiElement, ev: RtkChatComposerUiCustomEvent<HTMLRtkChatComposerUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChatComposerUiElementEventMap>(type: K, listener: (this: HTMLDyteChatComposerUiElement, ev: DyteChatComposerUiCustomEvent<HTMLDyteChatComposerUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChatComposerUiElementEventMap>(type: K, listener: (this: HTMLRtkChatComposerUiElement, ev: RtkChatComposerUiCustomEvent<HTMLRtkChatComposerUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChatComposerUiElement: {
-        prototype: HTMLDyteChatComposerUiElement;
-        new (): HTMLDyteChatComposerUiElement;
+    var HTMLRtkChatComposerUiElement: {
+        prototype: HTMLRtkChatComposerUiElement;
+        new (): HTMLRtkChatComposerUiElement;
     };
-    interface HTMLDyteChatComposerViewElementEventMap {
+    interface HTMLRtkChatComposerViewElementEventMap {
         "newMessage": NewMessageEvent;
         "editMessage": string;
         "editCancel": void;
@@ -4637,680 +4637,680 @@ declare global {
     /**
      * A component which renders a chat composer
      */
-    interface HTMLDyteChatComposerViewElement extends Components.DyteChatComposerView, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChatComposerViewElementEventMap>(type: K, listener: (this: HTMLDyteChatComposerViewElement, ev: DyteChatComposerViewCustomEvent<HTMLDyteChatComposerViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChatComposerViewElement extends Components.RtkChatComposerView, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChatComposerViewElementEventMap>(type: K, listener: (this: HTMLRtkChatComposerViewElement, ev: RtkChatComposerViewCustomEvent<HTMLRtkChatComposerViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChatComposerViewElementEventMap>(type: K, listener: (this: HTMLDyteChatComposerViewElement, ev: DyteChatComposerViewCustomEvent<HTMLDyteChatComposerViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChatComposerViewElementEventMap>(type: K, listener: (this: HTMLRtkChatComposerViewElement, ev: RtkChatComposerViewCustomEvent<HTMLRtkChatComposerViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChatComposerViewElement: {
-        prototype: HTMLDyteChatComposerViewElement;
-        new (): HTMLDyteChatComposerViewElement;
+    var HTMLRtkChatComposerViewElement: {
+        prototype: HTMLRtkChatComposerViewElement;
+        new (): HTMLRtkChatComposerViewElement;
     };
-    interface HTMLDyteChatMessageElementEventMap {
+    interface HTMLRtkChatMessageElementEventMap {
         "edit": Message;
         "reply": Message;
         "pin": Message;
         "delete": Message;
     }
-    interface HTMLDyteChatMessageElement extends Components.DyteChatMessage, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChatMessageElementEventMap>(type: K, listener: (this: HTMLDyteChatMessageElement, ev: DyteChatMessageCustomEvent<HTMLDyteChatMessageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChatMessageElement extends Components.RtkChatMessage, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChatMessageElementEventMap>(type: K, listener: (this: HTMLRtkChatMessageElement, ev: RtkChatMessageCustomEvent<HTMLRtkChatMessageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChatMessageElementEventMap>(type: K, listener: (this: HTMLDyteChatMessageElement, ev: DyteChatMessageCustomEvent<HTMLDyteChatMessageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChatMessageElementEventMap>(type: K, listener: (this: HTMLRtkChatMessageElement, ev: RtkChatMessageCustomEvent<HTMLRtkChatMessageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChatMessageElement: {
-        prototype: HTMLDyteChatMessageElement;
-        new (): HTMLDyteChatMessageElement;
+    var HTMLRtkChatMessageElement: {
+        prototype: HTMLRtkChatMessageElement;
+        new (): HTMLRtkChatMessageElement;
     };
-    interface HTMLDyteChatMessagesUiElementEventMap {
+    interface HTMLRtkChatMessagesUiElementEventMap {
         "pinMessage": Message;
-        "dyteStateUpdate": States;
+        "rtkStateUpdate": States;
     }
-    interface HTMLDyteChatMessagesUiElement extends Components.DyteChatMessagesUi, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChatMessagesUiElementEventMap>(type: K, listener: (this: HTMLDyteChatMessagesUiElement, ev: DyteChatMessagesUiCustomEvent<HTMLDyteChatMessagesUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChatMessagesUiElement extends Components.RtkChatMessagesUi, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChatMessagesUiElementEventMap>(type: K, listener: (this: HTMLRtkChatMessagesUiElement, ev: RtkChatMessagesUiCustomEvent<HTMLRtkChatMessagesUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChatMessagesUiElementEventMap>(type: K, listener: (this: HTMLDyteChatMessagesUiElement, ev: DyteChatMessagesUiCustomEvent<HTMLDyteChatMessagesUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChatMessagesUiElementEventMap>(type: K, listener: (this: HTMLRtkChatMessagesUiElement, ev: RtkChatMessagesUiCustomEvent<HTMLRtkChatMessagesUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChatMessagesUiElement: {
-        prototype: HTMLDyteChatMessagesUiElement;
-        new (): HTMLDyteChatMessagesUiElement;
+    var HTMLRtkChatMessagesUiElement: {
+        prototype: HTMLRtkChatMessagesUiElement;
+        new (): HTMLRtkChatMessagesUiElement;
     };
-    interface HTMLDyteChatMessagesUiPaginatedElementEventMap {
+    interface HTMLRtkChatMessagesUiPaginatedElementEventMap {
         "editMessageInit": {
     payload: TextMessage;
     flags: { isReply?: boolean; isEdit?: boolean };
   };
         "pinMessage": Message;
         "deleteMessage": Message;
-        "dyteStateUpdate": States;
+        "rtkStateUpdate": States;
     }
-    interface HTMLDyteChatMessagesUiPaginatedElement extends Components.DyteChatMessagesUiPaginated, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChatMessagesUiPaginatedElementEventMap>(type: K, listener: (this: HTMLDyteChatMessagesUiPaginatedElement, ev: DyteChatMessagesUiPaginatedCustomEvent<HTMLDyteChatMessagesUiPaginatedElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChatMessagesUiPaginatedElement extends Components.RtkChatMessagesUiPaginated, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChatMessagesUiPaginatedElementEventMap>(type: K, listener: (this: HTMLRtkChatMessagesUiPaginatedElement, ev: RtkChatMessagesUiPaginatedCustomEvent<HTMLRtkChatMessagesUiPaginatedElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChatMessagesUiPaginatedElementEventMap>(type: K, listener: (this: HTMLDyteChatMessagesUiPaginatedElement, ev: DyteChatMessagesUiPaginatedCustomEvent<HTMLDyteChatMessagesUiPaginatedElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChatMessagesUiPaginatedElementEventMap>(type: K, listener: (this: HTMLRtkChatMessagesUiPaginatedElement, ev: RtkChatMessagesUiPaginatedCustomEvent<HTMLRtkChatMessagesUiPaginatedElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChatMessagesUiPaginatedElement: {
-        prototype: HTMLDyteChatMessagesUiPaginatedElement;
-        new (): HTMLDyteChatMessagesUiPaginatedElement;
+    var HTMLRtkChatMessagesUiPaginatedElement: {
+        prototype: HTMLRtkChatMessagesUiPaginatedElement;
+        new (): HTMLRtkChatMessagesUiPaginatedElement;
     };
-    interface HTMLDyteChatSearchResultsElement extends Components.DyteChatSearchResults, HTMLStencilElement {
+    interface HTMLRtkChatSearchResultsElement extends Components.RtkChatSearchResults, HTMLStencilElement {
     }
-    var HTMLDyteChatSearchResultsElement: {
-        prototype: HTMLDyteChatSearchResultsElement;
-        new (): HTMLDyteChatSearchResultsElement;
+    var HTMLRtkChatSearchResultsElement: {
+        prototype: HTMLRtkChatSearchResultsElement;
+        new (): HTMLRtkChatSearchResultsElement;
     };
-    interface HTMLDyteChatSelectorUiElementEventMap {
-        "dyteChatGroupChanged": ChatGroupChangedType;
+    interface HTMLRtkChatSelectorUiElementEventMap {
+        "rtkChatGroupChanged": ChatGroupChangedType;
     }
-    interface HTMLDyteChatSelectorUiElement extends Components.DyteChatSelectorUi, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChatSelectorUiElementEventMap>(type: K, listener: (this: HTMLDyteChatSelectorUiElement, ev: DyteChatSelectorUiCustomEvent<HTMLDyteChatSelectorUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChatSelectorUiElement extends Components.RtkChatSelectorUi, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChatSelectorUiElementEventMap>(type: K, listener: (this: HTMLRtkChatSelectorUiElement, ev: RtkChatSelectorUiCustomEvent<HTMLRtkChatSelectorUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChatSelectorUiElementEventMap>(type: K, listener: (this: HTMLDyteChatSelectorUiElement, ev: DyteChatSelectorUiCustomEvent<HTMLDyteChatSelectorUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChatSelectorUiElementEventMap>(type: K, listener: (this: HTMLRtkChatSelectorUiElement, ev: RtkChatSelectorUiCustomEvent<HTMLRtkChatSelectorUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChatSelectorUiElement: {
-        prototype: HTMLDyteChatSelectorUiElement;
-        new (): HTMLDyteChatSelectorUiElement;
+    var HTMLRtkChatSelectorUiElement: {
+        prototype: HTMLRtkChatSelectorUiElement;
+        new (): HTMLRtkChatSelectorUiElement;
     };
-    interface HTMLDyteChatToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkChatToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles visibility of chat.
      * You need to pass the `meeting` object to it to see the unread messages count badge.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'chat' }
      * ```
      */
-    interface HTMLDyteChatToggleElement extends Components.DyteChatToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteChatToggleElementEventMap>(type: K, listener: (this: HTMLDyteChatToggleElement, ev: DyteChatToggleCustomEvent<HTMLDyteChatToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkChatToggleElement extends Components.RtkChatToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkChatToggleElementEventMap>(type: K, listener: (this: HTMLRtkChatToggleElement, ev: RtkChatToggleCustomEvent<HTMLRtkChatToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteChatToggleElementEventMap>(type: K, listener: (this: HTMLDyteChatToggleElement, ev: DyteChatToggleCustomEvent<HTMLDyteChatToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkChatToggleElementEventMap>(type: K, listener: (this: HTMLRtkChatToggleElement, ev: RtkChatToggleCustomEvent<HTMLRtkChatToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteChatToggleElement: {
-        prototype: HTMLDyteChatToggleElement;
-        new (): HTMLDyteChatToggleElement;
+    var HTMLRtkChatToggleElement: {
+        prototype: HTMLRtkChatToggleElement;
+        new (): HTMLRtkChatToggleElement;
     };
     /**
      * Shows the time elapsed in a meeting.
      */
-    interface HTMLDyteClockElement extends Components.DyteClock, HTMLStencilElement {
+    interface HTMLRtkClockElement extends Components.RtkClock, HTMLStencilElement {
     }
-    var HTMLDyteClockElement: {
-        prototype: HTMLDyteClockElement;
-        new (): HTMLDyteClockElement;
+    var HTMLRtkClockElement: {
+        prototype: HTMLRtkClockElement;
+        new (): HTMLRtkClockElement;
     };
-    interface HTMLDyteConfirmationModalElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkConfirmationModalElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A confirmation modal.
      */
-    interface HTMLDyteConfirmationModalElement extends Components.DyteConfirmationModal, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteConfirmationModalElementEventMap>(type: K, listener: (this: HTMLDyteConfirmationModalElement, ev: DyteConfirmationModalCustomEvent<HTMLDyteConfirmationModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkConfirmationModalElement extends Components.RtkConfirmationModal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkConfirmationModalElementEventMap>(type: K, listener: (this: HTMLRtkConfirmationModalElement, ev: RtkConfirmationModalCustomEvent<HTMLRtkConfirmationModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteConfirmationModalElementEventMap>(type: K, listener: (this: HTMLDyteConfirmationModalElement, ev: DyteConfirmationModalCustomEvent<HTMLDyteConfirmationModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkConfirmationModalElementEventMap>(type: K, listener: (this: HTMLRtkConfirmationModalElement, ev: RtkConfirmationModalCustomEvent<HTMLRtkConfirmationModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteConfirmationModalElement: {
-        prototype: HTMLDyteConfirmationModalElement;
-        new (): HTMLDyteConfirmationModalElement;
+    var HTMLRtkConfirmationModalElement: {
+        prototype: HTMLRtkConfirmationModalElement;
+        new (): HTMLRtkConfirmationModalElement;
     };
     /**
      * Controlbar component provides you with various designs as variants.
      */
-    interface HTMLDyteControlbarElement extends Components.DyteControlbar, HTMLStencilElement {
+    interface HTMLRtkControlbarElement extends Components.RtkControlbar, HTMLStencilElement {
     }
-    var HTMLDyteControlbarElement: {
-        prototype: HTMLDyteControlbarElement;
-        new (): HTMLDyteControlbarElement;
+    var HTMLRtkControlbarElement: {
+        prototype: HTMLRtkControlbarElement;
+        new (): HTMLRtkControlbarElement;
     };
     /**
      * A skeleton component used for composing custom controlbar buttons.
      */
-    interface HTMLDyteControlbarButtonElement extends Components.DyteControlbarButton, HTMLStencilElement {
+    interface HTMLRtkControlbarButtonElement extends Components.RtkControlbarButton, HTMLStencilElement {
     }
-    var HTMLDyteControlbarButtonElement: {
-        prototype: HTMLDyteControlbarButtonElement;
-        new (): HTMLDyteControlbarButtonElement;
+    var HTMLRtkControlbarButtonElement: {
+        prototype: HTMLRtkControlbarButtonElement;
+        new (): HTMLRtkControlbarButtonElement;
     };
-    interface HTMLDyteCounterElementEventMap {
+    interface HTMLRtkCounterElementEventMap {
         "valueChange": string;
     }
     /**
      * A number picker with increment and decrement buttons.
      */
-    interface HTMLDyteCounterElement extends Components.DyteCounter, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteCounterElementEventMap>(type: K, listener: (this: HTMLDyteCounterElement, ev: DyteCounterCustomEvent<HTMLDyteCounterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkCounterElement extends Components.RtkCounter, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkCounterElementEventMap>(type: K, listener: (this: HTMLRtkCounterElement, ev: RtkCounterCustomEvent<HTMLRtkCounterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteCounterElementEventMap>(type: K, listener: (this: HTMLDyteCounterElement, ev: DyteCounterCustomEvent<HTMLDyteCounterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkCounterElementEventMap>(type: K, listener: (this: HTMLRtkCounterElement, ev: RtkCounterCustomEvent<HTMLRtkCounterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteCounterElement: {
-        prototype: HTMLDyteCounterElement;
-        new (): HTMLDyteCounterElement;
+    var HTMLRtkCounterElement: {
+        prototype: HTMLRtkCounterElement;
+        new (): HTMLRtkCounterElement;
     };
-    interface HTMLDyteDebuggerElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkDebuggerElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A troubleshooting component to identify and fix any issues in the meeting.
      */
-    interface HTMLDyteDebuggerElement extends Components.DyteDebugger, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteDebuggerElementEventMap>(type: K, listener: (this: HTMLDyteDebuggerElement, ev: DyteDebuggerCustomEvent<HTMLDyteDebuggerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkDebuggerElement extends Components.RtkDebugger, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkDebuggerElementEventMap>(type: K, listener: (this: HTMLRtkDebuggerElement, ev: RtkDebuggerCustomEvent<HTMLRtkDebuggerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteDebuggerElementEventMap>(type: K, listener: (this: HTMLDyteDebuggerElement, ev: DyteDebuggerCustomEvent<HTMLDyteDebuggerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkDebuggerElementEventMap>(type: K, listener: (this: HTMLRtkDebuggerElement, ev: RtkDebuggerCustomEvent<HTMLRtkDebuggerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteDebuggerElement: {
-        prototype: HTMLDyteDebuggerElement;
-        new (): HTMLDyteDebuggerElement;
+    var HTMLRtkDebuggerElement: {
+        prototype: HTMLRtkDebuggerElement;
+        new (): HTMLRtkDebuggerElement;
     };
-    interface HTMLDyteDebuggerAudioElement extends Components.DyteDebuggerAudio, HTMLStencilElement {
+    interface HTMLRtkDebuggerAudioElement extends Components.RtkDebuggerAudio, HTMLStencilElement {
     }
-    var HTMLDyteDebuggerAudioElement: {
-        prototype: HTMLDyteDebuggerAudioElement;
-        new (): HTMLDyteDebuggerAudioElement;
+    var HTMLRtkDebuggerAudioElement: {
+        prototype: HTMLRtkDebuggerAudioElement;
+        new (): HTMLRtkDebuggerAudioElement;
     };
-    interface HTMLDyteDebuggerScreenshareElement extends Components.DyteDebuggerScreenshare, HTMLStencilElement {
+    interface HTMLRtkDebuggerScreenshareElement extends Components.RtkDebuggerScreenshare, HTMLStencilElement {
     }
-    var HTMLDyteDebuggerScreenshareElement: {
-        prototype: HTMLDyteDebuggerScreenshareElement;
-        new (): HTMLDyteDebuggerScreenshareElement;
+    var HTMLRtkDebuggerScreenshareElement: {
+        prototype: HTMLRtkDebuggerScreenshareElement;
+        new (): HTMLRtkDebuggerScreenshareElement;
     };
-    interface HTMLDyteDebuggerSystemElement extends Components.DyteDebuggerSystem, HTMLStencilElement {
+    interface HTMLRtkDebuggerSystemElement extends Components.RtkDebuggerSystem, HTMLStencilElement {
     }
-    var HTMLDyteDebuggerSystemElement: {
-        prototype: HTMLDyteDebuggerSystemElement;
-        new (): HTMLDyteDebuggerSystemElement;
+    var HTMLRtkDebuggerSystemElement: {
+        prototype: HTMLRtkDebuggerSystemElement;
+        new (): HTMLRtkDebuggerSystemElement;
     };
-    interface HTMLDyteDebuggerToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkDebuggerToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
-    interface HTMLDyteDebuggerToggleElement extends Components.DyteDebuggerToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteDebuggerToggleElementEventMap>(type: K, listener: (this: HTMLDyteDebuggerToggleElement, ev: DyteDebuggerToggleCustomEvent<HTMLDyteDebuggerToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkDebuggerToggleElement extends Components.RtkDebuggerToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkDebuggerToggleElementEventMap>(type: K, listener: (this: HTMLRtkDebuggerToggleElement, ev: RtkDebuggerToggleCustomEvent<HTMLRtkDebuggerToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteDebuggerToggleElementEventMap>(type: K, listener: (this: HTMLDyteDebuggerToggleElement, ev: DyteDebuggerToggleCustomEvent<HTMLDyteDebuggerToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkDebuggerToggleElementEventMap>(type: K, listener: (this: HTMLRtkDebuggerToggleElement, ev: RtkDebuggerToggleCustomEvent<HTMLRtkDebuggerToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteDebuggerToggleElement: {
-        prototype: HTMLDyteDebuggerToggleElement;
-        new (): HTMLDyteDebuggerToggleElement;
+    var HTMLRtkDebuggerToggleElement: {
+        prototype: HTMLRtkDebuggerToggleElement;
+        new (): HTMLRtkDebuggerToggleElement;
     };
-    interface HTMLDyteDebuggerVideoElement extends Components.DyteDebuggerVideo, HTMLStencilElement {
+    interface HTMLRtkDebuggerVideoElement extends Components.RtkDebuggerVideo, HTMLStencilElement {
     }
-    var HTMLDyteDebuggerVideoElement: {
-        prototype: HTMLDyteDebuggerVideoElement;
-        new (): HTMLDyteDebuggerVideoElement;
+    var HTMLRtkDebuggerVideoElement: {
+        prototype: HTMLRtkDebuggerVideoElement;
+        new (): HTMLRtkDebuggerVideoElement;
     };
-    interface HTMLDyteDialogElementEventMap {
-        "dyteDialogClose": any;
+    interface HTMLRtkDialogElementEventMap {
+        "rtkDialogClose": any;
     }
     /**
      * A dialog component.
      */
-    interface HTMLDyteDialogElement extends Components.DyteDialog, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteDialogElementEventMap>(type: K, listener: (this: HTMLDyteDialogElement, ev: DyteDialogCustomEvent<HTMLDyteDialogElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkDialogElement extends Components.RtkDialog, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkDialogElementEventMap>(type: K, listener: (this: HTMLRtkDialogElement, ev: RtkDialogCustomEvent<HTMLRtkDialogElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteDialogElementEventMap>(type: K, listener: (this: HTMLDyteDialogElement, ev: DyteDialogCustomEvent<HTMLDyteDialogElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkDialogElementEventMap>(type: K, listener: (this: HTMLRtkDialogElement, ev: RtkDialogCustomEvent<HTMLRtkDialogElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteDialogElement: {
-        prototype: HTMLDyteDialogElement;
-        new (): HTMLDyteDialogElement;
+    var HTMLRtkDialogElement: {
+        prototype: HTMLRtkDialogElement;
+        new (): HTMLRtkDialogElement;
     };
-    interface HTMLDyteDialogManagerElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkDialogManagerElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component which handles all dialog elements in a component such as:
-     * - dyte-settings
-     * - dyte-leave-meeting
-     * - dyte-permissions-message
-     * - dyte-image-viewer
-     * - dyte-breakout-rooms-manager
+     * - rtk-settings
+     * - rtk-leave-meeting
+     * - rtk-permissions-message
+     * - rtk-image-viewer
+     * - rtk-breakout-rooms-manager
      * This components depends on the values from `states` object.
      */
-    interface HTMLDyteDialogManagerElement extends Components.DyteDialogManager, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteDialogManagerElementEventMap>(type: K, listener: (this: HTMLDyteDialogManagerElement, ev: DyteDialogManagerCustomEvent<HTMLDyteDialogManagerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkDialogManagerElement extends Components.RtkDialogManager, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkDialogManagerElementEventMap>(type: K, listener: (this: HTMLRtkDialogManagerElement, ev: RtkDialogManagerCustomEvent<HTMLRtkDialogManagerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteDialogManagerElementEventMap>(type: K, listener: (this: HTMLDyteDialogManagerElement, ev: DyteDialogManagerCustomEvent<HTMLDyteDialogManagerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkDialogManagerElementEventMap>(type: K, listener: (this: HTMLRtkDialogManagerElement, ev: RtkDialogManagerCustomEvent<HTMLRtkDialogManagerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteDialogManagerElement: {
-        prototype: HTMLDyteDialogManagerElement;
-        new (): HTMLDyteDialogManagerElement;
+    var HTMLRtkDialogManagerElement: {
+        prototype: HTMLRtkDialogManagerElement;
+        new (): HTMLRtkDialogManagerElement;
     };
-    interface HTMLDyteDraftAttachmentViewElementEventMap {
+    interface HTMLRtkDraftAttachmentViewElementEventMap {
         "deleteAttachment": any;
     }
     /**
      * A component which renders the draft attachment to send
      */
-    interface HTMLDyteDraftAttachmentViewElement extends Components.DyteDraftAttachmentView, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteDraftAttachmentViewElementEventMap>(type: K, listener: (this: HTMLDyteDraftAttachmentViewElement, ev: DyteDraftAttachmentViewCustomEvent<HTMLDyteDraftAttachmentViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkDraftAttachmentViewElement extends Components.RtkDraftAttachmentView, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkDraftAttachmentViewElementEventMap>(type: K, listener: (this: HTMLRtkDraftAttachmentViewElement, ev: RtkDraftAttachmentViewCustomEvent<HTMLRtkDraftAttachmentViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteDraftAttachmentViewElementEventMap>(type: K, listener: (this: HTMLDyteDraftAttachmentViewElement, ev: DyteDraftAttachmentViewCustomEvent<HTMLDyteDraftAttachmentViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkDraftAttachmentViewElementEventMap>(type: K, listener: (this: HTMLRtkDraftAttachmentViewElement, ev: RtkDraftAttachmentViewCustomEvent<HTMLRtkDraftAttachmentViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteDraftAttachmentViewElement: {
-        prototype: HTMLDyteDraftAttachmentViewElement;
-        new (): HTMLDyteDraftAttachmentViewElement;
+    var HTMLRtkDraftAttachmentViewElement: {
+        prototype: HTMLRtkDraftAttachmentViewElement;
+        new (): HTMLRtkDraftAttachmentViewElement;
     };
-    interface HTMLDyteEmojiPickerElementEventMap {
+    interface HTMLRtkEmojiPickerElementEventMap {
         "pickerClose": void;
-        "dyteEmojiClicked": string;
+        "rtkEmojiClicked": string;
     }
     /**
      * A very simple emoji picker component.
      */
-    interface HTMLDyteEmojiPickerElement extends Components.DyteEmojiPicker, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteEmojiPickerElementEventMap>(type: K, listener: (this: HTMLDyteEmojiPickerElement, ev: DyteEmojiPickerCustomEvent<HTMLDyteEmojiPickerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkEmojiPickerElement extends Components.RtkEmojiPicker, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkEmojiPickerElementEventMap>(type: K, listener: (this: HTMLRtkEmojiPickerElement, ev: RtkEmojiPickerCustomEvent<HTMLRtkEmojiPickerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteEmojiPickerElementEventMap>(type: K, listener: (this: HTMLDyteEmojiPickerElement, ev: DyteEmojiPickerCustomEvent<HTMLDyteEmojiPickerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkEmojiPickerElementEventMap>(type: K, listener: (this: HTMLRtkEmojiPickerElement, ev: RtkEmojiPickerCustomEvent<HTMLRtkEmojiPickerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteEmojiPickerElement: {
-        prototype: HTMLDyteEmojiPickerElement;
-        new (): HTMLDyteEmojiPickerElement;
+    var HTMLRtkEmojiPickerElement: {
+        prototype: HTMLRtkEmojiPickerElement;
+        new (): HTMLRtkEmojiPickerElement;
     };
-    interface HTMLDyteEmojiPickerButtonElement extends Components.DyteEmojiPickerButton, HTMLStencilElement {
+    interface HTMLRtkEmojiPickerButtonElement extends Components.RtkEmojiPickerButton, HTMLStencilElement {
     }
-    var HTMLDyteEmojiPickerButtonElement: {
-        prototype: HTMLDyteEmojiPickerButtonElement;
-        new (): HTMLDyteEmojiPickerButtonElement;
+    var HTMLRtkEmojiPickerButtonElement: {
+        prototype: HTMLRtkEmojiPickerButtonElement;
+        new (): HTMLRtkEmojiPickerButtonElement;
     };
     /**
      * A screen which shows a meeting has ended.
      */
-    interface HTMLDyteEndedScreenElement extends Components.DyteEndedScreen, HTMLStencilElement {
+    interface HTMLRtkEndedScreenElement extends Components.RtkEndedScreen, HTMLStencilElement {
     }
-    var HTMLDyteEndedScreenElement: {
-        prototype: HTMLDyteEndedScreenElement;
-        new (): HTMLDyteEndedScreenElement;
+    var HTMLRtkEndedScreenElement: {
+        prototype: HTMLRtkEndedScreenElement;
+        new (): HTMLRtkEndedScreenElement;
     };
-    interface HTMLDyteFileDropzoneElementEventMap {
+    interface HTMLRtkFileDropzoneElementEventMap {
         "dropCallback": DragEvent;
     }
-    interface HTMLDyteFileDropzoneElement extends Components.DyteFileDropzone, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteFileDropzoneElementEventMap>(type: K, listener: (this: HTMLDyteFileDropzoneElement, ev: DyteFileDropzoneCustomEvent<HTMLDyteFileDropzoneElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkFileDropzoneElement extends Components.RtkFileDropzone, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkFileDropzoneElementEventMap>(type: K, listener: (this: HTMLRtkFileDropzoneElement, ev: RtkFileDropzoneCustomEvent<HTMLRtkFileDropzoneElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteFileDropzoneElementEventMap>(type: K, listener: (this: HTMLDyteFileDropzoneElement, ev: DyteFileDropzoneCustomEvent<HTMLDyteFileDropzoneElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkFileDropzoneElementEventMap>(type: K, listener: (this: HTMLRtkFileDropzoneElement, ev: RtkFileDropzoneCustomEvent<HTMLRtkFileDropzoneElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteFileDropzoneElement: {
-        prototype: HTMLDyteFileDropzoneElement;
-        new (): HTMLDyteFileDropzoneElement;
+    var HTMLRtkFileDropzoneElement: {
+        prototype: HTMLRtkFileDropzoneElement;
+        new (): HTMLRtkFileDropzoneElement;
     };
     /**
      * A component which renders a file message from chat.
      */
-    interface HTMLDyteFileMessageElement extends Components.DyteFileMessage, HTMLStencilElement {
+    interface HTMLRtkFileMessageElement extends Components.RtkFileMessage, HTMLStencilElement {
     }
-    var HTMLDyteFileMessageElement: {
-        prototype: HTMLDyteFileMessageElement;
-        new (): HTMLDyteFileMessageElement;
+    var HTMLRtkFileMessageElement: {
+        prototype: HTMLRtkFileMessageElement;
+        new (): HTMLRtkFileMessageElement;
     };
     /**
      * A component which renders a file message.
      */
-    interface HTMLDyteFileMessageViewElement extends Components.DyteFileMessageView, HTMLStencilElement {
+    interface HTMLRtkFileMessageViewElement extends Components.RtkFileMessageView, HTMLStencilElement {
     }
-    var HTMLDyteFileMessageViewElement: {
-        prototype: HTMLDyteFileMessageViewElement;
-        new (): HTMLDyteFileMessageViewElement;
+    var HTMLRtkFileMessageViewElement: {
+        prototype: HTMLRtkFileMessageViewElement;
+        new (): HTMLRtkFileMessageViewElement;
     };
-    interface HTMLDyteFilePickerButtonElementEventMap {
+    interface HTMLRtkFilePickerButtonElementEventMap {
         "fileChange": File;
     }
-    interface HTMLDyteFilePickerButtonElement extends Components.DyteFilePickerButton, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteFilePickerButtonElementEventMap>(type: K, listener: (this: HTMLDyteFilePickerButtonElement, ev: DyteFilePickerButtonCustomEvent<HTMLDyteFilePickerButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkFilePickerButtonElement extends Components.RtkFilePickerButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkFilePickerButtonElementEventMap>(type: K, listener: (this: HTMLRtkFilePickerButtonElement, ev: RtkFilePickerButtonCustomEvent<HTMLRtkFilePickerButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteFilePickerButtonElementEventMap>(type: K, listener: (this: HTMLDyteFilePickerButtonElement, ev: DyteFilePickerButtonCustomEvent<HTMLDyteFilePickerButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkFilePickerButtonElementEventMap>(type: K, listener: (this: HTMLRtkFilePickerButtonElement, ev: RtkFilePickerButtonCustomEvent<HTMLRtkFilePickerButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteFilePickerButtonElement: {
-        prototype: HTMLDyteFilePickerButtonElement;
-        new (): HTMLDyteFilePickerButtonElement;
+    var HTMLRtkFilePickerButtonElement: {
+        prototype: HTMLRtkFilePickerButtonElement;
+        new (): HTMLRtkFilePickerButtonElement;
     };
-    interface HTMLDyteFullscreenToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkFullscreenToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles full screen mode for any
-     * existing `dyte-meeting` component in the DOM.
+     * existing `rtk-meeting` component in the DOM.
      */
-    interface HTMLDyteFullscreenToggleElement extends Components.DyteFullscreenToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteFullscreenToggleElementEventMap>(type: K, listener: (this: HTMLDyteFullscreenToggleElement, ev: DyteFullscreenToggleCustomEvent<HTMLDyteFullscreenToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkFullscreenToggleElement extends Components.RtkFullscreenToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkFullscreenToggleElementEventMap>(type: K, listener: (this: HTMLRtkFullscreenToggleElement, ev: RtkFullscreenToggleCustomEvent<HTMLRtkFullscreenToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteFullscreenToggleElementEventMap>(type: K, listener: (this: HTMLDyteFullscreenToggleElement, ev: DyteFullscreenToggleCustomEvent<HTMLDyteFullscreenToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkFullscreenToggleElementEventMap>(type: K, listener: (this: HTMLRtkFullscreenToggleElement, ev: RtkFullscreenToggleCustomEvent<HTMLRtkFullscreenToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteFullscreenToggleElement: {
-        prototype: HTMLDyteFullscreenToggleElement;
-        new (): HTMLDyteFullscreenToggleElement;
+    var HTMLRtkFullscreenToggleElement: {
+        prototype: HTMLRtkFullscreenToggleElement;
+        new (): HTMLRtkFullscreenToggleElement;
     };
-    interface HTMLDyteGridElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkGridElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * The main grid component which abstracts all the grid handling logic and renders it for you.
      */
-    interface HTMLDyteGridElement extends Components.DyteGrid, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteGridElementEventMap>(type: K, listener: (this: HTMLDyteGridElement, ev: DyteGridCustomEvent<HTMLDyteGridElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkGridElement extends Components.RtkGrid, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkGridElementEventMap>(type: K, listener: (this: HTMLRtkGridElement, ev: RtkGridCustomEvent<HTMLRtkGridElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteGridElementEventMap>(type: K, listener: (this: HTMLDyteGridElement, ev: DyteGridCustomEvent<HTMLDyteGridElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkGridElementEventMap>(type: K, listener: (this: HTMLRtkGridElement, ev: RtkGridCustomEvent<HTMLRtkGridElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteGridElement: {
-        prototype: HTMLDyteGridElement;
-        new (): HTMLDyteGridElement;
+    var HTMLRtkGridElement: {
+        prototype: HTMLRtkGridElement;
+        new (): HTMLRtkGridElement;
     };
     /**
      * A component which allows you to change current page and view mode
-     * of active participants list. This is reflected in the `dyte-grid` component.
+     * of active participants list. This is reflected in the `rtk-grid` component.
      */
-    interface HTMLDyteGridPaginationElement extends Components.DyteGridPagination, HTMLStencilElement {
+    interface HTMLRtkGridPaginationElement extends Components.RtkGridPagination, HTMLStencilElement {
     }
-    var HTMLDyteGridPaginationElement: {
-        prototype: HTMLDyteGridPaginationElement;
-        new (): HTMLDyteGridPaginationElement;
+    var HTMLRtkGridPaginationElement: {
+        prototype: HTMLRtkGridPaginationElement;
+        new (): HTMLRtkGridPaginationElement;
     };
     /**
      * A component that houses all the header components.
      */
-    interface HTMLDyteHeaderElement extends Components.DyteHeader, HTMLStencilElement {
+    interface HTMLRtkHeaderElement extends Components.RtkHeader, HTMLStencilElement {
     }
-    var HTMLDyteHeaderElement: {
-        prototype: HTMLDyteHeaderElement;
-        new (): HTMLDyteHeaderElement;
+    var HTMLRtkHeaderElement: {
+        prototype: HTMLRtkHeaderElement;
+        new (): HTMLRtkHeaderElement;
     };
     /**
      * An icon component which accepts an svg string and renders it.
      */
-    interface HTMLDyteIconElement extends Components.DyteIcon, HTMLStencilElement {
+    interface HTMLRtkIconElement extends Components.RtkIcon, HTMLStencilElement {
     }
-    var HTMLDyteIconElement: {
-        prototype: HTMLDyteIconElement;
-        new (): HTMLDyteIconElement;
+    var HTMLRtkIconElement: {
+        prototype: HTMLRtkIconElement;
+        new (): HTMLRtkIconElement;
     };
     /**
      * A screen that handles the idle state,
      * i.e; when you are waiting for data about the meeting, specifically the `meeting` object.
      */
-    interface HTMLDyteIdleScreenElement extends Components.DyteIdleScreen, HTMLStencilElement {
+    interface HTMLRtkIdleScreenElement extends Components.RtkIdleScreen, HTMLStencilElement {
     }
-    var HTMLDyteIdleScreenElement: {
-        prototype: HTMLDyteIdleScreenElement;
-        new (): HTMLDyteIdleScreenElement;
+    var HTMLRtkIdleScreenElement: {
+        prototype: HTMLRtkIdleScreenElement;
+        new (): HTMLRtkIdleScreenElement;
     };
-    interface HTMLDyteImageMessageElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkImageMessageElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component which renders an image message from chat.
      */
-    interface HTMLDyteImageMessageElement extends Components.DyteImageMessage, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteImageMessageElementEventMap>(type: K, listener: (this: HTMLDyteImageMessageElement, ev: DyteImageMessageCustomEvent<HTMLDyteImageMessageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkImageMessageElement extends Components.RtkImageMessage, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkImageMessageElementEventMap>(type: K, listener: (this: HTMLRtkImageMessageElement, ev: RtkImageMessageCustomEvent<HTMLRtkImageMessageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteImageMessageElementEventMap>(type: K, listener: (this: HTMLDyteImageMessageElement, ev: DyteImageMessageCustomEvent<HTMLDyteImageMessageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkImageMessageElementEventMap>(type: K, listener: (this: HTMLRtkImageMessageElement, ev: RtkImageMessageCustomEvent<HTMLRtkImageMessageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteImageMessageElement: {
-        prototype: HTMLDyteImageMessageElement;
-        new (): HTMLDyteImageMessageElement;
+    var HTMLRtkImageMessageElement: {
+        prototype: HTMLRtkImageMessageElement;
+        new (): HTMLRtkImageMessageElement;
     };
-    interface HTMLDyteImageMessageViewElementEventMap {
+    interface HTMLRtkImageMessageViewElementEventMap {
         "preview": string;
     }
     /**
      * A component which renders an image message.
      */
-    interface HTMLDyteImageMessageViewElement extends Components.DyteImageMessageView, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteImageMessageViewElementEventMap>(type: K, listener: (this: HTMLDyteImageMessageViewElement, ev: DyteImageMessageViewCustomEvent<HTMLDyteImageMessageViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkImageMessageViewElement extends Components.RtkImageMessageView, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkImageMessageViewElementEventMap>(type: K, listener: (this: HTMLRtkImageMessageViewElement, ev: RtkImageMessageViewCustomEvent<HTMLRtkImageMessageViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteImageMessageViewElementEventMap>(type: K, listener: (this: HTMLDyteImageMessageViewElement, ev: DyteImageMessageViewCustomEvent<HTMLDyteImageMessageViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkImageMessageViewElementEventMap>(type: K, listener: (this: HTMLRtkImageMessageViewElement, ev: RtkImageMessageViewCustomEvent<HTMLRtkImageMessageViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteImageMessageViewElement: {
-        prototype: HTMLDyteImageMessageViewElement;
-        new (): HTMLDyteImageMessageViewElement;
+    var HTMLRtkImageMessageViewElement: {
+        prototype: HTMLRtkImageMessageViewElement;
+        new (): HTMLRtkImageMessageViewElement;
     };
-    interface HTMLDyteImageViewerElementEventMap {
+    interface HTMLRtkImageViewerElementEventMap {
         "close": void;
     }
     /**
      * A component which shows an image sent via chat.
      */
-    interface HTMLDyteImageViewerElement extends Components.DyteImageViewer, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteImageViewerElementEventMap>(type: K, listener: (this: HTMLDyteImageViewerElement, ev: DyteImageViewerCustomEvent<HTMLDyteImageViewerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkImageViewerElement extends Components.RtkImageViewer, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkImageViewerElementEventMap>(type: K, listener: (this: HTMLRtkImageViewerElement, ev: RtkImageViewerCustomEvent<HTMLRtkImageViewerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteImageViewerElementEventMap>(type: K, listener: (this: HTMLDyteImageViewerElement, ev: DyteImageViewerCustomEvent<HTMLDyteImageViewerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkImageViewerElementEventMap>(type: K, listener: (this: HTMLRtkImageViewerElement, ev: RtkImageViewerCustomEvent<HTMLRtkImageViewerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteImageViewerElement: {
-        prototype: HTMLDyteImageViewerElement;
-        new (): HTMLDyteImageViewerElement;
+    var HTMLRtkImageViewerElement: {
+        prototype: HTMLRtkImageViewerElement;
+        new (): HTMLRtkImageViewerElement;
     };
-    interface HTMLDyteInformationTooltipElement extends Components.DyteInformationTooltip, HTMLStencilElement {
+    interface HTMLRtkInformationTooltipElement extends Components.RtkInformationTooltip, HTMLStencilElement {
     }
-    var HTMLDyteInformationTooltipElement: {
-        prototype: HTMLDyteInformationTooltipElement;
-        new (): HTMLDyteInformationTooltipElement;
+    var HTMLRtkInformationTooltipElement: {
+        prototype: HTMLRtkInformationTooltipElement;
+        new (): HTMLRtkInformationTooltipElement;
     };
-    interface HTMLDyteJoinStageElementEventMap {
-        "dyteStateUpdate": States;
-        "dyteJoinStage": void;
-        "dyteLeaveStage": void;
+    interface HTMLRtkJoinStageElementEventMap {
+        "rtkStateUpdate": States;
+        "rtkJoinStage": void;
+        "rtkLeaveStage": void;
     }
-    interface HTMLDyteJoinStageElement extends Components.DyteJoinStage, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteJoinStageElementEventMap>(type: K, listener: (this: HTMLDyteJoinStageElement, ev: DyteJoinStageCustomEvent<HTMLDyteJoinStageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkJoinStageElement extends Components.RtkJoinStage, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkJoinStageElementEventMap>(type: K, listener: (this: HTMLRtkJoinStageElement, ev: RtkJoinStageCustomEvent<HTMLRtkJoinStageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteJoinStageElementEventMap>(type: K, listener: (this: HTMLDyteJoinStageElement, ev: DyteJoinStageCustomEvent<HTMLDyteJoinStageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkJoinStageElementEventMap>(type: K, listener: (this: HTMLRtkJoinStageElement, ev: RtkJoinStageCustomEvent<HTMLRtkJoinStageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteJoinStageElement: {
-        prototype: HTMLDyteJoinStageElement;
-        new (): HTMLDyteJoinStageElement;
+    var HTMLRtkJoinStageElement: {
+        prototype: HTMLRtkJoinStageElement;
+        new (): HTMLRtkJoinStageElement;
     };
-    interface HTMLDyteLeaveButtonElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkLeaveButtonElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles visilibility of the leave confirmation dialog.
      */
-    interface HTMLDyteLeaveButtonElement extends Components.DyteLeaveButton, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteLeaveButtonElementEventMap>(type: K, listener: (this: HTMLDyteLeaveButtonElement, ev: DyteLeaveButtonCustomEvent<HTMLDyteLeaveButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkLeaveButtonElement extends Components.RtkLeaveButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkLeaveButtonElementEventMap>(type: K, listener: (this: HTMLRtkLeaveButtonElement, ev: RtkLeaveButtonCustomEvent<HTMLRtkLeaveButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteLeaveButtonElementEventMap>(type: K, listener: (this: HTMLDyteLeaveButtonElement, ev: DyteLeaveButtonCustomEvent<HTMLDyteLeaveButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkLeaveButtonElementEventMap>(type: K, listener: (this: HTMLRtkLeaveButtonElement, ev: RtkLeaveButtonCustomEvent<HTMLRtkLeaveButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteLeaveButtonElement: {
-        prototype: HTMLDyteLeaveButtonElement;
-        new (): HTMLDyteLeaveButtonElement;
+    var HTMLRtkLeaveButtonElement: {
+        prototype: HTMLRtkLeaveButtonElement;
+        new (): HTMLRtkLeaveButtonElement;
     };
-    interface HTMLDyteLeaveMeetingElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkLeaveMeetingElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component which allows you to leave a meeting or
      * end meeting for all, if you have the permission.
      */
-    interface HTMLDyteLeaveMeetingElement extends Components.DyteLeaveMeeting, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteLeaveMeetingElementEventMap>(type: K, listener: (this: HTMLDyteLeaveMeetingElement, ev: DyteLeaveMeetingCustomEvent<HTMLDyteLeaveMeetingElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkLeaveMeetingElement extends Components.RtkLeaveMeeting, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkLeaveMeetingElementEventMap>(type: K, listener: (this: HTMLRtkLeaveMeetingElement, ev: RtkLeaveMeetingCustomEvent<HTMLRtkLeaveMeetingElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteLeaveMeetingElementEventMap>(type: K, listener: (this: HTMLDyteLeaveMeetingElement, ev: DyteLeaveMeetingCustomEvent<HTMLDyteLeaveMeetingElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkLeaveMeetingElementEventMap>(type: K, listener: (this: HTMLRtkLeaveMeetingElement, ev: RtkLeaveMeetingCustomEvent<HTMLRtkLeaveMeetingElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteLeaveMeetingElement: {
-        prototype: HTMLDyteLeaveMeetingElement;
-        new (): HTMLDyteLeaveMeetingElement;
+    var HTMLRtkLeaveMeetingElement: {
+        prototype: HTMLRtkLeaveMeetingElement;
+        new (): HTMLRtkLeaveMeetingElement;
     };
-    interface HTMLDyteLivestreamIndicatorElement extends Components.DyteLivestreamIndicator, HTMLStencilElement {
+    interface HTMLRtkLivestreamIndicatorElement extends Components.RtkLivestreamIndicator, HTMLStencilElement {
     }
-    var HTMLDyteLivestreamIndicatorElement: {
-        prototype: HTMLDyteLivestreamIndicatorElement;
-        new (): HTMLDyteLivestreamIndicatorElement;
+    var HTMLRtkLivestreamIndicatorElement: {
+        prototype: HTMLRtkLivestreamIndicatorElement;
+        new (): HTMLRtkLivestreamIndicatorElement;
     };
-    interface HTMLDyteLivestreamPlayerElementEventMap {
-        "dyteAPIError": {
+    interface HTMLRtkLivestreamPlayerElementEventMap {
+        "rtkApiError": {
     trace: string;
     message: string;
   };
     }
-    interface HTMLDyteLivestreamPlayerElement extends Components.DyteLivestreamPlayer, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteLivestreamPlayerElementEventMap>(type: K, listener: (this: HTMLDyteLivestreamPlayerElement, ev: DyteLivestreamPlayerCustomEvent<HTMLDyteLivestreamPlayerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkLivestreamPlayerElement extends Components.RtkLivestreamPlayer, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkLivestreamPlayerElementEventMap>(type: K, listener: (this: HTMLRtkLivestreamPlayerElement, ev: RtkLivestreamPlayerCustomEvent<HTMLRtkLivestreamPlayerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteLivestreamPlayerElementEventMap>(type: K, listener: (this: HTMLDyteLivestreamPlayerElement, ev: DyteLivestreamPlayerCustomEvent<HTMLDyteLivestreamPlayerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkLivestreamPlayerElementEventMap>(type: K, listener: (this: HTMLRtkLivestreamPlayerElement, ev: RtkLivestreamPlayerCustomEvent<HTMLRtkLivestreamPlayerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteLivestreamPlayerElement: {
-        prototype: HTMLDyteLivestreamPlayerElement;
-        new (): HTMLDyteLivestreamPlayerElement;
+    var HTMLRtkLivestreamPlayerElement: {
+        prototype: HTMLRtkLivestreamPlayerElement;
+        new (): HTMLRtkLivestreamPlayerElement;
     };
-    interface HTMLDyteLivestreamToggleElementEventMap {
-        "dyteStateUpdate": States1;
-        "dyteAPIError": {
+    interface HTMLRtkLivestreamToggleElementEventMap {
+        "rtkStateUpdate": States1;
+        "rtkApiError": {
     trace: string;
     message: string;
   };
     }
-    interface HTMLDyteLivestreamToggleElement extends Components.DyteLivestreamToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteLivestreamToggleElementEventMap>(type: K, listener: (this: HTMLDyteLivestreamToggleElement, ev: DyteLivestreamToggleCustomEvent<HTMLDyteLivestreamToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkLivestreamToggleElement extends Components.RtkLivestreamToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkLivestreamToggleElementEventMap>(type: K, listener: (this: HTMLRtkLivestreamToggleElement, ev: RtkLivestreamToggleCustomEvent<HTMLRtkLivestreamToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteLivestreamToggleElementEventMap>(type: K, listener: (this: HTMLDyteLivestreamToggleElement, ev: DyteLivestreamToggleCustomEvent<HTMLDyteLivestreamToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkLivestreamToggleElementEventMap>(type: K, listener: (this: HTMLRtkLivestreamToggleElement, ev: RtkLivestreamToggleCustomEvent<HTMLRtkLivestreamToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteLivestreamToggleElement: {
-        prototype: HTMLDyteLivestreamToggleElement;
-        new (): HTMLDyteLivestreamToggleElement;
+    var HTMLRtkLivestreamToggleElement: {
+        prototype: HTMLRtkLivestreamToggleElement;
+        new (): HTMLRtkLivestreamToggleElement;
     };
     /**
      * A component which loads the logo from your config, or via the `logo-url` attribute.
      */
-    interface HTMLDyteLogoElement extends Components.DyteLogo, HTMLStencilElement {
+    interface HTMLRtkLogoElement extends Components.RtkLogo, HTMLStencilElement {
     }
-    var HTMLDyteLogoElement: {
-        prototype: HTMLDyteLogoElement;
-        new (): HTMLDyteLogoElement;
+    var HTMLRtkLogoElement: {
+        prototype: HTMLRtkLogoElement;
+        new (): HTMLRtkLogoElement;
     };
-    interface HTMLDyteMarkdownViewElement extends Components.DyteMarkdownView, HTMLStencilElement {
+    interface HTMLRtkMarkdownViewElement extends Components.RtkMarkdownView, HTMLStencilElement {
     }
-    var HTMLDyteMarkdownViewElement: {
-        prototype: HTMLDyteMarkdownViewElement;
-        new (): HTMLDyteMarkdownViewElement;
+    var HTMLRtkMarkdownViewElement: {
+        prototype: HTMLRtkMarkdownViewElement;
+        new (): HTMLRtkMarkdownViewElement;
     };
-    interface HTMLDyteMeetingElementEventMap {
-        "dyteStatesUpdate": States;
+    interface HTMLRtkMeetingElementEventMap {
+        "rtkStatesUpdate": States;
     }
     /**
      * A single component which renders an entire meeting UI.
@@ -5318,105 +5318,105 @@ declare global {
      * With this component, you don't have to handle all the states,
      * dialogs and other smaller bits of managing the application.
      */
-    interface HTMLDyteMeetingElement extends Components.DyteMeeting, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteMeetingElementEventMap>(type: K, listener: (this: HTMLDyteMeetingElement, ev: DyteMeetingCustomEvent<HTMLDyteMeetingElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkMeetingElement extends Components.RtkMeeting, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkMeetingElementEventMap>(type: K, listener: (this: HTMLRtkMeetingElement, ev: RtkMeetingCustomEvent<HTMLRtkMeetingElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteMeetingElementEventMap>(type: K, listener: (this: HTMLDyteMeetingElement, ev: DyteMeetingCustomEvent<HTMLDyteMeetingElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkMeetingElementEventMap>(type: K, listener: (this: HTMLRtkMeetingElement, ev: RtkMeetingCustomEvent<HTMLRtkMeetingElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteMeetingElement: {
-        prototype: HTMLDyteMeetingElement;
-        new (): HTMLDyteMeetingElement;
+    var HTMLRtkMeetingElement: {
+        prototype: HTMLRtkMeetingElement;
+        new (): HTMLRtkMeetingElement;
     };
     /**
      * Displays the title of the meeting.
      */
-    interface HTMLDyteMeetingTitleElement extends Components.DyteMeetingTitle, HTMLStencilElement {
+    interface HTMLRtkMeetingTitleElement extends Components.RtkMeetingTitle, HTMLStencilElement {
     }
-    var HTMLDyteMeetingTitleElement: {
-        prototype: HTMLDyteMeetingTitleElement;
-        new (): HTMLDyteMeetingTitleElement;
+    var HTMLRtkMeetingTitleElement: {
+        prototype: HTMLRtkMeetingTitleElement;
+        new (): HTMLRtkMeetingTitleElement;
     };
     /**
      * A menu component.
      */
-    interface HTMLDyteMenuElement extends Components.DyteMenu, HTMLStencilElement {
+    interface HTMLRtkMenuElement extends Components.RtkMenu, HTMLStencilElement {
     }
-    var HTMLDyteMenuElement: {
-        prototype: HTMLDyteMenuElement;
-        new (): HTMLDyteMenuElement;
+    var HTMLRtkMenuElement: {
+        prototype: HTMLRtkMenuElement;
+        new (): HTMLRtkMenuElement;
     };
     /**
      * A menu item component.
      */
-    interface HTMLDyteMenuItemElement extends Components.DyteMenuItem, HTMLStencilElement {
+    interface HTMLRtkMenuItemElement extends Components.RtkMenuItem, HTMLStencilElement {
     }
-    var HTMLDyteMenuItemElement: {
-        prototype: HTMLDyteMenuItemElement;
-        new (): HTMLDyteMenuItemElement;
+    var HTMLRtkMenuItemElement: {
+        prototype: HTMLRtkMenuItemElement;
+        new (): HTMLRtkMenuItemElement;
     };
     /**
      * A menu list component.
      */
-    interface HTMLDyteMenuListElement extends Components.DyteMenuList, HTMLStencilElement {
+    interface HTMLRtkMenuListElement extends Components.RtkMenuList, HTMLStencilElement {
     }
-    var HTMLDyteMenuListElement: {
-        prototype: HTMLDyteMenuListElement;
-        new (): HTMLDyteMenuListElement;
+    var HTMLRtkMenuListElement: {
+        prototype: HTMLRtkMenuListElement;
+        new (): HTMLRtkMenuListElement;
     };
     /**
      * A component which renders list of messages.
      */
-    interface HTMLDyteMessageListViewElement extends Components.DyteMessageListView, HTMLStencilElement {
+    interface HTMLRtkMessageListViewElement extends Components.RtkMessageListView, HTMLStencilElement {
     }
-    var HTMLDyteMessageListViewElement: {
-        prototype: HTMLDyteMessageListViewElement;
-        new (): HTMLDyteMessageListViewElement;
+    var HTMLRtkMessageListViewElement: {
+        prototype: HTMLRtkMessageListViewElement;
+        new (): HTMLRtkMessageListViewElement;
     };
-    interface HTMLDyteMessageViewElementEventMap {
+    interface HTMLRtkMessageViewElementEventMap {
         "action": string;
     }
-    interface HTMLDyteMessageViewElement extends Components.DyteMessageView, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteMessageViewElementEventMap>(type: K, listener: (this: HTMLDyteMessageViewElement, ev: DyteMessageViewCustomEvent<HTMLDyteMessageViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkMessageViewElement extends Components.RtkMessageView, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkMessageViewElementEventMap>(type: K, listener: (this: HTMLRtkMessageViewElement, ev: RtkMessageViewCustomEvent<HTMLRtkMessageViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteMessageViewElementEventMap>(type: K, listener: (this: HTMLDyteMessageViewElement, ev: DyteMessageViewCustomEvent<HTMLDyteMessageViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkMessageViewElementEventMap>(type: K, listener: (this: HTMLRtkMessageViewElement, ev: RtkMessageViewCustomEvent<HTMLRtkMessageViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteMessageViewElement: {
-        prototype: HTMLDyteMessageViewElement;
-        new (): HTMLDyteMessageViewElement;
+    var HTMLRtkMessageViewElement: {
+        prototype: HTMLRtkMessageViewElement;
+        new (): HTMLRtkMessageViewElement;
     };
-    interface HTMLDyteMicToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkMicToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles your microphone.
      */
-    interface HTMLDyteMicToggleElement extends Components.DyteMicToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteMicToggleElementEventMap>(type: K, listener: (this: HTMLDyteMicToggleElement, ev: DyteMicToggleCustomEvent<HTMLDyteMicToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkMicToggleElement extends Components.RtkMicToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkMicToggleElementEventMap>(type: K, listener: (this: HTMLRtkMicToggleElement, ev: RtkMicToggleCustomEvent<HTMLRtkMicToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteMicToggleElementEventMap>(type: K, listener: (this: HTMLDyteMicToggleElement, ev: DyteMicToggleCustomEvent<HTMLDyteMicToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkMicToggleElementEventMap>(type: K, listener: (this: HTMLRtkMicToggleElement, ev: RtkMicToggleCustomEvent<HTMLRtkMicToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteMicToggleElement: {
-        prototype: HTMLDyteMicToggleElement;
-        new (): HTMLDyteMicToggleElement;
+    var HTMLRtkMicToggleElement: {
+        prototype: HTMLRtkMicToggleElement;
+        new (): HTMLRtkMicToggleElement;
     };
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -5425,402 +5425,402 @@ declare global {
      * }
      * ```
      */
-    interface HTMLDyteMicrophoneSelectorElement extends Components.DyteMicrophoneSelector, HTMLStencilElement {
+    interface HTMLRtkMicrophoneSelectorElement extends Components.RtkMicrophoneSelector, HTMLStencilElement {
     }
-    var HTMLDyteMicrophoneSelectorElement: {
-        prototype: HTMLDyteMicrophoneSelectorElement;
-        new (): HTMLDyteMicrophoneSelectorElement;
+    var HTMLRtkMicrophoneSelectorElement: {
+        prototype: HTMLRtkMicrophoneSelectorElement;
+        new (): HTMLRtkMicrophoneSelectorElement;
     };
     /**
      * A grid component which handles screenshares, plugins and participants.
      */
-    interface HTMLDyteMixedGridElement extends Components.DyteMixedGrid, HTMLStencilElement {
+    interface HTMLRtkMixedGridElement extends Components.RtkMixedGrid, HTMLStencilElement {
     }
-    var HTMLDyteMixedGridElement: {
-        prototype: HTMLDyteMixedGridElement;
-        new (): HTMLDyteMixedGridElement;
+    var HTMLRtkMixedGridElement: {
+        prototype: HTMLRtkMixedGridElement;
+        new (): HTMLRtkMixedGridElement;
     };
-    interface HTMLDyteMoreToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkMoreToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles visibility of a more menu.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeMoreMenu: boolean; }
      * ```
      */
-    interface HTMLDyteMoreToggleElement extends Components.DyteMoreToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteMoreToggleElementEventMap>(type: K, listener: (this: HTMLDyteMoreToggleElement, ev: DyteMoreToggleCustomEvent<HTMLDyteMoreToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkMoreToggleElement extends Components.RtkMoreToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkMoreToggleElementEventMap>(type: K, listener: (this: HTMLRtkMoreToggleElement, ev: RtkMoreToggleCustomEvent<HTMLRtkMoreToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteMoreToggleElementEventMap>(type: K, listener: (this: HTMLDyteMoreToggleElement, ev: DyteMoreToggleCustomEvent<HTMLDyteMoreToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkMoreToggleElementEventMap>(type: K, listener: (this: HTMLRtkMoreToggleElement, ev: RtkMoreToggleCustomEvent<HTMLRtkMoreToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteMoreToggleElement: {
-        prototype: HTMLDyteMoreToggleElement;
-        new (): HTMLDyteMoreToggleElement;
+    var HTMLRtkMoreToggleElement: {
+        prototype: HTMLRtkMoreToggleElement;
+        new (): HTMLRtkMoreToggleElement;
     };
-    interface HTMLDyteMuteAllButtonElementEventMap {
-        "dyteStateUpdate": States1;
+    interface HTMLRtkMuteAllButtonElementEventMap {
+        "rtkStateUpdate": States1;
     }
-    interface HTMLDyteMuteAllButtonElement extends Components.DyteMuteAllButton, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteMuteAllButtonElementEventMap>(type: K, listener: (this: HTMLDyteMuteAllButtonElement, ev: DyteMuteAllButtonCustomEvent<HTMLDyteMuteAllButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkMuteAllButtonElement extends Components.RtkMuteAllButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkMuteAllButtonElementEventMap>(type: K, listener: (this: HTMLRtkMuteAllButtonElement, ev: RtkMuteAllButtonCustomEvent<HTMLRtkMuteAllButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteMuteAllButtonElementEventMap>(type: K, listener: (this: HTMLDyteMuteAllButtonElement, ev: DyteMuteAllButtonCustomEvent<HTMLDyteMuteAllButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkMuteAllButtonElementEventMap>(type: K, listener: (this: HTMLRtkMuteAllButtonElement, ev: RtkMuteAllButtonCustomEvent<HTMLRtkMuteAllButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteMuteAllButtonElement: {
-        prototype: HTMLDyteMuteAllButtonElement;
-        new (): HTMLDyteMuteAllButtonElement;
+    var HTMLRtkMuteAllButtonElement: {
+        prototype: HTMLRtkMuteAllButtonElement;
+        new (): HTMLRtkMuteAllButtonElement;
     };
-    interface HTMLDyteMuteAllConfirmationElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkMuteAllConfirmationElementEventMap {
+        "rtkStateUpdate": States;
     }
-    interface HTMLDyteMuteAllConfirmationElement extends Components.DyteMuteAllConfirmation, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteMuteAllConfirmationElementEventMap>(type: K, listener: (this: HTMLDyteMuteAllConfirmationElement, ev: DyteMuteAllConfirmationCustomEvent<HTMLDyteMuteAllConfirmationElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkMuteAllConfirmationElement extends Components.RtkMuteAllConfirmation, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkMuteAllConfirmationElementEventMap>(type: K, listener: (this: HTMLRtkMuteAllConfirmationElement, ev: RtkMuteAllConfirmationCustomEvent<HTMLRtkMuteAllConfirmationElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteMuteAllConfirmationElementEventMap>(type: K, listener: (this: HTMLDyteMuteAllConfirmationElement, ev: DyteMuteAllConfirmationCustomEvent<HTMLDyteMuteAllConfirmationElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkMuteAllConfirmationElementEventMap>(type: K, listener: (this: HTMLRtkMuteAllConfirmationElement, ev: RtkMuteAllConfirmationCustomEvent<HTMLRtkMuteAllConfirmationElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteMuteAllConfirmationElement: {
-        prototype: HTMLDyteMuteAllConfirmationElement;
-        new (): HTMLDyteMuteAllConfirmationElement;
+    var HTMLRtkMuteAllConfirmationElement: {
+        prototype: HTMLRtkMuteAllConfirmationElement;
+        new (): HTMLRtkMuteAllConfirmationElement;
     };
     /**
      * A component which shows a participant's name.
      */
-    interface HTMLDyteNameTagElement extends Components.DyteNameTag, HTMLStencilElement {
+    interface HTMLRtkNameTagElement extends Components.RtkNameTag, HTMLStencilElement {
     }
-    var HTMLDyteNameTagElement: {
-        prototype: HTMLDyteNameTagElement;
-        new (): HTMLDyteNameTagElement;
+    var HTMLRtkNameTagElement: {
+        prototype: HTMLRtkNameTagElement;
+        new (): HTMLRtkNameTagElement;
     };
-    interface HTMLDyteNetworkIndicatorElement extends Components.DyteNetworkIndicator, HTMLStencilElement {
+    interface HTMLRtkNetworkIndicatorElement extends Components.RtkNetworkIndicator, HTMLStencilElement {
     }
-    var HTMLDyteNetworkIndicatorElement: {
-        prototype: HTMLDyteNetworkIndicatorElement;
-        new (): HTMLDyteNetworkIndicatorElement;
+    var HTMLRtkNetworkIndicatorElement: {
+        prototype: HTMLRtkNetworkIndicatorElement;
+        new (): HTMLRtkNetworkIndicatorElement;
     };
-    interface HTMLDyteNotificationElementEventMap {
-        "dyteNotificationDismiss": string;
+    interface HTMLRtkNotificationElementEventMap {
+        "rtkNotificationDismiss": string;
     }
     /**
      * A component which shows a notification.
      * You need to remove the element after you receive the
-     * `dyteNotificationDismiss` event.
+     * `rtkNotificationDismiss` event.
      */
-    interface HTMLDyteNotificationElement extends Components.DyteNotification, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteNotificationElementEventMap>(type: K, listener: (this: HTMLDyteNotificationElement, ev: DyteNotificationCustomEvent<HTMLDyteNotificationElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkNotificationElement extends Components.RtkNotification, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkNotificationElementEventMap>(type: K, listener: (this: HTMLRtkNotificationElement, ev: RtkNotificationCustomEvent<HTMLRtkNotificationElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteNotificationElementEventMap>(type: K, listener: (this: HTMLDyteNotificationElement, ev: DyteNotificationCustomEvent<HTMLDyteNotificationElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkNotificationElementEventMap>(type: K, listener: (this: HTMLRtkNotificationElement, ev: RtkNotificationCustomEvent<HTMLRtkNotificationElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteNotificationElement: {
-        prototype: HTMLDyteNotificationElement;
-        new (): HTMLDyteNotificationElement;
+    var HTMLRtkNotificationElement: {
+        prototype: HTMLRtkNotificationElement;
+        new (): HTMLRtkNotificationElement;
     };
     /**
      * A component which handles notifications.
      * You can configure which notifications you want to see and which ones you want to hear.
      * There are also certain limits which you can set as well.
      */
-    interface HTMLDyteNotificationsElement extends Components.DyteNotifications, HTMLStencilElement {
+    interface HTMLRtkNotificationsElement extends Components.RtkNotifications, HTMLStencilElement {
     }
-    var HTMLDyteNotificationsElement: {
-        prototype: HTMLDyteNotificationsElement;
-        new (): HTMLDyteNotificationsElement;
+    var HTMLRtkNotificationsElement: {
+        prototype: HTMLRtkNotificationsElement;
+        new (): HTMLRtkNotificationsElement;
     };
-    interface HTMLDyteOverlayModalElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkOverlayModalElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A confirmation modal.
      */
-    interface HTMLDyteOverlayModalElement extends Components.DyteOverlayModal, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteOverlayModalElementEventMap>(type: K, listener: (this: HTMLDyteOverlayModalElement, ev: DyteOverlayModalCustomEvent<HTMLDyteOverlayModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkOverlayModalElement extends Components.RtkOverlayModal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkOverlayModalElementEventMap>(type: K, listener: (this: HTMLRtkOverlayModalElement, ev: RtkOverlayModalCustomEvent<HTMLRtkOverlayModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteOverlayModalElementEventMap>(type: K, listener: (this: HTMLDyteOverlayModalElement, ev: DyteOverlayModalCustomEvent<HTMLDyteOverlayModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkOverlayModalElementEventMap>(type: K, listener: (this: HTMLRtkOverlayModalElement, ev: RtkOverlayModalCustomEvent<HTMLRtkOverlayModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteOverlayModalElement: {
-        prototype: HTMLDyteOverlayModalElement;
-        new (): HTMLDyteOverlayModalElement;
+    var HTMLRtkOverlayModalElement: {
+        prototype: HTMLRtkOverlayModalElement;
+        new (): HTMLRtkOverlayModalElement;
     };
-    interface HTMLDytePaginatedListElement extends Components.DytePaginatedList, HTMLStencilElement {
+    interface HTMLRtkPaginatedListElement extends Components.RtkPaginatedList, HTMLStencilElement {
     }
-    var HTMLDytePaginatedListElement: {
-        prototype: HTMLDytePaginatedListElement;
-        new (): HTMLDytePaginatedListElement;
+    var HTMLRtkPaginatedListElement: {
+        prototype: HTMLRtkPaginatedListElement;
+        new (): HTMLRtkPaginatedListElement;
     };
-    interface HTMLDyteParticipantElementEventMap {
-        "dyteSendNotification": {
+    interface HTMLRtkParticipantElementEventMap {
+        "rtkSendNotification": {
     trace: string;
     message: string;
   };
     }
     /**
-     * A participant entry component used inside `dyte-participants` which shows data like:
+     * A participant entry component used inside `rtk-participants` which shows data like:
      * name, picture and media device status.
      * You can perform privileged actions on the participant too.
      */
-    interface HTMLDyteParticipantElement extends Components.DyteParticipant, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteParticipantElementEventMap>(type: K, listener: (this: HTMLDyteParticipantElement, ev: DyteParticipantCustomEvent<HTMLDyteParticipantElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkParticipantElement extends Components.RtkParticipant, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkParticipantElementEventMap>(type: K, listener: (this: HTMLRtkParticipantElement, ev: RtkParticipantCustomEvent<HTMLRtkParticipantElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteParticipantElementEventMap>(type: K, listener: (this: HTMLDyteParticipantElement, ev: DyteParticipantCustomEvent<HTMLDyteParticipantElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkParticipantElementEventMap>(type: K, listener: (this: HTMLRtkParticipantElement, ev: RtkParticipantCustomEvent<HTMLRtkParticipantElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteParticipantElement: {
-        prototype: HTMLDyteParticipantElement;
-        new (): HTMLDyteParticipantElement;
+    var HTMLRtkParticipantElement: {
+        prototype: HTMLRtkParticipantElement;
+        new (): HTMLRtkParticipantElement;
     };
     /**
      * A component which shows count of total joined participants in a meeting.
      */
-    interface HTMLDyteParticipantCountElement extends Components.DyteParticipantCount, HTMLStencilElement {
+    interface HTMLRtkParticipantCountElement extends Components.RtkParticipantCount, HTMLStencilElement {
     }
-    var HTMLDyteParticipantCountElement: {
-        prototype: HTMLDyteParticipantCountElement;
-        new (): HTMLDyteParticipantCountElement;
+    var HTMLRtkParticipantCountElement: {
+        prototype: HTMLRtkParticipantCountElement;
+        new (): HTMLRtkParticipantCountElement;
     };
-    interface HTMLDyteParticipantSetupElement extends Components.DyteParticipantSetup, HTMLStencilElement {
+    interface HTMLRtkParticipantSetupElement extends Components.RtkParticipantSetup, HTMLStencilElement {
     }
-    var HTMLDyteParticipantSetupElement: {
-        prototype: HTMLDyteParticipantSetupElement;
-        new (): HTMLDyteParticipantSetupElement;
+    var HTMLRtkParticipantSetupElement: {
+        prototype: HTMLRtkParticipantSetupElement;
+        new (): HTMLRtkParticipantSetupElement;
     };
-    interface HTMLDyteParticipantTileElementEventMap {
+    interface HTMLRtkParticipantTileElementEventMap {
         "tileLoad": { participant: Peer; videoElement: HTMLVideoElement };
         "tileUnload": Peer;
     }
     /**
      * A component which plays a participants video and allows for placement
-     * of components like `dyte-name-tag`, `dyte-audio-visualizer` or any other component.
+     * of components like `rtk-name-tag`, `rtk-audio-visualizer` or any other component.
      */
-    interface HTMLDyteParticipantTileElement extends Components.DyteParticipantTile, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteParticipantTileElementEventMap>(type: K, listener: (this: HTMLDyteParticipantTileElement, ev: DyteParticipantTileCustomEvent<HTMLDyteParticipantTileElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkParticipantTileElement extends Components.RtkParticipantTile, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkParticipantTileElementEventMap>(type: K, listener: (this: HTMLRtkParticipantTileElement, ev: RtkParticipantTileCustomEvent<HTMLRtkParticipantTileElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteParticipantTileElementEventMap>(type: K, listener: (this: HTMLDyteParticipantTileElement, ev: DyteParticipantTileCustomEvent<HTMLDyteParticipantTileElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkParticipantTileElementEventMap>(type: K, listener: (this: HTMLRtkParticipantTileElement, ev: RtkParticipantTileCustomEvent<HTMLRtkParticipantTileElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteParticipantTileElement: {
-        prototype: HTMLDyteParticipantTileElement;
-        new (): HTMLDyteParticipantTileElement;
+    var HTMLRtkParticipantTileElement: {
+        prototype: HTMLRtkParticipantTileElement;
+        new (): HTMLRtkParticipantTileElement;
     };
-    interface HTMLDyteParticipantsElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkParticipantsElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component which lists all participants, with ability to
      * run privileged actions on each participant according to your permissions.
      */
-    interface HTMLDyteParticipantsElement extends Components.DyteParticipants, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteParticipantsElementEventMap>(type: K, listener: (this: HTMLDyteParticipantsElement, ev: DyteParticipantsCustomEvent<HTMLDyteParticipantsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkParticipantsElement extends Components.RtkParticipants, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkParticipantsElementEventMap>(type: K, listener: (this: HTMLRtkParticipantsElement, ev: RtkParticipantsCustomEvent<HTMLRtkParticipantsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteParticipantsElementEventMap>(type: K, listener: (this: HTMLDyteParticipantsElement, ev: DyteParticipantsCustomEvent<HTMLDyteParticipantsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkParticipantsElementEventMap>(type: K, listener: (this: HTMLRtkParticipantsElement, ev: RtkParticipantsCustomEvent<HTMLRtkParticipantsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteParticipantsElement: {
-        prototype: HTMLDyteParticipantsElement;
-        new (): HTMLDyteParticipantsElement;
+    var HTMLRtkParticipantsElement: {
+        prototype: HTMLRtkParticipantsElement;
+        new (): HTMLRtkParticipantsElement;
     };
-    interface HTMLDyteParticipantsAudioElementEventMap {
+    interface HTMLRtkParticipantsAudioElementEventMap {
         "dialogClose": void;
     }
     /**
      * A component which plays all the audio from participants and screenshares.
      */
-    interface HTMLDyteParticipantsAudioElement extends Components.DyteParticipantsAudio, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteParticipantsAudioElementEventMap>(type: K, listener: (this: HTMLDyteParticipantsAudioElement, ev: DyteParticipantsAudioCustomEvent<HTMLDyteParticipantsAudioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkParticipantsAudioElement extends Components.RtkParticipantsAudio, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkParticipantsAudioElementEventMap>(type: K, listener: (this: HTMLRtkParticipantsAudioElement, ev: RtkParticipantsAudioCustomEvent<HTMLRtkParticipantsAudioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteParticipantsAudioElementEventMap>(type: K, listener: (this: HTMLDyteParticipantsAudioElement, ev: DyteParticipantsAudioCustomEvent<HTMLDyteParticipantsAudioElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkParticipantsAudioElementEventMap>(type: K, listener: (this: HTMLRtkParticipantsAudioElement, ev: RtkParticipantsAudioCustomEvent<HTMLRtkParticipantsAudioElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteParticipantsAudioElement: {
-        prototype: HTMLDyteParticipantsAudioElement;
-        new (): HTMLDyteParticipantsAudioElement;
+    var HTMLRtkParticipantsAudioElement: {
+        prototype: HTMLRtkParticipantsAudioElement;
+        new (): HTMLRtkParticipantsAudioElement;
     };
     /**
      * A component which lists all participants, with ability to
      * run privileged actions on each participant according to your permissions.
      */
-    interface HTMLDyteParticipantsStageListElement extends Components.DyteParticipantsStageList, HTMLStencilElement {
+    interface HTMLRtkParticipantsStageListElement extends Components.RtkParticipantsStageList, HTMLStencilElement {
     }
-    var HTMLDyteParticipantsStageListElement: {
-        prototype: HTMLDyteParticipantsStageListElement;
-        new (): HTMLDyteParticipantsStageListElement;
+    var HTMLRtkParticipantsStageListElement: {
+        prototype: HTMLRtkParticipantsStageListElement;
+        new (): HTMLRtkParticipantsStageListElement;
     };
-    interface HTMLDyteParticipantsStageQueueElement extends Components.DyteParticipantsStageQueue, HTMLStencilElement {
+    interface HTMLRtkParticipantsStageQueueElement extends Components.RtkParticipantsStageQueue, HTMLStencilElement {
     }
-    var HTMLDyteParticipantsStageQueueElement: {
-        prototype: HTMLDyteParticipantsStageQueueElement;
-        new (): HTMLDyteParticipantsStageQueueElement;
+    var HTMLRtkParticipantsStageQueueElement: {
+        prototype: HTMLRtkParticipantsStageQueueElement;
+        new (): HTMLRtkParticipantsStageQueueElement;
     };
-    interface HTMLDyteParticipantsToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkParticipantsToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles visibility of participants.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'participants' }
      * ```
      */
-    interface HTMLDyteParticipantsToggleElement extends Components.DyteParticipantsToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteParticipantsToggleElementEventMap>(type: K, listener: (this: HTMLDyteParticipantsToggleElement, ev: DyteParticipantsToggleCustomEvent<HTMLDyteParticipantsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkParticipantsToggleElement extends Components.RtkParticipantsToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkParticipantsToggleElementEventMap>(type: K, listener: (this: HTMLRtkParticipantsToggleElement, ev: RtkParticipantsToggleCustomEvent<HTMLRtkParticipantsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteParticipantsToggleElementEventMap>(type: K, listener: (this: HTMLDyteParticipantsToggleElement, ev: DyteParticipantsToggleCustomEvent<HTMLDyteParticipantsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkParticipantsToggleElementEventMap>(type: K, listener: (this: HTMLRtkParticipantsToggleElement, ev: RtkParticipantsToggleCustomEvent<HTMLRtkParticipantsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteParticipantsToggleElement: {
-        prototype: HTMLDyteParticipantsToggleElement;
-        new (): HTMLDyteParticipantsToggleElement;
+    var HTMLRtkParticipantsToggleElement: {
+        prototype: HTMLRtkParticipantsToggleElement;
+        new (): HTMLRtkParticipantsToggleElement;
     };
-    interface HTMLDyteParticipantsViewerListElement extends Components.DyteParticipantsViewerList, HTMLStencilElement {
+    interface HTMLRtkParticipantsViewerListElement extends Components.RtkParticipantsViewerList, HTMLStencilElement {
     }
-    var HTMLDyteParticipantsViewerListElement: {
-        prototype: HTMLDyteParticipantsViewerListElement;
-        new (): HTMLDyteParticipantsViewerListElement;
+    var HTMLRtkParticipantsViewerListElement: {
+        prototype: HTMLRtkParticipantsViewerListElement;
+        new (): HTMLRtkParticipantsViewerListElement;
     };
-    interface HTMLDyteParticipantsWaitingListElement extends Components.DyteParticipantsWaitingList, HTMLStencilElement {
+    interface HTMLRtkParticipantsWaitingListElement extends Components.RtkParticipantsWaitingList, HTMLStencilElement {
     }
-    var HTMLDyteParticipantsWaitingListElement: {
-        prototype: HTMLDyteParticipantsWaitingListElement;
-        new (): HTMLDyteParticipantsWaitingListElement;
+    var HTMLRtkParticipantsWaitingListElement: {
+        prototype: HTMLRtkParticipantsWaitingListElement;
+        new (): HTMLRtkParticipantsWaitingListElement;
     };
-    interface HTMLDytePermissionsMessageElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkPermissionsMessageElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component which shows permission related troubleshooting
      * information.
      */
-    interface HTMLDytePermissionsMessageElement extends Components.DytePermissionsMessage, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDytePermissionsMessageElementEventMap>(type: K, listener: (this: HTMLDytePermissionsMessageElement, ev: DytePermissionsMessageCustomEvent<HTMLDytePermissionsMessageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkPermissionsMessageElement extends Components.RtkPermissionsMessage, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkPermissionsMessageElementEventMap>(type: K, listener: (this: HTMLRtkPermissionsMessageElement, ev: RtkPermissionsMessageCustomEvent<HTMLRtkPermissionsMessageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDytePermissionsMessageElementEventMap>(type: K, listener: (this: HTMLDytePermissionsMessageElement, ev: DytePermissionsMessageCustomEvent<HTMLDytePermissionsMessageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkPermissionsMessageElementEventMap>(type: K, listener: (this: HTMLRtkPermissionsMessageElement, ev: RtkPermissionsMessageCustomEvent<HTMLRtkPermissionsMessageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDytePermissionsMessageElement: {
-        prototype: HTMLDytePermissionsMessageElement;
-        new (): HTMLDytePermissionsMessageElement;
+    var HTMLRtkPermissionsMessageElement: {
+        prototype: HTMLRtkPermissionsMessageElement;
+        new (): HTMLRtkPermissionsMessageElement;
     };
-    interface HTMLDytePipToggleElementEventMap {
-        "dyteStateUpdate": States1;
+    interface HTMLRtkPipToggleElementEventMap {
+        "rtkStateUpdate": States1;
     }
-    interface HTMLDytePipToggleElement extends Components.DytePipToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDytePipToggleElementEventMap>(type: K, listener: (this: HTMLDytePipToggleElement, ev: DytePipToggleCustomEvent<HTMLDytePipToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkPipToggleElement extends Components.RtkPipToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkPipToggleElementEventMap>(type: K, listener: (this: HTMLRtkPipToggleElement, ev: RtkPipToggleCustomEvent<HTMLRtkPipToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDytePipToggleElementEventMap>(type: K, listener: (this: HTMLDytePipToggleElement, ev: DytePipToggleCustomEvent<HTMLDytePipToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkPipToggleElementEventMap>(type: K, listener: (this: HTMLRtkPipToggleElement, ev: RtkPipToggleCustomEvent<HTMLRtkPipToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDytePipToggleElement: {
-        prototype: HTMLDytePipToggleElement;
-        new (): HTMLDytePipToggleElement;
+    var HTMLRtkPipToggleElement: {
+        prototype: HTMLRtkPipToggleElement;
+        new (): HTMLRtkPipToggleElement;
     };
     /**
      * A component which loads a plugin.
      */
-    interface HTMLDytePluginMainElement extends Components.DytePluginMain, HTMLStencilElement {
+    interface HTMLRtkPluginMainElement extends Components.RtkPluginMain, HTMLStencilElement {
     }
-    var HTMLDytePluginMainElement: {
-        prototype: HTMLDytePluginMainElement;
-        new (): HTMLDytePluginMainElement;
+    var HTMLRtkPluginMainElement: {
+        prototype: HTMLRtkPluginMainElement;
+        new (): HTMLRtkPluginMainElement;
     };
-    interface HTMLDytePluginsElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkPluginsElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component which lists all available plugins from their preset,
      * and ability to enable or disable plugins.
      */
-    interface HTMLDytePluginsElement extends Components.DytePlugins, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDytePluginsElementEventMap>(type: K, listener: (this: HTMLDytePluginsElement, ev: DytePluginsCustomEvent<HTMLDytePluginsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkPluginsElement extends Components.RtkPlugins, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkPluginsElementEventMap>(type: K, listener: (this: HTMLRtkPluginsElement, ev: RtkPluginsCustomEvent<HTMLRtkPluginsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDytePluginsElementEventMap>(type: K, listener: (this: HTMLDytePluginsElement, ev: DytePluginsCustomEvent<HTMLDytePluginsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkPluginsElementEventMap>(type: K, listener: (this: HTMLRtkPluginsElement, ev: RtkPluginsCustomEvent<HTMLRtkPluginsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDytePluginsElement: {
-        prototype: HTMLDytePluginsElement;
-        new (): HTMLDytePluginsElement;
+    var HTMLRtkPluginsElement: {
+        prototype: HTMLRtkPluginsElement;
+        new (): HTMLRtkPluginsElement;
     };
-    interface HTMLDytePluginsToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkPluginsToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles visibility of plugins.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'plugins' }
      * ```
      */
-    interface HTMLDytePluginsToggleElement extends Components.DytePluginsToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDytePluginsToggleElementEventMap>(type: K, listener: (this: HTMLDytePluginsToggleElement, ev: DytePluginsToggleCustomEvent<HTMLDytePluginsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkPluginsToggleElement extends Components.RtkPluginsToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkPluginsToggleElementEventMap>(type: K, listener: (this: HTMLRtkPluginsToggleElement, ev: RtkPluginsToggleCustomEvent<HTMLRtkPluginsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDytePluginsToggleElementEventMap>(type: K, listener: (this: HTMLDytePluginsToggleElement, ev: DytePluginsToggleCustomEvent<HTMLDytePluginsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkPluginsToggleElementEventMap>(type: K, listener: (this: HTMLRtkPluginsToggleElement, ev: RtkPluginsToggleCustomEvent<HTMLRtkPluginsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDytePluginsToggleElement: {
-        prototype: HTMLDytePluginsToggleElement;
-        new (): HTMLDytePluginsToggleElement;
+    var HTMLRtkPluginsToggleElement: {
+        prototype: HTMLRtkPluginsToggleElement;
+        new (): HTMLRtkPluginsToggleElement;
     };
-    interface HTMLDytePollElementEventMap {
-        "dyteVotePoll": {
+    interface HTMLRtkPollElementEventMap {
+        "rtkVotePoll": {
     id: string;
     index: number;
   };
@@ -5829,87 +5829,87 @@ declare global {
      * A poll component.
      * Shows a poll where a user can vote.
      */
-    interface HTMLDytePollElement extends Components.DytePoll, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDytePollElementEventMap>(type: K, listener: (this: HTMLDytePollElement, ev: DytePollCustomEvent<HTMLDytePollElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkPollElement extends Components.RtkPoll, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkPollElementEventMap>(type: K, listener: (this: HTMLRtkPollElement, ev: RtkPollCustomEvent<HTMLRtkPollElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDytePollElementEventMap>(type: K, listener: (this: HTMLDytePollElement, ev: DytePollCustomEvent<HTMLDytePollElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkPollElementEventMap>(type: K, listener: (this: HTMLRtkPollElement, ev: RtkPollCustomEvent<HTMLRtkPollElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDytePollElement: {
-        prototype: HTMLDytePollElement;
-        new (): HTMLDytePollElement;
+    var HTMLRtkPollElement: {
+        prototype: HTMLRtkPollElement;
+        new (): HTMLRtkPollElement;
     };
-    interface HTMLDytePollFormElementEventMap {
-        "dyteCreatePoll": PollObject;
+    interface HTMLRtkPollFormElementEventMap {
+        "rtkCreatePoll": PollObject;
     }
     /**
      * A component that lets you create a poll.
      */
-    interface HTMLDytePollFormElement extends Components.DytePollForm, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDytePollFormElementEventMap>(type: K, listener: (this: HTMLDytePollFormElement, ev: DytePollFormCustomEvent<HTMLDytePollFormElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkPollFormElement extends Components.RtkPollForm, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkPollFormElementEventMap>(type: K, listener: (this: HTMLRtkPollFormElement, ev: RtkPollFormCustomEvent<HTMLRtkPollFormElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDytePollFormElementEventMap>(type: K, listener: (this: HTMLDytePollFormElement, ev: DytePollFormCustomEvent<HTMLDytePollFormElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkPollFormElementEventMap>(type: K, listener: (this: HTMLRtkPollFormElement, ev: RtkPollFormCustomEvent<HTMLRtkPollFormElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDytePollFormElement: {
-        prototype: HTMLDytePollFormElement;
-        new (): HTMLDytePollFormElement;
+    var HTMLRtkPollFormElement: {
+        prototype: HTMLRtkPollFormElement;
+        new (): HTMLRtkPollFormElement;
     };
     /**
      * A component which lists all available plugins a user can access with
      * the ability to enable or disable them as per their permissions.
      */
-    interface HTMLDytePollsElement extends Components.DytePolls, HTMLStencilElement {
+    interface HTMLRtkPollsElement extends Components.RtkPolls, HTMLStencilElement {
     }
-    var HTMLDytePollsElement: {
-        prototype: HTMLDytePollsElement;
-        new (): HTMLDytePollsElement;
+    var HTMLRtkPollsElement: {
+        prototype: HTMLRtkPollsElement;
+        new (): HTMLRtkPollsElement;
     };
-    interface HTMLDytePollsToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkPollsToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles visibility of polls.
      * You need to pass the `meeting` object to it to see the unread polls count badge.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'polls' }
      * ```
      */
-    interface HTMLDytePollsToggleElement extends Components.DytePollsToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDytePollsToggleElementEventMap>(type: K, listener: (this: HTMLDytePollsToggleElement, ev: DytePollsToggleCustomEvent<HTMLDytePollsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkPollsToggleElement extends Components.RtkPollsToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkPollsToggleElementEventMap>(type: K, listener: (this: HTMLRtkPollsToggleElement, ev: RtkPollsToggleCustomEvent<HTMLRtkPollsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDytePollsToggleElementEventMap>(type: K, listener: (this: HTMLDytePollsToggleElement, ev: DytePollsToggleCustomEvent<HTMLDytePollsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkPollsToggleElementEventMap>(type: K, listener: (this: HTMLRtkPollsToggleElement, ev: RtkPollsToggleCustomEvent<HTMLRtkPollsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDytePollsToggleElement: {
-        prototype: HTMLDytePollsToggleElement;
-        new (): HTMLDytePollsToggleElement;
+    var HTMLRtkPollsToggleElement: {
+        prototype: HTMLRtkPollsToggleElement;
+        new (): HTMLRtkPollsToggleElement;
     };
     /**
      * A component which indicates the recording status of a meeting.
      * It will not render anything if no recording is taking place.
      */
-    interface HTMLDyteRecordingIndicatorElement extends Components.DyteRecordingIndicator, HTMLStencilElement {
+    interface HTMLRtkRecordingIndicatorElement extends Components.RtkRecordingIndicator, HTMLStencilElement {
     }
-    var HTMLDyteRecordingIndicatorElement: {
-        prototype: HTMLDyteRecordingIndicatorElement;
-        new (): HTMLDyteRecordingIndicatorElement;
+    var HTMLRtkRecordingIndicatorElement: {
+        prototype: HTMLRtkRecordingIndicatorElement;
+        new (): HTMLRtkRecordingIndicatorElement;
     };
-    interface HTMLDyteRecordingToggleElementEventMap {
-        "dyteAPIError": {
+    interface HTMLRtkRecordingToggleElementEventMap {
+        "rtkApiError": {
     trace: string;
     message: string;
   };
@@ -5920,23 +5920,23 @@ declare global {
      * thus the button will not be visible for participants
      * who don't have the permission to record a meeting.
      */
-    interface HTMLDyteRecordingToggleElement extends Components.DyteRecordingToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteRecordingToggleElementEventMap>(type: K, listener: (this: HTMLDyteRecordingToggleElement, ev: DyteRecordingToggleCustomEvent<HTMLDyteRecordingToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkRecordingToggleElement extends Components.RtkRecordingToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkRecordingToggleElementEventMap>(type: K, listener: (this: HTMLRtkRecordingToggleElement, ev: RtkRecordingToggleCustomEvent<HTMLRtkRecordingToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteRecordingToggleElementEventMap>(type: K, listener: (this: HTMLDyteRecordingToggleElement, ev: DyteRecordingToggleCustomEvent<HTMLDyteRecordingToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkRecordingToggleElementEventMap>(type: K, listener: (this: HTMLRtkRecordingToggleElement, ev: RtkRecordingToggleCustomEvent<HTMLRtkRecordingToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteRecordingToggleElement: {
-        prototype: HTMLDyteRecordingToggleElement;
-        new (): HTMLDyteRecordingToggleElement;
+    var HTMLRtkRecordingToggleElement: {
+        prototype: HTMLRtkRecordingToggleElement;
+        new (): HTMLRtkRecordingToggleElement;
     };
-    interface HTMLDyteScreenShareToggleElementEventMap {
-        "dyteStateUpdate": States;
-        "dyteAPIError": {
+    interface HTMLRtkScreenShareToggleElementEventMap {
+        "rtkStateUpdate": States;
+        "rtkApiError": {
     trace: string;
     message: string;
   };
@@ -5944,22 +5944,22 @@ declare global {
     /**
      * A button which toggles your screenshare.
      */
-    interface HTMLDyteScreenShareToggleElement extends Components.DyteScreenShareToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteScreenShareToggleElementEventMap>(type: K, listener: (this: HTMLDyteScreenShareToggleElement, ev: DyteScreenShareToggleCustomEvent<HTMLDyteScreenShareToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkScreenShareToggleElement extends Components.RtkScreenShareToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkScreenShareToggleElementEventMap>(type: K, listener: (this: HTMLRtkScreenShareToggleElement, ev: RtkScreenShareToggleCustomEvent<HTMLRtkScreenShareToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteScreenShareToggleElementEventMap>(type: K, listener: (this: HTMLDyteScreenShareToggleElement, ev: DyteScreenShareToggleCustomEvent<HTMLDyteScreenShareToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkScreenShareToggleElementEventMap>(type: K, listener: (this: HTMLRtkScreenShareToggleElement, ev: RtkScreenShareToggleCustomEvent<HTMLRtkScreenShareToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteScreenShareToggleElement: {
-        prototype: HTMLDyteScreenShareToggleElement;
-        new (): HTMLDyteScreenShareToggleElement;
+    var HTMLRtkScreenShareToggleElement: {
+        prototype: HTMLRtkScreenShareToggleElement;
+        new (): HTMLRtkScreenShareToggleElement;
     };
-    interface HTMLDyteScreenshareViewElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkScreenshareViewElementEventMap {
+        "rtkStateUpdate": States;
         "screensharePlay": {
     participant: Peer;
     screenshareParticipant: Peer;
@@ -5967,50 +5967,50 @@ declare global {
     }
     /**
      * A component which plays a participant's screenshared video.
-     * It also allows for placement of other components similar to `dyte-participant-tile`.
+     * It also allows for placement of other components similar to `rtk-participant-tile`.
      * This component will not render anything if the participant hasn't start screensharing.
      */
-    interface HTMLDyteScreenshareViewElement extends Components.DyteScreenshareView, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteScreenshareViewElementEventMap>(type: K, listener: (this: HTMLDyteScreenshareViewElement, ev: DyteScreenshareViewCustomEvent<HTMLDyteScreenshareViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkScreenshareViewElement extends Components.RtkScreenshareView, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkScreenshareViewElementEventMap>(type: K, listener: (this: HTMLRtkScreenshareViewElement, ev: RtkScreenshareViewCustomEvent<HTMLRtkScreenshareViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteScreenshareViewElementEventMap>(type: K, listener: (this: HTMLDyteScreenshareViewElement, ev: DyteScreenshareViewCustomEvent<HTMLDyteScreenshareViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkScreenshareViewElementEventMap>(type: K, listener: (this: HTMLRtkScreenshareViewElement, ev: RtkScreenshareViewCustomEvent<HTMLRtkScreenshareViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteScreenshareViewElement: {
-        prototype: HTMLDyteScreenshareViewElement;
-        new (): HTMLDyteScreenshareViewElement;
+    var HTMLRtkScreenshareViewElement: {
+        prototype: HTMLRtkScreenshareViewElement;
+        new (): HTMLRtkScreenshareViewElement;
     };
-    interface HTMLDyteSettingsElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkSettingsElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A settings component to see and change your audio/video devices
      * as well as see your connection quality.
      */
-    interface HTMLDyteSettingsElement extends Components.DyteSettings, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteSettingsElementEventMap>(type: K, listener: (this: HTMLDyteSettingsElement, ev: DyteSettingsCustomEvent<HTMLDyteSettingsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkSettingsElement extends Components.RtkSettings, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkSettingsElementEventMap>(type: K, listener: (this: HTMLRtkSettingsElement, ev: RtkSettingsCustomEvent<HTMLRtkSettingsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteSettingsElementEventMap>(type: K, listener: (this: HTMLDyteSettingsElement, ev: DyteSettingsCustomEvent<HTMLDyteSettingsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkSettingsElementEventMap>(type: K, listener: (this: HTMLRtkSettingsElement, ev: RtkSettingsCustomEvent<HTMLRtkSettingsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteSettingsElement: {
-        prototype: HTMLDyteSettingsElement;
-        new (): HTMLDyteSettingsElement;
+    var HTMLRtkSettingsElement: {
+        prototype: HTMLRtkSettingsElement;
+        new (): HTMLRtkSettingsElement;
     };
-    interface HTMLDyteSettingsAudioElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkSettingsAudioElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -6019,50 +6019,50 @@ declare global {
      * }
      * ```
      */
-    interface HTMLDyteSettingsAudioElement extends Components.DyteSettingsAudio, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteSettingsAudioElementEventMap>(type: K, listener: (this: HTMLDyteSettingsAudioElement, ev: DyteSettingsAudioCustomEvent<HTMLDyteSettingsAudioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkSettingsAudioElement extends Components.RtkSettingsAudio, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkSettingsAudioElementEventMap>(type: K, listener: (this: HTMLRtkSettingsAudioElement, ev: RtkSettingsAudioCustomEvent<HTMLRtkSettingsAudioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteSettingsAudioElementEventMap>(type: K, listener: (this: HTMLDyteSettingsAudioElement, ev: DyteSettingsAudioCustomEvent<HTMLDyteSettingsAudioElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkSettingsAudioElementEventMap>(type: K, listener: (this: HTMLRtkSettingsAudioElement, ev: RtkSettingsAudioCustomEvent<HTMLRtkSettingsAudioElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteSettingsAudioElement: {
-        prototype: HTMLDyteSettingsAudioElement;
-        new (): HTMLDyteSettingsAudioElement;
+    var HTMLRtkSettingsAudioElement: {
+        prototype: HTMLRtkSettingsAudioElement;
+        new (): HTMLRtkSettingsAudioElement;
     };
-    interface HTMLDyteSettingsToggleElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkSettingsToggleElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A button which toggles visibility of settings module.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSettings: boolean; }
      * ```
      */
-    interface HTMLDyteSettingsToggleElement extends Components.DyteSettingsToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteSettingsToggleElementEventMap>(type: K, listener: (this: HTMLDyteSettingsToggleElement, ev: DyteSettingsToggleCustomEvent<HTMLDyteSettingsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkSettingsToggleElement extends Components.RtkSettingsToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkSettingsToggleElementEventMap>(type: K, listener: (this: HTMLRtkSettingsToggleElement, ev: RtkSettingsToggleCustomEvent<HTMLRtkSettingsToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteSettingsToggleElementEventMap>(type: K, listener: (this: HTMLDyteSettingsToggleElement, ev: DyteSettingsToggleCustomEvent<HTMLDyteSettingsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkSettingsToggleElementEventMap>(type: K, listener: (this: HTMLRtkSettingsToggleElement, ev: RtkSettingsToggleCustomEvent<HTMLRtkSettingsToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteSettingsToggleElement: {
-        prototype: HTMLDyteSettingsToggleElement;
-        new (): HTMLDyteSettingsToggleElement;
+    var HTMLRtkSettingsToggleElement: {
+        prototype: HTMLRtkSettingsToggleElement;
+        new (): HTMLRtkSettingsToggleElement;
     };
-    interface HTMLDyteSettingsVideoElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkSettingsVideoElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component which lets to manage your camera devices and your video preferences.
-     * Emits `dyteStateUpdate` event with data for toggling mirroring of self video:
+     * Emits `rtkStateUpdate` event with data for toggling mirroring of self video:
      * ```ts
      * {
      *  prefs: {
@@ -6071,92 +6071,92 @@ declare global {
      * }
      * ```
      */
-    interface HTMLDyteSettingsVideoElement extends Components.DyteSettingsVideo, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteSettingsVideoElementEventMap>(type: K, listener: (this: HTMLDyteSettingsVideoElement, ev: DyteSettingsVideoCustomEvent<HTMLDyteSettingsVideoElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkSettingsVideoElement extends Components.RtkSettingsVideo, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkSettingsVideoElementEventMap>(type: K, listener: (this: HTMLRtkSettingsVideoElement, ev: RtkSettingsVideoCustomEvent<HTMLRtkSettingsVideoElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteSettingsVideoElementEventMap>(type: K, listener: (this: HTMLDyteSettingsVideoElement, ev: DyteSettingsVideoCustomEvent<HTMLDyteSettingsVideoElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkSettingsVideoElementEventMap>(type: K, listener: (this: HTMLRtkSettingsVideoElement, ev: RtkSettingsVideoCustomEvent<HTMLRtkSettingsVideoElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteSettingsVideoElement: {
-        prototype: HTMLDyteSettingsVideoElement;
-        new (): HTMLDyteSettingsVideoElement;
+    var HTMLRtkSettingsVideoElement: {
+        prototype: HTMLRtkSettingsVideoElement;
+        new (): HTMLRtkSettingsVideoElement;
     };
-    interface HTMLDyteSetupScreenElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkSetupScreenElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A screen shown before joining the meeting, where you can edit your display name,
      * and media settings.
      */
-    interface HTMLDyteSetupScreenElement extends Components.DyteSetupScreen, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteSetupScreenElementEventMap>(type: K, listener: (this: HTMLDyteSetupScreenElement, ev: DyteSetupScreenCustomEvent<HTMLDyteSetupScreenElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkSetupScreenElement extends Components.RtkSetupScreen, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkSetupScreenElementEventMap>(type: K, listener: (this: HTMLRtkSetupScreenElement, ev: RtkSetupScreenCustomEvent<HTMLRtkSetupScreenElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteSetupScreenElementEventMap>(type: K, listener: (this: HTMLDyteSetupScreenElement, ev: DyteSetupScreenCustomEvent<HTMLDyteSetupScreenElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkSetupScreenElementEventMap>(type: K, listener: (this: HTMLRtkSetupScreenElement, ev: RtkSetupScreenCustomEvent<HTMLRtkSetupScreenElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteSetupScreenElement: {
-        prototype: HTMLDyteSetupScreenElement;
-        new (): HTMLDyteSetupScreenElement;
+    var HTMLRtkSetupScreenElement: {
+        prototype: HTMLRtkSetupScreenElement;
+        new (): HTMLRtkSetupScreenElement;
     };
-    interface HTMLDyteSidebarElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkSidebarElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component which handles the sidebar and
      * you can customize which sections you want, and which section you want as the default.
      */
-    interface HTMLDyteSidebarElement extends Components.DyteSidebar, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteSidebarElementEventMap>(type: K, listener: (this: HTMLDyteSidebarElement, ev: DyteSidebarCustomEvent<HTMLDyteSidebarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkSidebarElement extends Components.RtkSidebar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkSidebarElementEventMap>(type: K, listener: (this: HTMLRtkSidebarElement, ev: RtkSidebarCustomEvent<HTMLRtkSidebarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteSidebarElementEventMap>(type: K, listener: (this: HTMLDyteSidebarElement, ev: DyteSidebarCustomEvent<HTMLDyteSidebarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkSidebarElementEventMap>(type: K, listener: (this: HTMLRtkSidebarElement, ev: RtkSidebarCustomEvent<HTMLRtkSidebarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteSidebarElement: {
-        prototype: HTMLDyteSidebarElement;
-        new (): HTMLDyteSidebarElement;
+    var HTMLRtkSidebarElement: {
+        prototype: HTMLRtkSidebarElement;
+        new (): HTMLRtkSidebarElement;
     };
-    interface HTMLDyteSidebarUiElementEventMap {
+    interface HTMLRtkSidebarUiElementEventMap {
         "tabChange": string;
         "sidebarClose": void;
     }
-    interface HTMLDyteSidebarUiElement extends Components.DyteSidebarUi, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteSidebarUiElementEventMap>(type: K, listener: (this: HTMLDyteSidebarUiElement, ev: DyteSidebarUiCustomEvent<HTMLDyteSidebarUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkSidebarUiElement extends Components.RtkSidebarUi, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkSidebarUiElementEventMap>(type: K, listener: (this: HTMLRtkSidebarUiElement, ev: RtkSidebarUiCustomEvent<HTMLRtkSidebarUiElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteSidebarUiElementEventMap>(type: K, listener: (this: HTMLDyteSidebarUiElement, ev: DyteSidebarUiCustomEvent<HTMLDyteSidebarUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkSidebarUiElementEventMap>(type: K, listener: (this: HTMLRtkSidebarUiElement, ev: RtkSidebarUiCustomEvent<HTMLRtkSidebarUiElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteSidebarUiElement: {
-        prototype: HTMLDyteSidebarUiElement;
-        new (): HTMLDyteSidebarUiElement;
+    var HTMLRtkSidebarUiElement: {
+        prototype: HTMLRtkSidebarUiElement;
+        new (): HTMLRtkSidebarUiElement;
     };
     /**
      * A grid component which renders only the participants in a simple grid.
      */
-    interface HTMLDyteSimpleGridElement extends Components.DyteSimpleGrid, HTMLStencilElement {
+    interface HTMLRtkSimpleGridElement extends Components.RtkSimpleGrid, HTMLStencilElement {
     }
-    var HTMLDyteSimpleGridElement: {
-        prototype: HTMLDyteSimpleGridElement;
-        new (): HTMLDyteSimpleGridElement;
+    var HTMLRtkSimpleGridElement: {
+        prototype: HTMLRtkSimpleGridElement;
+        new (): HTMLRtkSimpleGridElement;
     };
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -6165,20 +6165,20 @@ declare global {
      * }
      * ```
      */
-    interface HTMLDyteSpeakerSelectorElement extends Components.DyteSpeakerSelector, HTMLStencilElement {
+    interface HTMLRtkSpeakerSelectorElement extends Components.RtkSpeakerSelector, HTMLStencilElement {
     }
-    var HTMLDyteSpeakerSelectorElement: {
-        prototype: HTMLDyteSpeakerSelectorElement;
-        new (): HTMLDyteSpeakerSelectorElement;
+    var HTMLRtkSpeakerSelectorElement: {
+        prototype: HTMLRtkSpeakerSelectorElement;
+        new (): HTMLRtkSpeakerSelectorElement;
     };
     /**
      * A component which shows an animating spinner.
      */
-    interface HTMLDyteSpinnerElement extends Components.DyteSpinner, HTMLStencilElement {
+    interface HTMLRtkSpinnerElement extends Components.RtkSpinner, HTMLStencilElement {
     }
-    var HTMLDyteSpinnerElement: {
-        prototype: HTMLDyteSpinnerElement;
-        new (): HTMLDyteSpinnerElement;
+    var HTMLRtkSpinnerElement: {
+        prototype: HTMLRtkSpinnerElement;
+        new (): HTMLRtkSpinnerElement;
     };
     /**
      * A grid component that renders two lists of participants: `pinnedParticipants` and `participants`.
@@ -6186,153 +6186,153 @@ declare global {
      * - Participants from `pinnedParticipants[]` are rendered inside a larger grid.
      * - Participants from `participants[]` array are rendered in a smaller grid.
      */
-    interface HTMLDyteSpotlightGridElement extends Components.DyteSpotlightGrid, HTMLStencilElement {
+    interface HTMLRtkSpotlightGridElement extends Components.RtkSpotlightGrid, HTMLStencilElement {
     }
-    var HTMLDyteSpotlightGridElement: {
-        prototype: HTMLDyteSpotlightGridElement;
-        new (): HTMLDyteSpotlightGridElement;
+    var HTMLRtkSpotlightGridElement: {
+        prototype: HTMLRtkSpotlightGridElement;
+        new (): HTMLRtkSpotlightGridElement;
     };
-    interface HTMLDyteSpotlightIndicatorElement extends Components.DyteSpotlightIndicator, HTMLStencilElement {
+    interface HTMLRtkSpotlightIndicatorElement extends Components.RtkSpotlightIndicator, HTMLStencilElement {
     }
-    var HTMLDyteSpotlightIndicatorElement: {
-        prototype: HTMLDyteSpotlightIndicatorElement;
-        new (): HTMLDyteSpotlightIndicatorElement;
+    var HTMLRtkSpotlightIndicatorElement: {
+        prototype: HTMLRtkSpotlightIndicatorElement;
+        new (): HTMLRtkSpotlightIndicatorElement;
     };
-    interface HTMLDyteStageElementEventMap {
-        "dyteStateUpdate": States;
+    interface HTMLRtkStageElementEventMap {
+        "rtkStateUpdate": States;
     }
     /**
      * A component used as a stage that commonly houses
      * the `grid` and `sidebar` components.
      */
-    interface HTMLDyteStageElement extends Components.DyteStage, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteStageElementEventMap>(type: K, listener: (this: HTMLDyteStageElement, ev: DyteStageCustomEvent<HTMLDyteStageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkStageElement extends Components.RtkStage, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkStageElementEventMap>(type: K, listener: (this: HTMLRtkStageElement, ev: RtkStageCustomEvent<HTMLRtkStageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteStageElementEventMap>(type: K, listener: (this: HTMLDyteStageElement, ev: DyteStageCustomEvent<HTMLDyteStageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkStageElementEventMap>(type: K, listener: (this: HTMLRtkStageElement, ev: RtkStageCustomEvent<HTMLRtkStageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteStageElement: {
-        prototype: HTMLDyteStageElement;
-        new (): HTMLDyteStageElement;
+    var HTMLRtkStageElement: {
+        prototype: HTMLRtkStageElement;
+        new (): HTMLRtkStageElement;
     };
-    interface HTMLDyteStageToggleElementEventMap {
-        "dyteStateUpdate": States1;
+    interface HTMLRtkStageToggleElementEventMap {
+        "rtkStateUpdate": States1;
     }
-    interface HTMLDyteStageToggleElement extends Components.DyteStageToggle, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteStageToggleElementEventMap>(type: K, listener: (this: HTMLDyteStageToggleElement, ev: DyteStageToggleCustomEvent<HTMLDyteStageToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkStageToggleElement extends Components.RtkStageToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkStageToggleElementEventMap>(type: K, listener: (this: HTMLRtkStageToggleElement, ev: RtkStageToggleCustomEvent<HTMLRtkStageToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteStageToggleElementEventMap>(type: K, listener: (this: HTMLDyteStageToggleElement, ev: DyteStageToggleCustomEvent<HTMLDyteStageToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkStageToggleElementEventMap>(type: K, listener: (this: HTMLRtkStageToggleElement, ev: RtkStageToggleCustomEvent<HTMLRtkStageToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteStageToggleElement: {
-        prototype: HTMLDyteStageToggleElement;
-        new (): HTMLDyteStageToggleElement;
+    var HTMLRtkStageToggleElement: {
+        prototype: HTMLRtkStageToggleElement;
+        new (): HTMLRtkStageToggleElement;
     };
-    interface HTMLDyteSwitchElementEventMap {
-        "dyteChange": boolean;
+    interface HTMLRtkSwitchElementEventMap {
+        "rtkChange": boolean;
     }
     /**
-     * A switch component which follows Dyte's Design System.
+     * A switch component which follows RTK Design System.
      */
-    interface HTMLDyteSwitchElement extends Components.DyteSwitch, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteSwitchElementEventMap>(type: K, listener: (this: HTMLDyteSwitchElement, ev: DyteSwitchCustomEvent<HTMLDyteSwitchElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkSwitchElement extends Components.RtkSwitch, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkSwitchElementEventMap>(type: K, listener: (this: HTMLRtkSwitchElement, ev: RtkSwitchCustomEvent<HTMLRtkSwitchElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteSwitchElementEventMap>(type: K, listener: (this: HTMLDyteSwitchElement, ev: DyteSwitchCustomEvent<HTMLDyteSwitchElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkSwitchElementEventMap>(type: K, listener: (this: HTMLRtkSwitchElement, ev: RtkSwitchCustomEvent<HTMLRtkSwitchElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteSwitchElement: {
-        prototype: HTMLDyteSwitchElement;
-        new (): HTMLDyteSwitchElement;
+    var HTMLRtkSwitchElement: {
+        prototype: HTMLRtkSwitchElement;
+        new (): HTMLRtkSwitchElement;
     };
-    interface HTMLDyteTabBarElementEventMap {
+    interface HTMLRtkTabBarElementEventMap {
         "tabChange": Tab;
     }
-    interface HTMLDyteTabBarElement extends Components.DyteTabBar, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteTabBarElementEventMap>(type: K, listener: (this: HTMLDyteTabBarElement, ev: DyteTabBarCustomEvent<HTMLDyteTabBarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkTabBarElement extends Components.RtkTabBar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkTabBarElementEventMap>(type: K, listener: (this: HTMLRtkTabBarElement, ev: RtkTabBarCustomEvent<HTMLRtkTabBarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteTabBarElementEventMap>(type: K, listener: (this: HTMLDyteTabBarElement, ev: DyteTabBarCustomEvent<HTMLDyteTabBarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkTabBarElementEventMap>(type: K, listener: (this: HTMLRtkTabBarElement, ev: RtkTabBarCustomEvent<HTMLRtkTabBarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteTabBarElement: {
-        prototype: HTMLDyteTabBarElement;
-        new (): HTMLDyteTabBarElement;
+    var HTMLRtkTabBarElement: {
+        prototype: HTMLRtkTabBarElement;
+        new (): HTMLRtkTabBarElement;
     };
-    interface HTMLDyteTextComposerViewElementEventMap {
+    interface HTMLRtkTextComposerViewElementEventMap {
         "textChange": string;
     }
     /**
      * A component which renders a text composer
      */
-    interface HTMLDyteTextComposerViewElement extends Components.DyteTextComposerView, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteTextComposerViewElementEventMap>(type: K, listener: (this: HTMLDyteTextComposerViewElement, ev: DyteTextComposerViewCustomEvent<HTMLDyteTextComposerViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkTextComposerViewElement extends Components.RtkTextComposerView, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkTextComposerViewElementEventMap>(type: K, listener: (this: HTMLRtkTextComposerViewElement, ev: RtkTextComposerViewCustomEvent<HTMLRtkTextComposerViewElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteTextComposerViewElementEventMap>(type: K, listener: (this: HTMLDyteTextComposerViewElement, ev: DyteTextComposerViewCustomEvent<HTMLDyteTextComposerViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkTextComposerViewElementEventMap>(type: K, listener: (this: HTMLRtkTextComposerViewElement, ev: RtkTextComposerViewCustomEvent<HTMLRtkTextComposerViewElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteTextComposerViewElement: {
-        prototype: HTMLDyteTextComposerViewElement;
-        new (): HTMLDyteTextComposerViewElement;
+    var HTMLRtkTextComposerViewElement: {
+        prototype: HTMLRtkTextComposerViewElement;
+        new (): HTMLRtkTextComposerViewElement;
     };
     /**
      * A component which renders a text message from chat.
      */
-    interface HTMLDyteTextMessageElement extends Components.DyteTextMessage, HTMLStencilElement {
+    interface HTMLRtkTextMessageElement extends Components.RtkTextMessage, HTMLStencilElement {
     }
-    var HTMLDyteTextMessageElement: {
-        prototype: HTMLDyteTextMessageElement;
-        new (): HTMLDyteTextMessageElement;
+    var HTMLRtkTextMessageElement: {
+        prototype: HTMLRtkTextMessageElement;
+        new (): HTMLRtkTextMessageElement;
     };
     /**
      * A component which renders a text message from chat.
      */
-    interface HTMLDyteTextMessageViewElement extends Components.DyteTextMessageView, HTMLStencilElement {
+    interface HTMLRtkTextMessageViewElement extends Components.RtkTextMessageView, HTMLStencilElement {
     }
-    var HTMLDyteTextMessageViewElement: {
-        prototype: HTMLDyteTextMessageViewElement;
-        new (): HTMLDyteTextMessageViewElement;
+    var HTMLRtkTextMessageViewElement: {
+        prototype: HTMLRtkTextMessageViewElement;
+        new (): HTMLRtkTextMessageViewElement;
     };
-    interface HTMLDyteTooltipElementEventMap {
-        "dyteOpenChange": boolean;
+    interface HTMLRtkTooltipElementEventMap {
+        "rtkOpenChange": boolean;
     }
     /**
-     * Tooltip component which follows Dyte's Design System.
+     * Tooltip component which follows RTK Design System.
      */
-    interface HTMLDyteTooltipElement extends Components.DyteTooltip, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteTooltipElementEventMap>(type: K, listener: (this: HTMLDyteTooltipElement, ev: DyteTooltipCustomEvent<HTMLDyteTooltipElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkTooltipElement extends Components.RtkTooltip, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkTooltipElementEventMap>(type: K, listener: (this: HTMLRtkTooltipElement, ev: RtkTooltipCustomEvent<HTMLRtkTooltipElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteTooltipElementEventMap>(type: K, listener: (this: HTMLDyteTooltipElement, ev: DyteTooltipCustomEvent<HTMLDyteTooltipElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkTooltipElementEventMap>(type: K, listener: (this: HTMLRtkTooltipElement, ev: RtkTooltipCustomEvent<HTMLRtkTooltipElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteTooltipElement: {
-        prototype: HTMLDyteTooltipElement;
-        new (): HTMLDyteTooltipElement;
+    var HTMLRtkTooltipElement: {
+        prototype: HTMLRtkTooltipElement;
+        new (): HTMLRtkTooltipElement;
     };
-    interface HTMLDyteTranscriptElementEventMap {
-        "dyteTranscriptDismiss": {
+    interface HTMLRtkTranscriptElementEventMap {
+        "rtkTranscriptDismiss": {
     id: string;
     renderedId: string;
   };
@@ -6340,214 +6340,214 @@ declare global {
     /**
      * A component which shows a transcript.
      * You need to remove the element after you receive the
-     * `dyteTranscriptDismiss` event.
+     * `rtkTranscriptDismiss` event.
      */
-    interface HTMLDyteTranscriptElement extends Components.DyteTranscript, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteTranscriptElementEventMap>(type: K, listener: (this: HTMLDyteTranscriptElement, ev: DyteTranscriptCustomEvent<HTMLDyteTranscriptElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkTranscriptElement extends Components.RtkTranscript, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkTranscriptElementEventMap>(type: K, listener: (this: HTMLRtkTranscriptElement, ev: RtkTranscriptCustomEvent<HTMLRtkTranscriptElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteTranscriptElementEventMap>(type: K, listener: (this: HTMLDyteTranscriptElement, ev: DyteTranscriptCustomEvent<HTMLDyteTranscriptElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkTranscriptElementEventMap>(type: K, listener: (this: HTMLRtkTranscriptElement, ev: RtkTranscriptCustomEvent<HTMLRtkTranscriptElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteTranscriptElement: {
-        prototype: HTMLDyteTranscriptElement;
-        new (): HTMLDyteTranscriptElement;
+    var HTMLRtkTranscriptElement: {
+        prototype: HTMLRtkTranscriptElement;
+        new (): HTMLRtkTranscriptElement;
     };
     /**
      * A component which handles transcripts.
      * You can configure which transcripts you want to see and which ones you want to hear.
      * There are also certain limits which you can set as well.
      */
-    interface HTMLDyteTranscriptsElement extends Components.DyteTranscripts, HTMLStencilElement {
+    interface HTMLRtkTranscriptsElement extends Components.RtkTranscripts, HTMLStencilElement {
     }
-    var HTMLDyteTranscriptsElement: {
-        prototype: HTMLDyteTranscriptsElement;
-        new (): HTMLDyteTranscriptsElement;
+    var HTMLRtkTranscriptsElement: {
+        prototype: HTMLRtkTranscriptsElement;
+        new (): HTMLRtkTranscriptsElement;
     };
-    interface HTMLDyteUiProviderElementEventMap {
-        "dyteStatesUpdate": States1;
+    interface HTMLRtkUiProviderElementEventMap {
+        "rtkStatesUpdate": States1;
     }
-    interface HTMLDyteUiProviderElement extends Components.DyteUiProvider, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDyteUiProviderElementEventMap>(type: K, listener: (this: HTMLDyteUiProviderElement, ev: DyteUiProviderCustomEvent<HTMLDyteUiProviderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLRtkUiProviderElement extends Components.RtkUiProvider, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRtkUiProviderElementEventMap>(type: K, listener: (this: HTMLRtkUiProviderElement, ev: RtkUiProviderCustomEvent<HTMLRtkUiProviderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDyteUiProviderElementEventMap>(type: K, listener: (this: HTMLDyteUiProviderElement, ev: DyteUiProviderCustomEvent<HTMLDyteUiProviderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRtkUiProviderElementEventMap>(type: K, listener: (this: HTMLRtkUiProviderElement, ev: RtkUiProviderCustomEvent<HTMLRtkUiProviderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDyteUiProviderElement: {
-        prototype: HTMLDyteUiProviderElement;
-        new (): HTMLDyteUiProviderElement;
+    var HTMLRtkUiProviderElement: {
+        prototype: HTMLRtkUiProviderElement;
+        new (): HTMLRtkUiProviderElement;
     };
     /**
      * A component which shows count of total joined participants in a meeting.
      */
-    interface HTMLDyteViewerCountElement extends Components.DyteViewerCount, HTMLStencilElement {
+    interface HTMLRtkViewerCountElement extends Components.RtkViewerCount, HTMLStencilElement {
     }
-    var HTMLDyteViewerCountElement: {
-        prototype: HTMLDyteViewerCountElement;
-        new (): HTMLDyteViewerCountElement;
+    var HTMLRtkViewerCountElement: {
+        prototype: HTMLRtkViewerCountElement;
+        new (): HTMLRtkViewerCountElement;
     };
-    interface HTMLDyteVirtualizedParticipantListElement extends Components.DyteVirtualizedParticipantList, HTMLStencilElement {
+    interface HTMLRtkVirtualizedParticipantListElement extends Components.RtkVirtualizedParticipantList, HTMLStencilElement {
     }
-    var HTMLDyteVirtualizedParticipantListElement: {
-        prototype: HTMLDyteVirtualizedParticipantListElement;
-        new (): HTMLDyteVirtualizedParticipantListElement;
+    var HTMLRtkVirtualizedParticipantListElement: {
+        prototype: HTMLRtkVirtualizedParticipantListElement;
+        new (): HTMLRtkVirtualizedParticipantListElement;
     };
-    interface HTMLDyteWaitingScreenElement extends Components.DyteWaitingScreen, HTMLStencilElement {
+    interface HTMLRtkWaitingScreenElement extends Components.RtkWaitingScreen, HTMLStencilElement {
     }
-    var HTMLDyteWaitingScreenElement: {
-        prototype: HTMLDyteWaitingScreenElement;
-        new (): HTMLDyteWaitingScreenElement;
+    var HTMLRtkWaitingScreenElement: {
+        prototype: HTMLRtkWaitingScreenElement;
+        new (): HTMLRtkWaitingScreenElement;
     };
     interface HTMLElementTagNameMap {
-        "dyte-ai": HTMLDyteAiElement;
-        "dyte-ai-toggle": HTMLDyteAiToggleElement;
-        "dyte-ai-transcriptions": HTMLDyteAiTranscriptionsElement;
-        "dyte-audio-grid": HTMLDyteAudioGridElement;
-        "dyte-audio-tile": HTMLDyteAudioTileElement;
-        "dyte-audio-visualizer": HTMLDyteAudioVisualizerElement;
-        "dyte-avatar": HTMLDyteAvatarElement;
-        "dyte-breakout-room-manager": HTMLDyteBreakoutRoomManagerElement;
-        "dyte-breakout-room-participants": HTMLDyteBreakoutRoomParticipantsElement;
-        "dyte-breakout-rooms-manager": HTMLDyteBreakoutRoomsManagerElement;
-        "dyte-breakout-rooms-toggle": HTMLDyteBreakoutRoomsToggleElement;
-        "dyte-broadcast-message-modal": HTMLDyteBroadcastMessageModalElement;
-        "dyte-button": HTMLDyteButtonElement;
-        "dyte-camera-selector": HTMLDyteCameraSelectorElement;
-        "dyte-camera-toggle": HTMLDyteCameraToggleElement;
-        "dyte-caption-toggle": HTMLDyteCaptionToggleElement;
-        "dyte-channel-creator": HTMLDyteChannelCreatorElement;
-        "dyte-channel-details": HTMLDyteChannelDetailsElement;
-        "dyte-channel-header": HTMLDyteChannelHeaderElement;
-        "dyte-channel-selector-ui": HTMLDyteChannelSelectorUiElement;
-        "dyte-channel-selector-view": HTMLDyteChannelSelectorViewElement;
-        "dyte-chat": HTMLDyteChatElement;
-        "dyte-chat-composer-ui": HTMLDyteChatComposerUiElement;
-        "dyte-chat-composer-view": HTMLDyteChatComposerViewElement;
-        "dyte-chat-message": HTMLDyteChatMessageElement;
-        "dyte-chat-messages-ui": HTMLDyteChatMessagesUiElement;
-        "dyte-chat-messages-ui-paginated": HTMLDyteChatMessagesUiPaginatedElement;
-        "dyte-chat-search-results": HTMLDyteChatSearchResultsElement;
-        "dyte-chat-selector-ui": HTMLDyteChatSelectorUiElement;
-        "dyte-chat-toggle": HTMLDyteChatToggleElement;
-        "dyte-clock": HTMLDyteClockElement;
-        "dyte-confirmation-modal": HTMLDyteConfirmationModalElement;
-        "dyte-controlbar": HTMLDyteControlbarElement;
-        "dyte-controlbar-button": HTMLDyteControlbarButtonElement;
-        "dyte-counter": HTMLDyteCounterElement;
-        "dyte-debugger": HTMLDyteDebuggerElement;
-        "dyte-debugger-audio": HTMLDyteDebuggerAudioElement;
-        "dyte-debugger-screenshare": HTMLDyteDebuggerScreenshareElement;
-        "dyte-debugger-system": HTMLDyteDebuggerSystemElement;
-        "dyte-debugger-toggle": HTMLDyteDebuggerToggleElement;
-        "dyte-debugger-video": HTMLDyteDebuggerVideoElement;
-        "dyte-dialog": HTMLDyteDialogElement;
-        "dyte-dialog-manager": HTMLDyteDialogManagerElement;
-        "dyte-draft-attachment-view": HTMLDyteDraftAttachmentViewElement;
-        "dyte-emoji-picker": HTMLDyteEmojiPickerElement;
-        "dyte-emoji-picker-button": HTMLDyteEmojiPickerButtonElement;
-        "dyte-ended-screen": HTMLDyteEndedScreenElement;
-        "dyte-file-dropzone": HTMLDyteFileDropzoneElement;
-        "dyte-file-message": HTMLDyteFileMessageElement;
-        "dyte-file-message-view": HTMLDyteFileMessageViewElement;
-        "dyte-file-picker-button": HTMLDyteFilePickerButtonElement;
-        "dyte-fullscreen-toggle": HTMLDyteFullscreenToggleElement;
-        "dyte-grid": HTMLDyteGridElement;
-        "dyte-grid-pagination": HTMLDyteGridPaginationElement;
-        "dyte-header": HTMLDyteHeaderElement;
-        "dyte-icon": HTMLDyteIconElement;
-        "dyte-idle-screen": HTMLDyteIdleScreenElement;
-        "dyte-image-message": HTMLDyteImageMessageElement;
-        "dyte-image-message-view": HTMLDyteImageMessageViewElement;
-        "dyte-image-viewer": HTMLDyteImageViewerElement;
-        "dyte-information-tooltip": HTMLDyteInformationTooltipElement;
-        "dyte-join-stage": HTMLDyteJoinStageElement;
-        "dyte-leave-button": HTMLDyteLeaveButtonElement;
-        "dyte-leave-meeting": HTMLDyteLeaveMeetingElement;
-        "dyte-livestream-indicator": HTMLDyteLivestreamIndicatorElement;
-        "dyte-livestream-player": HTMLDyteLivestreamPlayerElement;
-        "dyte-livestream-toggle": HTMLDyteLivestreamToggleElement;
-        "dyte-logo": HTMLDyteLogoElement;
-        "dyte-markdown-view": HTMLDyteMarkdownViewElement;
-        "dyte-meeting": HTMLDyteMeetingElement;
-        "dyte-meeting-title": HTMLDyteMeetingTitleElement;
-        "dyte-menu": HTMLDyteMenuElement;
-        "dyte-menu-item": HTMLDyteMenuItemElement;
-        "dyte-menu-list": HTMLDyteMenuListElement;
-        "dyte-message-list-view": HTMLDyteMessageListViewElement;
-        "dyte-message-view": HTMLDyteMessageViewElement;
-        "dyte-mic-toggle": HTMLDyteMicToggleElement;
-        "dyte-microphone-selector": HTMLDyteMicrophoneSelectorElement;
-        "dyte-mixed-grid": HTMLDyteMixedGridElement;
-        "dyte-more-toggle": HTMLDyteMoreToggleElement;
-        "dyte-mute-all-button": HTMLDyteMuteAllButtonElement;
-        "dyte-mute-all-confirmation": HTMLDyteMuteAllConfirmationElement;
-        "dyte-name-tag": HTMLDyteNameTagElement;
-        "dyte-network-indicator": HTMLDyteNetworkIndicatorElement;
-        "dyte-notification": HTMLDyteNotificationElement;
-        "dyte-notifications": HTMLDyteNotificationsElement;
-        "dyte-overlay-modal": HTMLDyteOverlayModalElement;
-        "dyte-paginated-list": HTMLDytePaginatedListElement;
-        "dyte-participant": HTMLDyteParticipantElement;
-        "dyte-participant-count": HTMLDyteParticipantCountElement;
-        "dyte-participant-setup": HTMLDyteParticipantSetupElement;
-        "dyte-participant-tile": HTMLDyteParticipantTileElement;
-        "dyte-participants": HTMLDyteParticipantsElement;
-        "dyte-participants-audio": HTMLDyteParticipantsAudioElement;
-        "dyte-participants-stage-list": HTMLDyteParticipantsStageListElement;
-        "dyte-participants-stage-queue": HTMLDyteParticipantsStageQueueElement;
-        "dyte-participants-toggle": HTMLDyteParticipantsToggleElement;
-        "dyte-participants-viewer-list": HTMLDyteParticipantsViewerListElement;
-        "dyte-participants-waiting-list": HTMLDyteParticipantsWaitingListElement;
-        "dyte-permissions-message": HTMLDytePermissionsMessageElement;
-        "dyte-pip-toggle": HTMLDytePipToggleElement;
-        "dyte-plugin-main": HTMLDytePluginMainElement;
-        "dyte-plugins": HTMLDytePluginsElement;
-        "dyte-plugins-toggle": HTMLDytePluginsToggleElement;
-        "dyte-poll": HTMLDytePollElement;
-        "dyte-poll-form": HTMLDytePollFormElement;
-        "dyte-polls": HTMLDytePollsElement;
-        "dyte-polls-toggle": HTMLDytePollsToggleElement;
-        "dyte-recording-indicator": HTMLDyteRecordingIndicatorElement;
-        "dyte-recording-toggle": HTMLDyteRecordingToggleElement;
-        "dyte-screen-share-toggle": HTMLDyteScreenShareToggleElement;
-        "dyte-screenshare-view": HTMLDyteScreenshareViewElement;
-        "dyte-settings": HTMLDyteSettingsElement;
-        "dyte-settings-audio": HTMLDyteSettingsAudioElement;
-        "dyte-settings-toggle": HTMLDyteSettingsToggleElement;
-        "dyte-settings-video": HTMLDyteSettingsVideoElement;
-        "dyte-setup-screen": HTMLDyteSetupScreenElement;
-        "dyte-sidebar": HTMLDyteSidebarElement;
-        "dyte-sidebar-ui": HTMLDyteSidebarUiElement;
-        "dyte-simple-grid": HTMLDyteSimpleGridElement;
-        "dyte-speaker-selector": HTMLDyteSpeakerSelectorElement;
-        "dyte-spinner": HTMLDyteSpinnerElement;
-        "dyte-spotlight-grid": HTMLDyteSpotlightGridElement;
-        "dyte-spotlight-indicator": HTMLDyteSpotlightIndicatorElement;
-        "dyte-stage": HTMLDyteStageElement;
-        "dyte-stage-toggle": HTMLDyteStageToggleElement;
-        "dyte-switch": HTMLDyteSwitchElement;
-        "dyte-tab-bar": HTMLDyteTabBarElement;
-        "dyte-text-composer-view": HTMLDyteTextComposerViewElement;
-        "dyte-text-message": HTMLDyteTextMessageElement;
-        "dyte-text-message-view": HTMLDyteTextMessageViewElement;
-        "dyte-tooltip": HTMLDyteTooltipElement;
-        "dyte-transcript": HTMLDyteTranscriptElement;
-        "dyte-transcripts": HTMLDyteTranscriptsElement;
-        "dyte-ui-provider": HTMLDyteUiProviderElement;
-        "dyte-viewer-count": HTMLDyteViewerCountElement;
-        "dyte-virtualized-participant-list": HTMLDyteVirtualizedParticipantListElement;
-        "dyte-waiting-screen": HTMLDyteWaitingScreenElement;
+        "rtk-ai": HTMLRtkAiElement;
+        "rtk-ai-toggle": HTMLRtkAiToggleElement;
+        "rtk-ai-transcriptions": HTMLRtkAiTranscriptionsElement;
+        "rtk-audio-grid": HTMLRtkAudioGridElement;
+        "rtk-audio-tile": HTMLRtkAudioTileElement;
+        "rtk-audio-visualizer": HTMLRtkAudioVisualizerElement;
+        "rtk-avatar": HTMLRtkAvatarElement;
+        "rtk-breakout-room-manager": HTMLRtkBreakoutRoomManagerElement;
+        "rtk-breakout-room-participants": HTMLRtkBreakoutRoomParticipantsElement;
+        "rtk-breakout-rooms-manager": HTMLRtkBreakoutRoomsManagerElement;
+        "rtk-breakout-rooms-toggle": HTMLRtkBreakoutRoomsToggleElement;
+        "rtk-broadcast-message-modal": HTMLRtkBroadcastMessageModalElement;
+        "rtk-button": HTMLRtkButtonElement;
+        "rtk-camera-selector": HTMLRtkCameraSelectorElement;
+        "rtk-camera-toggle": HTMLRtkCameraToggleElement;
+        "rtk-caption-toggle": HTMLRtkCaptionToggleElement;
+        "rtk-channel-creator": HTMLRtkChannelCreatorElement;
+        "rtk-channel-details": HTMLRtkChannelDetailsElement;
+        "rtk-channel-header": HTMLRtkChannelHeaderElement;
+        "rtk-channel-selector-ui": HTMLRtkChannelSelectorUiElement;
+        "rtk-channel-selector-view": HTMLRtkChannelSelectorViewElement;
+        "rtk-chat": HTMLRtkChatElement;
+        "rtk-chat-composer-ui": HTMLRtkChatComposerUiElement;
+        "rtk-chat-composer-view": HTMLRtkChatComposerViewElement;
+        "rtk-chat-message": HTMLRtkChatMessageElement;
+        "rtk-chat-messages-ui": HTMLRtkChatMessagesUiElement;
+        "rtk-chat-messages-ui-paginated": HTMLRtkChatMessagesUiPaginatedElement;
+        "rtk-chat-search-results": HTMLRtkChatSearchResultsElement;
+        "rtk-chat-selector-ui": HTMLRtkChatSelectorUiElement;
+        "rtk-chat-toggle": HTMLRtkChatToggleElement;
+        "rtk-clock": HTMLRtkClockElement;
+        "rtk-confirmation-modal": HTMLRtkConfirmationModalElement;
+        "rtk-controlbar": HTMLRtkControlbarElement;
+        "rtk-controlbar-button": HTMLRtkControlbarButtonElement;
+        "rtk-counter": HTMLRtkCounterElement;
+        "rtk-debugger": HTMLRtkDebuggerElement;
+        "rtk-debugger-audio": HTMLRtkDebuggerAudioElement;
+        "rtk-debugger-screenshare": HTMLRtkDebuggerScreenshareElement;
+        "rtk-debugger-system": HTMLRtkDebuggerSystemElement;
+        "rtk-debugger-toggle": HTMLRtkDebuggerToggleElement;
+        "rtk-debugger-video": HTMLRtkDebuggerVideoElement;
+        "rtk-dialog": HTMLRtkDialogElement;
+        "rtk-dialog-manager": HTMLRtkDialogManagerElement;
+        "rtk-draft-attachment-view": HTMLRtkDraftAttachmentViewElement;
+        "rtk-emoji-picker": HTMLRtkEmojiPickerElement;
+        "rtk-emoji-picker-button": HTMLRtkEmojiPickerButtonElement;
+        "rtk-ended-screen": HTMLRtkEndedScreenElement;
+        "rtk-file-dropzone": HTMLRtkFileDropzoneElement;
+        "rtk-file-message": HTMLRtkFileMessageElement;
+        "rtk-file-message-view": HTMLRtkFileMessageViewElement;
+        "rtk-file-picker-button": HTMLRtkFilePickerButtonElement;
+        "rtk-fullscreen-toggle": HTMLRtkFullscreenToggleElement;
+        "rtk-grid": HTMLRtkGridElement;
+        "rtk-grid-pagination": HTMLRtkGridPaginationElement;
+        "rtk-header": HTMLRtkHeaderElement;
+        "rtk-icon": HTMLRtkIconElement;
+        "rtk-idle-screen": HTMLRtkIdleScreenElement;
+        "rtk-image-message": HTMLRtkImageMessageElement;
+        "rtk-image-message-view": HTMLRtkImageMessageViewElement;
+        "rtk-image-viewer": HTMLRtkImageViewerElement;
+        "rtk-information-tooltip": HTMLRtkInformationTooltipElement;
+        "rtk-join-stage": HTMLRtkJoinStageElement;
+        "rtk-leave-button": HTMLRtkLeaveButtonElement;
+        "rtk-leave-meeting": HTMLRtkLeaveMeetingElement;
+        "rtk-livestream-indicator": HTMLRtkLivestreamIndicatorElement;
+        "rtk-livestream-player": HTMLRtkLivestreamPlayerElement;
+        "rtk-livestream-toggle": HTMLRtkLivestreamToggleElement;
+        "rtk-logo": HTMLRtkLogoElement;
+        "rtk-markdown-view": HTMLRtkMarkdownViewElement;
+        "rtk-meeting": HTMLRtkMeetingElement;
+        "rtk-meeting-title": HTMLRtkMeetingTitleElement;
+        "rtk-menu": HTMLRtkMenuElement;
+        "rtk-menu-item": HTMLRtkMenuItemElement;
+        "rtk-menu-list": HTMLRtkMenuListElement;
+        "rtk-message-list-view": HTMLRtkMessageListViewElement;
+        "rtk-message-view": HTMLRtkMessageViewElement;
+        "rtk-mic-toggle": HTMLRtkMicToggleElement;
+        "rtk-microphone-selector": HTMLRtkMicrophoneSelectorElement;
+        "rtk-mixed-grid": HTMLRtkMixedGridElement;
+        "rtk-more-toggle": HTMLRtkMoreToggleElement;
+        "rtk-mute-all-button": HTMLRtkMuteAllButtonElement;
+        "rtk-mute-all-confirmation": HTMLRtkMuteAllConfirmationElement;
+        "rtk-name-tag": HTMLRtkNameTagElement;
+        "rtk-network-indicator": HTMLRtkNetworkIndicatorElement;
+        "rtk-notification": HTMLRtkNotificationElement;
+        "rtk-notifications": HTMLRtkNotificationsElement;
+        "rtk-overlay-modal": HTMLRtkOverlayModalElement;
+        "rtk-paginated-list": HTMLRtkPaginatedListElement;
+        "rtk-participant": HTMLRtkParticipantElement;
+        "rtk-participant-count": HTMLRtkParticipantCountElement;
+        "rtk-participant-setup": HTMLRtkParticipantSetupElement;
+        "rtk-participant-tile": HTMLRtkParticipantTileElement;
+        "rtk-participants": HTMLRtkParticipantsElement;
+        "rtk-participants-audio": HTMLRtkParticipantsAudioElement;
+        "rtk-participants-stage-list": HTMLRtkParticipantsStageListElement;
+        "rtk-participants-stage-queue": HTMLRtkParticipantsStageQueueElement;
+        "rtk-participants-toggle": HTMLRtkParticipantsToggleElement;
+        "rtk-participants-viewer-list": HTMLRtkParticipantsViewerListElement;
+        "rtk-participants-waiting-list": HTMLRtkParticipantsWaitingListElement;
+        "rtk-permissions-message": HTMLRtkPermissionsMessageElement;
+        "rtk-pip-toggle": HTMLRtkPipToggleElement;
+        "rtk-plugin-main": HTMLRtkPluginMainElement;
+        "rtk-plugins": HTMLRtkPluginsElement;
+        "rtk-plugins-toggle": HTMLRtkPluginsToggleElement;
+        "rtk-poll": HTMLRtkPollElement;
+        "rtk-poll-form": HTMLRtkPollFormElement;
+        "rtk-polls": HTMLRtkPollsElement;
+        "rtk-polls-toggle": HTMLRtkPollsToggleElement;
+        "rtk-recording-indicator": HTMLRtkRecordingIndicatorElement;
+        "rtk-recording-toggle": HTMLRtkRecordingToggleElement;
+        "rtk-screen-share-toggle": HTMLRtkScreenShareToggleElement;
+        "rtk-screenshare-view": HTMLRtkScreenshareViewElement;
+        "rtk-settings": HTMLRtkSettingsElement;
+        "rtk-settings-audio": HTMLRtkSettingsAudioElement;
+        "rtk-settings-toggle": HTMLRtkSettingsToggleElement;
+        "rtk-settings-video": HTMLRtkSettingsVideoElement;
+        "rtk-setup-screen": HTMLRtkSetupScreenElement;
+        "rtk-sidebar": HTMLRtkSidebarElement;
+        "rtk-sidebar-ui": HTMLRtkSidebarUiElement;
+        "rtk-simple-grid": HTMLRtkSimpleGridElement;
+        "rtk-speaker-selector": HTMLRtkSpeakerSelectorElement;
+        "rtk-spinner": HTMLRtkSpinnerElement;
+        "rtk-spotlight-grid": HTMLRtkSpotlightGridElement;
+        "rtk-spotlight-indicator": HTMLRtkSpotlightIndicatorElement;
+        "rtk-stage": HTMLRtkStageElement;
+        "rtk-stage-toggle": HTMLRtkStageToggleElement;
+        "rtk-switch": HTMLRtkSwitchElement;
+        "rtk-tab-bar": HTMLRtkTabBarElement;
+        "rtk-text-composer-view": HTMLRtkTextComposerViewElement;
+        "rtk-text-message": HTMLRtkTextMessageElement;
+        "rtk-text-message-view": HTMLRtkTextMessageViewElement;
+        "rtk-tooltip": HTMLRtkTooltipElement;
+        "rtk-transcript": HTMLRtkTranscriptElement;
+        "rtk-transcripts": HTMLRtkTranscriptsElement;
+        "rtk-ui-provider": HTMLRtkUiProviderElement;
+        "rtk-viewer-count": HTMLRtkViewerCountElement;
+        "rtk-virtualized-participant-list": HTMLRtkVirtualizedParticipantListElement;
+        "rtk-waiting-screen": HTMLRtkWaitingScreenElement;
     }
 }
 declare namespace LocalJSX {
-    interface DyteAi {
+    interface RtkAi {
         /**
           * Config
          */
@@ -6563,7 +6563,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteAiCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkAiCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -6575,13 +6575,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * View type
          */
         "view"?: AIView;
     }
-    interface DyteAiToggle {
+    interface RtkAiToggle {
         /**
           * Icon pack
          */
@@ -6593,7 +6593,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteAiToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkAiToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -6605,13 +6605,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
         "variant"?: ControlBarVariant;
     }
-    interface DyteAiTranscriptions {
+    interface RtkAiTranscriptions {
         /**
           * Initial transcriptions
          */
@@ -6623,9 +6623,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteAudioGrid {
+    interface RtkAudioGrid {
         /**
           * Config
          */
@@ -6653,9 +6653,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteAudioTile {
+    interface RtkAudioTile {
         /**
           * Config
          */
@@ -6683,13 +6683,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
     /**
      * An audio visualizer component which visualizes a participants audio.
-     * Commonly used inside `dyte-name-tag`.
+     * Commonly used inside `rtk-name-tag`.
      */
-    interface DyteAudioVisualizer {
+    interface RtkAudioVisualizer {
         /**
           * Hide when there is no audio / audio is muted
          */
@@ -6713,7 +6713,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -6722,7 +6722,7 @@ declare namespace LocalJSX {
     /**
      * Avatar component which renders a participant's image or their initials.
      */
-    interface DyteAvatar {
+    interface RtkAvatar {
         /**
           * Icon pack
          */
@@ -6738,13 +6738,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Avatar type
          */
         "variant"?: AvatarVariant;
     }
-    interface DyteBreakoutRoomManager {
+    interface RtkBreakoutRoomManager {
         /**
           * allow room delete
          */
@@ -6776,25 +6776,25 @@ declare namespace LocalJSX {
         /**
           * Event for deleting room
          */
-        "onDelete"?: (event: DyteBreakoutRoomManagerCustomEvent<string>) => void;
+        "onDelete"?: (event: RtkBreakoutRoomManagerCustomEvent<string>) => void;
         /**
           * On Delete event emitter
          */
-        "onParticipantDelete"?: (event: DyteBreakoutRoomManagerCustomEvent<{
+        "onParticipantDelete"?: (event: RtkBreakoutRoomManagerCustomEvent<{
     customParticipantId: string;
   }>) => void;
         /**
           * Event for adding a participant
          */
-        "onParticipantsAdd"?: (event: DyteBreakoutRoomManagerCustomEvent<null>) => void;
+        "onParticipantsAdd"?: (event: RtkBreakoutRoomManagerCustomEvent<null>) => void;
         /**
           * Event for joining a room
          */
-        "onRoomJoin"?: (event: DyteBreakoutRoomManagerCustomEvent<null>) => void;
+        "onRoomJoin"?: (event: RtkBreakoutRoomManagerCustomEvent<null>) => void;
         /**
           * Event for updating room details
          */
-        "onUpdate"?: (event: DyteBreakoutRoomManagerCustomEvent<{
+        "onUpdate"?: (event: RtkBreakoutRoomManagerCustomEvent<{
     title: string | undefined;
     id: string;
   }>) => void;
@@ -6809,13 +6809,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which lists all participants, with ability to
      * run privileged actions on each participant according to your permissions.
      */
-    interface DyteBreakoutRoomParticipants {
+    interface RtkBreakoutRoomParticipants {
         /**
           * Icon pack
          */
@@ -6827,15 +6827,15 @@ declare namespace LocalJSX {
         /**
           * Emits an event when all participants are selected or deselected
          */
-        "onAllParticipantsToggleUpdate"?: (event: DyteBreakoutRoomParticipantsCustomEvent<string[]>) => void;
+        "onAllParticipantsToggleUpdate"?: (event: RtkBreakoutRoomParticipantsCustomEvent<string[]>) => void;
         /**
           * Emits an event when participants are dragged
          */
-        "onParticipantsDragging"?: (event: DyteBreakoutRoomParticipantsCustomEvent<boolean>) => void;
+        "onParticipantsDragging"?: (event: RtkBreakoutRoomParticipantsCustomEvent<boolean>) => void;
         /**
           * Emits an event when selected participants are updated
          */
-        "onSelectedParticipantsUpdate"?: (event: DyteBreakoutRoomParticipantsCustomEvent<string[]>) => void;
+        "onSelectedParticipantsUpdate"?: (event: RtkBreakoutRoomParticipantsCustomEvent<string[]>) => void;
         /**
           * Participant ids
          */
@@ -6847,9 +6847,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteBreakoutRoomsManager {
+    interface RtkBreakoutRoomsManager {
         /**
           * Icon pack
          */
@@ -6861,7 +6861,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteBreakoutRoomsManagerCustomEvent<PartialStateEvent>) => void;
+        "onRtkStateUpdate"?: (event: RtkBreakoutRoomsManagerCustomEvent<PartialStateEvent>) => void;
         /**
           * States object
          */
@@ -6869,13 +6869,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A button which toggles visibility of breakout rooms.
      * You need to pass the `meeting` object to it.
      */
-    interface DyteBreakoutRoomsToggle {
+    interface RtkBreakoutRoomsToggle {
         /**
           * Icon pack
          */
@@ -6887,7 +6887,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteBreakoutRoomsToggleCustomEvent<PartialStateEvent>) => void;
+        "onRtkStateUpdate"?: (event: RtkBreakoutRoomsToggleCustomEvent<PartialStateEvent>) => void;
         /**
           * Size
          */
@@ -6899,13 +6899,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
         "variant"?: ControlBarVariant;
     }
-    interface DyteBroadcastMessageModal {
+    interface RtkBroadcastMessageModal {
         /**
           * Icon pack
          */
@@ -6917,7 +6917,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteBroadcastMessageModalCustomEvent<States1>) => void;
+        "onRtkStateUpdate"?: (event: RtkBroadcastMessageModalCustomEvent<States1>) => void;
         /**
           * States object
          */
@@ -6925,12 +6925,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
-     * A button that follows Dyte's Design System.
+     * A button that follows RTK Design System.
      */
-    interface DyteButton {
+    interface RtkButton {
         /**
           * Where the button is disabled or not
          */
@@ -6958,7 +6958,7 @@ declare namespace LocalJSX {
     }
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -6967,7 +6967,7 @@ declare namespace LocalJSX {
      * }
      * ```
      */
-    interface DyteCameraSelector {
+    interface RtkCameraSelector {
         /**
           * Icon pack
          */
@@ -6983,7 +6983,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * variant
          */
@@ -6992,7 +6992,7 @@ declare namespace LocalJSX {
     /**
      * A button which toggles your camera.
      */
-    interface DyteCameraToggle {
+    interface RtkCameraToggle {
         /**
           * Icon pack
          */
@@ -7004,7 +7004,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteCameraToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkCameraToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -7012,13 +7012,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
         "variant"?: ControlBarVariant;
     }
-    interface DyteCaptionToggle {
+    interface RtkCaptionToggle {
         /**
           * Config
          */
@@ -7034,7 +7034,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteCaptionToggleCustomEvent<States1>) => void;
+        "onRtkStateUpdate"?: (event: RtkCaptionToggleCustomEvent<States1>) => void;
         /**
           * Size
          */
@@ -7046,13 +7046,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
         "variant"?: ControlBarVariant;
     }
-    interface DyteChannelCreator {
+    interface RtkChannelCreator {
         /**
           * Icon pack
          */
@@ -7064,17 +7064,17 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteChannelCreatorCustomEvent<States1>) => void;
+        "onRtkStateUpdate"?: (event: RtkChannelCreatorCustomEvent<States1>) => void;
         /**
           * Emits event to switch channel
          */
-        "onSwitchChannel"?: (event: DyteChannelCreatorCustomEvent<string>) => void;
+        "onSwitchChannel"?: (event: RtkChannelCreatorCustomEvent<string>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteChannelDetails {
+    interface RtkChannelDetails {
         /**
           * Channel object
          */
@@ -7090,9 +7090,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteChannelHeader {
+    interface RtkChannelHeader {
         /**
           * Channel object
          */
@@ -7108,15 +7108,15 @@ declare namespace LocalJSX {
         /**
           * Event emitted when back button is clicked
          */
-        "onBack"?: (event: DyteChannelHeaderCustomEvent<void>) => void;
+        "onBack"?: (event: RtkChannelHeaderCustomEvent<void>) => void;
         /**
           * event triggered for search
          */
-        "onSearch"?: (event: DyteChannelHeaderCustomEvent<string>) => void;
+        "onSearch"?: (event: RtkChannelHeaderCustomEvent<string>) => void;
         /**
           * event triggered for search
          */
-        "onSearchDismissed"?: (event: DyteChannelHeaderCustomEvent<any>) => void;
+        "onSearchDismissed"?: (event: RtkChannelHeaderCustomEvent<any>) => void;
         /**
           * Show back button
          */
@@ -7124,9 +7124,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteChannelSelectorUi {
+    interface RtkChannelSelectorUi {
         /**
           * Channels
          */
@@ -7138,7 +7138,7 @@ declare namespace LocalJSX {
         /**
           * On channel changed
          */
-        "onChannelChanged"?: (event: DyteChannelSelectorUiCustomEvent<string>) => void;
+        "onChannelChanged"?: (event: RtkChannelSelectorUiCustomEvent<string>) => void;
         /**
           * Selected channel id
          */
@@ -7150,9 +7150,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteChannelSelectorView {
+    interface RtkChannelSelectorView {
         /**
           * Channels
          */
@@ -7180,7 +7180,7 @@ declare namespace LocalJSX {
         /**
           * Event emitted when selected channel changes
          */
-        "onChannelChange"?: (event: DyteChannelSelectorViewCustomEvent<{
+        "onChannelChange"?: (event: RtkChannelSelectorViewCustomEvent<{
     id: string;
     name: string;
     avatarUrl?: string;
@@ -7196,7 +7196,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
         /**
           * Render as dropdown or list (default = list)
          */
@@ -7205,7 +7205,7 @@ declare namespace LocalJSX {
     /**
      * Fully featured chat component with image & file upload, emoji picker and auto-scroll.
      */
-    interface DyteChat {
+    interface RtkChat {
         /**
           * Config
          */
@@ -7229,7 +7229,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteChatCustomEvent<States1>) => void;
+        "onRtkStateUpdate"?: (event: RtkChatCustomEvent<States1>) => void;
         /**
           * @deprecated Beta API, will change in future List of target presets allowed as private chat recipient
          */
@@ -7241,9 +7241,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteChatComposerUi {
+    interface RtkChatComposerUi {
         /**
           * Whether user can send file messages
          */
@@ -7271,11 +7271,11 @@ declare namespace LocalJSX {
         /**
           * Event emitted when message editing is cancelled
          */
-        "onDyteEditCancelled"?: (event: DyteChatComposerUiCustomEvent<any>) => void;
+        "onRtkEditCancelled"?: (event: RtkChatComposerUiCustomEvent<any>) => void;
         /**
           * Event emitted when message is edited
          */
-        "onDyteEditMessage"?: (event: DyteChatComposerUiCustomEvent<{
+        "onRtkEditMessage"?: (event: RtkChatComposerUiCustomEvent<{
     id: string;
     message: string;
     channelId?: string;
@@ -7283,7 +7283,7 @@ declare namespace LocalJSX {
         /**
           * Event emitted when new message is submitted
          */
-        "onDyteNewMessage"?: (event: DyteChatComposerUiCustomEvent<DyteNewMessageEvent>) => void;
+        "onRtkNewMessage"?: (event: RtkChatComposerUiCustomEvent<RtkNewMessageEvent>) => void;
         /**
           * prefill the composer
          */
@@ -7299,12 +7299,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which renders a chat composer
      */
-    interface DyteChatComposerView {
+    interface RtkChatComposerView {
         /**
           * Whether user can send file messages
          */
@@ -7340,19 +7340,19 @@ declare namespace LocalJSX {
         /**
           * Event emitted when message editing is cancelled
          */
-        "onEditCancel"?: (event: DyteChatComposerViewCustomEvent<void>) => void;
+        "onEditCancel"?: (event: RtkChatComposerViewCustomEvent<void>) => void;
         /**
           * Event emitted when message is edited
          */
-        "onEditMessage"?: (event: DyteChatComposerViewCustomEvent<string>) => void;
+        "onEditMessage"?: (event: RtkChatComposerViewCustomEvent<string>) => void;
         /**
           * Event emitted when new message is submitted
          */
-        "onNewMessage"?: (event: DyteChatComposerViewCustomEvent<NewMessageEvent>) => void;
+        "onNewMessage"?: (event: RtkChatComposerViewCustomEvent<NewMessageEvent>) => void;
         /**
           * Event emitted when quoted message is dismissed
          */
-        "onQuotedMessageDismiss"?: (event: DyteChatComposerViewCustomEvent<void>) => void;
+        "onQuotedMessageDismiss"?: (event: RtkChatComposerViewCustomEvent<void>) => void;
         /**
           * Quote message to be displayed
          */
@@ -7368,9 +7368,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteChatMessage {
+    interface RtkChatMessage {
         /**
           * aligns message to right
          */
@@ -7430,19 +7430,19 @@ declare namespace LocalJSX {
         /**
           * Event for when edit is clicked on a message
          */
-        "onDelete"?: (event: DyteChatMessageCustomEvent<Message>) => void;
+        "onDelete"?: (event: RtkChatMessageCustomEvent<Message>) => void;
         /**
           * Event for when edit is clicked on a message
          */
-        "onEdit"?: (event: DyteChatMessageCustomEvent<Message>) => void;
+        "onEdit"?: (event: RtkChatMessageCustomEvent<Message>) => void;
         /**
           * Event for when pin is clicked on a message
          */
-        "onPin"?: (event: DyteChatMessageCustomEvent<Message>) => void;
+        "onPin"?: (event: RtkChatMessageCustomEvent<Message>) => void;
         /**
           * Event for when reply is clicked on a message
          */
-        "onReply"?: (event: DyteChatMessageCustomEvent<Message>) => void;
+        "onReply"?: (event: RtkChatMessageCustomEvent<Message>) => void;
         /**
           * sender display picture url
          */
@@ -7454,9 +7454,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteChatMessagesUi {
+    interface RtkChatMessagesUi {
         /**
           * Can current user pin/unpin messages
          */
@@ -7470,13 +7470,13 @@ declare namespace LocalJSX {
          */
         "messages"?: Chat[];
         /**
-          * Emits updated state data
-         */
-        "onDyteStateUpdate"?: (event: DyteChatMessagesUiCustomEvent<States>) => void;
-        /**
           * Event emitted when a message is pinned or unpinned
          */
-        "onPinMessage"?: (event: DyteChatMessagesUiCustomEvent<Message>) => void;
+        "onPinMessage"?: (event: RtkChatMessagesUiCustomEvent<Message>) => void;
+        /**
+          * Emits updated state data
+         */
+        "onRtkStateUpdate"?: (event: RtkChatMessagesUiCustomEvent<States>) => void;
         /**
           * Selected group key
          */
@@ -7492,9 +7492,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteChatMessagesUiPaginated {
+    interface RtkChatMessagesUiPaginated {
         /**
           * Icon pack
          */
@@ -7510,22 +7510,22 @@ declare namespace LocalJSX {
         /**
           * Event emitted when a message is deleted
          */
-        "onDeleteMessage"?: (event: DyteChatMessagesUiPaginatedCustomEvent<Message>) => void;
-        /**
-          * Emits updated state data
-         */
-        "onDyteStateUpdate"?: (event: DyteChatMessagesUiPaginatedCustomEvent<States>) => void;
+        "onDeleteMessage"?: (event: RtkChatMessagesUiPaginatedCustomEvent<Message>) => void;
         /**
           * Event for editing a message
          */
-        "onEditMessageInit"?: (event: DyteChatMessagesUiPaginatedCustomEvent<{
+        "onEditMessageInit"?: (event: RtkChatMessagesUiPaginatedCustomEvent<{
     payload: TextMessage;
     flags: { isReply?: boolean; isEdit?: boolean };
   }>) => void;
         /**
           * Event emitted when a message is pinned or unpinned
          */
-        "onPinMessage"?: (event: DyteChatMessagesUiPaginatedCustomEvent<Message>) => void;
+        "onPinMessage"?: (event: RtkChatMessagesUiPaginatedCustomEvent<Message>) => void;
+        /**
+          * Emits updated state data
+         */
+        "onRtkStateUpdate"?: (event: RtkChatMessagesUiPaginatedCustomEvent<States>) => void;
         /**
           * Selected channel
          */
@@ -7541,9 +7541,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteChatSearchResults {
+    interface RtkChatSearchResults {
         /**
           * Channel id
          */
@@ -7563,9 +7563,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteChatSelectorUi {
+    interface RtkChatSelectorUi {
         /**
           * Participants
          */
@@ -7577,7 +7577,7 @@ declare namespace LocalJSX {
         /**
           * Event emitted when chat scope is changed
          */
-        "onDyteChatGroupChanged"?: (event: DyteChatSelectorUiCustomEvent<ChatGroupChangedType>) => void;
+        "onRtkChatGroupChanged"?: (event: RtkChatSelectorUiCustomEvent<ChatGroupChangedType>) => void;
         /**
           * Selected participant
          */
@@ -7589,7 +7589,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Unread counts
          */
@@ -7598,12 +7598,12 @@ declare namespace LocalJSX {
     /**
      * A button which toggles visibility of chat.
      * You need to pass the `meeting` object to it to see the unread messages count badge.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'chat' }
      * ```
      */
-    interface DyteChatToggle {
+    interface RtkChatToggle {
         /**
           * Icon pack
          */
@@ -7615,7 +7615,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteChatToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkChatToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -7627,7 +7627,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -7636,7 +7636,7 @@ declare namespace LocalJSX {
     /**
      * Shows the time elapsed in a meeting.
      */
-    interface DyteClock {
+    interface RtkClock {
         /**
           * Icon pack
          */
@@ -7649,7 +7649,7 @@ declare namespace LocalJSX {
     /**
      * A confirmation modal.
      */
-    interface DyteConfirmationModal {
+    interface RtkConfirmationModal {
         /**
           * Icon pack
          */
@@ -7661,7 +7661,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteConfirmationModalCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkConfirmationModalCustomEvent<States>) => void;
         /**
           * States object
          */
@@ -7669,12 +7669,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * Controlbar component provides you with various designs as variants.
      */
-    interface DyteControlbar {
+    interface RtkControlbar {
         /**
           * Config
          */
@@ -7702,7 +7702,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -7711,7 +7711,7 @@ declare namespace LocalJSX {
     /**
      * A skeleton component used for composing custom controlbar buttons.
      */
-    interface DyteControlbarButton {
+    interface RtkControlbarButton {
         /**
           * Whether icon requires brand color
          */
@@ -7752,7 +7752,7 @@ declare namespace LocalJSX {
     /**
      * A number picker with increment and decrement buttons.
      */
-    interface DyteCounter {
+    interface RtkCounter {
         /**
           * Icon pack
          */
@@ -7764,7 +7764,7 @@ declare namespace LocalJSX {
         /**
           * On change event emitter
          */
-        "onValueChange"?: (event: DyteCounterCustomEvent<string>) => void;
+        "onValueChange"?: (event: RtkCounterCustomEvent<string>) => void;
         /**
           * Size
          */
@@ -7772,7 +7772,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Initial value
          */
@@ -7781,7 +7781,7 @@ declare namespace LocalJSX {
     /**
      * A troubleshooting component to identify and fix any issues in the meeting.
      */
-    interface DyteDebugger {
+    interface RtkDebugger {
         /**
           * Icon pack
          */
@@ -7793,7 +7793,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteDebuggerCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkDebuggerCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -7805,9 +7805,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteDebuggerAudio {
+    interface RtkDebuggerAudio {
         /**
           * Icon pack
          */
@@ -7827,9 +7827,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteDebuggerScreenshare {
+    interface RtkDebuggerScreenshare {
         /**
           * Icon pack
          */
@@ -7849,9 +7849,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteDebuggerSystem {
+    interface RtkDebuggerSystem {
         /**
           * Icon pack
          */
@@ -7871,9 +7871,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteDebuggerToggle {
+    interface RtkDebuggerToggle {
         /**
           * Icon pack
          */
@@ -7885,7 +7885,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteDebuggerToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkDebuggerToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -7897,13 +7897,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
         "variant"?: ControlBarVariant;
     }
-    interface DyteDebuggerVideo {
+    interface RtkDebuggerVideo {
         /**
           * Icon pack
          */
@@ -7923,12 +7923,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
     /**
      * A dialog component.
      */
-    interface DyteDialog {
+    interface RtkDialog {
         /**
           * UI Config
          */
@@ -7952,7 +7952,7 @@ declare namespace LocalJSX {
         /**
           * Event emitted when dialog is closed
          */
-        "onDyteDialogClose"?: (event: DyteDialogCustomEvent<any>) => void;
+        "onRtkDialogClose"?: (event: RtkDialogCustomEvent<any>) => void;
         /**
           * Whether a dialog is open or not
          */
@@ -7968,18 +7968,18 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which handles all dialog elements in a component such as:
-     * - dyte-settings
-     * - dyte-leave-meeting
-     * - dyte-permissions-message
-     * - dyte-image-viewer
-     * - dyte-breakout-rooms-manager
+     * - rtk-settings
+     * - rtk-leave-meeting
+     * - rtk-permissions-message
+     * - rtk-image-viewer
+     * - rtk-breakout-rooms-manager
      * This components depends on the values from `states` object.
      */
-    interface DyteDialogManager {
+    interface RtkDialogManager {
         /**
           * UI Config
          */
@@ -7995,7 +7995,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteDialogManagerCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkDialogManagerCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -8007,12 +8007,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which renders the draft attachment to send
      */
-    interface DyteDraftAttachmentView {
+    interface RtkDraftAttachmentView {
         /**
           * Attachment to display
          */
@@ -8027,16 +8027,16 @@ declare namespace LocalJSX {
         /**
           * Event triggered when the attachment is deleted
          */
-        "onDeleteAttachment"?: (event: DyteDraftAttachmentViewCustomEvent<any>) => void;
+        "onDeleteAttachment"?: (event: RtkDraftAttachmentViewCustomEvent<any>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
     /**
      * A very simple emoji picker component.
      */
-    interface DyteEmojiPicker {
+    interface RtkEmojiPicker {
         /**
           * Controls whether or not to focus on mount
          */
@@ -8046,19 +8046,19 @@ declare namespace LocalJSX {
          */
         "iconPack"?: IconPack;
         /**
-          * Event which is emitted when an Emoji is clicked
-         */
-        "onDyteEmojiClicked"?: (event: DyteEmojiPickerCustomEvent<string>) => void;
-        /**
           * Close event
          */
-        "onPickerClose"?: (event: DyteEmojiPickerCustomEvent<void>) => void;
+        "onPickerClose"?: (event: RtkEmojiPickerCustomEvent<void>) => void;
+        /**
+          * Event which is emitted when an Emoji is clicked
+         */
+        "onRtkEmojiClicked"?: (event: RtkEmojiPickerCustomEvent<string>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteEmojiPickerButton {
+    interface RtkEmojiPickerButton {
         /**
           * Icon pack
          */
@@ -8070,12 +8070,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
     /**
      * A screen which shows a meeting has ended.
      */
-    interface DyteEndedScreen {
+    interface RtkEndedScreen {
         /**
           * Config object
          */
@@ -8099,9 +8099,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteFileDropzone {
+    interface RtkFileDropzone {
         /**
           * Host element on which drop events to attach
          */
@@ -8113,16 +8113,16 @@ declare namespace LocalJSX {
         /**
           * drop event callback
          */
-        "onDropCallback"?: (event: DyteFileDropzoneCustomEvent<DragEvent>) => void;
+        "onDropCallback"?: (event: RtkFileDropzoneCustomEvent<DragEvent>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
     /**
      * A component which renders a file message from chat.
      */
-    interface DyteFileMessage {
+    interface RtkFileMessage {
         /**
           * Icon pack
          */
@@ -8146,12 +8146,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which renders a file message.
      */
-    interface DyteFileMessageView {
+    interface RtkFileMessageView {
         /**
           * Icon pack
          */
@@ -8169,7 +8169,7 @@ declare namespace LocalJSX {
          */
         "url": string;
     }
-    interface DyteFilePickerButton {
+    interface RtkFilePickerButton {
         /**
           * File type filter to open file picker with
          */
@@ -8189,17 +8189,17 @@ declare namespace LocalJSX {
         /**
           * Event when a file is selected for upload
          */
-        "onFileChange"?: (event: DyteFilePickerButtonCustomEvent<File>) => void;
+        "onFileChange"?: (event: RtkFilePickerButtonCustomEvent<File>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
     /**
      * A button which toggles full screen mode for any
-     * existing `dyte-meeting` component in the DOM.
+     * existing `rtk-meeting` component in the DOM.
      */
-    interface DyteFullscreenToggle {
+    interface RtkFullscreenToggle {
         /**
           * Icon pack
          */
@@ -8207,7 +8207,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteFullscreenToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkFullscreenToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -8219,7 +8219,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Target Element to fullscreen
          */
@@ -8232,7 +8232,7 @@ declare namespace LocalJSX {
     /**
      * The main grid component which abstracts all the grid handling logic and renders it for you.
      */
-    interface DyteGrid {
+    interface RtkGrid {
         /**
           * The aspect ratio of each participant
          */
@@ -8264,7 +8264,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteGridCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkGridCustomEvent<States>) => void;
         /**
           * @deprecated
          */
@@ -8280,13 +8280,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which allows you to change current page and view mode
-     * of active participants list. This is reflected in the `dyte-grid` component.
+     * of active participants list. This is reflected in the `rtk-grid` component.
      */
-    interface DyteGridPagination {
+    interface RtkGridPagination {
         /**
           * Icon Pack
          */
@@ -8306,7 +8306,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -8315,7 +8315,7 @@ declare namespace LocalJSX {
     /**
      * A component that houses all the header components.
      */
-    interface DyteHeader {
+    interface RtkHeader {
         /**
           * Config
          */
@@ -8343,7 +8343,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -8352,7 +8352,7 @@ declare namespace LocalJSX {
     /**
      * An icon component which accepts an svg string and renders it.
      */
-    interface DyteIcon {
+    interface RtkIcon {
         /**
           * Icon
          */
@@ -8370,7 +8370,7 @@ declare namespace LocalJSX {
      * A screen that handles the idle state,
      * i.e; when you are waiting for data about the meeting, specifically the `meeting` object.
      */
-    interface DyteIdleScreen {
+    interface RtkIdleScreen {
         /**
           * Config object
          */
@@ -8386,12 +8386,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which renders an image message from chat.
      */
-    interface DyteImageMessage {
+    interface RtkImageMessage {
         /**
           * Icon pack
          */
@@ -8411,7 +8411,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteImageMessageCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkImageMessageCustomEvent<States>) => void;
         /**
           * show message in bubble
          */
@@ -8419,12 +8419,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which renders an image message.
      */
-    interface DyteImageMessageView {
+    interface RtkImageMessageView {
         /**
           * Icon pack
          */
@@ -8432,11 +8432,11 @@ declare namespace LocalJSX {
         /**
           * preview event
          */
-        "onPreview"?: (event: DyteImageMessageViewCustomEvent<string>) => void;
+        "onPreview"?: (event: RtkImageMessageViewCustomEvent<string>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
         /**
           * Url of the image
          */
@@ -8445,7 +8445,7 @@ declare namespace LocalJSX {
     /**
      * A component which shows an image sent via chat.
      */
-    interface DyteImageViewer {
+    interface RtkImageViewer {
         /**
           * Icon pack
          */
@@ -8457,7 +8457,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when viewer should be closed
          */
-        "onClose"?: (event: DyteImageViewerCustomEvent<void>) => void;
+        "onClose"?: (event: RtkImageViewerCustomEvent<void>) => void;
         /**
           * Size
          */
@@ -8465,15 +8465,15 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteInformationTooltip {
+    interface RtkInformationTooltip {
         /**
           * Icon pack
          */
         "iconPack"?: IconPack1;
     }
-    interface DyteJoinStage {
+    interface RtkJoinStage {
         /**
           * UI Config
          */
@@ -8493,15 +8493,15 @@ declare namespace LocalJSX {
         /**
           * Event which is emitted when user confirms joining stage
          */
-        "onDyteJoinStage"?: (event: DyteJoinStageCustomEvent<void>) => void;
+        "onRtkJoinStage"?: (event: RtkJoinStageCustomEvent<void>) => void;
         /**
           * Event which is emitted when user cancel joining stage
          */
-        "onDyteLeaveStage"?: (event: DyteJoinStageCustomEvent<void>) => void;
+        "onRtkLeaveStage"?: (event: RtkJoinStageCustomEvent<void>) => void;
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteJoinStageCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkJoinStageCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -8513,12 +8513,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A button which toggles visilibility of the leave confirmation dialog.
      */
-    interface DyteLeaveButton {
+    interface RtkLeaveButton {
         /**
           * Icon pack
          */
@@ -8526,7 +8526,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteLeaveButtonCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkLeaveButtonCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -8534,7 +8534,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -8544,7 +8544,7 @@ declare namespace LocalJSX {
      * A component which allows you to leave a meeting or
      * end meeting for all, if you have the permission.
      */
-    interface DyteLeaveMeeting {
+    interface RtkLeaveMeeting {
         /**
           * Icon pack
          */
@@ -8556,7 +8556,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteLeaveMeetingCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkLeaveMeetingCustomEvent<States>) => void;
         /**
           * States object
          */
@@ -8564,9 +8564,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteLivestreamIndicator {
+    interface RtkLivestreamIndicator {
         /**
           * Icon pack
          */
@@ -8582,9 +8582,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteLivestreamPlayer {
+    interface RtkLivestreamPlayer {
         /**
           * Icon pack
          */
@@ -8596,7 +8596,7 @@ declare namespace LocalJSX {
         /**
           * Emit API error events
          */
-        "onDyteAPIError"?: (event: DyteLivestreamPlayerCustomEvent<{
+        "onRtkApiError"?: (event: RtkLivestreamPlayerCustomEvent<{
     trace: string;
     message: string;
   }>) => void;
@@ -8607,9 +8607,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
-    interface DyteLivestreamToggle {
+    interface RtkLivestreamToggle {
         /**
           * Icon pack
          */
@@ -8621,14 +8621,14 @@ declare namespace LocalJSX {
         /**
           * Emit API error events
          */
-        "onDyteAPIError"?: (event: DyteLivestreamToggleCustomEvent<{
+        "onRtkApiError"?: (event: RtkLivestreamToggleCustomEvent<{
     trace: string;
     message: string;
   }>) => void;
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteLivestreamToggleCustomEvent<States1>) => void;
+        "onRtkStateUpdate"?: (event: RtkLivestreamToggleCustomEvent<States1>) => void;
         /**
           * Size
          */
@@ -8636,7 +8636,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -8645,7 +8645,7 @@ declare namespace LocalJSX {
     /**
      * A component which loads the logo from your config, or via the `logo-url` attribute.
      */
-    interface DyteLogo {
+    interface RtkLogo {
         /**
           * Config object
          */
@@ -8661,9 +8661,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteMarkdownView {
+    interface RtkMarkdownView {
         /**
           * max length of text to render as markdown
          */
@@ -8679,7 +8679,7 @@ declare namespace LocalJSX {
      * With this component, you don't have to handle all the states,
      * dialogs and other smaller bits of managing the application.
      */
-    interface DyteMeeting {
+    interface RtkMeeting {
         /**
           * Whether to apply the design system on the document root from config
          */
@@ -8715,7 +8715,7 @@ declare namespace LocalJSX {
         /**
           * States
          */
-        "onDyteStatesUpdate"?: (event: DyteMeetingCustomEvent<States>) => void;
+        "onRtkStatesUpdate"?: (event: RtkMeetingCustomEvent<States>) => void;
         /**
           * Whether to show setup screen or not
          */
@@ -8727,12 +8727,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * Displays the title of the meeting.
      */
-    interface DyteMeetingTitle {
+    interface RtkMeetingTitle {
         /**
           * Icon pack
          */
@@ -8744,12 +8744,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A menu component.
      */
-    interface DyteMenu {
+    interface RtkMenu {
         /**
           * Icon pack
          */
@@ -8769,12 +8769,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A menu item component.
      */
-    interface DyteMenuItem {
+    interface RtkMenuItem {
         /**
           * Icon pack
          */
@@ -8786,12 +8786,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A menu list component.
      */
-    interface DyteMenuList {
+    interface RtkMenuList {
         /**
           * Icon pack
          */
@@ -8799,12 +8799,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which renders list of messages.
      */
-    interface DyteMessageListView {
+    interface RtkMessageListView {
         /**
           * Estimated height of an item
          */
@@ -8830,7 +8830,7 @@ declare namespace LocalJSX {
          */
         "visibleItemsCount"?: number;
     }
-    interface DyteMessageView {
+    interface RtkMessageView {
         /**
           * List of actions to show in menu
          */
@@ -8862,7 +8862,7 @@ declare namespace LocalJSX {
         /**
           * action event
          */
-        "onAction"?: (event: DyteMessageViewCustomEvent<string>) => void;
+        "onAction"?: (event: RtkMessageViewCustomEvent<string>) => void;
         /**
           * Time when message was sent
          */
@@ -8879,7 +8879,7 @@ declare namespace LocalJSX {
     /**
      * A button which toggles your microphone.
      */
-    interface DyteMicToggle {
+    interface RtkMicToggle {
         /**
           * Icon pack
          */
@@ -8891,7 +8891,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteMicToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkMicToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -8899,7 +8899,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -8907,7 +8907,7 @@ declare namespace LocalJSX {
     }
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -8916,7 +8916,7 @@ declare namespace LocalJSX {
      * }
      * ```
      */
-    interface DyteMicrophoneSelector {
+    interface RtkMicrophoneSelector {
         /**
           * Icon pack
          */
@@ -8932,7 +8932,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * variant
          */
@@ -8941,7 +8941,7 @@ declare namespace LocalJSX {
     /**
      * A grid component which handles screenshares, plugins and participants.
      */
-    interface DyteMixedGrid {
+    interface RtkMixedGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
          */
@@ -8997,16 +8997,16 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A button which toggles visibility of a more menu.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeMoreMenu: boolean; }
      * ```
      */
-    interface DyteMoreToggle {
+    interface RtkMoreToggle {
         /**
           * Icon pack
          */
@@ -9014,7 +9014,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteMoreToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkMoreToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -9026,9 +9026,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteMuteAllButton {
+    interface RtkMuteAllButton {
         /**
           * Icon pack
          */
@@ -9040,7 +9040,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteMuteAllButtonCustomEvent<States1>) => void;
+        "onRtkStateUpdate"?: (event: RtkMuteAllButtonCustomEvent<States1>) => void;
         /**
           * Size
          */
@@ -9048,13 +9048,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
         "variant"?: ControlBarVariant;
     }
-    interface DyteMuteAllConfirmation {
+    interface RtkMuteAllConfirmation {
         /**
           * Icon pack
          */
@@ -9066,7 +9066,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteMuteAllConfirmationCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkMuteAllConfirmationCustomEvent<States>) => void;
         /**
           * States object
          */
@@ -9074,12 +9074,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which shows a participant's name.
      */
-    interface DyteNameTag {
+    interface RtkNameTag {
         /**
           * Icon pack
          */
@@ -9103,13 +9103,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Name tag variant
          */
-        "variant"?: DyteNameTagVariant;
+        "variant"?: RtkNameTagVariant;
     }
-    interface DyteNetworkIndicator {
+    interface RtkNetworkIndicator {
         /**
           * Icon pack
          */
@@ -9129,14 +9129,14 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
     /**
      * A component which shows a notification.
      * You need to remove the element after you receive the
-     * `dyteNotificationDismiss` event.
+     * `rtkNotificationDismiss` event.
      */
-    interface DyteNotification {
+    interface RtkNotification {
         /**
           * Icon pack
          */
@@ -9148,7 +9148,7 @@ declare namespace LocalJSX {
         /**
           * Dismiss event
          */
-        "onDyteNotificationDismiss"?: (event: DyteNotificationCustomEvent<string>) => void;
+        "onRtkNotificationDismiss"?: (event: RtkNotificationCustomEvent<string>) => void;
         /**
           * Size
          */
@@ -9156,14 +9156,14 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which handles notifications.
      * You can configure which notifications you want to see and which ones you want to hear.
      * There are also certain limits which you can set as well.
      */
-    interface DyteNotifications {
+    interface RtkNotifications {
         /**
           * Config object
          */
@@ -9187,12 +9187,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A confirmation modal.
      */
-    interface DyteOverlayModal {
+    interface RtkOverlayModal {
         /**
           * Icon pack
          */
@@ -9204,7 +9204,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteOverlayModalCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkOverlayModalCustomEvent<States>) => void;
         /**
           * States object
          */
@@ -9212,9 +9212,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DytePaginatedList {
+    interface RtkPaginatedList {
         /**
           * auto scroll list to bottom
          */
@@ -9250,14 +9250,14 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
-     * A participant entry component used inside `dyte-participants` which shows data like:
+     * A participant entry component used inside `rtk-participants` which shows data like:
      * name, picture and media device status.
      * You can perform privileged actions on the participant too.
      */
-    interface DyteParticipant {
+    interface RtkParticipant {
         /**
           * Config object
          */
@@ -9271,9 +9271,9 @@ declare namespace LocalJSX {
          */
         "meeting"?: Meeting;
         /**
-          * Emit dyte notifications
+          * Emit notifications
          */
-        "onDyteSendNotification"?: (event: DyteParticipantCustomEvent<{
+        "onRtkSendNotification"?: (event: RtkParticipantCustomEvent<{
     trace: string;
     message: string;
   }>) => void;
@@ -9288,7 +9288,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Show participant summary
          */
@@ -9297,7 +9297,7 @@ declare namespace LocalJSX {
     /**
      * A component which shows count of total joined participants in a meeting.
      */
-    interface DyteParticipantCount {
+    interface RtkParticipantCount {
         /**
           * Icon pack
          */
@@ -9313,9 +9313,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteParticipantSetup {
+    interface RtkParticipantSetup {
         /**
           * Config object
          */
@@ -9352,7 +9352,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -9360,9 +9360,9 @@ declare namespace LocalJSX {
     }
     /**
      * A component which plays a participants video and allows for placement
-     * of components like `dyte-name-tag`, `dyte-audio-visualizer` or any other component.
+     * of components like `rtk-name-tag`, `rtk-audio-visualizer` or any other component.
      */
-    interface DyteParticipantTile {
+    interface RtkParticipantTile {
         /**
           * Config object
          */
@@ -9391,11 +9391,11 @@ declare namespace LocalJSX {
         /**
           * Event triggered when tile is loaded
          */
-        "onTileLoad"?: (event: DyteParticipantTileCustomEvent<{ participant: Peer; videoElement: HTMLVideoElement }>) => void;
+        "onTileLoad"?: (event: RtkParticipantTileCustomEvent<{ participant: Peer; videoElement: HTMLVideoElement }>) => void;
         /**
           * Event triggered when tile is unloaded
          */
-        "onTileUnload"?: (event: DyteParticipantTileCustomEvent<Peer>) => void;
+        "onTileUnload"?: (event: RtkParticipantTileCustomEvent<Peer>) => void;
         /**
           * Participant object
          */
@@ -9411,7 +9411,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -9421,7 +9421,7 @@ declare namespace LocalJSX {
      * A component which lists all participants, with ability to
      * run privileged actions on each participant according to your permissions.
      */
-    interface DyteParticipants {
+    interface RtkParticipants {
         /**
           * Config
          */
@@ -9441,7 +9441,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteParticipantsCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkParticipantsCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -9453,12 +9453,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which plays all the audio from participants and screenshares.
      */
-    interface DyteParticipantsAudio {
+    interface RtkParticipantsAudio {
         /**
           * Icon pack
          */
@@ -9470,7 +9470,7 @@ declare namespace LocalJSX {
         /**
           * Callback to execute when the dialog is closed
          */
-        "onDialogClose"?: (event: DyteParticipantsAudioCustomEvent<void>) => void;
+        "onDialogClose"?: (event: RtkParticipantsAudioCustomEvent<void>) => void;
         /**
           * Pass existing audio element
          */
@@ -9478,13 +9478,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which lists all participants, with ability to
      * run privileged actions on each participant according to your permissions.
      */
-    interface DyteParticipantsStageList {
+    interface RtkParticipantsStageList {
         /**
           * Config
          */
@@ -9516,13 +9516,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * View mode for participants list
          */
         "view"?: ParticipantsViewMode;
     }
-    interface DyteParticipantsStageQueue {
+    interface RtkParticipantsStageQueue {
         /**
           * Config
          */
@@ -9542,7 +9542,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
         /**
           * View mode for participants list
          */
@@ -9550,12 +9550,12 @@ declare namespace LocalJSX {
     }
     /**
      * A button which toggles visibility of participants.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'participants' }
      * ```
      */
-    interface DyteParticipantsToggle {
+    interface RtkParticipantsToggle {
         /**
           * Icon pack
          */
@@ -9567,7 +9567,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteParticipantsToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkParticipantsToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -9579,13 +9579,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
         "variant"?: ControlBarVariant;
     }
-    interface DyteParticipantsViewerList {
+    interface RtkParticipantsViewerList {
         /**
           * Config
          */
@@ -9613,13 +9613,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
         /**
           * View mode for participants list
          */
         "view"?: ParticipantsViewMode;
     }
-    interface DyteParticipantsWaitingList {
+    interface RtkParticipantsWaitingList {
         /**
           * Config
          */
@@ -9639,7 +9639,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
         /**
           * View mode for participants list
          */
@@ -9649,7 +9649,7 @@ declare namespace LocalJSX {
      * A component which shows permission related troubleshooting
      * information.
      */
-    interface DytePermissionsMessage {
+    interface RtkPermissionsMessage {
         /**
           * Icon Pack
          */
@@ -9661,7 +9661,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DytePermissionsMessageCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkPermissionsMessageCustomEvent<States>) => void;
         /**
           * States object
          */
@@ -9669,9 +9669,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DytePipToggle {
+    interface RtkPipToggle {
         /**
           * Config
          */
@@ -9687,7 +9687,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DytePipToggleCustomEvent<States1>) => void;
+        "onRtkStateUpdate"?: (event: RtkPipToggleCustomEvent<States1>) => void;
         /**
           * Size
          */
@@ -9699,7 +9699,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -9708,7 +9708,7 @@ declare namespace LocalJSX {
     /**
      * A component which loads a plugin.
      */
-    interface DytePluginMain {
+    interface RtkPluginMain {
         /**
           * Icon pack
          */
@@ -9724,13 +9724,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which lists all available plugins from their preset,
      * and ability to enable or disable plugins.
      */
-    interface DytePlugins {
+    interface RtkPlugins {
         /**
           * Config
          */
@@ -9746,7 +9746,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DytePluginsCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkPluginsCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -9754,16 +9754,16 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A button which toggles visibility of plugins.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'plugins' }
      * ```
      */
-    interface DytePluginsToggle {
+    interface RtkPluginsToggle {
         /**
           * Icon pack
          */
@@ -9775,7 +9775,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DytePluginsToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkPluginsToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -9787,7 +9787,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -9797,7 +9797,7 @@ declare namespace LocalJSX {
      * A poll component.
      * Shows a poll where a user can vote.
      */
-    interface DytePoll {
+    interface RtkPoll {
         /**
           * Icon pack
          */
@@ -9805,7 +9805,7 @@ declare namespace LocalJSX {
         /**
           * Event which is emitted when a poll is voted on
          */
-        "onDyteVotePoll"?: (event: DytePollCustomEvent<{
+        "onRtkVotePoll"?: (event: RtkPollCustomEvent<{
     id: string;
     index: number;
   }>) => void;
@@ -9824,12 +9824,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component that lets you create a poll.
      */
-    interface DytePollForm {
+    interface RtkPollForm {
         /**
           * Icon pack
          */
@@ -9837,17 +9837,17 @@ declare namespace LocalJSX {
         /**
           * Event which is emitted when a poll is created
          */
-        "onDyteCreatePoll"?: (event: DytePollFormCustomEvent<PollObject>) => void;
+        "onRtkCreatePoll"?: (event: RtkPollFormCustomEvent<PollObject>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which lists all available plugins a user can access with
      * the ability to enable or disable them as per their permissions.
      */
-    interface DytePolls {
+    interface RtkPolls {
         /**
           * Config
          */
@@ -9867,17 +9867,17 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A button which toggles visibility of polls.
      * You need to pass the `meeting` object to it to see the unread polls count badge.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSidebar: boolean; sidebar: 'polls' }
      * ```
      */
-    interface DytePollsToggle {
+    interface RtkPollsToggle {
         /**
           * Icon pack
          */
@@ -9889,7 +9889,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DytePollsToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkPollsToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -9901,7 +9901,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -9911,7 +9911,7 @@ declare namespace LocalJSX {
      * A component which indicates the recording status of a meeting.
      * It will not render anything if no recording is taking place.
      */
-    interface DyteRecordingIndicator {
+    interface RtkRecordingIndicator {
         /**
           * Icon pack
          */
@@ -9927,7 +9927,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A button which toggles recording state of a meeting.
@@ -9935,7 +9935,7 @@ declare namespace LocalJSX {
      * thus the button will not be visible for participants
      * who don't have the permission to record a meeting.
      */
-    interface DyteRecordingToggle {
+    interface RtkRecordingToggle {
         /**
           * Disable the button
          */
@@ -9951,7 +9951,7 @@ declare namespace LocalJSX {
         /**
           * Emit api error events
          */
-        "onDyteAPIError"?: (event: DyteRecordingToggleCustomEvent<{
+        "onRtkApiError"?: (event: RtkRecordingToggleCustomEvent<{
     trace: string;
     message: string;
   }>) => void;
@@ -9962,7 +9962,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -9971,7 +9971,7 @@ declare namespace LocalJSX {
     /**
      * A button which toggles your screenshare.
      */
-    interface DyteScreenShareToggle {
+    interface RtkScreenShareToggle {
         /**
           * Icon pack
          */
@@ -9983,14 +9983,14 @@ declare namespace LocalJSX {
         /**
           * Emit api error events
          */
-        "onDyteAPIError"?: (event: DyteScreenShareToggleCustomEvent<{
+        "onRtkApiError"?: (event: RtkScreenShareToggleCustomEvent<{
     trace: string;
     message: string;
   }>) => void;
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteScreenShareToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkScreenShareToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -10002,7 +10002,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -10010,10 +10010,10 @@ declare namespace LocalJSX {
     }
     /**
      * A component which plays a participant's screenshared video.
-     * It also allows for placement of other components similar to `dyte-participant-tile`.
+     * It also allows for placement of other components similar to `rtk-participant-tile`.
      * This component will not render anything if the participant hasn't start screensharing.
      */
-    interface DyteScreenshareView {
+    interface RtkScreenshareView {
         /**
           * Hide full screen button
          */
@@ -10038,11 +10038,11 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteScreenshareViewCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkScreenshareViewCustomEvent<States>) => void;
         /**
           * Emits when video playback happens successfully
          */
-        "onScreensharePlay"?: (event: DyteScreenshareViewCustomEvent<{
+        "onScreensharePlay"?: (event: RtkScreenshareViewCustomEvent<{
     participant: Peer;
     screenshareParticipant: Peer;
   }>) => void;
@@ -10057,7 +10057,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -10067,7 +10067,7 @@ declare namespace LocalJSX {
      * A settings component to see and change your audio/video devices
      * as well as see your connection quality.
      */
-    interface DyteSettings {
+    interface RtkSettings {
         /**
           * Icon pack
          */
@@ -10079,7 +10079,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteSettingsCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkSettingsCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -10091,11 +10091,11 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -10104,7 +10104,7 @@ declare namespace LocalJSX {
      * }
      * ```
      */
-    interface DyteSettingsAudio {
+    interface RtkSettingsAudio {
         /**
           * Icon pack
          */
@@ -10116,7 +10116,7 @@ declare namespace LocalJSX {
         /**
           * Event updated state
          */
-        "onDyteStateUpdate"?: (event: DyteSettingsAudioCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkSettingsAudioCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -10128,16 +10128,16 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A button which toggles visibility of settings module.
-     * When clicked it emits a `dyteStateUpdate` event with the data:
+     * When clicked it emits a `rtkStateUpdate` event with the data:
      * ```ts
      * { activeSettings: boolean; }
      * ```
      */
-    interface DyteSettingsToggle {
+    interface RtkSettingsToggle {
         /**
           * Icon pack
          */
@@ -10145,7 +10145,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteSettingsToggleCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkSettingsToggleCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -10157,7 +10157,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Variant
          */
@@ -10165,7 +10165,7 @@ declare namespace LocalJSX {
     }
     /**
      * A component which lets to manage your camera devices and your video preferences.
-     * Emits `dyteStateUpdate` event with data for toggling mirroring of self video:
+     * Emits `rtkStateUpdate` event with data for toggling mirroring of self video:
      * ```ts
      * {
      *  prefs: {
@@ -10174,7 +10174,7 @@ declare namespace LocalJSX {
      * }
      * ```
      */
-    interface DyteSettingsVideo {
+    interface RtkSettingsVideo {
         /**
           * Icon pack
          */
@@ -10186,7 +10186,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state
          */
-        "onDyteStateUpdate"?: (event: DyteSettingsVideoCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkSettingsVideoCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -10198,13 +10198,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A screen shown before joining the meeting, where you can edit your display name,
      * and media settings.
      */
-    interface DyteSetupScreen {
+    interface RtkSetupScreen {
         /**
           * Config object
          */
@@ -10220,7 +10220,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteSetupScreenCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkSetupScreenCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -10232,13 +10232,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which handles the sidebar and
      * you can customize which sections you want, and which section you want as the default.
      */
-    interface DyteSidebar {
+    interface RtkSidebar {
         /**
           * Config
          */
@@ -10246,11 +10246,11 @@ declare namespace LocalJSX {
         /**
           * Default section
          */
-        "defaultSection"?: DyteSidebarSection;
+        "defaultSection"?: RtkSidebarSection;
         /**
           * Enabled sections in sidebar
          */
-        "enabledSections"?: DyteSidebarTab[];
+        "enabledSections"?: RtkSidebarTab[];
         /**
           * Icon pack
          */
@@ -10262,7 +10262,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteSidebarCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkSidebarCustomEvent<States>) => void;
         /**
           * Size
          */
@@ -10274,13 +10274,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * View type
          */
-        "view"?: DyteSidebarView;
+        "view"?: RtkSidebarView;
     }
-    interface DyteSidebarUi {
+    interface RtkSidebarUi {
         /**
           * Default tab to open
          */
@@ -10300,28 +10300,28 @@ declare namespace LocalJSX {
         /**
           * Tab change event
          */
-        "onSidebarClose"?: (event: DyteSidebarUiCustomEvent<void>) => void;
+        "onSidebarClose"?: (event: RtkSidebarUiCustomEvent<void>) => void;
         /**
           * Tab change event
          */
-        "onTabChange"?: (event: DyteSidebarUiCustomEvent<string>) => void;
+        "onTabChange"?: (event: RtkSidebarUiCustomEvent<string>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
         /**
           * Tabs
          */
-        "tabs"?: DyteSidebarTab1[];
+        "tabs"?: RtkSidebarTab1[];
         /**
           * View
          */
-        "view"?: DyteSidebarView1;
+        "view"?: RtkSidebarView1;
     }
     /**
      * A grid component which renders only the participants in a simple grid.
      */
-    interface DyteSimpleGrid {
+    interface RtkSimpleGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
          */
@@ -10357,11 +10357,11 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which lets to manage your audio devices and audio preferences.
-     * Emits `dyteStateUpdate` event with data for muting notification sounds:
+     * Emits `rtkStateUpdate` event with data for muting notification sounds:
      * ```ts
      * {
      *  prefs: {
@@ -10370,7 +10370,7 @@ declare namespace LocalJSX {
      * }
      * ```
      */
-    interface DyteSpeakerSelector {
+    interface RtkSpeakerSelector {
         /**
           * Icon pack
          */
@@ -10390,7 +10390,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * variant
          */
@@ -10399,7 +10399,7 @@ declare namespace LocalJSX {
     /**
      * A component which shows an animating spinner.
      */
-    interface DyteSpinner {
+    interface RtkSpinner {
         /**
           * Icon pack
          */
@@ -10415,7 +10415,7 @@ declare namespace LocalJSX {
      * - Participants from `pinnedParticipants[]` are rendered inside a larger grid.
      * - Participants from `participants[]` array are rendered in a smaller grid.
      */
-    interface DyteSpotlightGrid {
+    interface RtkSpotlightGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
          */
@@ -10463,9 +10463,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteSpotlightIndicator {
+    interface RtkSpotlightIndicator {
         /**
           * Icon pack
          */
@@ -10481,13 +10481,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component used as a stage that commonly houses
      * the `grid` and `sidebar` components.
      */
-    interface DyteStage {
+    interface RtkStage {
         /**
           * Icon pack
          */
@@ -10495,13 +10495,13 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteStageCustomEvent<States>) => void;
+        "onRtkStateUpdate"?: (event: RtkStageCustomEvent<States>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteStageToggle {
+    interface RtkStageToggle {
         /**
           * Icon pack
          */
@@ -10513,7 +10513,7 @@ declare namespace LocalJSX {
         /**
           * Emits updated state data
          */
-        "onDyteStateUpdate"?: (event: DyteStageToggleCustomEvent<States1>) => void;
+        "onRtkStateUpdate"?: (event: RtkStageToggleCustomEvent<States1>) => void;
         /**
           * Size
          */
@@ -10525,16 +10525,16 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
         /**
           * Variant
          */
         "variant"?: ControlBarVariant;
     }
     /**
-     * A switch component which follows Dyte's Design System.
+     * A switch component which follows RTK Design System.
      */
-    interface DyteSwitch {
+    interface RtkSwitch {
         /**
           * Whether the switch is enabled/checked
          */
@@ -10550,7 +10550,7 @@ declare namespace LocalJSX {
         /**
           * Event when switch value is changed
          */
-        "onDyteChange"?: (event: DyteSwitchCustomEvent<boolean>) => void;
+        "onRtkChange"?: (event: RtkSwitchCustomEvent<boolean>) => void;
         /**
           * Whether switch is readonly
          */
@@ -10558,9 +10558,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteTabBar {
+    interface RtkTabBar {
         /**
           * Active tab
          */
@@ -10584,7 +10584,7 @@ declare namespace LocalJSX {
         /**
           * Set active tab
          */
-        "onTabChange"?: (event: DyteTabBarCustomEvent<Tab>) => void;
+        "onTabChange"?: (event: RtkTabBarCustomEvent<Tab>) => void;
         /**
           * Size
          */
@@ -10596,7 +10596,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Tabs
          */
@@ -10605,7 +10605,7 @@ declare namespace LocalJSX {
     /**
      * A component which renders a text composer
      */
-    interface DyteTextComposerView {
+    interface RtkTextComposerView {
         /**
           * Disable the text input (default = false)
          */
@@ -10625,7 +10625,7 @@ declare namespace LocalJSX {
         /**
           * Event emitted when text changes
          */
-        "onTextChange"?: (event: DyteTextComposerViewCustomEvent<string>) => void;
+        "onTextChange"?: (event: RtkTextComposerViewCustomEvent<string>) => void;
         /**
           * Placeholder text
          */
@@ -10637,7 +10637,7 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
         /**
           * Default value for text input
          */
@@ -10646,7 +10646,7 @@ declare namespace LocalJSX {
     /**
      * A component which renders a text message from chat.
      */
-    interface DyteTextMessage {
+    interface RtkTextMessage {
         /**
           * Icon pack
          */
@@ -10670,12 +10670,12 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     /**
      * A component which renders a text message from chat.
      */
-    interface DyteTextMessageView {
+    interface RtkTextMessageView {
         /**
           * Renders text as markdown (default = true)
          */
@@ -10686,9 +10686,9 @@ declare namespace LocalJSX {
         "text": string;
     }
     /**
-     * Tooltip component which follows Dyte's Design System.
+     * Tooltip component which follows RTK Design System.
      */
-    interface DyteTooltip {
+    interface RtkTooltip {
         /**
           * Delay before showing the tooltip
          */
@@ -10708,7 +10708,7 @@ declare namespace LocalJSX {
         /**
           * Event handler called when the open state of the tooltip changes.
          */
-        "onDyteOpenChange"?: (event: DyteTooltipCustomEvent<boolean>) => void;
+        "onRtkOpenChange"?: (event: RtkTooltipCustomEvent<boolean>) => void;
         /**
           * Open
          */
@@ -10729,20 +10729,20 @@ declare namespace LocalJSX {
     /**
      * A component which shows a transcript.
      * You need to remove the element after you receive the
-     * `dyteTranscriptDismiss` event.
+     * `rtkTranscriptDismiss` event.
      */
-    interface DyteTranscript {
+    interface RtkTranscript {
         /**
           * Dismiss event
          */
-        "onDyteTranscriptDismiss"?: (event: DyteTranscriptCustomEvent<{
+        "onRtkTranscriptDismiss"?: (event: RtkTranscriptCustomEvent<{
     id: string;
     renderedId: string;
   }>) => void;
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Message
          */
@@ -10753,7 +10753,7 @@ declare namespace LocalJSX {
      * You can configure which transcripts you want to see and which ones you want to hear.
      * There are also certain limits which you can set as well.
      */
-    interface DyteTranscripts {
+    interface RtkTranscripts {
         /**
           * Config object
          */
@@ -10769,9 +10769,9 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
-    interface DyteUiProvider {
+    interface RtkUiProvider {
         /**
           * Config
          */
@@ -10792,7 +10792,7 @@ declare namespace LocalJSX {
         /**
           * States event
          */
-        "onDyteStatesUpdate"?: (event: DyteUiProviderCustomEvent<States1>) => void;
+        "onRtkStatesUpdate"?: (event: RtkUiProviderCustomEvent<States1>) => void;
         /**
           * Whether to show setup screen or not
          */
@@ -10804,12 +10804,12 @@ declare namespace LocalJSX {
         /**
           * Language utility
          */
-        "t"?: DyteI18n1;
+        "t"?: RtkI18n1;
     }
     /**
      * A component which shows count of total joined participants in a meeting.
      */
-    interface DyteViewerCount {
+    interface RtkViewerCount {
         /**
           * Icon pack
          */
@@ -10821,13 +10821,13 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
         /**
           * Viewer count variant
          */
         "variant"?: ViewerCountVariant;
     }
-    interface DyteVirtualizedParticipantList {
+    interface RtkVirtualizedParticipantList {
         /**
           * Buffer items to render before and after the visible area
          */
@@ -10849,7 +10849,7 @@ declare namespace LocalJSX {
          */
         "renderItem"?: (item: Peer1, index: number) => HTMLElement;
     }
-    interface DyteWaitingScreen {
+    interface RtkWaitingScreen {
         /**
           * Config
          */
@@ -10865,187 +10865,187 @@ declare namespace LocalJSX {
         /**
           * Language
          */
-        "t"?: DyteI18n;
+        "t"?: RtkI18n;
     }
     interface IntrinsicElements {
-        "dyte-ai": DyteAi;
-        "dyte-ai-toggle": DyteAiToggle;
-        "dyte-ai-transcriptions": DyteAiTranscriptions;
-        "dyte-audio-grid": DyteAudioGrid;
-        "dyte-audio-tile": DyteAudioTile;
-        "dyte-audio-visualizer": DyteAudioVisualizer;
-        "dyte-avatar": DyteAvatar;
-        "dyte-breakout-room-manager": DyteBreakoutRoomManager;
-        "dyte-breakout-room-participants": DyteBreakoutRoomParticipants;
-        "dyte-breakout-rooms-manager": DyteBreakoutRoomsManager;
-        "dyte-breakout-rooms-toggle": DyteBreakoutRoomsToggle;
-        "dyte-broadcast-message-modal": DyteBroadcastMessageModal;
-        "dyte-button": DyteButton;
-        "dyte-camera-selector": DyteCameraSelector;
-        "dyte-camera-toggle": DyteCameraToggle;
-        "dyte-caption-toggle": DyteCaptionToggle;
-        "dyte-channel-creator": DyteChannelCreator;
-        "dyte-channel-details": DyteChannelDetails;
-        "dyte-channel-header": DyteChannelHeader;
-        "dyte-channel-selector-ui": DyteChannelSelectorUi;
-        "dyte-channel-selector-view": DyteChannelSelectorView;
-        "dyte-chat": DyteChat;
-        "dyte-chat-composer-ui": DyteChatComposerUi;
-        "dyte-chat-composer-view": DyteChatComposerView;
-        "dyte-chat-message": DyteChatMessage;
-        "dyte-chat-messages-ui": DyteChatMessagesUi;
-        "dyte-chat-messages-ui-paginated": DyteChatMessagesUiPaginated;
-        "dyte-chat-search-results": DyteChatSearchResults;
-        "dyte-chat-selector-ui": DyteChatSelectorUi;
-        "dyte-chat-toggle": DyteChatToggle;
-        "dyte-clock": DyteClock;
-        "dyte-confirmation-modal": DyteConfirmationModal;
-        "dyte-controlbar": DyteControlbar;
-        "dyte-controlbar-button": DyteControlbarButton;
-        "dyte-counter": DyteCounter;
-        "dyte-debugger": DyteDebugger;
-        "dyte-debugger-audio": DyteDebuggerAudio;
-        "dyte-debugger-screenshare": DyteDebuggerScreenshare;
-        "dyte-debugger-system": DyteDebuggerSystem;
-        "dyte-debugger-toggle": DyteDebuggerToggle;
-        "dyte-debugger-video": DyteDebuggerVideo;
-        "dyte-dialog": DyteDialog;
-        "dyte-dialog-manager": DyteDialogManager;
-        "dyte-draft-attachment-view": DyteDraftAttachmentView;
-        "dyte-emoji-picker": DyteEmojiPicker;
-        "dyte-emoji-picker-button": DyteEmojiPickerButton;
-        "dyte-ended-screen": DyteEndedScreen;
-        "dyte-file-dropzone": DyteFileDropzone;
-        "dyte-file-message": DyteFileMessage;
-        "dyte-file-message-view": DyteFileMessageView;
-        "dyte-file-picker-button": DyteFilePickerButton;
-        "dyte-fullscreen-toggle": DyteFullscreenToggle;
-        "dyte-grid": DyteGrid;
-        "dyte-grid-pagination": DyteGridPagination;
-        "dyte-header": DyteHeader;
-        "dyte-icon": DyteIcon;
-        "dyte-idle-screen": DyteIdleScreen;
-        "dyte-image-message": DyteImageMessage;
-        "dyte-image-message-view": DyteImageMessageView;
-        "dyte-image-viewer": DyteImageViewer;
-        "dyte-information-tooltip": DyteInformationTooltip;
-        "dyte-join-stage": DyteJoinStage;
-        "dyte-leave-button": DyteLeaveButton;
-        "dyte-leave-meeting": DyteLeaveMeeting;
-        "dyte-livestream-indicator": DyteLivestreamIndicator;
-        "dyte-livestream-player": DyteLivestreamPlayer;
-        "dyte-livestream-toggle": DyteLivestreamToggle;
-        "dyte-logo": DyteLogo;
-        "dyte-markdown-view": DyteMarkdownView;
-        "dyte-meeting": DyteMeeting;
-        "dyte-meeting-title": DyteMeetingTitle;
-        "dyte-menu": DyteMenu;
-        "dyte-menu-item": DyteMenuItem;
-        "dyte-menu-list": DyteMenuList;
-        "dyte-message-list-view": DyteMessageListView;
-        "dyte-message-view": DyteMessageView;
-        "dyte-mic-toggle": DyteMicToggle;
-        "dyte-microphone-selector": DyteMicrophoneSelector;
-        "dyte-mixed-grid": DyteMixedGrid;
-        "dyte-more-toggle": DyteMoreToggle;
-        "dyte-mute-all-button": DyteMuteAllButton;
-        "dyte-mute-all-confirmation": DyteMuteAllConfirmation;
-        "dyte-name-tag": DyteNameTag;
-        "dyte-network-indicator": DyteNetworkIndicator;
-        "dyte-notification": DyteNotification;
-        "dyte-notifications": DyteNotifications;
-        "dyte-overlay-modal": DyteOverlayModal;
-        "dyte-paginated-list": DytePaginatedList;
-        "dyte-participant": DyteParticipant;
-        "dyte-participant-count": DyteParticipantCount;
-        "dyte-participant-setup": DyteParticipantSetup;
-        "dyte-participant-tile": DyteParticipantTile;
-        "dyte-participants": DyteParticipants;
-        "dyte-participants-audio": DyteParticipantsAudio;
-        "dyte-participants-stage-list": DyteParticipantsStageList;
-        "dyte-participants-stage-queue": DyteParticipantsStageQueue;
-        "dyte-participants-toggle": DyteParticipantsToggle;
-        "dyte-participants-viewer-list": DyteParticipantsViewerList;
-        "dyte-participants-waiting-list": DyteParticipantsWaitingList;
-        "dyte-permissions-message": DytePermissionsMessage;
-        "dyte-pip-toggle": DytePipToggle;
-        "dyte-plugin-main": DytePluginMain;
-        "dyte-plugins": DytePlugins;
-        "dyte-plugins-toggle": DytePluginsToggle;
-        "dyte-poll": DytePoll;
-        "dyte-poll-form": DytePollForm;
-        "dyte-polls": DytePolls;
-        "dyte-polls-toggle": DytePollsToggle;
-        "dyte-recording-indicator": DyteRecordingIndicator;
-        "dyte-recording-toggle": DyteRecordingToggle;
-        "dyte-screen-share-toggle": DyteScreenShareToggle;
-        "dyte-screenshare-view": DyteScreenshareView;
-        "dyte-settings": DyteSettings;
-        "dyte-settings-audio": DyteSettingsAudio;
-        "dyte-settings-toggle": DyteSettingsToggle;
-        "dyte-settings-video": DyteSettingsVideo;
-        "dyte-setup-screen": DyteSetupScreen;
-        "dyte-sidebar": DyteSidebar;
-        "dyte-sidebar-ui": DyteSidebarUi;
-        "dyte-simple-grid": DyteSimpleGrid;
-        "dyte-speaker-selector": DyteSpeakerSelector;
-        "dyte-spinner": DyteSpinner;
-        "dyte-spotlight-grid": DyteSpotlightGrid;
-        "dyte-spotlight-indicator": DyteSpotlightIndicator;
-        "dyte-stage": DyteStage;
-        "dyte-stage-toggle": DyteStageToggle;
-        "dyte-switch": DyteSwitch;
-        "dyte-tab-bar": DyteTabBar;
-        "dyte-text-composer-view": DyteTextComposerView;
-        "dyte-text-message": DyteTextMessage;
-        "dyte-text-message-view": DyteTextMessageView;
-        "dyte-tooltip": DyteTooltip;
-        "dyte-transcript": DyteTranscript;
-        "dyte-transcripts": DyteTranscripts;
-        "dyte-ui-provider": DyteUiProvider;
-        "dyte-viewer-count": DyteViewerCount;
-        "dyte-virtualized-participant-list": DyteVirtualizedParticipantList;
-        "dyte-waiting-screen": DyteWaitingScreen;
+        "rtk-ai": RtkAi;
+        "rtk-ai-toggle": RtkAiToggle;
+        "rtk-ai-transcriptions": RtkAiTranscriptions;
+        "rtk-audio-grid": RtkAudioGrid;
+        "rtk-audio-tile": RtkAudioTile;
+        "rtk-audio-visualizer": RtkAudioVisualizer;
+        "rtk-avatar": RtkAvatar;
+        "rtk-breakout-room-manager": RtkBreakoutRoomManager;
+        "rtk-breakout-room-participants": RtkBreakoutRoomParticipants;
+        "rtk-breakout-rooms-manager": RtkBreakoutRoomsManager;
+        "rtk-breakout-rooms-toggle": RtkBreakoutRoomsToggle;
+        "rtk-broadcast-message-modal": RtkBroadcastMessageModal;
+        "rtk-button": RtkButton;
+        "rtk-camera-selector": RtkCameraSelector;
+        "rtk-camera-toggle": RtkCameraToggle;
+        "rtk-caption-toggle": RtkCaptionToggle;
+        "rtk-channel-creator": RtkChannelCreator;
+        "rtk-channel-details": RtkChannelDetails;
+        "rtk-channel-header": RtkChannelHeader;
+        "rtk-channel-selector-ui": RtkChannelSelectorUi;
+        "rtk-channel-selector-view": RtkChannelSelectorView;
+        "rtk-chat": RtkChat;
+        "rtk-chat-composer-ui": RtkChatComposerUi;
+        "rtk-chat-composer-view": RtkChatComposerView;
+        "rtk-chat-message": RtkChatMessage;
+        "rtk-chat-messages-ui": RtkChatMessagesUi;
+        "rtk-chat-messages-ui-paginated": RtkChatMessagesUiPaginated;
+        "rtk-chat-search-results": RtkChatSearchResults;
+        "rtk-chat-selector-ui": RtkChatSelectorUi;
+        "rtk-chat-toggle": RtkChatToggle;
+        "rtk-clock": RtkClock;
+        "rtk-confirmation-modal": RtkConfirmationModal;
+        "rtk-controlbar": RtkControlbar;
+        "rtk-controlbar-button": RtkControlbarButton;
+        "rtk-counter": RtkCounter;
+        "rtk-debugger": RtkDebugger;
+        "rtk-debugger-audio": RtkDebuggerAudio;
+        "rtk-debugger-screenshare": RtkDebuggerScreenshare;
+        "rtk-debugger-system": RtkDebuggerSystem;
+        "rtk-debugger-toggle": RtkDebuggerToggle;
+        "rtk-debugger-video": RtkDebuggerVideo;
+        "rtk-dialog": RtkDialog;
+        "rtk-dialog-manager": RtkDialogManager;
+        "rtk-draft-attachment-view": RtkDraftAttachmentView;
+        "rtk-emoji-picker": RtkEmojiPicker;
+        "rtk-emoji-picker-button": RtkEmojiPickerButton;
+        "rtk-ended-screen": RtkEndedScreen;
+        "rtk-file-dropzone": RtkFileDropzone;
+        "rtk-file-message": RtkFileMessage;
+        "rtk-file-message-view": RtkFileMessageView;
+        "rtk-file-picker-button": RtkFilePickerButton;
+        "rtk-fullscreen-toggle": RtkFullscreenToggle;
+        "rtk-grid": RtkGrid;
+        "rtk-grid-pagination": RtkGridPagination;
+        "rtk-header": RtkHeader;
+        "rtk-icon": RtkIcon;
+        "rtk-idle-screen": RtkIdleScreen;
+        "rtk-image-message": RtkImageMessage;
+        "rtk-image-message-view": RtkImageMessageView;
+        "rtk-image-viewer": RtkImageViewer;
+        "rtk-information-tooltip": RtkInformationTooltip;
+        "rtk-join-stage": RtkJoinStage;
+        "rtk-leave-button": RtkLeaveButton;
+        "rtk-leave-meeting": RtkLeaveMeeting;
+        "rtk-livestream-indicator": RtkLivestreamIndicator;
+        "rtk-livestream-player": RtkLivestreamPlayer;
+        "rtk-livestream-toggle": RtkLivestreamToggle;
+        "rtk-logo": RtkLogo;
+        "rtk-markdown-view": RtkMarkdownView;
+        "rtk-meeting": RtkMeeting;
+        "rtk-meeting-title": RtkMeetingTitle;
+        "rtk-menu": RtkMenu;
+        "rtk-menu-item": RtkMenuItem;
+        "rtk-menu-list": RtkMenuList;
+        "rtk-message-list-view": RtkMessageListView;
+        "rtk-message-view": RtkMessageView;
+        "rtk-mic-toggle": RtkMicToggle;
+        "rtk-microphone-selector": RtkMicrophoneSelector;
+        "rtk-mixed-grid": RtkMixedGrid;
+        "rtk-more-toggle": RtkMoreToggle;
+        "rtk-mute-all-button": RtkMuteAllButton;
+        "rtk-mute-all-confirmation": RtkMuteAllConfirmation;
+        "rtk-name-tag": RtkNameTag;
+        "rtk-network-indicator": RtkNetworkIndicator;
+        "rtk-notification": RtkNotification;
+        "rtk-notifications": RtkNotifications;
+        "rtk-overlay-modal": RtkOverlayModal;
+        "rtk-paginated-list": RtkPaginatedList;
+        "rtk-participant": RtkParticipant;
+        "rtk-participant-count": RtkParticipantCount;
+        "rtk-participant-setup": RtkParticipantSetup;
+        "rtk-participant-tile": RtkParticipantTile;
+        "rtk-participants": RtkParticipants;
+        "rtk-participants-audio": RtkParticipantsAudio;
+        "rtk-participants-stage-list": RtkParticipantsStageList;
+        "rtk-participants-stage-queue": RtkParticipantsStageQueue;
+        "rtk-participants-toggle": RtkParticipantsToggle;
+        "rtk-participants-viewer-list": RtkParticipantsViewerList;
+        "rtk-participants-waiting-list": RtkParticipantsWaitingList;
+        "rtk-permissions-message": RtkPermissionsMessage;
+        "rtk-pip-toggle": RtkPipToggle;
+        "rtk-plugin-main": RtkPluginMain;
+        "rtk-plugins": RtkPlugins;
+        "rtk-plugins-toggle": RtkPluginsToggle;
+        "rtk-poll": RtkPoll;
+        "rtk-poll-form": RtkPollForm;
+        "rtk-polls": RtkPolls;
+        "rtk-polls-toggle": RtkPollsToggle;
+        "rtk-recording-indicator": RtkRecordingIndicator;
+        "rtk-recording-toggle": RtkRecordingToggle;
+        "rtk-screen-share-toggle": RtkScreenShareToggle;
+        "rtk-screenshare-view": RtkScreenshareView;
+        "rtk-settings": RtkSettings;
+        "rtk-settings-audio": RtkSettingsAudio;
+        "rtk-settings-toggle": RtkSettingsToggle;
+        "rtk-settings-video": RtkSettingsVideo;
+        "rtk-setup-screen": RtkSetupScreen;
+        "rtk-sidebar": RtkSidebar;
+        "rtk-sidebar-ui": RtkSidebarUi;
+        "rtk-simple-grid": RtkSimpleGrid;
+        "rtk-speaker-selector": RtkSpeakerSelector;
+        "rtk-spinner": RtkSpinner;
+        "rtk-spotlight-grid": RtkSpotlightGrid;
+        "rtk-spotlight-indicator": RtkSpotlightIndicator;
+        "rtk-stage": RtkStage;
+        "rtk-stage-toggle": RtkStageToggle;
+        "rtk-switch": RtkSwitch;
+        "rtk-tab-bar": RtkTabBar;
+        "rtk-text-composer-view": RtkTextComposerView;
+        "rtk-text-message": RtkTextMessage;
+        "rtk-text-message-view": RtkTextMessageView;
+        "rtk-tooltip": RtkTooltip;
+        "rtk-transcript": RtkTranscript;
+        "rtk-transcripts": RtkTranscripts;
+        "rtk-ui-provider": RtkUiProvider;
+        "rtk-viewer-count": RtkViewerCount;
+        "rtk-virtualized-participant-list": RtkVirtualizedParticipantList;
+        "rtk-waiting-screen": RtkWaitingScreen;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "dyte-ai": LocalJSX.DyteAi & JSXBase.HTMLAttributes<HTMLDyteAiElement>;
-            "dyte-ai-toggle": LocalJSX.DyteAiToggle & JSXBase.HTMLAttributes<HTMLDyteAiToggleElement>;
-            "dyte-ai-transcriptions": LocalJSX.DyteAiTranscriptions & JSXBase.HTMLAttributes<HTMLDyteAiTranscriptionsElement>;
-            "dyte-audio-grid": LocalJSX.DyteAudioGrid & JSXBase.HTMLAttributes<HTMLDyteAudioGridElement>;
-            "dyte-audio-tile": LocalJSX.DyteAudioTile & JSXBase.HTMLAttributes<HTMLDyteAudioTileElement>;
+            "rtk-ai": LocalJSX.RtkAi & JSXBase.HTMLAttributes<HTMLRtkAiElement>;
+            "rtk-ai-toggle": LocalJSX.RtkAiToggle & JSXBase.HTMLAttributes<HTMLRtkAiToggleElement>;
+            "rtk-ai-transcriptions": LocalJSX.RtkAiTranscriptions & JSXBase.HTMLAttributes<HTMLRtkAiTranscriptionsElement>;
+            "rtk-audio-grid": LocalJSX.RtkAudioGrid & JSXBase.HTMLAttributes<HTMLRtkAudioGridElement>;
+            "rtk-audio-tile": LocalJSX.RtkAudioTile & JSXBase.HTMLAttributes<HTMLRtkAudioTileElement>;
             /**
              * An audio visualizer component which visualizes a participants audio.
-             * Commonly used inside `dyte-name-tag`.
+             * Commonly used inside `rtk-name-tag`.
              */
-            "dyte-audio-visualizer": LocalJSX.DyteAudioVisualizer & JSXBase.HTMLAttributes<HTMLDyteAudioVisualizerElement>;
+            "rtk-audio-visualizer": LocalJSX.RtkAudioVisualizer & JSXBase.HTMLAttributes<HTMLRtkAudioVisualizerElement>;
             /**
              * Avatar component which renders a participant's image or their initials.
              */
-            "dyte-avatar": LocalJSX.DyteAvatar & JSXBase.HTMLAttributes<HTMLDyteAvatarElement>;
-            "dyte-breakout-room-manager": LocalJSX.DyteBreakoutRoomManager & JSXBase.HTMLAttributes<HTMLDyteBreakoutRoomManagerElement>;
+            "rtk-avatar": LocalJSX.RtkAvatar & JSXBase.HTMLAttributes<HTMLRtkAvatarElement>;
+            "rtk-breakout-room-manager": LocalJSX.RtkBreakoutRoomManager & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomManagerElement>;
             /**
              * A component which lists all participants, with ability to
              * run privileged actions on each participant according to your permissions.
              */
-            "dyte-breakout-room-participants": LocalJSX.DyteBreakoutRoomParticipants & JSXBase.HTMLAttributes<HTMLDyteBreakoutRoomParticipantsElement>;
-            "dyte-breakout-rooms-manager": LocalJSX.DyteBreakoutRoomsManager & JSXBase.HTMLAttributes<HTMLDyteBreakoutRoomsManagerElement>;
+            "rtk-breakout-room-participants": LocalJSX.RtkBreakoutRoomParticipants & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomParticipantsElement>;
+            "rtk-breakout-rooms-manager": LocalJSX.RtkBreakoutRoomsManager & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomsManagerElement>;
             /**
              * A button which toggles visibility of breakout rooms.
              * You need to pass the `meeting` object to it.
              */
-            "dyte-breakout-rooms-toggle": LocalJSX.DyteBreakoutRoomsToggle & JSXBase.HTMLAttributes<HTMLDyteBreakoutRoomsToggleElement>;
-            "dyte-broadcast-message-modal": LocalJSX.DyteBroadcastMessageModal & JSXBase.HTMLAttributes<HTMLDyteBroadcastMessageModalElement>;
+            "rtk-breakout-rooms-toggle": LocalJSX.RtkBreakoutRoomsToggle & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomsToggleElement>;
+            "rtk-broadcast-message-modal": LocalJSX.RtkBroadcastMessageModal & JSXBase.HTMLAttributes<HTMLRtkBroadcastMessageModalElement>;
             /**
-             * A button that follows Dyte's Design System.
+             * A button that follows RTK Design System.
              */
-            "dyte-button": LocalJSX.DyteButton & JSXBase.HTMLAttributes<HTMLDyteButtonElement>;
+            "rtk-button": LocalJSX.RtkButton & JSXBase.HTMLAttributes<HTMLRtkButtonElement>;
             /**
              * A component which lets to manage your audio devices and audio preferences.
-             * Emits `dyteStateUpdate` event with data for muting notification sounds:
+             * Emits `rtkStateUpdate` event with data for muting notification sounds:
              * ```ts
              * {
              *  prefs: {
@@ -11054,199 +11054,199 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "dyte-camera-selector": LocalJSX.DyteCameraSelector & JSXBase.HTMLAttributes<HTMLDyteCameraSelectorElement>;
+            "rtk-camera-selector": LocalJSX.RtkCameraSelector & JSXBase.HTMLAttributes<HTMLRtkCameraSelectorElement>;
             /**
              * A button which toggles your camera.
              */
-            "dyte-camera-toggle": LocalJSX.DyteCameraToggle & JSXBase.HTMLAttributes<HTMLDyteCameraToggleElement>;
-            "dyte-caption-toggle": LocalJSX.DyteCaptionToggle & JSXBase.HTMLAttributes<HTMLDyteCaptionToggleElement>;
-            "dyte-channel-creator": LocalJSX.DyteChannelCreator & JSXBase.HTMLAttributes<HTMLDyteChannelCreatorElement>;
-            "dyte-channel-details": LocalJSX.DyteChannelDetails & JSXBase.HTMLAttributes<HTMLDyteChannelDetailsElement>;
-            "dyte-channel-header": LocalJSX.DyteChannelHeader & JSXBase.HTMLAttributes<HTMLDyteChannelHeaderElement>;
-            "dyte-channel-selector-ui": LocalJSX.DyteChannelSelectorUi & JSXBase.HTMLAttributes<HTMLDyteChannelSelectorUiElement>;
-            "dyte-channel-selector-view": LocalJSX.DyteChannelSelectorView & JSXBase.HTMLAttributes<HTMLDyteChannelSelectorViewElement>;
+            "rtk-camera-toggle": LocalJSX.RtkCameraToggle & JSXBase.HTMLAttributes<HTMLRtkCameraToggleElement>;
+            "rtk-caption-toggle": LocalJSX.RtkCaptionToggle & JSXBase.HTMLAttributes<HTMLRtkCaptionToggleElement>;
+            "rtk-channel-creator": LocalJSX.RtkChannelCreator & JSXBase.HTMLAttributes<HTMLRtkChannelCreatorElement>;
+            "rtk-channel-details": LocalJSX.RtkChannelDetails & JSXBase.HTMLAttributes<HTMLRtkChannelDetailsElement>;
+            "rtk-channel-header": LocalJSX.RtkChannelHeader & JSXBase.HTMLAttributes<HTMLRtkChannelHeaderElement>;
+            "rtk-channel-selector-ui": LocalJSX.RtkChannelSelectorUi & JSXBase.HTMLAttributes<HTMLRtkChannelSelectorUiElement>;
+            "rtk-channel-selector-view": LocalJSX.RtkChannelSelectorView & JSXBase.HTMLAttributes<HTMLRtkChannelSelectorViewElement>;
             /**
              * Fully featured chat component with image & file upload, emoji picker and auto-scroll.
              */
-            "dyte-chat": LocalJSX.DyteChat & JSXBase.HTMLAttributes<HTMLDyteChatElement>;
-            "dyte-chat-composer-ui": LocalJSX.DyteChatComposerUi & JSXBase.HTMLAttributes<HTMLDyteChatComposerUiElement>;
+            "rtk-chat": LocalJSX.RtkChat & JSXBase.HTMLAttributes<HTMLRtkChatElement>;
+            "rtk-chat-composer-ui": LocalJSX.RtkChatComposerUi & JSXBase.HTMLAttributes<HTMLRtkChatComposerUiElement>;
             /**
              * A component which renders a chat composer
              */
-            "dyte-chat-composer-view": LocalJSX.DyteChatComposerView & JSXBase.HTMLAttributes<HTMLDyteChatComposerViewElement>;
-            "dyte-chat-message": LocalJSX.DyteChatMessage & JSXBase.HTMLAttributes<HTMLDyteChatMessageElement>;
-            "dyte-chat-messages-ui": LocalJSX.DyteChatMessagesUi & JSXBase.HTMLAttributes<HTMLDyteChatMessagesUiElement>;
-            "dyte-chat-messages-ui-paginated": LocalJSX.DyteChatMessagesUiPaginated & JSXBase.HTMLAttributes<HTMLDyteChatMessagesUiPaginatedElement>;
-            "dyte-chat-search-results": LocalJSX.DyteChatSearchResults & JSXBase.HTMLAttributes<HTMLDyteChatSearchResultsElement>;
-            "dyte-chat-selector-ui": LocalJSX.DyteChatSelectorUi & JSXBase.HTMLAttributes<HTMLDyteChatSelectorUiElement>;
+            "rtk-chat-composer-view": LocalJSX.RtkChatComposerView & JSXBase.HTMLAttributes<HTMLRtkChatComposerViewElement>;
+            "rtk-chat-message": LocalJSX.RtkChatMessage & JSXBase.HTMLAttributes<HTMLRtkChatMessageElement>;
+            "rtk-chat-messages-ui": LocalJSX.RtkChatMessagesUi & JSXBase.HTMLAttributes<HTMLRtkChatMessagesUiElement>;
+            "rtk-chat-messages-ui-paginated": LocalJSX.RtkChatMessagesUiPaginated & JSXBase.HTMLAttributes<HTMLRtkChatMessagesUiPaginatedElement>;
+            "rtk-chat-search-results": LocalJSX.RtkChatSearchResults & JSXBase.HTMLAttributes<HTMLRtkChatSearchResultsElement>;
+            "rtk-chat-selector-ui": LocalJSX.RtkChatSelectorUi & JSXBase.HTMLAttributes<HTMLRtkChatSelectorUiElement>;
             /**
              * A button which toggles visibility of chat.
              * You need to pass the `meeting` object to it to see the unread messages count badge.
-             * When clicked it emits a `dyteStateUpdate` event with the data:
+             * When clicked it emits a `rtkStateUpdate` event with the data:
              * ```ts
              * { activeSidebar: boolean; sidebar: 'chat' }
              * ```
              */
-            "dyte-chat-toggle": LocalJSX.DyteChatToggle & JSXBase.HTMLAttributes<HTMLDyteChatToggleElement>;
+            "rtk-chat-toggle": LocalJSX.RtkChatToggle & JSXBase.HTMLAttributes<HTMLRtkChatToggleElement>;
             /**
              * Shows the time elapsed in a meeting.
              */
-            "dyte-clock": LocalJSX.DyteClock & JSXBase.HTMLAttributes<HTMLDyteClockElement>;
+            "rtk-clock": LocalJSX.RtkClock & JSXBase.HTMLAttributes<HTMLRtkClockElement>;
             /**
              * A confirmation modal.
              */
-            "dyte-confirmation-modal": LocalJSX.DyteConfirmationModal & JSXBase.HTMLAttributes<HTMLDyteConfirmationModalElement>;
+            "rtk-confirmation-modal": LocalJSX.RtkConfirmationModal & JSXBase.HTMLAttributes<HTMLRtkConfirmationModalElement>;
             /**
              * Controlbar component provides you with various designs as variants.
              */
-            "dyte-controlbar": LocalJSX.DyteControlbar & JSXBase.HTMLAttributes<HTMLDyteControlbarElement>;
+            "rtk-controlbar": LocalJSX.RtkControlbar & JSXBase.HTMLAttributes<HTMLRtkControlbarElement>;
             /**
              * A skeleton component used for composing custom controlbar buttons.
              */
-            "dyte-controlbar-button": LocalJSX.DyteControlbarButton & JSXBase.HTMLAttributes<HTMLDyteControlbarButtonElement>;
+            "rtk-controlbar-button": LocalJSX.RtkControlbarButton & JSXBase.HTMLAttributes<HTMLRtkControlbarButtonElement>;
             /**
              * A number picker with increment and decrement buttons.
              */
-            "dyte-counter": LocalJSX.DyteCounter & JSXBase.HTMLAttributes<HTMLDyteCounterElement>;
+            "rtk-counter": LocalJSX.RtkCounter & JSXBase.HTMLAttributes<HTMLRtkCounterElement>;
             /**
              * A troubleshooting component to identify and fix any issues in the meeting.
              */
-            "dyte-debugger": LocalJSX.DyteDebugger & JSXBase.HTMLAttributes<HTMLDyteDebuggerElement>;
-            "dyte-debugger-audio": LocalJSX.DyteDebuggerAudio & JSXBase.HTMLAttributes<HTMLDyteDebuggerAudioElement>;
-            "dyte-debugger-screenshare": LocalJSX.DyteDebuggerScreenshare & JSXBase.HTMLAttributes<HTMLDyteDebuggerScreenshareElement>;
-            "dyte-debugger-system": LocalJSX.DyteDebuggerSystem & JSXBase.HTMLAttributes<HTMLDyteDebuggerSystemElement>;
-            "dyte-debugger-toggle": LocalJSX.DyteDebuggerToggle & JSXBase.HTMLAttributes<HTMLDyteDebuggerToggleElement>;
-            "dyte-debugger-video": LocalJSX.DyteDebuggerVideo & JSXBase.HTMLAttributes<HTMLDyteDebuggerVideoElement>;
+            "rtk-debugger": LocalJSX.RtkDebugger & JSXBase.HTMLAttributes<HTMLRtkDebuggerElement>;
+            "rtk-debugger-audio": LocalJSX.RtkDebuggerAudio & JSXBase.HTMLAttributes<HTMLRtkDebuggerAudioElement>;
+            "rtk-debugger-screenshare": LocalJSX.RtkDebuggerScreenshare & JSXBase.HTMLAttributes<HTMLRtkDebuggerScreenshareElement>;
+            "rtk-debugger-system": LocalJSX.RtkDebuggerSystem & JSXBase.HTMLAttributes<HTMLRtkDebuggerSystemElement>;
+            "rtk-debugger-toggle": LocalJSX.RtkDebuggerToggle & JSXBase.HTMLAttributes<HTMLRtkDebuggerToggleElement>;
+            "rtk-debugger-video": LocalJSX.RtkDebuggerVideo & JSXBase.HTMLAttributes<HTMLRtkDebuggerVideoElement>;
             /**
              * A dialog component.
              */
-            "dyte-dialog": LocalJSX.DyteDialog & JSXBase.HTMLAttributes<HTMLDyteDialogElement>;
+            "rtk-dialog": LocalJSX.RtkDialog & JSXBase.HTMLAttributes<HTMLRtkDialogElement>;
             /**
              * A component which handles all dialog elements in a component such as:
-             * - dyte-settings
-             * - dyte-leave-meeting
-             * - dyte-permissions-message
-             * - dyte-image-viewer
-             * - dyte-breakout-rooms-manager
+             * - rtk-settings
+             * - rtk-leave-meeting
+             * - rtk-permissions-message
+             * - rtk-image-viewer
+             * - rtk-breakout-rooms-manager
              * This components depends on the values from `states` object.
              */
-            "dyte-dialog-manager": LocalJSX.DyteDialogManager & JSXBase.HTMLAttributes<HTMLDyteDialogManagerElement>;
+            "rtk-dialog-manager": LocalJSX.RtkDialogManager & JSXBase.HTMLAttributes<HTMLRtkDialogManagerElement>;
             /**
              * A component which renders the draft attachment to send
              */
-            "dyte-draft-attachment-view": LocalJSX.DyteDraftAttachmentView & JSXBase.HTMLAttributes<HTMLDyteDraftAttachmentViewElement>;
+            "rtk-draft-attachment-view": LocalJSX.RtkDraftAttachmentView & JSXBase.HTMLAttributes<HTMLRtkDraftAttachmentViewElement>;
             /**
              * A very simple emoji picker component.
              */
-            "dyte-emoji-picker": LocalJSX.DyteEmojiPicker & JSXBase.HTMLAttributes<HTMLDyteEmojiPickerElement>;
-            "dyte-emoji-picker-button": LocalJSX.DyteEmojiPickerButton & JSXBase.HTMLAttributes<HTMLDyteEmojiPickerButtonElement>;
+            "rtk-emoji-picker": LocalJSX.RtkEmojiPicker & JSXBase.HTMLAttributes<HTMLRtkEmojiPickerElement>;
+            "rtk-emoji-picker-button": LocalJSX.RtkEmojiPickerButton & JSXBase.HTMLAttributes<HTMLRtkEmojiPickerButtonElement>;
             /**
              * A screen which shows a meeting has ended.
              */
-            "dyte-ended-screen": LocalJSX.DyteEndedScreen & JSXBase.HTMLAttributes<HTMLDyteEndedScreenElement>;
-            "dyte-file-dropzone": LocalJSX.DyteFileDropzone & JSXBase.HTMLAttributes<HTMLDyteFileDropzoneElement>;
+            "rtk-ended-screen": LocalJSX.RtkEndedScreen & JSXBase.HTMLAttributes<HTMLRtkEndedScreenElement>;
+            "rtk-file-dropzone": LocalJSX.RtkFileDropzone & JSXBase.HTMLAttributes<HTMLRtkFileDropzoneElement>;
             /**
              * A component which renders a file message from chat.
              */
-            "dyte-file-message": LocalJSX.DyteFileMessage & JSXBase.HTMLAttributes<HTMLDyteFileMessageElement>;
+            "rtk-file-message": LocalJSX.RtkFileMessage & JSXBase.HTMLAttributes<HTMLRtkFileMessageElement>;
             /**
              * A component which renders a file message.
              */
-            "dyte-file-message-view": LocalJSX.DyteFileMessageView & JSXBase.HTMLAttributes<HTMLDyteFileMessageViewElement>;
-            "dyte-file-picker-button": LocalJSX.DyteFilePickerButton & JSXBase.HTMLAttributes<HTMLDyteFilePickerButtonElement>;
+            "rtk-file-message-view": LocalJSX.RtkFileMessageView & JSXBase.HTMLAttributes<HTMLRtkFileMessageViewElement>;
+            "rtk-file-picker-button": LocalJSX.RtkFilePickerButton & JSXBase.HTMLAttributes<HTMLRtkFilePickerButtonElement>;
             /**
              * A button which toggles full screen mode for any
-             * existing `dyte-meeting` component in the DOM.
+             * existing `rtk-meeting` component in the DOM.
              */
-            "dyte-fullscreen-toggle": LocalJSX.DyteFullscreenToggle & JSXBase.HTMLAttributes<HTMLDyteFullscreenToggleElement>;
+            "rtk-fullscreen-toggle": LocalJSX.RtkFullscreenToggle & JSXBase.HTMLAttributes<HTMLRtkFullscreenToggleElement>;
             /**
              * The main grid component which abstracts all the grid handling logic and renders it for you.
              */
-            "dyte-grid": LocalJSX.DyteGrid & JSXBase.HTMLAttributes<HTMLDyteGridElement>;
+            "rtk-grid": LocalJSX.RtkGrid & JSXBase.HTMLAttributes<HTMLRtkGridElement>;
             /**
              * A component which allows you to change current page and view mode
-             * of active participants list. This is reflected in the `dyte-grid` component.
+             * of active participants list. This is reflected in the `rtk-grid` component.
              */
-            "dyte-grid-pagination": LocalJSX.DyteGridPagination & JSXBase.HTMLAttributes<HTMLDyteGridPaginationElement>;
+            "rtk-grid-pagination": LocalJSX.RtkGridPagination & JSXBase.HTMLAttributes<HTMLRtkGridPaginationElement>;
             /**
              * A component that houses all the header components.
              */
-            "dyte-header": LocalJSX.DyteHeader & JSXBase.HTMLAttributes<HTMLDyteHeaderElement>;
+            "rtk-header": LocalJSX.RtkHeader & JSXBase.HTMLAttributes<HTMLRtkHeaderElement>;
             /**
              * An icon component which accepts an svg string and renders it.
              */
-            "dyte-icon": LocalJSX.DyteIcon & JSXBase.HTMLAttributes<HTMLDyteIconElement>;
+            "rtk-icon": LocalJSX.RtkIcon & JSXBase.HTMLAttributes<HTMLRtkIconElement>;
             /**
              * A screen that handles the idle state,
              * i.e; when you are waiting for data about the meeting, specifically the `meeting` object.
              */
-            "dyte-idle-screen": LocalJSX.DyteIdleScreen & JSXBase.HTMLAttributes<HTMLDyteIdleScreenElement>;
+            "rtk-idle-screen": LocalJSX.RtkIdleScreen & JSXBase.HTMLAttributes<HTMLRtkIdleScreenElement>;
             /**
              * A component which renders an image message from chat.
              */
-            "dyte-image-message": LocalJSX.DyteImageMessage & JSXBase.HTMLAttributes<HTMLDyteImageMessageElement>;
+            "rtk-image-message": LocalJSX.RtkImageMessage & JSXBase.HTMLAttributes<HTMLRtkImageMessageElement>;
             /**
              * A component which renders an image message.
              */
-            "dyte-image-message-view": LocalJSX.DyteImageMessageView & JSXBase.HTMLAttributes<HTMLDyteImageMessageViewElement>;
+            "rtk-image-message-view": LocalJSX.RtkImageMessageView & JSXBase.HTMLAttributes<HTMLRtkImageMessageViewElement>;
             /**
              * A component which shows an image sent via chat.
              */
-            "dyte-image-viewer": LocalJSX.DyteImageViewer & JSXBase.HTMLAttributes<HTMLDyteImageViewerElement>;
-            "dyte-information-tooltip": LocalJSX.DyteInformationTooltip & JSXBase.HTMLAttributes<HTMLDyteInformationTooltipElement>;
-            "dyte-join-stage": LocalJSX.DyteJoinStage & JSXBase.HTMLAttributes<HTMLDyteJoinStageElement>;
+            "rtk-image-viewer": LocalJSX.RtkImageViewer & JSXBase.HTMLAttributes<HTMLRtkImageViewerElement>;
+            "rtk-information-tooltip": LocalJSX.RtkInformationTooltip & JSXBase.HTMLAttributes<HTMLRtkInformationTooltipElement>;
+            "rtk-join-stage": LocalJSX.RtkJoinStage & JSXBase.HTMLAttributes<HTMLRtkJoinStageElement>;
             /**
              * A button which toggles visilibility of the leave confirmation dialog.
              */
-            "dyte-leave-button": LocalJSX.DyteLeaveButton & JSXBase.HTMLAttributes<HTMLDyteLeaveButtonElement>;
+            "rtk-leave-button": LocalJSX.RtkLeaveButton & JSXBase.HTMLAttributes<HTMLRtkLeaveButtonElement>;
             /**
              * A component which allows you to leave a meeting or
              * end meeting for all, if you have the permission.
              */
-            "dyte-leave-meeting": LocalJSX.DyteLeaveMeeting & JSXBase.HTMLAttributes<HTMLDyteLeaveMeetingElement>;
-            "dyte-livestream-indicator": LocalJSX.DyteLivestreamIndicator & JSXBase.HTMLAttributes<HTMLDyteLivestreamIndicatorElement>;
-            "dyte-livestream-player": LocalJSX.DyteLivestreamPlayer & JSXBase.HTMLAttributes<HTMLDyteLivestreamPlayerElement>;
-            "dyte-livestream-toggle": LocalJSX.DyteLivestreamToggle & JSXBase.HTMLAttributes<HTMLDyteLivestreamToggleElement>;
+            "rtk-leave-meeting": LocalJSX.RtkLeaveMeeting & JSXBase.HTMLAttributes<HTMLRtkLeaveMeetingElement>;
+            "rtk-livestream-indicator": LocalJSX.RtkLivestreamIndicator & JSXBase.HTMLAttributes<HTMLRtkLivestreamIndicatorElement>;
+            "rtk-livestream-player": LocalJSX.RtkLivestreamPlayer & JSXBase.HTMLAttributes<HTMLRtkLivestreamPlayerElement>;
+            "rtk-livestream-toggle": LocalJSX.RtkLivestreamToggle & JSXBase.HTMLAttributes<HTMLRtkLivestreamToggleElement>;
             /**
              * A component which loads the logo from your config, or via the `logo-url` attribute.
              */
-            "dyte-logo": LocalJSX.DyteLogo & JSXBase.HTMLAttributes<HTMLDyteLogoElement>;
-            "dyte-markdown-view": LocalJSX.DyteMarkdownView & JSXBase.HTMLAttributes<HTMLDyteMarkdownViewElement>;
+            "rtk-logo": LocalJSX.RtkLogo & JSXBase.HTMLAttributes<HTMLRtkLogoElement>;
+            "rtk-markdown-view": LocalJSX.RtkMarkdownView & JSXBase.HTMLAttributes<HTMLRtkMarkdownViewElement>;
             /**
              * A single component which renders an entire meeting UI.
              * It loads your preset and renders the UI based on it.
              * With this component, you don't have to handle all the states,
              * dialogs and other smaller bits of managing the application.
              */
-            "dyte-meeting": LocalJSX.DyteMeeting & JSXBase.HTMLAttributes<HTMLDyteMeetingElement>;
+            "rtk-meeting": LocalJSX.RtkMeeting & JSXBase.HTMLAttributes<HTMLRtkMeetingElement>;
             /**
              * Displays the title of the meeting.
              */
-            "dyte-meeting-title": LocalJSX.DyteMeetingTitle & JSXBase.HTMLAttributes<HTMLDyteMeetingTitleElement>;
+            "rtk-meeting-title": LocalJSX.RtkMeetingTitle & JSXBase.HTMLAttributes<HTMLRtkMeetingTitleElement>;
             /**
              * A menu component.
              */
-            "dyte-menu": LocalJSX.DyteMenu & JSXBase.HTMLAttributes<HTMLDyteMenuElement>;
+            "rtk-menu": LocalJSX.RtkMenu & JSXBase.HTMLAttributes<HTMLRtkMenuElement>;
             /**
              * A menu item component.
              */
-            "dyte-menu-item": LocalJSX.DyteMenuItem & JSXBase.HTMLAttributes<HTMLDyteMenuItemElement>;
+            "rtk-menu-item": LocalJSX.RtkMenuItem & JSXBase.HTMLAttributes<HTMLRtkMenuItemElement>;
             /**
              * A menu list component.
              */
-            "dyte-menu-list": LocalJSX.DyteMenuList & JSXBase.HTMLAttributes<HTMLDyteMenuListElement>;
+            "rtk-menu-list": LocalJSX.RtkMenuList & JSXBase.HTMLAttributes<HTMLRtkMenuListElement>;
             /**
              * A component which renders list of messages.
              */
-            "dyte-message-list-view": LocalJSX.DyteMessageListView & JSXBase.HTMLAttributes<HTMLDyteMessageListViewElement>;
-            "dyte-message-view": LocalJSX.DyteMessageView & JSXBase.HTMLAttributes<HTMLDyteMessageViewElement>;
+            "rtk-message-list-view": LocalJSX.RtkMessageListView & JSXBase.HTMLAttributes<HTMLRtkMessageListViewElement>;
+            "rtk-message-view": LocalJSX.RtkMessageView & JSXBase.HTMLAttributes<HTMLRtkMessageViewElement>;
             /**
              * A button which toggles your microphone.
              */
-            "dyte-mic-toggle": LocalJSX.DyteMicToggle & JSXBase.HTMLAttributes<HTMLDyteMicToggleElement>;
+            "rtk-mic-toggle": LocalJSX.RtkMicToggle & JSXBase.HTMLAttributes<HTMLRtkMicToggleElement>;
             /**
              * A component which lets to manage your audio devices and audio preferences.
-             * Emits `dyteStateUpdate` event with data for muting notification sounds:
+             * Emits `rtkStateUpdate` event with data for muting notification sounds:
              * ```ts
              * {
              *  prefs: {
@@ -11255,160 +11255,160 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "dyte-microphone-selector": LocalJSX.DyteMicrophoneSelector & JSXBase.HTMLAttributes<HTMLDyteMicrophoneSelectorElement>;
+            "rtk-microphone-selector": LocalJSX.RtkMicrophoneSelector & JSXBase.HTMLAttributes<HTMLRtkMicrophoneSelectorElement>;
             /**
              * A grid component which handles screenshares, plugins and participants.
              */
-            "dyte-mixed-grid": LocalJSX.DyteMixedGrid & JSXBase.HTMLAttributes<HTMLDyteMixedGridElement>;
+            "rtk-mixed-grid": LocalJSX.RtkMixedGrid & JSXBase.HTMLAttributes<HTMLRtkMixedGridElement>;
             /**
              * A button which toggles visibility of a more menu.
-             * When clicked it emits a `dyteStateUpdate` event with the data:
+             * When clicked it emits a `rtkStateUpdate` event with the data:
              * ```ts
              * { activeMoreMenu: boolean; }
              * ```
              */
-            "dyte-more-toggle": LocalJSX.DyteMoreToggle & JSXBase.HTMLAttributes<HTMLDyteMoreToggleElement>;
-            "dyte-mute-all-button": LocalJSX.DyteMuteAllButton & JSXBase.HTMLAttributes<HTMLDyteMuteAllButtonElement>;
-            "dyte-mute-all-confirmation": LocalJSX.DyteMuteAllConfirmation & JSXBase.HTMLAttributes<HTMLDyteMuteAllConfirmationElement>;
+            "rtk-more-toggle": LocalJSX.RtkMoreToggle & JSXBase.HTMLAttributes<HTMLRtkMoreToggleElement>;
+            "rtk-mute-all-button": LocalJSX.RtkMuteAllButton & JSXBase.HTMLAttributes<HTMLRtkMuteAllButtonElement>;
+            "rtk-mute-all-confirmation": LocalJSX.RtkMuteAllConfirmation & JSXBase.HTMLAttributes<HTMLRtkMuteAllConfirmationElement>;
             /**
              * A component which shows a participant's name.
              */
-            "dyte-name-tag": LocalJSX.DyteNameTag & JSXBase.HTMLAttributes<HTMLDyteNameTagElement>;
-            "dyte-network-indicator": LocalJSX.DyteNetworkIndicator & JSXBase.HTMLAttributes<HTMLDyteNetworkIndicatorElement>;
+            "rtk-name-tag": LocalJSX.RtkNameTag & JSXBase.HTMLAttributes<HTMLRtkNameTagElement>;
+            "rtk-network-indicator": LocalJSX.RtkNetworkIndicator & JSXBase.HTMLAttributes<HTMLRtkNetworkIndicatorElement>;
             /**
              * A component which shows a notification.
              * You need to remove the element after you receive the
-             * `dyteNotificationDismiss` event.
+             * `rtkNotificationDismiss` event.
              */
-            "dyte-notification": LocalJSX.DyteNotification & JSXBase.HTMLAttributes<HTMLDyteNotificationElement>;
+            "rtk-notification": LocalJSX.RtkNotification & JSXBase.HTMLAttributes<HTMLRtkNotificationElement>;
             /**
              * A component which handles notifications.
              * You can configure which notifications you want to see and which ones you want to hear.
              * There are also certain limits which you can set as well.
              */
-            "dyte-notifications": LocalJSX.DyteNotifications & JSXBase.HTMLAttributes<HTMLDyteNotificationsElement>;
+            "rtk-notifications": LocalJSX.RtkNotifications & JSXBase.HTMLAttributes<HTMLRtkNotificationsElement>;
             /**
              * A confirmation modal.
              */
-            "dyte-overlay-modal": LocalJSX.DyteOverlayModal & JSXBase.HTMLAttributes<HTMLDyteOverlayModalElement>;
-            "dyte-paginated-list": LocalJSX.DytePaginatedList & JSXBase.HTMLAttributes<HTMLDytePaginatedListElement>;
+            "rtk-overlay-modal": LocalJSX.RtkOverlayModal & JSXBase.HTMLAttributes<HTMLRtkOverlayModalElement>;
+            "rtk-paginated-list": LocalJSX.RtkPaginatedList & JSXBase.HTMLAttributes<HTMLRtkPaginatedListElement>;
             /**
-             * A participant entry component used inside `dyte-participants` which shows data like:
+             * A participant entry component used inside `rtk-participants` which shows data like:
              * name, picture and media device status.
              * You can perform privileged actions on the participant too.
              */
-            "dyte-participant": LocalJSX.DyteParticipant & JSXBase.HTMLAttributes<HTMLDyteParticipantElement>;
+            "rtk-participant": LocalJSX.RtkParticipant & JSXBase.HTMLAttributes<HTMLRtkParticipantElement>;
             /**
              * A component which shows count of total joined participants in a meeting.
              */
-            "dyte-participant-count": LocalJSX.DyteParticipantCount & JSXBase.HTMLAttributes<HTMLDyteParticipantCountElement>;
-            "dyte-participant-setup": LocalJSX.DyteParticipantSetup & JSXBase.HTMLAttributes<HTMLDyteParticipantSetupElement>;
+            "rtk-participant-count": LocalJSX.RtkParticipantCount & JSXBase.HTMLAttributes<HTMLRtkParticipantCountElement>;
+            "rtk-participant-setup": LocalJSX.RtkParticipantSetup & JSXBase.HTMLAttributes<HTMLRtkParticipantSetupElement>;
             /**
              * A component which plays a participants video and allows for placement
-             * of components like `dyte-name-tag`, `dyte-audio-visualizer` or any other component.
+             * of components like `rtk-name-tag`, `rtk-audio-visualizer` or any other component.
              */
-            "dyte-participant-tile": LocalJSX.DyteParticipantTile & JSXBase.HTMLAttributes<HTMLDyteParticipantTileElement>;
+            "rtk-participant-tile": LocalJSX.RtkParticipantTile & JSXBase.HTMLAttributes<HTMLRtkParticipantTileElement>;
             /**
              * A component which lists all participants, with ability to
              * run privileged actions on each participant according to your permissions.
              */
-            "dyte-participants": LocalJSX.DyteParticipants & JSXBase.HTMLAttributes<HTMLDyteParticipantsElement>;
+            "rtk-participants": LocalJSX.RtkParticipants & JSXBase.HTMLAttributes<HTMLRtkParticipantsElement>;
             /**
              * A component which plays all the audio from participants and screenshares.
              */
-            "dyte-participants-audio": LocalJSX.DyteParticipantsAudio & JSXBase.HTMLAttributes<HTMLDyteParticipantsAudioElement>;
+            "rtk-participants-audio": LocalJSX.RtkParticipantsAudio & JSXBase.HTMLAttributes<HTMLRtkParticipantsAudioElement>;
             /**
              * A component which lists all participants, with ability to
              * run privileged actions on each participant according to your permissions.
              */
-            "dyte-participants-stage-list": LocalJSX.DyteParticipantsStageList & JSXBase.HTMLAttributes<HTMLDyteParticipantsStageListElement>;
-            "dyte-participants-stage-queue": LocalJSX.DyteParticipantsStageQueue & JSXBase.HTMLAttributes<HTMLDyteParticipantsStageQueueElement>;
+            "rtk-participants-stage-list": LocalJSX.RtkParticipantsStageList & JSXBase.HTMLAttributes<HTMLRtkParticipantsStageListElement>;
+            "rtk-participants-stage-queue": LocalJSX.RtkParticipantsStageQueue & JSXBase.HTMLAttributes<HTMLRtkParticipantsStageQueueElement>;
             /**
              * A button which toggles visibility of participants.
-             * When clicked it emits a `dyteStateUpdate` event with the data:
+             * When clicked it emits a `rtkStateUpdate` event with the data:
              * ```ts
              * { activeSidebar: boolean; sidebar: 'participants' }
              * ```
              */
-            "dyte-participants-toggle": LocalJSX.DyteParticipantsToggle & JSXBase.HTMLAttributes<HTMLDyteParticipantsToggleElement>;
-            "dyte-participants-viewer-list": LocalJSX.DyteParticipantsViewerList & JSXBase.HTMLAttributes<HTMLDyteParticipantsViewerListElement>;
-            "dyte-participants-waiting-list": LocalJSX.DyteParticipantsWaitingList & JSXBase.HTMLAttributes<HTMLDyteParticipantsWaitingListElement>;
+            "rtk-participants-toggle": LocalJSX.RtkParticipantsToggle & JSXBase.HTMLAttributes<HTMLRtkParticipantsToggleElement>;
+            "rtk-participants-viewer-list": LocalJSX.RtkParticipantsViewerList & JSXBase.HTMLAttributes<HTMLRtkParticipantsViewerListElement>;
+            "rtk-participants-waiting-list": LocalJSX.RtkParticipantsWaitingList & JSXBase.HTMLAttributes<HTMLRtkParticipantsWaitingListElement>;
             /**
              * A component which shows permission related troubleshooting
              * information.
              */
-            "dyte-permissions-message": LocalJSX.DytePermissionsMessage & JSXBase.HTMLAttributes<HTMLDytePermissionsMessageElement>;
-            "dyte-pip-toggle": LocalJSX.DytePipToggle & JSXBase.HTMLAttributes<HTMLDytePipToggleElement>;
+            "rtk-permissions-message": LocalJSX.RtkPermissionsMessage & JSXBase.HTMLAttributes<HTMLRtkPermissionsMessageElement>;
+            "rtk-pip-toggle": LocalJSX.RtkPipToggle & JSXBase.HTMLAttributes<HTMLRtkPipToggleElement>;
             /**
              * A component which loads a plugin.
              */
-            "dyte-plugin-main": LocalJSX.DytePluginMain & JSXBase.HTMLAttributes<HTMLDytePluginMainElement>;
+            "rtk-plugin-main": LocalJSX.RtkPluginMain & JSXBase.HTMLAttributes<HTMLRtkPluginMainElement>;
             /**
              * A component which lists all available plugins from their preset,
              * and ability to enable or disable plugins.
              */
-            "dyte-plugins": LocalJSX.DytePlugins & JSXBase.HTMLAttributes<HTMLDytePluginsElement>;
+            "rtk-plugins": LocalJSX.RtkPlugins & JSXBase.HTMLAttributes<HTMLRtkPluginsElement>;
             /**
              * A button which toggles visibility of plugins.
-             * When clicked it emits a `dyteStateUpdate` event with the data:
+             * When clicked it emits a `rtkStateUpdate` event with the data:
              * ```ts
              * { activeSidebar: boolean; sidebar: 'plugins' }
              * ```
              */
-            "dyte-plugins-toggle": LocalJSX.DytePluginsToggle & JSXBase.HTMLAttributes<HTMLDytePluginsToggleElement>;
+            "rtk-plugins-toggle": LocalJSX.RtkPluginsToggle & JSXBase.HTMLAttributes<HTMLRtkPluginsToggleElement>;
             /**
              * A poll component.
              * Shows a poll where a user can vote.
              */
-            "dyte-poll": LocalJSX.DytePoll & JSXBase.HTMLAttributes<HTMLDytePollElement>;
+            "rtk-poll": LocalJSX.RtkPoll & JSXBase.HTMLAttributes<HTMLRtkPollElement>;
             /**
              * A component that lets you create a poll.
              */
-            "dyte-poll-form": LocalJSX.DytePollForm & JSXBase.HTMLAttributes<HTMLDytePollFormElement>;
+            "rtk-poll-form": LocalJSX.RtkPollForm & JSXBase.HTMLAttributes<HTMLRtkPollFormElement>;
             /**
              * A component which lists all available plugins a user can access with
              * the ability to enable or disable them as per their permissions.
              */
-            "dyte-polls": LocalJSX.DytePolls & JSXBase.HTMLAttributes<HTMLDytePollsElement>;
+            "rtk-polls": LocalJSX.RtkPolls & JSXBase.HTMLAttributes<HTMLRtkPollsElement>;
             /**
              * A button which toggles visibility of polls.
              * You need to pass the `meeting` object to it to see the unread polls count badge.
-             * When clicked it emits a `dyteStateUpdate` event with the data:
+             * When clicked it emits a `rtkStateUpdate` event with the data:
              * ```ts
              * { activeSidebar: boolean; sidebar: 'polls' }
              * ```
              */
-            "dyte-polls-toggle": LocalJSX.DytePollsToggle & JSXBase.HTMLAttributes<HTMLDytePollsToggleElement>;
+            "rtk-polls-toggle": LocalJSX.RtkPollsToggle & JSXBase.HTMLAttributes<HTMLRtkPollsToggleElement>;
             /**
              * A component which indicates the recording status of a meeting.
              * It will not render anything if no recording is taking place.
              */
-            "dyte-recording-indicator": LocalJSX.DyteRecordingIndicator & JSXBase.HTMLAttributes<HTMLDyteRecordingIndicatorElement>;
+            "rtk-recording-indicator": LocalJSX.RtkRecordingIndicator & JSXBase.HTMLAttributes<HTMLRtkRecordingIndicatorElement>;
             /**
              * A button which toggles recording state of a meeting.
              * Only a privileged user can perform this action,
              * thus the button will not be visible for participants
              * who don't have the permission to record a meeting.
              */
-            "dyte-recording-toggle": LocalJSX.DyteRecordingToggle & JSXBase.HTMLAttributes<HTMLDyteRecordingToggleElement>;
+            "rtk-recording-toggle": LocalJSX.RtkRecordingToggle & JSXBase.HTMLAttributes<HTMLRtkRecordingToggleElement>;
             /**
              * A button which toggles your screenshare.
              */
-            "dyte-screen-share-toggle": LocalJSX.DyteScreenShareToggle & JSXBase.HTMLAttributes<HTMLDyteScreenShareToggleElement>;
+            "rtk-screen-share-toggle": LocalJSX.RtkScreenShareToggle & JSXBase.HTMLAttributes<HTMLRtkScreenShareToggleElement>;
             /**
              * A component which plays a participant's screenshared video.
-             * It also allows for placement of other components similar to `dyte-participant-tile`.
+             * It also allows for placement of other components similar to `rtk-participant-tile`.
              * This component will not render anything if the participant hasn't start screensharing.
              */
-            "dyte-screenshare-view": LocalJSX.DyteScreenshareView & JSXBase.HTMLAttributes<HTMLDyteScreenshareViewElement>;
+            "rtk-screenshare-view": LocalJSX.RtkScreenshareView & JSXBase.HTMLAttributes<HTMLRtkScreenshareViewElement>;
             /**
              * A settings component to see and change your audio/video devices
              * as well as see your connection quality.
              */
-            "dyte-settings": LocalJSX.DyteSettings & JSXBase.HTMLAttributes<HTMLDyteSettingsElement>;
+            "rtk-settings": LocalJSX.RtkSettings & JSXBase.HTMLAttributes<HTMLRtkSettingsElement>;
             /**
              * A component which lets to manage your audio devices and audio preferences.
-             * Emits `dyteStateUpdate` event with data for muting notification sounds:
+             * Emits `rtkStateUpdate` event with data for muting notification sounds:
              * ```ts
              * {
              *  prefs: {
@@ -11417,18 +11417,18 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "dyte-settings-audio": LocalJSX.DyteSettingsAudio & JSXBase.HTMLAttributes<HTMLDyteSettingsAudioElement>;
+            "rtk-settings-audio": LocalJSX.RtkSettingsAudio & JSXBase.HTMLAttributes<HTMLRtkSettingsAudioElement>;
             /**
              * A button which toggles visibility of settings module.
-             * When clicked it emits a `dyteStateUpdate` event with the data:
+             * When clicked it emits a `rtkStateUpdate` event with the data:
              * ```ts
              * { activeSettings: boolean; }
              * ```
              */
-            "dyte-settings-toggle": LocalJSX.DyteSettingsToggle & JSXBase.HTMLAttributes<HTMLDyteSettingsToggleElement>;
+            "rtk-settings-toggle": LocalJSX.RtkSettingsToggle & JSXBase.HTMLAttributes<HTMLRtkSettingsToggleElement>;
             /**
              * A component which lets to manage your camera devices and your video preferences.
-             * Emits `dyteStateUpdate` event with data for toggling mirroring of self video:
+             * Emits `rtkStateUpdate` event with data for toggling mirroring of self video:
              * ```ts
              * {
              *  prefs: {
@@ -11437,25 +11437,25 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "dyte-settings-video": LocalJSX.DyteSettingsVideo & JSXBase.HTMLAttributes<HTMLDyteSettingsVideoElement>;
+            "rtk-settings-video": LocalJSX.RtkSettingsVideo & JSXBase.HTMLAttributes<HTMLRtkSettingsVideoElement>;
             /**
              * A screen shown before joining the meeting, where you can edit your display name,
              * and media settings.
              */
-            "dyte-setup-screen": LocalJSX.DyteSetupScreen & JSXBase.HTMLAttributes<HTMLDyteSetupScreenElement>;
+            "rtk-setup-screen": LocalJSX.RtkSetupScreen & JSXBase.HTMLAttributes<HTMLRtkSetupScreenElement>;
             /**
              * A component which handles the sidebar and
              * you can customize which sections you want, and which section you want as the default.
              */
-            "dyte-sidebar": LocalJSX.DyteSidebar & JSXBase.HTMLAttributes<HTMLDyteSidebarElement>;
-            "dyte-sidebar-ui": LocalJSX.DyteSidebarUi & JSXBase.HTMLAttributes<HTMLDyteSidebarUiElement>;
+            "rtk-sidebar": LocalJSX.RtkSidebar & JSXBase.HTMLAttributes<HTMLRtkSidebarElement>;
+            "rtk-sidebar-ui": LocalJSX.RtkSidebarUi & JSXBase.HTMLAttributes<HTMLRtkSidebarUiElement>;
             /**
              * A grid component which renders only the participants in a simple grid.
              */
-            "dyte-simple-grid": LocalJSX.DyteSimpleGrid & JSXBase.HTMLAttributes<HTMLDyteSimpleGridElement>;
+            "rtk-simple-grid": LocalJSX.RtkSimpleGrid & JSXBase.HTMLAttributes<HTMLRtkSimpleGridElement>;
             /**
              * A component which lets to manage your audio devices and audio preferences.
-             * Emits `dyteStateUpdate` event with data for muting notification sounds:
+             * Emits `rtkStateUpdate` event with data for muting notification sounds:
              * ```ts
              * {
              *  prefs: {
@@ -11464,65 +11464,65 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "dyte-speaker-selector": LocalJSX.DyteSpeakerSelector & JSXBase.HTMLAttributes<HTMLDyteSpeakerSelectorElement>;
+            "rtk-speaker-selector": LocalJSX.RtkSpeakerSelector & JSXBase.HTMLAttributes<HTMLRtkSpeakerSelectorElement>;
             /**
              * A component which shows an animating spinner.
              */
-            "dyte-spinner": LocalJSX.DyteSpinner & JSXBase.HTMLAttributes<HTMLDyteSpinnerElement>;
+            "rtk-spinner": LocalJSX.RtkSpinner & JSXBase.HTMLAttributes<HTMLRtkSpinnerElement>;
             /**
              * A grid component that renders two lists of participants: `pinnedParticipants` and `participants`.
              * You can customize the layout to a `column` view, by default is is `row`.
              * - Participants from `pinnedParticipants[]` are rendered inside a larger grid.
              * - Participants from `participants[]` array are rendered in a smaller grid.
              */
-            "dyte-spotlight-grid": LocalJSX.DyteSpotlightGrid & JSXBase.HTMLAttributes<HTMLDyteSpotlightGridElement>;
-            "dyte-spotlight-indicator": LocalJSX.DyteSpotlightIndicator & JSXBase.HTMLAttributes<HTMLDyteSpotlightIndicatorElement>;
+            "rtk-spotlight-grid": LocalJSX.RtkSpotlightGrid & JSXBase.HTMLAttributes<HTMLRtkSpotlightGridElement>;
+            "rtk-spotlight-indicator": LocalJSX.RtkSpotlightIndicator & JSXBase.HTMLAttributes<HTMLRtkSpotlightIndicatorElement>;
             /**
              * A component used as a stage that commonly houses
              * the `grid` and `sidebar` components.
              */
-            "dyte-stage": LocalJSX.DyteStage & JSXBase.HTMLAttributes<HTMLDyteStageElement>;
-            "dyte-stage-toggle": LocalJSX.DyteStageToggle & JSXBase.HTMLAttributes<HTMLDyteStageToggleElement>;
+            "rtk-stage": LocalJSX.RtkStage & JSXBase.HTMLAttributes<HTMLRtkStageElement>;
+            "rtk-stage-toggle": LocalJSX.RtkStageToggle & JSXBase.HTMLAttributes<HTMLRtkStageToggleElement>;
             /**
-             * A switch component which follows Dyte's Design System.
+             * A switch component which follows RTK Design System.
              */
-            "dyte-switch": LocalJSX.DyteSwitch & JSXBase.HTMLAttributes<HTMLDyteSwitchElement>;
-            "dyte-tab-bar": LocalJSX.DyteTabBar & JSXBase.HTMLAttributes<HTMLDyteTabBarElement>;
+            "rtk-switch": LocalJSX.RtkSwitch & JSXBase.HTMLAttributes<HTMLRtkSwitchElement>;
+            "rtk-tab-bar": LocalJSX.RtkTabBar & JSXBase.HTMLAttributes<HTMLRtkTabBarElement>;
             /**
              * A component which renders a text composer
              */
-            "dyte-text-composer-view": LocalJSX.DyteTextComposerView & JSXBase.HTMLAttributes<HTMLDyteTextComposerViewElement>;
+            "rtk-text-composer-view": LocalJSX.RtkTextComposerView & JSXBase.HTMLAttributes<HTMLRtkTextComposerViewElement>;
             /**
              * A component which renders a text message from chat.
              */
-            "dyte-text-message": LocalJSX.DyteTextMessage & JSXBase.HTMLAttributes<HTMLDyteTextMessageElement>;
+            "rtk-text-message": LocalJSX.RtkTextMessage & JSXBase.HTMLAttributes<HTMLRtkTextMessageElement>;
             /**
              * A component which renders a text message from chat.
              */
-            "dyte-text-message-view": LocalJSX.DyteTextMessageView & JSXBase.HTMLAttributes<HTMLDyteTextMessageViewElement>;
+            "rtk-text-message-view": LocalJSX.RtkTextMessageView & JSXBase.HTMLAttributes<HTMLRtkTextMessageViewElement>;
             /**
-             * Tooltip component which follows Dyte's Design System.
+             * Tooltip component which follows RTK Design System.
              */
-            "dyte-tooltip": LocalJSX.DyteTooltip & JSXBase.HTMLAttributes<HTMLDyteTooltipElement>;
+            "rtk-tooltip": LocalJSX.RtkTooltip & JSXBase.HTMLAttributes<HTMLRtkTooltipElement>;
             /**
              * A component which shows a transcript.
              * You need to remove the element after you receive the
-             * `dyteTranscriptDismiss` event.
+             * `rtkTranscriptDismiss` event.
              */
-            "dyte-transcript": LocalJSX.DyteTranscript & JSXBase.HTMLAttributes<HTMLDyteTranscriptElement>;
+            "rtk-transcript": LocalJSX.RtkTranscript & JSXBase.HTMLAttributes<HTMLRtkTranscriptElement>;
             /**
              * A component which handles transcripts.
              * You can configure which transcripts you want to see and which ones you want to hear.
              * There are also certain limits which you can set as well.
              */
-            "dyte-transcripts": LocalJSX.DyteTranscripts & JSXBase.HTMLAttributes<HTMLDyteTranscriptsElement>;
-            "dyte-ui-provider": LocalJSX.DyteUiProvider & JSXBase.HTMLAttributes<HTMLDyteUiProviderElement>;
+            "rtk-transcripts": LocalJSX.RtkTranscripts & JSXBase.HTMLAttributes<HTMLRtkTranscriptsElement>;
+            "rtk-ui-provider": LocalJSX.RtkUiProvider & JSXBase.HTMLAttributes<HTMLRtkUiProviderElement>;
             /**
              * A component which shows count of total joined participants in a meeting.
              */
-            "dyte-viewer-count": LocalJSX.DyteViewerCount & JSXBase.HTMLAttributes<HTMLDyteViewerCountElement>;
-            "dyte-virtualized-participant-list": LocalJSX.DyteVirtualizedParticipantList & JSXBase.HTMLAttributes<HTMLDyteVirtualizedParticipantListElement>;
-            "dyte-waiting-screen": LocalJSX.DyteWaitingScreen & JSXBase.HTMLAttributes<HTMLDyteWaitingScreenElement>;
+            "rtk-viewer-count": LocalJSX.RtkViewerCount & JSXBase.HTMLAttributes<HTMLRtkViewerCountElement>;
+            "rtk-virtualized-participant-list": LocalJSX.RtkVirtualizedParticipantList & JSXBase.HTMLAttributes<HTMLRtkVirtualizedParticipantListElement>;
+            "rtk-waiting-screen": LocalJSX.RtkWaitingScreen & JSXBase.HTMLAttributes<HTMLRtkWaitingScreenElement>;
         }
     }
 }

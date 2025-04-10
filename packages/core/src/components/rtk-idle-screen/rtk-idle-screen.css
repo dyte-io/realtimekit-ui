@@ -1,0 +1,18 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply h-full w-full;
+  @apply flex flex-col items-center justify-center;
+}
+
+.ctr {
+  @apply flex flex-col items-center gap-8;
+}
+
+rtk-logo.loaded {
+  @apply h-12;
+}
+
+rtk-spinner {
+  @apply text-brand-500 h-12 w-12;
+}

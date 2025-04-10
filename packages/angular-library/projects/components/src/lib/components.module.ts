@@ -1,5 +1,5 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { defineCustomElements } from '@dytesdk/ui-kit/loader';
+import { defineCustomElements } from '@cloudflare/realtimekit-ui/loader';
 import { DIRECTIVES } from './stencil-generated';
 
 @NgModule({
@@ -13,4 +13,4 @@ import { DIRECTIVES } from './stencil-generated';
     },
   ],
 })
-export class DyteComponentsModule {}
+export class RealtimeKitComponentsModule {}

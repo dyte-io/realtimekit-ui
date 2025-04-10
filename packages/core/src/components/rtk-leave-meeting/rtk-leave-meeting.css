@@ -1,0 +1,30 @@
+@import '../../styles/reset.css';
+
+.leave-modal {
+  @apply w-72 md:w-96;
+  @apply bg-background-1000 relative flex flex-col rounded-md p-8;
+  @apply text-text-1000;
+}
+
+.leave-modal .header h2 {
+  @apply m-0 mb-3;
+}
+
+.leave-modal .message {
+  @apply text-text-600;
+}
+
+.leave-modal .content {
+  @apply text-text-md mt-4;
+  @apply flex flex-wrap gap-4;
+
+  rtk-button {
+    @apply min-w-44 h-9 flex-grow;
+  }
+  .secondary-btn {
+    @apply bg-background-800 hover:bg-background-600;
+  }
+  .secondary-danger-btn {
+    @apply text-danger;
+  }
+}

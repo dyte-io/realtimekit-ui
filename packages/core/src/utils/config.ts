@@ -4,7 +4,7 @@ import { UIConfig } from '../types/ui-config';
 import { DesignTokens } from '../types/ui-config/design-tokens';
 import { isValidHexColor } from './color';
 import deepMerge from 'lodash-es/merge';
-import { Meeting } from '../types/dyte-client';
+import { Meeting } from '../types/rtk-client';
 import { isLiveStreamHost } from './livestream';
 
 /**
@@ -46,7 +46,7 @@ export const generateConfig = (
 
   let logo: string;
 
-  let meetingElements = ['dyte-stage'];
+  let meetingElements = ['rtk-stage'];
 
   let headerChildren = {},
     controlBarChildren = {};
@@ -55,13 +55,13 @@ export const generateConfig = (
   const showGridPagination = options?.grid_pagination !== false;
 
   if (oldConfig.controlBar?.isEnabled) {
-    meetingElements.push('dyte-controlbar');
+    meetingElements.push('rtk-controlbar');
 
     const { elements } = oldConfig.controlBar;
 
     const leftElements = [
-      ...(elements.fullscreen ? ['dyte-fullscreen-toggle'] : []),
-      ...(showSettingsToggle ? ['dyte-settings-toggle'] : []),
+      ...(elements.fullscreen ? ['rtk-fullscreen-toggle'] : []),
+      ...(showSettingsToggle ? ['rtk-settings-toggle'] : []),
     ];
     const rightElements = [];
     const moreElements = [];
@@ -70,60 +70,60 @@ export const generateConfig = (
       meeting.self?.config?.pipMode &&
       meeting.self.config?.viewType !== 'LIVESTREAM'
     ) {
-      moreElements.push('dyte-pip-toggle');
+      moreElements.push('rtk-pip-toggle');
     }
 
     if (meeting?.self.permissions.canDisableParticipantAudio) {
-      moreElements.push('dyte-mute-all-button');
+      moreElements.push('rtk-mute-all-button');
     }
 
-    moreElements.push('dyte-breakout-rooms-toggle');
+    moreElements.push('rtk-breakout-rooms-toggle');
 
     if (meeting.self?.permissions.canRecord) {
-      moreElements.push('dyte-recording-toggle');
+      moreElements.push('rtk-recording-toggle');
     }
 
     if ((meeting.self.permissions as DytePermissionsPreset).transcriptionEnabled ?? false) {
-      moreElements.push('dyte-caption-toggle');
+      moreElements.push('rtk-caption-toggle');
     }
 
-    if (navigator.product !== 'ReactNative') moreElements.push('dyte-debugger-toggle');
+    if (navigator.product !== 'ReactNative') moreElements.push('rtk-debugger-toggle');
 
     if (isLiveStreamHost(meeting)) {
-      leftElements.push('dyte-livestream-toggle');
+      leftElements.push('rtk-livestream-toggle');
     }
 
     if (elements.screenshare) {
-      leftElements.push('dyte-screen-share-toggle');
+      leftElements.push('rtk-screen-share-toggle');
     }
 
     if (elements.chat) {
-      rightElements.push('dyte-chat-toggle');
+      rightElements.push('rtk-chat-toggle');
     }
 
     if (elements.polls) {
-      rightElements.push('dyte-polls-toggle');
+      rightElements.push('rtk-polls-toggle');
     }
 
     if (elements.participants) {
-      rightElements.push('dyte-participants-toggle');
+      rightElements.push('rtk-participants-toggle');
     }
 
     if (elements.plugins) {
-      rightElements.push('dyte-plugins-toggle');
+      rightElements.push('rtk-plugins-toggle');
     }
 
-    rightElements.push('dyte-ai-toggle');
+    rightElements.push('rtk-ai-toggle');
 
     // NOTE(ishita1805): No condition as permission check happens within component
     const centerElements = [
-      'dyte-mic-toggle',
-      'dyte-camera-toggle',
-      'dyte-stage-toggle',
-      'dyte-leave-button',
+      'rtk-mic-toggle',
+      'rtk-camera-toggle',
+      'rtk-stage-toggle',
+      'rtk-leave-button',
     ];
 
-    if (moreElements.length > 0) centerElements.push('dyte-more-toggle');
+    if (moreElements.length > 0) centerElements.push('rtk-more-toggle');
 
     const allSideElements = leftElements.concat(rightElements).concat(moreElements);
 
@@ -134,89 +134,89 @@ export const generateConfig = (
     }
 
     controlBarChildren = {
-      'dyte-controlbar': {
+      'rtk-controlbar': {
         states: ['activeMoreMenu'],
         children: ['div#controlbar-left', 'div#controlbar-center', 'div#controlbar-right'],
       },
       'div#controlbar-left': leftElements,
       'div#controlbar-center': centerElements,
       'div#controlbar-right': rightElements,
-      'dyte-more-toggle': {
+      'rtk-more-toggle': {
         states: ['activeMoreMenu'],
         children: [],
       },
-      'dyte-more-toggle.activeMoreMenu': moreElements.map((el) => [
+      'rtk-more-toggle.activeMoreMenu': moreElements.map((el) => [
         el,
         { variant: 'horizontal', slot: 'more-elements' },
       ]),
-      'dyte-controlbar.sm': ['div#controlbar-mobile'],
-      'dyte-controlbar.md': ['div#controlbar-mobile'],
+      'rtk-controlbar.sm': ['div#controlbar-mobile'],
+      'rtk-controlbar.md': ['div#controlbar-mobile'],
 
-      'dyte-more-toggle.activeMoreMenu.md': allSideElements.map((el) => [
+      'rtk-more-toggle.activeMoreMenu.md': allSideElements.map((el) => [
         el,
         { variant: 'horizontal', slot: 'more-elements' },
       ]),
-      'dyte-more-toggle.activeMoreMenu.sm': allSideElements.map((el) => [
+      'rtk-more-toggle.activeMoreMenu.sm': allSideElements.map((el) => [
         el,
         { variant: 'horizontal', slot: 'more-elements' },
       ]),
 
       'div#controlbar-mobile': [
-        'dyte-mic-toggle',
-        'dyte-camera-toggle',
-        'dyte-stage-toggle',
-        ...[hasMobileDrawer && 'dyte-more-toggle'],
-        'dyte-leave-button',
+        'rtk-mic-toggle',
+        'rtk-camera-toggle',
+        'rtk-stage-toggle',
+        ...[hasMobileDrawer && 'rtk-more-toggle'],
+        'rtk-leave-button',
       ],
     };
   }
 
   if (oldConfig.header?.isEnabled) {
-    meetingElements.unshift('dyte-header');
+    meetingElements.unshift('rtk-header');
 
     const { elements } = oldConfig.header;
 
-    let leftElements = ['dyte-recording-indicator', 'dyte-livestream-indicator'],
+    let leftElements = ['rtk-recording-indicator', 'rtk-livestream-indicator'],
       centerElements = [],
       rightElements = [];
 
     if (showGridPagination) {
-      rightElements.push('dyte-grid-pagination');
+      rightElements.push('rtk-grid-pagination');
     }
 
     if (elements.title) {
-      centerElements.push('dyte-meeting-title');
+      centerElements.push('rtk-meeting-title');
     }
 
     if (typeof elements.logo === 'string' && elements.logo.length > 0) {
       logo = elements.logo;
-      leftElements.unshift('dyte-logo');
+      leftElements.unshift('rtk-logo');
     }
 
     if (elements.participantCount) {
-      rightElements.push('dyte-participant-count', 'dyte-viewer-count');
+      rightElements.push('rtk-participant-count', 'rtk-viewer-count');
     }
 
     if (elements.timer) {
-      rightElements.push('dyte-clock');
+      rightElements.push('rtk-clock');
     }
 
     headerChildren = {
-      'dyte-header': ['div#header-left', 'div#header-center', 'div#header-right'],
-      'dyte-header.sm': { remove: ['div#header-center'] },
+      'rtk-header': ['div#header-left', 'div#header-center', 'div#header-right'],
+      'rtk-header.sm': { remove: ['div#header-center'] },
 
       'div#header-left': leftElements,
       'div#header-center': centerElements,
       'div#header-right': rightElements,
 
       'div#header-left.sm': {
-        remove: ['dyte-logo'],
-        prepend: ['dyte-meeting-title'],
+        remove: ['rtk-logo'],
+        prepend: ['rtk-meeting-title'],
       },
     };
   }
 
-  meetingElements.push('dyte-participants-audio', 'dyte-dialog-manager');
+  meetingElements.push('rtk-participants-audio', 'rtk-dialog-manager');
 
   let designTokens: DesignTokens = {
     logo,
@@ -234,14 +234,14 @@ export const generateConfig = (
   let config: UIConfig = {
     designTokens,
     styles: {
-      'dyte-header': {
+      'rtk-header': {
         display: 'grid',
         height: '48px',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gridTemplateRows: '1fr',
         alignItems: 'center',
       },
-      'dyte-header.sm': {
+      'rtk-header.sm': {
         display: 'grid',
         gridArea: 'header',
         gridTemplateColumns: 'repeat(2, 1fr)',
@@ -254,7 +254,7 @@ export const generateConfig = (
         height: '48px',
         wordBreak: 'break-all',
       },
-      'dyte-logo': {
+      'rtk-logo': {
         height: '26px',
       },
       'div#header-center': {
@@ -268,35 +268,35 @@ export const generateConfig = (
         alignItems: 'center',
         justifyContent: 'flex-end',
       },
-      'dyte-stage': {
+      'rtk-stage': {
         display: 'flex',
         flex: '1',
       },
-      'dyte-grid': {
+      'rtk-grid': {
         flex: '1',
         height: 'auto',
       },
-      'dyte-controlbar': {
+      'rtk-controlbar': {
         display: 'grid',
         gridTemplateColumns: 'repeat(3,1fr)',
         gridTemplateRows: '1fr',
         alignItems: 'center',
         padding: '8px',
       },
-      'dyte-controlbar.sm': {
+      'rtk-controlbar.sm': {
         display: 'flex',
         position: 'relative',
-        backgroundColor: 'var(--dyte-colors-background-1000, #000)',
+        backgroundColor: 'var(--rtk-colors-background-1000, #000)',
       },
-      'dyte-controlbar.md': {
+      'rtk-controlbar.md': {
         display: 'flex',
         position: 'relative',
-        backgroundColor: 'var(--dyte-colors-background-1000, #000)',
+        backgroundColor: 'var(--rtk-colors-background-1000, #000)',
       },
       'div#controlbar-left': {
         display: 'flex',
         alignItems: 'center',
-        gap: 'var(--dyte-space-1, 4px)',
+        gap: 'var(--rtk-space-1, 4px)',
       },
       'div#controlbar-center': {
         display: 'flex',
@@ -304,7 +304,7 @@ export const generateConfig = (
         position: 'relative',
         overflow: 'visible',
         justifyContent: 'center',
-        gap: 'var(--dyte-space-1, 4px)',
+        gap: 'var(--rtk-space-1, 4px)',
       },
       'div#controlbar-mobile': {
         display: 'flex',
@@ -312,19 +312,19 @@ export const generateConfig = (
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: '10000',
-        gap: 'var(--dyte-space-1, 4px)',
+        gap: 'var(--rtk-space-1, 4px)',
       },
       'div#controlbar-right': {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        gap: 'var(--dyte-space-1, 4px)',
+        gap: 'var(--rtk-space-1, 4px)',
       },
-      'dyte-settings': {
+      'rtk-settings': {
         width: '720px',
         height: '480px',
       },
-      'dyte-debugger': {
+      'rtk-debugger': {
         width: '720px',
         height: '480px',
       },
@@ -334,7 +334,7 @@ export const generateConfig = (
         left: '12px',
         display: 'flex',
         gap: '6px',
-        background: 'rgb(var(--dyte-colors-background-800, 0 0 0))',
+        background: 'rgb(var(--rtk-colors-background-800, 0 0 0))',
         borderRadius: '100%',
       },
       'div#setupcontrols-media': {
@@ -352,120 +352,118 @@ export const generateConfig = (
         flexDirection: 'column',
         gap: '6px',
       },
-      'dyte-meeting-title.sm': {
+      'rtk-meeting-title.sm': {
         marginLeft: '0',
       },
-      'dyte-clock': {
+      'rtk-clock': {
         marginRight: '0',
       },
     },
     root: {
-      'dyte-meeting': {
+      'rtk-meeting': {
         // if using key value pair, provide the key in `state`
         // else provide array of states in `states`
         state: 'meeting',
         states: ['activeSidebar', 'activeAI'],
       },
-      'dyte-meeting[meeting=idle]': ['dyte-idle-screen'],
-      'dyte-meeting[meeting=waiting]': ['dyte-waiting-screen'],
-      'dyte-meeting[meeting=setup]': ['dyte-setup-screen', 'dyte-dialog-manager'],
-      'dyte-meeting[meeting=joined]': meetingElements,
-      'dyte-meeting[meeting=joined].activeSidebar.sm': {
-        add: [['dyte-sidebar', { view: 'full-screen' }]],
+      'rtk-meeting[meeting=idle]': ['rtk-idle-screen'],
+      'rtk-meeting[meeting=waiting]': ['rtk-waiting-screen'],
+      'rtk-meeting[meeting=setup]': ['rtk-setup-screen', 'rtk-dialog-manager'],
+      'rtk-meeting[meeting=joined]': meetingElements,
+      'rtk-meeting[meeting=joined].activeSidebar.sm': {
+        add: [['rtk-sidebar', { view: 'full-screen' }]],
       },
-      'dyte-meeting[meeting=joined].activeSidebar.md': {
-        add: [['dyte-sidebar', { view: 'full-screen' }]],
+      'rtk-meeting[meeting=joined].activeSidebar.md': {
+        add: [['rtk-sidebar', { view: 'full-screen' }]],
       },
-      'dyte-meeting[meeting=joined].activeAI.sm': {
-        add: [['dyte-ai', { view: 'full-screen' }]],
+      'rtk-meeting[meeting=joined].activeAI.sm': {
+        add: [['rtk-ai', { view: 'full-screen' }]],
       },
-      'dyte-meeting[meeting=joined].activeAI.md': {
-        add: [['dyte-ai', { view: 'full-screen' }]],
+      'rtk-meeting[meeting=joined].activeAI.md': {
+        add: [['rtk-ai', { view: 'full-screen' }]],
       },
-      'dyte-meeting[meeting=ended]': ['dyte-ended-screen'],
+      'rtk-meeting[meeting=ended]': ['rtk-ended-screen'],
 
       ...headerChildren,
       ...controlBarChildren,
 
-      'dyte-stage': {
+      'rtk-stage': {
         states: ['activeSidebar', 'activeAI'],
-        children: ['dyte-grid', 'dyte-notifications', 'dyte-transcripts'],
+        children: ['rtk-grid', 'rtk-notifications', 'rtk-transcripts'],
       },
 
-      'dyte-stage.activeSidebar': {
-        add: [['dyte-sidebar', { view: 'sidebar' }]],
-      },
-
-      // hide sidebar for smaller screens
-      'dyte-stage.activeSidebar.sm': { remove: ['dyte-sidebar'] },
-
-      'dyte-stage.activeAI': {
-        add: [['dyte-ai', { view: 'sidebar' }]],
+      'rtk-stage.activeSidebar': {
+        add: [['rtk-sidebar', { view: 'sidebar' }]],
       },
 
       // hide sidebar for smaller screens
-      'dyte-stage.activeAI.sm': { remove: ['dyte-ai'] },
+      'rtk-stage.activeSidebar.sm': { remove: ['rtk-sidebar'] },
 
-      'dyte-grid': {
+      'rtk-stage.activeAI': {
+        add: [['rtk-ai', { view: 'sidebar' }]],
+      },
+
+      // hide sidebar for smaller screens
+      'rtk-stage.activeAI.sm': { remove: ['rtk-ai'] },
+
+      'rtk-grid': {
         states: ['activeScreenShare', 'activePlugin', 'activeSpotlight'],
         state: 'viewType',
-        children: ['dyte-simple-grid'],
+        children: ['rtk-simple-grid'],
       },
 
-      'dyte-grid[viewType=AUDIO_ROOM]': ['dyte-audio-grid'],
+      'rtk-grid[viewType=AUDIO_ROOM]': ['rtk-audio-grid'],
 
-      'dyte-grid[viewType=AUDIO_ROOM].activePlugin': ['dyte-mixed-grid'],
-      'dyte-grid[viewType=AUDIO_ROOM].activeScreenshare': ['dyte-mixed-grid'],
-      'dyte-grid[viewType=AUDIO_ROOM].activeScreenShare.activeSpotlight': ['dyte-mixed-grid'],
-      'dyte-grid[viewType=AUDIO_ROOM].activePlugin.activeSpotlight': ['dyte-mixed-grid'],
-      'dyte-grid[viewType=AUDIO_ROOM].activePlugin.activeScreenShare.activeSpotlight': [
-        'dyte-mixed-grid',
+      'rtk-grid[viewType=AUDIO_ROOM].activePlugin': ['rtk-mixed-grid'],
+      'rtk-grid[viewType=AUDIO_ROOM].activeScreenshare': ['rtk-mixed-grid'],
+      'rtk-grid[viewType=AUDIO_ROOM].activeScreenShare.activeSpotlight': ['rtk-mixed-grid'],
+      'rtk-grid[viewType=AUDIO_ROOM].activePlugin.activeSpotlight': ['rtk-mixed-grid'],
+      'rtk-grid[viewType=AUDIO_ROOM].activePlugin.activeScreenShare.activeSpotlight': [
+        'rtk-mixed-grid',
       ],
 
-      'dyte-grid.activeSpotlight': ['dyte-spotlight-grid'],
+      'rtk-grid.activeSpotlight': ['rtk-spotlight-grid'],
 
-      'dyte-grid.activeScreenShare': ['dyte-mixed-grid'],
-      'dyte-grid.activePlugin': ['dyte-mixed-grid'],
+      'rtk-grid.activeScreenShare': ['rtk-mixed-grid'],
+      'rtk-grid.activePlugin': ['rtk-mixed-grid'],
 
-      'dyte-grid.activeScreenShare.activeSpotlight': ['dyte-mixed-grid'],
-      'dyte-grid.activePlugin.activeSpotlight': ['dyte-mixed-grid'],
-      'dyte-grid.activePlugin.activeScreenShare.activeSpotlight': ['dyte-mixed-grid'],
+      'rtk-grid.activeScreenShare.activeSpotlight': ['rtk-mixed-grid'],
+      'rtk-grid.activePlugin.activeSpotlight': ['rtk-mixed-grid'],
+      'rtk-grid.activePlugin.activeScreenShare.activeSpotlight': ['rtk-mixed-grid'],
 
-      'dyte-mixed-grid': {
+      'rtk-mixed-grid': {
         states: ['activeSpotlight'],
         state: 'viewType',
-        children: ['dyte-simple-grid'],
+        children: ['rtk-simple-grid'],
       },
 
-      'dyte-mixed-grid[viewType=AUDIO_ROOM]': ['dyte-audio-grid'],
+      'rtk-mixed-grid[viewType=AUDIO_ROOM]': ['rtk-audio-grid'],
 
-      'dyte-mixed-grid.activeSpotlight': ['dyte-spotlight-grid'],
+      'rtk-mixed-grid.activeSpotlight': ['rtk-spotlight-grid'],
 
-      'dyte-participant-tile': {
+      'rtk-participant-tile': {
         state: 'meeting',
-        children: ['dyte-name-tag', 'dyte-avatar', 'dyte-network-indicator'],
+        children: ['rtk-name-tag', 'rtk-avatar', 'rtk-network-indicator'],
       },
 
-      'dyte-participant-setup': ['dyte-avatar', 'div#setupcontrols-media'],
+      'rtk-participant-setup': ['rtk-avatar', 'div#setupcontrols-media'],
 
-      'dyte-participant-tile[meeting=setup]': [
-        'dyte-avatar',
+      'rtk-participant-tile[meeting=setup]': [
+        'rtk-avatar',
         'div#setupcontrols-indicator',
         'div#setupcontrols-media',
         ...(showSettingsToggle ? ['div#setupcontrols-settings'] : []),
       ],
-      'div#setupcontrols-indicator': [
-        ['dyte-audio-visualizer', { slot: 'start', hideMuted: true }],
-      ],
+      'div#setupcontrols-indicator': [['rtk-audio-visualizer', { slot: 'start', hideMuted: true }]],
       'div#setupcontrols-media': [
-        ['dyte-mic-toggle', { size: 'sm' }],
-        ['dyte-camera-toggle', { size: 'sm' }],
+        ['rtk-mic-toggle', { size: 'sm' }],
+        ['rtk-camera-toggle', { size: 'sm' }],
       ],
-      'div#setupcontrols-settings': [['dyte-settings-toggle', { size: 'sm' }]],
+      'div#setupcontrols-settings': [['rtk-settings-toggle', { size: 'sm' }]],
 
-      'dyte-screenshare-view': ['dyte-name-tag', 'dyte-network-indicator'],
+      'rtk-screenshare-view': ['rtk-name-tag', 'rtk-network-indicator'],
 
-      'dyte-name-tag': [['dyte-audio-visualizer', { slot: 'start' }]],
+      'rtk-name-tag': [['rtk-audio-visualizer', { slot: 'start' }]],
     },
     config: {
       notification_sounds: {

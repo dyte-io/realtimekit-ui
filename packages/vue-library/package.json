@@ -1,7 +1,7 @@
 {
-  "name": "@dytesdk/vue-ui-kit",
-  "version": "3.0.0-staging.2",
-  "description": "Dyte's UI Kit to support easy UI development for Vue.",
+  "name": "@cloudflare/realtimekit-vue-ui",
+  "version": "0.0.0",
+  "description": "UI Kit to support easy UI development for Vue.",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "exports": {
@@ -23,15 +23,8 @@
     "access": "public",
     "tag": "latest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dyte-io/ui-kit.git"
-  },
   "dependencies": {
-    "@dytesdk/ui-kit": "*",
+    "@cloudflare/realtimekit-ui": "*",
     "@stencil/vue-output-target": "^0.9.6"
-  },
-  "bugs": {
-    "email": "support@dyte.io"
   }
 }

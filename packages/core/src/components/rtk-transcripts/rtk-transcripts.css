@@ -1,0 +1,13 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply absolute inset-4 top-auto z-10 flex flex-col;
+  @apply pointer-events-none;
+  @apply w-full justify-center;
+  width: 100%;
+  z-index: 5;
+}
+
+rtk-transcript {
+  @apply mt-2;
+}

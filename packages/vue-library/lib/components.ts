@@ -3,12 +3,12 @@
 /* auto-generated vue proxies */
 import { defineContainer } from '@stencil/vue-output-target/runtime';
 
-import type { JSX } from '@dytesdk/ui-kit';
+import type { JSX } from '@cloudflare/realtimekit-ui';
 
 
 
 
-export const DyteAi = /*@__PURE__*/ defineContainer<JSX.DyteAi>('dyte-ai', undefined, [
+export const RtkAi = /*@__PURE__*/ defineContainer<JSX.RtkAi>('rtk-ai', undefined, [
   'meeting',
   'states',
   'config',
@@ -16,33 +16,33 @@ export const DyteAi = /*@__PURE__*/ defineContainer<JSX.DyteAi>('dyte-ai', undef
   't',
   'size',
   'view',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteAiToggle = /*@__PURE__*/ defineContainer<JSX.DyteAiToggle>('dyte-ai-toggle', undefined, [
+export const RtkAiToggle = /*@__PURE__*/ defineContainer<JSX.RtkAiToggle>('rtk-ai-toggle', undefined, [
   'variant',
   'states',
   'meeting',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteAiTranscriptions = /*@__PURE__*/ defineContainer<JSX.DyteAiTranscriptions>('dyte-ai-transcriptions', undefined, [
+export const RtkAiTranscriptions = /*@__PURE__*/ defineContainer<JSX.RtkAiTranscriptions>('rtk-ai-transcriptions', undefined, [
   't',
   'meeting',
   'initialTranscriptions'
 ]);
 
 
-export const DyteAudioGrid = /*@__PURE__*/ defineContainer<JSX.DyteAudioGrid>('dyte-audio-grid', undefined, [
+export const RtkAudioGrid = /*@__PURE__*/ defineContainer<JSX.RtkAudioGrid>('rtk-audio-grid', undefined, [
   'meeting',
   'config',
   'states',
@@ -53,7 +53,7 @@ export const DyteAudioGrid = /*@__PURE__*/ defineContainer<JSX.DyteAudioGrid>('d
 ]);
 
 
-export const DyteAudioTile = /*@__PURE__*/ defineContainer<JSX.DyteAudioTile>('dyte-audio-tile', undefined, [
+export const RtkAudioTile = /*@__PURE__*/ defineContainer<JSX.RtkAudioTile>('rtk-audio-tile', undefined, [
   'meeting',
   'config',
   'size',
@@ -64,7 +64,7 @@ export const DyteAudioTile = /*@__PURE__*/ defineContainer<JSX.DyteAudioTile>('d
 ]);
 
 
-export const DyteAudioVisualizer = /*@__PURE__*/ defineContainer<JSX.DyteAudioVisualizer>('dyte-audio-visualizer', undefined, [
+export const RtkAudioVisualizer = /*@__PURE__*/ defineContainer<JSX.RtkAudioVisualizer>('rtk-audio-visualizer', undefined, [
   'variant',
   'participant',
   'size',
@@ -75,7 +75,7 @@ export const DyteAudioVisualizer = /*@__PURE__*/ defineContainer<JSX.DyteAudioVi
 ]);
 
 
-export const DyteAvatar = /*@__PURE__*/ defineContainer<JSX.DyteAvatar>('dyte-avatar', undefined, [
+export const RtkAvatar = /*@__PURE__*/ defineContainer<JSX.RtkAvatar>('rtk-avatar', undefined, [
   'participant',
   'variant',
   'size',
@@ -84,7 +84,7 @@ export const DyteAvatar = /*@__PURE__*/ defineContainer<JSX.DyteAvatar>('dyte-av
 ]);
 
 
-export const DyteBreakoutRoomManager = /*@__PURE__*/ defineContainer<JSX.DyteBreakoutRoomManager>('dyte-breakout-room-manager', undefined, [
+export const RtkBreakoutRoomManager = /*@__PURE__*/ defineContainer<JSX.RtkBreakoutRoomManager>('rtk-breakout-room-manager', undefined, [
   'meeting',
   'assigningParticipants',
   'mode',
@@ -109,7 +109,7 @@ export const DyteBreakoutRoomManager = /*@__PURE__*/ defineContainer<JSX.DyteBre
 ]);
 
 
-export const DyteBreakoutRoomParticipants = /*@__PURE__*/ defineContainer<JSX.DyteBreakoutRoomParticipants>('dyte-breakout-room-participants', undefined, [
+export const RtkBreakoutRoomParticipants = /*@__PURE__*/ defineContainer<JSX.RtkBreakoutRoomParticipants>('rtk-breakout-room-participants', undefined, [
   'meeting',
   'participantIds',
   'iconPack',
@@ -125,42 +125,42 @@ export const DyteBreakoutRoomParticipants = /*@__PURE__*/ defineContainer<JSX.Dy
 ]);
 
 
-export const DyteBreakoutRoomsManager = /*@__PURE__*/ defineContainer<JSX.DyteBreakoutRoomsManager>('dyte-breakout-rooms-manager', undefined, [
+export const RtkBreakoutRoomsManager = /*@__PURE__*/ defineContainer<JSX.RtkBreakoutRoomsManager>('rtk-breakout-rooms-manager', undefined, [
   'meeting',
   'states',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteBreakoutRoomsToggle = /*@__PURE__*/ defineContainer<JSX.DyteBreakoutRoomsToggle>('dyte-breakout-rooms-toggle', undefined, [
+export const RtkBreakoutRoomsToggle = /*@__PURE__*/ defineContainer<JSX.RtkBreakoutRoomsToggle>('rtk-breakout-rooms-toggle', undefined, [
   'variant',
   'meeting',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteBroadcastMessageModal = /*@__PURE__*/ defineContainer<JSX.DyteBroadcastMessageModal>('dyte-broadcast-message-modal', undefined, [
+export const RtkBroadcastMessageModal = /*@__PURE__*/ defineContainer<JSX.RtkBroadcastMessageModal>('rtk-broadcast-message-modal', undefined, [
   'meeting',
   'states',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteButton = /*@__PURE__*/ defineContainer<JSX.DyteButton>('dyte-button', undefined, [
+export const RtkButton = /*@__PURE__*/ defineContainer<JSX.RtkButton>('rtk-button', undefined, [
   'size',
   'variant',
   'kind',
@@ -170,7 +170,7 @@ export const DyteButton = /*@__PURE__*/ defineContainer<JSX.DyteButton>('dyte-bu
 ]);
 
 
-export const DyteCameraSelector = /*@__PURE__*/ defineContainer<JSX.DyteCameraSelector>('dyte-camera-selector', undefined, [
+export const RtkCameraSelector = /*@__PURE__*/ defineContainer<JSX.RtkCameraSelector>('rtk-camera-selector', undefined, [
   'meeting',
   'size',
   'iconPack',
@@ -179,19 +179,19 @@ export const DyteCameraSelector = /*@__PURE__*/ defineContainer<JSX.DyteCameraSe
 ]);
 
 
-export const DyteCameraToggle = /*@__PURE__*/ defineContainer<JSX.DyteCameraToggle>('dyte-camera-toggle', undefined, [
+export const RtkCameraToggle = /*@__PURE__*/ defineContainer<JSX.RtkCameraToggle>('rtk-camera-toggle', undefined, [
   'variant',
   'meeting',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteCaptionToggle = /*@__PURE__*/ defineContainer<JSX.DyteCaptionToggle>('dyte-caption-toggle', undefined, [
+export const RtkCaptionToggle = /*@__PURE__*/ defineContainer<JSX.RtkCaptionToggle>('rtk-caption-toggle', undefined, [
   'variant',
   'meeting',
   'states',
@@ -199,25 +199,25 @@ export const DyteCaptionToggle = /*@__PURE__*/ defineContainer<JSX.DyteCaptionTo
   'iconPack',
   'size',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteChannelCreator = /*@__PURE__*/ defineContainer<JSX.DyteChannelCreator>('dyte-channel-creator', undefined, [
+export const RtkChannelCreator = /*@__PURE__*/ defineContainer<JSX.RtkChannelCreator>('rtk-channel-creator', undefined, [
   'meeting',
   't',
   'iconPack',
-  'dyteStateUpdate',
+  'rtkStateUpdate',
   'switchChannel'
 ], [
-  'dyteStateUpdate',
+  'rtkStateUpdate',
   'switchChannel'
 ]);
 
 
-export const DyteChannelDetails = /*@__PURE__*/ defineContainer<JSX.DyteChannelDetails>('dyte-channel-details', undefined, [
+export const RtkChannelDetails = /*@__PURE__*/ defineContainer<JSX.RtkChannelDetails>('rtk-channel-details', undefined, [
   'channel',
   't',
   'iconPack',
@@ -225,7 +225,7 @@ export const DyteChannelDetails = /*@__PURE__*/ defineContainer<JSX.DyteChannelD
 ]);
 
 
-export const DyteChannelHeader = /*@__PURE__*/ defineContainer<JSX.DyteChannelHeader>('dyte-channel-header', undefined, [
+export const RtkChannelHeader = /*@__PURE__*/ defineContainer<JSX.RtkChannelHeader>('rtk-channel-header', undefined, [
   'meeting',
   'channel',
   'iconPack',
@@ -241,7 +241,7 @@ export const DyteChannelHeader = /*@__PURE__*/ defineContainer<JSX.DyteChannelHe
 ]);
 
 
-export const DyteChannelSelectorUi = /*@__PURE__*/ defineContainer<JSX.DyteChannelSelectorUi>('dyte-channel-selector-ui', undefined, [
+export const RtkChannelSelectorUi = /*@__PURE__*/ defineContainer<JSX.RtkChannelSelectorUi>('rtk-channel-selector-ui', undefined, [
   'channels',
   'selectedChannelId',
   'iconPack',
@@ -253,7 +253,7 @@ export const DyteChannelSelectorUi = /*@__PURE__*/ defineContainer<JSX.DyteChann
 ]);
 
 
-export const DyteChannelSelectorView = /*@__PURE__*/ defineContainer<JSX.DyteChannelSelectorView>('dyte-channel-selector-view', undefined, [
+export const RtkChannelSelectorView = /*@__PURE__*/ defineContainer<JSX.RtkChannelSelectorView>('rtk-channel-selector-view', undefined, [
   'channels',
   'selectedChannelId',
   'disableSearch',
@@ -267,7 +267,7 @@ export const DyteChannelSelectorView = /*@__PURE__*/ defineContainer<JSX.DyteCha
 ]);
 
 
-export const DyteChat = /*@__PURE__*/ defineContainer<JSX.DyteChat>('dyte-chat', undefined, [
+export const RtkChat = /*@__PURE__*/ defineContainer<JSX.RtkChat>('rtk-chat', undefined, [
   'meeting',
   'config',
   'size',
@@ -276,13 +276,13 @@ export const DyteChat = /*@__PURE__*/ defineContainer<JSX.DyteChat>('dyte-chat',
   'disablePrivateChat',
   'privatePresetFilter',
   'displayFilter',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteChatComposerUi = /*@__PURE__*/ defineContainer<JSX.DyteChatComposerUi>('dyte-chat-composer-ui', undefined, [
+export const RtkChatComposerUi = /*@__PURE__*/ defineContainer<JSX.RtkChatComposerUi>('rtk-chat-composer-ui', undefined, [
   'canSendTextMessage',
   'canSendFiles',
   'size',
@@ -292,17 +292,17 @@ export const DyteChatComposerUi = /*@__PURE__*/ defineContainer<JSX.DyteChatComp
   'prefill',
   'members',
   'channelId',
-  'dyteNewMessage',
-  'dyteEditMessage',
-  'dyteEditCancelled'
+  'rtkNewMessage',
+  'rtkEditMessage',
+  'rtkEditCancelled'
 ], [
-  'dyteNewMessage',
-  'dyteEditMessage',
-  'dyteEditCancelled'
+  'rtkNewMessage',
+  'rtkEditMessage',
+  'rtkEditCancelled'
 ]);
 
 
-export const DyteChatComposerView = /*@__PURE__*/ defineContainer<JSX.DyteChatComposerView>('dyte-chat-composer-view', undefined, [
+export const RtkChatComposerView = /*@__PURE__*/ defineContainer<JSX.RtkChatComposerView>('rtk-chat-composer-view', undefined, [
   'canSendTextMessage',
   'canSendFiles',
   'message',
@@ -327,7 +327,7 @@ export const DyteChatComposerView = /*@__PURE__*/ defineContainer<JSX.DyteChatCo
 ]);
 
 
-export const DyteChatMessage = /*@__PURE__*/ defineContainer<JSX.DyteChatMessage>('dyte-chat-message', undefined, [
+export const RtkChatMessage = /*@__PURE__*/ defineContainer<JSX.RtkChatMessage>('rtk-chat-message', undefined, [
   'message',
   'isContinued',
   'child',
@@ -357,7 +357,7 @@ export const DyteChatMessage = /*@__PURE__*/ defineContainer<JSX.DyteChatMessage
 ]);
 
 
-export const DyteChatMessagesUi = /*@__PURE__*/ defineContainer<JSX.DyteChatMessagesUi>('dyte-chat-messages-ui', undefined, [
+export const RtkChatMessagesUi = /*@__PURE__*/ defineContainer<JSX.RtkChatMessagesUi>('rtk-chat-messages-ui', undefined, [
   'selectedGroup',
   'messages',
   'selfUserId',
@@ -366,14 +366,14 @@ export const DyteChatMessagesUi = /*@__PURE__*/ defineContainer<JSX.DyteChatMess
   'iconPack',
   't',
   'pinMessage',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
   'pinMessage',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteChatMessagesUiPaginated = /*@__PURE__*/ defineContainer<JSX.DyteChatMessagesUiPaginated>('dyte-chat-messages-ui-paginated', undefined, [
+export const RtkChatMessagesUiPaginated = /*@__PURE__*/ defineContainer<JSX.RtkChatMessagesUiPaginated>('rtk-chat-messages-ui-paginated', undefined, [
   'meeting',
   'selectedChannel',
   'selectedChannelId',
@@ -384,16 +384,16 @@ export const DyteChatMessagesUiPaginated = /*@__PURE__*/ defineContainer<JSX.Dyt
   'editMessageInit',
   'pinMessage',
   'deleteMessage',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
   'editMessageInit',
   'pinMessage',
   'deleteMessage',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteChatSearchResults = /*@__PURE__*/ defineContainer<JSX.DyteChatSearchResults>('dyte-chat-search-results', undefined, [
+export const RtkChatSearchResults = /*@__PURE__*/ defineContainer<JSX.RtkChatSearchResults>('rtk-chat-search-results', undefined, [
   'meeting',
   'query',
   'channelId',
@@ -402,50 +402,50 @@ export const DyteChatSearchResults = /*@__PURE__*/ defineContainer<JSX.DyteChatS
 ]);
 
 
-export const DyteChatSelectorUi = /*@__PURE__*/ defineContainer<JSX.DyteChatSelectorUi>('dyte-chat-selector-ui', undefined, [
+export const RtkChatSelectorUi = /*@__PURE__*/ defineContainer<JSX.RtkChatSelectorUi>('rtk-chat-selector-ui', undefined, [
   'selfUserId',
   'selectedGroupId',
   'unreadCounts',
   'groups',
   'iconPack',
   't',
-  'dyteChatGroupChanged'
+  'rtkChatGroupChanged'
 ], [
-  'dyteChatGroupChanged'
+  'rtkChatGroupChanged'
 ]);
 
 
-export const DyteChatToggle = /*@__PURE__*/ defineContainer<JSX.DyteChatToggle>('dyte-chat-toggle', undefined, [
+export const RtkChatToggle = /*@__PURE__*/ defineContainer<JSX.RtkChatToggle>('rtk-chat-toggle', undefined, [
   'variant',
   'meeting',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteClock = /*@__PURE__*/ defineContainer<JSX.DyteClock>('dyte-clock', undefined, [
+export const RtkClock = /*@__PURE__*/ defineContainer<JSX.RtkClock>('rtk-clock', undefined, [
   'meeting',
   'iconPack'
 ]);
 
 
-export const DyteConfirmationModal = /*@__PURE__*/ defineContainer<JSX.DyteConfirmationModal>('dyte-confirmation-modal', undefined, [
+export const RtkConfirmationModal = /*@__PURE__*/ defineContainer<JSX.RtkConfirmationModal>('rtk-confirmation-modal', undefined, [
   'meeting',
   'states',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteControlbar = /*@__PURE__*/ defineContainer<JSX.DyteControlbar>('dyte-controlbar', undefined, [
+export const RtkControlbar = /*@__PURE__*/ defineContainer<JSX.RtkControlbar>('rtk-controlbar', undefined, [
   'variant',
   'disableRender',
   'meeting',
@@ -457,7 +457,7 @@ export const DyteControlbar = /*@__PURE__*/ defineContainer<JSX.DyteControlbar>(
 ]);
 
 
-export const DyteControlbarButton = /*@__PURE__*/ defineContainer<JSX.DyteControlbarButton>('dyte-controlbar-button', undefined, [
+export const RtkControlbarButton = /*@__PURE__*/ defineContainer<JSX.RtkControlbarButton>('rtk-controlbar-button', undefined, [
   'variant',
   'showWarning',
   'size',
@@ -470,7 +470,7 @@ export const DyteControlbarButton = /*@__PURE__*/ defineContainer<JSX.DyteContro
 ]);
 
 
-export const DyteCounter = /*@__PURE__*/ defineContainer<JSX.DyteCounter>('dyte-counter', undefined, [
+export const RtkCounter = /*@__PURE__*/ defineContainer<JSX.RtkCounter>('rtk-counter', undefined, [
   'size',
   'value',
   'minValue',
@@ -482,19 +482,19 @@ export const DyteCounter = /*@__PURE__*/ defineContainer<JSX.DyteCounter>('dyte-
 ]);
 
 
-export const DyteDebugger = /*@__PURE__*/ defineContainer<JSX.DyteDebugger>('dyte-debugger', undefined, [
+export const RtkDebugger = /*@__PURE__*/ defineContainer<JSX.RtkDebugger>('rtk-debugger', undefined, [
   'meeting',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteDebuggerAudio = /*@__PURE__*/ defineContainer<JSX.DyteDebuggerAudio>('dyte-debugger-audio', undefined, [
+export const RtkDebuggerAudio = /*@__PURE__*/ defineContainer<JSX.RtkDebuggerAudio>('rtk-debugger-audio', undefined, [
   'meeting',
   'states',
   'size',
@@ -503,7 +503,7 @@ export const DyteDebuggerAudio = /*@__PURE__*/ defineContainer<JSX.DyteDebuggerA
 ]);
 
 
-export const DyteDebuggerScreenshare = /*@__PURE__*/ defineContainer<JSX.DyteDebuggerScreenshare>('dyte-debugger-screenshare', undefined, [
+export const RtkDebuggerScreenshare = /*@__PURE__*/ defineContainer<JSX.RtkDebuggerScreenshare>('rtk-debugger-screenshare', undefined, [
   'meeting',
   'states',
   'size',
@@ -512,7 +512,7 @@ export const DyteDebuggerScreenshare = /*@__PURE__*/ defineContainer<JSX.DyteDeb
 ]);
 
 
-export const DyteDebuggerSystem = /*@__PURE__*/ defineContainer<JSX.DyteDebuggerSystem>('dyte-debugger-system', undefined, [
+export const RtkDebuggerSystem = /*@__PURE__*/ defineContainer<JSX.RtkDebuggerSystem>('rtk-debugger-system', undefined, [
   'meeting',
   'states',
   'size',
@@ -521,20 +521,20 @@ export const DyteDebuggerSystem = /*@__PURE__*/ defineContainer<JSX.DyteDebugger
 ]);
 
 
-export const DyteDebuggerToggle = /*@__PURE__*/ defineContainer<JSX.DyteDebuggerToggle>('dyte-debugger-toggle', undefined, [
+export const RtkDebuggerToggle = /*@__PURE__*/ defineContainer<JSX.RtkDebuggerToggle>('rtk-debugger-toggle', undefined, [
   'variant',
   'meeting',
   'states',
   't',
   'iconPack',
   'size',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteDebuggerVideo = /*@__PURE__*/ defineContainer<JSX.DyteDebuggerVideo>('dyte-debugger-video', undefined, [
+export const RtkDebuggerVideo = /*@__PURE__*/ defineContainer<JSX.RtkDebuggerVideo>('rtk-debugger-video', undefined, [
   'meeting',
   'states',
   'size',
@@ -543,7 +543,7 @@ export const DyteDebuggerVideo = /*@__PURE__*/ defineContainer<JSX.DyteDebuggerV
 ]);
 
 
-export const DyteDialog = /*@__PURE__*/ defineContainer<JSX.DyteDialog>('dyte-dialog', undefined, [
+export const RtkDialog = /*@__PURE__*/ defineContainer<JSX.RtkDialog>('rtk-dialog', undefined, [
   'hideCloseButton',
   'disableEscapeKey',
   'meeting',
@@ -553,26 +553,26 @@ export const DyteDialog = /*@__PURE__*/ defineContainer<JSX.DyteDialog>('dyte-di
   'iconPack',
   't',
   'open',
-  'dyteDialogClose'
+  'rtkDialogClose'
 ], [
-  'dyteDialogClose'
+  'rtkDialogClose'
 ]);
 
 
-export const DyteDialogManager = /*@__PURE__*/ defineContainer<JSX.DyteDialogManager>('dyte-dialog-manager', undefined, [
+export const RtkDialogManager = /*@__PURE__*/ defineContainer<JSX.RtkDialogManager>('rtk-dialog-manager', undefined, [
   'meeting',
   'config',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteDraftAttachmentView = /*@__PURE__*/ defineContainer<JSX.DyteDraftAttachmentView>('dyte-draft-attachment-view', undefined, [
+export const RtkDraftAttachmentView = /*@__PURE__*/ defineContainer<JSX.RtkDraftAttachmentView>('rtk-draft-attachment-view', undefined, [
   'iconPack',
   't',
   'attachment',
@@ -582,26 +582,26 @@ export const DyteDraftAttachmentView = /*@__PURE__*/ defineContainer<JSX.DyteDra
 ]);
 
 
-export const DyteEmojiPicker = /*@__PURE__*/ defineContainer<JSX.DyteEmojiPicker>('dyte-emoji-picker', undefined, [
+export const RtkEmojiPicker = /*@__PURE__*/ defineContainer<JSX.RtkEmojiPicker>('rtk-emoji-picker', undefined, [
   'iconPack',
   't',
   'focusWhenOpened',
   'pickerClose',
-  'dyteEmojiClicked'
+  'rtkEmojiClicked'
 ], [
   'pickerClose',
-  'dyteEmojiClicked'
+  'rtkEmojiClicked'
 ]);
 
 
-export const DyteEmojiPickerButton = /*@__PURE__*/ defineContainer<JSX.DyteEmojiPickerButton>('dyte-emoji-picker-button', undefined, [
+export const RtkEmojiPickerButton = /*@__PURE__*/ defineContainer<JSX.RtkEmojiPickerButton>('rtk-emoji-picker-button', undefined, [
   'iconPack',
   't',
   'isActive'
 ]);
 
 
-export const DyteEndedScreen = /*@__PURE__*/ defineContainer<JSX.DyteEndedScreen>('dyte-ended-screen', undefined, [
+export const RtkEndedScreen = /*@__PURE__*/ defineContainer<JSX.RtkEndedScreen>('rtk-ended-screen', undefined, [
   'config',
   'size',
   'states',
@@ -611,7 +611,7 @@ export const DyteEndedScreen = /*@__PURE__*/ defineContainer<JSX.DyteEndedScreen
 ]);
 
 
-export const DyteFileDropzone = /*@__PURE__*/ defineContainer<JSX.DyteFileDropzone>('dyte-file-dropzone', undefined, [
+export const RtkFileDropzone = /*@__PURE__*/ defineContainer<JSX.RtkFileDropzone>('rtk-file-dropzone', undefined, [
   'hostEl',
   'iconPack',
   't',
@@ -621,7 +621,7 @@ export const DyteFileDropzone = /*@__PURE__*/ defineContainer<JSX.DyteFileDropzo
 ]);
 
 
-export const DyteFileMessage = /*@__PURE__*/ defineContainer<JSX.DyteFileMessage>('dyte-file-message', undefined, [
+export const RtkFileMessage = /*@__PURE__*/ defineContainer<JSX.RtkFileMessage>('rtk-file-message', undefined, [
   'message',
   'now',
   'isContinued',
@@ -631,7 +631,7 @@ export const DyteFileMessage = /*@__PURE__*/ defineContainer<JSX.DyteFileMessage
 ]);
 
 
-export const DyteFileMessageView = /*@__PURE__*/ defineContainer<JSX.DyteFileMessageView>('dyte-file-message-view', undefined, [
+export const RtkFileMessageView = /*@__PURE__*/ defineContainer<JSX.RtkFileMessageView>('rtk-file-message-view', undefined, [
   'name',
   'size',
   'url',
@@ -639,7 +639,7 @@ export const DyteFileMessageView = /*@__PURE__*/ defineContainer<JSX.DyteFileMes
 ]);
 
 
-export const DyteFilePickerButton = /*@__PURE__*/ defineContainer<JSX.DyteFilePickerButton>('dyte-file-picker-button', undefined, [
+export const RtkFilePickerButton = /*@__PURE__*/ defineContainer<JSX.RtkFilePickerButton>('rtk-file-picker-button', undefined, [
   'filter',
   'label',
   'icon',
@@ -651,20 +651,20 @@ export const DyteFilePickerButton = /*@__PURE__*/ defineContainer<JSX.DyteFilePi
 ]);
 
 
-export const DyteFullscreenToggle = /*@__PURE__*/ defineContainer<JSX.DyteFullscreenToggle>('dyte-fullscreen-toggle', undefined, [
+export const RtkFullscreenToggle = /*@__PURE__*/ defineContainer<JSX.RtkFullscreenToggle>('rtk-fullscreen-toggle', undefined, [
   'states',
   'targetElement',
   'variant',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteGrid = /*@__PURE__*/ defineContainer<JSX.DyteGrid>('dyte-grid', undefined, [
+export const RtkGrid = /*@__PURE__*/ defineContainer<JSX.RtkGrid>('rtk-grid', undefined, [
   'layout',
   'aspectRatio',
   'meeting',
@@ -676,13 +676,13 @@ export const DyteGrid = /*@__PURE__*/ defineContainer<JSX.DyteGrid>('dyte-grid',
   't',
   'gridSize',
   'overrides',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteGridPagination = /*@__PURE__*/ defineContainer<JSX.DyteGridPagination>('dyte-grid-pagination', undefined, [
+export const RtkGridPagination = /*@__PURE__*/ defineContainer<JSX.RtkGridPagination>('rtk-grid-pagination', undefined, [
   'meeting',
   'states',
   'size',
@@ -692,7 +692,7 @@ export const DyteGridPagination = /*@__PURE__*/ defineContainer<JSX.DyteGridPagi
 ]);
 
 
-export const DyteHeader = /*@__PURE__*/ defineContainer<JSX.DyteHeader>('dyte-header', undefined, [
+export const RtkHeader = /*@__PURE__*/ defineContainer<JSX.RtkHeader>('rtk-header', undefined, [
   'variant',
   'disableRender',
   'meeting',
@@ -704,14 +704,14 @@ export const DyteHeader = /*@__PURE__*/ defineContainer<JSX.DyteHeader>('dyte-he
 ]);
 
 
-export const DyteIcon = /*@__PURE__*/ defineContainer<JSX.DyteIcon>('dyte-icon', undefined, [
+export const RtkIcon = /*@__PURE__*/ defineContainer<JSX.RtkIcon>('rtk-icon', undefined, [
   'icon',
   'variant',
   'size'
 ]);
 
 
-export const DyteIdleScreen = /*@__PURE__*/ defineContainer<JSX.DyteIdleScreen>('dyte-idle-screen', undefined, [
+export const RtkIdleScreen = /*@__PURE__*/ defineContainer<JSX.RtkIdleScreen>('rtk-idle-screen', undefined, [
   'meeting',
   'config',
   'iconPack',
@@ -719,20 +719,20 @@ export const DyteIdleScreen = /*@__PURE__*/ defineContainer<JSX.DyteIdleScreen>(
 ]);
 
 
-export const DyteImageMessage = /*@__PURE__*/ defineContainer<JSX.DyteImageMessage>('dyte-image-message', undefined, [
+export const RtkImageMessage = /*@__PURE__*/ defineContainer<JSX.RtkImageMessage>('rtk-image-message', undefined, [
   'message',
   'now',
   'isContinued',
   'iconPack',
   't',
   'showBubble',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteImageMessageView = /*@__PURE__*/ defineContainer<JSX.DyteImageMessageView>('dyte-image-message-view', undefined, [
+export const RtkImageMessageView = /*@__PURE__*/ defineContainer<JSX.RtkImageMessageView>('rtk-image-message-view', undefined, [
   'url',
   'iconPack',
   't',
@@ -742,7 +742,7 @@ export const DyteImageMessageView = /*@__PURE__*/ defineContainer<JSX.DyteImageM
 ]);
 
 
-export const DyteImageViewer = /*@__PURE__*/ defineContainer<JSX.DyteImageViewer>('dyte-image-viewer', undefined, [
+export const RtkImageViewer = /*@__PURE__*/ defineContainer<JSX.RtkImageViewer>('rtk-image-viewer', undefined, [
   'image',
   'size',
   't',
@@ -753,12 +753,12 @@ export const DyteImageViewer = /*@__PURE__*/ defineContainer<JSX.DyteImageViewer
 ]);
 
 
-export const DyteInformationTooltip = /*@__PURE__*/ defineContainer<JSX.DyteInformationTooltip>('dyte-information-tooltip', undefined, [
+export const RtkInformationTooltip = /*@__PURE__*/ defineContainer<JSX.RtkInformationTooltip>('rtk-information-tooltip', undefined, [
   'iconPack'
 ]);
 
 
-export const DyteJoinStage = /*@__PURE__*/ defineContainer<JSX.DyteJoinStage>('dyte-join-stage', undefined, [
+export const RtkJoinStage = /*@__PURE__*/ defineContainer<JSX.RtkJoinStage>('rtk-join-stage', undefined, [
   'meeting',
   'config',
   'states',
@@ -766,39 +766,39 @@ export const DyteJoinStage = /*@__PURE__*/ defineContainer<JSX.DyteJoinStage>('d
   'iconPack',
   't',
   'dataConfig',
-  'dyteStateUpdate',
-  'dyteJoinStage',
-  'dyteLeaveStage'
+  'rtkStateUpdate',
+  'rtkJoinStage',
+  'rtkLeaveStage'
 ], [
-  'dyteStateUpdate',
-  'dyteJoinStage',
-  'dyteLeaveStage'
+  'rtkStateUpdate',
+  'rtkJoinStage',
+  'rtkLeaveStage'
 ]);
 
 
-export const DyteLeaveButton = /*@__PURE__*/ defineContainer<JSX.DyteLeaveButton>('dyte-leave-button', undefined, [
+export const RtkLeaveButton = /*@__PURE__*/ defineContainer<JSX.RtkLeaveButton>('rtk-leave-button', undefined, [
   'variant',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteLeaveMeeting = /*@__PURE__*/ defineContainer<JSX.DyteLeaveMeeting>('dyte-leave-meeting', undefined, [
+export const RtkLeaveMeeting = /*@__PURE__*/ defineContainer<JSX.RtkLeaveMeeting>('rtk-leave-meeting', undefined, [
   'meeting',
   'states',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteLivestreamIndicator = /*@__PURE__*/ defineContainer<JSX.DyteLivestreamIndicator>('dyte-livestream-indicator', undefined, [
+export const RtkLivestreamIndicator = /*@__PURE__*/ defineContainer<JSX.RtkLivestreamIndicator>('rtk-livestream-indicator', undefined, [
   'meeting',
   'size',
   't',
@@ -806,32 +806,32 @@ export const DyteLivestreamIndicator = /*@__PURE__*/ defineContainer<JSX.DyteLiv
 ]);
 
 
-export const DyteLivestreamPlayer = /*@__PURE__*/ defineContainer<JSX.DyteLivestreamPlayer>('dyte-livestream-player', undefined, [
+export const RtkLivestreamPlayer = /*@__PURE__*/ defineContainer<JSX.RtkLivestreamPlayer>('rtk-livestream-player', undefined, [
   'meeting',
   'size',
   't',
   'iconPack',
-  'dyteAPIError'
+  'rtkApiError'
 ], [
-  'dyteAPIError'
+  'rtkApiError'
 ]);
 
 
-export const DyteLivestreamToggle = /*@__PURE__*/ defineContainer<JSX.DyteLivestreamToggle>('dyte-livestream-toggle', undefined, [
+export const RtkLivestreamToggle = /*@__PURE__*/ defineContainer<JSX.RtkLivestreamToggle>('rtk-livestream-toggle', undefined, [
   'variant',
   'meeting',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate',
-  'dyteAPIError'
+  'rtkStateUpdate',
+  'rtkApiError'
 ], [
-  'dyteStateUpdate',
-  'dyteAPIError'
+  'rtkStateUpdate',
+  'rtkApiError'
 ]);
 
 
-export const DyteLogo = /*@__PURE__*/ defineContainer<JSX.DyteLogo>('dyte-logo', undefined, [
+export const RtkLogo = /*@__PURE__*/ defineContainer<JSX.RtkLogo>('rtk-logo', undefined, [
   'logoUrl',
   'config',
   'meeting',
@@ -839,13 +839,13 @@ export const DyteLogo = /*@__PURE__*/ defineContainer<JSX.DyteLogo>('dyte-logo',
 ]);
 
 
-export const DyteMarkdownView = /*@__PURE__*/ defineContainer<JSX.DyteMarkdownView>('dyte-markdown-view', undefined, [
+export const RtkMarkdownView = /*@__PURE__*/ defineContainer<JSX.RtkMarkdownView>('rtk-markdown-view', undefined, [
   'text',
   'maxLength'
 ]);
 
 
-export const DyteMeeting = /*@__PURE__*/ defineContainer<JSX.DyteMeeting>('dyte-meeting', undefined, [
+export const RtkMeeting = /*@__PURE__*/ defineContainer<JSX.RtkMeeting>('rtk-meeting', undefined, [
   'loadConfigFromPreset',
   'applyDesignSystem',
   'mode',
@@ -857,20 +857,20 @@ export const DyteMeeting = /*@__PURE__*/ defineContainer<JSX.DyteMeeting>('dyte-
   'size',
   'gridLayout',
   'iconPack',
-  'dyteStatesUpdate'
+  'rtkStatesUpdate'
 ], [
-  'dyteStatesUpdate'
+  'rtkStatesUpdate'
 ]);
 
 
-export const DyteMeetingTitle = /*@__PURE__*/ defineContainer<JSX.DyteMeetingTitle>('dyte-meeting-title', undefined, [
+export const RtkMeetingTitle = /*@__PURE__*/ defineContainer<JSX.RtkMeetingTitle>('rtk-meeting-title', undefined, [
   'meeting',
   'iconPack',
   't'
 ]);
 
 
-export const DyteMenu = /*@__PURE__*/ defineContainer<JSX.DyteMenu>('dyte-menu', undefined, [
+export const RtkMenu = /*@__PURE__*/ defineContainer<JSX.RtkMenu>('rtk-menu', undefined, [
   'size',
   'placement',
   'offset',
@@ -879,20 +879,20 @@ export const DyteMenu = /*@__PURE__*/ defineContainer<JSX.DyteMenu>('dyte-menu',
 ]);
 
 
-export const DyteMenuItem = /*@__PURE__*/ defineContainer<JSX.DyteMenuItem>('dyte-menu-item', undefined, [
+export const RtkMenuItem = /*@__PURE__*/ defineContainer<JSX.RtkMenuItem>('rtk-menu-item', undefined, [
   'size',
   'iconPack',
   't'
 ]);
 
 
-export const DyteMenuList = /*@__PURE__*/ defineContainer<JSX.DyteMenuList>('dyte-menu-list', undefined, [
+export const RtkMenuList = /*@__PURE__*/ defineContainer<JSX.RtkMenuList>('rtk-menu-list', undefined, [
   'iconPack',
   't'
 ]);
 
 
-export const DyteMessageListView = /*@__PURE__*/ defineContainer<JSX.DyteMessageListView>('dyte-message-list-view', undefined, [
+export const RtkMessageListView = /*@__PURE__*/ defineContainer<JSX.RtkMessageListView>('rtk-message-list-view', undefined, [
   'messages',
   'renderer',
   'loadMore',
@@ -902,7 +902,7 @@ export const DyteMessageListView = /*@__PURE__*/ defineContainer<JSX.DyteMessage
 ]);
 
 
-export const DyteMessageView = /*@__PURE__*/ defineContainer<JSX.DyteMessageView>('dyte-message-view', undefined, [
+export const RtkMessageView = /*@__PURE__*/ defineContainer<JSX.RtkMessageView>('rtk-message-view', undefined, [
   'actions',
   'variant',
   'viewType',
@@ -919,19 +919,19 @@ export const DyteMessageView = /*@__PURE__*/ defineContainer<JSX.DyteMessageView
 ]);
 
 
-export const DyteMicToggle = /*@__PURE__*/ defineContainer<JSX.DyteMicToggle>('dyte-mic-toggle', undefined, [
+export const RtkMicToggle = /*@__PURE__*/ defineContainer<JSX.RtkMicToggle>('rtk-mic-toggle', undefined, [
   'variant',
   'meeting',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteMicrophoneSelector = /*@__PURE__*/ defineContainer<JSX.DyteMicrophoneSelector>('dyte-microphone-selector', undefined, [
+export const RtkMicrophoneSelector = /*@__PURE__*/ defineContainer<JSX.RtkMicrophoneSelector>('rtk-microphone-selector', undefined, [
   'meeting',
   'size',
   'iconPack',
@@ -940,7 +940,7 @@ export const DyteMicrophoneSelector = /*@__PURE__*/ defineContainer<JSX.DyteMicr
 ]);
 
 
-export const DyteMixedGrid = /*@__PURE__*/ defineContainer<JSX.DyteMixedGrid>('dyte-mixed-grid', undefined, [
+export const RtkMixedGrid = /*@__PURE__*/ defineContainer<JSX.RtkMixedGrid>('rtk-mixed-grid', undefined, [
   'layout',
   'participants',
   'pinnedParticipants',
@@ -958,41 +958,41 @@ export const DyteMixedGrid = /*@__PURE__*/ defineContainer<JSX.DyteMixedGrid>('d
 ]);
 
 
-export const DyteMoreToggle = /*@__PURE__*/ defineContainer<JSX.DyteMoreToggle>('dyte-more-toggle', undefined, [
+export const RtkMoreToggle = /*@__PURE__*/ defineContainer<JSX.RtkMoreToggle>('rtk-more-toggle', undefined, [
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteMuteAllButton = /*@__PURE__*/ defineContainer<JSX.DyteMuteAllButton>('dyte-mute-all-button', undefined, [
+export const RtkMuteAllButton = /*@__PURE__*/ defineContainer<JSX.RtkMuteAllButton>('rtk-mute-all-button', undefined, [
   'variant',
   'meeting',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteMuteAllConfirmation = /*@__PURE__*/ defineContainer<JSX.DyteMuteAllConfirmation>('dyte-mute-all-confirmation', undefined, [
+export const RtkMuteAllConfirmation = /*@__PURE__*/ defineContainer<JSX.RtkMuteAllConfirmation>('rtk-mute-all-confirmation', undefined, [
   'meeting',
   'states',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteNameTag = /*@__PURE__*/ defineContainer<JSX.DyteNameTag>('dyte-name-tag', undefined, [
+export const RtkNameTag = /*@__PURE__*/ defineContainer<JSX.RtkNameTag>('rtk-name-tag', undefined, [
   'participant',
   'meeting',
   'size',
@@ -1003,7 +1003,7 @@ export const DyteNameTag = /*@__PURE__*/ defineContainer<JSX.DyteNameTag>('dyte-
 ]);
 
 
-export const DyteNetworkIndicator = /*@__PURE__*/ defineContainer<JSX.DyteNetworkIndicator>('dyte-network-indicator', undefined, [
+export const RtkNetworkIndicator = /*@__PURE__*/ defineContainer<JSX.RtkNetworkIndicator>('rtk-network-indicator', undefined, [
   'participant',
   'meeting',
   'iconPack',
@@ -1012,18 +1012,18 @@ export const DyteNetworkIndicator = /*@__PURE__*/ defineContainer<JSX.DyteNetwor
 ]);
 
 
-export const DyteNotification = /*@__PURE__*/ defineContainer<JSX.DyteNotification>('dyte-notification', undefined, [
+export const RtkNotification = /*@__PURE__*/ defineContainer<JSX.RtkNotification>('rtk-notification', undefined, [
   'notification',
   'size',
   'iconPack',
   't',
-  'dyteNotificationDismiss'
+  'rtkNotificationDismiss'
 ], [
-  'dyteNotificationDismiss'
+  'rtkNotificationDismiss'
 ]);
 
 
-export const DyteNotifications = /*@__PURE__*/ defineContainer<JSX.DyteNotifications>('dyte-notifications', undefined, [
+export const RtkNotifications = /*@__PURE__*/ defineContainer<JSX.RtkNotifications>('rtk-notifications', undefined, [
   'meeting',
   'states',
   'config',
@@ -1033,18 +1033,18 @@ export const DyteNotifications = /*@__PURE__*/ defineContainer<JSX.DyteNotificat
 ]);
 
 
-export const DyteOverlayModal = /*@__PURE__*/ defineContainer<JSX.DyteOverlayModal>('dyte-overlay-modal', undefined, [
+export const RtkOverlayModal = /*@__PURE__*/ defineContainer<JSX.RtkOverlayModal>('rtk-overlay-modal', undefined, [
   'meeting',
   'states',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DytePaginatedList = /*@__PURE__*/ defineContainer<JSX.DytePaginatedList>('dyte-paginated-list', undefined, [
+export const RtkPaginatedList = /*@__PURE__*/ defineContainer<JSX.RtkPaginatedList>('rtk-paginated-list', undefined, [
   'pageSize',
   'pagesAllowed',
   'fetchData',
@@ -1057,7 +1057,7 @@ export const DytePaginatedList = /*@__PURE__*/ defineContainer<JSX.DytePaginated
 ]);
 
 
-export const DyteParticipant = /*@__PURE__*/ defineContainer<JSX.DyteParticipant>('dyte-participant', undefined, [
+export const RtkParticipant = /*@__PURE__*/ defineContainer<JSX.RtkParticipant>('rtk-participant', undefined, [
   'meeting',
   'states',
   'view',
@@ -1065,13 +1065,13 @@ export const DyteParticipant = /*@__PURE__*/ defineContainer<JSX.DyteParticipant
   'iconPack',
   't',
   'config',
-  'dyteSendNotification'
+  'rtkSendNotification'
 ], [
-  'dyteSendNotification'
+  'rtkSendNotification'
 ]);
 
 
-export const DyteParticipantCount = /*@__PURE__*/ defineContainer<JSX.DyteParticipantCount>('dyte-participant-count', undefined, [
+export const RtkParticipantCount = /*@__PURE__*/ defineContainer<JSX.RtkParticipantCount>('rtk-participant-count', undefined, [
   'meeting',
   'iconPack',
   't',
@@ -1079,7 +1079,7 @@ export const DyteParticipantCount = /*@__PURE__*/ defineContainer<JSX.DytePartic
 ]);
 
 
-export const DyteParticipantSetup = /*@__PURE__*/ defineContainer<JSX.DyteParticipantSetup>('dyte-participant-setup', undefined, [
+export const RtkParticipantSetup = /*@__PURE__*/ defineContainer<JSX.RtkParticipantSetup>('rtk-participant-setup', undefined, [
   'nameTagPosition',
   'isPreview',
   'participant',
@@ -1092,7 +1092,7 @@ export const DyteParticipantSetup = /*@__PURE__*/ defineContainer<JSX.DytePartic
 ]);
 
 
-export const DyteParticipantTile = /*@__PURE__*/ defineContainer<JSX.DyteParticipantTile>('dyte-participant-tile', undefined, [
+export const RtkParticipantTile = /*@__PURE__*/ defineContainer<JSX.RtkParticipantTile>('rtk-participant-tile', undefined, [
   'nameTagPosition',
   'isPreview',
   'participant',
@@ -1111,7 +1111,7 @@ export const DyteParticipantTile = /*@__PURE__*/ defineContainer<JSX.DytePartici
 ]);
 
 
-export const DyteParticipants = /*@__PURE__*/ defineContainer<JSX.DyteParticipants>('dyte-participants', undefined, [
+export const RtkParticipants = /*@__PURE__*/ defineContainer<JSX.RtkParticipants>('rtk-participants', undefined, [
   'meeting',
   'states',
   'config',
@@ -1119,13 +1119,13 @@ export const DyteParticipants = /*@__PURE__*/ defineContainer<JSX.DyteParticipan
   'iconPack',
   'defaultParticipantsTabId',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteParticipantsAudio = /*@__PURE__*/ defineContainer<JSX.DyteParticipantsAudio>('dyte-participants-audio', undefined, [
+export const RtkParticipantsAudio = /*@__PURE__*/ defineContainer<JSX.RtkParticipantsAudio>('rtk-participants-audio', undefined, [
   'meeting',
   'iconPack',
   't',
@@ -1136,7 +1136,7 @@ export const DyteParticipantsAudio = /*@__PURE__*/ defineContainer<JSX.DyteParti
 ]);
 
 
-export const DyteParticipantsStageList = /*@__PURE__*/ defineContainer<JSX.DyteParticipantsStageList>('dyte-participants-stage-list', undefined, [
+export const RtkParticipantsStageList = /*@__PURE__*/ defineContainer<JSX.RtkParticipantsStageList>('rtk-participants-stage-list', undefined, [
   'meeting',
   'states',
   'config',
@@ -1149,7 +1149,7 @@ export const DyteParticipantsStageList = /*@__PURE__*/ defineContainer<JSX.DyteP
 ]);
 
 
-export const DyteParticipantsStageQueue = /*@__PURE__*/ defineContainer<JSX.DyteParticipantsStageQueue>('dyte-participants-stage-queue', undefined, [
+export const RtkParticipantsStageQueue = /*@__PURE__*/ defineContainer<JSX.RtkParticipantsStageQueue>('rtk-participants-stage-queue', undefined, [
   'meeting',
   'config',
   'size',
@@ -1159,20 +1159,20 @@ export const DyteParticipantsStageQueue = /*@__PURE__*/ defineContainer<JSX.Dyte
 ]);
 
 
-export const DyteParticipantsToggle = /*@__PURE__*/ defineContainer<JSX.DyteParticipantsToggle>('dyte-participants-toggle', undefined, [
+export const RtkParticipantsToggle = /*@__PURE__*/ defineContainer<JSX.RtkParticipantsToggle>('rtk-participants-toggle', undefined, [
   'variant',
   'meeting',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteParticipantsViewerList = /*@__PURE__*/ defineContainer<JSX.DyteParticipantsViewerList>('dyte-participants-viewer-list', undefined, [
+export const RtkParticipantsViewerList = /*@__PURE__*/ defineContainer<JSX.RtkParticipantsViewerList>('rtk-participants-viewer-list', undefined, [
   'meeting',
   'config',
   'size',
@@ -1184,7 +1184,7 @@ export const DyteParticipantsViewerList = /*@__PURE__*/ defineContainer<JSX.Dyte
 ]);
 
 
-export const DyteParticipantsWaitingList = /*@__PURE__*/ defineContainer<JSX.DyteParticipantsWaitingList>('dyte-participants-waiting-list', undefined, [
+export const RtkParticipantsWaitingList = /*@__PURE__*/ defineContainer<JSX.RtkParticipantsWaitingList>('rtk-participants-waiting-list', undefined, [
   'meeting',
   'config',
   'size',
@@ -1194,18 +1194,18 @@ export const DyteParticipantsWaitingList = /*@__PURE__*/ defineContainer<JSX.Dyt
 ]);
 
 
-export const DytePermissionsMessage = /*@__PURE__*/ defineContainer<JSX.DytePermissionsMessage>('dyte-permissions-message', undefined, [
+export const RtkPermissionsMessage = /*@__PURE__*/ defineContainer<JSX.RtkPermissionsMessage>('rtk-permissions-message', undefined, [
   'meeting',
   't',
   'iconPack',
   'states',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DytePipToggle = /*@__PURE__*/ defineContainer<JSX.DytePipToggle>('dyte-pip-toggle', undefined, [
+export const RtkPipToggle = /*@__PURE__*/ defineContainer<JSX.RtkPipToggle>('rtk-pip-toggle', undefined, [
   'variant',
   'meeting',
   'states',
@@ -1213,13 +1213,13 @@ export const DytePipToggle = /*@__PURE__*/ defineContainer<JSX.DytePipToggle>('d
   'iconPack',
   'size',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DytePluginMain = /*@__PURE__*/ defineContainer<JSX.DytePluginMain>('dyte-plugin-main', undefined, [
+export const RtkPluginMain = /*@__PURE__*/ defineContainer<JSX.RtkPluginMain>('rtk-plugin-main', undefined, [
   'meeting',
   'plugin',
   'iconPack',
@@ -1227,53 +1227,53 @@ export const DytePluginMain = /*@__PURE__*/ defineContainer<JSX.DytePluginMain>(
 ]);
 
 
-export const DytePlugins = /*@__PURE__*/ defineContainer<JSX.DytePlugins>('dyte-plugins', undefined, [
+export const RtkPlugins = /*@__PURE__*/ defineContainer<JSX.RtkPlugins>('rtk-plugins', undefined, [
   'meeting',
   'config',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DytePluginsToggle = /*@__PURE__*/ defineContainer<JSX.DytePluginsToggle>('dyte-plugins-toggle', undefined, [
+export const RtkPluginsToggle = /*@__PURE__*/ defineContainer<JSX.RtkPluginsToggle>('rtk-plugins-toggle', undefined, [
   'variant',
   'meeting',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DytePoll = /*@__PURE__*/ defineContainer<JSX.DytePoll>('dyte-poll', undefined, [
+export const RtkPoll = /*@__PURE__*/ defineContainer<JSX.RtkPoll>('rtk-poll', undefined, [
   'poll',
   'self',
   'permissions',
   'iconPack',
   't',
-  'dyteVotePoll'
+  'rtkVotePoll'
 ], [
-  'dyteVotePoll'
+  'rtkVotePoll'
 ]);
 
 
-export const DytePollForm = /*@__PURE__*/ defineContainer<JSX.DytePollForm>('dyte-poll-form', undefined, [
+export const RtkPollForm = /*@__PURE__*/ defineContainer<JSX.RtkPollForm>('rtk-poll-form', undefined, [
   'iconPack',
   't',
-  'dyteCreatePoll'
+  'rtkCreatePoll'
 ], [
-  'dyteCreatePoll'
+  'rtkCreatePoll'
 ]);
 
 
-export const DytePolls = /*@__PURE__*/ defineContainer<JSX.DytePolls>('dyte-polls', undefined, [
+export const RtkPolls = /*@__PURE__*/ defineContainer<JSX.RtkPolls>('rtk-polls', undefined, [
   'meeting',
   'config',
   'size',
@@ -1282,20 +1282,20 @@ export const DytePolls = /*@__PURE__*/ defineContainer<JSX.DytePolls>('dyte-poll
 ]);
 
 
-export const DytePollsToggle = /*@__PURE__*/ defineContainer<JSX.DytePollsToggle>('dyte-polls-toggle', undefined, [
+export const RtkPollsToggle = /*@__PURE__*/ defineContainer<JSX.RtkPollsToggle>('rtk-polls-toggle', undefined, [
   'variant',
   'meeting',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteRecordingIndicator = /*@__PURE__*/ defineContainer<JSX.DyteRecordingIndicator>('dyte-recording-indicator', undefined, [
+export const RtkRecordingIndicator = /*@__PURE__*/ defineContainer<JSX.RtkRecordingIndicator>('rtk-recording-indicator', undefined, [
   'meeting',
   'size',
   't',
@@ -1303,35 +1303,35 @@ export const DyteRecordingIndicator = /*@__PURE__*/ defineContainer<JSX.DyteReco
 ]);
 
 
-export const DyteRecordingToggle = /*@__PURE__*/ defineContainer<JSX.DyteRecordingToggle>('dyte-recording-toggle', undefined, [
+export const RtkRecordingToggle = /*@__PURE__*/ defineContainer<JSX.RtkRecordingToggle>('rtk-recording-toggle', undefined, [
   'variant',
   'meeting',
   't',
   'iconPack',
   'size',
   'disabled',
-  'dyteAPIError'
+  'rtkApiError'
 ], [
-  'dyteAPIError'
+  'rtkApiError'
 ]);
 
 
-export const DyteScreenShareToggle = /*@__PURE__*/ defineContainer<JSX.DyteScreenShareToggle>('dyte-screen-share-toggle', undefined, [
+export const RtkScreenShareToggle = /*@__PURE__*/ defineContainer<JSX.RtkScreenShareToggle>('rtk-screen-share-toggle', undefined, [
   'states',
   'variant',
   'meeting',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate',
-  'dyteAPIError'
+  'rtkStateUpdate',
+  'rtkApiError'
 ], [
-  'dyteStateUpdate',
-  'dyteAPIError'
+  'rtkStateUpdate',
+  'rtkApiError'
 ]);
 
 
-export const DyteScreenshareView = /*@__PURE__*/ defineContainer<JSX.DyteScreenshareView>('dyte-screenshare-view', undefined, [
+export const RtkScreenshareView = /*@__PURE__*/ defineContainer<JSX.RtkScreenshareView>('rtk-screenshare-view', undefined, [
   'hideFullScreenButton',
   'nameTagPosition',
   'participant',
@@ -1340,76 +1340,76 @@ export const DyteScreenshareView = /*@__PURE__*/ defineContainer<JSX.DyteScreens
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate',
+  'rtkStateUpdate',
   'screensharePlay'
 ], [
-  'dyteStateUpdate',
+  'rtkStateUpdate',
   'screensharePlay'
 ]);
 
 
-export const DyteSettings = /*@__PURE__*/ defineContainer<JSX.DyteSettings>('dyte-settings', undefined, [
+export const RtkSettings = /*@__PURE__*/ defineContainer<JSX.RtkSettings>('rtk-settings', undefined, [
   'meeting',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteSettingsAudio = /*@__PURE__*/ defineContainer<JSX.DyteSettingsAudio>('dyte-settings-audio', undefined, [
+export const RtkSettingsAudio = /*@__PURE__*/ defineContainer<JSX.RtkSettingsAudio>('rtk-settings-audio', undefined, [
   'meeting',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteSettingsToggle = /*@__PURE__*/ defineContainer<JSX.DyteSettingsToggle>('dyte-settings-toggle', undefined, [
+export const RtkSettingsToggle = /*@__PURE__*/ defineContainer<JSX.RtkSettingsToggle>('rtk-settings-toggle', undefined, [
   'variant',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteSettingsVideo = /*@__PURE__*/ defineContainer<JSX.DyteSettingsVideo>('dyte-settings-video', undefined, [
+export const RtkSettingsVideo = /*@__PURE__*/ defineContainer<JSX.RtkSettingsVideo>('rtk-settings-video', undefined, [
   'meeting',
   'states',
   'size',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteSetupScreen = /*@__PURE__*/ defineContainer<JSX.DyteSetupScreen>('dyte-setup-screen', undefined, [
+export const RtkSetupScreen = /*@__PURE__*/ defineContainer<JSX.RtkSetupScreen>('rtk-setup-screen', undefined, [
   'meeting',
   'states',
   'size',
   'config',
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteSidebar = /*@__PURE__*/ defineContainer<JSX.DyteSidebar>('dyte-sidebar', undefined, [
+export const RtkSidebar = /*@__PURE__*/ defineContainer<JSX.RtkSidebar>('rtk-sidebar', undefined, [
   'enabledSections',
   'defaultSection',
   'meeting',
@@ -1419,13 +1419,13 @@ export const DyteSidebar = /*@__PURE__*/ defineContainer<JSX.DyteSidebar>('dyte-
   't',
   'size',
   'view',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteSidebarUi = /*@__PURE__*/ defineContainer<JSX.DyteSidebarUi>('dyte-sidebar-ui', undefined, [
+export const RtkSidebarUi = /*@__PURE__*/ defineContainer<JSX.RtkSidebarUi>('rtk-sidebar-ui', undefined, [
   'view',
   'tabs',
   'hideHeader',
@@ -1441,7 +1441,7 @@ export const DyteSidebarUi = /*@__PURE__*/ defineContainer<JSX.DyteSidebarUi>('d
 ]);
 
 
-export const DyteSimpleGrid = /*@__PURE__*/ defineContainer<JSX.DyteSimpleGrid>('dyte-simple-grid', undefined, [
+export const RtkSimpleGrid = /*@__PURE__*/ defineContainer<JSX.RtkSimpleGrid>('rtk-simple-grid', undefined, [
   'participants',
   'aspectRatio',
   'gap',
@@ -1454,7 +1454,7 @@ export const DyteSimpleGrid = /*@__PURE__*/ defineContainer<JSX.DyteSimpleGrid>(
 ]);
 
 
-export const DyteSpeakerSelector = /*@__PURE__*/ defineContainer<JSX.DyteSpeakerSelector>('dyte-speaker-selector', undefined, [
+export const RtkSpeakerSelector = /*@__PURE__*/ defineContainer<JSX.RtkSpeakerSelector>('rtk-speaker-selector', undefined, [
   'meeting',
   'states',
   'variant',
@@ -1464,13 +1464,13 @@ export const DyteSpeakerSelector = /*@__PURE__*/ defineContainer<JSX.DyteSpeaker
 ]);
 
 
-export const DyteSpinner = /*@__PURE__*/ defineContainer<JSX.DyteSpinner>('dyte-spinner', undefined, [
+export const RtkSpinner = /*@__PURE__*/ defineContainer<JSX.RtkSpinner>('rtk-spinner', undefined, [
   'iconPack',
   'size'
 ]);
 
 
-export const DyteSpotlightGrid = /*@__PURE__*/ defineContainer<JSX.DyteSpotlightGrid>('dyte-spotlight-grid', undefined, [
+export const RtkSpotlightGrid = /*@__PURE__*/ defineContainer<JSX.RtkSpotlightGrid>('rtk-spotlight-grid', undefined, [
   'layout',
   'participants',
   'pinnedParticipants',
@@ -1486,7 +1486,7 @@ export const DyteSpotlightGrid = /*@__PURE__*/ defineContainer<JSX.DyteSpotlight
 ]);
 
 
-export const DyteSpotlightIndicator = /*@__PURE__*/ defineContainer<JSX.DyteSpotlightIndicator>('dyte-spotlight-indicator', undefined, [
+export const RtkSpotlightIndicator = /*@__PURE__*/ defineContainer<JSX.RtkSpotlightIndicator>('rtk-spotlight-indicator', undefined, [
   'meeting',
   'iconPack',
   't',
@@ -1494,41 +1494,41 @@ export const DyteSpotlightIndicator = /*@__PURE__*/ defineContainer<JSX.DyteSpot
 ]);
 
 
-export const DyteStage = /*@__PURE__*/ defineContainer<JSX.DyteStage>('dyte-stage', undefined, [
+export const RtkStage = /*@__PURE__*/ defineContainer<JSX.RtkStage>('rtk-stage', undefined, [
   'iconPack',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteStageToggle = /*@__PURE__*/ defineContainer<JSX.DyteStageToggle>('dyte-stage-toggle', undefined, [
+export const RtkStageToggle = /*@__PURE__*/ defineContainer<JSX.RtkStageToggle>('rtk-stage-toggle', undefined, [
   'variant',
   'meeting',
   'size',
   'iconPack',
   'states',
   't',
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ], [
-  'dyteStateUpdate'
+  'rtkStateUpdate'
 ]);
 
 
-export const DyteSwitch = /*@__PURE__*/ defineContainer<JSX.DyteSwitch>('dyte-switch', undefined, [
+export const RtkSwitch = /*@__PURE__*/ defineContainer<JSX.RtkSwitch>('rtk-switch', undefined, [
   'checked',
   'readonly',
   'disabled',
   'iconPack',
   't',
-  'dyteChange'
+  'rtkChange'
 ], [
-  'dyteChange'
+  'rtkChange'
 ]);
 
 
-export const DyteTabBar = /*@__PURE__*/ defineContainer<JSX.DyteTabBar>('dyte-tab-bar', undefined, [
+export const RtkTabBar = /*@__PURE__*/ defineContainer<JSX.RtkTabBar>('rtk-tab-bar', undefined, [
   'size',
   'meeting',
   'states',
@@ -1544,7 +1544,7 @@ export const DyteTabBar = /*@__PURE__*/ defineContainer<JSX.DyteTabBar>('dyte-ta
 ]);
 
 
-export const DyteTextComposerView = /*@__PURE__*/ defineContainer<JSX.DyteTextComposerView>('dyte-text-composer-view', undefined, [
+export const RtkTextComposerView = /*@__PURE__*/ defineContainer<JSX.RtkTextComposerView>('rtk-text-composer-view', undefined, [
   'disabled',
   'placeholder',
   'value',
@@ -1559,7 +1559,7 @@ export const DyteTextComposerView = /*@__PURE__*/ defineContainer<JSX.DyteTextCo
 ]);
 
 
-export const DyteTextMessage = /*@__PURE__*/ defineContainer<JSX.DyteTextMessage>('dyte-text-message', undefined, [
+export const RtkTextMessage = /*@__PURE__*/ defineContainer<JSX.RtkTextMessage>('rtk-text-message', undefined, [
   'message',
   'now',
   'isContinued',
@@ -1569,13 +1569,13 @@ export const DyteTextMessage = /*@__PURE__*/ defineContainer<JSX.DyteTextMessage
 ]);
 
 
-export const DyteTextMessageView = /*@__PURE__*/ defineContainer<JSX.DyteTextMessageView>('dyte-text-message-view', undefined, [
+export const RtkTextMessageView = /*@__PURE__*/ defineContainer<JSX.RtkTextMessageView>('rtk-text-message-view', undefined, [
   'text',
   'isMarkdown'
 ]);
 
 
-export const DyteTooltip = /*@__PURE__*/ defineContainer<JSX.DyteTooltip>('dyte-tooltip', undefined, [
+export const RtkTooltip = /*@__PURE__*/ defineContainer<JSX.RtkTooltip>('rtk-tooltip', undefined, [
   'label',
   'variant',
   'disabled',
@@ -1584,22 +1584,22 @@ export const DyteTooltip = /*@__PURE__*/ defineContainer<JSX.DyteTooltip>('dyte-
   'size',
   'placement',
   'delay',
-  'dyteOpenChange'
+  'rtkOpenChange'
 ], [
-  'dyteOpenChange'
+  'rtkOpenChange'
 ]);
 
 
-export const DyteTranscript = /*@__PURE__*/ defineContainer<JSX.DyteTranscript>('dyte-transcript', undefined, [
+export const RtkTranscript = /*@__PURE__*/ defineContainer<JSX.RtkTranscript>('rtk-transcript', undefined, [
   'transcript',
   't',
-  'dyteTranscriptDismiss'
+  'rtkTranscriptDismiss'
 ], [
-  'dyteTranscriptDismiss'
+  'rtkTranscriptDismiss'
 ]);
 
 
-export const DyteTranscripts = /*@__PURE__*/ defineContainer<JSX.DyteTranscripts>('dyte-transcripts', undefined, [
+export const RtkTranscripts = /*@__PURE__*/ defineContainer<JSX.RtkTranscripts>('rtk-transcripts', undefined, [
   'meeting',
   'states',
   'config',
@@ -1607,7 +1607,7 @@ export const DyteTranscripts = /*@__PURE__*/ defineContainer<JSX.DyteTranscripts
 ]);
 
 
-export const DyteUiProvider = /*@__PURE__*/ defineContainer<JSX.DyteUiProvider>('dyte-ui-provider', undefined, [
+export const RtkUiProvider = /*@__PURE__*/ defineContainer<JSX.RtkUiProvider>('rtk-ui-provider', undefined, [
   'meeting',
   'iconPack',
   't',
@@ -1615,13 +1615,13 @@ export const DyteUiProvider = /*@__PURE__*/ defineContainer<JSX.DyteUiProvider>(
   'size',
   'showSetupScreen',
   'noRenderUntilMeeting',
-  'dyteStatesUpdate'
+  'rtkStatesUpdate'
 ], [
-  'dyteStatesUpdate'
+  'rtkStatesUpdate'
 ]);
 
 
-export const DyteViewerCount = /*@__PURE__*/ defineContainer<JSX.DyteViewerCount>('dyte-viewer-count', undefined, [
+export const RtkViewerCount = /*@__PURE__*/ defineContainer<JSX.RtkViewerCount>('rtk-viewer-count', undefined, [
   'meeting',
   'variant',
   'iconPack',
@@ -1629,7 +1629,7 @@ export const DyteViewerCount = /*@__PURE__*/ defineContainer<JSX.DyteViewerCount
 ]);
 
 
-export const DyteVirtualizedParticipantList = /*@__PURE__*/ defineContainer<JSX.DyteVirtualizedParticipantList>('dyte-virtualized-participant-list', undefined, [
+export const RtkVirtualizedParticipantList = /*@__PURE__*/ defineContainer<JSX.RtkVirtualizedParticipantList>('rtk-virtualized-participant-list', undefined, [
   'items',
   'renderItem',
   'itemHeight',
@@ -1638,7 +1638,7 @@ export const DyteVirtualizedParticipantList = /*@__PURE__*/ defineContainer<JSX.
 ]);
 
 
-export const DyteWaitingScreen = /*@__PURE__*/ defineContainer<JSX.DyteWaitingScreen>('dyte-waiting-screen', undefined, [
+export const RtkWaitingScreen = /*@__PURE__*/ defineContainer<JSX.RtkWaitingScreen>('rtk-waiting-screen', undefined, [
   'meeting',
   'config',
   'iconPack',

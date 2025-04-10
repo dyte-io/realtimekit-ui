@@ -27,42 +27,42 @@ The `colors` property is an object which specifies all the colors required. You 
 ```ts
 interface UIColors {
   brand?: {
-    300: string
-    400: string
-    500: string
-    600: string
-    700: string
-  }
+    300: string;
+    400: string;
+    500: string;
+    600: string;
+    700: string;
+  };
   background?: {
-    1000: string
-    900: string
-    800: string
-    700: string
-    600: string
-  }
-  text?: string
-  videoBg?: string
-  danger?: string
-  success?: string
-  warning?: string
+    1000: string;
+    900: string;
+    800: string;
+    700: string;
+    600: string;
+  };
+  text?: string;
+  videoBg?: string;
+  danger?: string;
+  success?: string;
+  warning?: string;
 }
 ```
 
 ## Styles
 
-You can set your own CSS for dyte components or simple HTML elements which you will use in the tree. You can also set styles for a specific state, or a specific screen size.
+You can set your own CSS for RTK components or simple HTML elements which you will use in the tree. You can also set styles for a specific state, or a specific screen size.
 
 Example:
 
 ```json
 {
-  "dyte-meeting": {
+  "rtk-meeting": {
     "display": "flex"
   },
-  "dyte-meeting.sm": {
+  "rtk-meeting.sm": {
     "flexDirection": "column"
   },
-  "dyte-meeting[meeting=idle]": {
+  "rtk-meeting[meeting=idle]": {
     "display": "block"
   },
   "div#header-center": {
@@ -73,7 +73,7 @@ Example:
 
 ## Tree (root)
 
-The tree is the hierarchy of components which the renderer inside `dyte-meeting` will accept and it uses it to render the entire UI.
+The tree is the hierarchy of components which the renderer inside `rtk-meeting` will accept and it uses it to render the entire UI.
 
 You can:
 
@@ -91,13 +91,13 @@ Example:
 
 ```json
 {
-  "dyte-meeting[meeting=joined]": ["dyte-header", "dyte-stage", "dyte-controlbar"],
-  "dyte-header": {
+  "rtk-meeting[meeting=joined]": ["rtk-header", "rtk-stage", "rtk-controlbar"],
+  "rtk-header": {
     "props": {
       "variant": "boxed"
     },
     "children": ["div#header-left", "div#header-center", "div#header-right"]
   },
-  "div#header-left": [["dyte-participant-count", { "variant": "boxed" }]]
+  "div#header-left": [["rtk-participant-count", { "variant": "boxed" }]]
 }
 ```

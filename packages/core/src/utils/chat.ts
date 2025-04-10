@@ -1,5 +1,5 @@
 import type { Message } from '@dytesdk/web-core';
-import { Peer } from '../types/dyte-client';
+import { Peer } from '../types/rtk-client';
 import { ChatChannel, ChatMessage } from '../types/props';
 import { chatUnreadTimestamps } from './user-prefs';
 
@@ -28,7 +28,7 @@ export function alphabeticalSorter(a: string, b: string) {
 }
 
 /**
- * Generate a unique chat group key used in `<dyte-chat-messages-ui />`
+ * Generate a unique chat group key used in `<rtk-chat-messages-ui />`
  * @param ids An array of user ids
  * @returns A unique key from the user ids
  */

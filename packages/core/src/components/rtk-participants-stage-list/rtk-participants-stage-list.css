@@ -1,0 +1,33 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply flex w-full flex-col;
+  @apply text-text-md;
+}
+
+.participants-container {
+  @apply mb-4 w-full h-full;
+}
+
+h3,
+.heading-count {
+  @apply m-0 flex items-center justify-center p-0;
+  @apply text-text-lg text-text-900 font-normal;
+  @apply text-center;
+}
+
+.heading-count {
+  @apply text-text-md;
+}
+
+.participants {
+  @apply mt-2 mb-0 p-0;
+}
+
+.empty-stage-list {
+  @apply text-text-sm text-text-700 my-4 text-center;
+}
+
+rtk-participant {
+  @apply w-full;
+}

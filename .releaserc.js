@@ -1,6 +1,6 @@
 const baseConfig = {
   branches: [],
-  tagFormat: '@dyte-in/ui-kit-v${version}',
+  tagFormat: '@cloudflare/realtimekit-ui-v${version}',
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
@@ -63,7 +63,7 @@ const baseConfig = {
       }
     ]
   ],
-  repositoryUrl: 'https://github.com/dyte-io/ui-kit',
+  repositoryUrl: 'https://github.com/dyte-io/realtimekit-ui',
 }
 
 const config = {

@@ -4,36 +4,36 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Even
 
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
-import { Components } from '@dytesdk/ui-kit';
+import { Components } from '@cloudflare/realtimekit-ui';
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't', 'view']
 })
 @Component({
-  selector: 'dyte-ai',
+  selector: 'rtk-ai',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't', 'view'],
 })
-export class DyteAi {
-  protected el: HTMLDyteAiElement;
+export class RtkAi {
+  protected el: HTMLRtkAiElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteAiStates } from '@dytesdk/ui-kit';
+import type { States as IRtkAiStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteAi extends Components.DyteAi {
+export declare interface RtkAi extends Components.RtkAi {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteAiStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkAiStates>>;
 }
 
 
@@ -41,29 +41,29 @@ export declare interface DyteAi extends Components.DyteAi {
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-ai-toggle',
+  selector: 'rtk-ai-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteAiToggle {
-  protected el: HTMLDyteAiToggleElement;
+export class RtkAiToggle {
+  protected el: HTMLRtkAiToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteAiToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkAiToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteAiToggle extends Components.DyteAiToggle {
+export declare interface RtkAiToggle extends Components.RtkAiToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteAiToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkAiToggleStates>>;
 }
 
 
@@ -71,14 +71,14 @@ export declare interface DyteAiToggle extends Components.DyteAiToggle {
   inputs: ['initialTranscriptions', 'meeting', 't']
 })
 @Component({
-  selector: 'dyte-ai-transcriptions',
+  selector: 'rtk-ai-transcriptions',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['initialTranscriptions', 'meeting', 't'],
 })
-export class DyteAiTranscriptions {
-  protected el: HTMLDyteAiTranscriptionsElement;
+export class RtkAiTranscriptions {
+  protected el: HTMLRtkAiTranscriptionsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -86,21 +86,21 @@ export class DyteAiTranscriptions {
 }
 
 
-export declare interface DyteAiTranscriptions extends Components.DyteAiTranscriptions {}
+export declare interface RtkAiTranscriptions extends Components.RtkAiTranscriptions {}
 
 
 @ProxyCmp({
   inputs: ['config', 'hideSelf', 'iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-audio-grid',
+  selector: 'rtk-audio-grid',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'hideSelf', 'iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteAudioGrid {
-  protected el: HTMLDyteAudioGridElement;
+export class RtkAudioGrid {
+  protected el: HTMLRtkAudioGridElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -108,21 +108,21 @@ export class DyteAudioGrid {
 }
 
 
-export declare interface DyteAudioGrid extends Components.DyteAudioGrid {}
+export declare interface RtkAudioGrid extends Components.RtkAudioGrid {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 'participant', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-audio-tile',
+  selector: 'rtk-audio-tile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'participant', 'size', 'states', 't'],
 })
-export class DyteAudioTile {
-  protected el: HTMLDyteAudioTileElement;
+export class RtkAudioTile {
+  protected el: HTMLRtkAudioTileElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -130,21 +130,21 @@ export class DyteAudioTile {
 }
 
 
-export declare interface DyteAudioTile extends Components.DyteAudioTile {}
+export declare interface RtkAudioTile extends Components.RtkAudioTile {}
 
 
 @ProxyCmp({
   inputs: ['hideMuted', 'iconPack', 'isScreenShare', 'participant', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-audio-visualizer',
+  selector: 'rtk-audio-visualizer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['hideMuted', 'iconPack', 'isScreenShare', 'participant', 'size', 't', 'variant'],
 })
-export class DyteAudioVisualizer {
-  protected el: HTMLDyteAudioVisualizerElement;
+export class RtkAudioVisualizer {
+  protected el: HTMLRtkAudioVisualizerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -152,21 +152,21 @@ export class DyteAudioVisualizer {
 }
 
 
-export declare interface DyteAudioVisualizer extends Components.DyteAudioVisualizer {}
+export declare interface RtkAudioVisualizer extends Components.RtkAudioVisualizer {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'participant', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-avatar',
+  selector: 'rtk-avatar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'participant', 'size', 't', 'variant'],
 })
-export class DyteAvatar {
-  protected el: HTMLDyteAvatarElement;
+export class RtkAvatar {
+  protected el: HTMLRtkAvatarElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -174,21 +174,21 @@ export class DyteAvatar {
 }
 
 
-export declare interface DyteAvatar extends Components.DyteAvatar {}
+export declare interface RtkAvatar extends Components.RtkAvatar {}
 
 
 @ProxyCmp({
   inputs: ['allowDelete', 'assigningParticipants', 'defaultExpanded', 'iconPack', 'isDragMode', 'meeting', 'mode', 'room', 'states', 't']
 })
 @Component({
-  selector: 'dyte-breakout-room-manager',
+  selector: 'rtk-breakout-room-manager',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['allowDelete', 'assigningParticipants', 'defaultExpanded', 'iconPack', 'isDragMode', 'meeting', 'mode', 'room', 'states', 't'],
 })
-export class DyteBreakoutRoomManager {
-  protected el: HTMLDyteBreakoutRoomManagerElement;
+export class RtkBreakoutRoomManager {
+  protected el: HTMLRtkBreakoutRoomManagerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -197,7 +197,7 @@ export class DyteBreakoutRoomManager {
 }
 
 
-export declare interface DyteBreakoutRoomManager extends Components.DyteBreakoutRoomManager {
+export declare interface RtkBreakoutRoomManager extends Components.RtkBreakoutRoomManager {
   /**
    * Event for adding a participant
    */
@@ -225,14 +225,14 @@ export declare interface DyteBreakoutRoomManager extends Components.DyteBreakout
   inputs: ['iconPack', 'meeting', 'participantIds', 'selectedParticipantIds', 't']
 })
 @Component({
-  selector: 'dyte-breakout-room-participants',
+  selector: 'rtk-breakout-room-participants',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'participantIds', 'selectedParticipantIds', 't'],
 })
-export class DyteBreakoutRoomParticipants {
-  protected el: HTMLDyteBreakoutRoomParticipantsElement;
+export class RtkBreakoutRoomParticipants {
+  protected el: HTMLRtkBreakoutRoomParticipantsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -241,7 +241,7 @@ export class DyteBreakoutRoomParticipants {
 }
 
 
-export declare interface DyteBreakoutRoomParticipants extends Components.DyteBreakoutRoomParticipants {
+export declare interface RtkBreakoutRoomParticipants extends Components.RtkBreakoutRoomParticipants {
   /**
    * Emits an event when selected participants are updated
    */
@@ -261,29 +261,29 @@ export declare interface DyteBreakoutRoomParticipants extends Components.DyteBre
   inputs: ['iconPack', 'meeting', 'states', 't']
 })
 @Component({
-  selector: 'dyte-breakout-rooms-manager',
+  selector: 'rtk-breakout-rooms-manager',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'states', 't'],
 })
-export class DyteBreakoutRoomsManager {
-  protected el: HTMLDyteBreakoutRoomsManagerElement;
+export class RtkBreakoutRoomsManager {
+  protected el: HTMLRtkBreakoutRoomsManagerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { PartialStateEvent as IDyteBreakoutRoomsManagerPartialStateEvent } from '@dytesdk/ui-kit';
+import type { PartialStateEvent as IRtkBreakoutRoomsManagerPartialStateEvent } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteBreakoutRoomsManager extends Components.DyteBreakoutRoomsManager {
+export declare interface RtkBreakoutRoomsManager extends Components.RtkBreakoutRoomsManager {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteBreakoutRoomsManagerPartialStateEvent>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkBreakoutRoomsManagerPartialStateEvent>>;
 }
 
 
@@ -291,29 +291,29 @@ export declare interface DyteBreakoutRoomsManager extends Components.DyteBreakou
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-breakout-rooms-toggle',
+  selector: 'rtk-breakout-rooms-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteBreakoutRoomsToggle {
-  protected el: HTMLDyteBreakoutRoomsToggleElement;
+export class RtkBreakoutRoomsToggle {
+  protected el: HTMLRtkBreakoutRoomsToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { PartialStateEvent as IDyteBreakoutRoomsTogglePartialStateEvent } from '@dytesdk/ui-kit';
+import type { PartialStateEvent as IRtkBreakoutRoomsTogglePartialStateEvent } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteBreakoutRoomsToggle extends Components.DyteBreakoutRoomsToggle {
+export declare interface RtkBreakoutRoomsToggle extends Components.RtkBreakoutRoomsToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteBreakoutRoomsTogglePartialStateEvent>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkBreakoutRoomsTogglePartialStateEvent>>;
 }
 
 
@@ -321,29 +321,29 @@ export declare interface DyteBreakoutRoomsToggle extends Components.DyteBreakout
   inputs: ['iconPack', 'meeting', 'states', 't']
 })
 @Component({
-  selector: 'dyte-broadcast-message-modal',
+  selector: 'rtk-broadcast-message-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'states', 't'],
 })
-export class DyteBroadcastMessageModal {
-  protected el: HTMLDyteBroadcastMessageModalElement;
+export class RtkBroadcastMessageModal {
+  protected el: HTMLRtkBroadcastMessageModalElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteBroadcastMessageModalStates } from '@dytesdk/ui-kit';
+import type { States as IRtkBroadcastMessageModalStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteBroadcastMessageModal extends Components.DyteBroadcastMessageModal {
+export declare interface RtkBroadcastMessageModal extends Components.RtkBroadcastMessageModal {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteBroadcastMessageModalStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkBroadcastMessageModalStates>>;
 }
 
 
@@ -351,14 +351,14 @@ export declare interface DyteBroadcastMessageModal extends Components.DyteBroadc
   inputs: ['disabled', 'kind', 'reverse', 'size', 'type', 'variant']
 })
 @Component({
-  selector: 'dyte-button',
+  selector: 'rtk-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'kind', 'reverse', 'size', 'type', 'variant'],
 })
-export class DyteButton {
-  protected el: HTMLDyteButtonElement;
+export class RtkButton {
+  protected el: HTMLRtkButtonElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -366,21 +366,21 @@ export class DyteButton {
 }
 
 
-export declare interface DyteButton extends Components.DyteButton {}
+export declare interface RtkButton extends Components.RtkButton {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-camera-selector',
+  selector: 'rtk-camera-selector',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant'],
 })
-export class DyteCameraSelector {
-  protected el: HTMLDyteCameraSelectorElement;
+export class RtkCameraSelector {
+  protected el: HTMLRtkCameraSelectorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -388,36 +388,36 @@ export class DyteCameraSelector {
 }
 
 
-export declare interface DyteCameraSelector extends Components.DyteCameraSelector {}
+export declare interface RtkCameraSelector extends Components.RtkCameraSelector {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-camera-toggle',
+  selector: 'rtk-camera-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant'],
 })
-export class DyteCameraToggle {
-  protected el: HTMLDyteCameraToggleElement;
+export class RtkCameraToggle {
+  protected el: HTMLRtkCameraToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteCameraToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkCameraToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteCameraToggle extends Components.DyteCameraToggle {
+export declare interface RtkCameraToggle extends Components.RtkCameraToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteCameraToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkCameraToggleStates>>;
 }
 
 
@@ -425,29 +425,29 @@ export declare interface DyteCameraToggle extends Components.DyteCameraToggle {
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-caption-toggle',
+  selector: 'rtk-caption-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteCaptionToggle {
-  protected el: HTMLDyteCaptionToggleElement;
+export class RtkCaptionToggle {
+  protected el: HTMLRtkCaptionToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteCaptionToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkCaptionToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteCaptionToggle extends Components.DyteCaptionToggle {
+export declare interface RtkCaptionToggle extends Components.RtkCaptionToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteCaptionToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkCaptionToggleStates>>;
 }
 
 
@@ -455,29 +455,29 @@ export declare interface DyteCaptionToggle extends Components.DyteCaptionToggle 
   inputs: ['iconPack', 'meeting', 't']
 })
 @Component({
-  selector: 'dyte-channel-creator',
+  selector: 'rtk-channel-creator',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 't'],
 })
-export class DyteChannelCreator {
-  protected el: HTMLDyteChannelCreatorElement;
+export class RtkChannelCreator {
+  protected el: HTMLRtkChannelCreatorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate', 'switchChannel']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate', 'switchChannel']);
   }
 }
 
 
-import type { States as IDyteChannelCreatorStates } from '@dytesdk/ui-kit';
+import type { States as IRtkChannelCreatorStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChannelCreator extends Components.DyteChannelCreator {
+export declare interface RtkChannelCreator extends Components.RtkChannelCreator {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteChannelCreatorStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkChannelCreatorStates>>;
   /**
    * Emits event to switch channel
    */
@@ -489,14 +489,14 @@ export declare interface DyteChannelCreator extends Components.DyteChannelCreato
   inputs: ['channel', 'iconPack', 'members', 't']
 })
 @Component({
-  selector: 'dyte-channel-details',
+  selector: 'rtk-channel-details',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['channel', 'iconPack', 'members', 't'],
 })
-export class DyteChannelDetails {
-  protected el: HTMLDyteChannelDetailsElement;
+export class RtkChannelDetails {
+  protected el: HTMLRtkChannelDetailsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -504,21 +504,21 @@ export class DyteChannelDetails {
 }
 
 
-export declare interface DyteChannelDetails extends Components.DyteChannelDetails {}
+export declare interface RtkChannelDetails extends Components.RtkChannelDetails {}
 
 
 @ProxyCmp({
   inputs: ['channel', 'iconPack', 'meeting', 'showBackButton', 't']
 })
 @Component({
-  selector: 'dyte-channel-header',
+  selector: 'rtk-channel-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['channel', 'iconPack', 'meeting', 'showBackButton', 't'],
 })
-export class DyteChannelHeader {
-  protected el: HTMLDyteChannelHeaderElement;
+export class RtkChannelHeader {
+  protected el: HTMLRtkChannelHeaderElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -527,7 +527,7 @@ export class DyteChannelHeader {
 }
 
 
-export declare interface DyteChannelHeader extends Components.DyteChannelHeader {
+export declare interface RtkChannelHeader extends Components.RtkChannelHeader {
   /**
    * event triggered for search
    */
@@ -547,14 +547,14 @@ export declare interface DyteChannelHeader extends Components.DyteChannelHeader 
   inputs: ['channels', 'iconPack', 'selectedChannelId', 'showRecentMessage', 't']
 })
 @Component({
-  selector: 'dyte-channel-selector-ui',
+  selector: 'rtk-channel-selector-ui',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['channels', 'iconPack', 'selectedChannelId', 'showRecentMessage', 't'],
 })
-export class DyteChannelSelectorUi {
-  protected el: HTMLDyteChannelSelectorUiElement;
+export class RtkChannelSelectorUi {
+  protected el: HTMLRtkChannelSelectorUiElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -563,7 +563,7 @@ export class DyteChannelSelectorUi {
 }
 
 
-export declare interface DyteChannelSelectorUi extends Components.DyteChannelSelectorUi {
+export declare interface RtkChannelSelectorUi extends Components.RtkChannelSelectorUi {
   /**
    * On channel changed
    */
@@ -575,14 +575,14 @@ export declare interface DyteChannelSelectorUi extends Components.DyteChannelSel
   inputs: ['channels', 'disableSearch', 'hideAvatar', 'iconPack', 'selectedChannelId', 't', 'viewAs']
 })
 @Component({
-  selector: 'dyte-channel-selector-view',
+  selector: 'rtk-channel-selector-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['channels', 'disableSearch', 'hideAvatar', 'iconPack', 'selectedChannelId', 't', 'viewAs'],
 })
-export class DyteChannelSelectorView {
-  protected el: HTMLDyteChannelSelectorViewElement;
+export class RtkChannelSelectorView {
+  protected el: HTMLRtkChannelSelectorViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -591,13 +591,13 @@ export class DyteChannelSelectorView {
 }
 
 
-import type { IconPack as IDyteChannelSelectorViewIconPack } from '@dytesdk/ui-kit';
+import type { IconPack as IRtkChannelSelectorViewIconPack } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChannelSelectorView extends Components.DyteChannelSelectorView {
+export declare interface RtkChannelSelectorView extends Components.RtkChannelSelectorView {
   /**
    * Event emitted when selected channel changes
    */
-  channelChange: EventEmitter<CustomEvent<{ id: string; name: string; avatarUrl?: string; icon?: keyof IDyteChannelSelectorViewIconPack; latestMessage?: string; latestMessageTime?: Date; unreadCount?: number; }>>;
+  channelChange: EventEmitter<CustomEvent<{ id: string; name: string; avatarUrl?: string; icon?: keyof IRtkChannelSelectorViewIconPack; latestMessage?: string; latestMessageTime?: Date; unreadCount?: number; }>>;
 }
 
 
@@ -605,29 +605,29 @@ export declare interface DyteChannelSelectorView extends Components.DyteChannelS
   inputs: ['config', 'disablePrivateChat', 'displayFilter', 'iconPack', 'meeting', 'privatePresetFilter', 'size', 't']
 })
 @Component({
-  selector: 'dyte-chat',
+  selector: 'rtk-chat',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'disablePrivateChat', 'displayFilter', 'iconPack', 'meeting', 'privatePresetFilter', 'size', 't'],
 })
-export class DyteChat {
-  protected el: HTMLDyteChatElement;
+export class RtkChat {
+  protected el: HTMLRtkChatElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteChatStates } from '@dytesdk/ui-kit';
+import type { States as IRtkChatStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChat extends Components.DyteChat {
+export declare interface RtkChat extends Components.RtkChat {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteChatStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkChatStates>>;
 }
 
 
@@ -635,37 +635,37 @@ export declare interface DyteChat extends Components.DyteChat {
   inputs: ['canSendFiles', 'canSendTextMessage', 'channelId', 'disableEmojiPicker', 'iconPack', 'members', 'prefill', 'size', 't']
 })
 @Component({
-  selector: 'dyte-chat-composer-ui',
+  selector: 'rtk-chat-composer-ui',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['canSendFiles', 'canSendTextMessage', 'channelId', 'disableEmojiPicker', 'iconPack', 'members', 'prefill', 'size', 't'],
 })
-export class DyteChatComposerUi {
-  protected el: HTMLDyteChatComposerUiElement;
+export class RtkChatComposerUi {
+  protected el: HTMLRtkChatComposerUiElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteNewMessage', 'dyteEditMessage', 'dyteEditCancelled']);
+    proxyOutputs(this, this.el, ['rtkNewMessage', 'rtkEditMessage', 'rtkEditCancelled']);
   }
 }
 
 
-import type { DyteNewMessageEvent as IDyteChatComposerUiDyteNewMessageEvent } from '@dytesdk/ui-kit';
+import type { RtkNewMessageEvent as IRtkChatComposerUiRtkNewMessageEvent } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChatComposerUi extends Components.DyteChatComposerUi {
+export declare interface RtkChatComposerUi extends Components.RtkChatComposerUi {
   /**
    * Event emitted when new message is submitted
    */
-  dyteNewMessage: EventEmitter<CustomEvent<IDyteChatComposerUiDyteNewMessageEvent>>;
+  rtkNewMessage: EventEmitter<CustomEvent<IRtkChatComposerUiRtkNewMessageEvent>>;
   /**
    * Event emitted when message is edited
    */
-  dyteEditMessage: EventEmitter<CustomEvent<{ id: string; message: string; channelId?: string; }>>;
+  rtkEditMessage: EventEmitter<CustomEvent<{ id: string; message: string; channelId?: string; }>>;
   /**
    * Event emitted when message editing is cancelled
    */
-  dyteEditCancelled: EventEmitter<CustomEvent<any>>;
+  rtkEditCancelled: EventEmitter<CustomEvent<any>>;
 }
 
 
@@ -673,14 +673,14 @@ export declare interface DyteChatComposerUi extends Components.DyteChatComposerU
   inputs: ['canSendFiles', 'canSendTextMessage', 'disableEmojiPicker', 'iconPack', 'inputTextPlaceholder', 'isEditing', 'maxLength', 'message', 'quotedMessage', 'rateLimits', 'storageKey', 't']
 })
 @Component({
-  selector: 'dyte-chat-composer-view',
+  selector: 'rtk-chat-composer-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['canSendFiles', 'canSendTextMessage', 'disableEmojiPicker', 'iconPack', 'inputTextPlaceholder', 'isEditing', 'maxLength', 'message', 'quotedMessage', 'rateLimits', 'storageKey', 't'],
 })
-export class DyteChatComposerView {
-  protected el: HTMLDyteChatComposerViewElement;
+export class RtkChatComposerView {
+  protected el: HTMLRtkChatComposerViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -689,13 +689,13 @@ export class DyteChatComposerView {
 }
 
 
-import type { NewMessageEvent as IDyteChatComposerViewNewMessageEvent } from '@dytesdk/ui-kit';
+import type { NewMessageEvent as IRtkChatComposerViewNewMessageEvent } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChatComposerView extends Components.DyteChatComposerView {
+export declare interface RtkChatComposerView extends Components.RtkChatComposerView {
   /**
    * Event emitted when new message is submitted
    */
-  newMessage: EventEmitter<CustomEvent<IDyteChatComposerViewNewMessageEvent>>;
+  newMessage: EventEmitter<CustomEvent<IRtkChatComposerViewNewMessageEvent>>;
   /**
    * Event emitted when message is edited
    */
@@ -715,14 +715,14 @@ export declare interface DyteChatComposerView extends Components.DyteChatCompose
   inputs: ['alignRight', 'canDelete', 'canEdit', 'canPin', 'canReply', 'child', 'disableControls', 'hideAvatar', 'iconPack', 'isContinued', 'isSelf', 'isUnread', 'leftAlign', 'message', 'senderDisplayPicture', 'size', 't']
 })
 @Component({
-  selector: 'dyte-chat-message',
+  selector: 'rtk-chat-message',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['alignRight', 'canDelete', 'canEdit', 'canPin', 'canReply', 'child', 'disableControls', 'hideAvatar', 'iconPack', 'isContinued', 'isSelf', 'isUnread', 'leftAlign', 'message', 'senderDisplayPicture', 'size', 't'],
 })
-export class DyteChatMessage {
-  protected el: HTMLDyteChatMessageElement;
+export class RtkChatMessage {
+  protected el: HTMLRtkChatMessageElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -731,25 +731,25 @@ export class DyteChatMessage {
 }
 
 
-import type { Message as IDyteChatMessageMessage } from '@dytesdk/ui-kit';
+import type { Message as IRtkChatMessageMessage } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChatMessage extends Components.DyteChatMessage {
+export declare interface RtkChatMessage extends Components.RtkChatMessage {
   /**
    * Event for when edit is clicked on a message
    */
-  edit: EventEmitter<CustomEvent<IDyteChatMessageMessage>>;
+  edit: EventEmitter<CustomEvent<IRtkChatMessageMessage>>;
   /**
    * Event for when reply is clicked on a message
    */
-  reply: EventEmitter<CustomEvent<IDyteChatMessageMessage>>;
+  reply: EventEmitter<CustomEvent<IRtkChatMessageMessage>>;
   /**
    * Event for when pin is clicked on a message
    */
-  pin: EventEmitter<CustomEvent<IDyteChatMessageMessage>>;
+  pin: EventEmitter<CustomEvent<IRtkChatMessageMessage>>;
   /**
    * Event for when edit is clicked on a message
    */
-  delete: EventEmitter<CustomEvent<IDyteChatMessageMessage>>;
+  delete: EventEmitter<CustomEvent<IRtkChatMessageMessage>>;
 }
 
 
@@ -757,34 +757,34 @@ export declare interface DyteChatMessage extends Components.DyteChatMessage {
   inputs: ['canPinMessages', 'iconPack', 'messages', 'selectedGroup', 'selfUserId', 'size', 't']
 })
 @Component({
-  selector: 'dyte-chat-messages-ui',
+  selector: 'rtk-chat-messages-ui',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['canPinMessages', 'iconPack', 'messages', 'selectedGroup', 'selfUserId', 'size', 't'],
 })
-export class DyteChatMessagesUi {
-  protected el: HTMLDyteChatMessagesUiElement;
+export class RtkChatMessagesUi {
+  protected el: HTMLRtkChatMessagesUiElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['pinMessage', 'dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['pinMessage', 'rtkStateUpdate']);
   }
 }
 
 
-import type { Message as IDyteChatMessagesUiMessage } from '@dytesdk/ui-kit';
-import type { States as IDyteChatMessagesUiStates } from '@dytesdk/ui-kit';
+import type { Message as IRtkChatMessagesUiMessage } from '@cloudflare/realtimekit-ui';
+import type { States as IRtkChatMessagesUiStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChatMessagesUi extends Components.DyteChatMessagesUi {
+export declare interface RtkChatMessagesUi extends Components.RtkChatMessagesUi {
   /**
    * Event emitted when a message is pinned or unpinned
    */
-  pinMessage: EventEmitter<CustomEvent<IDyteChatMessagesUiMessage>>;
+  pinMessage: EventEmitter<CustomEvent<IRtkChatMessagesUiMessage>>;
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteChatMessagesUiStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkChatMessagesUiStates>>;
 }
 
 
@@ -792,43 +792,43 @@ export declare interface DyteChatMessagesUi extends Components.DyteChatMessagesU
   inputs: ['iconPack', 'leftAlign', 'meeting', 'selectedChannel', 'selectedChannelId', 'size', 't']
 })
 @Component({
-  selector: 'dyte-chat-messages-ui-paginated',
+  selector: 'rtk-chat-messages-ui-paginated',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'leftAlign', 'meeting', 'selectedChannel', 'selectedChannelId', 'size', 't'],
 })
-export class DyteChatMessagesUiPaginated {
-  protected el: HTMLDyteChatMessagesUiPaginatedElement;
+export class RtkChatMessagesUiPaginated {
+  protected el: HTMLRtkChatMessagesUiPaginatedElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['editMessageInit', 'pinMessage', 'deleteMessage', 'dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['editMessageInit', 'pinMessage', 'deleteMessage', 'rtkStateUpdate']);
   }
 }
 
 
-import type { TextMessage as IDyteChatMessagesUiPaginatedTextMessage } from '@dytesdk/ui-kit';
-import type { Message as IDyteChatMessagesUiPaginatedMessage } from '@dytesdk/ui-kit';
-import type { States as IDyteChatMessagesUiPaginatedStates } from '@dytesdk/ui-kit';
+import type { TextMessage as IRtkChatMessagesUiPaginatedTextMessage } from '@cloudflare/realtimekit-ui';
+import type { Message as IRtkChatMessagesUiPaginatedMessage } from '@cloudflare/realtimekit-ui';
+import type { States as IRtkChatMessagesUiPaginatedStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChatMessagesUiPaginated extends Components.DyteChatMessagesUiPaginated {
+export declare interface RtkChatMessagesUiPaginated extends Components.RtkChatMessagesUiPaginated {
   /**
    * Event for editing a message
    */
-  editMessageInit: EventEmitter<CustomEvent<{ payload: IDyteChatMessagesUiPaginatedTextMessage; flags: { isReply?: boolean; isEdit?: boolean }; }>>;
+  editMessageInit: EventEmitter<CustomEvent<{ payload: IRtkChatMessagesUiPaginatedTextMessage; flags: { isReply?: boolean; isEdit?: boolean }; }>>;
   /**
    * Event emitted when a message is pinned or unpinned
    */
-  pinMessage: EventEmitter<CustomEvent<IDyteChatMessagesUiPaginatedMessage>>;
+  pinMessage: EventEmitter<CustomEvent<IRtkChatMessagesUiPaginatedMessage>>;
   /**
    * Event emitted when a message is deleted
    */
-  deleteMessage: EventEmitter<CustomEvent<IDyteChatMessagesUiPaginatedMessage>>;
+  deleteMessage: EventEmitter<CustomEvent<IRtkChatMessagesUiPaginatedMessage>>;
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteChatMessagesUiPaginatedStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkChatMessagesUiPaginatedStates>>;
 }
 
 
@@ -836,14 +836,14 @@ export declare interface DyteChatMessagesUiPaginated extends Components.DyteChat
   inputs: ['channelId', 'iconPack', 'meeting', 'query', 't']
 })
 @Component({
-  selector: 'dyte-chat-search-results',
+  selector: 'rtk-chat-search-results',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['channelId', 'iconPack', 'meeting', 'query', 't'],
 })
-export class DyteChatSearchResults {
-  protected el: HTMLDyteChatSearchResultsElement;
+export class RtkChatSearchResults {
+  protected el: HTMLRtkChatSearchResultsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -851,36 +851,36 @@ export class DyteChatSearchResults {
 }
 
 
-export declare interface DyteChatSearchResults extends Components.DyteChatSearchResults {}
+export declare interface RtkChatSearchResults extends Components.RtkChatSearchResults {}
 
 
 @ProxyCmp({
   inputs: ['groups', 'iconPack', 'selectedGroupId', 'selfUserId', 't', 'unreadCounts']
 })
 @Component({
-  selector: 'dyte-chat-selector-ui',
+  selector: 'rtk-chat-selector-ui',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['groups', 'iconPack', 'selectedGroupId', 'selfUserId', 't', 'unreadCounts'],
 })
-export class DyteChatSelectorUi {
-  protected el: HTMLDyteChatSelectorUiElement;
+export class RtkChatSelectorUi {
+  protected el: HTMLRtkChatSelectorUiElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteChatGroupChanged']);
+    proxyOutputs(this, this.el, ['rtkChatGroupChanged']);
   }
 }
 
 
-import type { ChatGroupChangedType as IDyteChatSelectorUiChatGroupChangedType } from '@dytesdk/ui-kit';
+import type { ChatGroupChangedType as IRtkChatSelectorUiChatGroupChangedType } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChatSelectorUi extends Components.DyteChatSelectorUi {
+export declare interface RtkChatSelectorUi extends Components.RtkChatSelectorUi {
   /**
    * Event emitted when chat scope is changed
    */
-  dyteChatGroupChanged: EventEmitter<CustomEvent<IDyteChatSelectorUiChatGroupChangedType>>;
+  rtkChatGroupChanged: EventEmitter<CustomEvent<IRtkChatSelectorUiChatGroupChangedType>>;
 }
 
 
@@ -888,29 +888,29 @@ export declare interface DyteChatSelectorUi extends Components.DyteChatSelectorU
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-chat-toggle',
+  selector: 'rtk-chat-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteChatToggle {
-  protected el: HTMLDyteChatToggleElement;
+export class RtkChatToggle {
+  protected el: HTMLRtkChatToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteChatToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkChatToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteChatToggle extends Components.DyteChatToggle {
+export declare interface RtkChatToggle extends Components.RtkChatToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteChatToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkChatToggleStates>>;
 }
 
 
@@ -918,14 +918,14 @@ export declare interface DyteChatToggle extends Components.DyteChatToggle {
   inputs: ['iconPack', 'meeting']
 })
 @Component({
-  selector: 'dyte-clock',
+  selector: 'rtk-clock',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting'],
 })
-export class DyteClock {
-  protected el: HTMLDyteClockElement;
+export class RtkClock {
+  protected el: HTMLRtkClockElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -933,36 +933,36 @@ export class DyteClock {
 }
 
 
-export declare interface DyteClock extends Components.DyteClock {}
+export declare interface RtkClock extends Components.RtkClock {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'states', 't']
 })
 @Component({
-  selector: 'dyte-confirmation-modal',
+  selector: 'rtk-confirmation-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'states', 't'],
 })
-export class DyteConfirmationModal {
-  protected el: HTMLDyteConfirmationModalElement;
+export class RtkConfirmationModal {
+  protected el: HTMLRtkConfirmationModalElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteConfirmationModalStates } from '@dytesdk/ui-kit';
+import type { States as IRtkConfirmationModalStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteConfirmationModal extends Components.DyteConfirmationModal {
+export declare interface RtkConfirmationModal extends Components.RtkConfirmationModal {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteConfirmationModalStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkConfirmationModalStates>>;
 }
 
 
@@ -970,14 +970,14 @@ export declare interface DyteConfirmationModal extends Components.DyteConfirmati
   inputs: ['config', 'disableRender', 'iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-controlbar',
+  selector: 'rtk-controlbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'disableRender', 'iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteControlbar {
-  protected el: HTMLDyteControlbarElement;
+export class RtkControlbar {
+  protected el: HTMLRtkControlbarElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -985,21 +985,21 @@ export class DyteControlbar {
 }
 
 
-export declare interface DyteControlbar extends Components.DyteControlbar {}
+export declare interface RtkControlbar extends Components.RtkControlbar {}
 
 
 @ProxyCmp({
   inputs: ['brandIcon', 'disabled', 'icon', 'iconPack', 'isLoading', 'label', 'showWarning', 'size', 'variant']
 })
 @Component({
-  selector: 'dyte-controlbar-button',
+  selector: 'rtk-controlbar-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['brandIcon', 'disabled', 'icon', 'iconPack', 'isLoading', 'label', 'showWarning', 'size', 'variant'],
 })
-export class DyteControlbarButton {
-  protected el: HTMLDyteControlbarButtonElement;
+export class RtkControlbarButton {
+  protected el: HTMLRtkControlbarButtonElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1007,21 +1007,21 @@ export class DyteControlbarButton {
 }
 
 
-export declare interface DyteControlbarButton extends Components.DyteControlbarButton {}
+export declare interface RtkControlbarButton extends Components.RtkControlbarButton {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'minValue', 'size', 't', 'value']
 })
 @Component({
-  selector: 'dyte-counter',
+  selector: 'rtk-counter',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'minValue', 'size', 't', 'value'],
 })
-export class DyteCounter {
-  protected el: HTMLDyteCounterElement;
+export class RtkCounter {
+  protected el: HTMLRtkCounterElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1030,7 +1030,7 @@ export class DyteCounter {
 }
 
 
-export declare interface DyteCounter extends Components.DyteCounter {
+export declare interface RtkCounter extends Components.RtkCounter {
   /**
    * On change event emitter
    */
@@ -1042,29 +1042,29 @@ export declare interface DyteCounter extends Components.DyteCounter {
   inputs: ['iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-debugger',
+  selector: 'rtk-debugger',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteDebugger {
-  protected el: HTMLDyteDebuggerElement;
+export class RtkDebugger {
+  protected el: HTMLRtkDebuggerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteDebuggerStates } from '@dytesdk/ui-kit';
+import type { States as IRtkDebuggerStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteDebugger extends Components.DyteDebugger {
+export declare interface RtkDebugger extends Components.RtkDebugger {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteDebuggerStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkDebuggerStates>>;
 }
 
 
@@ -1072,14 +1072,14 @@ export declare interface DyteDebugger extends Components.DyteDebugger {
   inputs: ['iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-debugger-audio',
+  selector: 'rtk-debugger-audio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteDebuggerAudio {
-  protected el: HTMLDyteDebuggerAudioElement;
+export class RtkDebuggerAudio {
+  protected el: HTMLRtkDebuggerAudioElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1087,21 +1087,21 @@ export class DyteDebuggerAudio {
 }
 
 
-export declare interface DyteDebuggerAudio extends Components.DyteDebuggerAudio {}
+export declare interface RtkDebuggerAudio extends Components.RtkDebuggerAudio {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-debugger-screenshare',
+  selector: 'rtk-debugger-screenshare',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteDebuggerScreenshare {
-  protected el: HTMLDyteDebuggerScreenshareElement;
+export class RtkDebuggerScreenshare {
+  protected el: HTMLRtkDebuggerScreenshareElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1109,21 +1109,21 @@ export class DyteDebuggerScreenshare {
 }
 
 
-export declare interface DyteDebuggerScreenshare extends Components.DyteDebuggerScreenshare {}
+export declare interface RtkDebuggerScreenshare extends Components.RtkDebuggerScreenshare {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-debugger-system',
+  selector: 'rtk-debugger-system',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteDebuggerSystem {
-  protected el: HTMLDyteDebuggerSystemElement;
+export class RtkDebuggerSystem {
+  protected el: HTMLRtkDebuggerSystemElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1131,36 +1131,36 @@ export class DyteDebuggerSystem {
 }
 
 
-export declare interface DyteDebuggerSystem extends Components.DyteDebuggerSystem {}
+export declare interface RtkDebuggerSystem extends Components.RtkDebuggerSystem {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-debugger-toggle',
+  selector: 'rtk-debugger-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteDebuggerToggle {
-  protected el: HTMLDyteDebuggerToggleElement;
+export class RtkDebuggerToggle {
+  protected el: HTMLRtkDebuggerToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteDebuggerToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkDebuggerToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteDebuggerToggle extends Components.DyteDebuggerToggle {
+export declare interface RtkDebuggerToggle extends Components.RtkDebuggerToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteDebuggerToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkDebuggerToggleStates>>;
 }
 
 
@@ -1168,14 +1168,14 @@ export declare interface DyteDebuggerToggle extends Components.DyteDebuggerToggl
   inputs: ['iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-debugger-video',
+  selector: 'rtk-debugger-video',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteDebuggerVideo {
-  protected el: HTMLDyteDebuggerVideoElement;
+export class RtkDebuggerVideo {
+  protected el: HTMLRtkDebuggerVideoElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1183,34 +1183,34 @@ export class DyteDebuggerVideo {
 }
 
 
-export declare interface DyteDebuggerVideo extends Components.DyteDebuggerVideo {}
+export declare interface RtkDebuggerVideo extends Components.RtkDebuggerVideo {}
 
 
 @ProxyCmp({
   inputs: ['config', 'disableEscapeKey', 'hideCloseButton', 'iconPack', 'meeting', 'open', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-dialog',
+  selector: 'rtk-dialog',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'disableEscapeKey', 'hideCloseButton', 'iconPack', 'meeting', 'open', 'size', 'states', 't'],
 })
-export class DyteDialog {
-  protected el: HTMLDyteDialogElement;
+export class RtkDialog {
+  protected el: HTMLRtkDialogElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteDialogClose']);
+    proxyOutputs(this, this.el, ['rtkDialogClose']);
   }
 }
 
 
-export declare interface DyteDialog extends Components.DyteDialog {
+export declare interface RtkDialog extends Components.RtkDialog {
   /**
    * Event emitted when dialog is closed
    */
-  dyteDialogClose: EventEmitter<CustomEvent<any>>;
+  rtkDialogClose: EventEmitter<CustomEvent<any>>;
 }
 
 
@@ -1218,29 +1218,29 @@ export declare interface DyteDialog extends Components.DyteDialog {
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-dialog-manager',
+  selector: 'rtk-dialog-manager',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteDialogManager {
-  protected el: HTMLDyteDialogManagerElement;
+export class RtkDialogManager {
+  protected el: HTMLRtkDialogManagerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteDialogManagerStates } from '@dytesdk/ui-kit';
+import type { States as IRtkDialogManagerStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteDialogManager extends Components.DyteDialogManager {
+export declare interface RtkDialogManager extends Components.RtkDialogManager {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteDialogManagerStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkDialogManagerStates>>;
 }
 
 
@@ -1248,14 +1248,14 @@ export declare interface DyteDialogManager extends Components.DyteDialogManager 
   inputs: ['attachment', 'iconPack', 't']
 })
 @Component({
-  selector: 'dyte-draft-attachment-view',
+  selector: 'rtk-draft-attachment-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['attachment', 'iconPack', 't'],
 })
-export class DyteDraftAttachmentView {
-  protected el: HTMLDyteDraftAttachmentViewElement;
+export class RtkDraftAttachmentView {
+  protected el: HTMLRtkDraftAttachmentViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1264,7 +1264,7 @@ export class DyteDraftAttachmentView {
 }
 
 
-export declare interface DyteDraftAttachmentView extends Components.DyteDraftAttachmentView {
+export declare interface RtkDraftAttachmentView extends Components.RtkDraftAttachmentView {
   /**
    * Event triggered when the attachment is deleted
    */
@@ -1276,23 +1276,23 @@ export declare interface DyteDraftAttachmentView extends Components.DyteDraftAtt
   inputs: ['focusWhenOpened', 'iconPack', 't']
 })
 @Component({
-  selector: 'dyte-emoji-picker',
+  selector: 'rtk-emoji-picker',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['focusWhenOpened', 'iconPack', 't'],
 })
-export class DyteEmojiPicker {
-  protected el: HTMLDyteEmojiPickerElement;
+export class RtkEmojiPicker {
+  protected el: HTMLRtkEmojiPickerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['pickerClose', 'dyteEmojiClicked']);
+    proxyOutputs(this, this.el, ['pickerClose', 'rtkEmojiClicked']);
   }
 }
 
 
-export declare interface DyteEmojiPicker extends Components.DyteEmojiPicker {
+export declare interface RtkEmojiPicker extends Components.RtkEmojiPicker {
   /**
    * Close event
    */
@@ -1300,7 +1300,7 @@ export declare interface DyteEmojiPicker extends Components.DyteEmojiPicker {
   /**
    * Event which is emitted when an Emoji is clicked
    */
-  dyteEmojiClicked: EventEmitter<CustomEvent<string>>;
+  rtkEmojiClicked: EventEmitter<CustomEvent<string>>;
 }
 
 
@@ -1308,14 +1308,14 @@ export declare interface DyteEmojiPicker extends Components.DyteEmojiPicker {
   inputs: ['iconPack', 'isActive', 't']
 })
 @Component({
-  selector: 'dyte-emoji-picker-button',
+  selector: 'rtk-emoji-picker-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'isActive', 't'],
 })
-export class DyteEmojiPickerButton {
-  protected el: HTMLDyteEmojiPickerButtonElement;
+export class RtkEmojiPickerButton {
+  protected el: HTMLRtkEmojiPickerButtonElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1323,21 +1323,21 @@ export class DyteEmojiPickerButton {
 }
 
 
-export declare interface DyteEmojiPickerButton extends Components.DyteEmojiPickerButton {}
+export declare interface RtkEmojiPickerButton extends Components.RtkEmojiPickerButton {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-ended-screen',
+  selector: 'rtk-ended-screen',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteEndedScreen {
-  protected el: HTMLDyteEndedScreenElement;
+export class RtkEndedScreen {
+  protected el: HTMLRtkEndedScreenElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1345,21 +1345,21 @@ export class DyteEndedScreen {
 }
 
 
-export declare interface DyteEndedScreen extends Components.DyteEndedScreen {}
+export declare interface RtkEndedScreen extends Components.RtkEndedScreen {}
 
 
 @ProxyCmp({
   inputs: ['hostEl', 'iconPack', 't']
 })
 @Component({
-  selector: 'dyte-file-dropzone',
+  selector: 'rtk-file-dropzone',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['hostEl', 'iconPack', 't'],
 })
-export class DyteFileDropzone {
-  protected el: HTMLDyteFileDropzoneElement;
+export class RtkFileDropzone {
+  protected el: HTMLRtkFileDropzoneElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1368,7 +1368,7 @@ export class DyteFileDropzone {
 }
 
 
-export declare interface DyteFileDropzone extends Components.DyteFileDropzone {
+export declare interface RtkFileDropzone extends Components.RtkFileDropzone {
   /**
    * drop event callback
    */
@@ -1380,14 +1380,14 @@ export declare interface DyteFileDropzone extends Components.DyteFileDropzone {
   inputs: ['iconPack', 'isContinued', 'message', 'now', 'showBubble', 't']
 })
 @Component({
-  selector: 'dyte-file-message',
+  selector: 'rtk-file-message',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'isContinued', 'message', 'now', 'showBubble', 't'],
 })
-export class DyteFileMessage {
-  protected el: HTMLDyteFileMessageElement;
+export class RtkFileMessage {
+  protected el: HTMLRtkFileMessageElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1395,21 +1395,21 @@ export class DyteFileMessage {
 }
 
 
-export declare interface DyteFileMessage extends Components.DyteFileMessage {}
+export declare interface RtkFileMessage extends Components.RtkFileMessage {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'name', 'size', 'url']
 })
 @Component({
-  selector: 'dyte-file-message-view',
+  selector: 'rtk-file-message-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'name', 'size', 'url'],
 })
-export class DyteFileMessageView {
-  protected el: HTMLDyteFileMessageViewElement;
+export class RtkFileMessageView {
+  protected el: HTMLRtkFileMessageViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1417,21 +1417,21 @@ export class DyteFileMessageView {
 }
 
 
-export declare interface DyteFileMessageView extends Components.DyteFileMessageView {}
+export declare interface RtkFileMessageView extends Components.RtkFileMessageView {}
 
 
 @ProxyCmp({
   inputs: ['filter', 'icon', 'iconPack', 'label', 't']
 })
 @Component({
-  selector: 'dyte-file-picker-button',
+  selector: 'rtk-file-picker-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['filter', 'icon', 'iconPack', 'label', 't'],
 })
-export class DyteFilePickerButton {
-  protected el: HTMLDyteFilePickerButtonElement;
+export class RtkFilePickerButton {
+  protected el: HTMLRtkFilePickerButtonElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1440,7 +1440,7 @@ export class DyteFilePickerButton {
 }
 
 
-export declare interface DyteFilePickerButton extends Components.DyteFilePickerButton {
+export declare interface RtkFilePickerButton extends Components.RtkFilePickerButton {
   /**
    * Event when a file is selected for upload
    */
@@ -1452,29 +1452,29 @@ export declare interface DyteFilePickerButton extends Components.DyteFilePickerB
   inputs: ['iconPack', 'size', 'states', 't', 'targetElement', 'variant']
 })
 @Component({
-  selector: 'dyte-fullscreen-toggle',
+  selector: 'rtk-fullscreen-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'size', 'states', 't', 'targetElement', 'variant'],
 })
-export class DyteFullscreenToggle {
-  protected el: HTMLDyteFullscreenToggleElement;
+export class RtkFullscreenToggle {
+  protected el: HTMLRtkFullscreenToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteFullscreenToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkFullscreenToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteFullscreenToggle extends Components.DyteFullscreenToggle {
+export declare interface RtkFullscreenToggle extends Components.RtkFullscreenToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteFullscreenToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkFullscreenToggleStates>>;
 }
 
 
@@ -1482,29 +1482,29 @@ export declare interface DyteFullscreenToggle extends Components.DyteFullscreenT
   inputs: ['aspectRatio', 'config', 'gap', 'gridSize', 'iconPack', 'layout', 'meeting', 'overrides', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-grid',
+  selector: 'rtk-grid',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['aspectRatio', 'config', 'gap', 'gridSize', 'iconPack', 'layout', 'meeting', 'overrides', 'size', 'states', 't'],
 })
-export class DyteGrid {
-  protected el: HTMLDyteGridElement;
+export class RtkGrid {
+  protected el: HTMLRtkGridElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteGridStates } from '@dytesdk/ui-kit';
+import type { States as IRtkGridStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteGrid extends Components.DyteGrid {
+export declare interface RtkGrid extends Components.RtkGrid {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteGridStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkGridStates>>;
 }
 
 
@@ -1512,14 +1512,14 @@ export declare interface DyteGrid extends Components.DyteGrid {
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-grid-pagination',
+  selector: 'rtk-grid-pagination',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteGridPagination {
-  protected el: HTMLDyteGridPaginationElement;
+export class RtkGridPagination {
+  protected el: HTMLRtkGridPaginationElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1527,21 +1527,21 @@ export class DyteGridPagination {
 }
 
 
-export declare interface DyteGridPagination extends Components.DyteGridPagination {}
+export declare interface RtkGridPagination extends Components.RtkGridPagination {}
 
 
 @ProxyCmp({
   inputs: ['config', 'disableRender', 'iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-header',
+  selector: 'rtk-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'disableRender', 'iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteHeader {
-  protected el: HTMLDyteHeaderElement;
+export class RtkHeader {
+  protected el: HTMLRtkHeaderElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1549,21 +1549,21 @@ export class DyteHeader {
 }
 
 
-export declare interface DyteHeader extends Components.DyteHeader {}
+export declare interface RtkHeader extends Components.RtkHeader {}
 
 
 @ProxyCmp({
   inputs: ['icon', 'size', 'variant']
 })
 @Component({
-  selector: 'dyte-icon',
+  selector: 'rtk-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['icon', 'size', 'variant'],
 })
-export class DyteIcon {
-  protected el: HTMLDyteIconElement;
+export class RtkIcon {
+  protected el: HTMLRtkIconElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1571,21 +1571,21 @@ export class DyteIcon {
 }
 
 
-export declare interface DyteIcon extends Components.DyteIcon {}
+export declare interface RtkIcon extends Components.RtkIcon {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 't']
 })
 @Component({
-  selector: 'dyte-idle-screen',
+  selector: 'rtk-idle-screen',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 't'],
 })
-export class DyteIdleScreen {
-  protected el: HTMLDyteIdleScreenElement;
+export class RtkIdleScreen {
+  protected el: HTMLRtkIdleScreenElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1593,36 +1593,36 @@ export class DyteIdleScreen {
 }
 
 
-export declare interface DyteIdleScreen extends Components.DyteIdleScreen {}
+export declare interface RtkIdleScreen extends Components.RtkIdleScreen {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'isContinued', 'message', 'now', 'showBubble', 't']
 })
 @Component({
-  selector: 'dyte-image-message',
+  selector: 'rtk-image-message',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'isContinued', 'message', 'now', 'showBubble', 't'],
 })
-export class DyteImageMessage {
-  protected el: HTMLDyteImageMessageElement;
+export class RtkImageMessage {
+  protected el: HTMLRtkImageMessageElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteImageMessageStates } from '@dytesdk/ui-kit';
+import type { States as IRtkImageMessageStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteImageMessage extends Components.DyteImageMessage {
+export declare interface RtkImageMessage extends Components.RtkImageMessage {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteImageMessageStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkImageMessageStates>>;
 }
 
 
@@ -1630,14 +1630,14 @@ export declare interface DyteImageMessage extends Components.DyteImageMessage {
   inputs: ['iconPack', 't', 'url']
 })
 @Component({
-  selector: 'dyte-image-message-view',
+  selector: 'rtk-image-message-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 't', 'url'],
 })
-export class DyteImageMessageView {
-  protected el: HTMLDyteImageMessageViewElement;
+export class RtkImageMessageView {
+  protected el: HTMLRtkImageMessageViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1646,7 +1646,7 @@ export class DyteImageMessageView {
 }
 
 
-export declare interface DyteImageMessageView extends Components.DyteImageMessageView {
+export declare interface RtkImageMessageView extends Components.RtkImageMessageView {
   /**
    * preview event
    */
@@ -1658,14 +1658,14 @@ export declare interface DyteImageMessageView extends Components.DyteImageMessag
   inputs: ['iconPack', 'image', 'size', 't']
 })
 @Component({
-  selector: 'dyte-image-viewer',
+  selector: 'rtk-image-viewer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'image', 'size', 't'],
 })
-export class DyteImageViewer {
-  protected el: HTMLDyteImageViewerElement;
+export class RtkImageViewer {
+  protected el: HTMLRtkImageViewerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1674,7 +1674,7 @@ export class DyteImageViewer {
 }
 
 
-export declare interface DyteImageViewer extends Components.DyteImageViewer {
+export declare interface RtkImageViewer extends Components.RtkImageViewer {
   /**
    * Emitted when viewer should be closed
    */
@@ -1686,14 +1686,14 @@ export declare interface DyteImageViewer extends Components.DyteImageViewer {
   inputs: ['iconPack']
 })
 @Component({
-  selector: 'dyte-information-tooltip',
+  selector: 'rtk-information-tooltip',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack'],
 })
-export class DyteInformationTooltip {
-  protected el: HTMLDyteInformationTooltipElement;
+export class RtkInformationTooltip {
+  protected el: HTMLRtkInformationTooltipElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1701,44 +1701,44 @@ export class DyteInformationTooltip {
 }
 
 
-export declare interface DyteInformationTooltip extends Components.DyteInformationTooltip {}
+export declare interface RtkInformationTooltip extends Components.RtkInformationTooltip {}
 
 
 @ProxyCmp({
   inputs: ['config', 'dataConfig', 'iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-join-stage',
+  selector: 'rtk-join-stage',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'dataConfig', 'iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteJoinStage {
-  protected el: HTMLDyteJoinStageElement;
+export class RtkJoinStage {
+  protected el: HTMLRtkJoinStageElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate', 'dyteJoinStage', 'dyteLeaveStage']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate', 'rtkJoinStage', 'rtkLeaveStage']);
   }
 }
 
 
-import type { States as IDyteJoinStageStates } from '@dytesdk/ui-kit';
+import type { States as IRtkJoinStageStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteJoinStage extends Components.DyteJoinStage {
+export declare interface RtkJoinStage extends Components.RtkJoinStage {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteJoinStageStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkJoinStageStates>>;
   /**
    * Event which is emitted when user confirms joining stage
    */
-  dyteJoinStage: EventEmitter<CustomEvent<void>>;
+  rtkJoinStage: EventEmitter<CustomEvent<void>>;
   /**
    * Event which is emitted when user cancel joining stage
    */
-  dyteLeaveStage: EventEmitter<CustomEvent<void>>;
+  rtkLeaveStage: EventEmitter<CustomEvent<void>>;
 }
 
 
@@ -1746,29 +1746,29 @@ export declare interface DyteJoinStage extends Components.DyteJoinStage {
   inputs: ['iconPack', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-leave-button',
+  selector: 'rtk-leave-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'size', 't', 'variant'],
 })
-export class DyteLeaveButton {
-  protected el: HTMLDyteLeaveButtonElement;
+export class RtkLeaveButton {
+  protected el: HTMLRtkLeaveButtonElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteLeaveButtonStates } from '@dytesdk/ui-kit';
+import type { States as IRtkLeaveButtonStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteLeaveButton extends Components.DyteLeaveButton {
+export declare interface RtkLeaveButton extends Components.RtkLeaveButton {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteLeaveButtonStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkLeaveButtonStates>>;
 }
 
 
@@ -1776,29 +1776,29 @@ export declare interface DyteLeaveButton extends Components.DyteLeaveButton {
   inputs: ['iconPack', 'meeting', 'states', 't']
 })
 @Component({
-  selector: 'dyte-leave-meeting',
+  selector: 'rtk-leave-meeting',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'states', 't'],
 })
-export class DyteLeaveMeeting {
-  protected el: HTMLDyteLeaveMeetingElement;
+export class RtkLeaveMeeting {
+  protected el: HTMLRtkLeaveMeetingElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteLeaveMeetingStates } from '@dytesdk/ui-kit';
+import type { States as IRtkLeaveMeetingStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteLeaveMeeting extends Components.DyteLeaveMeeting {
+export declare interface RtkLeaveMeeting extends Components.RtkLeaveMeeting {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteLeaveMeetingStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkLeaveMeetingStates>>;
 }
 
 
@@ -1806,14 +1806,14 @@ export declare interface DyteLeaveMeeting extends Components.DyteLeaveMeeting {
   inputs: ['iconPack', 'meeting', 'size', 't']
 })
 @Component({
-  selector: 'dyte-livestream-indicator',
+  selector: 'rtk-livestream-indicator',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't'],
 })
-export class DyteLivestreamIndicator {
-  protected el: HTMLDyteLivestreamIndicatorElement;
+export class RtkLivestreamIndicator {
+  protected el: HTMLRtkLivestreamIndicatorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1821,34 +1821,34 @@ export class DyteLivestreamIndicator {
 }
 
 
-export declare interface DyteLivestreamIndicator extends Components.DyteLivestreamIndicator {}
+export declare interface RtkLivestreamIndicator extends Components.RtkLivestreamIndicator {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 't']
 })
 @Component({
-  selector: 'dyte-livestream-player',
+  selector: 'rtk-livestream-player',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't'],
 })
-export class DyteLivestreamPlayer {
-  protected el: HTMLDyteLivestreamPlayerElement;
+export class RtkLivestreamPlayer {
+  protected el: HTMLRtkLivestreamPlayerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteAPIError']);
+    proxyOutputs(this, this.el, ['rtkApiError']);
   }
 }
 
 
-export declare interface DyteLivestreamPlayer extends Components.DyteLivestreamPlayer {
+export declare interface RtkLivestreamPlayer extends Components.RtkLivestreamPlayer {
   /**
    * Emit API error events
    */
-  dyteAPIError: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
+  rtkApiError: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
 }
 
 
@@ -1856,33 +1856,33 @@ export declare interface DyteLivestreamPlayer extends Components.DyteLivestreamP
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-livestream-toggle',
+  selector: 'rtk-livestream-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant'],
 })
-export class DyteLivestreamToggle {
-  protected el: HTMLDyteLivestreamToggleElement;
+export class RtkLivestreamToggle {
+  protected el: HTMLRtkLivestreamToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate', 'dyteAPIError']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate', 'rtkApiError']);
   }
 }
 
 
-import type { States as IDyteLivestreamToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkLivestreamToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteLivestreamToggle extends Components.DyteLivestreamToggle {
+export declare interface RtkLivestreamToggle extends Components.RtkLivestreamToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteLivestreamToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkLivestreamToggleStates>>;
   /**
    * Emit API error events
    */
-  dyteAPIError: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
+  rtkApiError: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
 }
 
 
@@ -1890,14 +1890,14 @@ export declare interface DyteLivestreamToggle extends Components.DyteLivestreamT
   inputs: ['config', 'logoUrl', 'meeting', 't']
 })
 @Component({
-  selector: 'dyte-logo',
+  selector: 'rtk-logo',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'logoUrl', 'meeting', 't'],
 })
-export class DyteLogo {
-  protected el: HTMLDyteLogoElement;
+export class RtkLogo {
+  protected el: HTMLRtkLogoElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1905,21 +1905,21 @@ export class DyteLogo {
 }
 
 
-export declare interface DyteLogo extends Components.DyteLogo {}
+export declare interface RtkLogo extends Components.RtkLogo {}
 
 
 @ProxyCmp({
   inputs: ['maxLength', 'text']
 })
 @Component({
-  selector: 'dyte-markdown-view',
+  selector: 'rtk-markdown-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['maxLength', 'text'],
 })
-export class DyteMarkdownView {
-  protected el: HTMLDyteMarkdownViewElement;
+export class RtkMarkdownView {
+  protected el: HTMLRtkMarkdownViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1927,36 +1927,36 @@ export class DyteMarkdownView {
 }
 
 
-export declare interface DyteMarkdownView extends Components.DyteMarkdownView {}
+export declare interface RtkMarkdownView extends Components.RtkMarkdownView {}
 
 
 @ProxyCmp({
   inputs: ['applyDesignSystem', 'config', 'gridLayout', 'iconPack', 'leaveOnUnmount', 'loadConfigFromPreset', 'meeting', 'mode', 'showSetupScreen', 'size', 't']
 })
 @Component({
-  selector: 'dyte-meeting',
+  selector: 'rtk-meeting',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['applyDesignSystem', 'config', 'gridLayout', 'iconPack', 'leaveOnUnmount', 'loadConfigFromPreset', 'meeting', 'mode', 'showSetupScreen', 'size', 't'],
 })
-export class DyteMeeting {
-  protected el: HTMLDyteMeetingElement;
+export class RtkMeeting {
+  protected el: HTMLRtkMeetingElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStatesUpdate']);
+    proxyOutputs(this, this.el, ['rtkStatesUpdate']);
   }
 }
 
 
-import type { States as IDyteMeetingStates } from '@dytesdk/ui-kit';
+import type { States as IRtkMeetingStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteMeeting extends Components.DyteMeeting {
+export declare interface RtkMeeting extends Components.RtkMeeting {
   /**
    * States
    */
-  dyteStatesUpdate: EventEmitter<CustomEvent<IDyteMeetingStates>>;
+  rtkStatesUpdate: EventEmitter<CustomEvent<IRtkMeetingStates>>;
 }
 
 
@@ -1964,14 +1964,14 @@ export declare interface DyteMeeting extends Components.DyteMeeting {
   inputs: ['iconPack', 'meeting', 't']
 })
 @Component({
-  selector: 'dyte-meeting-title',
+  selector: 'rtk-meeting-title',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 't'],
 })
-export class DyteMeetingTitle {
-  protected el: HTMLDyteMeetingTitleElement;
+export class RtkMeetingTitle {
+  protected el: HTMLRtkMeetingTitleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1979,21 +1979,21 @@ export class DyteMeetingTitle {
 }
 
 
-export declare interface DyteMeetingTitle extends Components.DyteMeetingTitle {}
+export declare interface RtkMeetingTitle extends Components.RtkMeetingTitle {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'offset', 'placement', 'size', 't']
 })
 @Component({
-  selector: 'dyte-menu',
+  selector: 'rtk-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'offset', 'placement', 'size', 't'],
 })
-export class DyteMenu {
-  protected el: HTMLDyteMenuElement;
+export class RtkMenu {
+  protected el: HTMLRtkMenuElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2001,21 +2001,21 @@ export class DyteMenu {
 }
 
 
-export declare interface DyteMenu extends Components.DyteMenu {}
+export declare interface RtkMenu extends Components.RtkMenu {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'size', 't']
 })
 @Component({
-  selector: 'dyte-menu-item',
+  selector: 'rtk-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'size', 't'],
 })
-export class DyteMenuItem {
-  protected el: HTMLDyteMenuItemElement;
+export class RtkMenuItem {
+  protected el: HTMLRtkMenuItemElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2023,21 +2023,21 @@ export class DyteMenuItem {
 }
 
 
-export declare interface DyteMenuItem extends Components.DyteMenuItem {}
+export declare interface RtkMenuItem extends Components.RtkMenuItem {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 't']
 })
 @Component({
-  selector: 'dyte-menu-list',
+  selector: 'rtk-menu-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 't'],
 })
-export class DyteMenuList {
-  protected el: HTMLDyteMenuListElement;
+export class RtkMenuList {
+  protected el: HTMLRtkMenuListElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2045,21 +2045,21 @@ export class DyteMenuList {
 }
 
 
-export declare interface DyteMenuList extends Components.DyteMenuList {}
+export declare interface RtkMenuList extends Components.RtkMenuList {}
 
 
 @ProxyCmp({
   inputs: ['estimateItemSize', 'iconPack', 'loadMore', 'messages', 'renderer', 'visibleItemsCount']
 })
 @Component({
-  selector: 'dyte-message-list-view',
+  selector: 'rtk-message-list-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['estimateItemSize', 'iconPack', 'loadMore', 'messages', 'renderer', 'visibleItemsCount'],
 })
-export class DyteMessageListView {
-  protected el: HTMLDyteMessageListViewElement;
+export class RtkMessageListView {
+  protected el: HTMLRtkMessageListViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2067,21 +2067,21 @@ export class DyteMessageListView {
 }
 
 
-export declare interface DyteMessageListView extends Components.DyteMessageListView {}
+export declare interface RtkMessageListView extends Components.RtkMessageListView {}
 
 
 @ProxyCmp({
   inputs: ['actions', 'authorName', 'avatarUrl', 'hideAuthorName', 'hideAvatar', 'hideMetadata', 'iconPack', 'time', 'variant', 'viewType']
 })
 @Component({
-  selector: 'dyte-message-view',
+  selector: 'rtk-message-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['actions', 'authorName', 'avatarUrl', 'hideAuthorName', 'hideAvatar', 'hideMetadata', 'iconPack', 'time', 'variant', 'viewType'],
 })
-export class DyteMessageView {
-  protected el: HTMLDyteMessageViewElement;
+export class RtkMessageView {
+  protected el: HTMLRtkMessageViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2090,7 +2090,7 @@ export class DyteMessageView {
 }
 
 
-export declare interface DyteMessageView extends Components.DyteMessageView {
+export declare interface RtkMessageView extends Components.RtkMessageView {
   /**
    * action event
    */
@@ -2102,29 +2102,29 @@ export declare interface DyteMessageView extends Components.DyteMessageView {
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-mic-toggle',
+  selector: 'rtk-mic-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant'],
 })
-export class DyteMicToggle {
-  protected el: HTMLDyteMicToggleElement;
+export class RtkMicToggle {
+  protected el: HTMLRtkMicToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteMicToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkMicToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteMicToggle extends Components.DyteMicToggle {
+export declare interface RtkMicToggle extends Components.RtkMicToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteMicToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkMicToggleStates>>;
 }
 
 
@@ -2132,14 +2132,14 @@ export declare interface DyteMicToggle extends Components.DyteMicToggle {
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-microphone-selector',
+  selector: 'rtk-microphone-selector',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant'],
 })
-export class DyteMicrophoneSelector {
-  protected el: HTMLDyteMicrophoneSelectorElement;
+export class RtkMicrophoneSelector {
+  protected el: HTMLRtkMicrophoneSelectorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2147,21 +2147,21 @@ export class DyteMicrophoneSelector {
 }
 
 
-export declare interface DyteMicrophoneSelector extends Components.DyteMicrophoneSelector {}
+export declare interface RtkMicrophoneSelector extends Components.RtkMicrophoneSelector {}
 
 
 @ProxyCmp({
   inputs: ['aspectRatio', 'config', 'gap', 'gridSize', 'iconPack', 'layout', 'meeting', 'participants', 'pinnedParticipants', 'plugins', 'screenShareParticipants', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-mixed-grid',
+  selector: 'rtk-mixed-grid',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['aspectRatio', 'config', 'gap', 'gridSize', 'iconPack', 'layout', 'meeting', 'participants', 'pinnedParticipants', 'plugins', 'screenShareParticipants', 'size', 'states', 't'],
 })
-export class DyteMixedGrid {
-  protected el: HTMLDyteMixedGridElement;
+export class RtkMixedGrid {
+  protected el: HTMLRtkMixedGridElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2169,36 +2169,36 @@ export class DyteMixedGrid {
 }
 
 
-export declare interface DyteMixedGrid extends Components.DyteMixedGrid {}
+export declare interface RtkMixedGrid extends Components.RtkMixedGrid {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-more-toggle',
+  selector: 'rtk-more-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'size', 'states', 't'],
 })
-export class DyteMoreToggle {
-  protected el: HTMLDyteMoreToggleElement;
+export class RtkMoreToggle {
+  protected el: HTMLRtkMoreToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteMoreToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkMoreToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteMoreToggle extends Components.DyteMoreToggle {
+export declare interface RtkMoreToggle extends Components.RtkMoreToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteMoreToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkMoreToggleStates>>;
 }
 
 
@@ -2206,29 +2206,29 @@ export declare interface DyteMoreToggle extends Components.DyteMoreToggle {
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-mute-all-button',
+  selector: 'rtk-mute-all-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't', 'variant'],
 })
-export class DyteMuteAllButton {
-  protected el: HTMLDyteMuteAllButtonElement;
+export class RtkMuteAllButton {
+  protected el: HTMLRtkMuteAllButtonElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteMuteAllButtonStates } from '@dytesdk/ui-kit';
+import type { States as IRtkMuteAllButtonStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteMuteAllButton extends Components.DyteMuteAllButton {
+export declare interface RtkMuteAllButton extends Components.RtkMuteAllButton {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteMuteAllButtonStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkMuteAllButtonStates>>;
 }
 
 
@@ -2236,29 +2236,29 @@ export declare interface DyteMuteAllButton extends Components.DyteMuteAllButton 
   inputs: ['iconPack', 'meeting', 'states', 't']
 })
 @Component({
-  selector: 'dyte-mute-all-confirmation',
+  selector: 'rtk-mute-all-confirmation',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'states', 't'],
 })
-export class DyteMuteAllConfirmation {
-  protected el: HTMLDyteMuteAllConfirmationElement;
+export class RtkMuteAllConfirmation {
+  protected el: HTMLRtkMuteAllConfirmationElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteMuteAllConfirmationStates } from '@dytesdk/ui-kit';
+import type { States as IRtkMuteAllConfirmationStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteMuteAllConfirmation extends Components.DyteMuteAllConfirmation {
+export declare interface RtkMuteAllConfirmation extends Components.RtkMuteAllConfirmation {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteMuteAllConfirmationStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkMuteAllConfirmationStates>>;
 }
 
 
@@ -2266,14 +2266,14 @@ export declare interface DyteMuteAllConfirmation extends Components.DyteMuteAllC
   inputs: ['iconPack', 'isScreenShare', 'meeting', 'participant', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-name-tag',
+  selector: 'rtk-name-tag',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'isScreenShare', 'meeting', 'participant', 'size', 't', 'variant'],
 })
-export class DyteNameTag {
-  protected el: HTMLDyteNameTagElement;
+export class RtkNameTag {
+  protected el: HTMLRtkNameTagElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2281,21 +2281,21 @@ export class DyteNameTag {
 }
 
 
-export declare interface DyteNameTag extends Components.DyteNameTag {}
+export declare interface RtkNameTag extends Components.RtkNameTag {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'isScreenShare', 'meeting', 'participant', 't']
 })
 @Component({
-  selector: 'dyte-network-indicator',
+  selector: 'rtk-network-indicator',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'isScreenShare', 'meeting', 'participant', 't'],
 })
-export class DyteNetworkIndicator {
-  protected el: HTMLDyteNetworkIndicatorElement;
+export class RtkNetworkIndicator {
+  protected el: HTMLRtkNetworkIndicatorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2303,34 +2303,34 @@ export class DyteNetworkIndicator {
 }
 
 
-export declare interface DyteNetworkIndicator extends Components.DyteNetworkIndicator {}
+export declare interface RtkNetworkIndicator extends Components.RtkNetworkIndicator {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'notification', 'size', 't']
 })
 @Component({
-  selector: 'dyte-notification',
+  selector: 'rtk-notification',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'notification', 'size', 't'],
 })
-export class DyteNotification {
-  protected el: HTMLDyteNotificationElement;
+export class RtkNotification {
+  protected el: HTMLRtkNotificationElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteNotificationDismiss']);
+    proxyOutputs(this, this.el, ['rtkNotificationDismiss']);
   }
 }
 
 
-export declare interface DyteNotification extends Components.DyteNotification {
+export declare interface RtkNotification extends Components.RtkNotification {
   /**
    * Dismiss event
    */
-  dyteNotificationDismiss: EventEmitter<CustomEvent<string>>;
+  rtkNotificationDismiss: EventEmitter<CustomEvent<string>>;
 }
 
 
@@ -2338,14 +2338,14 @@ export declare interface DyteNotification extends Components.DyteNotification {
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-notifications',
+  selector: 'rtk-notifications',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteNotifications {
-  protected el: HTMLDyteNotificationsElement;
+export class RtkNotifications {
+  protected el: HTMLRtkNotificationsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2353,36 +2353,36 @@ export class DyteNotifications {
 }
 
 
-export declare interface DyteNotifications extends Components.DyteNotifications {}
+export declare interface RtkNotifications extends Components.RtkNotifications {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'states', 't']
 })
 @Component({
-  selector: 'dyte-overlay-modal',
+  selector: 'rtk-overlay-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'states', 't'],
 })
-export class DyteOverlayModal {
-  protected el: HTMLDyteOverlayModalElement;
+export class RtkOverlayModal {
+  protected el: HTMLRtkOverlayModalElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteOverlayModalStates } from '@dytesdk/ui-kit';
+import type { States as IRtkOverlayModalStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteOverlayModal extends Components.DyteOverlayModal {
+export declare interface RtkOverlayModal extends Components.RtkOverlayModal {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteOverlayModalStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkOverlayModalStates>>;
 }
 
 
@@ -2391,14 +2391,14 @@ export declare interface DyteOverlayModal extends Components.DyteOverlayModal {
   methods: ['onNewNode', 'onNodeDelete', 'onNodeUpdate']
 })
 @Component({
-  selector: 'dyte-paginated-list',
+  selector: 'rtk-paginated-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['autoScroll', 'createNodes', 'emptyListLabel', 'fetchData', 'iconPack', 'pageSize', 'pagesAllowed', 'selectedItemId', 't'],
 })
-export class DytePaginatedList {
-  protected el: HTMLDytePaginatedListElement;
+export class RtkPaginatedList {
+  protected el: HTMLRtkPaginatedListElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2406,34 +2406,34 @@ export class DytePaginatedList {
 }
 
 
-export declare interface DytePaginatedList extends Components.DytePaginatedList {}
+export declare interface RtkPaginatedList extends Components.RtkPaginatedList {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 'participant', 'states', 't', 'view']
 })
 @Component({
-  selector: 'dyte-participant',
+  selector: 'rtk-participant',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'participant', 'states', 't', 'view'],
 })
-export class DyteParticipant {
-  protected el: HTMLDyteParticipantElement;
+export class RtkParticipant {
+  protected el: HTMLRtkParticipantElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteSendNotification']);
+    proxyOutputs(this, this.el, ['rtkSendNotification']);
   }
 }
 
 
-export declare interface DyteParticipant extends Components.DyteParticipant {
+export declare interface RtkParticipant extends Components.RtkParticipant {
   /**
-   * Emit dyte notifications
+   * Emit notifications
    */
-  dyteSendNotification: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
+  rtkSendNotification: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
 }
 
 
@@ -2441,14 +2441,14 @@ export declare interface DyteParticipant extends Components.DyteParticipant {
   inputs: ['iconPack', 'meeting', 'size', 't']
 })
 @Component({
-  selector: 'dyte-participant-count',
+  selector: 'rtk-participant-count',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't'],
 })
-export class DyteParticipantCount {
-  protected el: HTMLDyteParticipantCountElement;
+export class RtkParticipantCount {
+  protected el: HTMLRtkParticipantCountElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2456,21 +2456,21 @@ export class DyteParticipantCount {
 }
 
 
-export declare interface DyteParticipantCount extends Components.DyteParticipantCount {}
+export declare interface RtkParticipantCount extends Components.RtkParticipantCount {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'isPreview', 'nameTagPosition', 'participant', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-participant-setup',
+  selector: 'rtk-participant-setup',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'isPreview', 'nameTagPosition', 'participant', 'size', 'states', 't', 'variant'],
 })
-export class DyteParticipantSetup {
-  protected el: HTMLDyteParticipantSetupElement;
+export class RtkParticipantSetup {
+  protected el: HTMLRtkParticipantSetupElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2478,21 +2478,21 @@ export class DyteParticipantSetup {
 }
 
 
-export declare interface DyteParticipantSetup extends Components.DyteParticipantSetup {}
+export declare interface RtkParticipantSetup extends Components.RtkParticipantSetup {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'isPreview', 'meeting', 'nameTagPosition', 'participant', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-participant-tile',
+  selector: 'rtk-participant-tile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'isPreview', 'meeting', 'nameTagPosition', 'participant', 'size', 'states', 't', 'variant'],
 })
-export class DyteParticipantTile {
-  protected el: HTMLDyteParticipantTileElement;
+export class RtkParticipantTile {
+  protected el: HTMLRtkParticipantTileElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2501,17 +2501,17 @@ export class DyteParticipantTile {
 }
 
 
-import type { Peer as IDyteParticipantTilePeer } from '@dytesdk/ui-kit';
+import type { Peer as IRtkParticipantTilePeer } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteParticipantTile extends Components.DyteParticipantTile {
+export declare interface RtkParticipantTile extends Components.RtkParticipantTile {
   /**
    * Event triggered when tile is loaded
    */
-  tileLoad: EventEmitter<CustomEvent<{ participant: IDyteParticipantTilePeer; videoElement: HTMLVideoElement }>>;
+  tileLoad: EventEmitter<CustomEvent<{ participant: IRtkParticipantTilePeer; videoElement: HTMLVideoElement }>>;
   /**
    * Event triggered when tile is unloaded
    */
-  tileUnload: EventEmitter<CustomEvent<IDyteParticipantTilePeer>>;
+  tileUnload: EventEmitter<CustomEvent<IRtkParticipantTilePeer>>;
 }
 
 
@@ -2519,29 +2519,29 @@ export declare interface DyteParticipantTile extends Components.DyteParticipantT
   inputs: ['config', 'defaultParticipantsTabId', 'iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-participants',
+  selector: 'rtk-participants',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'defaultParticipantsTabId', 'iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteParticipants {
-  protected el: HTMLDyteParticipantsElement;
+export class RtkParticipants {
+  protected el: HTMLRtkParticipantsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteParticipantsStates } from '@dytesdk/ui-kit';
+import type { States as IRtkParticipantsStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteParticipants extends Components.DyteParticipants {
+export declare interface RtkParticipants extends Components.RtkParticipants {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteParticipantsStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkParticipantsStates>>;
 }
 
 
@@ -2549,14 +2549,14 @@ export declare interface DyteParticipants extends Components.DyteParticipants {
   inputs: ['iconPack', 'meeting', 'preloadedAudioElem', 't']
 })
 @Component({
-  selector: 'dyte-participants-audio',
+  selector: 'rtk-participants-audio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'preloadedAudioElem', 't'],
 })
-export class DyteParticipantsAudio {
-  protected el: HTMLDyteParticipantsAudioElement;
+export class RtkParticipantsAudio {
+  protected el: HTMLRtkParticipantsAudioElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2565,7 +2565,7 @@ export class DyteParticipantsAudio {
 }
 
 
-export declare interface DyteParticipantsAudio extends Components.DyteParticipantsAudio {
+export declare interface RtkParticipantsAudio extends Components.RtkParticipantsAudio {
   /**
    * Callback to execute when the dialog is closed
    */
@@ -2577,14 +2577,14 @@ export declare interface DyteParticipantsAudio extends Components.DyteParticipan
   inputs: ['config', 'hideHeader', 'iconPack', 'meeting', 'search', 'size', 'states', 't', 'view']
 })
 @Component({
-  selector: 'dyte-participants-stage-list',
+  selector: 'rtk-participants-stage-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'hideHeader', 'iconPack', 'meeting', 'search', 'size', 'states', 't', 'view'],
 })
-export class DyteParticipantsStageList {
-  protected el: HTMLDyteParticipantsStageListElement;
+export class RtkParticipantsStageList {
+  protected el: HTMLRtkParticipantsStageListElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2592,21 +2592,21 @@ export class DyteParticipantsStageList {
 }
 
 
-export declare interface DyteParticipantsStageList extends Components.DyteParticipantsStageList {}
+export declare interface RtkParticipantsStageList extends Components.RtkParticipantsStageList {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 'size', 't', 'view']
 })
 @Component({
-  selector: 'dyte-participants-stage-queue',
+  selector: 'rtk-participants-stage-queue',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 't', 'view'],
 })
-export class DyteParticipantsStageQueue {
-  protected el: HTMLDyteParticipantsStageQueueElement;
+export class RtkParticipantsStageQueue {
+  protected el: HTMLRtkParticipantsStageQueueElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2614,36 +2614,36 @@ export class DyteParticipantsStageQueue {
 }
 
 
-export declare interface DyteParticipantsStageQueue extends Components.DyteParticipantsStageQueue {}
+export declare interface RtkParticipantsStageQueue extends Components.RtkParticipantsStageQueue {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-participants-toggle',
+  selector: 'rtk-participants-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteParticipantsToggle {
-  protected el: HTMLDyteParticipantsToggleElement;
+export class RtkParticipantsToggle {
+  protected el: HTMLRtkParticipantsToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteParticipantsToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkParticipantsToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteParticipantsToggle extends Components.DyteParticipantsToggle {
+export declare interface RtkParticipantsToggle extends Components.RtkParticipantsToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteParticipantsToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkParticipantsToggleStates>>;
 }
 
 
@@ -2651,14 +2651,14 @@ export declare interface DyteParticipantsToggle extends Components.DyteParticipa
   inputs: ['config', 'hideHeader', 'iconPack', 'meeting', 'search', 'size', 't', 'view']
 })
 @Component({
-  selector: 'dyte-participants-viewer-list',
+  selector: 'rtk-participants-viewer-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'hideHeader', 'iconPack', 'meeting', 'search', 'size', 't', 'view'],
 })
-export class DyteParticipantsViewerList {
-  protected el: HTMLDyteParticipantsViewerListElement;
+export class RtkParticipantsViewerList {
+  protected el: HTMLRtkParticipantsViewerListElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2666,21 +2666,21 @@ export class DyteParticipantsViewerList {
 }
 
 
-export declare interface DyteParticipantsViewerList extends Components.DyteParticipantsViewerList {}
+export declare interface RtkParticipantsViewerList extends Components.RtkParticipantsViewerList {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 'size', 't', 'view']
 })
 @Component({
-  selector: 'dyte-participants-waiting-list',
+  selector: 'rtk-participants-waiting-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 't', 'view'],
 })
-export class DyteParticipantsWaitingList {
-  protected el: HTMLDyteParticipantsWaitingListElement;
+export class RtkParticipantsWaitingList {
+  protected el: HTMLRtkParticipantsWaitingListElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2688,36 +2688,36 @@ export class DyteParticipantsWaitingList {
 }
 
 
-export declare interface DyteParticipantsWaitingList extends Components.DyteParticipantsWaitingList {}
+export declare interface RtkParticipantsWaitingList extends Components.RtkParticipantsWaitingList {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'states', 't']
 })
 @Component({
-  selector: 'dyte-permissions-message',
+  selector: 'rtk-permissions-message',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'states', 't'],
 })
-export class DytePermissionsMessage {
-  protected el: HTMLDytePermissionsMessageElement;
+export class RtkPermissionsMessage {
+  protected el: HTMLRtkPermissionsMessageElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDytePermissionsMessageStates } from '@dytesdk/ui-kit';
+import type { States as IRtkPermissionsMessageStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DytePermissionsMessage extends Components.DytePermissionsMessage {
+export declare interface RtkPermissionsMessage extends Components.RtkPermissionsMessage {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDytePermissionsMessageStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkPermissionsMessageStates>>;
 }
 
 
@@ -2725,29 +2725,29 @@ export declare interface DytePermissionsMessage extends Components.DytePermissio
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-pip-toggle',
+  selector: 'rtk-pip-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DytePipToggle {
-  protected el: HTMLDytePipToggleElement;
+export class RtkPipToggle {
+  protected el: HTMLRtkPipToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDytePipToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkPipToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DytePipToggle extends Components.DytePipToggle {
+export declare interface RtkPipToggle extends Components.RtkPipToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDytePipToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkPipToggleStates>>;
 }
 
 
@@ -2755,14 +2755,14 @@ export declare interface DytePipToggle extends Components.DytePipToggle {
   inputs: ['iconPack', 'meeting', 'plugin', 't']
 })
 @Component({
-  selector: 'dyte-plugin-main',
+  selector: 'rtk-plugin-main',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'plugin', 't'],
 })
-export class DytePluginMain {
-  protected el: HTMLDytePluginMainElement;
+export class RtkPluginMain {
+  protected el: HTMLRtkPluginMainElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2770,36 +2770,36 @@ export class DytePluginMain {
 }
 
 
-export declare interface DytePluginMain extends Components.DytePluginMain {}
+export declare interface RtkPluginMain extends Components.RtkPluginMain {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 'size', 't']
 })
 @Component({
-  selector: 'dyte-plugins',
+  selector: 'rtk-plugins',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 't'],
 })
-export class DytePlugins {
-  protected el: HTMLDytePluginsElement;
+export class RtkPlugins {
+  protected el: HTMLRtkPluginsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDytePluginsStates } from '@dytesdk/ui-kit';
+import type { States as IRtkPluginsStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DytePlugins extends Components.DytePlugins {
+export declare interface RtkPlugins extends Components.RtkPlugins {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDytePluginsStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkPluginsStates>>;
 }
 
 
@@ -2807,29 +2807,29 @@ export declare interface DytePlugins extends Components.DytePlugins {
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-plugins-toggle',
+  selector: 'rtk-plugins-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DytePluginsToggle {
-  protected el: HTMLDytePluginsToggleElement;
+export class RtkPluginsToggle {
+  protected el: HTMLRtkPluginsToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDytePluginsToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkPluginsToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DytePluginsToggle extends Components.DytePluginsToggle {
+export declare interface RtkPluginsToggle extends Components.RtkPluginsToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDytePluginsToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkPluginsToggleStates>>;
 }
 
 
@@ -2837,27 +2837,27 @@ export declare interface DytePluginsToggle extends Components.DytePluginsToggle 
   inputs: ['iconPack', 'permissions', 'poll', 'self', 't']
 })
 @Component({
-  selector: 'dyte-poll',
+  selector: 'rtk-poll',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'permissions', 'poll', 'self', 't'],
 })
-export class DytePoll {
-  protected el: HTMLDytePollElement;
+export class RtkPoll {
+  protected el: HTMLRtkPollElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteVotePoll']);
+    proxyOutputs(this, this.el, ['rtkVotePoll']);
   }
 }
 
 
-export declare interface DytePoll extends Components.DytePoll {
+export declare interface RtkPoll extends Components.RtkPoll {
   /**
    * Event which is emitted when a poll is voted on
    */
-  dyteVotePoll: EventEmitter<CustomEvent<{ id: string; index: number; }>>;
+  rtkVotePoll: EventEmitter<CustomEvent<{ id: string; index: number; }>>;
 }
 
 
@@ -2865,29 +2865,29 @@ export declare interface DytePoll extends Components.DytePoll {
   inputs: ['iconPack', 't']
 })
 @Component({
-  selector: 'dyte-poll-form',
+  selector: 'rtk-poll-form',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 't'],
 })
-export class DytePollForm {
-  protected el: HTMLDytePollFormElement;
+export class RtkPollForm {
+  protected el: HTMLRtkPollFormElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteCreatePoll']);
+    proxyOutputs(this, this.el, ['rtkCreatePoll']);
   }
 }
 
 
-import type { PollObject as IDytePollFormPollObject } from '@dytesdk/ui-kit';
+import type { PollObject as IRtkPollFormPollObject } from '@cloudflare/realtimekit-ui';
 
-export declare interface DytePollForm extends Components.DytePollForm {
+export declare interface RtkPollForm extends Components.RtkPollForm {
   /**
    * Event which is emitted when a poll is created
    */
-  dyteCreatePoll: EventEmitter<CustomEvent<IDytePollFormPollObject>>;
+  rtkCreatePoll: EventEmitter<CustomEvent<IRtkPollFormPollObject>>;
 }
 
 
@@ -2895,14 +2895,14 @@ export declare interface DytePollForm extends Components.DytePollForm {
   inputs: ['config', 'iconPack', 'meeting', 'size', 't']
 })
 @Component({
-  selector: 'dyte-polls',
+  selector: 'rtk-polls',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 't'],
 })
-export class DytePolls {
-  protected el: HTMLDytePollsElement;
+export class RtkPolls {
+  protected el: HTMLRtkPollsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2910,36 +2910,36 @@ export class DytePolls {
 }
 
 
-export declare interface DytePolls extends Components.DytePolls {}
+export declare interface RtkPolls extends Components.RtkPolls {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-polls-toggle',
+  selector: 'rtk-polls-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DytePollsToggle {
-  protected el: HTMLDytePollsToggleElement;
+export class RtkPollsToggle {
+  protected el: HTMLRtkPollsToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDytePollsToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkPollsToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DytePollsToggle extends Components.DytePollsToggle {
+export declare interface RtkPollsToggle extends Components.RtkPollsToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDytePollsToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkPollsToggleStates>>;
 }
 
 
@@ -2947,14 +2947,14 @@ export declare interface DytePollsToggle extends Components.DytePollsToggle {
   inputs: ['iconPack', 'meeting', 'size', 't']
 })
 @Component({
-  selector: 'dyte-recording-indicator',
+  selector: 'rtk-recording-indicator',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't'],
 })
-export class DyteRecordingIndicator {
-  protected el: HTMLDyteRecordingIndicatorElement;
+export class RtkRecordingIndicator {
+  protected el: HTMLRtkRecordingIndicatorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -2962,34 +2962,34 @@ export class DyteRecordingIndicator {
 }
 
 
-export declare interface DyteRecordingIndicator extends Components.DyteRecordingIndicator {}
+export declare interface RtkRecordingIndicator extends Components.RtkRecordingIndicator {}
 
 
 @ProxyCmp({
   inputs: ['disabled', 'iconPack', 'meeting', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-recording-toggle',
+  selector: 'rtk-recording-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'iconPack', 'meeting', 'size', 't', 'variant'],
 })
-export class DyteRecordingToggle {
-  protected el: HTMLDyteRecordingToggleElement;
+export class RtkRecordingToggle {
+  protected el: HTMLRtkRecordingToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteAPIError']);
+    proxyOutputs(this, this.el, ['rtkApiError']);
   }
 }
 
 
-export declare interface DyteRecordingToggle extends Components.DyteRecordingToggle {
+export declare interface RtkRecordingToggle extends Components.RtkRecordingToggle {
   /**
    * Emit api error events
    */
-  dyteAPIError: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
+  rtkApiError: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
 }
 
 
@@ -2997,33 +2997,33 @@ export declare interface DyteRecordingToggle extends Components.DyteRecordingTog
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-screen-share-toggle',
+  selector: 'rtk-screen-share-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteScreenShareToggle {
-  protected el: HTMLDyteScreenShareToggleElement;
+export class RtkScreenShareToggle {
+  protected el: HTMLRtkScreenShareToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate', 'dyteAPIError']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate', 'rtkApiError']);
   }
 }
 
 
-import type { States as IDyteScreenShareToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkScreenShareToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteScreenShareToggle extends Components.DyteScreenShareToggle {
+export declare interface RtkScreenShareToggle extends Components.RtkScreenShareToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteScreenShareToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkScreenShareToggleStates>>;
   /**
    * Emit api error events
    */
-  dyteAPIError: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
+  rtkApiError: EventEmitter<CustomEvent<{ trace: string; message: string; }>>;
 }
 
 
@@ -3031,34 +3031,34 @@ export declare interface DyteScreenShareToggle extends Components.DyteScreenShar
   inputs: ['hideFullScreenButton', 'iconPack', 'meeting', 'nameTagPosition', 'participant', 'size', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-screenshare-view',
+  selector: 'rtk-screenshare-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['hideFullScreenButton', 'iconPack', 'meeting', 'nameTagPosition', 'participant', 'size', 't', 'variant'],
 })
-export class DyteScreenshareView {
-  protected el: HTMLDyteScreenshareViewElement;
+export class RtkScreenshareView {
+  protected el: HTMLRtkScreenshareViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate', 'screensharePlay']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate', 'screensharePlay']);
   }
 }
 
 
-import type { States as IDyteScreenshareViewStates } from '@dytesdk/ui-kit';
-import type { Peer as IDyteScreenshareViewPeer } from '@dytesdk/ui-kit';
+import type { States as IRtkScreenshareViewStates } from '@cloudflare/realtimekit-ui';
+import type { Peer as IRtkScreenshareViewPeer } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteScreenshareView extends Components.DyteScreenshareView {
+export declare interface RtkScreenshareView extends Components.RtkScreenshareView {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteScreenshareViewStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkScreenshareViewStates>>;
   /**
    * Emits when video playback happens successfully
    */
-  screensharePlay: EventEmitter<CustomEvent<{ participant: IDyteScreenshareViewPeer; screenshareParticipant: IDyteScreenshareViewPeer; }>>;
+  screensharePlay: EventEmitter<CustomEvent<{ participant: IRtkScreenshareViewPeer; screenshareParticipant: IRtkScreenshareViewPeer; }>>;
 }
 
 
@@ -3066,29 +3066,29 @@ export declare interface DyteScreenshareView extends Components.DyteScreenshareV
   inputs: ['iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-settings',
+  selector: 'rtk-settings',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteSettings {
-  protected el: HTMLDyteSettingsElement;
+export class RtkSettings {
+  protected el: HTMLRtkSettingsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteSettingsStates } from '@dytesdk/ui-kit';
+import type { States as IRtkSettingsStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteSettings extends Components.DyteSettings {
+export declare interface RtkSettings extends Components.RtkSettings {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteSettingsStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkSettingsStates>>;
 }
 
 
@@ -3096,29 +3096,29 @@ export declare interface DyteSettings extends Components.DyteSettings {
   inputs: ['iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-settings-audio',
+  selector: 'rtk-settings-audio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteSettingsAudio {
-  protected el: HTMLDyteSettingsAudioElement;
+export class RtkSettingsAudio {
+  protected el: HTMLRtkSettingsAudioElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteSettingsAudioStates } from '@dytesdk/ui-kit';
+import type { States as IRtkSettingsAudioStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteSettingsAudio extends Components.DyteSettingsAudio {
+export declare interface RtkSettingsAudio extends Components.RtkSettingsAudio {
   /**
    * Event updated state
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteSettingsAudioStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkSettingsAudioStates>>;
 }
 
 
@@ -3126,29 +3126,29 @@ export declare interface DyteSettingsAudio extends Components.DyteSettingsAudio 
   inputs: ['iconPack', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-settings-toggle',
+  selector: 'rtk-settings-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'size', 'states', 't', 'variant'],
 })
-export class DyteSettingsToggle {
-  protected el: HTMLDyteSettingsToggleElement;
+export class RtkSettingsToggle {
+  protected el: HTMLRtkSettingsToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteSettingsToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkSettingsToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteSettingsToggle extends Components.DyteSettingsToggle {
+export declare interface RtkSettingsToggle extends Components.RtkSettingsToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteSettingsToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkSettingsToggleStates>>;
 }
 
 
@@ -3156,29 +3156,29 @@ export declare interface DyteSettingsToggle extends Components.DyteSettingsToggl
   inputs: ['iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-settings-video',
+  selector: 'rtk-settings-video',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteSettingsVideo {
-  protected el: HTMLDyteSettingsVideoElement;
+export class RtkSettingsVideo {
+  protected el: HTMLRtkSettingsVideoElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteSettingsVideoStates } from '@dytesdk/ui-kit';
+import type { States as IRtkSettingsVideoStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteSettingsVideo extends Components.DyteSettingsVideo {
+export declare interface RtkSettingsVideo extends Components.RtkSettingsVideo {
   /**
    * Emits updated state
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteSettingsVideoStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkSettingsVideoStates>>;
 }
 
 
@@ -3186,29 +3186,29 @@ export declare interface DyteSettingsVideo extends Components.DyteSettingsVideo 
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-setup-screen',
+  selector: 'rtk-setup-screen',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'size', 'states', 't'],
 })
-export class DyteSetupScreen {
-  protected el: HTMLDyteSetupScreenElement;
+export class RtkSetupScreen {
+  protected el: HTMLRtkSetupScreenElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteSetupScreenStates } from '@dytesdk/ui-kit';
+import type { States as IRtkSetupScreenStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteSetupScreen extends Components.DyteSetupScreen {
+export declare interface RtkSetupScreen extends Components.RtkSetupScreen {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteSetupScreenStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkSetupScreenStates>>;
 }
 
 
@@ -3216,29 +3216,29 @@ export declare interface DyteSetupScreen extends Components.DyteSetupScreen {
   inputs: ['config', 'defaultSection', 'enabledSections', 'iconPack', 'meeting', 'size', 'states', 't', 'view']
 })
 @Component({
-  selector: 'dyte-sidebar',
+  selector: 'rtk-sidebar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'defaultSection', 'enabledSections', 'iconPack', 'meeting', 'size', 'states', 't', 'view'],
 })
-export class DyteSidebar {
-  protected el: HTMLDyteSidebarElement;
+export class RtkSidebar {
+  protected el: HTMLRtkSidebarElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteSidebarStates } from '@dytesdk/ui-kit';
+import type { States as IRtkSidebarStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteSidebar extends Components.DyteSidebar {
+export declare interface RtkSidebar extends Components.RtkSidebar {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteSidebarStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkSidebarStates>>;
 }
 
 
@@ -3246,14 +3246,14 @@ export declare interface DyteSidebar extends Components.DyteSidebar {
   inputs: ['currentTab', 'hideCloseAction', 'hideHeader', 'iconPack', 't', 'tabs', 'view']
 })
 @Component({
-  selector: 'dyte-sidebar-ui',
+  selector: 'rtk-sidebar-ui',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['currentTab', 'hideCloseAction', 'hideHeader', 'iconPack', 't', 'tabs', 'view'],
 })
-export class DyteSidebarUi {
-  protected el: HTMLDyteSidebarUiElement;
+export class RtkSidebarUi {
+  protected el: HTMLRtkSidebarUiElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3262,7 +3262,7 @@ export class DyteSidebarUi {
 }
 
 
-export declare interface DyteSidebarUi extends Components.DyteSidebarUi {
+export declare interface RtkSidebarUi extends Components.RtkSidebarUi {
   /**
    * Tab change event
    */
@@ -3278,14 +3278,14 @@ export declare interface DyteSidebarUi extends Components.DyteSidebarUi {
   inputs: ['aspectRatio', 'config', 'gap', 'iconPack', 'meeting', 'participants', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-simple-grid',
+  selector: 'rtk-simple-grid',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['aspectRatio', 'config', 'gap', 'iconPack', 'meeting', 'participants', 'size', 'states', 't'],
 })
-export class DyteSimpleGrid {
-  protected el: HTMLDyteSimpleGridElement;
+export class RtkSimpleGrid {
+  protected el: HTMLRtkSimpleGridElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3293,21 +3293,21 @@ export class DyteSimpleGrid {
 }
 
 
-export declare interface DyteSimpleGrid extends Components.DyteSimpleGrid {}
+export declare interface RtkSimpleGrid extends Components.RtkSimpleGrid {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-speaker-selector',
+  selector: 'rtk-speaker-selector',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteSpeakerSelector {
-  protected el: HTMLDyteSpeakerSelectorElement;
+export class RtkSpeakerSelector {
+  protected el: HTMLRtkSpeakerSelectorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3315,21 +3315,21 @@ export class DyteSpeakerSelector {
 }
 
 
-export declare interface DyteSpeakerSelector extends Components.DyteSpeakerSelector {}
+export declare interface RtkSpeakerSelector extends Components.RtkSpeakerSelector {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'size']
 })
 @Component({
-  selector: 'dyte-spinner',
+  selector: 'rtk-spinner',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'size'],
 })
-export class DyteSpinner {
-  protected el: HTMLDyteSpinnerElement;
+export class RtkSpinner {
+  protected el: HTMLRtkSpinnerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3337,21 +3337,21 @@ export class DyteSpinner {
 }
 
 
-export declare interface DyteSpinner extends Components.DyteSpinner {}
+export declare interface RtkSpinner extends Components.RtkSpinner {}
 
 
 @ProxyCmp({
   inputs: ['aspectRatio', 'config', 'gap', 'gridSize', 'iconPack', 'layout', 'meeting', 'participants', 'pinnedParticipants', 'size', 'states', 't']
 })
 @Component({
-  selector: 'dyte-spotlight-grid',
+  selector: 'rtk-spotlight-grid',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['aspectRatio', 'config', 'gap', 'gridSize', 'iconPack', 'layout', 'meeting', 'participants', 'pinnedParticipants', 'size', 'states', 't'],
 })
-export class DyteSpotlightGrid {
-  protected el: HTMLDyteSpotlightGridElement;
+export class RtkSpotlightGrid {
+  protected el: HTMLRtkSpotlightGridElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3359,21 +3359,21 @@ export class DyteSpotlightGrid {
 }
 
 
-export declare interface DyteSpotlightGrid extends Components.DyteSpotlightGrid {}
+export declare interface RtkSpotlightGrid extends Components.RtkSpotlightGrid {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 'meeting', 'size', 't']
 })
 @Component({
-  selector: 'dyte-spotlight-indicator',
+  selector: 'rtk-spotlight-indicator',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 't'],
 })
-export class DyteSpotlightIndicator {
-  protected el: HTMLDyteSpotlightIndicatorElement;
+export class RtkSpotlightIndicator {
+  protected el: HTMLRtkSpotlightIndicatorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3381,36 +3381,36 @@ export class DyteSpotlightIndicator {
 }
 
 
-export declare interface DyteSpotlightIndicator extends Components.DyteSpotlightIndicator {}
+export declare interface RtkSpotlightIndicator extends Components.RtkSpotlightIndicator {}
 
 
 @ProxyCmp({
   inputs: ['iconPack', 't']
 })
 @Component({
-  selector: 'dyte-stage',
+  selector: 'rtk-stage',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 't'],
 })
-export class DyteStage {
-  protected el: HTMLDyteStageElement;
+export class RtkStage {
+  protected el: HTMLRtkStageElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteStageStates } from '@dytesdk/ui-kit';
+import type { States as IRtkStageStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteStage extends Components.DyteStage {
+export declare interface RtkStage extends Components.RtkStage {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteStageStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkStageStates>>;
 }
 
 
@@ -3418,29 +3418,29 @@ export declare interface DyteStage extends Components.DyteStage {
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-stage-toggle',
+  selector: 'rtk-stage-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 'size', 'states', 't', 'variant'],
 })
-export class DyteStageToggle {
-  protected el: HTMLDyteStageToggleElement;
+export class RtkStageToggle {
+  protected el: HTMLRtkStageToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStateUpdate']);
+    proxyOutputs(this, this.el, ['rtkStateUpdate']);
   }
 }
 
 
-import type { States as IDyteStageToggleStates } from '@dytesdk/ui-kit';
+import type { States as IRtkStageToggleStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteStageToggle extends Components.DyteStageToggle {
+export declare interface RtkStageToggle extends Components.RtkStageToggle {
   /**
    * Emits updated state data
    */
-  dyteStateUpdate: EventEmitter<CustomEvent<IDyteStageToggleStates>>;
+  rtkStateUpdate: EventEmitter<CustomEvent<IRtkStageToggleStates>>;
 }
 
 
@@ -3448,27 +3448,27 @@ export declare interface DyteStageToggle extends Components.DyteStageToggle {
   inputs: ['checked', 'disabled', 'iconPack', 'readonly', 't']
 })
 @Component({
-  selector: 'dyte-switch',
+  selector: 'rtk-switch',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['checked', 'disabled', 'iconPack', 'readonly', 't'],
 })
-export class DyteSwitch {
-  protected el: HTMLDyteSwitchElement;
+export class RtkSwitch {
+  protected el: HTMLRtkSwitchElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteChange']);
+    proxyOutputs(this, this.el, ['rtkChange']);
   }
 }
 
 
-export declare interface DyteSwitch extends Components.DyteSwitch {
+export declare interface RtkSwitch extends Components.RtkSwitch {
   /**
    * Event when switch value is changed
    */
-  dyteChange: EventEmitter<CustomEvent<boolean>>;
+  rtkChange: EventEmitter<CustomEvent<boolean>>;
 }
 
 
@@ -3476,14 +3476,14 @@ export declare interface DyteSwitch extends Components.DyteSwitch {
   inputs: ['activeTab', 'config', 'iconPack', 'layout', 'meeting', 'size', 'states', 't', 'tabs']
 })
 @Component({
-  selector: 'dyte-tab-bar',
+  selector: 'rtk-tab-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['activeTab', 'config', 'iconPack', 'layout', 'meeting', 'size', 'states', 't', 'tabs'],
 })
-export class DyteTabBar {
-  protected el: HTMLDyteTabBarElement;
+export class RtkTabBar {
+  protected el: HTMLRtkTabBarElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3492,13 +3492,13 @@ export class DyteTabBar {
 }
 
 
-import type { Tab as IDyteTabBarTab } from '@dytesdk/ui-kit';
+import type { Tab as IRtkTabBarTab } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteTabBar extends Components.DyteTabBar {
+export declare interface RtkTabBar extends Components.RtkTabBar {
   /**
    * Set active tab
    */
-  tabChange: EventEmitter<CustomEvent<IDyteTabBarTab>>;
+  tabChange: EventEmitter<CustomEvent<IRtkTabBarTab>>;
 }
 
 
@@ -3507,14 +3507,14 @@ export declare interface DyteTabBar extends Components.DyteTabBar {
   methods: ['setText']
 })
 @Component({
-  selector: 'dyte-text-composer-view',
+  selector: 'rtk-text-composer-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'iconPack', 'keyDownHandler', 'maxLength', 'placeholder', 'rateLimitBreached', 't', 'value'],
 })
-export class DyteTextComposerView {
-  protected el: HTMLDyteTextComposerViewElement;
+export class RtkTextComposerView {
+  protected el: HTMLRtkTextComposerViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3523,7 +3523,7 @@ export class DyteTextComposerView {
 }
 
 
-export declare interface DyteTextComposerView extends Components.DyteTextComposerView {
+export declare interface RtkTextComposerView extends Components.RtkTextComposerView {
   /**
    * Event emitted when text changes
    */
@@ -3535,14 +3535,14 @@ export declare interface DyteTextComposerView extends Components.DyteTextCompose
   inputs: ['iconPack', 'isContinued', 'message', 'now', 'showBubble', 't']
 })
 @Component({
-  selector: 'dyte-text-message',
+  selector: 'rtk-text-message',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'isContinued', 'message', 'now', 'showBubble', 't'],
 })
-export class DyteTextMessage {
-  protected el: HTMLDyteTextMessageElement;
+export class RtkTextMessage {
+  protected el: HTMLRtkTextMessageElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3550,21 +3550,21 @@ export class DyteTextMessage {
 }
 
 
-export declare interface DyteTextMessage extends Components.DyteTextMessage {}
+export declare interface RtkTextMessage extends Components.RtkTextMessage {}
 
 
 @ProxyCmp({
   inputs: ['isMarkdown', 'text']
 })
 @Component({
-  selector: 'dyte-text-message-view',
+  selector: 'rtk-text-message-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['isMarkdown', 'text'],
 })
-export class DyteTextMessageView {
-  protected el: HTMLDyteTextMessageViewElement;
+export class RtkTextMessageView {
+  protected el: HTMLRtkTextMessageViewElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3572,34 +3572,34 @@ export class DyteTextMessageView {
 }
 
 
-export declare interface DyteTextMessageView extends Components.DyteTextMessageView {}
+export declare interface RtkTextMessageView extends Components.RtkTextMessageView {}
 
 
 @ProxyCmp({
   inputs: ['delay', 'disabled', 'kind', 'label', 'open', 'placement', 'size', 'variant']
 })
 @Component({
-  selector: 'dyte-tooltip',
+  selector: 'rtk-tooltip',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['delay', 'disabled', 'kind', 'label', 'open', 'placement', 'size', 'variant'],
 })
-export class DyteTooltip {
-  protected el: HTMLDyteTooltipElement;
+export class RtkTooltip {
+  protected el: HTMLRtkTooltipElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteOpenChange']);
+    proxyOutputs(this, this.el, ['rtkOpenChange']);
   }
 }
 
 
-export declare interface DyteTooltip extends Components.DyteTooltip {
+export declare interface RtkTooltip extends Components.RtkTooltip {
   /**
    * Event handler called when the open state of the tooltip changes.
    */
-  dyteOpenChange: EventEmitter<CustomEvent<boolean>>;
+  rtkOpenChange: EventEmitter<CustomEvent<boolean>>;
 }
 
 
@@ -3607,27 +3607,27 @@ export declare interface DyteTooltip extends Components.DyteTooltip {
   inputs: ['t', 'transcript']
 })
 @Component({
-  selector: 'dyte-transcript',
+  selector: 'rtk-transcript',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['t', 'transcript'],
 })
-export class DyteTranscript {
-  protected el: HTMLDyteTranscriptElement;
+export class RtkTranscript {
+  protected el: HTMLRtkTranscriptElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteTranscriptDismiss']);
+    proxyOutputs(this, this.el, ['rtkTranscriptDismiss']);
   }
 }
 
 
-export declare interface DyteTranscript extends Components.DyteTranscript {
+export declare interface RtkTranscript extends Components.RtkTranscript {
   /**
    * Dismiss event
    */
-  dyteTranscriptDismiss: EventEmitter<CustomEvent<{ id: string; renderedId: string; }>>;
+  rtkTranscriptDismiss: EventEmitter<CustomEvent<{ id: string; renderedId: string; }>>;
 }
 
 
@@ -3635,14 +3635,14 @@ export declare interface DyteTranscript extends Components.DyteTranscript {
   inputs: ['config', 'meeting', 'states', 't']
 })
 @Component({
-  selector: 'dyte-transcripts',
+  selector: 'rtk-transcripts',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'meeting', 'states', 't'],
 })
-export class DyteTranscripts {
-  protected el: HTMLDyteTranscriptsElement;
+export class RtkTranscripts {
+  protected el: HTMLRtkTranscriptsElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3650,36 +3650,36 @@ export class DyteTranscripts {
 }
 
 
-export declare interface DyteTranscripts extends Components.DyteTranscripts {}
+export declare interface RtkTranscripts extends Components.RtkTranscripts {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 'noRenderUntilMeeting', 'showSetupScreen', 'size', 't']
 })
 @Component({
-  selector: 'dyte-ui-provider',
+  selector: 'rtk-ui-provider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 'noRenderUntilMeeting', 'showSetupScreen', 'size', 't'],
 })
-export class DyteUiProvider {
-  protected el: HTMLDyteUiProviderElement;
+export class RtkUiProvider {
+  protected el: HTMLRtkUiProviderElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dyteStatesUpdate']);
+    proxyOutputs(this, this.el, ['rtkStatesUpdate']);
   }
 }
 
 
-import type { States as IDyteUiProviderStates } from '@dytesdk/ui-kit';
+import type { States as IRtkUiProviderStates } from '@cloudflare/realtimekit-ui';
 
-export declare interface DyteUiProvider extends Components.DyteUiProvider {
+export declare interface RtkUiProvider extends Components.RtkUiProvider {
   /**
    * States event
    */
-  dyteStatesUpdate: EventEmitter<CustomEvent<IDyteUiProviderStates>>;
+  rtkStatesUpdate: EventEmitter<CustomEvent<IRtkUiProviderStates>>;
 }
 
 
@@ -3687,14 +3687,14 @@ export declare interface DyteUiProvider extends Components.DyteUiProvider {
   inputs: ['iconPack', 'meeting', 't', 'variant']
 })
 @Component({
-  selector: 'dyte-viewer-count',
+  selector: 'rtk-viewer-count',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconPack', 'meeting', 't', 'variant'],
 })
-export class DyteViewerCount {
-  protected el: HTMLDyteViewerCountElement;
+export class RtkViewerCount {
+  protected el: HTMLRtkViewerCountElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3702,21 +3702,21 @@ export class DyteViewerCount {
 }
 
 
-export declare interface DyteViewerCount extends Components.DyteViewerCount {}
+export declare interface RtkViewerCount extends Components.RtkViewerCount {}
 
 
 @ProxyCmp({
   inputs: ['bufferedItemsCount', 'emptyListElement', 'itemHeight', 'items', 'renderItem']
 })
 @Component({
-  selector: 'dyte-virtualized-participant-list',
+  selector: 'rtk-virtualized-participant-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['bufferedItemsCount', 'emptyListElement', 'itemHeight', 'items', 'renderItem'],
 })
-export class DyteVirtualizedParticipantList {
-  protected el: HTMLDyteVirtualizedParticipantListElement;
+export class RtkVirtualizedParticipantList {
+  protected el: HTMLRtkVirtualizedParticipantListElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3724,21 +3724,21 @@ export class DyteVirtualizedParticipantList {
 }
 
 
-export declare interface DyteVirtualizedParticipantList extends Components.DyteVirtualizedParticipantList {}
+export declare interface RtkVirtualizedParticipantList extends Components.RtkVirtualizedParticipantList {}
 
 
 @ProxyCmp({
   inputs: ['config', 'iconPack', 'meeting', 't']
 })
 @Component({
-  selector: 'dyte-waiting-screen',
+  selector: 'rtk-waiting-screen',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['config', 'iconPack', 'meeting', 't'],
 })
-export class DyteWaitingScreen {
-  protected el: HTMLDyteWaitingScreenElement;
+export class RtkWaitingScreen {
+  protected el: HTMLRtkWaitingScreenElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -3746,6 +3746,6 @@ export class DyteWaitingScreen {
 }
 
 
-export declare interface DyteWaitingScreen extends Components.DyteWaitingScreen {}
+export declare interface RtkWaitingScreen extends Components.RtkWaitingScreen {}
 
 

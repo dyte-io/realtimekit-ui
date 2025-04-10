@@ -52,79 +52,79 @@ module.exports = ({ colors }) => ({
   transparent: colors.transparent,
   brand: {
     DEFAULT: ({ opacityValue }) =>
-      getColorWithOpacity('--dyte-colors-brand-500', defaultColors.brand[500], opacityValue),
+      getColorWithOpacity('--rtk-colors-brand-500', defaultColors.brand[500], opacityValue),
     300: ({ opacityValue }) =>
-      getColorWithOpacity('--dyte-colors-brand-300', defaultColors.brand[300], opacityValue),
+      getColorWithOpacity('--rtk-colors-brand-300', defaultColors.brand[300], opacityValue),
     400: ({ opacityValue }) =>
-      getColorWithOpacity('--dyte-colors-brand-400', defaultColors.brand[400], opacityValue),
+      getColorWithOpacity('--rtk-colors-brand-400', defaultColors.brand[400], opacityValue),
     500: ({ opacityValue }) =>
-      getColorWithOpacity('--dyte-colors-brand-500', defaultColors.brand[500], opacityValue),
+      getColorWithOpacity('--rtk-colors-brand-500', defaultColors.brand[500], opacityValue),
     600: ({ opacityValue }) =>
-      getColorWithOpacity('--dyte-colors-brand-600', defaultColors.brand[600], opacityValue),
+      getColorWithOpacity('--rtk-colors-brand-600', defaultColors.brand[600], opacityValue),
     700: ({ opacityValue }) =>
-      getColorWithOpacity('--dyte-colors-brand-700', defaultColors.brand[700], opacityValue),
+      getColorWithOpacity('--rtk-colors-brand-700', defaultColors.brand[700], opacityValue),
   },
   background: {
     DEFAULT: ({ opacityValue }) =>
       getColorWithOpacity(
-        '--dyte-colors-background-1000',
+        '--rtk-colors-background-1000',
         defaultColors.background[1000],
         opacityValue
       ),
     1000: ({ opacityValue }) =>
       getColorWithOpacity(
-        '--dyte-colors-background-1000',
+        '--rtk-colors-background-1000',
         defaultColors.background[1000],
         opacityValue
       ),
     900: ({ opacityValue }) =>
       getColorWithOpacity(
-        '--dyte-colors-background-900',
+        '--rtk-colors-background-900',
         defaultColors.background[900],
         opacityValue
       ),
     800: ({ opacityValue }) =>
       getColorWithOpacity(
-        '--dyte-colors-background-800',
+        '--rtk-colors-background-800',
         defaultColors.background[800],
         opacityValue
       ),
     700: ({ opacityValue }) =>
       getColorWithOpacity(
-        '--dyte-colors-background-700',
+        '--rtk-colors-background-700',
         defaultColors.background[700],
         opacityValue
       ),
     600: ({ opacityValue }) =>
       getColorWithOpacity(
-        '--dyte-colors-background-600',
+        '--rtk-colors-background-600',
         defaultColors.background[600],
         opacityValue
       ),
   },
   text: {
-    DEFAULT: 'rgb(var(--dyte-colors-text-1000, 255 255 255))',
-    1000: 'rgb(var(--dyte-colors-text-1000, 255 255 255))',
-    900: 'rgb(var(--dyte-colors-text-900, 255 255 255 / 0.88))',
-    800: 'rgb(var(--dyte-colors-text-800, 255 255 255 / 0.76))',
-    700: 'rgb(var(--dyte-colors-text-700, 255 255 255 / 0.64))',
-    600: 'rgb(var(--dyte-colors-text-600, 255 255 255 / 0.52))',
+    DEFAULT: 'rgb(var(--rtk-colors-text-1000, 255 255 255))',
+    1000: 'rgb(var(--rtk-colors-text-1000, 255 255 255))',
+    900: 'rgb(var(--rtk-colors-text-900, 255 255 255 / 0.88))',
+    800: 'rgb(var(--rtk-colors-text-800, 255 255 255 / 0.76))',
+    700: 'rgb(var(--rtk-colors-text-700, 255 255 255 / 0.64))',
+    600: 'rgb(var(--rtk-colors-text-600, 255 255 255 / 0.52))',
   },
   'text-on-brand': {
     DEFAULT:
-      'rgb(var(--dyte-colors-text-on-brand-1000, var(--dyte-colors-text-1000, 255 255 255)))',
-    1000: 'rgb(var(--dyte-colors-text-on-brand-1000, var(--dyte-colors-text-1000, 255 255 255)))',
-    900: 'rgb(var(--dyte-colors-text-on-brand-900, var(--dyte-colors-text-900, 255 255 255 / 0.88)))',
-    800: 'rgb(var(--dyte-colors-text-on-brand-800, var(--dyte-colors-text-800, 255 255 255 / 0.76)))',
-    700: 'rgb(var(--dyte-colors-text-on-brand-700, var(--dyte-colors-text-700, 255 255 255 / 0.64)))',
-    600: 'rgb(var(--dyte-colors-text-on-brand-600, var(--dyte-colors-text-600, 255 255 255 / 0.52)))',
+      'rgb(var(--rtk-colors-text-on-brand-1000, var(--rtk-colors-text-1000, 255 255 255)))',
+    1000: 'rgb(var(--rtk-colors-text-on-brand-1000, var(--rtk-colors-text-1000, 255 255 255)))',
+    900: 'rgb(var(--rtk-colors-text-on-brand-900, var(--rtk-colors-text-900, 255 255 255 / 0.88)))',
+    800: 'rgb(var(--rtk-colors-text-on-brand-800, var(--rtk-colors-text-800, 255 255 255 / 0.76)))',
+    700: 'rgb(var(--rtk-colors-text-on-brand-700, var(--rtk-colors-text-700, 255 255 255 / 0.64)))',
+    600: 'rgb(var(--rtk-colors-text-on-brand-600, var(--rtk-colors-text-600, 255 255 255 / 0.52)))',
   },
   'video-bg': ({ opacityValue }) =>
-    getColorWithOpacity('--dyte-colors-video-bg', defaultColors['video-bg'], opacityValue),
+    getColorWithOpacity('--rtk-colors-video-bg', defaultColors['video-bg'], opacityValue),
   danger: ({ opacityValue }) =>
-    getColorWithOpacity('--dyte-colors-danger', defaultColors.danger, opacityValue),
+    getColorWithOpacity('--rtk-colors-danger', defaultColors.danger, opacityValue),
   success: ({ opacityValue }) =>
-    getColorWithOpacity('--dyte-colors-success', defaultColors.success, opacityValue),
+    getColorWithOpacity('--rtk-colors-success', defaultColors.success, opacityValue),
   warning: ({ opacityValue }) =>
-    getColorWithOpacity('--dyte-colors-warning', defaultColors.warning, opacityValue),
+    getColorWithOpacity('--rtk-colors-warning', defaultColors.warning, opacityValue),
 });

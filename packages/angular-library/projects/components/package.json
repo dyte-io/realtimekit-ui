@@ -1,14 +1,14 @@
 {
-  "name": "@dytesdk/angular-ui-kit",
+  "name": "@cloudflare/realtimekit-angular-ui",
   "version": "3.0.0-staging.2",
-  "description": "Dyte's UI Kit to support easy UI development for Angular Projects",
+  "description": "UI Kit to support easy UI development for Angular Projects",
   "peerDependencies": {
     "@angular/common": ">=12",
     "@angular/core": ">=12"
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "@dytesdk/ui-kit": "*"
+    "@cloudflare/realtimekit-ui": "*"
   },
   "publishConfig": {
     "access": "public",
@@ -17,15 +17,12 @@
   "files": [
     "dist/"
   ],
-  "bugs": {
-    "email": "support@dyte.io"
-  },
   "sideEffects": false,
   "scripts": {
     "prepublishOnly": "cp package.json package.json.bak && node prepublish.js",
     "postpublish": "mv package.json.bak package.json"
   },
-  "module": "dist/fesm2022/dytesdk-angular-ui-kit.mjs",
+  "module": "dist/fesm2022/cloudflare-realtimekit-angular-ui.mjs",
   "typings": "dist/index.d.ts",
   "exports": {
     "./package.json": {
@@ -33,7 +30,7 @@
     },
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/fesm2022/dytesdk-angular-ui-kit.mjs"
+      "default": "./dist/fesm2022/cloudflare-realtimekit-angular-ui.mjs"
     }
   }
 }

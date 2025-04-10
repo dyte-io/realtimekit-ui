@@ -1,0 +1,17 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply mx-2 inline-flex h-10 select-none items-center;
+}
+
+:host([size='sm']) {
+  @apply text-text-sm mx-1;
+}
+
+rtk-icon {
+  @apply mr-1 h-5 w-5;
+}
+
+:host([size='sm']) rtk-icon {
+  @apply h-4 w-4;
+}

@@ -9,7 +9,7 @@ import { THEMES } from '../theme/presets/themes';
 import { BORDER_WIDTHS, BORDER_RADII } from '../theme/presets/border';
 import { hexToRGB } from './color';
 
-const DEFAULT_CSS_TOKEN_PREFIX = '--dyte-';
+const DEFAULT_CSS_TOKEN_PREFIX = '--rtk-';
 
 function getToken(token: string, tokenPrefix: string = DEFAULT_CSS_TOKEN_PREFIX) {
   return tokenPrefix + token;
@@ -20,7 +20,7 @@ const provideGoogleFont = (fontFamily: string) => {
 
   const links = [];
 
-  if (document.querySelector('link[data-dyte-font]') == null) {
+  if (document.querySelector('link[data-rtk-font]') == null) {
     /**
      * Adds the following preconnect link tags for faster google font loading
      * <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@ const provideGoogleFont = (fontFamily: string) => {
     const p1 = document.createElement('link');
 
     p1.rel = 'preconnect';
-    p1.setAttribute('data-dyte-font', 'true');
+    p1.setAttribute('data-rtk-font', 'true');
     p1.href = 'https://fonts.googleapis.com';
 
     const p2 = p1.cloneNode(true) as HTMLLinkElement;
@@ -42,7 +42,7 @@ const provideGoogleFont = (fontFamily: string) => {
 
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.setAttribute('data-dyte-font', fontFamily);
+  link.setAttribute('data-rtk-font', fontFamily);
   link.href = encodeURI(
     `https://fonts.googleapis.com/css2?family=${fontFamily}:wght@${weights.join(';')}&display=swap`
   );
@@ -119,10 +119,10 @@ const provideColors = (
 
 /**
  * Provides the design system new tokens to consume values from for styling the Dyte UI Kit's UI.
- * @param el The element/node you want to _provide_ Dyte's design system.
+ * @param el The element/node you want to _provide_ RTK Design system.
  * @param tokens The design tokens you want to updated.
  */
-export const provideDyteDesignSystem = (
+export const provideRtkDesignSystem = (
   el: HTMLElement,
   {
     spacingBase,
@@ -137,7 +137,7 @@ export const provideDyteDesignSystem = (
 ) => {
   if (typeof el !== 'object') {
     throw new Error(
-      '[dyte-ui-kit] (provideDyteDesignSystem): Passed element is not a valid HTML Element'
+      '[rtk-ui-kit] (provideDyteDesignSystem): Passed element is not a valid HTML Element'
     );
   }
 

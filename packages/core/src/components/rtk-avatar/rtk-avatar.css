@@ -1,0 +1,69 @@
+@import '../../styles/reset.css';
+
+:host {
+  @apply flex h-32 w-32 items-center justify-center;
+  @apply text-heading-lg;
+  @apply bg-brand-500 text-text-on-brand-1000;
+  @apply overflow-clip rounded-full;
+  @apply select-none;
+}
+
+rtk-icon {
+  @apply h-1/2 w-1/2;
+}
+
+.image-ctr {
+  @apply bg-background-700 flex h-full w-full items-center justify-center;
+  @apply text-text-600;
+}
+
+img {
+  @apply h-0 w-0 object-cover;
+}
+
+img.loaded {
+  @apply h-full w-full;
+}
+
+.initials {
+  @apply flex h-full w-full items-center justify-center;
+  @apply uppercase;
+}
+
+.image {
+  @apply flex h-full w-full items-center justify-center;
+
+  img {
+    @apply hidden;
+    @apply h-full w-full object-cover;
+  }
+  img.loaded {
+    @apply block;
+  }
+}
+
+/* Variants */
+
+:host([variant='hexagon']) {
+  @apply rounded-none;
+  clip-path: polygon(50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+:host([variant='square']) {
+  @apply rounded-none;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/** Sizes */
+
+:host([size='sm']) {
+  @apply text-text-sm h-14 w-14;
+}
+
+:host([size='md']) {
+  @apply h-28 w-28;
+}
+
+:host([size='lg']) {
+  @apply h-32 w-32;
+}

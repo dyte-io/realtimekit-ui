@@ -1,4 +1,4 @@
-import { Meeting } from '../types/dyte-client';
+import { Meeting } from '../types/rtk-client';
 import { ConnectedMeetingParticipant } from '../types/props';
 import { ConnectedMeetingState } from '../types/props';
 import {

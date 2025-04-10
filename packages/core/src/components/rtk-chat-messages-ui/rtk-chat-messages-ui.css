@@ -1,0 +1,117 @@
+@import '../../styles/reset.css';
+@import '../../styles/scrollbar.css';
+
+:host {
+  @apply relative flex flex-col;
+  @apply bg-background-900;
+  word-break: break-word;
+}
+
+.chat-container {
+  @apply box-border flex flex-col py-4;
+  flex: 1 0 0px;
+  overflow-y: scroll;
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .chat {
+    flex: 0 0 auto;
+  }
+}
+
+.file-picker {
+  @apply hidden;
+}
+
+.chat {
+  .head {
+    @apply flex items-center;
+
+    .name {
+      @apply text-text-sm mr-4 font-bold;
+    }
+
+    .time {
+      @apply text-text-sm text-text-800;
+    }
+  }
+
+  .body {
+    @apply mt-2 break-words leading-snug;
+
+    .emoji {
+      @apply text-heading-md;
+    }
+  }
+}
+
+p {
+  @apply mt-0 mb-3;
+}
+
+rtk-message-view {
+  @apply mt-4;
+  @apply text-text-900 block px-2;
+  @apply box-border;
+}
+
+rtk-message-view::part(message) {
+  @apply flex-grow;
+}
+
+*[is-continued] {
+  rtk-message-view {
+    @apply mt-1;
+  }
+}
+
+.pinned {
+  .message-wrapper {
+    @apply relative;
+  }
+
+  .pin-button {
+    @apply absolute right-4 -top-4 flex;
+    @apply bg-background-600 rounded-sm;
+
+    &:hover rtk-button {
+      @apply bg-brand-600;
+    }
+  }
+
+  rtk-message-view {
+    @apply bg-background-700;
+    @apply py-1;
+  }
+}
+
+a {
+  @apply text-brand-300 no-underline hover:underline;
+}
+
+.new-chat-marker {
+  @apply text-brand-300 flex w-full items-center gap-2;
+}
+
+.new-chat-marker::before {
+  content: '';
+  height: 1px;
+  @apply flex-1;
+  @apply bg-brand-300/50;
+}
+
+.show-new-messages-ctr {
+  @apply pointer-events-none flex justify-end p-3;
+  @apply z-0 -mt-14;
+}
+
+.show-new-messages {
+  @apply pointer-events-auto;
+  @apply translate-y-16 opacity-0 transition;
+}
+
+.show-new-messages.active {
+  @apply translate-y-0 opacity-100;
+}

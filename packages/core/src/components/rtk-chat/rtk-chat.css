@@ -1,0 +1,133 @@
+@import '../../styles/reset.css';
+@import '../../styles/scrollbar.css';
+
+:host {
+  @apply flex h-full w-full flex-col;
+  @apply text-text-md;
+  @apply text-text-1000 relative;
+}
+
+h3 {
+  @apply m-0 flex h-12 items-center justify-center;
+  @apply text-text-lg text-text-900 font-normal;
+  @apply text-center;
+}
+
+#dropzone {
+  @apply absolute inset-0 z-10 hidden;
+  @apply flex-col items-center justify-center;
+  @apply bg-background-800 text-text-700;
+}
+
+#dropzone.active {
+  @apply flex;
+  animation: 0.2s slide-up ease-in;
+}
+
+rtk-chat-messages-ui,
+rtk-chat-messages-ui-paginated {
+  flex: 1 0 0;
+}
+
+rtk-chat-composer-view {
+  @apply m-2;
+}
+
+.chat-container {
+  @apply flex h-full w-full flex-row;
+  container-type: size;
+  container-name: chatcontainer;
+}
+
+@container chatcontainer (height < 360px) {
+  rtk-channel-selector-view {
+    @apply h-8 min-h-[24px];
+  }
+}
+
+.chat {
+  @apply flex flex-1 flex-col;
+}
+
+.banner {
+  @apply h-full w-full;
+  @apply flex flex-col items-center justify-center;
+
+  .welcome-new-channel {
+    @apply w-48;
+  }
+  .create-channel-illustration {
+    @apply h-40 w-40;
+  }
+}
+
+.channel-selector-header {
+  @apply box-border;
+  @apply h-16 p-4;
+  @apply flex justify-between;
+  border-bottom: theme('borderWidth.sm') solid theme('colors.background.700');
+
+  .channel-create-btn {
+    @apply hover:text-brand-300 w-8 justify-center;
+  }
+}
+
+.view-chats-btn {
+  @apply mt-4;
+}
+
+.selector-container {
+  @apply max-w-80 z-50 w-full;
+  border-right: theme(borderWidth.sm) solid theme(colors.background.600);
+}
+
+.selector-container.hide {
+  @apply hidden;
+}
+
+.mobile-close-btn {
+  display: none;
+}
+
+.selector-container.mobile {
+  @apply h-full w-full max-w-full;
+  @apply absolute inset-0;
+  @apply bg-background-1000/60;
+  @apply flex;
+
+  rtk-channel-selector-view {
+    @apply max-w-96;
+    animation: 0.3s swipe-in;
+  }
+
+  .mobile-close-btn {
+    @apply my-4 mx-6 block;
+  }
+}
+
+.pinned-messages-header {
+  @apply flex items-center gap-2 p-2;
+  @apply bg-background-600 text-text-sm;
+  @apply cursor-pointer;
+
+  rtk-icon {
+    @apply h-3 w-3;
+  }
+
+  &:hover {
+    @apply bg-brand-500;
+  }
+}
+
+.pinned-messages-header.active {
+  @apply bg-brand-500;
+}
+
+@keyframes swipe-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

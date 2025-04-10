@@ -1,0 +1,118 @@
+@import '../../styles/reset.css';
+@import '../../styles//scrollbar.css';
+
+:host {
+  @apply relative flex overflow-hidden rounded-md;
+  @apply w-full;
+  @apply text-text-1000 bg-background-900;
+}
+
+header {
+  @apply mr-2 flex items-center justify-between py-0 px-2;
+  h3 {
+    @apply my-4;
+  }
+}
+
+.back-btn {
+  @apply hover:bg-background-700 rounded-sm bg-transparent shadow-none;
+}
+
+aside {
+  @apply bg-background-1000 !max-w-56 box-border flex flex-col pl-2;
+
+  button {
+    @apply mt-4 box-border flex w-full items-center justify-between rounded-l-sm px-4 py-3;
+    @apply text-text-900 bg-transparent;
+    @apply text-text-md cursor-default shadow-none;
+
+    @apply border-none outline-none;
+
+    .right {
+      @apply flex items-center;
+
+      rtk-icon {
+        @apply h-5 w-5 last:ml-4;
+      }
+    }
+  }
+
+  button[type='button'] {
+    @apply hover:bg-background-700 cursor-pointer transition-colors;
+    border-right: theme('borderWidth.md') solid theme('colors.transparent');
+  }
+
+  button.active {
+    @apply border-brand bg-brand/20 hover:bg-brand/20;
+  }
+
+  button.hidden {
+    display: none;
+  }
+}
+
+main {
+  @apply relative box-border flex h-full w-full flex-col;
+}
+
+:host([size='sm']) aside {
+  @apply bg-background-900;
+}
+
+:host([size='sm']) {
+  aside {
+    @apply !w-full !max-w-full pl-0;
+
+    button {
+      @apply rounded-none;
+    }
+
+    button.active {
+      @apply hover:bg-background-700 border-none bg-transparent;
+    }
+
+    button.hidden {
+      display: none;
+    }
+  }
+
+  aside.hide {
+    @apply hidden;
+  }
+
+  main {
+    @apply hidden h-full w-full p-0;
+  }
+
+  main.active {
+    @apply block;
+  }
+
+  header {
+    @apply m-0 justify-center;
+
+    rtk-button {
+      @apply absolute left-4;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background-800 rounded-lg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-background-1000 rounded-lg;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-background-1000 rounded-lg;
+}
+
+.progress-bar {
+  @apply bg-background-600 h-1 w-full overflow-hidden;
+}
+.progress-indicator {
+  @apply bg-brand-500 h-full;
+}
