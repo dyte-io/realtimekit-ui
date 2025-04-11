@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "prepare": "is-ci || husky install",
-    "start": "npm start -w @dytesdk/ui-kit",
+    "start": "npm start -w @cloudflare/realtimekit-ui",
     "dev": "npm start",
     "lint": "npm run lint --workspaces --if-present",
     "lint:fix": "npm run lint:fix --workspaces --if-present",

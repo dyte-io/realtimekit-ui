@@ -20,7 +20,6 @@
 
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [About](#about)
 
 <!-- GETTING STARTED -->
 
@@ -30,13 +29,13 @@
 
 > [React UI Kit](https://npmjs.com/package/@cloudflare/realtimekit-react-ui) · [Angular UI Kit](https://npmjs.com/package/@cloudflare/realtimekit-angular-ui)
 
-First, you will need to install the ui-kit along with the [web-core](https://npmjs.com/package/@dytesdk/web-core) package:
+First, you will need to install the ui-kit along with the [web-core](https://npmjs.com/package/@cloudflare/realtimekit) package:
 
 ```sh
-npm i @cloudflare/realtimekit-ui @dytesdk/web-core
+npm i @cloudflare/realtimekit-ui @cloudflare/realtimekit
 ```
 
-The `web-core` package is the package which handles all the low level logic required for a meeting by interating with our servers. Use it to create a meeting object, which you can pass along to the UI Kit components.
+The `@cloudflare/realtimekit` package is the package which handles all the low level logic required for a meeting by interating with our servers. Use it to create a meeting object, which you can pass along to the UI Kit components.
 
 ## Usage
 
@@ -77,7 +76,3 @@ You can now pass this object to most of the components, like so (with Vanilla JS
   init();
 </script>
 ```
-
-## About
-
-`realtimekit-ui` is created & maintained by Cloudflare.

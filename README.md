@@ -41,7 +41,7 @@
 First, you will need to install the ui-kit along with the [web-core](https://npmjs.com/package/@dytesdk/web-core) package:
 
 ```sh
-npm i @dytesdk/ui-kit @dytesdk/web-core
+npm i @cloudflare/realtimekit-ui @dytesdk/web-core
 ```
 
 The `web-core` package is the package which handles all the low level logic required for a meeting by interating with our servers. Use it to create a meeting object, which you can pass along to the UI Kit components.
