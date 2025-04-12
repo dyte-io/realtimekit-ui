@@ -2369,6 +2369,10 @@ export namespace Components {
          */
         "notification": Notification;
         /**
+          * Stops timeout when true
+         */
+        "paused": boolean;
+        /**
           * Size
          */
         "size": Size;
@@ -9149,6 +9153,10 @@ declare namespace LocalJSX {
           * Dismiss event
          */
         "onRtkNotificationDismiss"?: (event: RtkNotificationCustomEvent<string>) => void;
+        /**
+          * Stops timeout when true
+         */
+        "paused"?: boolean;
         /**
           * Size
          */

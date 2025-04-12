@@ -9,7 +9,7 @@
 }
 
 .ctr {
-  @apply min-w-40 box-border inline-flex h-full items-center px-3;
+  @apply min-w-40 box-border inline-flex h-full items-center pl-3 pr-2;
   @apply bg-background-600 select-none rounded-md;
   @apply shadow-background-1000 shadow-md;
   @apply pointer-events-auto;
@@ -42,22 +42,23 @@ rtk-icon.icon {
   @apply text-text-900;
 }
 
-rtk-icon.dismiss {
-  @apply ml-auto h-5 w-5;
-  @apply text-text-600 hover:text-text-1000 rounded-md hover:cursor-pointer;
+button.dismiss {
+  @apply flex h-6 w-6 items-center justify-center border-none p-0;
+  @apply text-text-600 outline-text-1000 rounded-sm bg-transparent outline-1;
+  @apply hover:text-text-1000 hover:cursor-pointer focus-visible:outline;
   @apply transition-colors;
 }
 
+.dismiss rtk-icon {
+  @apply h-5 w-5;
+}
+
 rtk-button {
-  @apply ml-4 mr-2 rounded-sm;
+  @apply rounded-sm;
 }
 
 .right {
-  @apply ml-auto flex items-center;
-
-  & > * {
-    @apply ml-2 first:ml-0;
-  }
+  @apply ml-auto flex items-center gap-2;
 }
 
 :host(.exit) {
