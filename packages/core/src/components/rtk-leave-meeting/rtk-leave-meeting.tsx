@@ -139,20 +139,16 @@ export class RtkLeaveMeeting {
                 {this.t('breakout_rooms.leave_confirmation.main_room_btn')}
               </rtk-button>
             )}
-            <rtk-button
-              variant={this.canEndMeeting ? 'secondary' : 'danger'}
-              title={this.t('leave')}
-              onClick={this.handleLeave}
-              class={{
-                'secondary-btn': this.canEndMeeting,
-                'secondary-danger-btn': this.canEndMeeting,
-              }}
-            >
+            <rtk-button variant="danger" title={this.t('leave')} onClick={this.handleLeave}>
               {this.t('leave')}
             </rtk-button>
 
             {this.canEndMeeting && (
-              <rtk-button variant="danger" onClick={this.handleEndMeeting}>
+              <rtk-button
+                variant="danger"
+                class="secondary-btn secondary-danger-btn"
+                onClick={this.handleEndMeeting}
+              >
                 {this.t('end.all')}
               </rtk-button>
             )}
