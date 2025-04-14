@@ -1,54 +1,43 @@
-<!-- PROJECT LOGO -->
-<p align="center">
-  <a href="https://dyte.io">
-    <img src="https://assets.dyte.io/logo-outlined.png" alt="Logo" width="120" />
-  </a>
+# RealtimeKit React UI
 
-  <h2 align="center">RealtimeKit UI for React</h3>
+**RealtimeKit React UI** provides pre-built, ready-to-use UI components for React for integrating with [Cloudflare RealtimeKit](https://npmjs.com/package/@cloudflare/realtimekit).
 
-  <p align="center">
-    A set of UI components to truly customize your meeting UI, in React
-    <br />
-    <a href="https://docs.dyte.io"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://community.dyte.io">Report Bug</a>
-    ·
-    <a href="https://community.dyte.io">Request Feature</a>
-  </p>
-</p>
+If you're using a different framework or no framework (see HTML), we also offer dedicated packages:
 
-<!-- TABLE OF CONTENTS -->
+- [Vue](https://npmjs.com/package/@cloudflare/realtimekit-vue-ui)
+- [Angular](https://npmjs.com/package/@cloudflare/realtimekit-angular-ui)
+- [HTML (Web Components)](https://npmjs.com/package/@cloudflare/realtimekit-ui)
 
-## Table of Contents
+## Usage
 
-- [Getting Started](#getting-started)
-- [Usage](#usage)
+First, install RealtimeKit UI along with [RealtimeKit](https://npmjs.com/package/@cloudflare/realtimekit):
 
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-> There are separate UI Kit packages for VanillaJS and Angular. Check out the links to the packages below
-
-> [UI Kit](https://npmjs.com/package/@cloudflare/realtimekit-ui) · [Angular UI Kit](https://npmjs.com/package/@cloudflare/realtimekit-angular-ui)
-
-First, you will need to install the RealtimeKit UI along with the [RealtimeKit](https://npmjs.com/package/@cloudflare/realtimekit) package:
+> `@cloudflare/realtimekit` is the core package that offers APIs to handle meetings in the client side.
+> You use it to access and perform actions in a meeting.
 
 ```sh
 npm i @cloudflare/realtimekit-react-ui @cloudflare/realtimekit
 ```
 
-## Usage
+### Simple Usage
 
-Use the `useDyteClient()` hook to initialize a client
+This is the simplest way to use RealtimeKit UI, where you don't have to manage the entire meeting UI on your own. Everything will be taken care of by the `RtkMeeting` component.
+
+Use the `useRealtimeKitClient()` hook to access the `meeting` instance state, as well as the `meeting` instance initializer method.
+
+Then pass the `authToken` of a participant that you receive from your API.
+
+> You call the RealtimeKit Add Participant API from your own backend API to get this `authToken`
+> to use with RealtimeKit.
 
 ```jsx
+import { useRealtimeKitClient } from '@cloudflare/realtimekit/react';
+
 function App() {
-  const [client, initClient] = useDyteClient();
+  const [meeting, initMeeting] = useRealtimeKitClient();
 
   useEffect(() => {
-    initClient({
+    initMeeting({
       authToken: '<auth-token>',
       roomName: '<room-name>',
       defaults: {
@@ -58,6 +47,40 @@ function App() {
     });
   }, []);
 
-  return <RtkMeeting meeting={client} />;
+  return <RtkMeeting meeting={meeting} />;
+}
+```
+
+### Using `<RtkUiProvider>`
+
+If you wish to use individual UI components to build your desired UI, you can use the `RtkUiProvider` component to provide the meeting instance to all child components to make development easier:
+
+```jsx
+import { useRealtimeKitClient } from '@cloudflare/realtimekit/react';
+import {
+  RtkUiProvider,
+  RtkMeeting,
+  RtkSimpleGrid,
+} from '@cloudflare/realtimekit-react-ui';
+
+function App() {
+  const [meeting, initMeeting] = useRealtimeKitClient();
+
+  useEffect(() => {
+    initMeeting({
+      authToken: '<auth-token>',
+      roomName: '<room-name>',
+      defaults: {
+        audio: true,
+        video: true,
+      },
+    });
+  }, []);
+
+  return (
+    <RtkUiProvider meeting={meeting}>
+      <RtkSimpleGrid />
+    </RtkUiProvider>
+  );
 }
 ```

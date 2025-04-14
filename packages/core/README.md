@@ -1,50 +1,34 @@
-<!-- PROJECT LOGO -->
-<p align="center">
-  <h2 align="center">RealtimeKit UI by Cloudflare</h3>
+# RealtimeKit UI
 
-  <p align="center">
-    A set of UI components to truly customize your meeting UI
-    <br />
-    <a href="https://docs.dyte.io"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://community.dyte.io">Report Bug</a>
-    ·
-    <a href="https://community.dyte.io">Request Feature</a>
-  </p>
-</p>
+**RealtimeKit UI** provides pre-built, ready-to-use UI components for integrating with [Cloudflare RealtimeKit](https://npmjs.com/package/@cloudflare/realtimekit).
 
-<!-- TABLE OF CONTENTS -->
+This package includes Web Components that work natively in HTML — so no framework required.
 
-## Table of Contents
+If you're using a specific framework, we also offer dedicated packages:
 
-- [Getting Started](#getting-started)
-- [Usage](#usage)
+- [React](https://npmjs.com/package/@cloudflare/realtimekit-react-ui)
+- [Vue](https://npmjs.com/package/@cloudflare/realtimekit-vue-ui)
+- [Angular](https://npmjs.com/package/@cloudflare/realtimekit-angular-ui)
 
-<!-- GETTING STARTED -->
+## Usage
 
-## Getting Started
+First, install RealtimeKit UI along with [RealtimeKit](https://npmjs.com/package/@cloudflare/realtimekit):
 
-> There are separate UI Kit packages for React and Angular because they don't fully support Web Components natively yet. Check out the links to the packages below
-
-> [React UI Kit](https://npmjs.com/package/@cloudflare/realtimekit-react-ui) · [Angular UI Kit](https://npmjs.com/package/@cloudflare/realtimekit-angular-ui)
-
-First, you will need to install the ui-kit along with the [web-core](https://npmjs.com/package/@cloudflare/realtimekit) package:
+> `@cloudflare/realtimekit` is the core package that offers APIs to handle meetings in the client side.
+> You use it to access and perform actions in a meeting.
 
 ```sh
 npm i @cloudflare/realtimekit-ui @cloudflare/realtimekit
 ```
 
-The `@cloudflare/realtimekit` package is the package which handles all the low level logic required for a meeting by interating with our servers. Use it to create a meeting object, which you can pass along to the UI Kit components.
+Then you'll need to initialize a meeting object once you've received an `authToken` of a participant from your APIs.
 
-## Usage
-
-You'll need to initialize a meeting object first.
+> You call the RealtimeKit Add Participant API from your own backend API to get this `authToken`
+> to use with RealtimeKit.
 
 ```js
-const meeting = await DyteClient.init({
-  roomName: '<room-name>',
-  authToken: '<auth-token>',
+const meeting = await RealtimeKit.init({
+  authToken: '<your-auth-token>',
   defaults: {
     video: true,
     audio: true,
@@ -52,7 +36,7 @@ const meeting = await DyteClient.init({
 });
 ```
 
-You can now pass this object to most of the components, like so (with Vanilla JS, HTML):
+You can now pass this meeting instance to any of the components:
 
 ```html
 <!-- Load the component -->
@@ -60,9 +44,8 @@ You can now pass this object to most of the components, like so (with Vanilla JS
 
 <script>
   const init = async () => {
-    const meeting = await DyteClient.init({
-      authToken: '<auth-token>',
-      roomName: '<room-name>',
+    const meeting = await RealtimeKit.init({
+      authToken: '<your-auth-token>',
       defaults: {
         video: true,
         audio: true,
