@@ -1,4 +1,4 @@
-# Dyte UI Kit
+# Cloudflare RealtimeKit UI
 
 Read on to understand the project and how you can get started, or open up the section:
 
@@ -42,7 +42,7 @@ You can use these styles in css files like:
 ```css
 :host {
   /** @apply directive */
-  @apply flex items-center justify-center bg-brand-500;
+  @apply bg-brand-500 flex items-center justify-center;
   /** or you can use the theme values with theme() */
   border-left: theme('borderWidths.sm') solid theme('colors.brand.500');
 }
@@ -97,12 +97,12 @@ These components will take in some default props via attributes:
 
 ```ts
 interface DefaultProps {
-  meeting: Meeting
-  config?: UIConfig
-  size?: Size
-  states?: States
-  iconPack?: IconPack
-  t?: LangDict
+  meeting: RealtimeKit;
+  config?: UIConfig;
+  size?: Size;
+  states?: States;
+  iconPack?: IconPack;
+  t?: LangDict;
 }
 ```
 
@@ -113,7 +113,7 @@ Some important points:
   - like `<rtk-icon>` will need the config object to render the logo
 - The `size` prop can be used for styling your component for different breakpoints and also for using in structuring your component
 - The `iconPack` prop is optional, and if you don't pass it, it will use the `defaultIconPack` which is an icon set from [fluent-icons](https://fluenticons.co/outlined/)
-- The `t` prop is optional, uses `defaultLanguage` by default which is `en`.
+- The `t` prop is optional, uses `defaultLanguage` by default.
 - The `states` prop is optional and is passed down from `<rtk-meeting>` component which has all the states which are needed for a meeting.
 
 ## Handling imports in StencilJS
@@ -122,7 +122,7 @@ Stencil requires all imports to be named, and gives an error otherwise when runn
 
 So, commonly used types from `web-core` and others are named exports from the `types` directory.
 
-- [`rtk-client.ts`](../src/types/rtk-client.ts) consists of types & exports which are required from the `web-core` package.
+- [`rtk-client.ts`](../src/types/rtk-client.ts) consists of types & exports which are required from the `@cloudflare/realtimekit` package.
 - [`props.ts`](../src/types/props.ts) consists of a set of types which are commonly used by components like `Size`, `States`.
 - [`ui-config/*.ts`](../src/types/ui-config) consists of types for the UI Config.
 
@@ -130,22 +130,16 @@ These icons are fetched and merged with the default icon pack to handle missing 
 
 Note that only the `rtk-meeting` components accepts the URL, all other components accept the `iconPack` prop, which is just the object downloaded from the URL.
 
-Dyte will provide a set of most commonly used icon packs via a CDN on `icons.dyte.io` or `assets.dyte.io/icons`
-
 ## Language
 
-You can specify a language in the UI config, or pass it as a prop to `rtk-meeting` as:
-
-The language codes are specified in [ISO 639-1 Code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
-
-Note that only the `rtk-meeting` components accepts the `language` property, all other components accept the `t` prop, which is just the object containing the language data.
+You can pass a language object as a prop `t` to `rtk-meeting` as:
 
 > We cannot use the `lang` attribute as it is a reserved attribute which stencil doesn't allow to be used a prop in our components.
 
-```html
-<rtk-meeting language="hi"></rtk-meeting>
+```jsx
+<RtkMeeting
+  t={useLanguage({
+    ended: 'Ended',
+  })}
+/>
 ```
-
-The language dictionaries will be available via a CDN, and `rtk-meeting` will download the necessary dictionary based on the provided language code.
-
-CDN: `https://assets.dyte.io/languages/{language}.json`
