@@ -14,6 +14,7 @@ import {
 import { RtkSidebarTab, RtkSidebarView } from '../rtk-sidebar-ui/rtk-sidebar-ui';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { StageStatus } from '@dytesdk/web-core';
+import { Render } from '../../lib/render';
 
 export type RtkSidebarSection = 'chat' | 'polls' | 'participants' | 'plugins';
 
@@ -199,10 +200,16 @@ export class RtkSidebar {
               </rtk-button>
             </div>
           )}
-          {defaults.states.sidebar === 'chat' && <rtk-chat {...defaults} slot="chat" />}
+          {defaults.states.sidebar === 'chat' && (
+            <Render element="rtk-chat" defaults={defaults} props={{ slot: 'chat' }} />
+          )}
           {defaults.states.sidebar === 'polls' && <rtk-polls {...defaults} slot="polls" />}
           {defaults.states.sidebar === 'participants' && (
-            <rtk-participants {...defaults} slot="participants" />
+            <Render
+              element="rtk-participants"
+              defaults={defaults}
+              props={{ slot: 'participants' }}
+            />
           )}
           {defaults.states.sidebar === 'plugins' && <rtk-plugins {...defaults} slot="plugins" />}
         </rtk-sidebar-ui>
