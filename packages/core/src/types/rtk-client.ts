@@ -1,11 +1,11 @@
-import type DyteClient from '@dytesdk/web-core';
+import type DyteClient from '@cloudflare/realtimekit';
 import type {
-  DyteSelf as Self,
-  DyteParticipant as Participant,
+  RTKSelf as Self,
+  RTKParticipant as Participant,
   leaveRoomState,
-} from '@dytesdk/web-core';
+} from '@cloudflare/realtimekit';
 
-// TODO (@tushar): maybe move this to @dytesdk/web-core
+// TODO (@tushar): maybe move this to @cloudflare/realtimekit
 type WaitlistedParticipant = Readonly<
   Omit<Participant, 'audioTrack' | 'videoTrack' | 'screenShareTracks'>
 >;

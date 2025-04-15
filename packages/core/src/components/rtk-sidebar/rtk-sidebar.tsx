@@ -13,7 +13,7 @@ import {
 } from '../../utils/sidebar';
 import { RtkSidebarTab, RtkSidebarView } from '../rtk-sidebar-ui/rtk-sidebar-ui';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { StageStatus } from '@dytesdk/web-core';
+import { StageStatus } from '@cloudflare/realtimekit';
 import { Render } from '../../lib/render';
 
 export type RtkSidebarSection = 'chat' | 'polls' | 'participants' | 'plugins';

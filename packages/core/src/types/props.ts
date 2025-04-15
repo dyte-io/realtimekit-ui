@@ -1,8 +1,8 @@
-import type { ImageMessage, Message } from '@dytesdk/web-core';
+import type { ImageMessage, Message } from '@cloudflare/realtimekit';
 import { ButtonVariant } from '../components/rtk-button/rtk-button';
 import { RoomLeftState } from './rtk-client';
 import { LangDict } from '../exports';
-import type { ChatChannel as ChatChannelWebCore } from '@dytesdk/web-core';
+import type { ChatChannel as ChatChannelWebCore } from '@cloudflare/realtimekit';
 import { RtkSidebarSection } from '../components/rtk-sidebar/rtk-sidebar';
 import { IconVariant } from '../components/rtk-icon/rtk-icon';
 import { ParticipantsTabId } from '../components/rtk-participants/rtk-participants';

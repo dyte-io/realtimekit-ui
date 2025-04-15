@@ -1,4 +1,4 @@
-import type { DyteThemePreset, DytePermissionsPreset } from '@dytesdk/web-core';
+import type { RTKThemePreset, RTKPermissionsPreset } from '@cloudflare/realtimekit';
 import { defaultConfig } from '../lib/default-ui-config';
 import { UIConfig } from '../types/ui-config';
 import { DesignTokens } from '../types/ui-config/design-tokens';
@@ -37,7 +37,7 @@ type ConfigOptions = {
  * @returns
  */
 export const generateConfig = (
-  oldConfig: Partial<DyteThemePreset>,
+  oldConfig: Partial<RTKThemePreset>,
   meeting: Meeting,
   toExtend: UIConfig = {},
   options: ConfigOptions = { grid_pagination: true, settings_toggle: true }
@@ -83,7 +83,7 @@ export const generateConfig = (
       moreElements.push('rtk-recording-toggle');
     }
 
-    if ((meeting.self.permissions as DytePermissionsPreset).transcriptionEnabled ?? false) {
+    if ((meeting.self.permissions as RTKPermissionsPreset).transcriptionEnabled ?? false) {
       moreElements.push('rtk-caption-toggle');
     }
 

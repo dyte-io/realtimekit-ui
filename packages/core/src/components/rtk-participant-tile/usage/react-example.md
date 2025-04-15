@@ -1,26 +1,26 @@
 ```jsx live
-<DyteParticipantTile participant={meeting.self}>
+<RTKParticipantTile participant={meeting.self}>
   <DyteNameTag participant={meeting.self}>
     <DyteAudioVisualizer slot="start" />
   </DyteNameTag>
-</DyteParticipantTile>
+</RTKParticipantTile>
 ```
 
 You can change the `name-tag-position` to any of the supported values
 and change the placement of audio-visualizer in name-tag as well.
 
 ```jsx live
-<DyteParticipantTile participant={meeting.self} nameTagPosition="bottom-center">
+<RTKParticipantTile participant={meeting.self} nameTagPosition="bottom-center">
   <DyteNameTag participant={meeting.self}>
     <DyteAudioVisualizer slot="end" />
   </DyteNameTag>
-</DyteParticipantTile>
+</RTKParticipantTile>
 ```
 
 It also has a few variants.
 
 ```jsx live
-<DyteParticipantTile
+<RTKParticipantTile
   participant={meeting.self}
   nameTagPosition="bottom-center"
   variant="gradient"
@@ -28,5 +28,5 @@ It also has a few variants.
   <DyteNameTag participant={meeting.self}>
     <DyteAudioVisualizer slot="start" />
   </DyteNameTag>
-</DyteParticipantTile>
+</RTKParticipantTile>
 ```

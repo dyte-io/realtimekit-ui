@@ -1,4 +1,4 @@
-import { MediaKind } from '@dytesdk/web-core';
+import { MediaKind } from '@cloudflare/realtimekit';
 
 export type StatsHealth = 'Good' | 'Average' | 'Poor';
 

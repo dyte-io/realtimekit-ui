@@ -1,4 +1,4 @@
-import type { LivestreamState } from '@dytesdk/web-core';
+import type { LivestreamState } from '@cloudflare/realtimekit';
 import Hls from 'hls.js';
 import {
   Component,

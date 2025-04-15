@@ -5,7 +5,7 @@ import { Meeting, Peer, MediaPermission } from '../../types/rtk-client';
 import { PermissionSettings, Size, States } from '../../types/props';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { StageStatus } from '@dytesdk/web-core';
+import { StageStatus } from '@cloudflare/realtimekit';
 
 /**
  * A button which toggles your camera.

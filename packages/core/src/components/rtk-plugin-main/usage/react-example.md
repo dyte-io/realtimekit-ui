@@ -1,3 +1,3 @@
 ```jsx live
-<DytePluginMain meeting={meeting} plugin={activePlugin} />
+<RTKSelfMain meeting={meeting} plugin={activePlugin} />
 ```

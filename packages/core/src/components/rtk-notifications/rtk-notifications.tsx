@@ -18,7 +18,7 @@ import type {
   RecordingState,
   ChatUpdateParams,
   SocketConnectionState,
-} from '@dytesdk/web-core';
+} from '@cloudflare/realtimekit';
 import { defaultConfig } from '../../exports';
 import { parseMessageForTarget } from '../../utils/chat';
 import { SyncWithStore } from '../../utils/sync-with-store';

@@ -3,7 +3,7 @@ import { Meeting } from '../../types/rtk-client';
 import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { defaultIconPack, IconPack } from '../../lib/icons';
-import { DytePlugin } from '@dytesdk/web-core';
+import { RTKPlugin } from '@cloudflare/realtimekit';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { defaultConfig } from '../../exports';
@@ -43,7 +43,7 @@ export class RtkPlugins {
   /** Emits updated state data */
   @Event({ eventName: 'rtkStateUpdate' }) stateUpdate: EventEmitter<States>;
 
-  @State() plugins: DytePlugin[] = [];
+  @State() plugins: RTKPlugin[] = [];
 
   @State() canStartPlugins: boolean = false;
 

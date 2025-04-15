@@ -1,7 +1,7 @@
 import { Component, Host, h, Prop, Event, EventEmitter, State } from '@stencil/core';
 import { RtkI18n, IconPack, defaultIconPack, useLanguage } from '../../exports';
 import { ChatChannel } from '../../types/props';
-import type { Message } from '@dytesdk/web-core';
+import type { Message } from '@cloudflare/realtimekit';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { TextMessageView } from '../rtk-text-message/components/TextMessage';
 
@@ -163,9 +163,7 @@ export class RtkChannelSelectorUi {
               onClick={this.onRevealClicked}
               class="sidebar-btn"
             >
-              <rtk-icon
-                icon={this.isHidden ? this.iconPack.chevron_left : this.iconPack.dismiss}
-              />
+              <rtk-icon icon={this.isHidden ? this.iconPack.chevron_left : this.iconPack.dismiss} />
             </rtk-button>
           )}
           <slot name="header"></slot>
@@ -232,9 +230,7 @@ export class RtkChannelSelectorUi {
               onClick={this.onRevealClicked}
               class="sidebar-btn"
             >
-              <rtk-icon
-                icon={this.isHidden ? this.iconPack.chevron_left : this.iconPack.dismiss}
-              />
+              <rtk-icon icon={this.isHidden ? this.iconPack.chevron_left : this.iconPack.dismiss} />
             </rtk-button>
           </div>
         )}

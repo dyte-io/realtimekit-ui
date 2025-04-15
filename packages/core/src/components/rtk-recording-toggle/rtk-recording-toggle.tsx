@@ -1,4 +1,4 @@
-import type { RecordingState } from '@dytesdk/web-core';
+import type { RecordingState } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';

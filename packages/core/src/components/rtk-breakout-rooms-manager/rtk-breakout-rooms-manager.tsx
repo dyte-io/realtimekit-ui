@@ -4,7 +4,7 @@ import { defaultIconPack, IconPack } from '../../lib/icons';
 import { PartialStateEvent, States } from '../../types/props';
 import { Meeting } from '../../types/rtk-client';
 import { participantIdentifier, resetRoomCount } from '../../utils/breakout-rooms';
-import { DytePermissionsPreset } from '@dytesdk/web-core';
+import { RTKPermissionsPreset } from '@cloudflare/realtimekit';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import BreakoutRoomsManager, { DraftMeeting } from '../../utils/breakout-rooms-manager';
 
@@ -26,7 +26,7 @@ const MIN_ROOMS = 1;
 export class RtkBreakoutRoomsManager {
   private selectorRef: HTMLDivElement;
 
-  private permissions: DytePermissionsPreset['connectedMeetings'];
+  private permissions: RTKPermissionsPreset['connectedMeetings'];
 
   /** Flag to indicate busy state */
   @State() loading: boolean = false;

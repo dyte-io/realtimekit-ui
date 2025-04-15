@@ -7,7 +7,7 @@ import {
   MediaKind,
   ProducerScoreStats,
   AudioProducerScoreStats,
-} from '@dytesdk/web-core';
+} from '@cloudflare/realtimekit';
 
 import { SyncWithStore } from '../../utils/sync-with-store';
 

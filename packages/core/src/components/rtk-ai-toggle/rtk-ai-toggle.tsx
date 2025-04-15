@@ -5,7 +5,7 @@ import { Size, States } from '../../types/props';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';
 import { Meeting } from '../../types/rtk-client';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DytePermissionsPreset } from '@dytesdk/web-core';
+import { RTKPermissionsPreset } from '@cloudflare/realtimekit';
 
 @Component({
   tag: 'rtk-ai-toggle',
@@ -62,7 +62,7 @@ export class RtkAiToggle {
   render() {
     const text = this.t('ai.meeting_ai');
 
-    if (!(this.meeting?.self?.permissions as DytePermissionsPreset).transcriptionEnabled) {
+    if (!(this.meeting?.self?.permissions as RTKPermissionsPreset).transcriptionEnabled) {
       return <Host data-hidden />;
     }
 

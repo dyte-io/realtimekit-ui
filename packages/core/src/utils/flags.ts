@@ -1,4 +1,4 @@
-import DyteClient from '@dytesdk/web-core';
+import RealtimeKitClient from '@cloudflare/realtimekit';
 import { showLivestream } from './livestream';
 
 export const FlagsmithFeatureFlags = {
@@ -13,14 +13,14 @@ export const FlagsmithFeatureFlags = {
   PINNED_MESSAGES: 'pinned_msgs',
 };
 
-export const isBreakoutRoomsEnabled = (meeting: DyteClient) =>
+export const isBreakoutRoomsEnabled = (meeting: RealtimeKitClient) =>
   meeting.connectedMeetings.supportsConnectedMeetings;
 
-export const usePaginatedChat = (meeting: DyteClient) =>
+export const usePaginatedChat = (meeting: RealtimeKitClient) =>
   meeting?.meta.viewType === 'CHAT' ||
   showLivestream(meeting) ||
   meeting?.__internals__?.features.hasFeature('feat_paginated_chat');
 
-export const disableSettingSinkId = (meeting: DyteClient) =>
+export const disableSettingSinkId = (meeting: RealtimeKitClient) =>
   meeting?.__internals__?.browserSpecs.isFirefox() &&
   meeting?.__internals__?.features.hasFeature('disable_firefox_setting_sink_id');

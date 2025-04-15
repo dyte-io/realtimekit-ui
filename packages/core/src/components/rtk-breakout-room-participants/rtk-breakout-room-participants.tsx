@@ -3,11 +3,11 @@ import { Meeting } from '../../types/rtk-client';
 import { Component, Host, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { getAllConnectedParticipants, participantIdentifier } from '../../utils/breakout-rooms';
-import type { DyteConnectedMeetings } from '@dytesdk/web-core';
+import type { RTKConnectedMeetings } from '@cloudflare/realtimekit';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { formatName, shorten } from '../../utils/string';
 
-type ConnectedPeer = DyteConnectedMeetings['parentMeeting']['participants'][number];
+type ConnectedPeer = RTKConnectedMeetings['parentMeeting']['participants'][number];
 
 /**
  * A component which lists all participants, with ability to

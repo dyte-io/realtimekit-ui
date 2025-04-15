@@ -13,7 +13,7 @@ import {
 import { defaultIconPack, RtkI18n, IconPack, States, useLanguage } from '../../exports';
 import { Meeting } from '../../types/rtk-client';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DyteBasicParticipant } from '@dytesdk/web-core';
+import { RTKBasicParticipant } from '@cloudflare/realtimekit';
 
 @Component({
   tag: 'rtk-channel-creator',
@@ -58,7 +58,7 @@ export class RtkChannelCreator {
 
   @Element() $el: HTMLRtkChannelCreatorElement;
 
-  private allMembers: Map<string, DyteBasicParticipant> = new Map();
+  private allMembers: Map<string, RTKBasicParticipant> = new Map();
 
   private inputTextRef: HTMLInputElement = null;
 
@@ -110,7 +110,7 @@ export class RtkChannelCreator {
     this.focusOnSearch();
   };
 
-  private keyDownHandler = (e: KeyboardEvent, filteredMembers: DyteBasicParticipant[]) => {
+  private keyDownHandler = (e: KeyboardEvent, filteredMembers: RTKBasicParticipant[]) => {
     if (e.key === 'ArrowDown') {
       this.focusedMemberIndex = Math.min(this.focusedMemberIndex + 1, filteredMembers.length - 1);
     } else if (e.key === 'ArrowUp') {

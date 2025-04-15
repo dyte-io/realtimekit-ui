@@ -18,10 +18,7 @@ import { defaultConfig, States, UIConfig } from '../../exports';
 import { FlagsmithFeatureFlags } from '../../utils/flags';
 import { autoPlacement, computePosition, hide, offset, shift } from '@floating-ui/dom';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import type {
-  DyteParticipant as DyteParticipantType,
-  DyteSelf as DyteSelfType,
-} from '@dytesdk/web-core';
+import type { RTKParticipant, RTKSelf } from '@cloudflare/realtimekit';
 
 export type ParticipantViewMode = 'sidebar';
 
@@ -119,22 +116,13 @@ export class RtkParticipant {
     );
     if (this.participant == null || this.participant.removeListener == undefined) return;
     this.audioUpdateListener &&
-      (this.participant as DyteParticipantType).removeListener(
-        'audioUpdate',
-        this.audioUpdateListener
-      );
+      (this.participant as RTKParticipant).removeListener('audioUpdate', this.audioUpdateListener);
     this.videoUpdateListener &&
-      (this.participant as DyteParticipantType).removeListener(
-        'videoUpdate',
-        this.videoUpdateListener
-      );
-    (this.participant as DyteParticipantType).removeListener('pinned', this.pinnedListener);
-    (this.participant as DyteParticipantType).removeListener('unpinned', this.pinnedListener);
-    (this.participant as DyteParticipantType).removeListener(
-      'stageStatusUpdate',
-      this.stageListener
-    );
-    (this.participant as DyteSelfType).removeListener('toggleTile', this.toggleTileListener);
+      (this.participant as RTKParticipant).removeListener('videoUpdate', this.videoUpdateListener);
+    (this.participant as RTKParticipant).removeListener('pinned', this.pinnedListener);
+    (this.participant as RTKParticipant).removeListener('unpinned', this.pinnedListener);
+    (this.participant as RTKParticipant).removeListener('stageStatusUpdate', this.stageListener);
+    (this.participant as RTKSelf).removeListener('toggleTile', this.toggleTileListener);
   }
 
   @Watch('meeting')
@@ -176,7 +164,7 @@ export class RtkParticipant {
       this.audioEnabled = participant.audioEnabled;
       this.videoEnabled = participant.videoEnabled;
       this.isPinned = participant.isPinned;
-      this.isHidden = (participant as DyteSelfType).hidden ?? false;
+      this.isHidden = (participant as RTKSelf).hidden ?? false;
       this.isOnStage = participant.stageStatus === 'ON_STAGE';
       this.audioUpdateListener = ({ audioEnabled }) => {
         this.audioEnabled = audioEnabled;
@@ -185,12 +173,12 @@ export class RtkParticipant {
         this.videoEnabled = videoEnabled;
       };
       if (participant.addListener == undefined) return;
-      (participant as DyteParticipantType).addListener('audioUpdate', this.audioUpdateListener);
-      (participant as DyteParticipantType).addListener('videoUpdate', this.videoUpdateListener);
-      (participant as DyteParticipantType).addListener('pinned', this.pinnedListener);
-      (participant as DyteParticipantType).addListener('unpinned', this.pinnedListener);
-      (participant as DyteParticipantType).addListener('stageStatusUpdate', this.stageListener);
-      (this.participant as DyteSelfType).addListener('toggleTile', this.toggleTileListener);
+      (participant as RTKParticipant).addListener('audioUpdate', this.audioUpdateListener);
+      (participant as RTKParticipant).addListener('videoUpdate', this.videoUpdateListener);
+      (participant as RTKParticipant).addListener('pinned', this.pinnedListener);
+      (participant as RTKParticipant).addListener('unpinned', this.pinnedListener);
+      (participant as RTKParticipant).addListener('stageStatusUpdate', this.stageListener);
+      (this.participant as RTKSelf).addListener('toggleTile', this.toggleTileListener);
     }
   }
 
@@ -373,8 +361,8 @@ export class RtkParticipant {
                           t={this.t}
                           onClick={() => {
                             this.isHidden
-                              ? (this.participant as DyteSelfType).show()
-                              : (this.participant as DyteSelfType).hide();
+                              ? (this.participant as RTKSelf).show()
+                              : (this.participant as RTKSelf).hide();
                           }}
                         >
                           <rtk-icon

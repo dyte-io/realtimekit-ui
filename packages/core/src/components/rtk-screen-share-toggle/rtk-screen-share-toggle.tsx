@@ -6,7 +6,7 @@ import { Component, Host, h, Prop, State, Watch, Event, EventEmitter } from '@st
 import logger from '../../utils/logger';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { StageStatus } from '@dytesdk/web-core';
+import { StageStatus } from '@cloudflare/realtimekit';
 
 const deviceCanScreenShare = () => {
   return (

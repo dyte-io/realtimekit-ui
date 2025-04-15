@@ -1,4 +1,4 @@
-import type { Message } from '@dytesdk/web-core';
+import type { Message } from '@cloudflare/realtimekit';
 import {
   Component,
   Host,

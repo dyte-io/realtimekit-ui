@@ -1,11 +1,11 @@
 /* eslint-disable @stencil-community/ban-exported-const-enums */
-import DyteClient from '@dytesdk/web-core';
+import RealtimeKitClient from '@cloudflare/realtimekit';
 import { Level } from 'hls.js';
 
 /**
  * Can view the livestream
  */
-export const isLiveStreamViewer = (meeting: DyteClient) => {
+export const isLiveStreamViewer = (meeting: RealtimeKitClient) => {
   if (!showLivestream(meeting)) return false;
   return meeting.meta.viewType === 'LIVESTREAM' && meeting.stage.status !== 'ON_STAGE';
 };
@@ -13,12 +13,12 @@ export const isLiveStreamViewer = (meeting: DyteClient) => {
 /**
  * Can start/stop the livestream
  */
-export const isLiveStreamHost = (meeting: DyteClient) => {
+export const isLiveStreamHost = (meeting: RealtimeKitClient) => {
   if (!showLivestream(meeting)) return false;
   return meeting.meta.viewType === 'LIVESTREAM' && meeting?.self?.permissions.canLivestream;
 };
 
-export const showLivestream = (meeting: DyteClient) => {
+export const showLivestream = (meeting: RealtimeKitClient) => {
   return meeting?.livestream;
 };
 
@@ -97,7 +97,7 @@ export function getLivestreamViewerAllowedQualityLevels({
   meeting,
   hlsLevels,
 }: {
-  meeting: DyteClient;
+  meeting: RealtimeKitClient;
   hlsLevels: Level[];
 }): {
   autoLevelChangeAllowed: boolean;

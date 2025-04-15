@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
-import { DytePlugin } from '@dytesdk/web-core';
-import type { ActiveTabType } from '@dytesdk/web-core';
+import { RTKPlugin } from '@cloudflare/realtimekit';
+import type { ActiveTabType } from '@cloudflare/realtimekit';
 import { defaultConfig } from '../../lib/default-ui-config';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
@@ -14,7 +14,7 @@ import { GridLayout } from '../rtk-grid/rtk-grid';
 export interface Tab {
   type: ActiveTabType;
   participant?: Peer;
-  plugin?: DytePlugin;
+  plugin?: RTKPlugin;
 }
 
 @Component({

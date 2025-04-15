@@ -1,4 +1,4 @@
-import type { Message, ChatUpdateParams, TextMessage } from '@dytesdk/web-core';
+import type { Message, ChatUpdateParams, TextMessage } from '@cloudflare/realtimekit';
 import {
   Component,
   Event,
@@ -245,10 +245,7 @@ export class RtkChatMessagesUiPaginated {
             <div>
               <div class="body">
                 {message.type === 'text' && (
-                  <rtk-text-message-view
-                    text={message.message}
-                    isMarkdown
-                  ></rtk-text-message-view>
+                  <rtk-text-message-view text={message.message} isMarkdown></rtk-text-message-view>
                 )}
                 {message.type === 'file' && (
                   <rtk-file-message-view

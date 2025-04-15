@@ -8,7 +8,7 @@ import { FlagsmithFeatureFlags } from '../../utils/flags';
 import { defaultConfig } from '../../exports';
 import { DefaultProps, Render } from '../../lib/render';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DyteParticipant } from '@dytesdk/web-core';
+import { RTKParticipant } from '@cloudflare/realtimekit';
 
 /**
  * A component which plays a participants video and allows for placement
@@ -96,8 +96,8 @@ export class RtkParticipantTile {
     if (this.participant == null) return;
 
     this.participant.deregisterVideoElement(this.videoEl, this.isPreview);
-    (this.participant as DyteParticipant).removeListener('pinned', this.onPinned);
-    (this.participant as DyteParticipant).removeListener('unpinned', this.onPinned);
+    (this.participant as RTKParticipant).removeListener('pinned', this.onPinned);
+    (this.participant as RTKParticipant).removeListener('unpinned', this.onPinned);
     this.meeting.meta.off('mediaConnectionUpdate', this.mediaConnectionUpdateListener);
     this.tileUnload.emit(this.participant);
   }
@@ -123,8 +123,8 @@ export class RtkParticipantTile {
 
     this.videoEl && this.participant.registerVideoElement(this.videoEl, this.isPreview);
 
-    (participant as DyteParticipant).addListener('pinned', this.onPinned);
-    (participant as DyteParticipant).addListener('unpinned', this.onPinned);
+    (participant as RTKParticipant).addListener('pinned', this.onPinned);
+    (participant as RTKParticipant).addListener('unpinned', this.onPinned);
     this.meeting.meta.on('mediaConnectionUpdate', this.mediaConnectionUpdateListener.bind(this));
   }
 

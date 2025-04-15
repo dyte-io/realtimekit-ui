@@ -1,4 +1,4 @@
-import { DytePermissionsPreset } from '@dytesdk/web-core';
+import { RTKPermissionsPreset } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, EventEmitter, Event } from '@stencil/core';
 import { IconPack, defaultIconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
@@ -24,7 +24,7 @@ export class RtkPolls {
   @Prop() self: string;
 
   /** Permissions Object */
-  @Prop() permissions: DytePermissionsPreset;
+  @Prop() permissions: RTKPermissionsPreset;
 
   /** Event which is emitted when a poll is voted on */
   @Event({ eventName: 'rtkVotePoll' }) onVote: EventEmitter<{
