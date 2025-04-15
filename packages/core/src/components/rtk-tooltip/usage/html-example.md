@@ -1,9 +1,9 @@
 ```html
-<dyte-tooltip label="Primary tooltip variant" variant="primary">
+<rtk-tooltip label="Primary tooltip variant" variant="primary">
   <div>Hover over me</div>
-</dyte-tooltip>
+</rtk-tooltip>
 
-<dyte-tooltip label="Secondary tooltip variant" variant="secondary">
+<rtk-tooltip label="Secondary tooltip variant" variant="secondary">
   <div>Hover over me</div>
-</dyte-tooltip>
+</rtk-tooltip>
 ```

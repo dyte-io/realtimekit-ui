@@ -1,13 +1,13 @@
 ```html
-<dyte-simple-grid id="dyte-el"></dyte-simple-grid>
+<rtk-simple-grid id="rtk-el"></rtk-simple-grid>
 
 <script>
-  const el = document.getElementBydId('dyte-el');
+  const el = document.getElementBydId('rtk-el');
   el.participants = [meeting.self];
 </script>
 
 <style>
-  dyte-simple-grid {
+  rtk-simple-grid {
     height: 360px;
     width: 100%;
   }

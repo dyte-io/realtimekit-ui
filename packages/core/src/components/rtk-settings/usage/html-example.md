@@ -1,24 +1,24 @@
 ```html
 Desktop View:
-<dyte-settings class="dyte-el"></dyte-settings>
+<rtk-settings class="rtk-el"></rtk-settings>
 
 Mobile View:
-<dyte-settings size="sm" class="dyte-el"></dyte-settings>
+<rtk-settings size="sm" class="rtk-el"></rtk-settings>
 
 <script>
-  const elements = document.getElementsByClassName('dyte-el');
+  const elements = document.getElementsByClassName('rtk-el');
   for (const el of elements) {
     el.meeting = meeting;
   }
 </script>
 
 <style>
-  dyte-settings {
+  rtk-settings {
     height: 480px;
     width: '100%';
     max-width: 720px;
   }
-  dyte-settings[size='sm'] {
+  rtk-settings[size='sm'] {
     max-width: 360px;
   }
 </style>

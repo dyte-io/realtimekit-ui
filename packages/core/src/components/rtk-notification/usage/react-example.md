@@ -1,5 +1,5 @@
 ```jsx live
-<DyteNotification
+<RtkNotification
   notification={{
     id: 'your-id',
     message: 'Vaibhav says hi!',
@@ -10,7 +10,7 @@
       onClick: () => alert('Hey'),
     },
   }}
-  onDyteNotificationDismiss={(e) => {
+  onRtkNotificationDismiss={(e) => {
     e.target.remove();
   }}
 />

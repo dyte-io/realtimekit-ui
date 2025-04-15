@@ -1,16 +1,16 @@
 ```html
-<dyte-button onclick="showDialog()">Show dialog</dyte-button>
-<dyte-dialog id="dyte-el" open="false">
+<rtk-button onclick="showDialog()">Show dialog</rtk-button>
+<rtk-dialog id="rtk-el" open="false">
   <div>
     <h3>Hello!</h3>
     <p>This is some text inside dialog!</p>
   </div>
-</dyte-dialog>
+</rtk-dialog>
 
 <script>
-  const dialog = document.getElementById('dyte-el');
+  const dialog = document.getElementById('rtk-el');
 
-  dialog.addEventListener('dyteDialogClose', (open) => {
+  dialog.addEventListener('rtkDialogClose', (open) => {
     console.log('dialog closed');
   });
 
@@ -19,7 +19,7 @@
   }
 </script>
 <style>
-  dyte-dialog > div {
+  rtk-dialog > div {
     width: 512px;
     backgroundcolor: #000;
     color: #fff;

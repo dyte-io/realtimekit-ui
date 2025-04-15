@@ -1,11 +1,11 @@
 ```html
-<dyte-button onclick="showSettings()">Show Settings</dyte-button>
-<dyte-button onclick="showLeaveConfirmation()">Show Settings</dyte-button>
+<rtk-button onclick="showSettings()">Show Settings</rtk-button>
+<rtk-button onclick="showLeaveConfirmation()">Show Settings</rtk-button>
 
-<dyte-dialog-manager id="dyte-el"></dyte-dialog-manager>
+<rtk-dialog-manager id="rtk-el"></rtk-dialog-manager>
 
 <script>
-  const dialog = document.getElementById('dyte-el');
+  const dialog = document.getElementById('rtk-el');
   dialog.meeting = meeting;
   let states = {};
 
@@ -26,7 +26,7 @@
     stateUpdate({ activeLeaveConfirmation: true });
   }
 
-  dialog.addEventListener('dyteStateUpdate', (e) => {
+  dialog.addEventListener('rtkStateUpdate', (e) => {
     stateUpdate(e.detail);
   });
 

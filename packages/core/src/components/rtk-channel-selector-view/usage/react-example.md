@@ -1,5 +1,5 @@
 ```jsx live
-<DyteDraftAttachmentView
+<RtkDraftAttachmentView
   channels={[
     {
       id: '123',

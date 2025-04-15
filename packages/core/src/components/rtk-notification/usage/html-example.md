@@ -1,10 +1,10 @@
 ```html
-<dyte-notification id="dyte-el"></dyte-notification>
+<rtk-notification id="rtk-el"></rtk-notification>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
 
-  el.addEventListener('dyteNotificationDismiss', (e) => {
+  el.addEventListener('rtkNotificationDismiss', (e) => {
     e.target.remove();
   });
 

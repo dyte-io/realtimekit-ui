@@ -1,5 +1,5 @@
 ```jsx live
-<DyteMessageListView
+<RtkMessageListView
   messages={messages}
   renderer={(message, index) => {
     return <div>{message.text}</div>;
@@ -8,5 +8,5 @@
     const oldMessages = fetchOlderMessages(lastMessage);
     return oldMessages;
   }}
-></DyteMessageListView>
+></RtkMessageListView>
 ```

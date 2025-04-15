@@ -1,17 +1,17 @@
 ```html
-<dyte-meeting-title #dyteEl></dyte-meeting-title>
+<rtk-meeting-title #rtkEl></rtk-meeting-title>
 ```
 
 ```js
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('dyteEl') dyteEl: DyteMeetingTitle;
+  @ViewChild('rtkEl') rtkEl: RtkMeetingTitle;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.dyteEl.meeting = dyteMeeting;
+    this.rtkEl.meeting = rtkMeeting;
   }
 }
 ```

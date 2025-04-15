@@ -1,7 +1,7 @@
 ```jsx live
 <Center>
-  <DyteChatToggle size="sm" meeting={meeting} />
-  <DyteChatToggle size="lg" meeting={meeting} />
-  <DyteChatToggle variant="horizontal" size="sm" meeting={meeting} />
+  <RtkChatToggle size="sm" meeting={meeting} />
+  <RtkChatToggle size="lg" meeting={meeting} />
+  <RtkChatToggle variant="horizontal" size="sm" meeting={meeting} />
 </Center>
 ```

@@ -1,6 +1,6 @@
 ```html
 <div style="width: 360px">
-  <dyte-leave-meeting #leaveMeeting></dyte-leave-meeting>
+  <rtk-leave-meeting #leaveMeeting></rtk-leave-meeting>
 </div>
 ```
 
@@ -10,12 +10,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('leaveMeeting') componentLeaveMeeting: DyteLeaveMeeting;
+  @ViewChild('leaveMeeting') componentLeaveMeeting: RtkLeaveMeeting;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentLeaveMeeting.meeting = dyteMeeting;
+    this.componentLeaveMeeting.meeting = rtkMeeting;
   }
 }
 ```

@@ -1,3 +1,3 @@
 ```jsx live
-<DyteGrid meeting={meeting} style={{ height: '360px' }} />
+<RtkGrid meeting={meeting} style={{ height: '360px' }} />
 ```

@@ -1,5 +1,5 @@
 ```html
-<dyte-message-list-view id="list"></dyte-message-list-view>
+<rtk-message-list-view id="list"></rtk-message-list-view>
 ```
 
 ```js

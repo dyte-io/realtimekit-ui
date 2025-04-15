@@ -1,5 +1,5 @@
 ```html
-<dyte-ended-screen #endedScreen style="height: 360px"></dyte-ended-screen>
+<rtk-ended-screen #endedScreen style="height: 360px"></rtk-ended-screen>
 ```
 
 Component
@@ -8,13 +8,13 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('endedScreen') componentEndedScreen: DyteEndedScreen;
+  @ViewChild('endedScreen') componentEndedScreen: RtkEndedScreen;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
     const config = {
-      designTokens: { logo: 'https://docs.dyte.io/logo/dark.svg' },
+      designTokens: { logo: 'https://docs.rtk.io/logo/dark.svg' },
     };
     this.componentEndedScreen.config = config;
   }

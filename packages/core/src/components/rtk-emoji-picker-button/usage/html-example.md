@@ -1,9 +1,9 @@
 ```html
-<dyte-emoji-picker-button id="dyte-el" />
+<rtk-emoji-picker-button id="rtk-el" />
 
 <script>
   let isActive = false;
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.isActive = isActive;
   el.addEventListener('click', () => {
     el.isActive = !isActive;

@@ -1,5 +1,5 @@
 ```html
-<dyte-image-message-view #message />
+<rtk-image-message-view #message />
 ```
 
 Component
@@ -8,7 +8,7 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('message') componentMessage: DyteImageMessageView;
+  @ViewChild('message') componentMessage: RtkImageMessageView;
 
   async ngAfterViewInit() {
     this.componentMessage.url = 'https://image.net/peter/jpg';

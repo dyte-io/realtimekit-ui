@@ -1,5 +1,5 @@
 ```html
-<dyte-network-indicator #myEl></dyte-network-indicator>
+<rtk-network-indicator #myEl></rtk-network-indicator>
 ```
 
 Component
@@ -8,13 +8,13 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('myEl') component: DyteNetworkIndicator;
+  @ViewChild('myEl') component: RtkNetworkIndicator;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.component.participant = this.dyteMeeting.self;
-    this.component.meeting = this.dyteMeeting;
+    this.component.participant = this.rtkMeeting.self;
+    this.component.meeting = this.rtkMeeting;
   }
 }
 ```

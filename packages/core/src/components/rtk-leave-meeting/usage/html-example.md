@@ -1,10 +1,10 @@
 ```html
 <div style="width: 360px">
-  <dyte-leave-meeting id="dyte-el"></dyte-leave-meeting>
+  <rtk-leave-meeting id="rtk-el"></rtk-leave-meeting>
 </div>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
 </script>
 ```

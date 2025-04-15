@@ -1,5 +1,5 @@
 ```html
-<dyte-name-tag #one></dyte-name-tag> <dyte-name-tag #two></dyte-name-tag>
+<rtk-name-tag #one></rtk-name-tag> <rtk-name-tag #two></rtk-name-tag>
 ```
 
 Component
@@ -8,18 +8,18 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('one') componentOne: DyteNameTag;
+  @ViewChild('one') componentOne: RtkNameTag;
 
-  @ViewChild('two') componentTwo: DyteNameTag;
+  @ViewChild('two') componentTwo: RtkNameTag;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentOne.participant = this.dyteMeeting.self;
+    this.componentOne.participant = this.rtkMeeting.self;
 
     /* pass `meeting` to it to differentiate `you`. */
-    this.componentTwo.participant = this.dyteMeeting.self;
-    this.componentTwo.meeting = this.dyteMeeting;
+    this.componentTwo.participant = this.rtkMeeting.self;
+    this.componentTwo.meeting = this.rtkMeeting;
   }
 }
 ```

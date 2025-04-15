@@ -2,7 +2,7 @@ Template
 
 ```html
 <div>
-  <dyte-mute-all-confirmation #myId></dyte-mute-all-confirmation>
+  <rtk-mute-all-confirmation #myId></rtk-mute-all-confirmation>
 </div>
 ```
 
@@ -12,12 +12,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('myId') component: DyteMuteAllConfirmation;
+  @ViewChild('myId') component: RtkMuteAllConfirmation;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   showDialog() {
-    this.component.meeting = this.dyteMeeting;
+    this.component.meeting = this.rtkMeeting;
   }
 }
 ```

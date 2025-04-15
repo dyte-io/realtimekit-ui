@@ -1,8 +1,8 @@
 ```html
-<dyte-emoji-picker-button
+<rtk-emoji-picker-button
   [isActive]="isActive"
   (click)="onClick()"
-></dyte-emoji-picker-button>
+></rtk-emoji-picker-button>
 ```
 
 Component

@@ -1,8 +1,8 @@
 ```html
-<dyte-network-indicator id="dyte-el"></dyte-network-indicator>
+<rtk-network-indicator id="rtk-el"></rtk-network-indicator>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
 
   el.participant = meeting.self;
   el.meeting = meeting;

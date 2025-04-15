@@ -1,12 +1,12 @@
 ```html
-<dyte-plugins id="dyte-el"></dyte-plugins>
+<rtk-plugins id="rtk-el"></rtk-plugins>
 
 <script>
-  document.getElementById('dyte-el').meeting = meeting;
+  document.getElementById('rtk-el').meeting = meeting;
 </script>
 
 <style>
-  dyte-plugins {
+  rtk-plugins {
     height: 480px;
     width: 100%;
     max-width: 320px;

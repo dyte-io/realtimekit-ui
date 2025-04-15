@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-  <title>Dyte UI Kit</title>
+  <title>RealtimeKit UI</title>
 
   <style>
     html,
@@ -25,11 +25,11 @@
   </style>
 
   <!-- Required, do not edit -->
-  <script type="module" src="/build/dyte-ui-kit.esm.js"></script>
-  <script nomodule src="/build/dyte-ui-kit.js"></script>
+  <script type="module" src="/build/realtimekit-ui.esm.js"></script>
+  <script nomodule src="/build/realtimekit-ui.js"></script>
 
-  <!-- Dyte Web Core -->
-  <script src="/web-core.js"></script>
+  <!-- Realtimekit -->
+  <script src="/realtimekit.js"></script>
 
   <!-- Optional libs -->
   <!-- <script src="https://cdn.tailwindcss.com?plugins=forms"></script> -->
@@ -100,7 +100,7 @@
           };
 
           this.$refs.list.renderer = (msg, index) => {
-            const $message = document.createElement('dyte-message-view');
+            const $message = document.createElement('rtk-message-view');
             $message.authorName = "Peter";
             $message.time = new Date(msg.time);
             $message.innerHTML = `<span>${msg.text}</span>`;
@@ -116,8 +116,8 @@
   <div x-init="initialize" x-data="app()" class="h-full w-full flex flex-col" x-data="app()">
     <div style="color: aliceblue; background-color: rebeccapurple; padding: 10px;">Header</div>
     <div style="height: 512px;">
-      <dyte-message-list-view x-ref="list">
-      </dyte-message-list-view>
+      <rtk-message-list-view x-ref="list">
+      </rtk-message-list-view>
     </div>
 
     <div style="color: aliceblue; background-color: rebeccapurple; padding: 10px;">footer</div>

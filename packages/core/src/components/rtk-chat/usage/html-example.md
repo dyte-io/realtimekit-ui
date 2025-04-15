@@ -1,8 +1,8 @@
 ```html
-<rtk-chat id="dyte-el"></rtk-chat>
+<rtk-chat id="rtk-el"></rtk-chat>
 
 <script>
-  document.getElementById('dyte-el').meeting = meeting;
+  document.getElementById('rtk-el').meeting = meeting;
 </script>
 
 <style>

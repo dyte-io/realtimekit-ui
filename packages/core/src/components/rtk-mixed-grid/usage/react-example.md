@@ -1,5 +1,5 @@
 ```jsx live
-<DyteMixedGrid
+<RtkMixedGrid
   participants={[meeting.self]}
   pinnedParticipants={[meeting.self]}
   screenShareParticipants={[meeting.self]}

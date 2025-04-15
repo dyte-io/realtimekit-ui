@@ -1,4 +1,4 @@
 ```html
-<dyte-fullscreen-toggle #one></dyte-fullscreen-toggle>
-<dyte-fullscreen-toggle #two variant="horizontal"></dyte-fullscreen-toggle>
+<rtk-fullscreen-toggle #one></rtk-fullscreen-toggle>
+<rtk-fullscreen-toggle #two variant="horizontal"></rtk-fullscreen-toggle>
 ```

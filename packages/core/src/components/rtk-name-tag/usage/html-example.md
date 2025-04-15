@@ -1,10 +1,10 @@
 ```html
-<dyte-name-tag class="dyte-el"></dyte-meeting-title>
-<dyte-name-tag class="dyte-el-self"></dyte-meeting-title>
+<rtk-name-tag class="rtk-el"></rtk-meeting-title>
+<rtk-name-tag class="rtk-el-self"></rtk-meeting-title>
 
 <script>
-  const participant = document.getElementById('dyte-el');
-  const selfParticipant = document.getElementById('dyte-el-self');
+  const participant = document.getElementById('rtk-el');
+  const selfParticipant = document.getElementById('rtk-el-self');
 
   participant.participant = meeting.self;
 

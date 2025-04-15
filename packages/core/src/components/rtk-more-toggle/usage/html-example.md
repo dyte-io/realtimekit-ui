@@ -1,5 +1,5 @@
 ```html
-<dyte-more-toggle size="sm"></dyte-more-toggle>
-<dyte-more-toggle size="lg"></dyte-more-toggle>
-<dyte-more-toggle variant="horizontal"></dyte-more-toggle>
+<rtk-more-toggle size="sm"></rtk-more-toggle>
+<rtk-more-toggle size="lg"></rtk-more-toggle>
+<rtk-more-toggle variant="horizontal"></rtk-more-toggle>
 ```

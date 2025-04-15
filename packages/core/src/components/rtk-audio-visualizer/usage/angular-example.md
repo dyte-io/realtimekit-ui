@@ -1,7 +1,7 @@
 Template
 
 ```html
-<dyte-audio-visualizer #myid></dyte-audio-visualizer>
+<rtk-audio-visualizer #myid></rtk-audio-visualizer>
 ```
 
 Component
@@ -10,14 +10,14 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('myid') component: DyteAudioVisualizer;
+  @ViewChild('myid') component: RtkAudioVisualizer;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    const participant = this.dyteMeeting.self; // local user's audio
+    const participant = this.rtkMeeting.self; // local user's audio
     // OR get a participant from `meeting.participants.joined`
-    // const participant = this.dyteMeeting.participants.joined.get('{participant-id}');
+    // const participant = this.rtkMeeting.participants.joined.get('{participant-id}');
 
     if (this.component) {
       this.component.participant = participant;

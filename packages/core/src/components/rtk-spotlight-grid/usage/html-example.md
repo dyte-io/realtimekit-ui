@@ -1,9 +1,9 @@
 ```html
-<dyte-spotlight-grid class="dyte-el"></dyte-spotlight-grid>
-<dyte-spotlight-grid layout="column" class="dyte-el"></dyte-spotlight-grid>
+<rtk-spotlight-grid class="rtk-el"></rtk-spotlight-grid>
+<rtk-spotlight-grid layout="column" class="rtk-el"></rtk-spotlight-grid>
 
 <script>
-  const elements = document.getElementsByClassName('dyte-el');
+  const elements = document.getElementsByClassName('rtk-el');
   for (const el of elements) {
     el.participants = [meeting.self];
     el.pinnedParticipants = [meeting.self];
@@ -11,7 +11,7 @@
 </script>
 
 <style>
-  dyte-spotlight-grid {
+  rtk-spotlight-grid {
     height: 360px;
     width: 100%;
   }

@@ -1,12 +1,12 @@
 ```html
-<dyte-screenshare-view class="dyte-el" style="height: 480px">
-  <dyte-name-tag class="dyte-el">
-    <dyte-audio-visualizer class="dyte-el" slot="start"></dyte-audio-visualizer>
-  </dyte-name-tag>
-</dyte-screenshare-view>
+<rtk-screenshare-view class="rtk-el" style="height: 480px">
+  <rtk-name-tag class="rtk-el">
+    <rtk-audio-visualizer class="rtk-el" slot="start"></rtk-audio-visualizer>
+  </rtk-name-tag>
+</rtk-screenshare-view>
 
 <script>
-  const elements = document.getElementsByClassName('dyte-el');
+  const elements = document.getElementsByClassName('rtk-el');
   for (const el of elements) {
     el.participant = meeting.self;
   }

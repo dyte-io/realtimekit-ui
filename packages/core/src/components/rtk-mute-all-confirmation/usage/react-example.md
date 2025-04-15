@@ -1,3 +1,3 @@
 ```jsx live
-<DyteMuteAllConfirmation meeting={meeting} />
+<RtkMuteAllConfirmation meeting={meeting} />
 ```

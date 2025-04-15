@@ -13,12 +13,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('chat') componentChat: DyteChat;
+  @ViewChild('chat') componentChat: RtkChat;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentChat.meeting = this.dyteMeeting;
+    this.componentChat.meeting = this.rtkMeeting;
   }
 }
 ```

@@ -1,8 +1,8 @@
 ```html
-<dyte-draft-attachment-view
+<rtk-draft-attachment-view
   [attachment]="attachmentToUpload"
   (deleteAttachment)="onAttachmentDismissed()"
-></dyte-draft-attachment-view>
+></rtk-draft-attachment-view>
 ```
 
 Component

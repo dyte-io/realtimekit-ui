@@ -1,10 +1,10 @@
 This is an example which passes the default configuration for notifications.
 
 ```html
-<dyte-notifications id="dyte-el"></dyte-notifications>
+<rtk-notifications id="rtk-el"></rtk-notifications>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
   el.config = {
     config: {
@@ -41,7 +41,7 @@ To disable specific category of notifications set the value of the category to
 `false` like below.
 
 ```html
-<dyte-notifications id="dyte-el"></dyte-notifications>
+<rtk-notifications id="rtk-el"></rtk-notifications>
 
 <script>
   const config = {
@@ -58,7 +58,7 @@ To disable specific category of notifications set the value of the category to
     },
   };
 
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
   el.config = {
     config,
@@ -89,7 +89,7 @@ To change the duration for a specific category of notifications set the value of
 the category to the milliseconds.
 
 ```html
-<dyte-notifications id="dyte-el"></dyte-notifications>
+<rtk-notifications id="rtk-el"></rtk-notifications>
 
 <script>
   const config = {
@@ -103,7 +103,7 @@ the category to the milliseconds.
     },
   };
 
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
   el.config = {
     config,
@@ -120,7 +120,7 @@ To disable sound for a specific category of notifications set the value of the
 category to `false` like below.
 
 ```html
-<dyte-notifications id="dyte-el"></dyte-notifications>
+<rtk-notifications id="rtk-el"></rtk-notifications>
 
 <script>
   const config = {
@@ -131,7 +131,7 @@ category to `false` like below.
     },
   };
 
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
   el.config = {
     config,

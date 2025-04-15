@@ -1,8 +1,8 @@
 ```jsx live
 <RTKParticipantTile participant={meeting.self}>
-  <DyteNameTag participant={meeting.self}>
-    <DyteAudioVisualizer slot="start" />
-  </DyteNameTag>
+  <RtkNameTag participant={meeting.self}>
+    <RtkAudioVisualizer slot="start" />
+  </RtkNameTag>
 </RTKParticipantTile>
 ```
 
@@ -11,9 +11,9 @@ and change the placement of audio-visualizer in name-tag as well.
 
 ```jsx live
 <RTKParticipantTile participant={meeting.self} nameTagPosition="bottom-center">
-  <DyteNameTag participant={meeting.self}>
-    <DyteAudioVisualizer slot="end" />
-  </DyteNameTag>
+  <RtkNameTag participant={meeting.self}>
+    <RtkAudioVisualizer slot="end" />
+  </RtkNameTag>
 </RTKParticipantTile>
 ```
 
@@ -25,8 +25,8 @@ It also has a few variants.
   nameTagPosition="bottom-center"
   variant="gradient"
 >
-  <DyteNameTag participant={meeting.self}>
-    <DyteAudioVisualizer slot="start" />
-  </DyteNameTag>
+  <RtkNameTag participant={meeting.self}>
+    <RtkAudioVisualizer slot="start" />
+  </RtkNameTag>
 </RTKParticipantTile>
 ```

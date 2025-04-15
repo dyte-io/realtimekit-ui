@@ -1,5 +1,5 @@
 ```html
-<dyte-livestream-player #dyteEl></dyte-livestream-player>
+<rtk-livestream-player #rtkEl></rtk-livestream-player>
 ```
 
 Component
@@ -8,12 +8,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('dyteEl') dyteEl: DyteLivestreamPlayer;
+  @ViewChild('rtkEl') rtkEl: RtkLivestreamPlayer;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.dyteEl.meeting = dyteMeeting;
+    this.rtkEl.meeting = rtkMeeting;
   }
 }
 ```

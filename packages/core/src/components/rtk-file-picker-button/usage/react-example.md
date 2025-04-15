@@ -1,9 +1,9 @@
 ```jsx live
-<DyteFilePickerButton
+<RtkFilePickerButton
   label="Upload File"
   onFileChange={(event) => console.log(event.detail)}
 />
-<DyteFilePickerButton
+<RtkFilePickerButton
   filter="image/*"
   label="Upload Image"
   icon="image"

@@ -1,3 +1,3 @@
 ```html
-<dyte-logo logo-url="/logo/dark.svg" style="height: 36px"></dyte-logo>
+<rtk-logo logo-url="/logo/dark.svg" style="height: 36px"></rtk-logo>
 ```

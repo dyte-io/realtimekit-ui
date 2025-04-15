@@ -1,8 +1,8 @@
 ```html
-<dyte-setup-screen id="dyte-el" style="height: 360px"></dyte-setup-screen>
+<rtk-setup-screen id="rtk-el" style="height: 360px"></rtk-setup-screen>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
 </script>
 ```

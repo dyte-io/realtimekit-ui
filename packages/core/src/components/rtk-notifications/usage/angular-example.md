@@ -1,14 +1,14 @@
 This is an example which passes the default configuration for notifications.
 
 ```html
-<dyte-notifications #notifications></dyte-notifications>
+<rtk-notifications #notifications></rtk-notifications>
 ```
 
 ```js
 class NotificationComponent {
   title = 'NotificationComponent';
 
-  @ViewChild('notifications') notificationsComponent: DyteNotifications;
+  @ViewChild('notifications') notificationsComponent: RtkNotifications;
   async ngAfterViewInit() {
     if (!this.notificationsComponent) return;
 
