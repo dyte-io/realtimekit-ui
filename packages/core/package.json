@@ -1,7 +1,7 @@
 {
   "name": "@cloudflare/realtimekit-ui",
   "version": "1.0.0-staging.2",
-  "description": "UI kit to support easy UI development over the core web library.",
+  "description": "Pre-built, ready-to-use UI components and utilities for integrating with Cloudflare RealtimeKit",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.js",
