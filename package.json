@@ -2,7 +2,6 @@
   "workspaces": [
     "packages/core",
     "packages/react-library",
-    "packages/vue-library",
     "packages/angular-library"
   ],
   "scripts": {
