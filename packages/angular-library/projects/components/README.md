@@ -5,7 +5,6 @@
 If you're using a specific framework (or no framework - see HTML), we also offer dedicated packages:
 
 - [React](https://npmjs.com/package/@cloudflare/realtimekit-react-ui)
-- [Vue](https://npmjs.com/package/@cloudflare/realtimekit-vue-ui)
 - [HTML (Web Components)](https://npmjs.com/package/@cloudflare/realtimekit-ui)
 
 ## Usage

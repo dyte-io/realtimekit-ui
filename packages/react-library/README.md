@@ -4,7 +4,6 @@
 
 If you're using a different framework or no framework (see HTML), we also offer dedicated packages:
 
-- [Vue](https://npmjs.com/package/@cloudflare/realtimekit-vue-ui)
 - [Angular](https://npmjs.com/package/@cloudflare/realtimekit-angular-ui)
 - [HTML (Web Components)](https://npmjs.com/package/@cloudflare/realtimekit-ui)
 
