@@ -97,7 +97,7 @@ These components will take in some default props via attributes:
 
 ```ts
 interface DefaultProps {
-  meeting: RealtimeKit;
+  meeting: RealtimeKitClient;
   config?: UIConfig;
   size?: Size;
   states?: States;
