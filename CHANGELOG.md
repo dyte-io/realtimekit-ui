@@ -1,3 +1,11 @@
+# [1.0.0-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.2...@cloudflare/realtimekit-ui-v1.0.0-staging.3) (2025-04-15)
+
+
+### Bug Fixes
+
+* remove vue package ([fa20491](https://github.com/dyte-io/realtimekit-ui/commit/fa204913d19926aba0f84390500bdcc9c56a81c2))
+* update descriptions in READMEs ([39b30c4](https://github.com/dyte-io/realtimekit-ui/commit/39b30c49b848424f0bfa9aaac2c920729325a6bc))
+
 # [1.0.0-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.1...@cloudflare/realtimekit-ui-v1.0.0-staging.2) (2025-04-15)
 
 
