@@ -1,3 +1,3 @@
 ```jsx live
-<DyteMeetingTitle meeting={meeting} />
+<RtkMeetingTitle meeting={meeting} />
 ```

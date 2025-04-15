@@ -1,10 +1,10 @@
 ```html
-<dyte-menu placement="top">
-  <dyte-button slot="trigger">Top Menu</dyte-button>
-  <dyte-menu-list>
-    <dyte-menu-item (click)="showAlert()">alert()</dyte-button>
-  </dyte-menu-list>
-</dyte-menu>
+<rtk-menu placement="top">
+  <rtk-button slot="trigger">Top Menu</rtk-button>
+  <rtk-menu-list>
+    <rtk-menu-item (click)="showAlert()">alert()</rtk-button>
+  </rtk-menu-list>
+</rtk-menu>
 ```
 
 Component

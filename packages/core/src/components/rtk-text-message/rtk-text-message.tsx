@@ -1,4 +1,4 @@
-import type { TextMessage } from '@dytesdk/web-core';
+import type { TextMessage } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop } from '@stencil/core';
 import { IconPack, defaultIconPack } from '../../lib/icons';
 import { useLanguage, RtkI18n } from '../../lib/lang';

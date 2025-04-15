@@ -1,3 +1,3 @@
 ```jsx live
-<DyteMeeting mode="fill" meeting={meeting} style={{ height: '480px' }} />
+<RtkMeeting mode="fill" meeting={meeting} style={{ height: '480px' }} />
 ```

@@ -1,7 +1,7 @@
 ```jsx live
 <Center>
-  <DyteMuteAllButton size="sm" meeting={meeting} />
-  <DyteMuteAllButton size="lg" meeting={meeting} />
-  <DyteMuteAllButton variant="horizontal" size="sm" meeting={meeting} />
+  <RtkMuteAllButton size="sm" meeting={meeting} />
+  <RtkMuteAllButton size="lg" meeting={meeting} />
+  <RtkMuteAllButton variant="horizontal" size="sm" meeting={meeting} />
 </Center>
 ```

@@ -1,3 +1,3 @@
 ```jsx live
-<DyteSettingsAudio meeting={meeting} />
+<RtkSettingsAudio meeting={meeting} />
 ```

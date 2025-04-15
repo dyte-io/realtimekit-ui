@@ -1,13 +1,13 @@
 ```html
-<dyte-sidebar default-section="participants" id="dyte-el"></dyte-sidebar>
+<rtk-sidebar default-section="participants" id="rtk-el"></rtk-sidebar>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
 </script>
 
 <style>
-  dyte-sidebar {
+  rtk-sidebar {
     height: 360px;
   }
 </style>
@@ -17,15 +17,15 @@ To see a mobile sidebar:
 
 ```html
 <div id="app">
-  <dyte-sidebar
+  <rtk-sidebar
     view="full-screen"
     default-section="participants"
-    id="dyte-el"
-  ></dyte-sidebar>
+    id="rtk-el"
+  ></rtk-sidebar>
 </div>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
 </script>
 
@@ -35,7 +35,7 @@ To see a mobile sidebar:
     height: 600px;
   }
 
-  dyte-sidebar {
+  rtk-sidebar {
     height: 360px;
     max-width: 360px;
     margin: auto;

@@ -1,13 +1,13 @@
 ```html
-<dyte-plugin-main id="dyte-el"></dyte-plugin-main>
+<rtk-plugin-main id="rtk-el"></rtk-plugin-main>
 
 <script>
-  document.getElementById('dyte-el').meeting = meeting;
-  document.getElementById('dyte-el').plugin = activePlugin;
+  document.getElementById('rtk-el').meeting = meeting;
+  document.getElementById('rtk-el').plugin = activePlugin;
 </script>
 
 <style>
-  dyte-plugin-main {
+  rtk-plugin-main {
     height: 480px;
     width: 100%;
     max-width: 320px;

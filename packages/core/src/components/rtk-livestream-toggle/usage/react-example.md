@@ -1,7 +1,7 @@
 ```jsx live
 <Center>
-  <DyteLivestreamToggle size="sm" meeting={meeting} />
-  <DyteLivestreamToggle size="lg" meeting={meeting} />
-  <DyteLivestreamToggle variant="horizontal" size="sm" meeting={meeting} />
+  <RtkLivestreamToggle size="sm" meeting={meeting} />
+  <RtkLivestreamToggle size="lg" meeting={meeting} />
+  <RtkLivestreamToggle variant="horizontal" size="sm" meeting={meeting} />
 </Center>
 ```

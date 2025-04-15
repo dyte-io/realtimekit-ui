@@ -1,9 +1,9 @@
 ```html
-<dyte-emoji-picker id="dyte-el"></dyte-emoji-picker>
+<rtk-emoji-picker id="rtk-el"></rtk-emoji-picker>
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
 
-  el.addEventListener('dyteEmojiClicked', (e) => {
+  el.addEventListener('rtkEmojiClicked', (e) => {
     console.log('selected:', e.detail);
   });
 </script>

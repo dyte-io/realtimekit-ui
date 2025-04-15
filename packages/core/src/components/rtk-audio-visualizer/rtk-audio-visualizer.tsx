@@ -6,7 +6,7 @@ import { Size } from '../../types/props';
 import { drawBarsVisualizer } from '../../lib/visualizer';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DyteParticipant } from '@dytesdk/web-core';
+import { RTKParticipant } from '@cloudflare/realtimekit';
 
 export type AudioVisualizerVariant = 'bars';
 
@@ -68,13 +68,10 @@ export class RtkAudioVisualizer {
   disconnectedCallback() {
     this.hark?.stop();
     this.audioUpdateListener &&
-      (this.participant as DyteParticipant)?.removeListener(
-        'audioUpdate',
-        this.audioUpdateListener
-      );
+      (this.participant as RTKParticipant)?.removeListener('audioUpdate', this.audioUpdateListener);
 
     this.screenShareUpdateListener &&
-      (this.participant as DyteParticipant)?.removeListener(
+      (this.participant as RTKParticipant)?.removeListener(
         'screenShareUpdate',
         this.screenShareUpdateListener
       );
@@ -113,14 +110,14 @@ export class RtkAudioVisualizer {
             video: participant.screenShareTracks.video,
           },
         });
-        (participant as DyteParticipant).addListener(
+        (participant as RTKParticipant).addListener(
           'screenShareUpdate',
           this.screenShareUpdateListener
         );
       } else {
         this.audioUpdateListener(participant as Peer);
 
-        (participant as DyteParticipant).addListener('audioUpdate', this.audioUpdateListener);
+        (participant as RTKParticipant).addListener('audioUpdate', this.audioUpdateListener);
       }
     }
   }

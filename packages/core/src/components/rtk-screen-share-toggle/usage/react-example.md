@@ -1,7 +1,7 @@
 ```jsx live
 <Center>
-  <DyteScreenShareToggle size="sm" meeting={meeting} />
-  <DyteScreenShareToggle size="lg" meeting={meeting} />
-  <DyteScreenShareToggle variant="horizontal" size="sm" meeting={meeting} />
+  <RtkScreenShareToggle size="sm" meeting={meeting} />
+  <RtkScreenShareToggle size="lg" meeting={meeting} />
+  <RtkScreenShareToggle variant="horizontal" size="sm" meeting={meeting} />
 </Center>
 ```

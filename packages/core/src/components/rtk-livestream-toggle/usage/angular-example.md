@@ -1,9 +1,9 @@
 Template
 
 ```html
-<dyte-livestream-toggle #one></dyte-livestream-toggle>
-<dyte-livestream-toggle #two></dyte-livestream-toggle>
-<dyte-livestream-toggle #three></dyte-livestream-toggle>
+<rtk-livestream-toggle #one></rtk-livestream-toggle>
+<rtk-livestream-toggle #two></rtk-livestream-toggle>
+<rtk-livestream-toggle #three></rtk-livestream-toggle>
 ```
 
 Component
@@ -12,25 +12,25 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('one') componentOne: DyteLivestreamToggle;
+  @ViewChild('one') componentOne: RtkLivestreamToggle;
 
-  @ViewChild('two') componentTwo: DyteLivestreamToggle;
+  @ViewChild('two') componentTwo: RtkLivestreamToggle;
 
-  @ViewChild('three') componentTree: DyteLivestreamToggle;
+  @ViewChild('three') componentTree: RtkLivestreamToggle;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
     // Change the size to small
-    this.componentOne.meeting = this.dyteMeeting;
+    this.componentOne.meeting = this.rtkMeeting;
     this.componentOne.size = 'sm';
 
     // Change the size to large
-    this.componentTwo.meeting = this.dyteMeeting;
+    this.componentTwo.meeting = this.rtkMeeting;
     this.componentTwo.size = 'lg';
 
     // Render as a horizontal button
-    this.componentThree.meeting = this.dyteMeeting;
+    this.componentThree.meeting = this.rtkMeeting;
     this.componentThree.variant = 'horizontal';
   }
 }

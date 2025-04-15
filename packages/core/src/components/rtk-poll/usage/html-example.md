@@ -1,16 +1,16 @@
 ```html
-<dyte-poll id="dyte-el"></dyte-poll>
+<rtk-poll id="rtk-el"></rtk-poll>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
 
-  el.addEventListener('dyteVotePoll', (e) => {
+  el.addEventListener('rtkVotePoll', (e) => {
     console.log('Voted', e.detail);
   });
 
   el.poll = {
     id: 'poll-id',
-    question: 'Have you started using dyte yet?',
+    question: 'Have you started using rtk yet?',
     options: [
       {
         text: 'Yes',

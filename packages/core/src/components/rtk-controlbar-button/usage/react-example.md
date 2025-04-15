@@ -1,18 +1,18 @@
 ```jsx live
 <Center>
-  <DyteControlbarButton
+  <RtkControlbarButton
     label="Flight Mode"
     icon={airplaneSVG}
     onClick={() => alert('Flight mode toggled')}
     size="sm"
   />
-  <DyteControlbarButton
+  <RtkControlbarButton
     label="Flight Mode"
     icon={airplaneSVG}
     onClick={() => alert('Flight mode toggled')}
     size="lg"
   />
-  <DyteControlbarButton
+  <RtkControlbarButton
     label="Flight Mode"
     icon={airplaneSVG}
     onClick={() => alert('Flight mode toggled')}

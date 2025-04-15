@@ -1,5 +1,5 @@
-import { DytePlugin } from '@dytesdk/web-core';
-import type { ActiveTab, ActiveTabType } from '@dytesdk/web-core';
+import { RTKPlugin } from '@cloudflare/realtimekit';
+import type { ActiveTab, ActiveTabType } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, Element, State, Watch } from '@stencil/core';
 import { defaultConfig } from '../../lib/default-ui-config';
 import { defaultGridSize } from '../../lib/grid';
@@ -37,7 +37,7 @@ export class RtkMixedGrid {
   @Prop() screenShareParticipants: Peer[] = [];
 
   /** Active Plugins */
-  @Prop() plugins: DytePlugin[] = [];
+  @Prop() plugins: RTKPlugin[] = [];
 
   /**
    * Aspect Ratio of participant tile
@@ -128,7 +128,7 @@ export class RtkMixedGrid {
   }
 
   @Watch('plugins')
-  pluginsChanged(plugins: DytePlugin[]) {
+  pluginsChanged(plugins: RTKPlugin[]) {
     // If active tab has already been initialised by spotlight then don't change tab.
     if (!this.initialised && this.activeTab != null) return;
 

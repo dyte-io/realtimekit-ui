@@ -1,7 +1,7 @@
 ```jsx live
 <Center>
-  <DyteParticipantsToggle size="sm" />
-  <DyteParticipantsToggle size="lg" />
-  <DyteParticipantsToggle variant="horizontal" size="sm" />
+  <RTKParticipantsToggle size="sm" />
+  <RTKParticipantsToggle size="lg" />
+  <RTKParticipantsToggle variant="horizontal" size="sm" />
 </Center>
 ```

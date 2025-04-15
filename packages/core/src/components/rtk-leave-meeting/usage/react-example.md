@@ -1,5 +1,5 @@
 ```jsx live
 <div style={{ width: '360px' }}>
-  <DyteLeaveMeeting meeting={meeting} />
+  <RtkLeaveMeeting meeting={meeting} />
 </div>
 ```

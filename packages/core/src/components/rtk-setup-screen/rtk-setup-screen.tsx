@@ -9,7 +9,7 @@ import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import gracefulStorage from '../../utils/graceful-storage';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { SocketConnectionState } from '@dytesdk/web-core';
+import { SocketConnectionState } from '@cloudflare/realtimekit';
 
 /**
  * A screen shown before joining the meeting, where you can edit your display name,

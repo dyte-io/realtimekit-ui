@@ -6,13 +6,13 @@ function Example() {
 
   return (
     <Row>
-      <DyteButton onClick={() => setState({ activeSettings: true })}>
+      <RtkButton onClick={() => setState({ activeSettings: true })}>
         Show Settings
-      </DyteButton>
-      <DyteButton onClick={() => setState({ activeLeaveConfirmation: true })}>
+      </RtkButton>
+      <RtkButton onClick={() => setState({ activeLeaveConfirmation: true })}>
         Show Leave Confirmation
-      </DyteButton>
-      <DyteButton
+      </RtkButton>
+      <RtkButton
         onClick={() =>
           setState({
             activePermissionsMessage: { enabled: true, kind: 'audio' },
@@ -20,14 +20,14 @@ function Example() {
         }
       >
         Show Permissions Troubleshooting UI
-      </DyteButton>
-      <DyteButton onClick={() => setState({ activeRemoteAccessManager: true })}>
+      </RtkButton>
+      <RtkButton onClick={() => setState({ activeRemoteAccessManager: true })}>
         Show Remote Access Manager
-      </DyteButton>
-      <DyteDialogManager
+      </RtkButton>
+      <RtkDialogManager
         meeting={meeting}
         states={states}
-        onDyteStateUpdate={(e) => setState(e.detail)}
+        onRtkStateUpdate={(e) => setState(e.detail)}
       />
     </Row>
   );

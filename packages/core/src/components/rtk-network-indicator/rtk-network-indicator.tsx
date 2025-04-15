@@ -1,4 +1,4 @@
-import { DyteParticipant } from '@dytesdk/web-core';
+import { RTKParticipant } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, Watch, State } from '@stencil/core';
 import { defaultIconPack, RtkI18n, IconPack } from '../../exports';
 import { useLanguage } from '../../lib/lang';
@@ -43,11 +43,11 @@ export class RtkNetworkIndicator {
   participantChanged(participant: Peer) {
     if (!participant) return;
 
-    (participant as DyteParticipant).addListener('mediaScoreUpdate', this.onMediaScoreUpdate);
+    (participant as RTKParticipant).addListener('mediaScoreUpdate', this.onMediaScoreUpdate);
   }
 
   disconnectedCallback() {
-    (this.participant as DyteParticipant)?.removeListener(
+    (this.participant as RTKParticipant)?.removeListener(
       'mediaScoreUpdate',
       this.onMediaScoreUpdate
     );

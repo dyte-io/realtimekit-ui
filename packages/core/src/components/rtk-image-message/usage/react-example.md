@@ -1,3 +1,3 @@
 ```jsx live
-<DyteImageMessage message={meeting.chat.messages[0]} />
+<RtkImageMessage message={meeting.chat.messages[0]} />
 ```

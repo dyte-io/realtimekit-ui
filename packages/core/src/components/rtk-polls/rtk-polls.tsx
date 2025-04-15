@@ -7,7 +7,7 @@ import { PollObject, Size, Poll } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { smoothScrollToBottom } from '../../utils/scroll';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DytePermissionsPreset } from '@dytesdk/web-core';
+import { RTKPermissionsPreset } from '@cloudflare/realtimekit';
 
 /**
  * A component which lists all available plugins a user can access with
@@ -50,7 +50,7 @@ export class RtkPolls {
   /** Polls */
   @State() polls: Poll[];
 
-  @State() permissions: DytePermissionsPreset;
+  @State() permissions: RTKPermissionsPreset;
 
   connectedCallback() {
     this.meetingChanged(this.meeting);

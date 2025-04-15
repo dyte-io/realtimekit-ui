@@ -1,9 +1,9 @@
 ```html
-<dyte-meeting
+<rtk-meeting
   #myId
   mode="fill"
   style="height: 480px; width: 100%"
-></dyte-meeting>
+></rtk-meeting>
 ```
 
 Component
@@ -12,12 +12,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('myId') component: DyteMeeting;
+  @ViewChild('myId') component: RtkMeeting;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.component.meeting = this.dyteMeeting;
+    this.component.meeting = this.rtkMeeting;
   }
 }
 ```

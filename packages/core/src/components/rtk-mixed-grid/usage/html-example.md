@@ -1,8 +1,8 @@
 ```html
-<dyte-mixed-grid id="dyte-el"></dyte-mixed-grid>
+<rtk-mixed-grid id="rtk-el"></rtk-mixed-grid>
 
 <script>
-  const el = document.getElementBydId('dyte-el');
+  const el = document.getElementBydId('rtk-el');
   el.participants = [meeting.self];
   el.pinnedParticipants = [meeting.self];
   el.screenShareParticipants = [meeting.self];
@@ -10,7 +10,7 @@
 </script>
 
 <style>
-  dyte-mixed-grid {
+  rtk-mixed-grid {
     height: 360px;
     width: 100%;
   }

@@ -1,8 +1,8 @@
 Template
 
 ```html
-<dyte-button #one>Primary</dyte-button>
-<dyte-button #two>Secondary</dyte-button>
+<rtk-button #one>Primary</rtk-button>
+<rtk-button #two>Secondary</rtk-button>
 ```
 
 Component
@@ -11,11 +11,11 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('one') componentOne: DyteButton;
+  @ViewChild('one') componentOne: RtkButton;
 
-  @ViewChild('two') componentTwo: DyteButton;
+  @ViewChild('two') componentTwo: RtkButton;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
     this.componentTwo.variant = 'secondary';

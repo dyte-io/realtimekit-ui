@@ -1,4 +1,4 @@
-import type { Message } from '@dytesdk/web-core';
+import type { Message } from '@cloudflare/realtimekit';
 import { Peer } from '../types/rtk-client';
 import { ChatChannel, ChatMessage } from '../types/props';
 import { chatUnreadTimestamps } from './user-prefs';

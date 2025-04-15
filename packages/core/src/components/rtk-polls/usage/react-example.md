@@ -1,6 +1,6 @@
 ```jsx live
 <Center>
-  <DytePolls
+  <RtkPolls
     meeting={meeting}
     style={{ height: '480px', maxWidth: '320px', backgroundColor: '#000' }}
   />

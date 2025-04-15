@@ -4,7 +4,7 @@ import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Meeting } from '../../types/rtk-client';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DytePermissionsPreset } from '@dytesdk/web-core';
+import { RTKPermissionsPreset } from '@cloudflare/realtimekit';
 
 @Component({
   tag: 'rtk-caption-toggle',
@@ -67,7 +67,7 @@ export class RtkCaptionToggle {
 
   private permissionsUpdateListener = () => {
     this.captionEnabled =
-      (this.meeting.self.permissions as DytePermissionsPreset).transcriptionEnabled ?? false;
+      (this.meeting.self.permissions as RTKPermissionsPreset).transcriptionEnabled ?? false;
   };
 
   private toggleCaptions() {

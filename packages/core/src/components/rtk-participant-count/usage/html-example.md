@@ -1,8 +1,8 @@
 ```html
-<dyte-participant-count id="dyte-el"></dyte-participant-count>
+<rtk-participant-count id="rtk-el"></rtk-participant-count>
 
 <script>
-  const el = document.getElementBydId('dyte-el');
+  const el = document.getElementBydId('rtk-el');
   el.meeting = meeting;
 </script>
 ```

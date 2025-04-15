@@ -1,3 +1,3 @@
 ```jsx live
-<DyteViewerCount meeting={meeting} />
+<RtkViewerCount meeting={meeting} />
 ```

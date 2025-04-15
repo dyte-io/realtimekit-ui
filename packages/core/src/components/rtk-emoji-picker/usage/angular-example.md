@@ -5,21 +5,21 @@
 >
   Select an emoji
 </div>
-<dyte-emoji-picker
+<rtk-emoji-picker
   #emojiPicker
-  (dyteEmojiClicked)="selectEmoji"
-></dyte-emoji-picker>
+  (rtkEmojiClicked)="selectEmoji"
+></rtk-emoji-picker>
 ```
 
 ```js
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('emojiPicker') componentEmojiPicker: DyteEmojiPicker;
+  @ViewChild('emojiPicker') componentEmojiPicker: RtkEmojiPicker;
 
   @ViewChild('emojiSelected') componentSelected: HTMLDivElement;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {}
 

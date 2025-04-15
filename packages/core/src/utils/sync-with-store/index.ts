@@ -1,8 +1,8 @@
 import { getElement, ComponentInterface } from '@stencil/core';
-import { uiStore as store, appendElement, removeElement, type DyteUIStore } from './ui-store';
+import { uiStore as store, appendElement, removeElement, type RtkUiStore } from './ui-store';
 
 export function SyncWithStore() {
-  return function (proto: ComponentInterface, propName: keyof DyteUIStore) {
+  return function (proto: ComponentInterface, propName: keyof RtkUiStore) {
     const { connectedCallback, disconnectedCallback } = proto;
 
     proto.connectedCallback = function () {

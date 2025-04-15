@@ -1,5 +1,5 @@
 ```jsx live
-<DyteEmojiPicker
+<RtkEmojiPicker
   onRtkEmojiClicked={(e) => console.log('You selected', e.detail)}
 />
 ```

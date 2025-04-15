@@ -1,7 +1,7 @@
 Template
 
 ```html
-<dyte-clock #clock></dyte-clock>
+<rtk-clock #clock></rtk-clock>
 ```
 
 Component
@@ -10,12 +10,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('clock') componentClock: DyteClock;
+  @ViewChild('clock') componentClock: RtkClock;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentClock.meeting = this.dyteMeeting;
+    this.componentClock.meeting = this.rtkMeeting;
   }
 }
 ```

@@ -1,5 +1,5 @@
 import { defaultIconPack, IconPack } from '../../lib/icons';
-import { DytePermissionsPreset, DytePlugin } from '@dytesdk/web-core';
+import { RTKPermissionsPreset, RTKPlugin } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, Watch, State, writeTask } from '@stencil/core';
 import { Meeting } from '../../types/rtk-client';
 import { SyncWithStore } from '../../utils/sync-with-store';
@@ -23,7 +23,7 @@ export class RtkPluginMain {
   meeting: Meeting;
 
   /** Plugin */
-  @Prop() plugin!: DytePlugin;
+  @Prop() plugin!: RTKPlugin;
 
   /** Icon pack */
   @SyncWithStore()
@@ -62,7 +62,7 @@ export class RtkPluginMain {
   }
 
   @Watch('plugin')
-  pluginChanged(plugin: DytePlugin) {
+  pluginChanged(plugin: RTKPlugin) {
     this.toggleViewModeListener = (enable: boolean) => {
       const enabled = this.canInteractWithPlugin();
       if (enabled) return;
@@ -88,7 +88,7 @@ export class RtkPluginMain {
      * For v2 the controller is within plugin config
      */
 
-    const pluginConfig = (this.meeting.self.permissions.plugins as DytePermissionsPreset['plugins'])
+    const pluginConfig = (this.meeting.self.permissions.plugins as RTKPermissionsPreset['plugins'])
       .config[pluginId];
     /**
      * In some cases plugin config is undefined, specifically seen in cases of self

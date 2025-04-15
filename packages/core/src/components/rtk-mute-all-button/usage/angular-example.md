@@ -1,9 +1,9 @@
 Template
 
 ```html
-<dyte-mute-all-button #one></dyte-mute-all-button>
-<dyte-mute-all-button #two></dyte-mute-all-button>
-<dyte-mute-all-button #three></dyte-mute-all-button>
+<rtk-mute-all-button #one></rtk-mute-all-button>
+<rtk-mute-all-button #two></rtk-mute-all-button>
+<rtk-mute-all-button #three></rtk-mute-all-button>
 ```
 
 Component
@@ -12,25 +12,25 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('one') componentOne: DyteMuteAllButton;
+  @ViewChild('one') componentOne: RtkMuteAllButton;
 
-  @ViewChild('two') componentTwo: DyteMuteAllButton;
+  @ViewChild('two') componentTwo: RtkMuteAllButton;
 
-  @ViewChild('three') componentTree: DyteMuteAllButton;
+  @ViewChild('three') componentTree: RtkMuteAllButton;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
     // Change the size to small
-    this.componentOne.meeting = this.dyteMeeting;
+    this.componentOne.meeting = this.rtkMeeting;
     this.componentOne.size = 'sm';
 
     // Change the size to large
-    this.componentTwo.meeting = this.dyteMeeting;
+    this.componentTwo.meeting = this.rtkMeeting;
     this.componentTwo.size = 'lg';
 
     // Render as a horizontal button
-    this.componentThree.meeting = this.dyteMeeting;
+    this.componentThree.meeting = this.rtkMeeting;
     this.componentThree.variant = 'horizontal';
   }
 }

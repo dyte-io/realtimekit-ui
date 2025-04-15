@@ -2,7 +2,7 @@ import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
 import { States, Size, IconPack, defaultIconPack, RtkI18n } from '../../exports';
 import { useLanguage } from '../../lib/lang';
 import { Meeting } from '../../types/rtk-client';
-import { AudioProducerScoreStats, MediaKind, ProducerScoreStats } from '@dytesdk/web-core';
+import { AudioProducerScoreStats, MediaKind, ProducerScoreStats } from '@cloudflare/realtimekit';
 import { SyncWithStore } from '../../utils/sync-with-store';
 // import storeState from '../../lib/store';
 import {

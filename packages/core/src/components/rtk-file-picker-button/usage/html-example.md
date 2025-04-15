@@ -1,6 +1,6 @@
 ```html
-<dyte-file-picker-button id="file-el" />
-<dyte-file-picker-button id="image-el" />
+<rtk-file-picker-button id="file-el" />
+<rtk-file-picker-button id="image-el" />
 
 <script>
   const imageEl = document.getElementById('file-el');

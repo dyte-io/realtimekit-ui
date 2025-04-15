@@ -1,8 +1,8 @@
 ```html
-<dyte-livestream-indicator id="dyte-el"></dyte-livestream-indicator>
+<rtk-livestream-indicator id="rtk-el"></rtk-livestream-indicator>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
 </script>
 ```

@@ -9,7 +9,7 @@ import { UIConfig } from '../../types/ui-config';
 import { Dimensions, useGrid } from '../../lib/grid';
 import ResizeObserver from 'resize-observer-polyfill';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { MediaConnectionState } from '@dytesdk/web-core';
+import { MediaConnectionState } from '@cloudflare/realtimekit';
 
 /**
  * A grid component which renders only the participants in a simple grid.

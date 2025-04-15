@@ -1,7 +1,7 @@
 ```jsx live
 <Center>
-  <DytePollsToggle size="sm" meeting={meeting} />
-  <DytePollsToggle size="lg" meeting={meeting} />
-  <DytePollsToggle variant="horizontal" size="sm" meeting={meeting} />
+  <RtkPollsToggle size="sm" meeting={meeting} />
+  <RtkPollsToggle size="lg" meeting={meeting} />
+  <RtkPollsToggle variant="horizontal" size="sm" meeting={meeting} />
 </Center>
 ```

@@ -14,7 +14,7 @@ import {
 import { Meeting, Peer } from '../../types/rtk-client';
 import { Chat, ChatChannel, Size } from '../../types/props';
 import { defaultIconPack, IconPack } from '../../lib/icons';
-import type { Message, TextMessage } from '@dytesdk/web-core';
+import type { Message, TextMessage } from '@cloudflare/realtimekit';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import {
   TEMPORARY_CHANNEL_PREFIX,

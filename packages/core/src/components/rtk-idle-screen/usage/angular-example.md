@@ -1,5 +1,5 @@
 ```html
-<dyte-idle-screen #idleScreen style="height: 360px"></dyte-idle-screen>
+<rtk-idle-screen #idleScreen style="height: 360px"></rtk-idle-screen>
 ```
 
 Component
@@ -8,13 +8,13 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('idleScreen') componentIdleScreen: DyteIdleScreen;
+  @ViewChild('idleScreen') componentIdleScreen: RtkIdleScreen;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
     const config = {
-      designTokens: { logo: 'https://docs.dyte.io/logo/dark.svg' },
+      designTokens: { logo: 'https://docs.rtk.io/logo/dark.svg' },
     };
     this.componentIdleScreen.config = config;
   }

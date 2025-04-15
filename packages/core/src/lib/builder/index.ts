@@ -134,7 +134,7 @@ export class UIElemEditor {
 }
 /* eslint-enable no-console */
 
-export class RTKUIBuilder {
+export class RtkUiBuilder {
   private config: UIConfig;
 
   constructor(config?: UIConfig) {

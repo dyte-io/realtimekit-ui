@@ -1,9 +1,9 @@
 import { ConnectedMeetingState } from '../types/props';
 import { participantIdentifier } from './breakout-rooms';
 import BreakoutRoomsManager from './breakout-rooms-manager';
-import DyteClient from '@dytesdk/web-core';
+import RealtimeKitClient from '@cloudflare/realtimekit';
 
-const DyteClientMock = jest.fn().mockImplementation(() => ({
+const RealtimeKitClientMock = jest.fn().mockImplementation(() => ({
   connectedMeetings: {
     createMeetings: jest.fn().mockImplementation((meetingsToCreate: { title: string }[]) =>
       meetingsToCreate.map((meeting, index) => ({
@@ -320,7 +320,7 @@ describe('Breakout rooms manager', () => {
     // delete a existing meeting
     manager.deleteMeeting(MOCK_ROOM_3.id);
 
-    const client: DyteClient = new DyteClientMock();
+    const client: RealtimeKitClient = new RealtimeKitClientMock();
     await manager.applyChanges(client);
 
     expect(client.connectedMeetings.createMeetings).toHaveBeenCalledWith([

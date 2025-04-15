@@ -1,6 +1,6 @@
 ```jsx live
 <Center>
-  <DyteFullscreenToggle />
-  <DyteFullscreenToggle variant="horizontal" />
+  <RtkFullscreenToggle />
+  <RtkFullscreenToggle variant="horizontal" />
 </Center>
 ```

@@ -1,3 +1,3 @@
 ```jsx live
-<DytePollForm onDyteCreatePoll={(e) => console.log('create poll', e.detail)} />
+<RtkPollForm onRtkCreatePoll={(e) => console.log('create poll', e.detail)} />
 ```

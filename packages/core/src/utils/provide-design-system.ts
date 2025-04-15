@@ -118,7 +118,7 @@ const provideColors = (
 };
 
 /**
- * Provides the design system new tokens to consume values from for styling the Dyte UI Kit's UI.
+ * Provides the design system new tokens to consume values from for styling the RealtimeKit UI components.
  * @param el The element/node you want to _provide_ RTK Design system.
  * @param tokens The design tokens you want to updated.
  */
@@ -137,7 +137,7 @@ export const provideRtkDesignSystem = (
 ) => {
   if (typeof el !== 'object') {
     throw new Error(
-      '[rtk-ui-kit] (provideDyteDesignSystem): Passed element is not a valid HTML Element'
+      '[rtk-ui-kit] (provideRtkDesignSystem): Passed element is not a valid HTML Element'
     );
   }
 

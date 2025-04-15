@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Watch, State, Event, EventEmitter } from '@stencil/core';
-import type { DeviceConfig } from '@dytesdk/web-core';
+import type { DeviceConfig } from '@cloudflare/realtimekit';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Meeting } from '../../types/rtk-client';

@@ -1,4 +1,4 @@
-import type { LivestreamState } from '@dytesdk/web-core';
+import type { LivestreamState } from '@cloudflare/realtimekit';
 import Hls from 'hls.js';
 import {
   Component,
@@ -241,7 +241,7 @@ export class RtkLivestreamPlayer {
           lowLatencyMode: false,
         });
 
-        (window as any).dyte_hls = this.hls;
+        (window as any).rtk_hls = this.hls;
 
         this.meeting.__internals__.logger.info(`rtk-livestream-player:: Loading source`);
         this.hls.loadSource(this.playbackUrl);
@@ -365,7 +365,7 @@ export class RtkLivestreamPlayer {
     if (this.hls) {
       this.hls.destroy();
     }
-    (window as any).dyte_hls = null;
+    (window as any).rtk_hls = null;
   }
 
   @Watch('meeting')

@@ -1,4 +1,4 @@
-import type { StageStatus } from '@dytesdk/web-core';
+import type { StageStatus } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, Watch, State, Event, EventEmitter } from '@stencil/core';
 import { Size, IconPack, defaultIconPack, RtkI18n, States } from '../../exports';
 import { useLanguage } from '../../lib/lang';

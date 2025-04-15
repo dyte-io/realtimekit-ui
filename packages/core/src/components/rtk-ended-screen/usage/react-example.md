@@ -1,5 +1,5 @@
 ```jsx live
-<DyteEndedScreen
+<RtkEndedScreen
   config={{ designTokens: { logo: '/logo/dark.svg' } }}
   style={{ height: '360px' }}
 />

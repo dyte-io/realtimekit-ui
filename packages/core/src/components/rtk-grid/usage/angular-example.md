@@ -1,5 +1,5 @@
 ```html
-<dyte-grid #grid style="height: 360px;"></dyte-grid>
+<rtk-grid #grid style="height: 360px;"></rtk-grid>
 ```
 
 Component
@@ -8,12 +8,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('grid') componentGrid: DyteGrid;
+  @ViewChild('grid') componentGrid: RtkGrid;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentGrid.message = this.dyteMeeting;
+    this.componentGrid.message = this.rtkMeeting;
   }
 }
 ```

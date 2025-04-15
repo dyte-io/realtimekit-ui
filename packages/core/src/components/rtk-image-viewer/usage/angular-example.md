@@ -1,5 +1,5 @@
 ```html
-<dyte-image-viewer #imageViewer></dyte-image-viewer>
+<rtk-image-viewer #imageViewer></rtk-image-viewer>
 ```
 
 Component
@@ -8,9 +8,9 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('imageViewer') componentImageViewer: DyteImageViewer;
+  @ViewChild('imageViewer') componentImageViewer: RtkImageViewer;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
     this.componentImageViewer.image = {

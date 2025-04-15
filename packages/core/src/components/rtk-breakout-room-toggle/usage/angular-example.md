@@ -1,7 +1,7 @@
 Template
 
 ```html
-<dyte-breakout-rooms-toggle #myId></dyte-breakout-rooms-toggle>
+<rtk-breakout-rooms-toggle #myId></rtk-breakout-rooms-toggle>
 ```
 
 Component
@@ -10,12 +10,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('myId') component: DyteBreakoutRoomsToggle;
+  @ViewChild('myId') component: RtkBreakoutRoomsToggle;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.component.meeting = this.dyteMeeting;
+    this.component.meeting = this.rtkMeeting;
   }
 }
 ```

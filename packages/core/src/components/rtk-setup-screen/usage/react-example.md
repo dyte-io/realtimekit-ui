@@ -1,3 +1,3 @@
 ```jsx live
-<DyteSetupScreen meeting={meeting} style={{ height: '360px' }} />
+<RtkSetupScreen meeting={meeting} style={{ height: '360px' }} />
 ```

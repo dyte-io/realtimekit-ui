@@ -1,8 +1,8 @@
 ```html
-<dyte-grid-pagination id="dyte-el"></dyte-grid-pagination>
+<rtk-grid-pagination id="rtk-el"></rtk-grid-pagination>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
 </script>
 ```

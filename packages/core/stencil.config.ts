@@ -5,7 +5,7 @@ import { vueOutputTarget } from '@stencil/vue-output-target';
 import { angularOutputTarget } from '@stencil/angular-output-target';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 
-const webCorePath = require.resolve('@dytesdk/web-core/inlined');
+const realtimekitPath = require.resolve('@cloudflare/realtimekit/inlined');
 
 const esModules = ['lodash-es'].join('|');
 
@@ -65,8 +65,8 @@ export const config: Config = {
       // copy latest esm build to public/ for importing
       copy: [
         {
-          src: webCorePath,
-          dest: 'web-core.js',
+          src: realtimekitPath,
+          dest: 'realtimekit.js',
         },
       ],
     },

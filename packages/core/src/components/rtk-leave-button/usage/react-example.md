@@ -1,7 +1,7 @@
 ```jsx live
 <Center>
-  <DyteLeaveButton size="sm" />
-  <DyteLeaveButton size="lg" />
-  <DyteLeaveButton variant="horizontal" />
+  <RtkLeaveButton size="sm" />
+  <RtkLeaveButton size="lg" />
+  <RtkLeaveButton variant="horizontal" />
 </Center>
 ```

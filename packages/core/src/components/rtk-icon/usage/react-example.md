@@ -1,3 +1,3 @@
 ```jsx live
-<DyteIcon icon={airplaneSVG} />
+<RtkIcon icon={airplaneSVG} />
 ```

@@ -1,8 +1,8 @@
 ```html
-<dyte-channel-selector-view
+<rtk-channel-selector-view
   [channels]="channels"
   (channelChange)="onChannelChange($event)"
-></dyte-channel-selector-view>
+></rtk-channel-selector-view>
 ```
 
 Component

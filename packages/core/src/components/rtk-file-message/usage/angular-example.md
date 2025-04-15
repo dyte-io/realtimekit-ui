@@ -1,5 +1,5 @@
 ```html
-<dyte-file-message #message />
+<rtk-file-message #message />
 ```
 
 Component
@@ -8,12 +8,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('message') componentMessage: DyteFileMessage;
+  @ViewChild('message') componentMessage: RtkFileMessage;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentMessage.message = this.dyteMeeting.chat.messages[0]; // pick a file message
+    this.componentMessage.message = this.rtkMeeting.chat.messages[0]; // pick a file message
   }
 }
 ```

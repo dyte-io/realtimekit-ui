@@ -1,5 +1,5 @@
 ```jsx live
-<DyteSpotlightGrid
+<RtkSpotlightGrid
   layout="row"
   participants={meeting.participants.active.toArray()}
   pinnedParticipants={[meeting.self]}
