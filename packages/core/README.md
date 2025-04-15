@@ -27,7 +27,7 @@ Then you'll need to initialize a meeting object once you've received an `authTok
 > to use with RealtimeKit.
 
 ```js
-const meeting = await RealtimeKit.init({
+const meeting = await RealtimeKitClient.init({
   authToken: '<your-auth-token>',
   defaults: {
     video: true,
@@ -44,7 +44,7 @@ You can now pass this meeting instance to any of the components:
 
 <script>
   const init = async () => {
-    const meeting = await RealtimeKit.init({
+    const meeting = await RealtimeKitClient.init({
       authToken: '<your-auth-token>',
       defaults: {
         video: true,
