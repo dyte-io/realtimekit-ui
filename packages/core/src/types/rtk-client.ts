@@ -1,4 +1,4 @@
-import type DyteClient from '@cloudflare/realtimekit';
+import type RealtimeKitClient from '@cloudflare/realtimekit';
 import type {
   RTKSelf as Self,
   RTKParticipant as Participant,
@@ -11,9 +11,9 @@ type WaitlistedParticipant = Readonly<
 >;
 type Peer = Self | Participant;
 
-type Meeting = DyteClient;
+type Meeting = RealtimeKitClient;
 
-export type { Meeting, DyteClient, Peer, Self, Participant, WaitlistedParticipant };
+export type { Meeting, RealtimeKitClient, Peer, Self, Participant, WaitlistedParticipant };
 
 export type RoomLeftState = leaveRoomState;
 

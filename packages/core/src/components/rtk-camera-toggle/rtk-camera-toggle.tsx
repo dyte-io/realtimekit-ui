@@ -109,7 +109,7 @@ export class RtkCameraToggle {
   }
 
   private toggleCamera = () => {
-    this.meeting?.__internals__.logger.info('dyteCameraToggle::toggleCamera', {
+    this.meeting?.__internals__.logger.info('rtkCameraToggle::toggleCamera', {
       media: {
         video: {
           enabled: Boolean(this.meeting?.self?.videoEnabled),

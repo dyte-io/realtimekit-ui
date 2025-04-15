@@ -110,7 +110,7 @@ export class RtkMicToggle {
   }
 
   private toggleMic = () => {
-    this.meeting?.__internals__.logger.info('dyteMicToggle::toggleMic', {
+    this.meeting?.__internals__.logger.info('rtkMicToggle::toggleMic', {
       media: {
         audio: {
           enabled: Boolean(this.meeting?.self?.audioEnabled),

@@ -12,7 +12,7 @@ export const getInitialStates = (): States => ({
   prefs: getUserPreferences(),
 });
 
-export interface DyteUIStore {
+export interface RtkUiStore {
   meeting: Meeting | undefined;
   t: RtkI18n;
   iconPack: IconPack;
@@ -21,7 +21,7 @@ export interface DyteUIStore {
   size: Size | undefined;
 }
 
-const uiStore = createStore<DyteUIStore>({
+const uiStore = createStore<RtkUiStore>({
   meeting: undefined,
   t: useLanguage(),
   iconPack: defaultIconPack,

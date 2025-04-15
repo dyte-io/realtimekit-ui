@@ -113,7 +113,7 @@ export class RtkNotifications {
 
   connectedCallback() {
     if (typeof document !== 'undefined') {
-      document?.addEventListener('dyteNotification', this.onDyteNotification);
+      document?.addEventListener('rtkNotification', this.onNotification);
     }
     this.meetingChanged(this.meeting);
     this.configChanged(this.config);
@@ -145,7 +145,7 @@ export class RtkNotifications {
 
   disconnectedCallback() {
     if (typeof document !== 'undefined') {
-      document?.removeEventListener('dyteNotification', this.onDyteNotification);
+      document?.removeEventListener('rtkNotification', this.onNotification);
     }
 
     if (this.meeting == null) return;
@@ -546,7 +546,7 @@ export class RtkNotifications {
     }
   }
 
-  @Listen('dyteAPIError', { target: 'window' })
+  @Listen('rtkApiError', { target: 'window' })
   apiErrorListener({ detail }) {
     const { trace, message } = detail;
     this.add({
@@ -567,9 +567,7 @@ export class RtkNotifications {
     });
   }
 
-  private onDyteNotification = (
-    e: CustomEvent<Notification & { playSound: Sound | undefined }>
-  ) => {
+  private onNotification = (e: CustomEvent<Notification & { playSound: Sound | undefined }>) => {
     this.add(e.detail);
     const playSound = e.detail.playSound;
     if (playSound != undefined) this.audio.play(playSound);
