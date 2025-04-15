@@ -1,6 +1,6 @@
 {
   "name": "@cloudflare/realtimekit-vue-ui",
-  "version": "1.0.0-staging.1",
+  "version": "1.0.0-staging.2",
   "description": "UI Kit to support easy UI development for Vue.",
   "repository": {
     "type": "git",

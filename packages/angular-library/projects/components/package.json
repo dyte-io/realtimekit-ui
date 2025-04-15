@@ -1,6 +1,6 @@
 {
   "name": "@cloudflare/realtimekit-angular-ui",
-  "version": "1.0.0-staging.1",
+  "version": "1.0.0-staging.2",
   "description": "UI Kit to support easy UI development for Angular Projects",
   "peerDependencies": {
     "@angular/common": ">=12",

@@ -1,3 +1,10 @@
+# [1.0.0-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.1...@cloudflare/realtimekit-ui-v1.0.0-staging.2) (2025-04-15)
+
+
+### Bug Fixes
+
+* provide cache-dependency-path to workflows ([b6e4db8](https://github.com/dyte-io/realtimekit-ui/commit/b6e4db83149b934caac3533058841ae47785eb33))
+
 # 1.0.0-staging.1 (2025-04-15)
 
 
