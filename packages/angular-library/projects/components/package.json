@@ -32,5 +32,9 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/fesm2022/cloudflare-realtimekit-angular-ui.mjs"
     }
-  }
+  },
+  "bugs": {
+    "url": "https://realtime.cloudflare.com/issues"
+  },
+  "homepage": "https://realtime.cloudflare.com"
 }

@@ -7,8 +7,9 @@
     "url": "git+https://github.com/dyte-io/realtimekit-ui.git"
   },
   "bugs": {
-    "email": "support@dyte.io"
+    "url": "https://realtime.cloudflare.com/issues"
   },
+  "homepage": "https://realtime.cloudflare.com",
   "main": "./dist/index.js",
   "module": "./dist/es/index.js",
   "types": "./dist/index.d.ts",
