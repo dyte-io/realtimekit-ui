@@ -1,3 +1,10 @@
+# [1.0.0-staging.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.3...@cloudflare/realtimekit-ui-v1.0.0-staging.4) (2025-04-16)
+
+
+### Bug Fixes
+
+* update bugs, homepage in package.json and update realtimekit ([0dc85dc](https://github.com/dyte-io/realtimekit-ui/commit/0dc85dc092c1d2dc0435d697834fcaa408c7e18e))
+
 # [1.0.0-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.2...@cloudflare/realtimekit-ui-v1.0.0-staging.3) (2025-04-15)
 
 
