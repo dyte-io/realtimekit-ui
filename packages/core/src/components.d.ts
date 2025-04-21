@@ -3402,6 +3402,10 @@ export namespace Components {
          */
         "currentTab": string;
         /**
+          * Option to focus close button when opened
+         */
+        "focusCloseButton": boolean;
+        /**
           * Hide Close Action
          */
         "hideCloseAction": boolean;
@@ -10285,6 +10289,10 @@ declare namespace LocalJSX {
           * Default tab to open
          */
         "currentTab"?: string;
+        /**
+          * Option to focus close button when opened
+         */
+        "focusCloseButton"?: boolean;
         /**
           * Hide Close Action
          */

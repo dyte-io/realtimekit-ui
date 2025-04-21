@@ -1432,6 +1432,7 @@ export const RtkSidebarUi = /*@__PURE__*/ defineContainer<JSX.RtkSidebarUi>('rtk
   'hideCloseAction',
   'currentTab',
   'iconPack',
+  'focusCloseButton',
   't',
   'tabChange',
   'sidebarClose'

@@ -3243,14 +3243,14 @@ export declare interface RtkSidebar extends Components.RtkSidebar {
 
 
 @ProxyCmp({
-  inputs: ['currentTab', 'hideCloseAction', 'hideHeader', 'iconPack', 't', 'tabs', 'view']
+  inputs: ['currentTab', 'focusCloseButton', 'hideCloseAction', 'hideHeader', 'iconPack', 't', 'tabs', 'view']
 })
 @Component({
   selector: 'rtk-sidebar-ui',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['currentTab', 'hideCloseAction', 'hideHeader', 'iconPack', 't', 'tabs', 'view'],
+  inputs: ['currentTab', 'focusCloseButton', 'hideCloseAction', 'hideHeader', 'iconPack', 't', 'tabs', 'view'],
 })
 export class RtkSidebarUi {
   protected el: HTMLRtkSidebarUiElement;
