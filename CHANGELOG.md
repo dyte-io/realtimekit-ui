@@ -1,3 +1,10 @@
+# [1.0.0-staging.9](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.8...@cloudflare/realtimekit-ui-v1.0.0-staging.9) (2025-04-22)
+
+
+### Features
+
+* **rtk-notifications:** pause notification timeouts while focused/hovered ([c976e95](https://github.com/dyte-io/realtimekit-ui/commit/c976e95a9156236e06b39833fa584a91bbf15e8d))
+
 # [1.0.0-staging.8](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.7...@cloudflare/realtimekit-ui-v1.0.0-staging.8) (2025-04-22)
 
 
