@@ -1,3 +1,10 @@
+# [1.0.0-staging.6](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.5...@cloudflare/realtimekit-ui-v1.0.0-staging.6) (2025-04-22)
+
+
+### Bug Fixes
+
+* **overflow menu buttons:** fix vertical positioning of badges in overflow menu ([ccab8b3](https://github.com/dyte-io/realtimekit-ui/commit/ccab8b34fd8754bf3b9e5bd05ca17953d3619421))
+
 # [1.0.0-staging.5](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.4...@cloudflare/realtimekit-ui-v1.0.0-staging.5) (2025-04-22)
 
 
