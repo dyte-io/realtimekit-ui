@@ -95,6 +95,16 @@ export class RtkPluginsToggle {
     this.canViewPlugins = canViewPlugins(this.meeting);
   };
 
+  @Watch('pluginsActive')
+  handlePluginsActiveChange() {
+    // Plugins sidebar closed without opening a different sidebar
+    if (!this.pluginsActive && !this.states.activeSidebar) {
+      this.buttonEl.focus();
+    }
+  }
+
+  private buttonEl: HTMLRtkControlbarButtonElement;
+
   render() {
     if (!this.canViewPlugins) return <Host data-hidden />;
 
@@ -103,6 +113,7 @@ export class RtkPluginsToggle {
     return (
       <Host title={text}>
         <rtk-controlbar-button
+          ref={(el) => (this.buttonEl = el)}
           part="controlbar-button"
           size={this.size}
           iconPack={this.iconPack}

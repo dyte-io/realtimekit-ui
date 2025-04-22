@@ -129,6 +129,16 @@ export class RtkChatToggle {
     this.canViewChat = canViewChat(this.meeting);
   };
 
+  @Watch('chatActive')
+  handleChatActiveChange() {
+    // Chat sidebar closed without opening a different sidebar
+    if (!this.chatActive && !this.states.activeSidebar) {
+      this.buttonEl.focus();
+    }
+  }
+
+  private buttonEl: HTMLRtkControlbarButtonElement;
+
   render() {
     if (!this.canViewChat) return <Host data-hidden />;
     return (
@@ -142,6 +152,7 @@ export class RtkChatToggle {
               </div>
             )}
         <rtk-controlbar-button
+          ref={(el) => (this.buttonEl = el)}
           part="controlbar-button"
           size={this.size}
           iconPack={this.iconPack}

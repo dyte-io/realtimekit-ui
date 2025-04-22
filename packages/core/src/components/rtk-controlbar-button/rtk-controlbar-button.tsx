@@ -11,7 +11,7 @@ export type ControlBarVariant = 'button' | 'horizontal';
 @Component({
   tag: 'rtk-controlbar-button',
   styleUrl: 'rtk-controlbar-button.css',
-  shadow: true,
+  shadow: { delegatesFocus: true },
 })
 export class RtkControlbarButton {
   /** Variant */
