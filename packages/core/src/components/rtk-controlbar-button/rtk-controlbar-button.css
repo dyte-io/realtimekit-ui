@@ -9,7 +9,7 @@
 
   @apply relative box-border inline-flex;
   @apply min-w-20 h-full w-auto;
-  @apply select-none transition-colors;
+  @apply select-none rounded-md transition-colors;
   @apply text-text-1000;
 
   background-color: var(--background-color);
