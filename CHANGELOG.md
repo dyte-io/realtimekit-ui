@@ -1,3 +1,10 @@
+# [1.0.0-staging.5](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.4...@cloudflare/realtimekit-ui-v1.0.0-staging.5) (2025-04-22)
+
+
+### Bug Fixes
+
+* **rtk-leave-meeting:** use consistent primary button in leave dialog ([bd7f4fd](https://github.com/dyte-io/realtimekit-ui/commit/bd7f4fdad4c8ff802680ae003e091c0f58d35d2d))
+
 # [1.0.0-staging.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.3...@cloudflare/realtimekit-ui-v1.0.0-staging.4) (2025-04-16)
 
 
