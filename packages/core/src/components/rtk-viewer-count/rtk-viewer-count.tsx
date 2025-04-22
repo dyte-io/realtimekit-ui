@@ -65,7 +65,7 @@ export class RtkViewerCount {
   }
 
   render() {
-    if (!showLivestream(this.meeting)) return null;
+    if (!showLivestream(this.meeting)) return <Host data-hidden />;
     return (
       <Host tabIndex={0} role="log" aria-label={`${this.viewerCount} ${this.t('viewers')}`}>
         <rtk-icon icon={this.iconPack.viewers} tabIndex={-1} aria-hidden={true} part="icon" />

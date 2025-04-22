@@ -1,7 +1,7 @@
 @import '../../styles/reset.css';
 
 :host {
-  @apply mx-2 inline-flex items-center;
+  @apply inline-flex items-center;
   @apply text-text-md select-none;
   @apply text-text-1000;
 
@@ -9,8 +9,13 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* useful for removing from layouts that may have gap */
+:host([data-hidden]) {
+  display: none;
+}
+
 :host([size='sm']) {
-  @apply text-text-sm mx-1;
+  @apply text-text-sm;
 }
 
 rtk-icon {

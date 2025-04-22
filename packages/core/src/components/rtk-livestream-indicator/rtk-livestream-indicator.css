@@ -4,6 +4,11 @@
   @apply mx-2 flex;
 }
 
+/* useful for removing from layouts that may have gap */
+:host([data-hidden]) {
+  display: none;
+}
+
 :host[size='sm'] {
   @apply mx-1;
 }

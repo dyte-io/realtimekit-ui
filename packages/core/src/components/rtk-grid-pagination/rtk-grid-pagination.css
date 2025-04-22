@@ -1,11 +1,16 @@
 @import '../../styles/reset.css';
 
 :host {
-  @apply text-text-lg mx-2 flex select-none items-center;
+  @apply text-text-lg flex select-none items-center;
+}
+
+/* useful for removing from layouts that may have gap */
+:host([data-hidden]) {
+  display: none;
 }
 
 :host([size='sm']) {
-  @apply text-text-sm mx-1;
+  @apply text-text-sm;
 
   .center {
     @apply mx-0;
@@ -54,8 +59,6 @@ rtk-button {
 }
 
 :host([variant='grid']) {
-  @apply mx-0;
-
   rtk-button {
     @apply absolute top-1/2 h-20 w-20;
     @apply opacity-20 transition hover:opacity-100;

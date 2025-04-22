@@ -65,7 +65,7 @@ export class RtkRecordingIndicator {
 
   render() {
     return (
-      <Host>
+      <Host data-hidden={!this.isRecording}>
         {this.isRecording && (
           <div class="indicator" aria-label={this.t('recording.indicator')} part="indicator">
             <rtk-icon icon={this.iconPack.recording} aria-hidden={true} tabIndex={-1} part="icon" />

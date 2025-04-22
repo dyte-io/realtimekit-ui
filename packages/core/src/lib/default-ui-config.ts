@@ -20,6 +20,7 @@ export const defaultConfig: UIConfig = {
       gridTemplateColumns: 'repeat(3, 1fr)',
       gridTemplateRows: '1fr',
       alignItems: 'center',
+      '--header-section-gap': 'var(--dyte-space-2, 8px)',
     },
     'rtk-header.sm': {
       display: 'grid',
@@ -27,12 +28,14 @@ export const defaultConfig: UIConfig = {
       gridTemplateColumns: 'repeat(2, 1fr)',
       gridTemplateRows: '1fr',
       alignItems: 'center',
+      '--header-section-gap': 'var(--dyte-space-1, 4px)',
     },
     'div#header-left': {
       display: 'flex',
       alignItems: 'center',
       height: '48px',
       wordBreak: 'break-all',
+      gap: 'var(--header-section-gap)',
     },
     'rtk-logo': {
       height: '26px',
@@ -42,11 +45,14 @@ export const defaultConfig: UIConfig = {
       alignItems: 'center',
       justifyContent: 'center',
       wordBreak: 'break-all',
+      gap: 'var(--header-section-gap)',
+      paddingInline: 'var(--dyte-space-3, 12px)',
     },
     'div#header-right': {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'flex-end',
+      gap: 'var(--header-section-gap)',
     },
     'rtk-stage': {
       display: 'flex',
