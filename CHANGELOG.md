@@ -1,3 +1,22 @@
+# [1.0.0-staging.8](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.7...@cloudflare/realtimekit-ui-v1.0.0-staging.8) (2025-04-22)
+
+
+### Bug Fixes
+
+* **header components:** replace margin with gap ([3e8677c](https://github.com/dyte-io/realtimekit-ui/commit/3e8677c1672390e1d27adad8b8bfd33bd34d1623))
+
+
+### BREAKING CHANGES
+
+* **header components:** The following components no longer have margin:
+- rtk-clock
+- rtk-grid-pagination
+- rtk-livestream-indicator
+- rtk-meeting-title
+- rtk-participan-count
+- rtk-recording-indicator
+- rtk-viewer-count
+
 # [1.0.0-staging.7](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.6...@cloudflare/realtimekit-ui-v1.0.0-staging.7) (2025-04-22)
 
 
