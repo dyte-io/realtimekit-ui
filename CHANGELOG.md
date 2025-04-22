@@ -1,3 +1,15 @@
+# [1.0.0-staging.10](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.9...@cloudflare/realtimekit-ui-v1.0.0-staging.10) (2025-04-22)
+
+
+### Bug Fixes
+
+* **dyte-confirmation-modal:** fix message margin ([146141e](https://github.com/dyte-io/realtimekit-ui/commit/146141e647e7302188184a2fdaaf2d4177cf2b93))
+
+
+### Features
+
+* **dyte-dialog:** use dialog element for better focus management ([a02e54e](https://github.com/dyte-io/realtimekit-ui/commit/a02e54edbe648c1105e94d1a89add09c705b3b51))
+
 # [1.0.0-staging.9](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.8...@cloudflare/realtimekit-ui-v1.0.0-staging.9) (2025-04-22)
 
 
