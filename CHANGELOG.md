@@ -1,3 +1,10 @@
+# [1.0.0-staging.11](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.10...@cloudflare/realtimekit-ui-v1.0.0-staging.11) (2025-04-22)
+
+
+### Bug Fixes
+
+* bring back border-radius in controlbar button ([b387507](https://github.com/dyte-io/realtimekit-ui/commit/b38750731a48d7b5bcdbccdca731f77abef67bcf))
+
 # [1.0.0-staging.10](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.9...@cloudflare/realtimekit-ui-v1.0.0-staging.10) (2025-04-22)
 
 
