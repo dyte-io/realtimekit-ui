@@ -1,3 +1,10 @@
+# [1.0.0-staging.7](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.6...@cloudflare/realtimekit-ui-v1.0.0-staging.7) (2025-04-22)
+
+
+### Features
+
+* **sidebar and sidebar toggles:** improvements when opening/closing sidebars ([3ced973](https://github.com/dyte-io/realtimekit-ui/commit/3ced9732d458d821f1a27c49f5afe12534a64294))
+
 # [1.0.0-staging.6](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.5...@cloudflare/realtimekit-ui-v1.0.0-staging.6) (2025-04-22)
 
 
