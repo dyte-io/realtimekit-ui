@@ -1,3 +1,10 @@
+# [1.0.0-staging.12](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.11...@cloudflare/realtimekit-ui-v1.0.0-staging.12) (2025-04-30)
+
+
+### Bug Fixes
+
+* **breakout-rooms:** users were not able to join breakouts in first try ([0b4c689](https://github.com/dyte-io/realtimekit-ui/commit/0b4c68997072dbd76d9cbff74450347a4858c901))
+
 # [1.0.0-staging.11](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.10...@cloudflare/realtimekit-ui-v1.0.0-staging.11) (2025-04-22)
 
 
