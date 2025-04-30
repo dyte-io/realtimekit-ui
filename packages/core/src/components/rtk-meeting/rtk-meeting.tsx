@@ -223,14 +223,14 @@ export class RtkMeeting {
     this.updateStates(e.detail);
   }
 
-  private handleChangingMeeting(destinationMeetingId: string) {
+  private handleChangingMeeting = (destinationMeetingId: string) => {
     this.updateStates({
       activeBreakoutRoomsManager: {
         ...uiState.states.activeBreakoutRoomsManager,
         destinationMeetingId,
       },
     });
-  }
+  };
 
   private handleResize() {
     this.size = getSize(this.host.clientWidth);
