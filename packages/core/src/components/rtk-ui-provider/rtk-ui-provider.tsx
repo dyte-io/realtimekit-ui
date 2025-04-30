@@ -215,14 +215,14 @@ export class RtkUiProvider {
     }
   };
 
-  private handleChangingMeeting(destinationMeetingId: string) {
+  private handleChangingMeeting = (destinationMeetingId: string) => {
     this.updateStates({
       activeBreakoutRoomsManager: {
         ...uiState.states.activeBreakoutRoomsManager,
         destinationMeetingId,
       },
     });
-  }
+  };
 
   render() {
     return <Host>{this.noRenderUntilMeeting && !this.meeting ? null : <slot />}</Host>;
