@@ -1,3 +1,10 @@
+# [1.0.0-staging.13](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.12...@cloudflare/realtimekit-ui-v1.0.0-staging.13) (2025-05-05)
+
+
+### Bug Fixes
+
+* update stage requests based on events from participants ([e8f2dd2](https://github.com/dyte-io/realtimekit-ui/commit/e8f2dd2916dbbbbfa0c208b94adbfb6e2c5f9998))
+
 # [1.0.0-staging.12](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.11...@cloudflare/realtimekit-ui-v1.0.0-staging.12) (2025-04-30)
 
 
