@@ -1,6 +1,5 @@
 import { Meeting } from '../types/rtk-client';
 import { disableSettingSinkId } from '../utils/flags';
-import logger from '../utils/logger';
 
 interface PeerAudio {
   id: string;
@@ -17,12 +16,15 @@ export default class RTKAudio {
 
   private audioTracks: PeerAudio[];
 
+  private logger: Meeting['__internals__']['logger'];
+
   private _onError: () => void;
 
   constructor(meeting: Meeting, audio?: HTMLAudioElement) {
     this.meeting = meeting;
     this.audio = audio ?? document.createElement('audio');
     this.audio.autoplay = true;
+    this.logger = meeting.__internals__.logger;
 
     this.audioStream = new MediaStream();
     this.audio.srcObject = this.audioStream;
@@ -56,7 +58,7 @@ export default class RTKAudio {
           this._onError();
         }
       } else if (err.name !== 'AbortError') {
-        logger.error('[rtk-audio] play() error\n', err);
+        this.logger.error('[rtk-audio] play() error\n', err);
       }
     });
   }
@@ -64,7 +66,7 @@ export default class RTKAudio {
   async setDevice(id: string) {
     if (disableSettingSinkId(this.meeting)) return;
     await (this.audio as any).setSinkId?.(id)?.catch((err) => {
-      logger.error('[rtk-audio] setSinkId() error\n', err);
+      this.logger.error('[rtk-audio] setSinkId() error\n', err);
     });
   }
 
