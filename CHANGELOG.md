@@ -1,3 +1,10 @@
+# [1.0.0-staging.14](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.13...@cloudflare/realtimekit-ui-v1.0.0-staging.14) (2025-05-06)
+
+
+### Bug Fixes
+
+* use logger from meeting object ([afd8393](https://github.com/dyte-io/realtimekit-ui/commit/afd8393b8bedc98bc3755f459f778285f001be91))
+
 # [1.0.0-staging.13](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.12...@cloudflare/realtimekit-ui-v1.0.0-staging.13) (2025-05-05)
 
 
