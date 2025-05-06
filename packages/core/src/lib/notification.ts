@@ -1,6 +1,5 @@
 import { Meeting } from '../types/rtk-client';
 import { disableSettingSinkId } from '../utils/flags';
-import logger from '../utils/logger';
 
 const SOUNDS = {
   joined: 'https://dyte-uploads.s3.ap-south-1.amazonaws.com/notification_join.mp3',
@@ -31,9 +30,7 @@ export default class RTKNotificationsAudio {
 
     this.audio.src = SOUNDS[sound];
     this.audio.volume = 0.3;
-    this.audio.play()?.catch((err) => {
-      logger.error('[rtk-notifications] play() failed\n', { sound, duration }, err);
-    });
+    this.audio.play()?.catch((_) => {});
 
     setTimeout(() => {
       this.playing = false;
@@ -42,8 +39,6 @@ export default class RTKNotificationsAudio {
 
   async setDevice(id: string) {
     if (disableSettingSinkId(this.meeting)) return;
-    await (this.audio as any)?.setSinkId?.(id)?.catch((err) => {
-      logger.error('[rtk-notifications] setSinkId() error\n', err);
-    });
+    await (this.audio as any)?.setSinkId?.(id)?.catch((_) => {});
   }
 }
