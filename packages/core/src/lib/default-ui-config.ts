@@ -20,7 +20,7 @@ export const defaultConfig: UIConfig = {
       gridTemplateColumns: 'repeat(3, 1fr)',
       gridTemplateRows: '1fr',
       alignItems: 'center',
-      '--header-section-gap': 'var(--dyte-space-2, 8px)',
+      '--header-section-gap': 'var(--rtk-space-2, 8px)',
     },
     'rtk-header.sm': {
       display: 'grid',
@@ -28,7 +28,7 @@ export const defaultConfig: UIConfig = {
       gridTemplateColumns: 'repeat(2, 1fr)',
       gridTemplateRows: '1fr',
       alignItems: 'center',
-      '--header-section-gap': 'var(--dyte-space-1, 4px)',
+      '--header-section-gap': 'var(--rtk-space-1, 4px)',
     },
     'div#header-left': {
       display: 'flex',
@@ -46,7 +46,7 @@ export const defaultConfig: UIConfig = {
       justifyContent: 'center',
       wordBreak: 'break-all',
       gap: 'var(--header-section-gap)',
-      paddingInline: 'var(--dyte-space-3, 12px)',
+      paddingInline: 'var(--rtk-space-3, 12px)',
     },
     'div#header-right': {
       display: 'flex',
