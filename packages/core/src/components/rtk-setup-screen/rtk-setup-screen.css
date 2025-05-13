@@ -29,6 +29,15 @@
   @apply flex h-full w-full max-w-[584px] flex-col gap-2;
 }
 
+.meeting-title {
+  @apply text-heading-md mb-4 text-center font-medium;
+}
+
+.join-as {
+  @apply text-text-lg m-0 mb-4 text-center tracking-tight;
+  @apply line-clamp-1 text-text-600;
+}
+
 .name {
   @apply text-heading-lg m-0 mb-6 text-center font-medium tracking-tight;
   @apply line-clamp-1;

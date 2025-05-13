@@ -133,7 +133,8 @@ export class RtkSetupScreen {
             </div>
           </div>
           <div class="metadata">
-            <div class="name">{this.t('setup_screen.join_in_as')}</div>
+            <div class="meeting-title">{this.meeting.meta.meetingTitle}</div>
+            <div class="join-as">{this.t('setup_screen.join_in_as')}</div>
             <div class="label">
               <div class="name">{!this.canEditName && shorten(this.displayName, 20)}</div>
             </div>
