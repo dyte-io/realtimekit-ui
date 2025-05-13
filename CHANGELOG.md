@@ -1,3 +1,10 @@
+# [1.0.0-staging.15](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.14...@cloudflare/realtimekit-ui-v1.0.0-staging.15) (2025-05-13)
+
+
+### Bug Fixes
+
+* rename css vars prefix from dyte to rtk ([0ee6001](https://github.com/dyte-io/realtimekit-ui/commit/0ee60019f1945802546467942d53277e6f28ce9a))
+
 # [1.0.0-staging.14](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.13...@cloudflare/realtimekit-ui-v1.0.0-staging.14) (2025-05-06)
 
 
