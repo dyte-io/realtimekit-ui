@@ -39,7 +39,7 @@
 }
 
 .name {
-  @apply text-heading-lg m-0 mb-6 text-center font-medium tracking-tight;
+  @apply text-heading-sm m-0 mb-6 text-center font-medium tracking-tight;
   @apply line-clamp-1;
 }
 
