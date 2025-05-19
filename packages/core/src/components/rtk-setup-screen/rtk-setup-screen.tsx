@@ -1,4 +1,14 @@
-import { Component, Host, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  Host,
+  h,
+  Prop,
+  State,
+  Watch,
+  Event,
+  EventEmitter,
+  Fragment,
+} from '@stencil/core';
 import { Meeting } from '../../types/rtk-client';
 import { Size, States } from '../../types/props';
 import { shorten } from '../../utils/string';
@@ -17,7 +27,7 @@ import { SocketConnectionState } from '@cloudflare/realtimekit';
  */
 @Component({
   tag: 'rtk-setup-screen',
-  styleUrl: 'rtk-setup-screen.css',
+  styleUrl: './rtk-setup-screen.css',
   shadow: true,
 })
 export class RtkSetupScreen {
@@ -115,6 +125,8 @@ export class RtkSetupScreen {
       t: this.t,
     };
 
+    const meetingTitle = this.meeting?.meta.meetingTitle.trim();
+
     return (
       <Host>
         <div class="container">
@@ -133,30 +145,37 @@ export class RtkSetupScreen {
             </div>
           </div>
           <div class="metadata">
-            <div class="name">{this.t('setup_screen.join_in_as')}</div>
-            <div class="label">
-              <div class="name">{!this.canEditName && shorten(this.displayName, 20)}</div>
-            </div>
-            {/* TODO: Use `rtk-text-field` */}
-            {this.canEditName && (
-              <input
-                placeholder={this.t('setup_screen.your_name')}
-                value={this.displayName}
-                spellcheck={false}
-                autoFocus
-                ref={(el) => {
-                  this.inputEl = el;
-                }}
-                onInput={(e) => {
-                  this.displayName = (e.target as HTMLInputElement).value;
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    this.join();
-                  }
-                }}
-              />
+            {meetingTitle && meetingTitle !== '' && <div class="meeting-title">{meetingTitle}</div>}
+
+            {this.canEditName ? (
+              <Fragment>
+                <div class="join-as">{this.t('setup_screen.join_in_as')}</div>
+
+                <input
+                  placeholder={this.t('setup_screen.your_name')}
+                  value={this.displayName}
+                  spellcheck={false}
+                  autoFocus
+                  ref={(el) => {
+                    this.inputEl = el;
+                  }}
+                  onInput={(e) => {
+                    this.displayName = (e.target as HTMLInputElement).value;
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      this.join();
+                    }
+                  }}
+                />
+              </Fragment>
+            ) : (
+              <div class="uneditable-name">
+                <span class="text">{this.t('setup_screen.join_in_as')} </span>{' '}
+                <div class="name">{shorten(this.displayName, 20)}</div>
+              </div>
             )}
+
             <rtk-button size="lg" kind="wide" onClick={this.join} disabled={disabled}>
               {this.isJoining ? <rtk-spinner iconPack={this.iconPack} /> : this.t('join')}
             </rtk-button>

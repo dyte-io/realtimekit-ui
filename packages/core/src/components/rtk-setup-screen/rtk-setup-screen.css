@@ -13,25 +13,34 @@
   @apply flex items-center justify-evenly gap-4;
 }
 
-.metadata {
-  @apply max-w-80 w-full;
-}
-
-.label {
-  @apply text-text-md flex flex-col items-center;
-
-  p {
-    @apply text-text-lg mt-0 mb-2 inline-block;
-  }
-}
-
 .container-tile {
   @apply flex h-full w-full max-w-[584px] flex-col gap-2;
 }
 
-.name {
-  @apply text-heading-lg m-0 mb-6 text-center font-medium tracking-tight;
-  @apply line-clamp-1;
+.metadata {
+  @apply max-w-80 flex w-full flex-col items-center text-center;
+}
+
+.meeting-title {
+  @apply text-heading-md mb-4 text-center font-medium;
+}
+
+.join-as {
+  @apply text-text-lg m-0 mb-4 text-center tracking-tight;
+  @apply line-clamp-1 text-text-600;
+}
+
+.uneditable-name {
+  @apply mb-6;
+
+  .text,
+  .name {
+    @apply inline-block;
+  }
+
+  .name {
+    @apply text-text-lg font-medium;
+  }
 }
 
 input {
