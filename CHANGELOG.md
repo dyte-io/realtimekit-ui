@@ -1,3 +1,12 @@
+# [1.0.0-staging.16](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.15...@cloudflare/realtimekit-ui-v1.0.0-staging.16) (2025-05-29)
+
+
+### Bug Fixes
+
+* **setup-screen:** add meeting title and styling fixes ([cc5802c](https://github.com/dyte-io/realtimekit-ui/commit/cc5802c1de33eee8e4406335990f4fe201c558b9))
+* some ui issues ([5c1bec2](https://github.com/dyte-io/realtimekit-ui/commit/5c1bec24db4bc4c1505230e026fa587a1f8d9ca2))
+* ui design review changes ([7d51283](https://github.com/dyte-io/realtimekit-ui/commit/7d512838768a8708dd9e064697341dad3f1366c9))
+
 # [1.0.0-staging.15](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.14...@cloudflare/realtimekit-ui-v1.0.0-staging.15) (2025-05-13)
 
 
