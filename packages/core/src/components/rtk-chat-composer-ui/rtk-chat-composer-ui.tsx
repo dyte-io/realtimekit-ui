@@ -21,7 +21,7 @@ import {
 } from '../../utils/chat';
 import gracefulStorage from '../../utils/graceful-storage';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import type { DyteBasicParticipant, TextMessage } from '@dytesdk/web-core';
+import type { RTKBasicParticipant, TextMessage } from '@cloudflare/realtimekit';
 
 interface RtkText {
   type: 'text';
@@ -79,7 +79,7 @@ export class RtkChatComposerUi {
   } = {};
 
   /** list of members that can be mentioned */
-  @Prop() members?: DyteBasicParticipant[] = [];
+  @Prop() members?: RTKBasicParticipant[] = [];
 
   /** channel id */
   @Prop() channelId?: string;
@@ -313,7 +313,7 @@ export class RtkChatComposerUi {
     this.$textArea.value = message;
   };
 
-  private onMemberSelect = (member: DyteBasicParticipant) => {
+  private onMemberSelect = (member: RTKBasicParticipant) => {
     const reversedQuery = reverse(this.mentionQuery);
     const reversed = reverse(this.$textArea.value.trim()).replace(reversedQuery, '');
     this.$textArea.value = reverse(reversed) + `${MENTION_CHAR}${member.name} `;

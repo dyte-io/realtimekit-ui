@@ -109,6 +109,16 @@ export class RtkPollsToggle {
     this.canViewPolls = canViewPolls(this.meeting);
   };
 
+  @Watch('pollsActive')
+  handlePollsActiveChange() {
+    // Polls sidebar closed without opening a different sidebar
+    if (!this.pollsActive && !this.states.activeSidebar) {
+      this.buttonEl.focus();
+    }
+  }
+
+  private buttonEl: HTMLRtkControlbarButtonElement;
+
   render() {
     if (!this.canViewPolls) return <Host data-hidden />;
     const text = this.t('polls');
@@ -123,6 +133,7 @@ export class RtkPollsToggle {
           </div>
         )}
         <rtk-controlbar-button
+          ref={(el) => (this.buttonEl = el)}
           part="controlbar-button"
           size={this.size}
           iconPack={this.iconPack}

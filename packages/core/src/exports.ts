@@ -4,7 +4,7 @@ export { BreakoutRoomsManager };
 export { provideRtkDesignSystem } from './utils/provide-design-system';
 export { extendConfig, generateConfig } from './utils/config';
 export { sendNotification } from './utils/notification';
-export { RTKUIBuilder } from './lib/builder';
+export { RtkUiBuilder } from './lib/builder';
 export { uiStore, getInitialStates } from './utils/sync-with-store/ui-store';
 
 // addons
@@ -36,10 +36,7 @@ export {
 } from './utils/chat';
 
 // NOTE(vaibhavshn): fixes angular output type errors
-export type { RtkNewMessageEvent as DyteNewMessageEvent } from './components/rtk-chat-composer-ui/rtk-chat-composer-ui';
+export type { RtkNewMessageEvent } from './components/rtk-chat-composer-ui/rtk-chat-composer-ui';
 export type { NewMessageEvent } from './components/rtk-chat-composer-view/rtk-chat-composer-view';
 export type { ChatGroupChangedType } from './components/rtk-chat-selector-ui/rtk-chat-selector-ui';
 export type { Tab } from './components/rtk-tab-bar/rtk-tab-bar';
-
-// web-core exports
-export type { Message, FileMessage, ImageMessage, TextMessage } from '@dytesdk/web-core';

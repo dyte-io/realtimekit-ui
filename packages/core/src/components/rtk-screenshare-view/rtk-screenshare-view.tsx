@@ -21,7 +21,7 @@ import {
   requestFullScreen,
 } from '../../utils/full-screen';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DyteParticipant, DyteSelf } from '@dytesdk/web-core';
+import { RTKParticipant, RTKSelf } from '@cloudflare/realtimekit';
 
 /**
  * A component which plays a participant's screenshared video.
@@ -119,7 +119,7 @@ export class RtkScreenshareView {
 
     const { self } = this.meeting;
     if (this.participant.id === self.id && this.screenShareListener)
-      (this.participant as DyteParticipant).removeListener(
+      (this.participant as RTKParticipant).removeListener(
         'screenShareUpdate',
         this.screenShareListener
       );
@@ -158,7 +158,7 @@ export class RtkScreenshareView {
       this.screenShareListener(participant);
 
       if (participant.id === self.id)
-        (participant as DyteSelf).addListener('screenShareUpdate', this.screenShareListener);
+        (participant as RTKSelf).addListener('screenShareUpdate', this.screenShareListener);
       else
         this.meeting.participants.joined.addListener(
           'screenShareUpdate',

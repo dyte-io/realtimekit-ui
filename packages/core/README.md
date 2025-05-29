@@ -7,7 +7,6 @@ This package includes Web Components that work natively in HTML — so no framew
 If you're using a specific framework, we also offer dedicated packages:
 
 - [React](https://npmjs.com/package/@cloudflare/realtimekit-react-ui)
-- [Vue](https://npmjs.com/package/@cloudflare/realtimekit-vue-ui)
 - [Angular](https://npmjs.com/package/@cloudflare/realtimekit-angular-ui)
 
 ## Usage
@@ -27,7 +26,9 @@ Then you'll need to initialize a meeting object once you've received an `authTok
 > to use with RealtimeKit.
 
 ```js
-const meeting = await RealtimeKit.init({
+import RealtimeKitClient from '@cloudflare/realtimekit';
+
+const meeting = await RealtimeKitClient.init({
   authToken: '<your-auth-token>',
   defaults: {
     video: true,
@@ -44,7 +45,7 @@ You can now pass this meeting instance to any of the components:
 
 <script>
   const init = async () => {
-    const meeting = await RealtimeKit.init({
+    const meeting = await RealtimeKitClient.init({
       authToken: '<your-auth-token>',
       defaults: {
         video: true,

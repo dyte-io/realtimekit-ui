@@ -2,7 +2,7 @@ import { h, Component, Prop, Host } from '@stencil/core';
 import { RtkI18n, IconPack, defaultIconPack, useLanguage } from '../../exports';
 import { Meeting } from '../../types/rtk-client';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import type { Message } from '@dytesdk/web-core';
+import type { Message } from '@cloudflare/realtimekit';
 
 @Component({
   tag: 'rtk-chat-search-results',

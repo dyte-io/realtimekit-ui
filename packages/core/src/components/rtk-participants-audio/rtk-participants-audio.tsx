@@ -3,7 +3,7 @@ import { Meeting, Peer } from '../../types/rtk-client';
 import RTKAudio from '../../lib/audio';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { IconPack, defaultIconPack } from '../../lib/icons';
-import type { StageStatus } from '@dytesdk/web-core';
+import type { StageStatus } from '@cloudflare/realtimekit';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { isLiveStreamViewer } from '../../utils/livestream';
 

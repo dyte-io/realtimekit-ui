@@ -162,10 +162,19 @@ export class RtkParticipantsToggle {
     this.canViewParticipants = canViewParticipants(this.meeting);
   };
 
+  @Watch('participantsActive')
+  handleParticipantsActiveChange() {
+    // Participants sidebar closed without opening a different sidebar
+    if (!this.participantsActive && !this.states.activeSidebar) {
+      this.buttonEl.focus();
+    }
+  }
+
+  private buttonEl: HTMLRtkControlbarButtonElement;
+
   render() {
     if (!this.canViewParticipants) return <Host data-hidden />;
     const text = this.t('participants');
-    // const badgeCount = this.waitlistedParticipants.length + this.stageRequestedParticipants.length;
     return (
       <Host title={text}>
         {this.badgeCount !== 0 && !this.participantsActive && (
@@ -174,6 +183,7 @@ export class RtkParticipantsToggle {
           </div>
         )}
         <rtk-controlbar-button
+          ref={(el) => (this.buttonEl = el)}
           part="controlbar-button"
           size={this.size}
           iconPack={this.iconPack}

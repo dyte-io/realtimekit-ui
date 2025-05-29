@@ -16,7 +16,7 @@ export type ButtonKind = 'button' | 'icon' | 'wide';
 @Component({
   tag: 'rtk-button',
   styleUrl: 'rtk-button.css',
-  shadow: true,
+  shadow: { delegatesFocus: true },
 })
 export class RtkButton {
   /** Size */

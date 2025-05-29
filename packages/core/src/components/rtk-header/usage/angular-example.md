@@ -1,5 +1,5 @@
 ```html
-<dyte-header #header></dyte-header>
+<rtk-header #header></rtk-header>
 ```
 
 Component
@@ -8,12 +8,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('header') componentHeader: DyteHeader;
+  @ViewChild('header') componentHeader: RtkHeader;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentHeader.message = this.dyteMeeting;
+    this.componentHeader.message = this.rtkMeeting;
   }
 }
 ```

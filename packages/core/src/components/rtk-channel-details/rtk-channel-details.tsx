@@ -2,7 +2,7 @@ import { Component, Host, Prop, h } from '@stencil/core';
 import { RtkI18n, IconPack, defaultIconPack, useLanguage } from '../../exports';
 import { ChatChannel } from '../../types/props';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DyteBasicParticipant } from '@dytesdk/web-core';
+import { RTKBasicParticipant } from '@cloudflare/realtimekit';
 
 @Component({
   tag: 'rtk-channel-details',
@@ -24,7 +24,7 @@ export class RtkChannelDetails {
   iconPack: IconPack = defaultIconPack;
 
   /** List of channel members */
-  @Prop() members: DyteBasicParticipant[] = [];
+  @Prop() members: RTKBasicParticipant[] = [];
 
   private renderMembers() {
     return (

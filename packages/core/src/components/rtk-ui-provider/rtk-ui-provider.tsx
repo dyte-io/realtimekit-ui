@@ -86,7 +86,7 @@ export class RtkUiProvider {
           this.updateStates({ meeting: 'ended', roomLeftState: 'unauthorized' });
         }
       };
-      window.addEventListener('dyteError', this.authErrorListener);
+      window.addEventListener('rtkError', this.authErrorListener);
     }
 
     this.onMeetingChange(this.meeting);
@@ -101,7 +101,7 @@ export class RtkUiProvider {
 
   disconnectedCallback() {
     this.resizeObserver.disconnect();
-    window.removeEventListener('dyteError', this.authErrorListener);
+    window.removeEventListener('rtkError', this.authErrorListener);
 
     if (!this.meeting) return;
     this.meeting.self.removeListener('roomLeft', this.roomLeftListener);
@@ -140,7 +140,7 @@ export class RtkUiProvider {
       }
     }
 
-    window.removeEventListener('dyteError', this.authErrorListener);
+    window.removeEventListener('rtkError', this.authErrorListener);
   }
 
   @Watch('iconPack')
@@ -215,14 +215,14 @@ export class RtkUiProvider {
     }
   };
 
-  private handleChangingMeeting(destinationMeetingId: string) {
+  private handleChangingMeeting = (destinationMeetingId: string) => {
     this.updateStates({
       activeBreakoutRoomsManager: {
         ...uiState.states.activeBreakoutRoomsManager,
         destinationMeetingId,
       },
     });
-  }
+  };
 
   render() {
     return <Host>{this.noRenderUntilMeeting && !this.meeting ? null : <slot />}</Host>;

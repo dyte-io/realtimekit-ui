@@ -1,9 +1,9 @@
 Template
 
 ```html
-<dyte-mic-toggle #one></dyte-mic-toggle>
-<dyte-mic-toggle #two></dyte-mic-toggle>
-<dyte-mic-toggle #three></dyte-mic-toggle>
+<rtk-mic-toggle #one></rtk-mic-toggle>
+<rtk-mic-toggle #two></rtk-mic-toggle>
+<rtk-mic-toggle #three></rtk-mic-toggle>
 ```
 
 Component
@@ -12,25 +12,25 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('one') componentOne: DyteMicToggle;
+  @ViewChild('one') componentOne: RtkMicToggle;
 
-  @ViewChild('two') componentTwo: DyteMicToggle;
+  @ViewChild('two') componentTwo: RtkMicToggle;
 
-  @ViewChild('three') componentTree: DyteMicToggle;
+  @ViewChild('three') componentTree: RtkMicToggle;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
     // Change the size to small
-    this.componentOne.meeting = this.dyteMeeting;
+    this.componentOne.meeting = this.rtkMeeting;
     this.componentOne.size = 'sm';
 
     // Change the size to large
-    this.componentTwo.meeting = this.dyteMeeting;
+    this.componentTwo.meeting = this.rtkMeeting;
     this.componentTwo.size = 'lg';
 
     // Render as a horizontal button
-    this.componentThree.meeting = this.dyteMeeting;
+    this.componentThree.meeting = this.rtkMeeting;
     this.componentThree.variant = 'horizontal';
   }
 }

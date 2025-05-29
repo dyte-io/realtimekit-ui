@@ -1,4 +1,4 @@
-import type { LivestreamState } from '@dytesdk/web-core';
+import type { LivestreamState } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
 import { Size, States } from '../../exports';
 import { defaultIconPack, IconPack } from '../../lib/icons';

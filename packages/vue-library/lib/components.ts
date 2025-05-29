@@ -1014,6 +1014,7 @@ export const RtkNetworkIndicator = /*@__PURE__*/ defineContainer<JSX.RtkNetworkI
 
 export const RtkNotification = /*@__PURE__*/ defineContainer<JSX.RtkNotification>('rtk-notification', undefined, [
   'notification',
+  'paused',
   'size',
   'iconPack',
   't',
@@ -1432,6 +1433,7 @@ export const RtkSidebarUi = /*@__PURE__*/ defineContainer<JSX.RtkSidebarUi>('rtk
   'hideCloseAction',
   'currentTab',
   'iconPack',
+  'focusCloseButton',
   't',
   'tabChange',
   'sidebarClose'

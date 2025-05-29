@@ -5,7 +5,7 @@ import { RtkI18n, useLanguage } from '../../lib/lang';
 import { PermissionSettings, Size, States } from '../../types/props';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { StageStatus } from '@dytesdk/web-core';
+import { StageStatus } from '@cloudflare/realtimekit';
 
 /**
  * A button which toggles your microphone.
@@ -110,7 +110,7 @@ export class RtkMicToggle {
   }
 
   private toggleMic = () => {
-    this.meeting?.__internals__.logger.info('dyteMicToggle::toggleMic', {
+    this.meeting?.__internals__.logger.info('rtkMicToggle::toggleMic', {
       media: {
         audio: {
           enabled: Boolean(this.meeting?.self?.audioEnabled),

@@ -1,3 +1,3 @@
 ```jsx live
-<DytePermissionsMessage meeting={meeting} />
+<RtkPermissionsMessage meeting={meeting} />
 ```

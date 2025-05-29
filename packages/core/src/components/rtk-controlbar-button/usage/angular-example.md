@@ -1,9 +1,9 @@
 Template
 
 ```html
-<dyte-controlbar-button #one></dyte-controlbar-button>
-<dyte-controlbar-button #two></dyte-controlbar-button>
-<dyte-controlbar-button #three></dyte-controlbar-button>
+<rtk-controlbar-button #one></rtk-controlbar-button>
+<rtk-controlbar-button #two></rtk-controlbar-button>
+<rtk-controlbar-button #three></rtk-controlbar-button>
 ```
 
 Component
@@ -12,13 +12,13 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('one') componentOne: DyteControlbarButton;
+  @ViewChild('one') componentOne: RtkControlbarButton;
 
-  @ViewChild('two') componentTwo: DyteControlbarButton;
+  @ViewChild('two') componentTwo: RtkControlbarButton;
 
-  @ViewChild('three') componentTree: DyteControlbarButton;
+  @ViewChild('three') componentTree: RtkControlbarButton;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
     this.componentOne.label = 'Flight Mode';

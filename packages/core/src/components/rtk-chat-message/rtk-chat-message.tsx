@@ -3,7 +3,7 @@ import { defaultIconPack, RtkI18n, IconPack } from '../../exports';
 import { useLanguage } from '../../lib/lang';
 import { Size } from '../../types/props';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import type { Message } from '@dytesdk/web-core';
+import type { Message } from '@cloudflare/realtimekit';
 
 @Component({
   tag: 'rtk-chat-message',

@@ -1,5 +1,5 @@
 ```html
-<dyte-spinner></dyte-spinner>
-<dyte-spinner style="color: #ed7800"></dyte-spinner>
-<dyte-spinner style="color: #ffac00"></dyte-spinner>
+<rtk-spinner></rtk-spinner>
+<rtk-spinner style="color: #ed7800"></rtk-spinner>
+<rtk-spinner style="color: #ffac00"></rtk-spinner>
 ```

@@ -1,7 +1,7 @@
 ```jsx live
 <Center>
-  <DyteCameraToggle size="sm" meeting={meeting} />
-  <DyteCameraToggle size="lg" meeting={meeting} />
-  <DyteCameraToggle variant="horizontal" size="sm" meeting={meeting} />
+  <RtkCameraToggle size="sm" meeting={meeting} />
+  <RtkCameraToggle size="lg" meeting={meeting} />
+  <RtkCameraToggle variant="horizontal" size="sm" meeting={meeting} />
 </Center>
 ```

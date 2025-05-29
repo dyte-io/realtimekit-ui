@@ -1,8 +1,8 @@
 ```html
-<dyte-mute-all-confirmation id="dyte-el"></dyte-mute-all-confirmation>
+<rtk-mute-all-confirmation id="rtk-el"></rtk-mute-all-confirmation>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
 </script>
 ```

@@ -1,3 +1,3 @@
 ```jsx live
-<DyteChatComposerView onNewMessage={(event) => console.log(event.detail)} />
+<RtkChatComposerView onNewMessage={(event) => console.log(event.detail)} />
 ```

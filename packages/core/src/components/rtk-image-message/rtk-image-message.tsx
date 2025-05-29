@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, State, Event, EventEmitter } from '@stencil/core';
-import type { ImageMessage } from '@dytesdk/web-core';
+import type { ImageMessage } from '@cloudflare/realtimekit';
 import { ChatHead } from '../rtk-chat/components/ChatHead';
 import { sanitizeLink } from '../../utils/string';
 import { defaultIconPack, IconPack } from '../../lib/icons';

@@ -1,5 +1,5 @@
 ```html
-<dyte-grid-pagination #gridPagination></dyte-grid-pagination>
+<rtk-grid-pagination #gridPagination></rtk-grid-pagination>
 ```
 
 Component
@@ -8,12 +8,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('gridPagination') componentGridPagination: DyteGridPagination;
+  @ViewChild('gridPagination') componentGridPagination: RtkGridPagination;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentGridPagination.message = this.dyteMeeting;
+    this.componentGridPagination.message = this.rtkMeeting;
   }
 }
 ```

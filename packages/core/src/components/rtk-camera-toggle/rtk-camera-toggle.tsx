@@ -5,7 +5,7 @@ import { Meeting, Peer, MediaPermission } from '../../types/rtk-client';
 import { PermissionSettings, Size, States } from '../../types/props';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { StageStatus } from '@dytesdk/web-core';
+import { StageStatus } from '@cloudflare/realtimekit';
 
 /**
  * A button which toggles your camera.
@@ -109,7 +109,7 @@ export class RtkCameraToggle {
   }
 
   private toggleCamera = () => {
-    this.meeting?.__internals__.logger.info('dyteCameraToggle::toggleCamera', {
+    this.meeting?.__internals__.logger.info('rtkCameraToggle::toggleCamera', {
       media: {
         video: {
           enabled: Boolean(this.meeting?.self?.videoEnabled),

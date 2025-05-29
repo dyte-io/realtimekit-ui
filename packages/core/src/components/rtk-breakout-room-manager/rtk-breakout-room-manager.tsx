@@ -4,7 +4,7 @@ import { defaultIconPack, IconPack } from '../../lib/icons';
 import { ConnectedMeetingParticipant, States } from '../../types/props';
 import { Meeting } from '../../types/rtk-client';
 import { getAllConnectedParticipants, participantIdentifier } from '../../utils/breakout-rooms';
-import type { DyteConnectedMeetings, DytePermissionsPreset } from '@dytesdk/web-core';
+import type { RTKConnectedMeetings, RTKPermissionsPreset } from '@cloudflare/realtimekit';
 import { formatName, shorten } from '../../utils/string';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { DraftMeeting } from '../../utils/breakout-rooms-manager';
@@ -83,9 +83,9 @@ export class RtkBreakoutRoomManager {
     id: string;
   }>;
 
-  private allParticipants: DyteConnectedMeetings['parentMeeting']['participants'];
+  private allParticipants: RTKConnectedMeetings['parentMeeting']['participants'];
 
-  private permissions: DytePermissionsPreset['connectedMeetings'];
+  private permissions: RTKPermissionsPreset['connectedMeetings'];
 
   private roomTitle: string;
 

@@ -5,7 +5,6 @@
 If you're using a specific framework (or no framework - see HTML), we also offer dedicated packages:
 
 - [React](https://npmjs.com/package/@cloudflare/realtimekit-react-ui)
-- [Vue](https://npmjs.com/package/@cloudflare/realtimekit-vue-ui)
 - [HTML (Web Components)](https://npmjs.com/package/@cloudflare/realtimekit-ui)
 
 ## Usage
@@ -25,9 +24,9 @@ Then you'll need to initialize a meeting object once you've received an `authTok
 > to use with RealtimeKit.
 
 ```js
-import RealtimeKit from '@cloudflare/realtimekit';
+import RealtimeKitClient from '@cloudflare/realtimekit';
 
-const meeting = await RealtimeKit.init({
+const meeting = await RealtimeKitClient.init({
   authToken: '<your-auth-token>',
   defaults: {
     video: true,
@@ -48,7 +47,7 @@ Then initialize and pass the meeting object to the component:
 
 ```tsx
 import { RtkMeeting } from '@cloudflare/realtimekit-ui';
-import RealtimeKit from '@cloudflare/realtimekit';
+import RealtimeKitClient from '@cloudflare/realtimekit';
 
 class AppComponent {
   title = 'MyProject';
@@ -56,7 +55,7 @@ class AppComponent {
   rtkMeeting: RtkClient;
 
   async ngAfterViewInit() {
-    const meeting = await RealtimeKit.init({
+    const meeting = await RealtimeKitClient.init({
       authToken: '<auth-token>',
       defaults: {
         video: true,
@@ -84,7 +83,7 @@ Then initialize and pass the meeting object to the component:
 
 ```tsx
 import { RtkMeeting } from '@cloudflare/realtimekit-ui';
-import RealtimeKit from '@cloudflare/realtimekit';
+import RealtimeKitClient from '@cloudflare/realtimekit';
 
 class AppComponent {
   title = 'MyProject';
@@ -92,7 +91,7 @@ class AppComponent {
   rtkMeeting: RtkClient;
 
   async ngAfterViewInit() {
-    const meeting = await RealtimeKit.init({
+    const meeting = await RealtimeKitClient.init({
       authToken: '<auth-token>',
       defaults: {
         video: true,

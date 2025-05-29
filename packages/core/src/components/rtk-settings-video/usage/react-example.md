@@ -1,3 +1,3 @@
 ```jsx live
-<DyteSettingsVideo meeting={meeting} />
+<RtkSettingsVideo meeting={meeting} />
 ```

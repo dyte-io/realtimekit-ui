@@ -1,3 +1,3 @@
 ```jsx live
-<DyteImageMessageView url="https://image.net/peter/jpg" />
+<RtkImageMessageView url="https://image.net/peter/jpg" />
 ```

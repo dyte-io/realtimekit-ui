@@ -1,5 +1,5 @@
 ```html
-<dyte-message-view #message>Hello NY!</dyte-message-view>
+<rtk-message-view #message>Hello NY!</rtk-message-view>
 ```
 
 Component
@@ -8,7 +8,7 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('message') componentMessage: DyteMessageView;
+  @ViewChild('message') componentMessage: RtkMessageView;
 
   async ngAfterViewInit() {
     this.componentMessage.authorName = "Peter";

@@ -1,29 +1,18 @@
 @import '../../styles/reset.css';
 
-/**
- * NOTE(vaibhavshn):
- * The code for visibility and display below are set after careful consideration
- * as the .hydrated class overrides the visibility properly.
- * Thus the background overlay would be visible, even in closed state
- */
-
 :host {
-  @apply fixed inset-0 box-border p-4;
-  @apply flex-col items-center justify-center;
-  @apply bg-background-600/50 text-text-1000;
-  /* Hide dialog by default */
-  @apply invisible hidden;
-
-  @apply break-words;
   word-wrap: break-word;
-
-  z-index: 60;
-
-  backdrop-filter: blur(12px) saturate(180%);
+  @apply break-words;
 }
 
 #dialog {
-  @apply relative max-h-full max-w-full;
+  @apply relative max-h-full max-w-full p-0;
+  @apply text-text-1000 border-none bg-transparent;
+}
+
+#dialog::backdrop {
+  @apply bg-background-600/50;
+  backdrop-filter: blur(12px) saturate(180%);
 }
 
 #dismiss-btn {
@@ -32,14 +21,4 @@
 
 ::slotted(*) {
   @apply max-h-full max-w-full;
-}
-
-/* Show only when open="true" */
-:host([open]) {
-  @apply visible flex;
-}
-
-/* Hide dialog by default */
-:host([open='false']) {
-  @apply invisible hidden;
 }

@@ -1,14 +1,14 @@
 ```html
-<dyte-file-picker-button
+<rtk-file-picker-button
   label="Upload File"
   (fileChange)="onFileChange($event)"
-></dyte-file-picker-button>
-<dyte-file-picker-button
+></rtk-file-picker-button>
+<rtk-file-picker-button
   filter="image/*"
   label="Upload Image"
   icon="image"
   (fileChange)="onImageChange($event)"
-></dyte-file-picker-button>
+></rtk-file-picker-button>
 ```
 
 Component

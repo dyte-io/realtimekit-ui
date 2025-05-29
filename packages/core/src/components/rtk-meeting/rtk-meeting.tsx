@@ -124,7 +124,7 @@ export class RtkMeeting {
           this.updateStates({ meeting: 'ended', roomLeftState: 'unauthorized' });
         }
       };
-      window.addEventListener('dyteError', this.authErrorListener);
+      window.addEventListener('rtkError', this.authErrorListener);
     }
     this.leaveRoomTimer = 10000;
     this.loadConfigFromPreset = true;
@@ -156,7 +156,7 @@ export class RtkMeeting {
     }
     this.resizeObserver.disconnect();
     this.clearListeners(this.meeting);
-    window.removeEventListener('dyteError', this.authErrorListener);
+    window.removeEventListener('rtkError', this.authErrorListener);
   }
 
   @Watch('meeting')
@@ -215,7 +215,7 @@ export class RtkMeeting {
       }
     }
 
-    window.removeEventListener('dyteError', this.authErrorListener);
+    window.removeEventListener('rtkError', this.authErrorListener);
   }
 
   @Listen('rtkStateUpdate')
@@ -223,14 +223,14 @@ export class RtkMeeting {
     this.updateStates(e.detail);
   }
 
-  private handleChangingMeeting(destinationMeetingId: string) {
+  private handleChangingMeeting = (destinationMeetingId: string) => {
     this.updateStates({
       activeBreakoutRoomsManager: {
         ...uiState.states.activeBreakoutRoomsManager,
         destinationMeetingId,
       },
     });
-  }
+  };
 
   private handleResize() {
     this.size = getSize(this.host.clientWidth);

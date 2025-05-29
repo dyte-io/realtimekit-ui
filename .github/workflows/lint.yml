@@ -16,10 +16,11 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: package-lock.json
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-fund --no-audit
 
       - name: Run lint
         run: npm run lint
@@ -33,11 +34,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-fund --no-audit
 
       - name: Run build
         run: |

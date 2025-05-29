@@ -6,6 +6,7 @@ import { Meeting } from '../../types/rtk-client';
 import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { SyncWithStore } from '../../utils/sync-with-store';
+import { Render } from '../../lib/render';
 
 /**
  * A component which handles all dialog elements in a component such as:
@@ -116,7 +117,11 @@ export class RtkDialogManager {
             iconPack={this.iconPack}
             t={this.t}
           >
-            <rtk-image-viewer {...defaults} image={image} onClose={onImageClose} />
+            <Render
+              element="rtk-image-viewer"
+              defaults={defaults}
+              props={{ image, onClose: onImageClose }}
+            />
           </rtk-dialog>
         </Host>
       );
@@ -129,7 +134,7 @@ export class RtkDialogManager {
             iconPack={this.iconPack}
             t={this.t}
           >
-            <rtk-settings {...defaults} />
+            <Render element="rtk-settings" defaults={defaults} />
           </rtk-dialog>
         </Host>
       );

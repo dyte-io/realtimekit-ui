@@ -1,6 +1,13 @@
 {
   "name": "@cloudflare/realtimekit-angular-ui",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyte-io/realtimekit-ui.git"
+  },
+  "bugs": {
+    "email": "support@dyte.io"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -3,7 +3,7 @@ import { defaultIconPack, IconPack } from '../../lib/icons';
 import { Size, States } from '../../types/props';
 import { Meeting } from '../../types/rtk-client';
 import { RtkI18n, useLanguage } from '../../lib/lang';
-import { DyteParticipants } from '@dytesdk/web-core';
+import { RTKParticipants } from '@cloudflare/realtimekit';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import debounce from 'lodash/debounce';
 
@@ -99,7 +99,7 @@ export class RtkGridPagination {
   private onPageChanged = ({
     currentPage,
     pageCount,
-  }: Pick<DyteParticipants, 'viewMode' | 'currentPage' | 'pageCount'>) => {
+  }: Pick<RTKParticipants, 'viewMode' | 'currentPage' | 'pageCount'>) => {
     this.pageCount = pageCount;
     this.page = currentPage;
   };
@@ -162,7 +162,7 @@ export class RtkGridPagination {
     const isAudioRoom = meta?.viewType === 'AUDIO_ROOM';
 
     if (isAudioRoom || !this.showPagination) {
-      return;
+      return <Host data-hidden />;
     }
 
     return (

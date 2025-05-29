@@ -1,9 +1,9 @@
 ```html
-<dyte-text-composer-view
+<rtk-text-composer-view
   [value]="defaultText"
   [placeholder]="defaultText"
   (textChange)="onTextChange($event)"
-></dyte-text-composer-view>
+></rtk-text-composer-view>
 ```
 
 Component

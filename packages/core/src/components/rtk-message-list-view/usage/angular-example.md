@@ -1,10 +1,10 @@
 ```html
-<dyte-message-list-view
+<rtk-message-list-view
   [messages]="messages"
   [renderer]="renderer"
   [loadMore]="loadMore"
   #list
-></dyte-message-list-view>
+></rtk-message-list-view>
 ```
 
 Component
@@ -13,7 +13,7 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('list') componentList: DyteMessageListView;
+  @ViewChild('list') componentList: RtkMessageListView;
 
   async ngOnInit() {
     this.messages = [{ id: 'unique-123', text: 'Hello!!' }];

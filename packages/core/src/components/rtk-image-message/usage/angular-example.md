@@ -1,5 +1,5 @@
 ```html
-<dyte-image-message #message />
+<rtk-image-message #message />
 ```
 
 Component
@@ -8,12 +8,12 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('message') componentMessage: DyteImageMessage;
+  @ViewChild('message') componentMessage: RtkImageMessage;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentMessage.message = this.dyteMeeting.chat.messages[0]; // pick an image message
+    this.componentMessage.message = this.rtkMeeting.chat.messages[0]; // pick an image message
   }
 }
 ```

@@ -1,8 +1,8 @@
 ```html
-<dyte-channel-selector-view id="dyte-el" />
+<rtk-channel-selector-view id="rtk-el" />
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.channels = [
     {
       id: '123',

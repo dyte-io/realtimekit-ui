@@ -1,5 +1,5 @@
 ```html
-<dyte-file-message-view #message />
+<rtk-file-message-view #message />
 ```
 
 Component
@@ -8,7 +8,7 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('message') componentMessage: DyteFileMessageView;
+  @ViewChild('message') componentMessage: RtkFileMessageView;
 
   async ngAfterViewInit() {
     this.componentMessage.name = 'bonus.pdf';

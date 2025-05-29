@@ -1,6 +1,6 @@
 ```jsx live
 <Center>
-  <DyteSidebar
+  <RtkSidebar
     defaultSection="participants"
     meeting={meeting}
     style={{ height: '480px' }}
@@ -12,7 +12,7 @@ To see a mobile sidebar:
 
 ```jsx live
 <div style={{ position: 'relative', height: '600px' }}>
-  <DyteSidebar
+  <RtkSidebar
     view="full-screen"
     defaultSection="participants"
     meeting={meeting}

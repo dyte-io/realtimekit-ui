@@ -5,7 +5,7 @@ import { Size } from '../../types/props';
 import { RtkI18n, IconPack, States, defaultIconPack, useLanguage } from '../../exports';
 import hark from 'hark';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DyteParticipant } from '@dytesdk/web-core';
+import { RTKParticipant } from '@cloudflare/realtimekit';
 
 @Component({
   tag: 'rtk-audio-tile',
@@ -54,7 +54,7 @@ export class RtkAudioTile {
 
   disconnectedCallback() {
     this.hark?.stop();
-    (this.participant as DyteParticipant)?.removeListener('audioUpdate', this.onAudioUpdate);
+    (this.participant as RTKParticipant)?.removeListener('audioUpdate', this.onAudioUpdate);
   }
 
   @Watch('participant')
@@ -65,7 +65,7 @@ export class RtkAudioTile {
 
     this.audioEnabled = participant.audioEnabled;
 
-    (participant as DyteParticipant).addListener('audioUpdate', this.onAudioUpdate);
+    (participant as RTKParticipant).addListener('audioUpdate', this.onAudioUpdate);
   }
 
   private onAudioUpdate = ({

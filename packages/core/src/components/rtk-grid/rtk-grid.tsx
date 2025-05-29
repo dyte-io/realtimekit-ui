@@ -7,7 +7,7 @@ import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import debounce from 'lodash/debounce';
 import { DefaultProps, Render } from '../../lib/render';
-import { DytePlugin, leaveRoomState } from '@dytesdk/web-core';
+import { RTKPlugin, leaveRoomState } from '@cloudflare/realtimekit';
 import { isLiveStreamViewer } from '../../utils/livestream';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { defaultGridSize } from '../../lib/grid';
@@ -41,7 +41,7 @@ export class RtkGrid {
 
   @State() screenShareParticipants: Peer[] = [];
 
-  @State() plugins: DytePlugin[] = [];
+  @State() plugins: RTKPlugin[] = [];
 
   @State() emptyStage: boolean = false;
 
@@ -221,7 +221,7 @@ export class RtkGrid {
   }
 
   @Watch('plugins')
-  pluginsChanged(plugins: DytePlugin[]) {
+  pluginsChanged(plugins: RTKPlugin[]) {
     const activePlugin = plugins.length > 0;
     if (!!uiState.states.activePlugin === activePlugin) return;
 
@@ -369,7 +369,7 @@ export class RtkGrid {
     this.updateActiveParticipants();
   };
 
-  private onPluginStateUpdate = (plugin: DytePlugin, { active }: { active: boolean }) => {
+  private onPluginStateUpdate = (plugin: RTKPlugin, { active }: { active: boolean }) => {
     if (active) {
       if (!this.plugins.some((p) => p.id === plugin.id)) {
         this.plugins = [...this.plugins, plugin];

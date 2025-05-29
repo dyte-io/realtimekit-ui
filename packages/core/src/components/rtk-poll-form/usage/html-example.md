@@ -1,8 +1,8 @@
 ```html
-<dyte-poll-form id="dyte-el"></dyte-poll-form>
+<rtk-poll-form id="rtk-el"></rtk-poll-form>
 
 <script>
-  document.getElementById('dyte-el').addEventListener('dyteCreatePoll', (e) => {
+  document.getElementById('rtk-el').addEventListener('rtkCreatePoll', (e) => {
     console.log('create poll', e.detail);
   });
 </script>

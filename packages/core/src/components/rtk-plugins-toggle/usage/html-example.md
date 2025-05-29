@@ -1,5 +1,5 @@
 ```html
-<dyte-plugins-toggle size="sm" class="dyte-el"></dyte-plugins-toggle>
-<dyte-plugins-toggle size="lg" class="dyte-el"></dyte-plugins-toggle>
-<dyte-plugins-toggle variant="horizontal" class="dyte-el"></dyte-plugins-toggle>
+<rtk-plugins-toggle size="sm" class="rtk-el"></rtk-plugins-toggle>
+<rtk-plugins-toggle size="lg" class="rtk-el"></rtk-plugins-toggle>
+<rtk-plugins-toggle variant="horizontal" class="rtk-el"></rtk-plugins-toggle>
 ```

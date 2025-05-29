@@ -1,3 +1,3 @@
 ```jsx live
-<DyteBreakoutRoomsToggle meeting={meeting} />
+<RtkBreakoutRoomsToggle meeting={meeting} />
 ```

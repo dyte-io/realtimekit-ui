@@ -3,10 +3,9 @@ import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Meeting, Peer, MediaPermission } from '../../types/rtk-client';
 import { PermissionSettings, Size, States } from '../../types/props';
 import { Component, Host, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
-import logger from '../../utils/logger';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { StageStatus } from '@dytesdk/web-core';
+import { StageStatus } from '@cloudflare/realtimekit';
 
 const deviceCanScreenShare = () => {
   return (
@@ -159,7 +158,9 @@ export class RtkScreenShareToggle {
 
   connectedCallback() {
     if (!deviceCanScreenShare()) {
-      logger.error('[rtk-screenshare-toggle] Device does not support screensharing.');
+      this.meeting.__internals__.logger.error(
+        '[rtk-screenshare-toggle] Device does not support screensharing.'
+      );
       return;
     }
     this.meetingChanged(this.meeting);

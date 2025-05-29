@@ -30,8 +30,8 @@
     <script type="module" src="/build/realtimekit-ui.esm.js"></script>
     <script nomodule src="/build/realtimekit-ui.js"></script>
 
-    <!-- Dyte Web Core -->
-    <script src="/web-core.js"></script>
+    <!-- Realtimekit -->
+    <script src="/realtimekit.js"></script>
 
     <!-- Optional libs -->
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
@@ -110,7 +110,7 @@
             };
 
             try {
-              const meeting = await DyteClient.init({
+              const meeting = await RealtimeKitClient.init({
                 roomName,
                 baseURI,
                 authToken,

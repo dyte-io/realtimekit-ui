@@ -12,22 +12,22 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('one') componentOne: DyteChatToggle;
+  @ViewChild('one') componentOne: RtkChatToggle;
 
-  @ViewChild('two') componentTwo: DyteChatToggle;
+  @ViewChild('two') componentTwo: RtkChatToggle;
 
-  @ViewChild('three') componentTree: DyteChatToggle;
+  @ViewChild('three') componentTree: RtkChatToggle;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentOne.meeting = this.dyteMeeting;
+    this.componentOne.meeting = this.rtkMeeting;
     this.componentOne.size = 'sm';
 
-    this.componentTwo.meeting = this.dyteMeeting;
+    this.componentTwo.meeting = this.rtkMeeting;
     this.componentTwo.size = 'lg';
 
-    this.componentThree.meeting = this.dyteMeeting;
+    this.componentThree.meeting = this.rtkMeeting;
     this.componentThree.variant = 'horizontal';
   }
 }

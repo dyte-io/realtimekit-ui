@@ -1,7 +1,7 @@
 {
   "name": "@cloudflare/realtimekit-ui",
-  "version": "0.0.0",
-  "description": "UI kit to support easy UI development over the core web library.",
+  "version": "1.0.0-staging.16",
+  "description": "Pre-built, ready-to-use UI components and utilities for integrating with Cloudflare RealtimeKit",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.js",
@@ -53,7 +53,7 @@
     "tag": "latest"
   },
   "peerDepdendencies": {
-    "@dytesdk/web-core": "2.4.3"
+    "@cloudflare/realtimekit": ">=0"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.1.0",
@@ -63,8 +63,7 @@
     "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {
-    "@dyteinternals/utils": "^3.1.0",
-    "@dytesdk/web-core": "^2.5.0-staging.26",
+    "@cloudflare/realtimekit": "^0.5.0-staging.56",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
@@ -86,10 +85,18 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
-    "puppeteer": "^21.9.0",
+    "puppeteer": "24.9.0",
     "rollup": "^4.32.1",
     "rollup-plugin-node-polyfills": "^0.2.1",
     "tailwindcss": "3.1.0"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyte-io/realtimekit-ui.git"
+  },
+  "bugs": {
+    "url": "https://realtime.cloudflare.com/issues"
+  },
+  "homepage": "https://realtime.cloudflare.com"
 }

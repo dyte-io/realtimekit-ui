@@ -1,7 +1,7 @@
 ```jsx live
 <Row>
-  <DyteSpinner />
-  <DyteSpinner style={{ color: '#ed7800' }} />
-  <DyteSpinner style={{ color: '#ffac00' }} />
+  <RtkSpinner />
+  <RtkSpinner style={{ color: '#ed7800' }} />
+  <RtkSpinner style={{ color: '#ffac00' }} />
 </Row>
 ```

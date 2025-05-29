@@ -1,5 +1,5 @@
 ```jsx live
 <Center>
-  <DyteGridPagination meeting={meeting} />
+  <RtkGridPagination meeting={meeting} />
 </Center>
 ```

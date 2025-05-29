@@ -1,11 +1,11 @@
 import { Config } from '@stencil/core';
 import { postcss } from '@stencil-community/postcss';
 import { reactOutputTarget } from '@stencil/react-output-target';
-import { vueOutputTarget } from '@stencil/vue-output-target';
+// import { vueOutputTarget } from '@stencil/vue-output-target';
 import { angularOutputTarget } from '@stencil/angular-output-target';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 
-const webCorePath = require.resolve('@dytesdk/web-core/inlined');
+const realtimekitPath = require.resolve('@cloudflare/realtimekit/inlined');
 
 const esModules = ['lodash-es'].join('|');
 
@@ -37,10 +37,10 @@ export const config: Config = {
       directivesArrayFile:
         '../angular-library/projects/components/src/lib/stencil-generated/index.ts',
     }),
-    vueOutputTarget({
-      componentCorePackage: '@cloudflare/realtimekit-ui',
-      proxiesFile: '../vue-library/lib/components.ts',
-    }),
+    // vueOutputTarget({
+    //   componentCorePackage: '@cloudflare/realtimekit-ui',
+    //   proxiesFile: '../vue-library/lib/components.ts',
+    // }),
     reactOutputTarget({
       componentCorePackage: '@cloudflare/realtimekit-ui',
       proxiesFile: '../react-library/src/components/stencil-generated/index.ts',
@@ -65,8 +65,8 @@ export const config: Config = {
       // copy latest esm build to public/ for importing
       copy: [
         {
-          src: webCorePath,
-          dest: 'web-core.js',
+          src: realtimekitPath,
+          dest: 'realtimekit.js',
         },
       ],
     },

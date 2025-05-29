@@ -1,6 +1,6 @@
 ```jsx live
 <Row>
-  <DyteButton>Primary</DyteButton>
-  <DyteButton variant="secondary">Secondary</DyteButton>
+  <RtkButton>Primary</RtkButton>
+  <RtkButton variant="secondary">Secondary</RtkButton>
 </Row>
 ```

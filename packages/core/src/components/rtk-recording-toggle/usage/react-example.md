@@ -3,8 +3,8 @@ necessary permission.
 
 ```jsx live
 <Center>
-  <DyteRecordingToggle size="sm" meeting={meeting} />
-  <DyteRecordingToggle size="lg" meeting={meeting} />
-  <DyteRecordingToggle variant="horizontal" size="sm" meeting={meeting} />
+  <RtkRecordingToggle size="sm" meeting={meeting} />
+  <RtkRecordingToggle size="lg" meeting={meeting} />
+  <RtkRecordingToggle variant="horizontal" size="sm" meeting={meeting} />
 </Center>
 ```

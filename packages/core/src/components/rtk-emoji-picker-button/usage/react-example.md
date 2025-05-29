@@ -1,5 +1,5 @@
 ```jsx live
-<DyteEmojiPickerButton
+<RtkEmojiPickerButton
   isActive={false}
   onClick={() => console.log('button clicked')}
 />

@@ -1,8 +1,8 @@
 ```jsx live
-<DytePoll
+<RtkPoll
   poll={{
     id: 'poll-id',
-    question: 'Have you started using dyte yet?',
+    question: 'Have you started using rtk yet?',
     options: [
       {
         text: 'Yes',
@@ -21,7 +21,7 @@
     createdByUserId: 'vaibhavs-user-id',
     voted: [],
   }}
-  onDyteVotePoll={(e) => {
+  onRtkVotePoll={(e) => {
     console.log('Voted', e.detail);
   }}
 />

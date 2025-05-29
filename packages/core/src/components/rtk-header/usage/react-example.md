@@ -1,3 +1,3 @@
 ```jsx live
-<DyteHeader meeting={meeting} />
+<RtkHeader meeting={meeting} />
 ```

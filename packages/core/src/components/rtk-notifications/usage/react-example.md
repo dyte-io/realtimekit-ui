@@ -1,5 +1,5 @@
 ```jsx live
-<DyteNotifications
+<RtkNotifications
   meeting={meeting}
   config={{
     config: {
@@ -41,7 +41,7 @@ To disable specific category of notifications set the value of the category to
 `false` like below.
 
 ```jsx live
-<DyteNotifications
+<RtkNotifications
   meeting={meeting}
   config={{
     notifications: {
@@ -82,7 +82,7 @@ To change the duration for a specific category of notifications set the value of
 the category to the milliseconds.
 
 ```jsx live
-<DyteNotifications
+<RtkNotifications
   meeting={meeting}
   config={{
     notification_duration: {
@@ -106,7 +106,7 @@ To disable sound for a specific category of notifications set the value of the
 category to `false` like below.
 
 ```jsx live
-<DyteNotifications
+<RtkNotifications
   meeting={meeting}
   config={{
     notification_sounds: {

@@ -1,7 +1,7 @@
 ```jsx live
 <Center>
-  <DyteMoreToggle size="sm" />
-  <DyteMoreToggle size="lg" />
-  <DyteMoreToggle variant="horizontal" size="sm" />
+  <RtkMoreToggle size="sm" />
+  <RtkMoreToggle size="lg" />
+  <RtkMoreToggle variant="horizontal" size="sm" />
 </Center>
 ```

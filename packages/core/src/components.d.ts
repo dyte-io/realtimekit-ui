@@ -17,7 +17,7 @@ import { AudioVisualizerVariant } from "./components/rtk-audio-visualizer/rtk-au
 import { AvatarVariant } from "./components/rtk-avatar/rtk-avatar";
 import { DraftMeeting } from "./utils/breakout-rooms-manager";
 import { ButtonKind, ButtonVariant } from "./components/rtk-button/rtk-button";
-import { DyteBasicParticipant, DytePermissionsPreset, DytePlugin, FileMessage, ImageMessage, Message, TextMessage } from "@dytesdk/web-core";
+import { FileMessage, ImageMessage, Message, RTKBasicParticipant, RTKPermissionsPreset, RTKPlugin, TextMessage } from "@cloudflare/realtimekit";
 import { ChatFilter } from "./components/rtk-chat/rtk-chat";
 import { RtkNewMessageEvent } from "./components/rtk-chat-composer-ui/rtk-chat-composer-ui";
 import { NewMessageEvent } from "./components/rtk-chat-composer-view/rtk-chat-composer-view";
@@ -56,7 +56,7 @@ export { AudioVisualizerVariant } from "./components/rtk-audio-visualizer/rtk-au
 export { AvatarVariant } from "./components/rtk-avatar/rtk-avatar";
 export { DraftMeeting } from "./utils/breakout-rooms-manager";
 export { ButtonKind, ButtonVariant } from "./components/rtk-button/rtk-button";
-export { DyteBasicParticipant, DytePermissionsPreset, DytePlugin, FileMessage, ImageMessage, Message, TextMessage } from "@dytesdk/web-core";
+export { FileMessage, ImageMessage, Message, RTKBasicParticipant, RTKPermissionsPreset, RTKPlugin, TextMessage } from "@cloudflare/realtimekit";
 export { ChatFilter } from "./components/rtk-chat/rtk-chat";
 export { RtkNewMessageEvent } from "./components/rtk-chat-composer-ui/rtk-chat-composer-ui";
 export { NewMessageEvent } from "./components/rtk-chat-composer-view/rtk-chat-composer-view";
@@ -550,7 +550,7 @@ export namespace Components {
         /**
           * List of channel members
          */
-        "members": DyteBasicParticipant[];
+        "members": RTKBasicParticipant[];
         /**
           * Language
          */
@@ -699,7 +699,7 @@ export namespace Components {
         /**
           * list of members that can be mentioned
          */
-        "members"?: DyteBasicParticipant[];
+        "members"?: RTKBasicParticipant[];
         /**
           * prefill the composer
          */
@@ -2216,7 +2216,7 @@ export namespace Components {
         /**
           * Active Plugins
          */
-        "plugins": DytePlugin[];
+        "plugins": RTKPlugin[];
         /**
           * Screenshare Participants
          */
@@ -2368,6 +2368,10 @@ export namespace Components {
           * Message
          */
         "notification": Notification;
+        /**
+          * Stops timeout when true
+         */
+        "paused": boolean;
         /**
           * Size
          */
@@ -2912,7 +2916,7 @@ export namespace Components {
         /**
           * Plugin
          */
-        "plugin": DytePlugin;
+        "plugin": RTKPlugin;
         /**
           * Language
          */
@@ -2989,7 +2993,7 @@ export namespace Components {
         /**
           * Permissions Object
          */
-        "permissions": DytePermissionsPreset;
+        "permissions": RTKPermissionsPreset;
         /**
           * Poll
          */
@@ -3401,6 +3405,10 @@ export namespace Components {
           * Default tab to open
          */
         "currentTab": string;
+        /**
+          * Option to focus close button when opened
+         */
+        "focusCloseButton": boolean;
         /**
           * Hide Close Action
          */
@@ -7086,7 +7094,7 @@ declare namespace LocalJSX {
         /**
           * List of channel members
          */
-        "members"?: DyteBasicParticipant[];
+        "members"?: RTKBasicParticipant[];
         /**
           * Language
          */
@@ -7267,7 +7275,7 @@ declare namespace LocalJSX {
         /**
           * list of members that can be mentioned
          */
-        "members"?: DyteBasicParticipant[];
+        "members"?: RTKBasicParticipant[];
         /**
           * Event emitted when message editing is cancelled
          */
@@ -8981,7 +8989,7 @@ declare namespace LocalJSX {
         /**
           * Active Plugins
          */
-        "plugins"?: DytePlugin[];
+        "plugins"?: RTKPlugin[];
         /**
           * Screenshare Participants
          */
@@ -9149,6 +9157,10 @@ declare namespace LocalJSX {
           * Dismiss event
          */
         "onRtkNotificationDismiss"?: (event: RtkNotificationCustomEvent<string>) => void;
+        /**
+          * Stops timeout when true
+         */
+        "paused"?: boolean;
         /**
           * Size
          */
@@ -9720,7 +9732,7 @@ declare namespace LocalJSX {
         /**
           * Plugin
          */
-        "plugin": DytePlugin;
+        "plugin": RTKPlugin;
         /**
           * Language
          */
@@ -9812,7 +9824,7 @@ declare namespace LocalJSX {
         /**
           * Permissions Object
          */
-        "permissions"?: DytePermissionsPreset;
+        "permissions"?: RTKPermissionsPreset;
         /**
           * Poll
          */
@@ -10285,6 +10297,10 @@ declare namespace LocalJSX {
           * Default tab to open
          */
         "currentTab"?: string;
+        /**
+          * Option to focus close button when opened
+         */
+        "focusCloseButton"?: boolean;
         /**
           * Hide Close Action
          */

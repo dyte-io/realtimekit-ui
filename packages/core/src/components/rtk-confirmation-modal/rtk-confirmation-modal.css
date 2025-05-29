@@ -21,7 +21,7 @@
   @apply text-text-md;
 }
 
-.leave-message p {
+.leave-modal p {
   @apply my-3;
 }
 
@@ -32,10 +32,6 @@
 .leave-meeting rtk-button {
   @apply text-text-1000;
   @apply flex-1;
-}
-
-.end-meeting {
-  @apply mt-2;
 }
 
 .br-secondary-btn {

@@ -1,5 +1,5 @@
 ```html
-<dyte-mixed-grid #dyteEl></dyte-mixed-grid>
+<rtk-mixed-grid #rtkEl></rtk-mixed-grid>
 ```
 
 Component
@@ -8,15 +8,15 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('dyteEl') dyteEl: DyteMixedGrid;
+  @ViewChild('rtkEl') rtkEl: RtkMixedGrid;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.dyteEl.participants = [this.dyteMeeting.self];
-    this.dyteEl.pinnedParticipants = [this.dyteMeeting.self];
-    this.dyteEl.screenShareParticipants = [this.dyteMeeting.self];
-    this.dyteEl.plugins = [];
+    this.rtkEl.participants = [this.rtkMeeting.self];
+    this.rtkEl.pinnedParticipants = [this.rtkMeeting.self];
+    this.rtkEl.screenShareParticipants = [this.rtkMeeting.self];
+    this.rtkEl.plugins = [];
   }
 }
 ```

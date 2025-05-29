@@ -1,8 +1,13 @@
 @import '../../styles/reset.css';
 
 :host {
-  @apply text-text-lg mx-3 select-none;
+  @apply text-text-lg select-none;
   @apply text-text-1000;
+}
+
+/* useful for removing from layouts that may have gap */
+:host([data-hidden]) {
+  display: none;
 }
 
 .title {

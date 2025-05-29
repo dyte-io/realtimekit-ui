@@ -6,7 +6,7 @@ import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { defaultConfig } from '../../lib/default-ui-config';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DytePermissionsPreset } from '@dytesdk/web-core';
+import { RTKPermissionsPreset } from '@cloudflare/realtimekit';
 
 export type AIView = 'default' | 'sidebar' | 'full-screen';
 
@@ -76,7 +76,7 @@ export class RtkAi {
 
   render() {
     if (
-      !(this.meeting?.self?.permissions as DytePermissionsPreset).transcriptionEnabled ||
+      !(this.meeting?.self?.permissions as RTKPermissionsPreset).transcriptionEnabled ||
       !this.states?.activeAI
     ) {
       return null;

@@ -37,7 +37,7 @@ Now all the UI components are available for use in your Vue app.
 ```vue
 <!-- App.vue -->
 <script setup>
-import RealtimeKit from '@cloudflare/realtimekit';
+import RealtimeKitClient from '@cloudflare/realtimekit';
 import { RtkMeeting } from '@cloudflare/realtimekit-vue-ui';
 import { onMounted, shallowRef } from 'vue';
 
@@ -45,7 +45,7 @@ import { onMounted, shallowRef } from 'vue';
 const meetingRef = shallowRef();
 
 onMounted(() => {
-  RealtimeKit.init({
+  RealtimeKitClient.init({
     authToken,
   }).then((meeting) => {
     meetingRef.value = meeting;
@@ -65,7 +65,7 @@ If you wish to use individual UI components to build your desired UI, you can us
 ```vue
 <!-- App.vue -->
 <script setup>
-import RealtimeKit from '@cloudflare/realtimekit';
+import RealtimeKitClient from '@cloudflare/realtimekit';
 import { RtkMeeting, RtkSimpleGrid } from '@cloudflare/realtimekit-vue-ui';
 import { onMounted, shallowRef } from 'vue';
 
@@ -73,7 +73,7 @@ import { onMounted, shallowRef } from 'vue';
 const meetingRef = shallowRef();
 
 onMounted(() => {
-  RealtimeKit.init({
+  RealtimeKitClient.init({
     authToken,
   }).then((meeting) => {
     meetingRef.value = meeting;

@@ -13,7 +13,7 @@ import {
 } from '../../utils/sidebar';
 import { RtkSidebarTab, RtkSidebarView } from '../rtk-sidebar-ui/rtk-sidebar-ui';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { StageStatus } from '@dytesdk/web-core';
+import { StageStatus } from '@cloudflare/realtimekit';
 import { Render } from '../../lib/render';
 
 export type RtkSidebarSection = 'chat' | 'polls' | 'participants' | 'plugins';
@@ -28,8 +28,6 @@ export type RtkSidebarSection = 'chat' | 'polls' | 'participants' | 'plugins';
   shadow: true,
 })
 export class RtkSidebar {
-  private keydownListener: (e: KeyboardEvent) => void;
-
   private onStageStatusUpdate: (status: StageStatus) => void;
 
   /** Enabled sections in sidebar */
@@ -84,7 +82,6 @@ export class RtkSidebar {
   }
 
   disconnectedCallback() {
-    document.removeEventListener('keydown', this.keydownListener);
     this.meeting?.stage?.removeListener('stageStatusUpdate', this.onStageStatusUpdate);
     this.onStageStatusUpdate = null;
   }
@@ -111,12 +108,6 @@ export class RtkSidebar {
   viewChanged(view: RtkSidebarView) {
     if (view === 'full-screen') {
       this.enablePinning = false;
-      this.keydownListener = (e) => {
-        if (e.key === 'Escape') {
-          this.close();
-        }
-      };
-      document.addEventListener('keydown', this.keydownListener);
     } else {
       this.enablePinning = true;
     }

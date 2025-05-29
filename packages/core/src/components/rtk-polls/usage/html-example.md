@@ -1,12 +1,12 @@
 ```html
-<dyte-polls id="dyte-el"></dyte-polls>
+<rtk-polls id="rtk-el"></rtk-polls>
 
 <script>
-  document.getElementById('dyte-el').meeting = meeting;
+  document.getElementById('rtk-el').meeting = meeting;
 </script>
 
 <style>
-  dyte-polls {
+  rtk-polls {
     height: 480px;
     width: 100%;
     max-width: 320px;

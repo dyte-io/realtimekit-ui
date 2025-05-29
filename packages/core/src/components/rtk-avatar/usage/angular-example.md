@@ -1,9 +1,9 @@
 Template
 
 ```html
-<dyte-avatar #one></dyte-avatar>
-<dyte-avatar #two></dyte-avatar>
-<dyte-avatar #three></dyte-avatar>
+<rtk-avatar #one></rtk-avatar>
+<rtk-avatar #two></rtk-avatar>
+<rtk-avatar #three></rtk-avatar>
 ```
 
 Component
@@ -12,22 +12,22 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('one') componentOne: DyteAvatar;
+  @ViewChild('one') componentOne: RtkAvatar;
 
-  @ViewChild('two') componentTwo: DyteAvatar;
+  @ViewChild('two') componentTwo: RtkAvatar;
 
-  @ViewChild('three') componentTree: DyteAvatar;
+  @ViewChild('three') componentTree: RtkAvatar;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
-    this.componentOne.participant = this.dyteMeeting.self;
+    this.componentOne.participant = this.rtkMeeting.self;
     this.componentOne.size = 'sm';
 
-    this.componentTwo.participant = this.dyteMeeting.self;
+    this.componentTwo.participant = this.rtkMeeting.self;
     this.componentTwo.size = 'md';
 
-    this.componentThree.participant = this.dyteMeeting.self;
+    this.componentThree.participant = this.rtkMeeting.self;
     this.componentThree.size = 'lg';
     this.componentThree.variant = 'hexagon';
   }

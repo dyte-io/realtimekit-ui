@@ -1,11 +1,11 @@
 ```html
-<dyte-button (click)="showSettings()">Show Settings</dyte-button>
-<dyte-button (click)="showLeaveConfirmation()">Show Settings</dyte-button>
+<rtk-button (click)="showSettings()">Show Settings</rtk-button>
+<rtk-button (click)="showLeaveConfirmation()">Show Settings</rtk-button>
 
-<dyte-dialog-manager
+<rtk-dialog-manager
   #dialogManager
-  (dyteStateUpdate)="stateUpdate"
-></dyte-dialog-manager>
+  (rtkStateUpdate)="stateUpdate"
+></rtk-dialog-manager>
 ```
 
 Component
@@ -14,14 +14,14 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('dialogManager') componentDialogManager: DyteDialogManager;
+  @ViewChild('dialogManager') componentDialogManager: RtkDialogManager;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   states = { activeSettings: false, activeLeaveConfirmation: false };
 
   async ngAfterViewInit() {
-    this.componentDialogManager.meeting = this.dyteMeeting;
+    this.componentDialogManager.meeting = this.rtkMeeting;
     this.setComponentState();
   }
 

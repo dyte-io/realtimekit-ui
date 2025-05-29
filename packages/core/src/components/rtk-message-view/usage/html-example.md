@@ -1,5 +1,5 @@
 ```html
-<dyte-message-view id="message"> Hello NY! </dyte-message-view>
+<rtk-message-view id="message"> Hello NY! </rtk-message-view>
 ```
 
 ```js

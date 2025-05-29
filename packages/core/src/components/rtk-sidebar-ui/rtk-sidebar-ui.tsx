@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, Watch, h } from '@stencil/core';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { RtkI18n, defaultIconPack, useLanguage } from '../../exports';
 
@@ -33,6 +33,9 @@ export class RtkSidebarUi {
   /** Icon Pack */
   @Prop() iconPack = defaultIconPack;
 
+  /** Option to focus close button when opened */
+  @Prop() focusCloseButton = true;
+
   /** Language */
   @SyncWithStore()
   @Prop()
@@ -48,16 +51,42 @@ export class RtkSidebarUi {
     this.sidebarClose.emit();
   };
 
+  private keydownListener: (e: KeyboardEvent) => void;
+  private hostEl: HTMLElement;
+  private closeButton: HTMLElement;
+
+  componentDidLoad() {
+    this.keydownListener = (e) => {
+      if (e.key === 'Escape') {
+        this.onClose();
+      }
+    };
+    this.hostEl.addEventListener('keydown', this.keydownListener);
+    this.handleFocusCloseButton();
+  }
+
+  @Watch('currentTab')
+  handleFocusCloseButton() {
+    if (this.currentTab !== 'chat' && !this.hideCloseAction) {
+      this.closeButton.focus();
+    }
+  }
+
+  disconnectedCallback() {
+    this.hostEl.removeEventListener('keydown', this.keydownListener);
+  }
+
   render() {
     const isFullScreen = this.view === 'full-screen';
 
     const activeTab = this.tabs.find((tab) => tab.id === this.currentTab);
 
     return (
-      <Host class={this.view}>
+      <Host ref={(el) => (this.hostEl = el)} class={this.view}>
         {/* Close button */}
         {!this.hideCloseAction && (
           <rtk-button
+            ref={(el) => (this.closeButton = el)}
             variant="ghost"
             kind="icon"
             class="close"

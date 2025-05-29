@@ -1,8 +1,8 @@
 ```html
-<dyte-permissions-message id="dyte-el"></dyte-permissions-message>
+<rtk-permissions-message id="rtk-el"></rtk-permissions-message>
 
 <script>
-  const el = document.getElementById('dyte-el');
+  const el = document.getElementById('rtk-el');
   el.meeting = meeting;
 </script>
 ```

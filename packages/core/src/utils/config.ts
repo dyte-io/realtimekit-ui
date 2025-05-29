@@ -1,4 +1,4 @@
-import type { DyteThemePreset, DytePermissionsPreset } from '@dytesdk/web-core';
+import type { RTKThemePreset, RTKPermissionsPreset } from '@cloudflare/realtimekit';
 import { defaultConfig } from '../lib/default-ui-config';
 import { UIConfig } from '../types/ui-config';
 import { DesignTokens } from '../types/ui-config/design-tokens';
@@ -37,7 +37,7 @@ type ConfigOptions = {
  * @returns
  */
 export const generateConfig = (
-  oldConfig: Partial<DyteThemePreset>,
+  oldConfig: Partial<RTKThemePreset>,
   meeting: Meeting,
   toExtend: UIConfig = {},
   options: ConfigOptions = { grid_pagination: true, settings_toggle: true }
@@ -83,7 +83,7 @@ export const generateConfig = (
       moreElements.push('rtk-recording-toggle');
     }
 
-    if ((meeting.self.permissions as DytePermissionsPreset).transcriptionEnabled ?? false) {
+    if ((meeting.self.permissions as RTKPermissionsPreset).transcriptionEnabled ?? false) {
       moreElements.push('rtk-caption-toggle');
     }
 
@@ -240,6 +240,7 @@ export const generateConfig = (
         gridTemplateColumns: 'repeat(3, 1fr)',
         gridTemplateRows: '1fr',
         alignItems: 'center',
+        '--header-section-gap': 'var(--rtk-space-2, 8px)',
       },
       'rtk-header.sm': {
         display: 'grid',
@@ -247,12 +248,14 @@ export const generateConfig = (
         gridTemplateColumns: 'repeat(2, 1fr)',
         gridTemplateRows: '1fr',
         alignItems: 'center',
+        '--header-section-gap': 'var(--rtk-space-1, 4px)',
       },
       'div#header-left': {
         display: 'flex',
         alignItems: 'center',
         height: '48px',
         wordBreak: 'break-all',
+        gap: 'var(--header-section-gap)',
       },
       'rtk-logo': {
         height: '26px',
@@ -262,11 +265,14 @@ export const generateConfig = (
         alignItems: 'center',
         justifyContent: 'center',
         wordBreak: 'break-all',
+        gap: 'var(--header-section-gap)',
+        paddingInline: 'var(--rtk-space-3, 12px)',
       },
       'div#header-right': {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
+        gap: 'var(--header-section-gap)',
       },
       'rtk-stage': {
         display: 'flex',

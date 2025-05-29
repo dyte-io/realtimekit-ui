@@ -1,6 +1,6 @@
 ```jsx live
 <Center>
-  <DyteParticipants
+  <RTKParticipants
     meeting={meeting}
     style={{ height: '480px', maxWidth: '320px', backgroundColor: '#000' }}
   />

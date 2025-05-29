@@ -3,7 +3,7 @@ import { Meeting } from '../../types/rtk-client';
 import { ChatChannel } from '../../types/props';
 import { RtkI18n, IconPack, defaultIconPack, useLanguage } from '../../exports';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DyteBasicParticipant } from '@dytesdk/web-core';
+import { RTKBasicParticipant } from '@cloudflare/realtimekit';
 
 @Component({
   tag: 'rtk-channel-header',
@@ -38,7 +38,7 @@ export class RtkChannelHeader {
 
   @State() showSearchBar: boolean = false;
 
-  @State() members: DyteBasicParticipant[] = [];
+  @State() members: RTKBasicParticipant[] = [];
 
   /** Show back button */
   @Prop() showBackButton = false;

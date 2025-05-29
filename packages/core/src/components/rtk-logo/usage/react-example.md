@@ -1,3 +1,3 @@
 ```jsx live
-<DyteLogo logoUrl="/logo/dark.svg" style={{ height: '36px' }} />
+<RtkLogo logoUrl="/logo/dark.svg" style={{ height: '36px' }} />
 ```

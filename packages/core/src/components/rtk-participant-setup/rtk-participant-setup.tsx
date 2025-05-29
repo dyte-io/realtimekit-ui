@@ -6,7 +6,7 @@ import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { defaultConfig } from '../../exports';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { DyteSelf } from '@dytesdk/web-core';
+import { RTKSelf } from '@cloudflare/realtimekit';
 
 export type VideoState = Pick<Peer, 'videoEnabled' | 'videoTrack'>;
 
@@ -74,7 +74,7 @@ export class RtkParticipantSetup {
   disconnectedCallback() {
     if (this.participant == null) return;
 
-    (this.participant as DyteSelf).removeListener('videoUpdate', this.onVideoUpdate);
+    (this.participant as RTKSelf).removeListener('videoUpdate', this.onVideoUpdate);
   }
 
   @Watch('participant')
@@ -87,7 +87,7 @@ export class RtkParticipantSetup {
 
       this.isPinned = participant.isPinned;
 
-      (participant as DyteSelf).addListener('videoUpdate', this.onVideoUpdate);
+      (participant as RTKSelf).addListener('videoUpdate', this.onVideoUpdate);
     }
   }
 

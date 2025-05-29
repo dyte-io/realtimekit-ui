@@ -1,7 +1,15 @@
 {
   "name": "@cloudflare/realtimekit-vue-ui",
-  "version": "0.0.0",
-  "description": "UI Kit to support easy UI development for Vue.",
+  "version": "1.0.0-staging.16",
+  "description": "Pre-built, ready-to-use Vue UI components and utilities for integrating with Cloudflare RealtimeKit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyte-io/realtimekit-ui.git"
+  },
+  "bugs": {
+    "url": "https://realtime.cloudflare.com/issues"
+  },
+  "homepage": "https://realtime.cloudflare.com",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "exports": {

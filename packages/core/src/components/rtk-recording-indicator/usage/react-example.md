@@ -1,3 +1,3 @@
 ```jsx live
-<DyteRecordingIndicator meeting={meeting} />
+<RtkRecordingIndicator meeting={meeting} />
 ```

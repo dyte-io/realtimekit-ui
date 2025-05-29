@@ -1,9 +1,9 @@
 Template
 
 ```html
-<dyte-camera-toggle #one></dyte-camera-toggle>
-<dyte-camera-toggle #two></dyte-camera-toggle>
-<dyte-camera-toggle #three></dyte-camera-toggle>
+<rtk-camera-toggle #one></rtk-camera-toggle>
+<rtk-camera-toggle #two></rtk-camera-toggle>
+<rtk-camera-toggle #three></rtk-camera-toggle>
 ```
 
 Component
@@ -12,25 +12,25 @@ Component
 class MyComponent {
   title = 'MyComponent';
 
-  @ViewChild('one') componentOne: DyteCameraToggle;
+  @ViewChild('one') componentOne: RtkCameraToggle;
 
-  @ViewChild('two') componentTwo: DyteCameraToggle;
+  @ViewChild('two') componentTwo: RtkCameraToggle;
 
-  @ViewChild('three') componentTree: DyteCameraToggle;
+  @ViewChild('three') componentTree: RtkCameraToggle;
 
-  dyteMeeting: DyteClient; // meeting instance
+  rtkMeeting: RealtimeKitClient; // meeting instance
 
   async ngAfterViewInit() {
     // Change the size to small
-    this.componentOne.meeting = this.dyteMeeting;
+    this.componentOne.meeting = this.rtkMeeting;
     this.componentOne.size = 'sm';
 
     // Change the size to large
-    this.componentTwo.meeting = this.dyteMeeting;
+    this.componentTwo.meeting = this.rtkMeeting;
     this.componentTwo.size = 'lg';
 
     // Render as a horizontal button
-    this.componentThree.meeting = this.dyteMeeting;
+    this.componentThree.meeting = this.rtkMeeting;
     this.componentThree.variant = 'horizontal';
   }
 }

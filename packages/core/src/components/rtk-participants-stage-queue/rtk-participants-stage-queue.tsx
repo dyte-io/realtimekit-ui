@@ -44,6 +44,10 @@ export class RtkParticipantsStaged {
   disconnectedCallback() {
     const { stage } = this.meeting;
     stage?.removeListener('stageAccessRequestUpdate', this.updateRequestList);
+    this.meeting.participants.joined?.removeListener(
+      'stageStatusUpdate',
+      this.updateStageRequestedParticipants
+    );
   }
 
   @Watch('meeting')
@@ -51,6 +55,7 @@ export class RtkParticipantsStaged {
     if (meeting == null) return;
 
     this.updateRequestList();
+    meeting.participants.joined.on('stageStatusUpdate', this.updateStageRequestedParticipants);
     meeting.stage?.on('stageAccessRequestUpdate', this.updateRequestList);
   }
 
@@ -63,23 +68,19 @@ export class RtkParticipantsStaged {
   private acceptStageRequest = async (p: Peer) => {
     const { userId } = p;
     await this.meeting.stage.grantAccess([userId]);
-    this.updateStageRequestedParticipants();
   };
 
   private rejectStageRequest = async (p: Peer) => {
     const { userId } = p;
     await this.meeting.stage.denyAccess([userId]);
-    this.updateStageRequestedParticipants();
   };
 
   private acceptAllStageRequest = async () => {
     await this.meeting.stage.grantAccess(this.stageRequestedParticipants.map((p) => p.userId));
-    this.updateStageRequestedParticipants();
   };
 
   private denyAllStageRequest = async () => {
     await this.meeting.stage?.denyAccess(this.stageRequestedParticipants.map((p) => p.userId));
-    this.updateStageRequestedParticipants();
   };
 
   private shouldShowStageRequests = () => {

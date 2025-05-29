@@ -1,3 +1,3 @@
 ```jsx live
-<DyteClock meeting={meeting} />
+<RtkClock meeting={meeting} />
 ```
