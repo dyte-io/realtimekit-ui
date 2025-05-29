@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0...@cloudflare/realtimekit-ui-v1.0.1) (2025-05-29)
+
+
+### Bug Fixes
+
+* remove vue from semantic-release ([5aeee25](https://github.com/dyte-io/realtimekit-ui/commit/5aeee2549328a55a839cc71f4d8796bc2c6273ec))
+
 # [1.0.0-staging.17](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.16...@cloudflare/realtimekit-ui-v1.0.0-staging.17) (2025-05-29)
 
 # 1.0.0 (2025-05-29)
