@@ -19,7 +19,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm install --no-fund --no-audit
+        run: npm install --ignore-scripts --no-fund --no-audit
 
       - name: Run tests
         run: |
