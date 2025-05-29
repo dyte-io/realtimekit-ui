@@ -1,2298 +1,2231 @@
 # [1.0.0-staging.17](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.16...@cloudflare/realtimekit-ui-v1.0.0-staging.17) (2025-05-29)
 
+# 1.0.0 (2025-05-29)
 
 ### Bug Fixes
 
-* remove vue from semantic-release ([5aeee25](https://github.com/dyte-io/realtimekit-ui/commit/5aeee2549328a55a839cc71f4d8796bc2c6273ec))
+- remove vue from semantic-release ([5aeee25](https://github.com/dyte-io/realtimekit-ui/commit/5aeee2549328a55a839cc71f4d8796bc2c6273ec))
+- ./dist export ([2166d11](https://github.com/dyte-io/realtimekit-ui/commit/2166d119fcf984aa3d12e87dfd8efb6521670840))
+- access to npm publish ([6508322](https://github.com/dyte-io/realtimekit-ui/commit/6508322cd8ed3305e539c348505a8ac79cfd1a4a))
+- add event listener in componentDidLoad ([d99524a](https://github.com/dyte-io/realtimekit-ui/commit/d99524ab2f2cdbdddb6671972c0169e724c53383))
+- add private chat filter ([4654cf9](https://github.com/dyte-io/realtimekit-ui/commit/4654cf963f0b80d39625f098334388e9a74ce645))
+- add source spam on web-core ([ad70a9c](https://github.com/dyte-io/realtimekit-ui/commit/ad70a9c0c20f61769ebad6de906848736a760833))
+- added action step to auto-update staging branch ([6ff7104](https://github.com/dyte-io/realtimekit-ui/commit/6ff7104afd6aa94dad677f66cf8be4203bd6dd41))
+- added checkout on pr-comment ([50c11cb](https://github.com/dyte-io/realtimekit-ui/commit/50c11cb0f0fc34f275e7d05bb59fe521d24fdf93))
+- allow hiding self view ([cbd91eb](https://github.com/dyte-io/realtimekit-ui/commit/cbd91eb032c4ac0931a5c4fbedff71030d3c35bd))
+- allow passing a pre-loaded audio element ([822d9c0](https://github.com/dyte-io/realtimekit-ui/commit/822d9c028e607d66d875e164654dcb96a6bf6d0f))
+- always deploy staging web-core ([f0c4713](https://github.com/dyte-io/realtimekit-ui/commit/f0c47138eecbc90090340cbb27e3fb0ed0c03159))
+- angular build ([38f1b2a](https://github.com/dyte-io/realtimekit-ui/commit/38f1b2ac75c77025fd817669b530cca9cca8561f))
+- angular build ([5e81994](https://github.com/dyte-io/realtimekit-ui/commit/5e8199402e5ec069c90ec188d5ecf4f27aaed16b))
+- **breakout-rooms:** breakout room button is not visible in some edge cases ([6505768](https://github.com/dyte-io/realtimekit-ui/commit/650576815250a9b68c1b20df6ae43cf10716a55c))
+- **breakout-rooms:** users were not able to join breakouts in first try ([0b4c689](https://github.com/dyte-io/realtimekit-ui/commit/0b4c68997072dbd76d9cbff74450347a4858c901))
+- bring back border-radius in controlbar button ([b387507](https://github.com/dyte-io/realtimekit-ui/commit/b38750731a48d7b5bcdbccdca731f77abef67bcf))
+- bring back workflows ([c760907](https://github.com/dyte-io/realtimekit-ui/commit/c76090756a0df761e7aff9bf19edda474a0098c7))
+- build trigger ([4899df0](https://github.com/dyte-io/realtimekit-ui/commit/4899df04225ab39e4bf0bce48f0d2ab3d208e1bc))
+- **build:** build was failing due to web-core and utils mismatch ([cb2f911](https://github.com/dyte-io/realtimekit-ui/commit/cb2f911b0dd6a02caec4f3ff3149a2ce99b8fc54))
+- checks for toggle button visiblity ([40fbac2](https://github.com/dyte-io/realtimekit-ui/commit/40fbac27e4048bf7400d8de6396ff3d2b3acc220))
+- cjs extension typo in loader ([44b4b8a](https://github.com/dyte-io/realtimekit-ui/commit/44b4b8ae45ec761d4d313cbc97d61fad21aa1c6a))
+- componentShouldUpdate call ([c8bdc67](https://github.com/dyte-io/realtimekit-ui/commit/c8bdc679e40e959b43a070b5dc18d0981eea8ad6))
+- create patch release ([82237b1](https://github.com/dyte-io/realtimekit-ui/commit/82237b1801540656ebc72466984ed71b29984c60))
+- create release ([c41905a](https://github.com/dyte-io/realtimekit-ui/commit/c41905a7ad5c291b06a8b7479ae89c851dd797d5))
+- create release ([128b2a8](https://github.com/dyte-io/realtimekit-ui/commit/128b2a8950dda0a6c16bc28d632a0b7c295181f9))
+- create release ([7c74b86](https://github.com/dyte-io/realtimekit-ui/commit/7c74b864e839bc35557e46ace3eee02e0b5540e9))
+- create release ([eaafee2](https://github.com/dyte-io/realtimekit-ui/commit/eaafee2642ae390f36e425743c23cb9c39e350d4))
+- **debugger-i18n:** fixed the lack of i18n in debugger files ([3962e80](https://github.com/dyte-io/realtimekit-ui/commit/3962e803a9e3526a617f70b7cf0e1078a73d87a3))
+- **debugger:** added jitter unit ([20ace1d](https://github.com/dyte-io/realtimekit-ui/commit/20ace1d3051ef961adbe22aac15ed60c63661577))
+- **debugger:** fixed colors post status label refactoring ([502bd49](https://github.com/dyte-io/realtimekit-ui/commit/502bd49a7492c0990f00cbac0e5119c82e79db8a))
+- **debugger:** fixed label, rounding battery percentage ([760726e](https://github.com/dyte-io/realtimekit-ui/commit/760726e8275f96cd648290e5a7fb36addbebf829))
+- disable sourcemap ([d0afd77](https://github.com/dyte-io/realtimekit-ui/commit/d0afd770c15c33e2cd7a445e553a801861cef14d))
+- do not import from exports ([c2897ef](https://github.com/dyte-io/realtimekit-ui/commit/c2897ef32938e4f5bcfc844e082b2d259c3a03e0))
+- do not listen to changes once prop is updated manually after init ([ea2d0b8](https://github.com/dyte-io/realtimekit-ui/commit/ea2d0b82229736e5be0137218d0f2e2889551c1a))
+- **dyte-chat:** fixed code indentation for chat messages ([dae6425](https://github.com/dyte-io/realtimekit-ui/commit/dae64258577a8e4e72eba31eeba4f40d82e7397e))
+- **dyte-confirmation-modal:** fix message margin ([146141e](https://github.com/dyte-io/realtimekit-ui/commit/146141e647e7302188184a2fdaaf2d4177cf2b93))
+- **dyte-controlbar-button:** add focus outline and move interaction styles onto button ([3c586d5](https://github.com/dyte-io/realtimekit-ui/commit/3c586d56e13f2c5626d8b3af16013f59fbfd8ccc))
+- **dyte-participant-tile:** network disconnected icon is not going away due to incorrect field ([65eca1c](https://github.com/dyte-io/realtimekit-ui/commit/65eca1cf9f003d90cb0cdf096233647986baec14))
+- empty commit to trigger release ([51d6219](https://github.com/dyte-io/realtimekit-ui/commit/51d62196c35f00f548a5e6d92af3ac190163ba66))
+- error while destructuring meeting ([be2ecc8](https://github.com/dyte-io/realtimekit-ui/commit/be2ecc8a50656954b5bf75a0f20c97a81be295e3))
+- export getInitialStates() ([47841e3](https://github.com/dyte-io/realtimekit-ui/commit/47841e393583d1e634e0133f6cb53909cfd44e56))
+- export types properly ([99933dc](https://github.com/dyte-io/realtimekit-ui/commit/99933dcbdfece9d3b5bdfd4da192c3cb03404044))
+- export uiStore ([a06f7c5](https://github.com/dyte-io/realtimekit-ui/commit/a06f7c5b9ae70193fadf791066416052ab21dab8))
+- github action for staging updatE ([852cd6f](https://github.com/dyte-io/realtimekit-ui/commit/852cd6fa14aecef5d8903a4f6d3a00d63d7374e0))
+- github actions build step ([804d011](https://github.com/dyte-io/realtimekit-ui/commit/804d0118847e9a2edfcdbffd31cfed3d3ac4e385))
+- github actions deploy ([c6f4e24](https://github.com/dyte-io/realtimekit-ui/commit/c6f4e24f93749e9c153f012065ab1295a6be8dd0))
+- handle iframe not found exceptions ([8eb9230](https://github.com/dyte-io/realtimekit-ui/commit/8eb92308332173dfc93298cfacc0af8e0d431a84))
+- **header components:** replace margin with gap ([3e8677c](https://github.com/dyte-io/realtimekit-ui/commit/3e8677c1672390e1d27adad8b8bfd33bd34d1623))
+- hide troubleshooter for setup screen ([2db5506](https://github.com/dyte-io/realtimekit-ui/commit/2db5506b6fe9dd96d60e8da19e72f438d618791d))
+- incorrect check in setup screen ([20271af](https://github.com/dyte-io/realtimekit-ui/commit/20271af95006d592931c8d18ed2b26157ba5e64e))
+- incorrect env in release action ([952459a](https://github.com/dyte-io/realtimekit-ui/commit/952459abeeeb90b2aadecac4ce83d1f33282ec93))
+- incorrect tag usage ([03fa86f](https://github.com/dyte-io/realtimekit-ui/commit/03fa86f48705e65e8eba12fe19b05b944a56e619))
+- join in as text ([8f9ff5d](https://github.com/dyte-io/realtimekit-ui/commit/8f9ff5dffdca7ea42e3c6e2102a8ef84dd1e1fc9))
+- **livestream-viewer:** fixed some edge cases around playback, added logs for tracking ([210309b](https://github.com/dyte-io/realtimekit-ui/commit/210309bd690a09552fea837fadf96f61be9f9f1e))
+- **livestream-viewer:** level selector and safari fixes ([07f0e99](https://github.com/dyte-io/realtimekit-ui/commit/07f0e99cd2c9f981b95c3d245ea9940b04896d2c))
+- **livestream:** added logic to recover from fatal errors ([673ebcb](https://github.com/dyte-io/realtimekit-ui/commit/673ebcb7eb3f601d91213316e3b6a3b96d674529))
+- **livestream:** adding proper brand colors for player ([331d88a](https://github.com/dyte-io/realtimekit-ui/commit/331d88ac036d1590e16cead5a3115c9471286fa9))
+- **livestream:** reduced fast forward width ([98385f0](https://github.com/dyte-io/realtimekit-ui/commit/98385f0f1b372474d5cb0e5a2bcbee2467b82546))
+- **livestream:** removed hardcoded allowed qualities, fixed web-core package ([b847ed6](https://github.com/dyte-io/realtimekit-ui/commit/b847ed6a34af9bc7ba6592c95fad1ed2bd146ceb))
+- **livestream:** video dimension fixes for poor quality ([b1b5e15](https://github.com/dyte-io/realtimekit-ui/commit/b1b5e152923596dc113ca9424a46fa4caed628b7))
+- more package.json fixes ([129fa1b](https://github.com/dyte-io/realtimekit-ui/commit/129fa1b15905a4cc4d331b9aca37d1503c94c64d))
+- move pip controls to web-core ([1250d9a](https://github.com/dyte-io/realtimekit-ui/commit/1250d9a991f5c4906d2ab9367b7f12d075b9de9f))
+- **network-indicator:** show network indicator for self as well ([efff3f3](https://github.com/dyte-io/realtimekit-ui/commit/efff3f3e96c3e358df6fb591cc84d9cc1fa933bc))
+- **off-stage-actions:** mic and camera toggle should not be shown off stage ([23ae96d](https://github.com/dyte-io/realtimekit-ui/commit/23ae96d9fe494424d8cea0b0fd680de8b559eb25))
+- **offstage-screenshare:** permission update for screenshare was causing toggle to show up off stage ([4485515](https://github.com/dyte-io/realtimekit-ui/commit/4485515faef3086d046e18ba652e89325f0764b7))
+- optimize locale object handling ([8d20ecc](https://github.com/dyte-io/realtimekit-ui/commit/8d20eccc5727f41268f1248c8cc0702159af6a29))
+- **overflow menu buttons:** fix vertical positioning of badges in overflow menu ([ccab8b3](https://github.com/dyte-io/realtimekit-ui/commit/ccab8b34fd8754bf3b9e5bd05ca17953d3619421))
+- package.json and support email ([886429c](https://github.com/dyte-io/realtimekit-ui/commit/886429c57c2b765a797817f4a306b66478b2b646))
+- **participant-count-badge:** badge/pill was not showing the background color ([423e1f6](https://github.com/dyte-io/realtimekit-ui/commit/423e1f660f25c5b9d4c4400b98c958ff341f2ae1))
+- **participants-tab-i18n:** fixed i18n issues in the participants tab ([100dbc0](https://github.com/dyte-io/realtimekit-ui/commit/100dbc072b841e1614958276804cf44e50eb8543))
+- **participants:** participant menu list was not closing, actions were invisible for last 2 ([15ab76a](https://github.com/dyte-io/realtimekit-ui/commit/15ab76a7011650ba0e7240fed39764519838603e))
+- patch release ([db325af](https://github.com/dyte-io/realtimekit-ui/commit/db325af9326cdf7487e7043b34b2852acf557a3b))
+- patch release ([c084560](https://github.com/dyte-io/realtimekit-ui/commit/c084560861d4845b963e645a7eeb7a467c3d1049))
+- pip misc bugs ([8d3c213](https://github.com/dyte-io/realtimekit-ui/commit/8d3c21382cc9b2101ca632b71245640b877cba0e))
+- **player:** added fast forward, made some fixes ([f2bd2b2](https://github.com/dyte-io/realtimekit-ui/commit/f2bd2b2d835c2f39e03ff5dab6bb2ef009d9b949))
+- provide cache-dependency-path to workflows ([b6e4db8](https://github.com/dyte-io/realtimekit-ui/commit/b6e4db83149b934caac3533058841ae47785eb33))
+- public repo final release ([89190db](https://github.com/dyte-io/realtimekit-ui/commit/89190dba661f84554de174af0a84d6573b74a76d))
+- publish using lerna ([1b072c2](https://github.com/dyte-io/realtimekit-ui/commit/1b072c2de1a6154fd62510926637e06d6d0c5135))
+- push avatar behind the video element ([8a1b1d7](https://github.com/dyte-io/realtimekit-ui/commit/8a1b1d7da68fe45642c8341b112f63b4b58f595c))
+- re-export everything from ui-kit core ([be290b6](https://github.com/dyte-io/realtimekit-ui/commit/be290b6347508cdf04e34ef94189312ff1fb416b))
+- react ui kit export ([33eed82](https://github.com/dyte-io/realtimekit-ui/commit/33eed8283a4324d4003e76502b64b3e35f40a047))
+- react-ui-kit build error on new web-core version ([4f21962](https://github.com/dyte-io/realtimekit-ui/commit/4f219627dc4dc5dc123c02dfb9ce2f9686df53fd))
+- **react:** cjs build ([79977d3](https://github.com/dyte-io/realtimekit-ui/commit/79977d339f96865ba28e3f6e5f2aa7fbdd35c9bc))
+- register video element on video re renders ([725fb96](https://github.com/dyte-io/realtimekit-ui/commit/725fb968a883e734560597e20930a9402003c678))
+- release tagging ([2f14d21](https://github.com/dyte-io/realtimekit-ui/commit/2f14d217fda33e390d2217c0d4617c6c0f1d085b))
+- **release:** adding a empty commit to re-release ([9a70e57](https://github.com/dyte-io/realtimekit-ui/commit/9a70e570e50b78de84f66bd4c476a7a8b2eb7879))
+- **release:** adding empty commit to trigger re-release ([39d9e6f](https://github.com/dyte-io/realtimekit-ui/commit/39d9e6fd5ec6722a954884c4c0b391f59388a46c))
+- **release:** empty commit to fix previous empty no-dist npm release ([0157d66](https://github.com/dyte-io/realtimekit-ui/commit/0157d666953796f64ec071311fd8744778055b4d))
+- remove IVS ([4be485e](https://github.com/dyte-io/realtimekit-ui/commit/4be485e0844e5dfb259ad2cb759da79988d996b6))
+- remove react ui-hooks and cleanup ([3e21e4b](https://github.com/dyte-io/realtimekit-ui/commit/3e21e4b6d9945a8f4633ae9ba4cc91d24c430f4a))
+- remove socket service check ([1e1f3ee](https://github.com/dyte-io/realtimekit-ui/commit/1e1f3eee6323102c6f1d84fcc20fa4abc5944c9f))
+- remove socket service flag check ([b4b3289](https://github.com/dyte-io/realtimekit-ui/commit/b4b32897bd2f3fbd4e2b4aea8172550b8727dcca))
+- remove unused @Watch method ([90e60d0](https://github.com/dyte-io/realtimekit-ui/commit/90e60d0632dbf28d032b3d9b02a4476e4bb71070))
+- remove unused ai components ([02fc5cf](https://github.com/dyte-io/realtimekit-ui/commit/02fc5cf2fba07312faa5c3d8553774901d9d6456))
+- remove unused props from primitive components ([b1198e8](https://github.com/dyte-io/realtimekit-ui/commit/b1198e8c95c0c8fadc2a105bed3183dd2921ebbc))
+- remove unused types ([8dc3e6f](https://github.com/dyte-io/realtimekit-ui/commit/8dc3e6f10e0ecfc2e98538ac711076df97937d82))
+- remove vue package ([fa20491](https://github.com/dyte-io/realtimekit-ui/commit/fa204913d19926aba0f84390500bdcc9c56a81c2))
+- rename angular components module ([58d2321](https://github.com/dyte-io/realtimekit-ui/commit/58d23214e5d0b0232a834bcd6a1f262701329805))
+- rename css vars prefix from dyte to rtk ([0ee6001](https://github.com/dyte-io/realtimekit-ui/commit/0ee60019f1945802546467942d53277e6f28ce9a))
+- render chat and participants using Render ([53216bd](https://github.com/dyte-io/realtimekit-ui/commit/53216bd718d6a0c5396a0f93a8e21b1c54151654))
+- render preview video with new render API ([66903a0](https://github.com/dyte-io/realtimekit-ui/commit/66903a07a7fd174e79c4eba7cc4ccf62b2237eb5))
+- revert to older react-output-target ([a5fb103](https://github.com/dyte-io/realtimekit-ui/commit/a5fb1035b5a5c417eab63d11d02a6dc1a7dc14e4))
+- rollup optional dep error in github action ([529b4cb](https://github.com/dyte-io/realtimekit-ui/commit/529b4cba94129963b92c3ee127945431c8497860))
+- **rtk-leave-meeting:** use consistent primary button in leave dialog ([bd7f4fd](https://github.com/dyte-io/realtimekit-ui/commit/bd7f4fdad4c8ff802680ae003e091c0f58d35d2d))
+- run npm i and npm i --ws ([46eeeae](https://github.com/dyte-io/realtimekit-ui/commit/46eeeaeffa3abf86a054a44569cdf34dcb8fed0a))
+- run npm i inside workspaces ([4aa2968](https://github.com/dyte-io/realtimekit-ui/commit/4aa2968fc42eb431a67043c1307211a76ebacd05))
+- scroll lock in transcriptions ([71a9ca5](https://github.com/dyte-io/realtimekit-ui/commit/71a9ca54e0b77ef765bcd20de678f8531dd3f5c2))
+- set es2015 target ([faf2b04](https://github.com/dyte-io/realtimekit-ui/commit/faf2b044b8447bff356f77a472b41219d920b358))
+- **setup-screen:** add meeting title and styling fixes ([cc5802c](https://github.com/dyte-io/realtimekit-ui/commit/cc5802c1de33eee8e4406335990f4fe201c558b9))
+- show transcriptions in ai component ([d3b42db](https://github.com/dyte-io/realtimekit-ui/commit/d3b42db423c1af06fbeddaf9db7a323d17c7e441))
+- simplified state management ([057e883](https://github.com/dyte-io/realtimekit-ui/commit/057e88374632cf7e9012af3775ca5951a20b8361))
+- simplify device list logic ([b06fea9](https://github.com/dyte-io/realtimekit-ui/commit/b06fea937cee2229e91267e90aa5b6fa4ed9a4ec))
+- simplify sync-with-store internals ([f7654d6](https://github.com/dyte-io/realtimekit-ui/commit/f7654d6f33381455c80930c57d473b4ddf2829f4))
+- size of transcriptions title ([ba85b7b](https://github.com/dyte-io/realtimekit-ui/commit/ba85b7b20371965c6cf2f67a462cf6f71e60878d))
+- some ui issues ([5c1bec2](https://github.com/dyte-io/realtimekit-ui/commit/5c1bec24db4bc4c1505230e026fa587a1f8d9ca2))
+- state updates in ui-provider ([82a76e7](https://github.com/dyte-io/realtimekit-ui/commit/82a76e76ab88ca8e0656cbbfe600234003a813d3))
+- sync size with store ([94baeef](https://github.com/dyte-io/realtimekit-ui/commit/94baeef426005b065e0032bc7916716c436abbdb))
+- **sync-store:** pass oldValue in callback ([017a925](https://github.com/dyte-io/realtimekit-ui/commit/017a925e5a258efbc5153b10b6e6d7c6879746e7))
+- SyncWithStore logic ([abc11cd](https://github.com/dyte-io/realtimekit-ui/commit/abc11cd5d4888d64c9897d435ea4efed30216209))
+- **tile:** add network-indicator part attr ([218f94f](https://github.com/dyte-io/realtimekit-ui/commit/218f94f957c94fcbb1135f7b8a27ff5b97adcafa))
+- toggle controlbar icon on dynamic permission change ([478e92d](https://github.com/dyte-io/realtimekit-ui/commit/478e92d094a8608f32cb70dd883d7c294d924701))
+- ui design review changes ([7d51283](https://github.com/dyte-io/realtimekit-ui/commit/7d512838768a8708dd9e064697341dad3f1366c9))
+- ui-kit root export filepath ([d19a9d3](https://github.com/dyte-io/realtimekit-ui/commit/d19a9d3fb501cbc15073e355e4f48e2d612572a5))
+- **ui-kit-addons:** fixed hand raise icon ordering issue ([8131e71](https://github.com/dyte-io/realtimekit-ui/commit/8131e71a71189ee7011f82b798408248805a6de0))
+- unreported merge conflict ([b01b792](https://github.com/dyte-io/realtimekit-ui/commit/b01b792ff685d4b61a394b8097f8eebf7b6d6638))
+- update bugs, homepage in package.json and update realtimekit ([0dc85dc](https://github.com/dyte-io/realtimekit-ui/commit/0dc85dc092c1d2dc0435d697834fcaa408c7e18e))
+- update descriptions in READMEs ([39b30c4](https://github.com/dyte-io/realtimekit-ui/commit/39b30c49b848424f0bfa9aaac2c920729325a6bc))
+- update device selector state as per media permission state ([655a505](https://github.com/dyte-io/realtimekit-ui/commit/655a505f0c5fd01d71d4720b0d720b324fd126ff))
+- update mute all description ([44b430e](https://github.com/dyte-io/realtimekit-ui/commit/44b430ea34f3cd3b28a5f43f96f5382145af53ed))
+- update package names in scripts and docs ([7e0dee0](https://github.com/dyte-io/realtimekit-ui/commit/7e0dee091e28799873bd0f76273af24816b84885))
+- update stage requests based on events from participants ([e8f2dd2](https://github.com/dyte-io/realtimekit-ui/commit/e8f2dd2916dbbbbfa0c208b94adbfb6e2c5f9998))
+- update web-core ([d066ab0](https://github.com/dyte-io/realtimekit-ui/commit/d066ab05e69f4ba0a3d14d5f497a52975f24d81f))
+- update web-core version ([eb497d9](https://github.com/dyte-io/realtimekit-ui/commit/eb497d958ad034b12931c38e3e56143fa3b690a6))
+- update z-index for dyte-avatar ([2f1ff72](https://github.com/dyte-io/realtimekit-ui/commit/2f1ff7286af084310d8f4286e973eb066bcf55cf))
+- upgrade stencil ([9b1412f](https://github.com/dyte-io/realtimekit-ui/commit/9b1412fa55a0411159ec5a6b98f07463bce9d94f))
+- upgrade web-core ([fcf0d18](https://github.com/dyte-io/realtimekit-ui/commit/fcf0d18c49c95dc983e4a49b041b1aafde3bac96))
+- upgrade web-core ([3aebb6c](https://github.com/dyte-io/realtimekit-ui/commit/3aebb6c58b6f9331b84c0ee8639b6942222a4fb1))
+- use @SyncWithStore decorator in every component ([6272e6c](https://github.com/dyte-io/realtimekit-ui/commit/6272e6c9934dce1935df7a3ca2cea78550ce84df))
+- use absolute dimensions for avatar ([d9da4ed](https://github.com/dyte-io/realtimekit-ui/commit/d9da4ed5eee984105b7efcf1eed94797a458c2d0))
+- use arrow function in plugin-main to avoid state issues ([7192b11](https://github.com/dyte-io/realtimekit-ui/commit/7192b1132d0484f429961c9278c0f77fa2cb9c8e))
+- use logger from meeting object ([afd8393](https://github.com/dyte-io/realtimekit-ui/commit/afd8393b8bedc98bc3755f459f778285f001be91))
+- vue package ([7915b57](https://github.com/dyte-io/realtimekit-ui/commit/7915b57e99f5c7ac1410b5633ffe76a8797c1680))
+- vue ui kit ([d64cc60](https://github.com/dyte-io/realtimekit-ui/commit/d64cc60175232ead75c01da1d0f8e24ddf02b2e3))
+- **vue:** remove deprecated and non-existent applyPolyfills ([06721f1](https://github.com/dyte-io/realtimekit-ui/commit/06721f180e4e44da337ee1d15215e614cee610ca))
+
+### Code Refactoring
+
+- **control bar:** remove button margins ([38b6ecb](https://github.com/dyte-io/realtimekit-ui/commit/38b6ecbdb965668da21c3f4d21001863a81ec823))
+
+### Features
+
+- added ui-kit public source ([becdf7d](https://github.com/dyte-io/realtimekit-ui/commit/becdf7d3eb6bdf5a2c023a426d10e8bc06852369))
+- **debugger:** added systems tab for battery - works in chromium only, hidden for others ([6042e9f](https://github.com/dyte-io/realtimekit-ui/commit/6042e9f973f447a953b13b26336734c89b9602a7))
+- **debugger:** adding cpu and bandwidth limitations in debugger ([849eed4](https://github.com/dyte-io/realtimekit-ui/commit/849eed436d85be3fdf105edd37636f9ccbfbd46c))
+- **dyte-dialog:** use dialog element for better focus management ([a02e54e](https://github.com/dyte-io/realtimekit-ui/commit/a02e54edbe648c1105e94d1a89add09c705b3b51))
+- **dyte-emoji-picker:** optionally focus emoji picker search when opened ([43a2d41](https://github.com/dyte-io/realtimekit-ui/commit/43a2d417ecd27cd744e1feca629977c62cd79968))
+- **dyte-text-composer-view:** focus textarea when opening chat ([34e1ec3](https://github.com/dyte-io/realtimekit-ui/commit/34e1ec321bdd7249045d8a6f245d4ac5e9dc26cc))
+- feature release ([ca643ff](https://github.com/dyte-io/realtimekit-ui/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
+- feature release ([661ff63](https://github.com/dyte-io/realtimekit-ui/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
+- feature release ([5dc0f57](https://github.com/dyte-io/realtimekit-ui/commit/5dc0f575cca6a8918e1bd740a115ad0d842cdabc))
+- improve macos permission messages ([1dc9735](https://github.com/dyte-io/realtimekit-ui/commit/1dc973560b076ad58515a41c223ef1031934f4f9))
+- initial commit ([a31f52c](https://github.com/dyte-io/realtimekit-ui/commit/a31f52c2cab444fbd0f10d2219a790cf09ae23ea))
+- **internal:** added ability to show view only public chat ([17d8b7a](https://github.com/dyte-io/realtimekit-ui/commit/17d8b7a80c9abd169cbfacda19c62177259dd20c))
+- **internal:** livestream viewer with stats ([945e2b5](https://github.com/dyte-io/realtimekit-ui/commit/945e2b56a00acf42f8591e3f62c686bde7947b27))
+- **internal:** showing badges against the participant tabs with respective count ([d3c7844](https://github.com/dyte-io/realtimekit-ui/commit/d3c784491015d8a6b78b1c3e57d9b5ae1d6a9ed1))
+- **livestream:** added ability to control livestream viewer quality ([9db7720](https://github.com/dyte-io/realtimekit-ui/commit/9db77207e876c197a048755d3133cfe52c3f2c12))
+- **livestream:** show livestream viewers and stage list ([23b4040](https://github.com/dyte-io/realtimekit-ui/commit/23b4040125d0435e7b80fc2f2b0a58a22e8f7b20))
+- npm publish set to true ([c4d367b](https://github.com/dyte-io/realtimekit-ui/commit/c4d367b13d0dc48522fca7181b0e080d22ad3730))
+- **player:** adding custom hls based livestream player ([413bb3d](https://github.com/dyte-io/realtimekit-ui/commit/413bb3d28c2004975f20e5e25e1d7657cfd76ad8))
+- react hooks to listen to store updates ([c0de7f7](https://github.com/dyte-io/realtimekit-ui/commit/c0de7f71af0f68234be20ed78e591755a2629606))
+- realtimekit-ui ([aa124c4](https://github.com/dyte-io/realtimekit-ui/commit/aa124c484fcefc4d6b1b6ee733655560c274d62b))
+- **release:** created new package release ([f0eb31e](https://github.com/dyte-io/realtimekit-ui/commit/f0eb31eca4e1bd6f04cfee1854f8ad195fee0959))
+- **release:** created new package release ([9ef1088](https://github.com/dyte-io/realtimekit-ui/commit/9ef10883a7078730f3d099c6a62baec53eda7caa))
+- **release:** created new package release ([6bfa5df](https://github.com/dyte-io/realtimekit-ui/commit/6bfa5dfe7ff1fd144b7b1bc0026ded492052f3d1))
+- **release:** update package version ([00b2690](https://github.com/dyte-io/realtimekit-ui/commit/00b2690f6697f3fed5cf245a2b8f3994f0c2a87c))
+- **rtk-notifications:** pause notification timeouts while focused/hovered ([c976e95](https://github.com/dyte-io/realtimekit-ui/commit/c976e95a9156236e06b39833fa584a91bbf15e8d))
+- share common props using DyteUIProvider ([76f7058](https://github.com/dyte-io/realtimekit-ui/commit/76f705829d1cc767e14a8dad491fa39361a73a74))
+- show invalid auth token error ([8cba9cc](https://github.com/dyte-io/realtimekit-ui/commit/8cba9cca710c9559400faf66063af1e85c5adcad))
+- **sidebar and sidebar toggles:** improvements when opening/closing sidebars ([3ced973](https://github.com/dyte-io/realtimekit-ui/commit/3ced9732d458d821f1a27c49f5afe12534a64294))
+- **troubleshooter:** added basic troubleshooter ([21d9253](https://github.com/dyte-io/realtimekit-ui/commit/21d92530fb08d4a21e8a2d2f71913a0f05465840))
+- upgrade stencil to 4.25.3 ([528269b](https://github.com/dyte-io/realtimekit-ui/commit/528269bd0df33320a4424279aee481bb9b236457))
+- use realtimekit ([3cbd340](https://github.com/dyte-io/realtimekit-ui/commit/3cbd3402f839c9ee9f651d731d9d7e35b854dac9))
+
+### BREAKING CHANGES
+
+- **header components:** The following components no longer have margin:
+
+* rtk-clock
+* rtk-grid-pagination
+* rtk-livestream-indicator
+* rtk-meeting-title
+* rtk-participan-count
+* rtk-recording-indicator
+* rtk-viewer-count
+
+- **control bar:** Buttons no longer have margins
 
 # [1.0.0-staging.16](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.15...@cloudflare/realtimekit-ui-v1.0.0-staging.16) (2025-05-29)
 
-
 ### Bug Fixes
 
-* **setup-screen:** add meeting title and styling fixes ([cc5802c](https://github.com/dyte-io/realtimekit-ui/commit/cc5802c1de33eee8e4406335990f4fe201c558b9))
-* some ui issues ([5c1bec2](https://github.com/dyte-io/realtimekit-ui/commit/5c1bec24db4bc4c1505230e026fa587a1f8d9ca2))
-* ui design review changes ([7d51283](https://github.com/dyte-io/realtimekit-ui/commit/7d512838768a8708dd9e064697341dad3f1366c9))
+- **setup-screen:** add meeting title and styling fixes ([cc5802c](https://github.com/dyte-io/realtimekit-ui/commit/cc5802c1de33eee8e4406335990f4fe201c558b9))
+- some ui issues ([5c1bec2](https://github.com/dyte-io/realtimekit-ui/commit/5c1bec24db4bc4c1505230e026fa587a1f8d9ca2))
+- ui design review changes ([7d51283](https://github.com/dyte-io/realtimekit-ui/commit/7d512838768a8708dd9e064697341dad3f1366c9))
 
 # [1.0.0-staging.15](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.14...@cloudflare/realtimekit-ui-v1.0.0-staging.15) (2025-05-13)
 
-
 ### Bug Fixes
 
-* rename css vars prefix from dyte to rtk ([0ee6001](https://github.com/dyte-io/realtimekit-ui/commit/0ee60019f1945802546467942d53277e6f28ce9a))
+- rename css vars prefix from dyte to rtk ([0ee6001](https://github.com/dyte-io/realtimekit-ui/commit/0ee60019f1945802546467942d53277e6f28ce9a))
 
 # [1.0.0-staging.14](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.13...@cloudflare/realtimekit-ui-v1.0.0-staging.14) (2025-05-06)
 
-
 ### Bug Fixes
 
-* use logger from meeting object ([afd8393](https://github.com/dyte-io/realtimekit-ui/commit/afd8393b8bedc98bc3755f459f778285f001be91))
+- use logger from meeting object ([afd8393](https://github.com/dyte-io/realtimekit-ui/commit/afd8393b8bedc98bc3755f459f778285f001be91))
 
 # [1.0.0-staging.13](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.12...@cloudflare/realtimekit-ui-v1.0.0-staging.13) (2025-05-05)
 
-
 ### Bug Fixes
 
-* update stage requests based on events from participants ([e8f2dd2](https://github.com/dyte-io/realtimekit-ui/commit/e8f2dd2916dbbbbfa0c208b94adbfb6e2c5f9998))
+- update stage requests based on events from participants ([e8f2dd2](https://github.com/dyte-io/realtimekit-ui/commit/e8f2dd2916dbbbbfa0c208b94adbfb6e2c5f9998))
 
 # [1.0.0-staging.12](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.11...@cloudflare/realtimekit-ui-v1.0.0-staging.12) (2025-04-30)
 
-
 ### Bug Fixes
 
-* **breakout-rooms:** users were not able to join breakouts in first try ([0b4c689](https://github.com/dyte-io/realtimekit-ui/commit/0b4c68997072dbd76d9cbff74450347a4858c901))
+- **breakout-rooms:** users were not able to join breakouts in first try ([0b4c689](https://github.com/dyte-io/realtimekit-ui/commit/0b4c68997072dbd76d9cbff74450347a4858c901))
 
 # [1.0.0-staging.11](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.10...@cloudflare/realtimekit-ui-v1.0.0-staging.11) (2025-04-22)
 
-
 ### Bug Fixes
 
-* bring back border-radius in controlbar button ([b387507](https://github.com/dyte-io/realtimekit-ui/commit/b38750731a48d7b5bcdbccdca731f77abef67bcf))
+- bring back border-radius in controlbar button ([b387507](https://github.com/dyte-io/realtimekit-ui/commit/b38750731a48d7b5bcdbccdca731f77abef67bcf))
 
 # [1.0.0-staging.10](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.9...@cloudflare/realtimekit-ui-v1.0.0-staging.10) (2025-04-22)
 
-
 ### Bug Fixes
 
-* **dyte-confirmation-modal:** fix message margin ([146141e](https://github.com/dyte-io/realtimekit-ui/commit/146141e647e7302188184a2fdaaf2d4177cf2b93))
-
+- **dyte-confirmation-modal:** fix message margin ([146141e](https://github.com/dyte-io/realtimekit-ui/commit/146141e647e7302188184a2fdaaf2d4177cf2b93))
 
 ### Features
 
-* **dyte-dialog:** use dialog element for better focus management ([a02e54e](https://github.com/dyte-io/realtimekit-ui/commit/a02e54edbe648c1105e94d1a89add09c705b3b51))
+- **dyte-dialog:** use dialog element for better focus management ([a02e54e](https://github.com/dyte-io/realtimekit-ui/commit/a02e54edbe648c1105e94d1a89add09c705b3b51))
 
 # [1.0.0-staging.9](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.8...@cloudflare/realtimekit-ui-v1.0.0-staging.9) (2025-04-22)
 
-
 ### Features
 
-* **rtk-notifications:** pause notification timeouts while focused/hovered ([c976e95](https://github.com/dyte-io/realtimekit-ui/commit/c976e95a9156236e06b39833fa584a91bbf15e8d))
+- **rtk-notifications:** pause notification timeouts while focused/hovered ([c976e95](https://github.com/dyte-io/realtimekit-ui/commit/c976e95a9156236e06b39833fa584a91bbf15e8d))
 
 # [1.0.0-staging.8](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.7...@cloudflare/realtimekit-ui-v1.0.0-staging.8) (2025-04-22)
 
-
 ### Bug Fixes
 
-* **header components:** replace margin with gap ([3e8677c](https://github.com/dyte-io/realtimekit-ui/commit/3e8677c1672390e1d27adad8b8bfd33bd34d1623))
-
+- **header components:** replace margin with gap ([3e8677c](https://github.com/dyte-io/realtimekit-ui/commit/3e8677c1672390e1d27adad8b8bfd33bd34d1623))
 
 ### BREAKING CHANGES
 
-* **header components:** The following components no longer have margin:
-- rtk-clock
-- rtk-grid-pagination
-- rtk-livestream-indicator
-- rtk-meeting-title
-- rtk-participan-count
-- rtk-recording-indicator
-- rtk-viewer-count
+- **header components:** The following components no longer have margin:
+
+* rtk-clock
+* rtk-grid-pagination
+* rtk-livestream-indicator
+* rtk-meeting-title
+* rtk-participan-count
+* rtk-recording-indicator
+* rtk-viewer-count
 
 # [1.0.0-staging.7](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.6...@cloudflare/realtimekit-ui-v1.0.0-staging.7) (2025-04-22)
 
-
 ### Features
 
-* **sidebar and sidebar toggles:** improvements when opening/closing sidebars ([3ced973](https://github.com/dyte-io/realtimekit-ui/commit/3ced9732d458d821f1a27c49f5afe12534a64294))
+- **sidebar and sidebar toggles:** improvements when opening/closing sidebars ([3ced973](https://github.com/dyte-io/realtimekit-ui/commit/3ced9732d458d821f1a27c49f5afe12534a64294))
 
 # [1.0.0-staging.6](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.5...@cloudflare/realtimekit-ui-v1.0.0-staging.6) (2025-04-22)
 
-
 ### Bug Fixes
 
-* **overflow menu buttons:** fix vertical positioning of badges in overflow menu ([ccab8b3](https://github.com/dyte-io/realtimekit-ui/commit/ccab8b34fd8754bf3b9e5bd05ca17953d3619421))
+- **overflow menu buttons:** fix vertical positioning of badges in overflow menu ([ccab8b3](https://github.com/dyte-io/realtimekit-ui/commit/ccab8b34fd8754bf3b9e5bd05ca17953d3619421))
 
 # [1.0.0-staging.5](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.4...@cloudflare/realtimekit-ui-v1.0.0-staging.5) (2025-04-22)
 
-
 ### Bug Fixes
 
-* **rtk-leave-meeting:** use consistent primary button in leave dialog ([bd7f4fd](https://github.com/dyte-io/realtimekit-ui/commit/bd7f4fdad4c8ff802680ae003e091c0f58d35d2d))
+- **rtk-leave-meeting:** use consistent primary button in leave dialog ([bd7f4fd](https://github.com/dyte-io/realtimekit-ui/commit/bd7f4fdad4c8ff802680ae003e091c0f58d35d2d))
 
 # [1.0.0-staging.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.3...@cloudflare/realtimekit-ui-v1.0.0-staging.4) (2025-04-16)
 
-
 ### Bug Fixes
 
-* update bugs, homepage in package.json and update realtimekit ([0dc85dc](https://github.com/dyte-io/realtimekit-ui/commit/0dc85dc092c1d2dc0435d697834fcaa408c7e18e))
+- update bugs, homepage in package.json and update realtimekit ([0dc85dc](https://github.com/dyte-io/realtimekit-ui/commit/0dc85dc092c1d2dc0435d697834fcaa408c7e18e))
 
 # [1.0.0-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.2...@cloudflare/realtimekit-ui-v1.0.0-staging.3) (2025-04-15)
 
-
 ### Bug Fixes
 
-* remove vue package ([fa20491](https://github.com/dyte-io/realtimekit-ui/commit/fa204913d19926aba0f84390500bdcc9c56a81c2))
-* update descriptions in READMEs ([39b30c4](https://github.com/dyte-io/realtimekit-ui/commit/39b30c49b848424f0bfa9aaac2c920729325a6bc))
+- remove vue package ([fa20491](https://github.com/dyte-io/realtimekit-ui/commit/fa204913d19926aba0f84390500bdcc9c56a81c2))
+- update descriptions in READMEs ([39b30c4](https://github.com/dyte-io/realtimekit-ui/commit/39b30c49b848424f0bfa9aaac2c920729325a6bc))
 
 # [1.0.0-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0-staging.1...@cloudflare/realtimekit-ui-v1.0.0-staging.2) (2025-04-15)
 
-
 ### Bug Fixes
 
-* provide cache-dependency-path to workflows ([b6e4db8](https://github.com/dyte-io/realtimekit-ui/commit/b6e4db83149b934caac3533058841ae47785eb33))
+- provide cache-dependency-path to workflows ([b6e4db8](https://github.com/dyte-io/realtimekit-ui/commit/b6e4db83149b934caac3533058841ae47785eb33))
 
 # 1.0.0-staging.1 (2025-04-15)
 
-
 ### Bug Fixes
 
-* ./dist export ([2166d11](https://github.com/dyte-io/realtimekit-ui/commit/2166d119fcf984aa3d12e87dfd8efb6521670840))
-* access to npm publish ([6508322](https://github.com/dyte-io/realtimekit-ui/commit/6508322cd8ed3305e539c348505a8ac79cfd1a4a))
-* add event listener in componentDidLoad ([d99524a](https://github.com/dyte-io/realtimekit-ui/commit/d99524ab2f2cdbdddb6671972c0169e724c53383))
-* add private chat filter ([4654cf9](https://github.com/dyte-io/realtimekit-ui/commit/4654cf963f0b80d39625f098334388e9a74ce645))
-* add source spam on web-core ([ad70a9c](https://github.com/dyte-io/realtimekit-ui/commit/ad70a9c0c20f61769ebad6de906848736a760833))
-* added action step to auto-update staging branch ([6ff7104](https://github.com/dyte-io/realtimekit-ui/commit/6ff7104afd6aa94dad677f66cf8be4203bd6dd41))
-* added checkout on pr-comment ([50c11cb](https://github.com/dyte-io/realtimekit-ui/commit/50c11cb0f0fc34f275e7d05bb59fe521d24fdf93))
-* allow hiding self view ([cbd91eb](https://github.com/dyte-io/realtimekit-ui/commit/cbd91eb032c4ac0931a5c4fbedff71030d3c35bd))
-* allow passing a pre-loaded audio element ([822d9c0](https://github.com/dyte-io/realtimekit-ui/commit/822d9c028e607d66d875e164654dcb96a6bf6d0f))
-* always deploy staging web-core ([f0c4713](https://github.com/dyte-io/realtimekit-ui/commit/f0c47138eecbc90090340cbb27e3fb0ed0c03159))
-* angular build ([38f1b2a](https://github.com/dyte-io/realtimekit-ui/commit/38f1b2ac75c77025fd817669b530cca9cca8561f))
-* angular build ([5e81994](https://github.com/dyte-io/realtimekit-ui/commit/5e8199402e5ec069c90ec188d5ecf4f27aaed16b))
-* **breakout-rooms:** breakout room button is not visible in some edge cases ([6505768](https://github.com/dyte-io/realtimekit-ui/commit/650576815250a9b68c1b20df6ae43cf10716a55c))
-* bring back workflows ([c760907](https://github.com/dyte-io/realtimekit-ui/commit/c76090756a0df761e7aff9bf19edda474a0098c7))
-* build trigger ([4899df0](https://github.com/dyte-io/realtimekit-ui/commit/4899df04225ab39e4bf0bce48f0d2ab3d208e1bc))
-* **build:** build was failing due to web-core and utils mismatch ([cb2f911](https://github.com/dyte-io/realtimekit-ui/commit/cb2f911b0dd6a02caec4f3ff3149a2ce99b8fc54))
-* checks for toggle button visiblity ([40fbac2](https://github.com/dyte-io/realtimekit-ui/commit/40fbac27e4048bf7400d8de6396ff3d2b3acc220))
-* cjs extension typo in loader ([44b4b8a](https://github.com/dyte-io/realtimekit-ui/commit/44b4b8ae45ec761d4d313cbc97d61fad21aa1c6a))
-* componentShouldUpdate call ([c8bdc67](https://github.com/dyte-io/realtimekit-ui/commit/c8bdc679e40e959b43a070b5dc18d0981eea8ad6))
-* create patch release ([82237b1](https://github.com/dyte-io/realtimekit-ui/commit/82237b1801540656ebc72466984ed71b29984c60))
-* create release ([c41905a](https://github.com/dyte-io/realtimekit-ui/commit/c41905a7ad5c291b06a8b7479ae89c851dd797d5))
-* create release ([128b2a8](https://github.com/dyte-io/realtimekit-ui/commit/128b2a8950dda0a6c16bc28d632a0b7c295181f9))
-* create release ([7c74b86](https://github.com/dyte-io/realtimekit-ui/commit/7c74b864e839bc35557e46ace3eee02e0b5540e9))
-* create release ([eaafee2](https://github.com/dyte-io/realtimekit-ui/commit/eaafee2642ae390f36e425743c23cb9c39e350d4))
-* **debugger-i18n:** fixed the lack of i18n in debugger files ([3962e80](https://github.com/dyte-io/realtimekit-ui/commit/3962e803a9e3526a617f70b7cf0e1078a73d87a3))
-* **debugger:** added jitter unit ([20ace1d](https://github.com/dyte-io/realtimekit-ui/commit/20ace1d3051ef961adbe22aac15ed60c63661577))
-* **debugger:** fixed colors post status label refactoring ([502bd49](https://github.com/dyte-io/realtimekit-ui/commit/502bd49a7492c0990f00cbac0e5119c82e79db8a))
-* **debugger:** fixed label, rounding battery percentage ([760726e](https://github.com/dyte-io/realtimekit-ui/commit/760726e8275f96cd648290e5a7fb36addbebf829))
-* disable sourcemap ([d0afd77](https://github.com/dyte-io/realtimekit-ui/commit/d0afd770c15c33e2cd7a445e553a801861cef14d))
-* do not import from exports ([c2897ef](https://github.com/dyte-io/realtimekit-ui/commit/c2897ef32938e4f5bcfc844e082b2d259c3a03e0))
-* do not listen to changes once prop is updated manually after init ([ea2d0b8](https://github.com/dyte-io/realtimekit-ui/commit/ea2d0b82229736e5be0137218d0f2e2889551c1a))
-* **dyte-chat:** fixed code indentation for chat messages ([dae6425](https://github.com/dyte-io/realtimekit-ui/commit/dae64258577a8e4e72eba31eeba4f40d82e7397e))
-* **dyte-controlbar-button:** add focus outline and move interaction styles onto button ([3c586d5](https://github.com/dyte-io/realtimekit-ui/commit/3c586d56e13f2c5626d8b3af16013f59fbfd8ccc))
-* **dyte-participant-tile:** network disconnected icon is not going away due to incorrect field ([65eca1c](https://github.com/dyte-io/realtimekit-ui/commit/65eca1cf9f003d90cb0cdf096233647986baec14))
-* empty commit to trigger release ([51d6219](https://github.com/dyte-io/realtimekit-ui/commit/51d62196c35f00f548a5e6d92af3ac190163ba66))
-* error while destructuring meeting ([be2ecc8](https://github.com/dyte-io/realtimekit-ui/commit/be2ecc8a50656954b5bf75a0f20c97a81be295e3))
-* export getInitialStates() ([47841e3](https://github.com/dyte-io/realtimekit-ui/commit/47841e393583d1e634e0133f6cb53909cfd44e56))
-* export types properly ([99933dc](https://github.com/dyte-io/realtimekit-ui/commit/99933dcbdfece9d3b5bdfd4da192c3cb03404044))
-* export uiStore ([a06f7c5](https://github.com/dyte-io/realtimekit-ui/commit/a06f7c5b9ae70193fadf791066416052ab21dab8))
-* github action for staging updatE ([852cd6f](https://github.com/dyte-io/realtimekit-ui/commit/852cd6fa14aecef5d8903a4f6d3a00d63d7374e0))
-* github actions build step ([804d011](https://github.com/dyte-io/realtimekit-ui/commit/804d0118847e9a2edfcdbffd31cfed3d3ac4e385))
-* github actions deploy ([c6f4e24](https://github.com/dyte-io/realtimekit-ui/commit/c6f4e24f93749e9c153f012065ab1295a6be8dd0))
-* handle iframe not found exceptions ([8eb9230](https://github.com/dyte-io/realtimekit-ui/commit/8eb92308332173dfc93298cfacc0af8e0d431a84))
-* hide troubleshooter for setup screen ([2db5506](https://github.com/dyte-io/realtimekit-ui/commit/2db5506b6fe9dd96d60e8da19e72f438d618791d))
-* incorrect check in setup screen ([20271af](https://github.com/dyte-io/realtimekit-ui/commit/20271af95006d592931c8d18ed2b26157ba5e64e))
-* incorrect env in release action ([952459a](https://github.com/dyte-io/realtimekit-ui/commit/952459abeeeb90b2aadecac4ce83d1f33282ec93))
-* incorrect tag usage ([03fa86f](https://github.com/dyte-io/realtimekit-ui/commit/03fa86f48705e65e8eba12fe19b05b944a56e619))
-* join in as text ([8f9ff5d](https://github.com/dyte-io/realtimekit-ui/commit/8f9ff5dffdca7ea42e3c6e2102a8ef84dd1e1fc9))
-* **livestream-viewer:** fixed some edge cases around playback, added logs for tracking ([210309b](https://github.com/dyte-io/realtimekit-ui/commit/210309bd690a09552fea837fadf96f61be9f9f1e))
-* **livestream-viewer:** level selector and safari fixes ([07f0e99](https://github.com/dyte-io/realtimekit-ui/commit/07f0e99cd2c9f981b95c3d245ea9940b04896d2c))
-* **livestream:** added logic to recover from fatal errors ([673ebcb](https://github.com/dyte-io/realtimekit-ui/commit/673ebcb7eb3f601d91213316e3b6a3b96d674529))
-* **livestream:** adding proper brand colors for player ([331d88a](https://github.com/dyte-io/realtimekit-ui/commit/331d88ac036d1590e16cead5a3115c9471286fa9))
-* **livestream:** reduced fast forward width ([98385f0](https://github.com/dyte-io/realtimekit-ui/commit/98385f0f1b372474d5cb0e5a2bcbee2467b82546))
-* **livestream:** removed hardcoded allowed qualities, fixed web-core package ([b847ed6](https://github.com/dyte-io/realtimekit-ui/commit/b847ed6a34af9bc7ba6592c95fad1ed2bd146ceb))
-* **livestream:** video dimension fixes for poor quality ([b1b5e15](https://github.com/dyte-io/realtimekit-ui/commit/b1b5e152923596dc113ca9424a46fa4caed628b7))
-* more package.json fixes ([129fa1b](https://github.com/dyte-io/realtimekit-ui/commit/129fa1b15905a4cc4d331b9aca37d1503c94c64d))
-* move pip controls to web-core ([1250d9a](https://github.com/dyte-io/realtimekit-ui/commit/1250d9a991f5c4906d2ab9367b7f12d075b9de9f))
-* **network-indicator:** show network indicator for self as well ([efff3f3](https://github.com/dyte-io/realtimekit-ui/commit/efff3f3e96c3e358df6fb591cc84d9cc1fa933bc))
-* **off-stage-actions:** mic and camera toggle should not be shown off stage ([23ae96d](https://github.com/dyte-io/realtimekit-ui/commit/23ae96d9fe494424d8cea0b0fd680de8b559eb25))
-* **offstage-screenshare:** permission update for screenshare was causing toggle to show up off stage ([4485515](https://github.com/dyte-io/realtimekit-ui/commit/4485515faef3086d046e18ba652e89325f0764b7))
-* optimize locale object handling ([8d20ecc](https://github.com/dyte-io/realtimekit-ui/commit/8d20eccc5727f41268f1248c8cc0702159af6a29))
-* package.json and support email ([886429c](https://github.com/dyte-io/realtimekit-ui/commit/886429c57c2b765a797817f4a306b66478b2b646))
-* **participant-count-badge:** badge/pill was not showing the background color ([423e1f6](https://github.com/dyte-io/realtimekit-ui/commit/423e1f660f25c5b9d4c4400b98c958ff341f2ae1))
-* **participants-tab-i18n:** fixed i18n issues in the participants tab ([100dbc0](https://github.com/dyte-io/realtimekit-ui/commit/100dbc072b841e1614958276804cf44e50eb8543))
-* **participants:** participant menu list was not closing, actions were invisible for last 2 ([15ab76a](https://github.com/dyte-io/realtimekit-ui/commit/15ab76a7011650ba0e7240fed39764519838603e))
-* patch release ([db325af](https://github.com/dyte-io/realtimekit-ui/commit/db325af9326cdf7487e7043b34b2852acf557a3b))
-* patch release ([c084560](https://github.com/dyte-io/realtimekit-ui/commit/c084560861d4845b963e645a7eeb7a467c3d1049))
-* pip misc bugs ([8d3c213](https://github.com/dyte-io/realtimekit-ui/commit/8d3c21382cc9b2101ca632b71245640b877cba0e))
-* **player:** added fast forward, made some fixes ([f2bd2b2](https://github.com/dyte-io/realtimekit-ui/commit/f2bd2b2d835c2f39e03ff5dab6bb2ef009d9b949))
-* public repo final release ([89190db](https://github.com/dyte-io/realtimekit-ui/commit/89190dba661f84554de174af0a84d6573b74a76d))
-* publish using lerna ([1b072c2](https://github.com/dyte-io/realtimekit-ui/commit/1b072c2de1a6154fd62510926637e06d6d0c5135))
-* push avatar behind the video element ([8a1b1d7](https://github.com/dyte-io/realtimekit-ui/commit/8a1b1d7da68fe45642c8341b112f63b4b58f595c))
-* re-export everything from ui-kit core ([be290b6](https://github.com/dyte-io/realtimekit-ui/commit/be290b6347508cdf04e34ef94189312ff1fb416b))
-* react ui kit export ([33eed82](https://github.com/dyte-io/realtimekit-ui/commit/33eed8283a4324d4003e76502b64b3e35f40a047))
-* react-ui-kit build error on new web-core version ([4f21962](https://github.com/dyte-io/realtimekit-ui/commit/4f219627dc4dc5dc123c02dfb9ce2f9686df53fd))
-* **react:** cjs build ([79977d3](https://github.com/dyte-io/realtimekit-ui/commit/79977d339f96865ba28e3f6e5f2aa7fbdd35c9bc))
-* register video element on video re renders ([725fb96](https://github.com/dyte-io/realtimekit-ui/commit/725fb968a883e734560597e20930a9402003c678))
-* release tagging ([2f14d21](https://github.com/dyte-io/realtimekit-ui/commit/2f14d217fda33e390d2217c0d4617c6c0f1d085b))
-* **release:** adding a empty commit to re-release ([9a70e57](https://github.com/dyte-io/realtimekit-ui/commit/9a70e570e50b78de84f66bd4c476a7a8b2eb7879))
-* **release:** adding empty commit to trigger re-release ([39d9e6f](https://github.com/dyte-io/realtimekit-ui/commit/39d9e6fd5ec6722a954884c4c0b391f59388a46c))
-* **release:** empty commit to fix previous empty no-dist npm release ([0157d66](https://github.com/dyte-io/realtimekit-ui/commit/0157d666953796f64ec071311fd8744778055b4d))
-* remove IVS ([4be485e](https://github.com/dyte-io/realtimekit-ui/commit/4be485e0844e5dfb259ad2cb759da79988d996b6))
-* remove react ui-hooks and cleanup ([3e21e4b](https://github.com/dyte-io/realtimekit-ui/commit/3e21e4b6d9945a8f4633ae9ba4cc91d24c430f4a))
-* remove socket service check ([1e1f3ee](https://github.com/dyte-io/realtimekit-ui/commit/1e1f3eee6323102c6f1d84fcc20fa4abc5944c9f))
-* remove socket service flag check ([b4b3289](https://github.com/dyte-io/realtimekit-ui/commit/b4b32897bd2f3fbd4e2b4aea8172550b8727dcca))
-* remove unused @Watch method ([90e60d0](https://github.com/dyte-io/realtimekit-ui/commit/90e60d0632dbf28d032b3d9b02a4476e4bb71070))
-* remove unused ai components ([02fc5cf](https://github.com/dyte-io/realtimekit-ui/commit/02fc5cf2fba07312faa5c3d8553774901d9d6456))
-* remove unused props from primitive components ([b1198e8](https://github.com/dyte-io/realtimekit-ui/commit/b1198e8c95c0c8fadc2a105bed3183dd2921ebbc))
-* remove unused types ([8dc3e6f](https://github.com/dyte-io/realtimekit-ui/commit/8dc3e6f10e0ecfc2e98538ac711076df97937d82))
-* rename angular components module ([58d2321](https://github.com/dyte-io/realtimekit-ui/commit/58d23214e5d0b0232a834bcd6a1f262701329805))
-* render chat and participants using Render ([53216bd](https://github.com/dyte-io/realtimekit-ui/commit/53216bd718d6a0c5396a0f93a8e21b1c54151654))
-* render preview video with new render API ([66903a0](https://github.com/dyte-io/realtimekit-ui/commit/66903a07a7fd174e79c4eba7cc4ccf62b2237eb5))
-* revert to older react-output-target ([a5fb103](https://github.com/dyte-io/realtimekit-ui/commit/a5fb1035b5a5c417eab63d11d02a6dc1a7dc14e4))
-* rollup optional dep error in github action ([529b4cb](https://github.com/dyte-io/realtimekit-ui/commit/529b4cba94129963b92c3ee127945431c8497860))
-* run npm i and npm i --ws ([46eeeae](https://github.com/dyte-io/realtimekit-ui/commit/46eeeaeffa3abf86a054a44569cdf34dcb8fed0a))
-* run npm i inside workspaces ([4aa2968](https://github.com/dyte-io/realtimekit-ui/commit/4aa2968fc42eb431a67043c1307211a76ebacd05))
-* scroll lock in transcriptions ([71a9ca5](https://github.com/dyte-io/realtimekit-ui/commit/71a9ca54e0b77ef765bcd20de678f8531dd3f5c2))
-* set es2015 target ([faf2b04](https://github.com/dyte-io/realtimekit-ui/commit/faf2b044b8447bff356f77a472b41219d920b358))
-* show transcriptions in ai component ([d3b42db](https://github.com/dyte-io/realtimekit-ui/commit/d3b42db423c1af06fbeddaf9db7a323d17c7e441))
-* simplified state management ([057e883](https://github.com/dyte-io/realtimekit-ui/commit/057e88374632cf7e9012af3775ca5951a20b8361))
-* simplify device list logic ([b06fea9](https://github.com/dyte-io/realtimekit-ui/commit/b06fea937cee2229e91267e90aa5b6fa4ed9a4ec))
-* simplify sync-with-store internals ([f7654d6](https://github.com/dyte-io/realtimekit-ui/commit/f7654d6f33381455c80930c57d473b4ddf2829f4))
-* size of transcriptions title ([ba85b7b](https://github.com/dyte-io/realtimekit-ui/commit/ba85b7b20371965c6cf2f67a462cf6f71e60878d))
-* state updates in ui-provider ([82a76e7](https://github.com/dyte-io/realtimekit-ui/commit/82a76e76ab88ca8e0656cbbfe600234003a813d3))
-* sync size with store ([94baeef](https://github.com/dyte-io/realtimekit-ui/commit/94baeef426005b065e0032bc7916716c436abbdb))
-* **sync-store:** pass oldValue in callback ([017a925](https://github.com/dyte-io/realtimekit-ui/commit/017a925e5a258efbc5153b10b6e6d7c6879746e7))
-* SyncWithStore logic ([abc11cd](https://github.com/dyte-io/realtimekit-ui/commit/abc11cd5d4888d64c9897d435ea4efed30216209))
-* **tile:** add network-indicator part attr ([218f94f](https://github.com/dyte-io/realtimekit-ui/commit/218f94f957c94fcbb1135f7b8a27ff5b97adcafa))
-* toggle controlbar icon on dynamic permission change ([478e92d](https://github.com/dyte-io/realtimekit-ui/commit/478e92d094a8608f32cb70dd883d7c294d924701))
-* ui-kit root export filepath ([d19a9d3](https://github.com/dyte-io/realtimekit-ui/commit/d19a9d3fb501cbc15073e355e4f48e2d612572a5))
-* **ui-kit-addons:** fixed hand raise icon ordering issue ([8131e71](https://github.com/dyte-io/realtimekit-ui/commit/8131e71a71189ee7011f82b798408248805a6de0))
-* unreported merge conflict ([b01b792](https://github.com/dyte-io/realtimekit-ui/commit/b01b792ff685d4b61a394b8097f8eebf7b6d6638))
-* update device selector state as per media permission state ([655a505](https://github.com/dyte-io/realtimekit-ui/commit/655a505f0c5fd01d71d4720b0d720b324fd126ff))
-* update mute all description ([44b430e](https://github.com/dyte-io/realtimekit-ui/commit/44b430ea34f3cd3b28a5f43f96f5382145af53ed))
-* update package names in scripts and docs ([7e0dee0](https://github.com/dyte-io/realtimekit-ui/commit/7e0dee091e28799873bd0f76273af24816b84885))
-* update web-core ([d066ab0](https://github.com/dyte-io/realtimekit-ui/commit/d066ab05e69f4ba0a3d14d5f497a52975f24d81f))
-* update web-core version ([eb497d9](https://github.com/dyte-io/realtimekit-ui/commit/eb497d958ad034b12931c38e3e56143fa3b690a6))
-* update z-index for dyte-avatar ([2f1ff72](https://github.com/dyte-io/realtimekit-ui/commit/2f1ff7286af084310d8f4286e973eb066bcf55cf))
-* upgrade stencil ([9b1412f](https://github.com/dyte-io/realtimekit-ui/commit/9b1412fa55a0411159ec5a6b98f07463bce9d94f))
-* upgrade web-core ([fcf0d18](https://github.com/dyte-io/realtimekit-ui/commit/fcf0d18c49c95dc983e4a49b041b1aafde3bac96))
-* upgrade web-core ([3aebb6c](https://github.com/dyte-io/realtimekit-ui/commit/3aebb6c58b6f9331b84c0ee8639b6942222a4fb1))
-* use @SyncWithStore decorator in every component ([6272e6c](https://github.com/dyte-io/realtimekit-ui/commit/6272e6c9934dce1935df7a3ca2cea78550ce84df))
-* use absolute dimensions for avatar ([d9da4ed](https://github.com/dyte-io/realtimekit-ui/commit/d9da4ed5eee984105b7efcf1eed94797a458c2d0))
-* use arrow function in plugin-main to avoid state issues ([7192b11](https://github.com/dyte-io/realtimekit-ui/commit/7192b1132d0484f429961c9278c0f77fa2cb9c8e))
-* vue package ([7915b57](https://github.com/dyte-io/realtimekit-ui/commit/7915b57e99f5c7ac1410b5633ffe76a8797c1680))
-* vue ui kit ([d64cc60](https://github.com/dyte-io/realtimekit-ui/commit/d64cc60175232ead75c01da1d0f8e24ddf02b2e3))
-* **vue:** remove deprecated and non-existent applyPolyfills ([06721f1](https://github.com/dyte-io/realtimekit-ui/commit/06721f180e4e44da337ee1d15215e614cee610ca))
-
+- ./dist export ([2166d11](https://github.com/dyte-io/realtimekit-ui/commit/2166d119fcf984aa3d12e87dfd8efb6521670840))
+- access to npm publish ([6508322](https://github.com/dyte-io/realtimekit-ui/commit/6508322cd8ed3305e539c348505a8ac79cfd1a4a))
+- add event listener in componentDidLoad ([d99524a](https://github.com/dyte-io/realtimekit-ui/commit/d99524ab2f2cdbdddb6671972c0169e724c53383))
+- add private chat filter ([4654cf9](https://github.com/dyte-io/realtimekit-ui/commit/4654cf963f0b80d39625f098334388e9a74ce645))
+- add source spam on web-core ([ad70a9c](https://github.com/dyte-io/realtimekit-ui/commit/ad70a9c0c20f61769ebad6de906848736a760833))
+- added action step to auto-update staging branch ([6ff7104](https://github.com/dyte-io/realtimekit-ui/commit/6ff7104afd6aa94dad677f66cf8be4203bd6dd41))
+- added checkout on pr-comment ([50c11cb](https://github.com/dyte-io/realtimekit-ui/commit/50c11cb0f0fc34f275e7d05bb59fe521d24fdf93))
+- allow hiding self view ([cbd91eb](https://github.com/dyte-io/realtimekit-ui/commit/cbd91eb032c4ac0931a5c4fbedff71030d3c35bd))
+- allow passing a pre-loaded audio element ([822d9c0](https://github.com/dyte-io/realtimekit-ui/commit/822d9c028e607d66d875e164654dcb96a6bf6d0f))
+- always deploy staging web-core ([f0c4713](https://github.com/dyte-io/realtimekit-ui/commit/f0c47138eecbc90090340cbb27e3fb0ed0c03159))
+- angular build ([38f1b2a](https://github.com/dyte-io/realtimekit-ui/commit/38f1b2ac75c77025fd817669b530cca9cca8561f))
+- angular build ([5e81994](https://github.com/dyte-io/realtimekit-ui/commit/5e8199402e5ec069c90ec188d5ecf4f27aaed16b))
+- **breakout-rooms:** breakout room button is not visible in some edge cases ([6505768](https://github.com/dyte-io/realtimekit-ui/commit/650576815250a9b68c1b20df6ae43cf10716a55c))
+- bring back workflows ([c760907](https://github.com/dyte-io/realtimekit-ui/commit/c76090756a0df761e7aff9bf19edda474a0098c7))
+- build trigger ([4899df0](https://github.com/dyte-io/realtimekit-ui/commit/4899df04225ab39e4bf0bce48f0d2ab3d208e1bc))
+- **build:** build was failing due to web-core and utils mismatch ([cb2f911](https://github.com/dyte-io/realtimekit-ui/commit/cb2f911b0dd6a02caec4f3ff3149a2ce99b8fc54))
+- checks for toggle button visiblity ([40fbac2](https://github.com/dyte-io/realtimekit-ui/commit/40fbac27e4048bf7400d8de6396ff3d2b3acc220))
+- cjs extension typo in loader ([44b4b8a](https://github.com/dyte-io/realtimekit-ui/commit/44b4b8ae45ec761d4d313cbc97d61fad21aa1c6a))
+- componentShouldUpdate call ([c8bdc67](https://github.com/dyte-io/realtimekit-ui/commit/c8bdc679e40e959b43a070b5dc18d0981eea8ad6))
+- create patch release ([82237b1](https://github.com/dyte-io/realtimekit-ui/commit/82237b1801540656ebc72466984ed71b29984c60))
+- create release ([c41905a](https://github.com/dyte-io/realtimekit-ui/commit/c41905a7ad5c291b06a8b7479ae89c851dd797d5))
+- create release ([128b2a8](https://github.com/dyte-io/realtimekit-ui/commit/128b2a8950dda0a6c16bc28d632a0b7c295181f9))
+- create release ([7c74b86](https://github.com/dyte-io/realtimekit-ui/commit/7c74b864e839bc35557e46ace3eee02e0b5540e9))
+- create release ([eaafee2](https://github.com/dyte-io/realtimekit-ui/commit/eaafee2642ae390f36e425743c23cb9c39e350d4))
+- **debugger-i18n:** fixed the lack of i18n in debugger files ([3962e80](https://github.com/dyte-io/realtimekit-ui/commit/3962e803a9e3526a617f70b7cf0e1078a73d87a3))
+- **debugger:** added jitter unit ([20ace1d](https://github.com/dyte-io/realtimekit-ui/commit/20ace1d3051ef961adbe22aac15ed60c63661577))
+- **debugger:** fixed colors post status label refactoring ([502bd49](https://github.com/dyte-io/realtimekit-ui/commit/502bd49a7492c0990f00cbac0e5119c82e79db8a))
+- **debugger:** fixed label, rounding battery percentage ([760726e](https://github.com/dyte-io/realtimekit-ui/commit/760726e8275f96cd648290e5a7fb36addbebf829))
+- disable sourcemap ([d0afd77](https://github.com/dyte-io/realtimekit-ui/commit/d0afd770c15c33e2cd7a445e553a801861cef14d))
+- do not import from exports ([c2897ef](https://github.com/dyte-io/realtimekit-ui/commit/c2897ef32938e4f5bcfc844e082b2d259c3a03e0))
+- do not listen to changes once prop is updated manually after init ([ea2d0b8](https://github.com/dyte-io/realtimekit-ui/commit/ea2d0b82229736e5be0137218d0f2e2889551c1a))
+- **dyte-chat:** fixed code indentation for chat messages ([dae6425](https://github.com/dyte-io/realtimekit-ui/commit/dae64258577a8e4e72eba31eeba4f40d82e7397e))
+- **dyte-controlbar-button:** add focus outline and move interaction styles onto button ([3c586d5](https://github.com/dyte-io/realtimekit-ui/commit/3c586d56e13f2c5626d8b3af16013f59fbfd8ccc))
+- **dyte-participant-tile:** network disconnected icon is not going away due to incorrect field ([65eca1c](https://github.com/dyte-io/realtimekit-ui/commit/65eca1cf9f003d90cb0cdf096233647986baec14))
+- empty commit to trigger release ([51d6219](https://github.com/dyte-io/realtimekit-ui/commit/51d62196c35f00f548a5e6d92af3ac190163ba66))
+- error while destructuring meeting ([be2ecc8](https://github.com/dyte-io/realtimekit-ui/commit/be2ecc8a50656954b5bf75a0f20c97a81be295e3))
+- export getInitialStates() ([47841e3](https://github.com/dyte-io/realtimekit-ui/commit/47841e393583d1e634e0133f6cb53909cfd44e56))
+- export types properly ([99933dc](https://github.com/dyte-io/realtimekit-ui/commit/99933dcbdfece9d3b5bdfd4da192c3cb03404044))
+- export uiStore ([a06f7c5](https://github.com/dyte-io/realtimekit-ui/commit/a06f7c5b9ae70193fadf791066416052ab21dab8))
+- github action for staging updatE ([852cd6f](https://github.com/dyte-io/realtimekit-ui/commit/852cd6fa14aecef5d8903a4f6d3a00d63d7374e0))
+- github actions build step ([804d011](https://github.com/dyte-io/realtimekit-ui/commit/804d0118847e9a2edfcdbffd31cfed3d3ac4e385))
+- github actions deploy ([c6f4e24](https://github.com/dyte-io/realtimekit-ui/commit/c6f4e24f93749e9c153f012065ab1295a6be8dd0))
+- handle iframe not found exceptions ([8eb9230](https://github.com/dyte-io/realtimekit-ui/commit/8eb92308332173dfc93298cfacc0af8e0d431a84))
+- hide troubleshooter for setup screen ([2db5506](https://github.com/dyte-io/realtimekit-ui/commit/2db5506b6fe9dd96d60e8da19e72f438d618791d))
+- incorrect check in setup screen ([20271af](https://github.com/dyte-io/realtimekit-ui/commit/20271af95006d592931c8d18ed2b26157ba5e64e))
+- incorrect env in release action ([952459a](https://github.com/dyte-io/realtimekit-ui/commit/952459abeeeb90b2aadecac4ce83d1f33282ec93))
+- incorrect tag usage ([03fa86f](https://github.com/dyte-io/realtimekit-ui/commit/03fa86f48705e65e8eba12fe19b05b944a56e619))
+- join in as text ([8f9ff5d](https://github.com/dyte-io/realtimekit-ui/commit/8f9ff5dffdca7ea42e3c6e2102a8ef84dd1e1fc9))
+- **livestream-viewer:** fixed some edge cases around playback, added logs for tracking ([210309b](https://github.com/dyte-io/realtimekit-ui/commit/210309bd690a09552fea837fadf96f61be9f9f1e))
+- **livestream-viewer:** level selector and safari fixes ([07f0e99](https://github.com/dyte-io/realtimekit-ui/commit/07f0e99cd2c9f981b95c3d245ea9940b04896d2c))
+- **livestream:** added logic to recover from fatal errors ([673ebcb](https://github.com/dyte-io/realtimekit-ui/commit/673ebcb7eb3f601d91213316e3b6a3b96d674529))
+- **livestream:** adding proper brand colors for player ([331d88a](https://github.com/dyte-io/realtimekit-ui/commit/331d88ac036d1590e16cead5a3115c9471286fa9))
+- **livestream:** reduced fast forward width ([98385f0](https://github.com/dyte-io/realtimekit-ui/commit/98385f0f1b372474d5cb0e5a2bcbee2467b82546))
+- **livestream:** removed hardcoded allowed qualities, fixed web-core package ([b847ed6](https://github.com/dyte-io/realtimekit-ui/commit/b847ed6a34af9bc7ba6592c95fad1ed2bd146ceb))
+- **livestream:** video dimension fixes for poor quality ([b1b5e15](https://github.com/dyte-io/realtimekit-ui/commit/b1b5e152923596dc113ca9424a46fa4caed628b7))
+- more package.json fixes ([129fa1b](https://github.com/dyte-io/realtimekit-ui/commit/129fa1b15905a4cc4d331b9aca37d1503c94c64d))
+- move pip controls to web-core ([1250d9a](https://github.com/dyte-io/realtimekit-ui/commit/1250d9a991f5c4906d2ab9367b7f12d075b9de9f))
+- **network-indicator:** show network indicator for self as well ([efff3f3](https://github.com/dyte-io/realtimekit-ui/commit/efff3f3e96c3e358df6fb591cc84d9cc1fa933bc))
+- **off-stage-actions:** mic and camera toggle should not be shown off stage ([23ae96d](https://github.com/dyte-io/realtimekit-ui/commit/23ae96d9fe494424d8cea0b0fd680de8b559eb25))
+- **offstage-screenshare:** permission update for screenshare was causing toggle to show up off stage ([4485515](https://github.com/dyte-io/realtimekit-ui/commit/4485515faef3086d046e18ba652e89325f0764b7))
+- optimize locale object handling ([8d20ecc](https://github.com/dyte-io/realtimekit-ui/commit/8d20eccc5727f41268f1248c8cc0702159af6a29))
+- package.json and support email ([886429c](https://github.com/dyte-io/realtimekit-ui/commit/886429c57c2b765a797817f4a306b66478b2b646))
+- **participant-count-badge:** badge/pill was not showing the background color ([423e1f6](https://github.com/dyte-io/realtimekit-ui/commit/423e1f660f25c5b9d4c4400b98c958ff341f2ae1))
+- **participants-tab-i18n:** fixed i18n issues in the participants tab ([100dbc0](https://github.com/dyte-io/realtimekit-ui/commit/100dbc072b841e1614958276804cf44e50eb8543))
+- **participants:** participant menu list was not closing, actions were invisible for last 2 ([15ab76a](https://github.com/dyte-io/realtimekit-ui/commit/15ab76a7011650ba0e7240fed39764519838603e))
+- patch release ([db325af](https://github.com/dyte-io/realtimekit-ui/commit/db325af9326cdf7487e7043b34b2852acf557a3b))
+- patch release ([c084560](https://github.com/dyte-io/realtimekit-ui/commit/c084560861d4845b963e645a7eeb7a467c3d1049))
+- pip misc bugs ([8d3c213](https://github.com/dyte-io/realtimekit-ui/commit/8d3c21382cc9b2101ca632b71245640b877cba0e))
+- **player:** added fast forward, made some fixes ([f2bd2b2](https://github.com/dyte-io/realtimekit-ui/commit/f2bd2b2d835c2f39e03ff5dab6bb2ef009d9b949))
+- public repo final release ([89190db](https://github.com/dyte-io/realtimekit-ui/commit/89190dba661f84554de174af0a84d6573b74a76d))
+- publish using lerna ([1b072c2](https://github.com/dyte-io/realtimekit-ui/commit/1b072c2de1a6154fd62510926637e06d6d0c5135))
+- push avatar behind the video element ([8a1b1d7](https://github.com/dyte-io/realtimekit-ui/commit/8a1b1d7da68fe45642c8341b112f63b4b58f595c))
+- re-export everything from ui-kit core ([be290b6](https://github.com/dyte-io/realtimekit-ui/commit/be290b6347508cdf04e34ef94189312ff1fb416b))
+- react ui kit export ([33eed82](https://github.com/dyte-io/realtimekit-ui/commit/33eed8283a4324d4003e76502b64b3e35f40a047))
+- react-ui-kit build error on new web-core version ([4f21962](https://github.com/dyte-io/realtimekit-ui/commit/4f219627dc4dc5dc123c02dfb9ce2f9686df53fd))
+- **react:** cjs build ([79977d3](https://github.com/dyte-io/realtimekit-ui/commit/79977d339f96865ba28e3f6e5f2aa7fbdd35c9bc))
+- register video element on video re renders ([725fb96](https://github.com/dyte-io/realtimekit-ui/commit/725fb968a883e734560597e20930a9402003c678))
+- release tagging ([2f14d21](https://github.com/dyte-io/realtimekit-ui/commit/2f14d217fda33e390d2217c0d4617c6c0f1d085b))
+- **release:** adding a empty commit to re-release ([9a70e57](https://github.com/dyte-io/realtimekit-ui/commit/9a70e570e50b78de84f66bd4c476a7a8b2eb7879))
+- **release:** adding empty commit to trigger re-release ([39d9e6f](https://github.com/dyte-io/realtimekit-ui/commit/39d9e6fd5ec6722a954884c4c0b391f59388a46c))
+- **release:** empty commit to fix previous empty no-dist npm release ([0157d66](https://github.com/dyte-io/realtimekit-ui/commit/0157d666953796f64ec071311fd8744778055b4d))
+- remove IVS ([4be485e](https://github.com/dyte-io/realtimekit-ui/commit/4be485e0844e5dfb259ad2cb759da79988d996b6))
+- remove react ui-hooks and cleanup ([3e21e4b](https://github.com/dyte-io/realtimekit-ui/commit/3e21e4b6d9945a8f4633ae9ba4cc91d24c430f4a))
+- remove socket service check ([1e1f3ee](https://github.com/dyte-io/realtimekit-ui/commit/1e1f3eee6323102c6f1d84fcc20fa4abc5944c9f))
+- remove socket service flag check ([b4b3289](https://github.com/dyte-io/realtimekit-ui/commit/b4b32897bd2f3fbd4e2b4aea8172550b8727dcca))
+- remove unused @Watch method ([90e60d0](https://github.com/dyte-io/realtimekit-ui/commit/90e60d0632dbf28d032b3d9b02a4476e4bb71070))
+- remove unused ai components ([02fc5cf](https://github.com/dyte-io/realtimekit-ui/commit/02fc5cf2fba07312faa5c3d8553774901d9d6456))
+- remove unused props from primitive components ([b1198e8](https://github.com/dyte-io/realtimekit-ui/commit/b1198e8c95c0c8fadc2a105bed3183dd2921ebbc))
+- remove unused types ([8dc3e6f](https://github.com/dyte-io/realtimekit-ui/commit/8dc3e6f10e0ecfc2e98538ac711076df97937d82))
+- rename angular components module ([58d2321](https://github.com/dyte-io/realtimekit-ui/commit/58d23214e5d0b0232a834bcd6a1f262701329805))
+- render chat and participants using Render ([53216bd](https://github.com/dyte-io/realtimekit-ui/commit/53216bd718d6a0c5396a0f93a8e21b1c54151654))
+- render preview video with new render API ([66903a0](https://github.com/dyte-io/realtimekit-ui/commit/66903a07a7fd174e79c4eba7cc4ccf62b2237eb5))
+- revert to older react-output-target ([a5fb103](https://github.com/dyte-io/realtimekit-ui/commit/a5fb1035b5a5c417eab63d11d02a6dc1a7dc14e4))
+- rollup optional dep error in github action ([529b4cb](https://github.com/dyte-io/realtimekit-ui/commit/529b4cba94129963b92c3ee127945431c8497860))
+- run npm i and npm i --ws ([46eeeae](https://github.com/dyte-io/realtimekit-ui/commit/46eeeaeffa3abf86a054a44569cdf34dcb8fed0a))
+- run npm i inside workspaces ([4aa2968](https://github.com/dyte-io/realtimekit-ui/commit/4aa2968fc42eb431a67043c1307211a76ebacd05))
+- scroll lock in transcriptions ([71a9ca5](https://github.com/dyte-io/realtimekit-ui/commit/71a9ca54e0b77ef765bcd20de678f8531dd3f5c2))
+- set es2015 target ([faf2b04](https://github.com/dyte-io/realtimekit-ui/commit/faf2b044b8447bff356f77a472b41219d920b358))
+- show transcriptions in ai component ([d3b42db](https://github.com/dyte-io/realtimekit-ui/commit/d3b42db423c1af06fbeddaf9db7a323d17c7e441))
+- simplified state management ([057e883](https://github.com/dyte-io/realtimekit-ui/commit/057e88374632cf7e9012af3775ca5951a20b8361))
+- simplify device list logic ([b06fea9](https://github.com/dyte-io/realtimekit-ui/commit/b06fea937cee2229e91267e90aa5b6fa4ed9a4ec))
+- simplify sync-with-store internals ([f7654d6](https://github.com/dyte-io/realtimekit-ui/commit/f7654d6f33381455c80930c57d473b4ddf2829f4))
+- size of transcriptions title ([ba85b7b](https://github.com/dyte-io/realtimekit-ui/commit/ba85b7b20371965c6cf2f67a462cf6f71e60878d))
+- state updates in ui-provider ([82a76e7](https://github.com/dyte-io/realtimekit-ui/commit/82a76e76ab88ca8e0656cbbfe600234003a813d3))
+- sync size with store ([94baeef](https://github.com/dyte-io/realtimekit-ui/commit/94baeef426005b065e0032bc7916716c436abbdb))
+- **sync-store:** pass oldValue in callback ([017a925](https://github.com/dyte-io/realtimekit-ui/commit/017a925e5a258efbc5153b10b6e6d7c6879746e7))
+- SyncWithStore logic ([abc11cd](https://github.com/dyte-io/realtimekit-ui/commit/abc11cd5d4888d64c9897d435ea4efed30216209))
+- **tile:** add network-indicator part attr ([218f94f](https://github.com/dyte-io/realtimekit-ui/commit/218f94f957c94fcbb1135f7b8a27ff5b97adcafa))
+- toggle controlbar icon on dynamic permission change ([478e92d](https://github.com/dyte-io/realtimekit-ui/commit/478e92d094a8608f32cb70dd883d7c294d924701))
+- ui-kit root export filepath ([d19a9d3](https://github.com/dyte-io/realtimekit-ui/commit/d19a9d3fb501cbc15073e355e4f48e2d612572a5))
+- **ui-kit-addons:** fixed hand raise icon ordering issue ([8131e71](https://github.com/dyte-io/realtimekit-ui/commit/8131e71a71189ee7011f82b798408248805a6de0))
+- unreported merge conflict ([b01b792](https://github.com/dyte-io/realtimekit-ui/commit/b01b792ff685d4b61a394b8097f8eebf7b6d6638))
+- update device selector state as per media permission state ([655a505](https://github.com/dyte-io/realtimekit-ui/commit/655a505f0c5fd01d71d4720b0d720b324fd126ff))
+- update mute all description ([44b430e](https://github.com/dyte-io/realtimekit-ui/commit/44b430ea34f3cd3b28a5f43f96f5382145af53ed))
+- update package names in scripts and docs ([7e0dee0](https://github.com/dyte-io/realtimekit-ui/commit/7e0dee091e28799873bd0f76273af24816b84885))
+- update web-core ([d066ab0](https://github.com/dyte-io/realtimekit-ui/commit/d066ab05e69f4ba0a3d14d5f497a52975f24d81f))
+- update web-core version ([eb497d9](https://github.com/dyte-io/realtimekit-ui/commit/eb497d958ad034b12931c38e3e56143fa3b690a6))
+- update z-index for dyte-avatar ([2f1ff72](https://github.com/dyte-io/realtimekit-ui/commit/2f1ff7286af084310d8f4286e973eb066bcf55cf))
+- upgrade stencil ([9b1412f](https://github.com/dyte-io/realtimekit-ui/commit/9b1412fa55a0411159ec5a6b98f07463bce9d94f))
+- upgrade web-core ([fcf0d18](https://github.com/dyte-io/realtimekit-ui/commit/fcf0d18c49c95dc983e4a49b041b1aafde3bac96))
+- upgrade web-core ([3aebb6c](https://github.com/dyte-io/realtimekit-ui/commit/3aebb6c58b6f9331b84c0ee8639b6942222a4fb1))
+- use @SyncWithStore decorator in every component ([6272e6c](https://github.com/dyte-io/realtimekit-ui/commit/6272e6c9934dce1935df7a3ca2cea78550ce84df))
+- use absolute dimensions for avatar ([d9da4ed](https://github.com/dyte-io/realtimekit-ui/commit/d9da4ed5eee984105b7efcf1eed94797a458c2d0))
+- use arrow function in plugin-main to avoid state issues ([7192b11](https://github.com/dyte-io/realtimekit-ui/commit/7192b1132d0484f429961c9278c0f77fa2cb9c8e))
+- vue package ([7915b57](https://github.com/dyte-io/realtimekit-ui/commit/7915b57e99f5c7ac1410b5633ffe76a8797c1680))
+- vue ui kit ([d64cc60](https://github.com/dyte-io/realtimekit-ui/commit/d64cc60175232ead75c01da1d0f8e24ddf02b2e3))
+- **vue:** remove deprecated and non-existent applyPolyfills ([06721f1](https://github.com/dyte-io/realtimekit-ui/commit/06721f180e4e44da337ee1d15215e614cee610ca))
 
 ### Code Refactoring
 
-* **control bar:** remove button margins ([38b6ecb](https://github.com/dyte-io/realtimekit-ui/commit/38b6ecbdb965668da21c3f4d21001863a81ec823))
-
+- **control bar:** remove button margins ([38b6ecb](https://github.com/dyte-io/realtimekit-ui/commit/38b6ecbdb965668da21c3f4d21001863a81ec823))
 
 ### Features
 
-* added ui-kit public source ([becdf7d](https://github.com/dyte-io/realtimekit-ui/commit/becdf7d3eb6bdf5a2c023a426d10e8bc06852369))
-* **debugger:** added systems tab for battery - works in chromium only, hidden for others ([6042e9f](https://github.com/dyte-io/realtimekit-ui/commit/6042e9f973f447a953b13b26336734c89b9602a7))
-* **debugger:** adding cpu and bandwidth limitations in debugger ([849eed4](https://github.com/dyte-io/realtimekit-ui/commit/849eed436d85be3fdf105edd37636f9ccbfbd46c))
-* **dyte-emoji-picker:** optionally focus emoji picker search when opened ([43a2d41](https://github.com/dyte-io/realtimekit-ui/commit/43a2d417ecd27cd744e1feca629977c62cd79968))
-* **dyte-text-composer-view:** focus textarea when opening chat ([34e1ec3](https://github.com/dyte-io/realtimekit-ui/commit/34e1ec321bdd7249045d8a6f245d4ac5e9dc26cc))
-* feature release ([ca643ff](https://github.com/dyte-io/realtimekit-ui/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
-* feature release ([661ff63](https://github.com/dyte-io/realtimekit-ui/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
-* feature release ([5dc0f57](https://github.com/dyte-io/realtimekit-ui/commit/5dc0f575cca6a8918e1bd740a115ad0d842cdabc))
-* improve macos permission messages ([1dc9735](https://github.com/dyte-io/realtimekit-ui/commit/1dc973560b076ad58515a41c223ef1031934f4f9))
-* initial commit ([a31f52c](https://github.com/dyte-io/realtimekit-ui/commit/a31f52c2cab444fbd0f10d2219a790cf09ae23ea))
-* **internal:** added ability to show view only public chat ([17d8b7a](https://github.com/dyte-io/realtimekit-ui/commit/17d8b7a80c9abd169cbfacda19c62177259dd20c))
-* **internal:** livestream viewer with stats ([945e2b5](https://github.com/dyte-io/realtimekit-ui/commit/945e2b56a00acf42f8591e3f62c686bde7947b27))
-* **internal:** showing badges against the participant tabs with respective count ([d3c7844](https://github.com/dyte-io/realtimekit-ui/commit/d3c784491015d8a6b78b1c3e57d9b5ae1d6a9ed1))
-* **livestream:** added ability to control livestream viewer quality ([9db7720](https://github.com/dyte-io/realtimekit-ui/commit/9db77207e876c197a048755d3133cfe52c3f2c12))
-* **livestream:** show livestream viewers and stage list ([23b4040](https://github.com/dyte-io/realtimekit-ui/commit/23b4040125d0435e7b80fc2f2b0a58a22e8f7b20))
-* npm publish set to true ([c4d367b](https://github.com/dyte-io/realtimekit-ui/commit/c4d367b13d0dc48522fca7181b0e080d22ad3730))
-* **player:** adding custom hls based livestream player ([413bb3d](https://github.com/dyte-io/realtimekit-ui/commit/413bb3d28c2004975f20e5e25e1d7657cfd76ad8))
-* react hooks to listen to store updates ([c0de7f7](https://github.com/dyte-io/realtimekit-ui/commit/c0de7f71af0f68234be20ed78e591755a2629606))
-* realtimekit-ui ([aa124c4](https://github.com/dyte-io/realtimekit-ui/commit/aa124c484fcefc4d6b1b6ee733655560c274d62b))
-* **release:** created new package release ([f0eb31e](https://github.com/dyte-io/realtimekit-ui/commit/f0eb31eca4e1bd6f04cfee1854f8ad195fee0959))
-* **release:** created new package release ([9ef1088](https://github.com/dyte-io/realtimekit-ui/commit/9ef10883a7078730f3d099c6a62baec53eda7caa))
-* **release:** created new package release ([6bfa5df](https://github.com/dyte-io/realtimekit-ui/commit/6bfa5dfe7ff1fd144b7b1bc0026ded492052f3d1))
-* **release:** update package version ([00b2690](https://github.com/dyte-io/realtimekit-ui/commit/00b2690f6697f3fed5cf245a2b8f3994f0c2a87c))
-* share common props using DyteUIProvider ([76f7058](https://github.com/dyte-io/realtimekit-ui/commit/76f705829d1cc767e14a8dad491fa39361a73a74))
-* show invalid auth token error ([8cba9cc](https://github.com/dyte-io/realtimekit-ui/commit/8cba9cca710c9559400faf66063af1e85c5adcad))
-* **troubleshooter:** added basic troubleshooter ([21d9253](https://github.com/dyte-io/realtimekit-ui/commit/21d92530fb08d4a21e8a2d2f71913a0f05465840))
-* upgrade stencil to 4.25.3 ([528269b](https://github.com/dyte-io/realtimekit-ui/commit/528269bd0df33320a4424279aee481bb9b236457))
-* use realtimekit ([3cbd340](https://github.com/dyte-io/realtimekit-ui/commit/3cbd3402f839c9ee9f651d731d9d7e35b854dac9))
-
+- added ui-kit public source ([becdf7d](https://github.com/dyte-io/realtimekit-ui/commit/becdf7d3eb6bdf5a2c023a426d10e8bc06852369))
+- **debugger:** added systems tab for battery - works in chromium only, hidden for others ([6042e9f](https://github.com/dyte-io/realtimekit-ui/commit/6042e9f973f447a953b13b26336734c89b9602a7))
+- **debugger:** adding cpu and bandwidth limitations in debugger ([849eed4](https://github.com/dyte-io/realtimekit-ui/commit/849eed436d85be3fdf105edd37636f9ccbfbd46c))
+- **dyte-emoji-picker:** optionally focus emoji picker search when opened ([43a2d41](https://github.com/dyte-io/realtimekit-ui/commit/43a2d417ecd27cd744e1feca629977c62cd79968))
+- **dyte-text-composer-view:** focus textarea when opening chat ([34e1ec3](https://github.com/dyte-io/realtimekit-ui/commit/34e1ec321bdd7249045d8a6f245d4ac5e9dc26cc))
+- feature release ([ca643ff](https://github.com/dyte-io/realtimekit-ui/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
+- feature release ([661ff63](https://github.com/dyte-io/realtimekit-ui/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
+- feature release ([5dc0f57](https://github.com/dyte-io/realtimekit-ui/commit/5dc0f575cca6a8918e1bd740a115ad0d842cdabc))
+- improve macos permission messages ([1dc9735](https://github.com/dyte-io/realtimekit-ui/commit/1dc973560b076ad58515a41c223ef1031934f4f9))
+- initial commit ([a31f52c](https://github.com/dyte-io/realtimekit-ui/commit/a31f52c2cab444fbd0f10d2219a790cf09ae23ea))
+- **internal:** added ability to show view only public chat ([17d8b7a](https://github.com/dyte-io/realtimekit-ui/commit/17d8b7a80c9abd169cbfacda19c62177259dd20c))
+- **internal:** livestream viewer with stats ([945e2b5](https://github.com/dyte-io/realtimekit-ui/commit/945e2b56a00acf42f8591e3f62c686bde7947b27))
+- **internal:** showing badges against the participant tabs with respective count ([d3c7844](https://github.com/dyte-io/realtimekit-ui/commit/d3c784491015d8a6b78b1c3e57d9b5ae1d6a9ed1))
+- **livestream:** added ability to control livestream viewer quality ([9db7720](https://github.com/dyte-io/realtimekit-ui/commit/9db77207e876c197a048755d3133cfe52c3f2c12))
+- **livestream:** show livestream viewers and stage list ([23b4040](https://github.com/dyte-io/realtimekit-ui/commit/23b4040125d0435e7b80fc2f2b0a58a22e8f7b20))
+- npm publish set to true ([c4d367b](https://github.com/dyte-io/realtimekit-ui/commit/c4d367b13d0dc48522fca7181b0e080d22ad3730))
+- **player:** adding custom hls based livestream player ([413bb3d](https://github.com/dyte-io/realtimekit-ui/commit/413bb3d28c2004975f20e5e25e1d7657cfd76ad8))
+- react hooks to listen to store updates ([c0de7f7](https://github.com/dyte-io/realtimekit-ui/commit/c0de7f71af0f68234be20ed78e591755a2629606))
+- realtimekit-ui ([aa124c4](https://github.com/dyte-io/realtimekit-ui/commit/aa124c484fcefc4d6b1b6ee733655560c274d62b))
+- **release:** created new package release ([f0eb31e](https://github.com/dyte-io/realtimekit-ui/commit/f0eb31eca4e1bd6f04cfee1854f8ad195fee0959))
+- **release:** created new package release ([9ef1088](https://github.com/dyte-io/realtimekit-ui/commit/9ef10883a7078730f3d099c6a62baec53eda7caa))
+- **release:** created new package release ([6bfa5df](https://github.com/dyte-io/realtimekit-ui/commit/6bfa5dfe7ff1fd144b7b1bc0026ded492052f3d1))
+- **release:** update package version ([00b2690](https://github.com/dyte-io/realtimekit-ui/commit/00b2690f6697f3fed5cf245a2b8f3994f0c2a87c))
+- share common props using DyteUIProvider ([76f7058](https://github.com/dyte-io/realtimekit-ui/commit/76f705829d1cc767e14a8dad491fa39361a73a74))
+- show invalid auth token error ([8cba9cc](https://github.com/dyte-io/realtimekit-ui/commit/8cba9cca710c9559400faf66063af1e85c5adcad))
+- **troubleshooter:** added basic troubleshooter ([21d9253](https://github.com/dyte-io/realtimekit-ui/commit/21d92530fb08d4a21e8a2d2f71913a0f05465840))
+- upgrade stencil to 4.25.3 ([528269b](https://github.com/dyte-io/realtimekit-ui/commit/528269bd0df33320a4424279aee481bb9b236457))
+- use realtimekit ([3cbd340](https://github.com/dyte-io/realtimekit-ui/commit/3cbd3402f839c9ee9f651d731d9d7e35b854dac9))
 
 ### BREAKING CHANGES
 
-* **control bar:** Buttons no longer have margins
+- **control bar:** Buttons no longer have margins
 
 # [3.0.0-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v3.0.0-staging.1...@dyte-in/ui-kit-v3.0.0-staging.2) (2025-04-09)
 
-
 ### Features
 
-* **dyte-emoji-picker:** optionally focus emoji picker search when opened ([43a2d41](https://github.com/dyte-io/ui-kit/commit/43a2d417ecd27cd744e1feca629977c62cd79968))
+- **dyte-emoji-picker:** optionally focus emoji picker search when opened ([43a2d41](https://github.com/dyte-io/ui-kit/commit/43a2d417ecd27cd744e1feca629977c62cd79968))
 
 # [3.0.0-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.5.0...@dyte-in/ui-kit-v3.0.0-staging.1) (2025-04-08)
 
-
 ### Bug Fixes
 
-* **dyte-controlbar-button:** add focus outline and move interaction styles onto button ([3c586d5](https://github.com/dyte-io/ui-kit/commit/3c586d56e13f2c5626d8b3af16013f59fbfd8ccc))
-* empty commit to trigger release ([51d6219](https://github.com/dyte-io/ui-kit/commit/51d62196c35f00f548a5e6d92af3ac190163ba66))
-
+- **dyte-controlbar-button:** add focus outline and move interaction styles onto button ([3c586d5](https://github.com/dyte-io/ui-kit/commit/3c586d56e13f2c5626d8b3af16013f59fbfd8ccc))
+- empty commit to trigger release ([51d6219](https://github.com/dyte-io/ui-kit/commit/51d62196c35f00f548a5e6d92af3ac190163ba66))
 
 ### Code Refactoring
 
-* **control bar:** remove button margins ([38b6ecb](https://github.com/dyte-io/ui-kit/commit/38b6ecbdb965668da21c3f4d21001863a81ec823))
-
+- **control bar:** remove button margins ([38b6ecb](https://github.com/dyte-io/ui-kit/commit/38b6ecbdb965668da21c3f4d21001863a81ec823))
 
 ### BREAKING CHANGES
 
-* **control bar:** Buttons no longer have margins
+- **control bar:** Buttons no longer have margins
 
 # [2.5.0](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.1...@dyte-in/ui-kit-v2.5.0) (2025-04-07)
 
-
 ### Features
 
-* **dyte-text-composer-view:** focus textarea when opening chat ([34e1ec3](https://github.com/dyte-io/ui-kit/commit/34e1ec321bdd7249045d8a6f245d4ac5e9dc26cc))
+- **dyte-text-composer-view:** focus textarea when opening chat ([34e1ec3](https://github.com/dyte-io/ui-kit/commit/34e1ec321bdd7249045d8a6f245d4ac5e9dc26cc))
 
 ## [2.4.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0...@dyte-in/ui-kit-v2.4.1) (2025-04-03)
 
-
 ### Bug Fixes
 
-* handle iframe not found exceptions ([8eb9230](https://github.com/dyte-io/ui-kit/commit/8eb92308332173dfc93298cfacc0af8e0d431a84))
-* incorrect check in setup screen ([20271af](https://github.com/dyte-io/ui-kit/commit/20271af95006d592931c8d18ed2b26157ba5e64e))
-* incorrect tag usage ([03fa86f](https://github.com/dyte-io/ui-kit/commit/03fa86f48705e65e8eba12fe19b05b944a56e619))
-* use arrow function in plugin-main to avoid state issues ([7192b11](https://github.com/dyte-io/ui-kit/commit/7192b1132d0484f429961c9278c0f77fa2cb9c8e))
+- handle iframe not found exceptions ([8eb9230](https://github.com/dyte-io/ui-kit/commit/8eb92308332173dfc93298cfacc0af8e0d431a84))
+- incorrect check in setup screen ([20271af](https://github.com/dyte-io/ui-kit/commit/20271af95006d592931c8d18ed2b26157ba5e64e))
+- incorrect tag usage ([03fa86f](https://github.com/dyte-io/ui-kit/commit/03fa86f48705e65e8eba12fe19b05b944a56e619))
+- use arrow function in plugin-main to avoid state issues ([7192b11](https://github.com/dyte-io/ui-kit/commit/7192b1132d0484f429961c9278c0f77fa2cb9c8e))
 
 ## [2.4.1-staging.4](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.1-staging.3...@dyte-in/ui-kit-v2.4.1-staging.4) (2025-04-03)
 
-
 ### Bug Fixes
 
-* incorrect tag usage ([03fa86f](https://github.com/dyte-io/ui-kit/commit/03fa86f48705e65e8eba12fe19b05b944a56e619))
+- incorrect tag usage ([03fa86f](https://github.com/dyte-io/ui-kit/commit/03fa86f48705e65e8eba12fe19b05b944a56e619))
 
 ## [2.4.1-staging.3](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.1-staging.2...@dyte-in/ui-kit-v2.4.1-staging.3) (2025-04-03)
 
-
 ### Bug Fixes
 
-* use arrow function in plugin-main to avoid state issues ([7192b11](https://github.com/dyte-io/ui-kit/commit/7192b1132d0484f429961c9278c0f77fa2cb9c8e))
+- use arrow function in plugin-main to avoid state issues ([7192b11](https://github.com/dyte-io/ui-kit/commit/7192b1132d0484f429961c9278c0f77fa2cb9c8e))
 
 ## [2.4.1-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.1-staging.1...@dyte-in/ui-kit-v2.4.1-staging.2) (2025-04-03)
 
-
 ### Bug Fixes
 
-* incorrect check in setup screen ([20271af](https://github.com/dyte-io/ui-kit/commit/20271af95006d592931c8d18ed2b26157ba5e64e))
+- incorrect check in setup screen ([20271af](https://github.com/dyte-io/ui-kit/commit/20271af95006d592931c8d18ed2b26157ba5e64e))
 
 ## [2.4.1-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0...@dyte-in/ui-kit-v2.4.1-staging.1) (2025-04-02)
 
-
 ### Bug Fixes
 
-* handle iframe not found exceptions ([8eb9230](https://github.com/dyte-io/ui-kit/commit/8eb92308332173dfc93298cfacc0af8e0d431a84))
+- handle iframe not found exceptions ([8eb9230](https://github.com/dyte-io/ui-kit/commit/8eb92308332173dfc93298cfacc0af8e0d431a84))
 
 # [2.4.0](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.6...@dyte-in/ui-kit-v2.4.0) (2025-03-28)
 
-
 ### Bug Fixes
 
-* componentShouldUpdate call ([c8bdc67](https://github.com/dyte-io/ui-kit/commit/c8bdc679e40e959b43a070b5dc18d0981eea8ad6))
-* do not import from exports ([c2897ef](https://github.com/dyte-io/ui-kit/commit/c2897ef32938e4f5bcfc844e082b2d259c3a03e0))
-* do not listen to changes once prop is updated manually after init ([ea2d0b8](https://github.com/dyte-io/ui-kit/commit/ea2d0b82229736e5be0137218d0f2e2889551c1a))
-* export getInitialStates() ([47841e3](https://github.com/dyte-io/ui-kit/commit/47841e393583d1e634e0133f6cb53909cfd44e56))
-* export uiStore ([a06f7c5](https://github.com/dyte-io/ui-kit/commit/a06f7c5b9ae70193fadf791066416052ab21dab8))
-* re-export everything from ui-kit core ([be290b6](https://github.com/dyte-io/ui-kit/commit/be290b6347508cdf04e34ef94189312ff1fb416b))
-* react-ui-kit build error on new web-core version ([4f21962](https://github.com/dyte-io/ui-kit/commit/4f219627dc4dc5dc123c02dfb9ce2f9686df53fd))
-* remove react ui-hooks and cleanup ([3e21e4b](https://github.com/dyte-io/ui-kit/commit/3e21e4b6d9945a8f4633ae9ba4cc91d24c430f4a))
-* remove unused @Watch method ([90e60d0](https://github.com/dyte-io/ui-kit/commit/90e60d0632dbf28d032b3d9b02a4476e4bb71070))
-* remove unused ai components ([02fc5cf](https://github.com/dyte-io/ui-kit/commit/02fc5cf2fba07312faa5c3d8553774901d9d6456))
-* remove unused props from primitive components ([b1198e8](https://github.com/dyte-io/ui-kit/commit/b1198e8c95c0c8fadc2a105bed3183dd2921ebbc))
-* show transcriptions in ai component ([d3b42db](https://github.com/dyte-io/ui-kit/commit/d3b42db423c1af06fbeddaf9db7a323d17c7e441))
-* simplified state management ([057e883](https://github.com/dyte-io/ui-kit/commit/057e88374632cf7e9012af3775ca5951a20b8361))
-* simplify sync-with-store internals ([f7654d6](https://github.com/dyte-io/ui-kit/commit/f7654d6f33381455c80930c57d473b4ddf2829f4))
-* size of transcriptions title ([ba85b7b](https://github.com/dyte-io/ui-kit/commit/ba85b7b20371965c6cf2f67a462cf6f71e60878d))
-* state updates in ui-provider ([82a76e7](https://github.com/dyte-io/ui-kit/commit/82a76e76ab88ca8e0656cbbfe600234003a813d3))
-* sync size with store ([94baeef](https://github.com/dyte-io/ui-kit/commit/94baeef426005b065e0032bc7916716c436abbdb))
-* **sync-store:** pass oldValue in callback ([017a925](https://github.com/dyte-io/ui-kit/commit/017a925e5a258efbc5153b10b6e6d7c6879746e7))
-* SyncWithStore logic ([abc11cd](https://github.com/dyte-io/ui-kit/commit/abc11cd5d4888d64c9897d435ea4efed30216209))
-* unreported merge conflict ([b01b792](https://github.com/dyte-io/ui-kit/commit/b01b792ff685d4b61a394b8097f8eebf7b6d6638))
-* upgrade web-core ([fcf0d18](https://github.com/dyte-io/ui-kit/commit/fcf0d18c49c95dc983e4a49b041b1aafde3bac96))
-* use @SyncWithStore decorator in every component ([6272e6c](https://github.com/dyte-io/ui-kit/commit/6272e6c9934dce1935df7a3ca2cea78550ce84df))
-
+- componentShouldUpdate call ([c8bdc67](https://github.com/dyte-io/ui-kit/commit/c8bdc679e40e959b43a070b5dc18d0981eea8ad6))
+- do not import from exports ([c2897ef](https://github.com/dyte-io/ui-kit/commit/c2897ef32938e4f5bcfc844e082b2d259c3a03e0))
+- do not listen to changes once prop is updated manually after init ([ea2d0b8](https://github.com/dyte-io/ui-kit/commit/ea2d0b82229736e5be0137218d0f2e2889551c1a))
+- export getInitialStates() ([47841e3](https://github.com/dyte-io/ui-kit/commit/47841e393583d1e634e0133f6cb53909cfd44e56))
+- export uiStore ([a06f7c5](https://github.com/dyte-io/ui-kit/commit/a06f7c5b9ae70193fadf791066416052ab21dab8))
+- re-export everything from ui-kit core ([be290b6](https://github.com/dyte-io/ui-kit/commit/be290b6347508cdf04e34ef94189312ff1fb416b))
+- react-ui-kit build error on new web-core version ([4f21962](https://github.com/dyte-io/ui-kit/commit/4f219627dc4dc5dc123c02dfb9ce2f9686df53fd))
+- remove react ui-hooks and cleanup ([3e21e4b](https://github.com/dyte-io/ui-kit/commit/3e21e4b6d9945a8f4633ae9ba4cc91d24c430f4a))
+- remove unused @Watch method ([90e60d0](https://github.com/dyte-io/ui-kit/commit/90e60d0632dbf28d032b3d9b02a4476e4bb71070))
+- remove unused ai components ([02fc5cf](https://github.com/dyte-io/ui-kit/commit/02fc5cf2fba07312faa5c3d8553774901d9d6456))
+- remove unused props from primitive components ([b1198e8](https://github.com/dyte-io/ui-kit/commit/b1198e8c95c0c8fadc2a105bed3183dd2921ebbc))
+- show transcriptions in ai component ([d3b42db](https://github.com/dyte-io/ui-kit/commit/d3b42db423c1af06fbeddaf9db7a323d17c7e441))
+- simplified state management ([057e883](https://github.com/dyte-io/ui-kit/commit/057e88374632cf7e9012af3775ca5951a20b8361))
+- simplify sync-with-store internals ([f7654d6](https://github.com/dyte-io/ui-kit/commit/f7654d6f33381455c80930c57d473b4ddf2829f4))
+- size of transcriptions title ([ba85b7b](https://github.com/dyte-io/ui-kit/commit/ba85b7b20371965c6cf2f67a462cf6f71e60878d))
+- state updates in ui-provider ([82a76e7](https://github.com/dyte-io/ui-kit/commit/82a76e76ab88ca8e0656cbbfe600234003a813d3))
+- sync size with store ([94baeef](https://github.com/dyte-io/ui-kit/commit/94baeef426005b065e0032bc7916716c436abbdb))
+- **sync-store:** pass oldValue in callback ([017a925](https://github.com/dyte-io/ui-kit/commit/017a925e5a258efbc5153b10b6e6d7c6879746e7))
+- SyncWithStore logic ([abc11cd](https://github.com/dyte-io/ui-kit/commit/abc11cd5d4888d64c9897d435ea4efed30216209))
+- unreported merge conflict ([b01b792](https://github.com/dyte-io/ui-kit/commit/b01b792ff685d4b61a394b8097f8eebf7b6d6638))
+- upgrade web-core ([fcf0d18](https://github.com/dyte-io/ui-kit/commit/fcf0d18c49c95dc983e4a49b041b1aafde3bac96))
+- use @SyncWithStore decorator in every component ([6272e6c](https://github.com/dyte-io/ui-kit/commit/6272e6c9934dce1935df7a3ca2cea78550ce84df))
 
 ### Features
 
-* react hooks to listen to store updates ([c0de7f7](https://github.com/dyte-io/ui-kit/commit/c0de7f71af0f68234be20ed78e591755a2629606))
-* share common props using DyteUIProvider ([76f7058](https://github.com/dyte-io/ui-kit/commit/76f705829d1cc767e14a8dad491fa39361a73a74))
-* show invalid auth token error ([8cba9cc](https://github.com/dyte-io/ui-kit/commit/8cba9cca710c9559400faf66063af1e85c5adcad))
+- react hooks to listen to store updates ([c0de7f7](https://github.com/dyte-io/ui-kit/commit/c0de7f71af0f68234be20ed78e591755a2629606))
+- share common props using DyteUIProvider ([76f7058](https://github.com/dyte-io/ui-kit/commit/76f705829d1cc767e14a8dad491fa39361a73a74))
+- show invalid auth token error ([8cba9cc](https://github.com/dyte-io/ui-kit/commit/8cba9cca710c9559400faf66063af1e85c5adcad))
 
 # [2.4.0-staging.12](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.11...@dyte-in/ui-kit-v2.4.0-staging.12) (2025-03-28)
 
-
 ### Bug Fixes
 
-* re-export everything from ui-kit core ([be290b6](https://github.com/dyte-io/ui-kit/commit/be290b6347508cdf04e34ef94189312ff1fb416b))
+- re-export everything from ui-kit core ([be290b6](https://github.com/dyte-io/ui-kit/commit/be290b6347508cdf04e34ef94189312ff1fb416b))
 
 # [2.4.0-staging.11](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.10...@dyte-in/ui-kit-v2.4.0-staging.11) (2025-03-24)
 
-
 ### Bug Fixes
 
-* remove react ui-hooks and cleanup ([3e21e4b](https://github.com/dyte-io/ui-kit/commit/3e21e4b6d9945a8f4633ae9ba4cc91d24c430f4a))
+- remove react ui-hooks and cleanup ([3e21e4b](https://github.com/dyte-io/ui-kit/commit/3e21e4b6d9945a8f4633ae9ba4cc91d24c430f4a))
 
 # [2.4.0-staging.10](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.9...@dyte-in/ui-kit-v2.4.0-staging.10) (2025-03-24)
 
-
 ### Bug Fixes
 
-* export getInitialStates() ([47841e3](https://github.com/dyte-io/ui-kit/commit/47841e393583d1e634e0133f6cb53909cfd44e56))
-* react-ui-kit build error on new web-core version ([4f21962](https://github.com/dyte-io/ui-kit/commit/4f219627dc4dc5dc123c02dfb9ce2f9686df53fd))
-* state updates in ui-provider ([82a76e7](https://github.com/dyte-io/ui-kit/commit/82a76e76ab88ca8e0656cbbfe600234003a813d3))
-* sync size with store ([94baeef](https://github.com/dyte-io/ui-kit/commit/94baeef426005b065e0032bc7916716c436abbdb))
-
+- export getInitialStates() ([47841e3](https://github.com/dyte-io/ui-kit/commit/47841e393583d1e634e0133f6cb53909cfd44e56))
+- react-ui-kit build error on new web-core version ([4f21962](https://github.com/dyte-io/ui-kit/commit/4f219627dc4dc5dc123c02dfb9ce2f9686df53fd))
+- state updates in ui-provider ([82a76e7](https://github.com/dyte-io/ui-kit/commit/82a76e76ab88ca8e0656cbbfe600234003a813d3))
+- sync size with store ([94baeef](https://github.com/dyte-io/ui-kit/commit/94baeef426005b065e0032bc7916716c436abbdb))
 
 ### Features
 
-* react hooks to listen to store updates ([c0de7f7](https://github.com/dyte-io/ui-kit/commit/c0de7f71af0f68234be20ed78e591755a2629606))
+- react hooks to listen to store updates ([c0de7f7](https://github.com/dyte-io/ui-kit/commit/c0de7f71af0f68234be20ed78e591755a2629606))
 
 # [2.4.0-staging.9](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.8...@dyte-in/ui-kit-v2.4.0-staging.9) (2025-03-24)
 
-
 ### Bug Fixes
 
-* unreported merge conflict ([b01b792](https://github.com/dyte-io/ui-kit/commit/b01b792ff685d4b61a394b8097f8eebf7b6d6638))
+- unreported merge conflict ([b01b792](https://github.com/dyte-io/ui-kit/commit/b01b792ff685d4b61a394b8097f8eebf7b6d6638))
 
 # [2.4.0-staging.8](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.7...@dyte-in/ui-kit-v2.4.0-staging.8) (2025-03-24)
 
-
 ### Bug Fixes
 
-* simplified state management ([057e883](https://github.com/dyte-io/ui-kit/commit/057e88374632cf7e9012af3775ca5951a20b8361))
+- simplified state management ([057e883](https://github.com/dyte-io/ui-kit/commit/057e88374632cf7e9012af3775ca5951a20b8361))
 
 # [2.4.0-staging.7](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.6...@dyte-in/ui-kit-v2.4.0-staging.7) (2025-03-24)
 
-
 ### Bug Fixes
 
-* upgrade web-core ([fcf0d18](https://github.com/dyte-io/ui-kit/commit/fcf0d18c49c95dc983e4a49b041b1aafde3bac96))
-
+- upgrade web-core ([fcf0d18](https://github.com/dyte-io/ui-kit/commit/fcf0d18c49c95dc983e4a49b041b1aafde3bac96))
 
 ### Features
 
-* show invalid auth token error ([8cba9cc](https://github.com/dyte-io/ui-kit/commit/8cba9cca710c9559400faf66063af1e85c5adcad))
+- show invalid auth token error ([8cba9cc](https://github.com/dyte-io/ui-kit/commit/8cba9cca710c9559400faf66063af1e85c5adcad))
 
 # [2.4.0-staging.6](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.5...@dyte-in/ui-kit-v2.4.0-staging.6) (2025-03-21)
 
-
 ### Bug Fixes
 
-* simplify sync-with-store internals ([f7654d6](https://github.com/dyte-io/ui-kit/commit/f7654d6f33381455c80930c57d473b4ddf2829f4))
+- simplify sync-with-store internals ([f7654d6](https://github.com/dyte-io/ui-kit/commit/f7654d6f33381455c80930c57d473b4ddf2829f4))
 
 # [2.4.0-staging.5](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.4...@dyte-in/ui-kit-v2.4.0-staging.5) (2025-03-21)
 
-
 ### Bug Fixes
 
-* do not import from exports ([c2897ef](https://github.com/dyte-io/ui-kit/commit/c2897ef32938e4f5bcfc844e082b2d259c3a03e0))
+- do not import from exports ([c2897ef](https://github.com/dyte-io/ui-kit/commit/c2897ef32938e4f5bcfc844e082b2d259c3a03e0))
 
 # [2.4.0-staging.4](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.3...@dyte-in/ui-kit-v2.4.0-staging.4) (2025-03-21)
 
-
 ### Bug Fixes
 
-* export uiStore ([a06f7c5](https://github.com/dyte-io/ui-kit/commit/a06f7c5b9ae70193fadf791066416052ab21dab8))
+- export uiStore ([a06f7c5](https://github.com/dyte-io/ui-kit/commit/a06f7c5b9ae70193fadf791066416052ab21dab8))
 
 # [2.4.0-staging.3](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.2...@dyte-in/ui-kit-v2.4.0-staging.3) (2025-03-21)
 
-
 ### Bug Fixes
 
-* remove unused ai components ([02fc5cf](https://github.com/dyte-io/ui-kit/commit/02fc5cf2fba07312faa5c3d8553774901d9d6456))
-* remove unused props from primitive components ([b1198e8](https://github.com/dyte-io/ui-kit/commit/b1198e8c95c0c8fadc2a105bed3183dd2921ebbc))
-* show transcriptions in ai component ([d3b42db](https://github.com/dyte-io/ui-kit/commit/d3b42db423c1af06fbeddaf9db7a323d17c7e441))
-* size of transcriptions title ([ba85b7b](https://github.com/dyte-io/ui-kit/commit/ba85b7b20371965c6cf2f67a462cf6f71e60878d))
+- remove unused ai components ([02fc5cf](https://github.com/dyte-io/ui-kit/commit/02fc5cf2fba07312faa5c3d8553774901d9d6456))
+- remove unused props from primitive components ([b1198e8](https://github.com/dyte-io/ui-kit/commit/b1198e8c95c0c8fadc2a105bed3183dd2921ebbc))
+- show transcriptions in ai component ([d3b42db](https://github.com/dyte-io/ui-kit/commit/d3b42db423c1af06fbeddaf9db7a323d17c7e441))
+- size of transcriptions title ([ba85b7b](https://github.com/dyte-io/ui-kit/commit/ba85b7b20371965c6cf2f67a462cf6f71e60878d))
 
 # [2.4.0-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.4.0-staging.1...@dyte-in/ui-kit-v2.4.0-staging.2) (2025-03-12)
 
-
 ### Bug Fixes
 
-* remove unused @Watch method ([90e60d0](https://github.com/dyte-io/ui-kit/commit/90e60d0632dbf28d032b3d9b02a4476e4bb71070))
+- remove unused @Watch method ([90e60d0](https://github.com/dyte-io/ui-kit/commit/90e60d0632dbf28d032b3d9b02a4476e4bb71070))
 
 # [2.4.0-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.6...@dyte-in/ui-kit-v2.4.0-staging.1) (2025-03-12)
 
-
 ### Bug Fixes
 
-* componentShouldUpdate call ([c8bdc67](https://github.com/dyte-io/ui-kit/commit/c8bdc679e40e959b43a070b5dc18d0981eea8ad6))
-* do not listen to changes once prop is updated manually after init ([ea2d0b8](https://github.com/dyte-io/ui-kit/commit/ea2d0b82229736e5be0137218d0f2e2889551c1a))
-* **sync-store:** pass oldValue in callback ([017a925](https://github.com/dyte-io/ui-kit/commit/017a925e5a258efbc5153b10b6e6d7c6879746e7))
-* SyncWithStore logic ([abc11cd](https://github.com/dyte-io/ui-kit/commit/abc11cd5d4888d64c9897d435ea4efed30216209))
-* use @SyncWithStore decorator in every component ([6272e6c](https://github.com/dyte-io/ui-kit/commit/6272e6c9934dce1935df7a3ca2cea78550ce84df))
-
+- componentShouldUpdate call ([c8bdc67](https://github.com/dyte-io/ui-kit/commit/c8bdc679e40e959b43a070b5dc18d0981eea8ad6))
+- do not listen to changes once prop is updated manually after init ([ea2d0b8](https://github.com/dyte-io/ui-kit/commit/ea2d0b82229736e5be0137218d0f2e2889551c1a))
+- **sync-store:** pass oldValue in callback ([017a925](https://github.com/dyte-io/ui-kit/commit/017a925e5a258efbc5153b10b6e6d7c6879746e7))
+- SyncWithStore logic ([abc11cd](https://github.com/dyte-io/ui-kit/commit/abc11cd5d4888d64c9897d435ea4efed30216209))
+- use @SyncWithStore decorator in every component ([6272e6c](https://github.com/dyte-io/ui-kit/commit/6272e6c9934dce1935df7a3ca2cea78550ce84df))
 
 ### Features
 
-* share common props using DyteUIProvider ([76f7058](https://github.com/dyte-io/ui-kit/commit/76f705829d1cc767e14a8dad491fa39361a73a74))
+- share common props using DyteUIProvider ([76f7058](https://github.com/dyte-io/ui-kit/commit/76f705829d1cc767e14a8dad491fa39361a73a74))
 
 ## [2.3.6](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.5...@dyte-in/ui-kit-v2.3.6) (2025-03-11)
 
-
 ### Bug Fixes
 
-* cjs extension typo in loader ([44b4b8a](https://github.com/dyte-io/ui-kit/commit/44b4b8ae45ec761d4d313cbc97d61fad21aa1c6a))
+- cjs extension typo in loader ([44b4b8a](https://github.com/dyte-io/ui-kit/commit/44b4b8ae45ec761d4d313cbc97d61fad21aa1c6a))
 
 ## [2.3.5](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.4...@dyte-in/ui-kit-v2.3.5) (2025-03-11)
 
-
 ### Bug Fixes
 
-* revert to older react-output-target ([a5fb103](https://github.com/dyte-io/ui-kit/commit/a5fb1035b5a5c417eab63d11d02a6dc1a7dc14e4))
+- revert to older react-output-target ([a5fb103](https://github.com/dyte-io/ui-kit/commit/a5fb1035b5a5c417eab63d11d02a6dc1a7dc14e4))
 
 ## [2.3.5-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.4...@dyte-in/ui-kit-v2.3.5-staging.1) (2025-03-11)
 
-
 ### Bug Fixes
 
-* revert to older react-output-target ([a5fb103](https://github.com/dyte-io/ui-kit/commit/a5fb1035b5a5c417eab63d11d02a6dc1a7dc14e4))
+- revert to older react-output-target ([a5fb103](https://github.com/dyte-io/ui-kit/commit/a5fb1035b5a5c417eab63d11d02a6dc1a7dc14e4))
 
 ## [2.3.4](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.3...@dyte-in/ui-kit-v2.3.4) (2025-03-10)
 
-
 ### Bug Fixes
 
-* incorrect env in release action ([952459a](https://github.com/dyte-io/ui-kit/commit/952459abeeeb90b2aadecac4ce83d1f33282ec93))
+- incorrect env in release action ([952459a](https://github.com/dyte-io/ui-kit/commit/952459abeeeb90b2aadecac4ce83d1f33282ec93))
 
 ## [2.3.4-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.3...@dyte-in/ui-kit-v2.3.4-staging.1) (2025-03-10)
 
-
 ### Bug Fixes
 
-* incorrect env in release action ([952459a](https://github.com/dyte-io/ui-kit/commit/952459abeeeb90b2aadecac4ce83d1f33282ec93))
+- incorrect env in release action ([952459a](https://github.com/dyte-io/ui-kit/commit/952459abeeeb90b2aadecac4ce83d1f33282ec93))
 
 ## [2.3.3](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.2...@dyte-in/ui-kit-v2.3.3) (2025-03-10)
 
-
 ### Bug Fixes
 
-* ./dist export ([2166d11](https://github.com/dyte-io/ui-kit/commit/2166d119fcf984aa3d12e87dfd8efb6521670840))
-* release tagging ([2f14d21](https://github.com/dyte-io/ui-kit/commit/2f14d217fda33e390d2217c0d4617c6c0f1d085b))
+- ./dist export ([2166d11](https://github.com/dyte-io/ui-kit/commit/2166d119fcf984aa3d12e87dfd8efb6521670840))
+- release tagging ([2f14d21](https://github.com/dyte-io/ui-kit/commit/2f14d217fda33e390d2217c0d4617c6c0f1d085b))
 
 ## [2.3.3-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.3-staging.1...@dyte-in/ui-kit-v2.3.3-staging.2) (2025-03-10)
 
-
 ### Bug Fixes
 
-* ./dist export ([2166d11](https://github.com/dyte-io/ui-kit/commit/2166d119fcf984aa3d12e87dfd8efb6521670840))
+- ./dist export ([2166d11](https://github.com/dyte-io/ui-kit/commit/2166d119fcf984aa3d12e87dfd8efb6521670840))
 
 ## [2.3.3-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.2...@dyte-in/ui-kit-v2.3.3-staging.1) (2025-03-10)
 
-
 ### Bug Fixes
 
-* release tagging ([2f14d21](https://github.com/dyte-io/ui-kit/commit/2f14d217fda33e390d2217c0d4617c6c0f1d085b))
+- release tagging ([2f14d21](https://github.com/dyte-io/ui-kit/commit/2f14d217fda33e390d2217c0d4617c6c0f1d085b))
 
 ## [2.3.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.1...@dyte-in/ui-kit-v2.3.2) (2025-03-10)
 
-
 ### Bug Fixes
 
-* **react:** cjs build ([79977d3](https://github.com/dyte-io/ui-kit/commit/79977d339f96865ba28e3f6e5f2aa7fbdd35c9bc))
-* rollup optional dep error in github action ([529b4cb](https://github.com/dyte-io/ui-kit/commit/529b4cba94129963b92c3ee127945431c8497860))
-* set es2015 target ([faf2b04](https://github.com/dyte-io/ui-kit/commit/faf2b044b8447bff356f77a472b41219d920b358))
+- **react:** cjs build ([79977d3](https://github.com/dyte-io/ui-kit/commit/79977d339f96865ba28e3f6e5f2aa7fbdd35c9bc))
+- rollup optional dep error in github action ([529b4cb](https://github.com/dyte-io/ui-kit/commit/529b4cba94129963b92c3ee127945431c8497860))
+- set es2015 target ([faf2b04](https://github.com/dyte-io/ui-kit/commit/faf2b044b8447bff356f77a472b41219d920b358))
 
 ## [2.3.2-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.2-staging.1...@dyte-in/ui-kit-v2.3.2-staging.2) (2025-03-10)
 
-
 ### Bug Fixes
 
-* rollup optional dep error in github action ([529b4cb](https://github.com/dyte-io/ui-kit/commit/529b4cba94129963b92c3ee127945431c8497860))
+- rollup optional dep error in github action ([529b4cb](https://github.com/dyte-io/ui-kit/commit/529b4cba94129963b92c3ee127945431c8497860))
 
 ## [2.3.2-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.1...@dyte-in/ui-kit-v2.3.2-staging.1) (2025-03-10)
 
-
 ### Bug Fixes
 
-* **react:** cjs build ([79977d3](https://github.com/dyte-io/ui-kit/commit/79977d339f96865ba28e3f6e5f2aa7fbdd35c9bc))
-* set es2015 target ([faf2b04](https://github.com/dyte-io/ui-kit/commit/faf2b044b8447bff356f77a472b41219d920b358))
+- **react:** cjs build ([79977d3](https://github.com/dyte-io/ui-kit/commit/79977d339f96865ba28e3f6e5f2aa7fbdd35c9bc))
+- set es2015 target ([faf2b04](https://github.com/dyte-io/ui-kit/commit/faf2b044b8447bff356f77a472b41219d920b358))
 
 ## [2.3.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.0...@dyte-in/ui-kit-v2.3.1) (2025-03-06)
 
-
 ### Bug Fixes
 
-* angular build ([38f1b2a](https://github.com/dyte-io/ui-kit/commit/38f1b2ac75c77025fd817669b530cca9cca8561f))
-* angular build ([5e81994](https://github.com/dyte-io/ui-kit/commit/5e8199402e5ec069c90ec188d5ecf4f27aaed16b))
-* export types properly ([99933dc](https://github.com/dyte-io/ui-kit/commit/99933dcbdfece9d3b5bdfd4da192c3cb03404044))
-* more package.json fixes ([129fa1b](https://github.com/dyte-io/ui-kit/commit/129fa1b15905a4cc4d331b9aca37d1503c94c64d))
-* package.json and support email ([886429c](https://github.com/dyte-io/ui-kit/commit/886429c57c2b765a797817f4a306b66478b2b646))
-* react ui kit export ([33eed82](https://github.com/dyte-io/ui-kit/commit/33eed8283a4324d4003e76502b64b3e35f40a047))
-* rename angular components module ([58d2321](https://github.com/dyte-io/ui-kit/commit/58d23214e5d0b0232a834bcd6a1f262701329805))
-* ui-kit root export filepath ([d19a9d3](https://github.com/dyte-io/ui-kit/commit/d19a9d3fb501cbc15073e355e4f48e2d612572a5))
-* vue package ([7915b57](https://github.com/dyte-io/ui-kit/commit/7915b57e99f5c7ac1410b5633ffe76a8797c1680))
-* vue ui kit ([d64cc60](https://github.com/dyte-io/ui-kit/commit/d64cc60175232ead75c01da1d0f8e24ddf02b2e3))
-* **vue:** remove deprecated and non-existent applyPolyfills ([06721f1](https://github.com/dyte-io/ui-kit/commit/06721f180e4e44da337ee1d15215e614cee610ca))
+- angular build ([38f1b2a](https://github.com/dyte-io/ui-kit/commit/38f1b2ac75c77025fd817669b530cca9cca8561f))
+- angular build ([5e81994](https://github.com/dyte-io/ui-kit/commit/5e8199402e5ec069c90ec188d5ecf4f27aaed16b))
+- export types properly ([99933dc](https://github.com/dyte-io/ui-kit/commit/99933dcbdfece9d3b5bdfd4da192c3cb03404044))
+- more package.json fixes ([129fa1b](https://github.com/dyte-io/ui-kit/commit/129fa1b15905a4cc4d331b9aca37d1503c94c64d))
+- package.json and support email ([886429c](https://github.com/dyte-io/ui-kit/commit/886429c57c2b765a797817f4a306b66478b2b646))
+- react ui kit export ([33eed82](https://github.com/dyte-io/ui-kit/commit/33eed8283a4324d4003e76502b64b3e35f40a047))
+- rename angular components module ([58d2321](https://github.com/dyte-io/ui-kit/commit/58d23214e5d0b0232a834bcd6a1f262701329805))
+- ui-kit root export filepath ([d19a9d3](https://github.com/dyte-io/ui-kit/commit/d19a9d3fb501cbc15073e355e4f48e2d612572a5))
+- vue package ([7915b57](https://github.com/dyte-io/ui-kit/commit/7915b57e99f5c7ac1410b5633ffe76a8797c1680))
+- vue ui kit ([d64cc60](https://github.com/dyte-io/ui-kit/commit/d64cc60175232ead75c01da1d0f8e24ddf02b2e3))
+- **vue:** remove deprecated and non-existent applyPolyfills ([06721f1](https://github.com/dyte-io/ui-kit/commit/06721f180e4e44da337ee1d15215e614cee610ca))
 
 ## [2.3.1-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.1-staging.1...@dyte-in/ui-kit-v2.3.1-staging.2) (2025-03-06)
 
-
 ### Bug Fixes
 
-* **vue:** remove deprecated and non-existent applyPolyfills ([06721f1](https://github.com/dyte-io/ui-kit/commit/06721f180e4e44da337ee1d15215e614cee610ca))
+- **vue:** remove deprecated and non-existent applyPolyfills ([06721f1](https://github.com/dyte-io/ui-kit/commit/06721f180e4e44da337ee1d15215e614cee610ca))
 
 ## [2.3.1-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.3.0...@dyte-in/ui-kit-v2.3.1-staging.1) (2025-03-06)
 
-
 ### Bug Fixes
 
-* angular build ([38f1b2a](https://github.com/dyte-io/ui-kit/commit/38f1b2ac75c77025fd817669b530cca9cca8561f))
-* angular build ([5e81994](https://github.com/dyte-io/ui-kit/commit/5e8199402e5ec069c90ec188d5ecf4f27aaed16b))
-* export types properly ([99933dc](https://github.com/dyte-io/ui-kit/commit/99933dcbdfece9d3b5bdfd4da192c3cb03404044))
-* more package.json fixes ([129fa1b](https://github.com/dyte-io/ui-kit/commit/129fa1b15905a4cc4d331b9aca37d1503c94c64d))
-* package.json and support email ([886429c](https://github.com/dyte-io/ui-kit/commit/886429c57c2b765a797817f4a306b66478b2b646))
-* react ui kit export ([33eed82](https://github.com/dyte-io/ui-kit/commit/33eed8283a4324d4003e76502b64b3e35f40a047))
-* rename angular components module ([58d2321](https://github.com/dyte-io/ui-kit/commit/58d23214e5d0b0232a834bcd6a1f262701329805))
-* ui-kit root export filepath ([d19a9d3](https://github.com/dyte-io/ui-kit/commit/d19a9d3fb501cbc15073e355e4f48e2d612572a5))
-* vue package ([7915b57](https://github.com/dyte-io/ui-kit/commit/7915b57e99f5c7ac1410b5633ffe76a8797c1680))
-* vue ui kit ([d64cc60](https://github.com/dyte-io/ui-kit/commit/d64cc60175232ead75c01da1d0f8e24ddf02b2e3))
+- angular build ([38f1b2a](https://github.com/dyte-io/ui-kit/commit/38f1b2ac75c77025fd817669b530cca9cca8561f))
+- angular build ([5e81994](https://github.com/dyte-io/ui-kit/commit/5e8199402e5ec069c90ec188d5ecf4f27aaed16b))
+- export types properly ([99933dc](https://github.com/dyte-io/ui-kit/commit/99933dcbdfece9d3b5bdfd4da192c3cb03404044))
+- more package.json fixes ([129fa1b](https://github.com/dyte-io/ui-kit/commit/129fa1b15905a4cc4d331b9aca37d1503c94c64d))
+- package.json and support email ([886429c](https://github.com/dyte-io/ui-kit/commit/886429c57c2b765a797817f4a306b66478b2b646))
+- react ui kit export ([33eed82](https://github.com/dyte-io/ui-kit/commit/33eed8283a4324d4003e76502b64b3e35f40a047))
+- rename angular components module ([58d2321](https://github.com/dyte-io/ui-kit/commit/58d23214e5d0b0232a834bcd6a1f262701329805))
+- ui-kit root export filepath ([d19a9d3](https://github.com/dyte-io/ui-kit/commit/d19a9d3fb501cbc15073e355e4f48e2d612572a5))
+- vue package ([7915b57](https://github.com/dyte-io/ui-kit/commit/7915b57e99f5c7ac1410b5633ffe76a8797c1680))
+- vue ui kit ([d64cc60](https://github.com/dyte-io/ui-kit/commit/d64cc60175232ead75c01da1d0f8e24ddf02b2e3))
 
 # [2.3.0](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.2...@dyte-in/ui-kit-v2.3.0) (2025-03-05)
 
-
 ### Bug Fixes
 
-* checks for toggle button visiblity ([40fbac2](https://github.com/dyte-io/ui-kit/commit/40fbac27e4048bf7400d8de6396ff3d2b3acc220))
-* disable sourcemap ([d0afd77](https://github.com/dyte-io/ui-kit/commit/d0afd770c15c33e2cd7a445e553a801861cef14d))
-* optimize locale object handling ([8d20ecc](https://github.com/dyte-io/ui-kit/commit/8d20eccc5727f41268f1248c8cc0702159af6a29))
-* update mute all description ([44b430e](https://github.com/dyte-io/ui-kit/commit/44b430ea34f3cd3b28a5f43f96f5382145af53ed))
-* upgrade stencil ([9b1412f](https://github.com/dyte-io/ui-kit/commit/9b1412fa55a0411159ec5a6b98f07463bce9d94f))
-
+- checks for toggle button visiblity ([40fbac2](https://github.com/dyte-io/ui-kit/commit/40fbac27e4048bf7400d8de6396ff3d2b3acc220))
+- disable sourcemap ([d0afd77](https://github.com/dyte-io/ui-kit/commit/d0afd770c15c33e2cd7a445e553a801861cef14d))
+- optimize locale object handling ([8d20ecc](https://github.com/dyte-io/ui-kit/commit/8d20eccc5727f41268f1248c8cc0702159af6a29))
+- update mute all description ([44b430e](https://github.com/dyte-io/ui-kit/commit/44b430ea34f3cd3b28a5f43f96f5382145af53ed))
+- upgrade stencil ([9b1412f](https://github.com/dyte-io/ui-kit/commit/9b1412fa55a0411159ec5a6b98f07463bce9d94f))
 
 ### Features
 
-* upgrade stencil to 4.25.3 ([528269b](https://github.com/dyte-io/ui-kit/commit/528269bd0df33320a4424279aee481bb9b236457))
+- upgrade stencil to 4.25.3 ([528269b](https://github.com/dyte-io/ui-kit/commit/528269bd0df33320a4424279aee481bb9b236457))
 
 # [2.3.0-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.3-staging.3...@dyte-in/ui-kit-v2.3.0-staging.1) (2025-02-28)
 
-
 ### Bug Fixes
 
-* disable sourcemap ([d0afd77](https://github.com/dyte-io/ui-kit/commit/d0afd770c15c33e2cd7a445e553a801861cef14d))
-* upgrade stencil ([9b1412f](https://github.com/dyte-io/ui-kit/commit/9b1412fa55a0411159ec5a6b98f07463bce9d94f))
-
+- disable sourcemap ([d0afd77](https://github.com/dyte-io/ui-kit/commit/d0afd770c15c33e2cd7a445e553a801861cef14d))
+- upgrade stencil ([9b1412f](https://github.com/dyte-io/ui-kit/commit/9b1412fa55a0411159ec5a6b98f07463bce9d94f))
 
 ### Features
 
-* upgrade stencil to 4.25.3 ([528269b](https://github.com/dyte-io/ui-kit/commit/528269bd0df33320a4424279aee481bb9b236457))
+- upgrade stencil to 4.25.3 ([528269b](https://github.com/dyte-io/ui-kit/commit/528269bd0df33320a4424279aee481bb9b236457))
 
 ## [2.2.3-staging.3](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.3-staging.2...@dyte-in/ui-kit-v2.2.3-staging.3) (2025-02-28)
 
-
 ### Bug Fixes
 
-* update mute all description ([44b430e](https://github.com/dyte-io/ui-kit/commit/44b430ea34f3cd3b28a5f43f96f5382145af53ed))
+- update mute all description ([44b430e](https://github.com/dyte-io/ui-kit/commit/44b430ea34f3cd3b28a5f43f96f5382145af53ed))
 
 ## [2.2.3-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.3-staging.1...@dyte-in/ui-kit-v2.2.3-staging.2) (2025-02-27)
 
-
 ### Bug Fixes
 
-* checks for toggle button visiblity ([40fbac2](https://github.com/dyte-io/ui-kit/commit/40fbac27e4048bf7400d8de6396ff3d2b3acc220))
+- checks for toggle button visiblity ([40fbac2](https://github.com/dyte-io/ui-kit/commit/40fbac27e4048bf7400d8de6396ff3d2b3acc220))
 
 ## [2.2.3-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.2...@dyte-in/ui-kit-v2.2.3-staging.1) (2025-02-18)
 
-
 ### Bug Fixes
 
-* optimize locale object handling ([8d20ecc](https://github.com/dyte-io/ui-kit/commit/8d20eccc5727f41268f1248c8cc0702159af6a29))
+- optimize locale object handling ([8d20ecc](https://github.com/dyte-io/ui-kit/commit/8d20eccc5727f41268f1248c8cc0702159af6a29))
 
 ## [2.2.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.1...@dyte-in/ui-kit-v2.2.2) (2025-02-13)
 
-
 ### Bug Fixes
 
-* **release:** adding a empty commit to re-release ([9a70e57](https://github.com/dyte-io/ui-kit/commit/9a70e570e50b78de84f66bd4c476a7a8b2eb7879))
+- **release:** adding a empty commit to re-release ([9a70e57](https://github.com/dyte-io/ui-kit/commit/9a70e570e50b78de84f66bd4c476a7a8b2eb7879))
 
 ## [2.2.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.0...@dyte-in/ui-kit-v2.2.1) (2025-02-13)
 
-
 ### Bug Fixes
 
-* add source spam on web-core ([ad70a9c](https://github.com/dyte-io/ui-kit/commit/ad70a9c0c20f61769ebad6de906848736a760833))
-* error while destructuring meeting ([be2ecc8](https://github.com/dyte-io/ui-kit/commit/be2ecc8a50656954b5bf75a0f20c97a81be295e3))
-* remove unused types ([8dc3e6f](https://github.com/dyte-io/ui-kit/commit/8dc3e6f10e0ecfc2e98538ac711076df97937d82))
+- add source spam on web-core ([ad70a9c](https://github.com/dyte-io/ui-kit/commit/ad70a9c0c20f61769ebad6de906848736a760833))
+- error while destructuring meeting ([be2ecc8](https://github.com/dyte-io/ui-kit/commit/be2ecc8a50656954b5bf75a0f20c97a81be295e3))
+- remove unused types ([8dc3e6f](https://github.com/dyte-io/ui-kit/commit/8dc3e6f10e0ecfc2e98538ac711076df97937d82))
 
 ## [2.2.1-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.1-staging.1...@dyte-in/ui-kit-v2.2.1-staging.2) (2025-02-13)
 
-
 ### Bug Fixes
 
-* error while destructuring meeting ([be2ecc8](https://github.com/dyte-io/ui-kit/commit/be2ecc8a50656954b5bf75a0f20c97a81be295e3))
+- error while destructuring meeting ([be2ecc8](https://github.com/dyte-io/ui-kit/commit/be2ecc8a50656954b5bf75a0f20c97a81be295e3))
 
 ## [2.2.1-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.0...@dyte-in/ui-kit-v2.2.1-staging.1) (2025-02-13)
 
-
 ### Bug Fixes
 
-* add source spam on web-core ([ad70a9c](https://github.com/dyte-io/ui-kit/commit/ad70a9c0c20f61769ebad6de906848736a760833))
-* remove unused types ([8dc3e6f](https://github.com/dyte-io/ui-kit/commit/8dc3e6f10e0ecfc2e98538ac711076df97937d82))
+- add source spam on web-core ([ad70a9c](https://github.com/dyte-io/ui-kit/commit/ad70a9c0c20f61769ebad6de906848736a760833))
+- remove unused types ([8dc3e6f](https://github.com/dyte-io/ui-kit/commit/8dc3e6f10e0ecfc2e98538ac711076df97937d82))
 
 # [2.2.0](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.5...@dyte-in/ui-kit-v2.2.0) (2025-02-07)
 
-
 ### Bug Fixes
 
-* allow hiding self view ([cbd91eb](https://github.com/dyte-io/ui-kit/commit/cbd91eb032c4ac0931a5c4fbedff71030d3c35bd))
-* **breakout-rooms:** breakout room button is not visible in some edge cases ([6505768](https://github.com/dyte-io/ui-kit/commit/650576815250a9b68c1b20df6ae43cf10716a55c))
-* **build:** build was failing due to web-core and utils mismatch ([cb2f911](https://github.com/dyte-io/ui-kit/commit/cb2f911b0dd6a02caec4f3ff3149a2ce99b8fc54))
-* hide troubleshooter for setup screen ([2db5506](https://github.com/dyte-io/ui-kit/commit/2db5506b6fe9dd96d60e8da19e72f438d618791d))
-* join in as text ([8f9ff5d](https://github.com/dyte-io/ui-kit/commit/8f9ff5dffdca7ea42e3c6e2102a8ef84dd1e1fc9))
-* **livestream-viewer:** level selector and safari fixes ([07f0e99](https://github.com/dyte-io/ui-kit/commit/07f0e99cd2c9f981b95c3d245ea9940b04896d2c))
-* **livestream:** added logic to recover from fatal errors ([673ebcb](https://github.com/dyte-io/ui-kit/commit/673ebcb7eb3f601d91213316e3b6a3b96d674529))
-* **livestream:** adding proper brand colors for player ([331d88a](https://github.com/dyte-io/ui-kit/commit/331d88ac036d1590e16cead5a3115c9471286fa9))
-* **livestream:** reduced fast forward width ([98385f0](https://github.com/dyte-io/ui-kit/commit/98385f0f1b372474d5cb0e5a2bcbee2467b82546))
-* **livestream:** removed hardcoded allowed qualities, fixed web-core package ([b847ed6](https://github.com/dyte-io/ui-kit/commit/b847ed6a34af9bc7ba6592c95fad1ed2bd146ceb))
-* **livestream:** video dimension fixes for poor quality ([b1b5e15](https://github.com/dyte-io/ui-kit/commit/b1b5e152923596dc113ca9424a46fa4caed628b7))
-* **player:** added fast forward, made some fixes ([f2bd2b2](https://github.com/dyte-io/ui-kit/commit/f2bd2b2d835c2f39e03ff5dab6bb2ef009d9b949))
-* simplify device list logic ([b06fea9](https://github.com/dyte-io/ui-kit/commit/b06fea937cee2229e91267e90aa5b6fa4ed9a4ec))
-
+- allow hiding self view ([cbd91eb](https://github.com/dyte-io/ui-kit/commit/cbd91eb032c4ac0931a5c4fbedff71030d3c35bd))
+- **breakout-rooms:** breakout room button is not visible in some edge cases ([6505768](https://github.com/dyte-io/ui-kit/commit/650576815250a9b68c1b20df6ae43cf10716a55c))
+- **build:** build was failing due to web-core and utils mismatch ([cb2f911](https://github.com/dyte-io/ui-kit/commit/cb2f911b0dd6a02caec4f3ff3149a2ce99b8fc54))
+- hide troubleshooter for setup screen ([2db5506](https://github.com/dyte-io/ui-kit/commit/2db5506b6fe9dd96d60e8da19e72f438d618791d))
+- join in as text ([8f9ff5d](https://github.com/dyte-io/ui-kit/commit/8f9ff5dffdca7ea42e3c6e2102a8ef84dd1e1fc9))
+- **livestream-viewer:** level selector and safari fixes ([07f0e99](https://github.com/dyte-io/ui-kit/commit/07f0e99cd2c9f981b95c3d245ea9940b04896d2c))
+- **livestream:** added logic to recover from fatal errors ([673ebcb](https://github.com/dyte-io/ui-kit/commit/673ebcb7eb3f601d91213316e3b6a3b96d674529))
+- **livestream:** adding proper brand colors for player ([331d88a](https://github.com/dyte-io/ui-kit/commit/331d88ac036d1590e16cead5a3115c9471286fa9))
+- **livestream:** reduced fast forward width ([98385f0](https://github.com/dyte-io/ui-kit/commit/98385f0f1b372474d5cb0e5a2bcbee2467b82546))
+- **livestream:** removed hardcoded allowed qualities, fixed web-core package ([b847ed6](https://github.com/dyte-io/ui-kit/commit/b847ed6a34af9bc7ba6592c95fad1ed2bd146ceb))
+- **livestream:** video dimension fixes for poor quality ([b1b5e15](https://github.com/dyte-io/ui-kit/commit/b1b5e152923596dc113ca9424a46fa4caed628b7))
+- **player:** added fast forward, made some fixes ([f2bd2b2](https://github.com/dyte-io/ui-kit/commit/f2bd2b2d835c2f39e03ff5dab6bb2ef009d9b949))
+- simplify device list logic ([b06fea9](https://github.com/dyte-io/ui-kit/commit/b06fea937cee2229e91267e90aa5b6fa4ed9a4ec))
 
 ### Features
 
-* **livestream:** added ability to control livestream viewer quality ([9db7720](https://github.com/dyte-io/ui-kit/commit/9db77207e876c197a048755d3133cfe52c3f2c12))
-* **player:** adding custom hls based livestream player ([413bb3d](https://github.com/dyte-io/ui-kit/commit/413bb3d28c2004975f20e5e25e1d7657cfd76ad8))
+- **livestream:** added ability to control livestream viewer quality ([9db7720](https://github.com/dyte-io/ui-kit/commit/9db77207e876c197a048755d3133cfe52c3f2c12))
+- **player:** adding custom hls based livestream player ([413bb3d](https://github.com/dyte-io/ui-kit/commit/413bb3d28c2004975f20e5e25e1d7657cfd76ad8))
 
 # [2.2.0-staging.8](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.0-staging.7...@dyte-in/ui-kit-v2.2.0-staging.8) (2025-02-07)
 
-
 ### Bug Fixes
 
-* **dyte-participant-tile:** network disconnected icon is not going away due to incorrect field ([65eca1c](https://github.com/dyte-io/ui-kit/commit/65eca1cf9f003d90cb0cdf096233647986baec14))
-* **release:** empty commit to fix previous empty no-dist npm release ([0157d66](https://github.com/dyte-io/ui-kit/commit/0157d666953796f64ec071311fd8744778055b4d))
+- **dyte-participant-tile:** network disconnected icon is not going away due to incorrect field ([65eca1c](https://github.com/dyte-io/ui-kit/commit/65eca1cf9f003d90cb0cdf096233647986baec14))
+- **release:** empty commit to fix previous empty no-dist npm release ([0157d66](https://github.com/dyte-io/ui-kit/commit/0157d666953796f64ec071311fd8744778055b4d))
 
 # [2.2.0-staging.7](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.0-staging.6...@dyte-in/ui-kit-v2.2.0-staging.7) (2025-02-07)
 
-
 ### Bug Fixes
 
-* allow hiding self view ([cbd91eb](https://github.com/dyte-io/ui-kit/commit/cbd91eb032c4ac0931a5c4fbedff71030d3c35bd))
+- allow hiding self view ([cbd91eb](https://github.com/dyte-io/ui-kit/commit/cbd91eb032c4ac0931a5c4fbedff71030d3c35bd))
 
 # [2.2.0-staging.6](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.0-staging.5...@dyte-in/ui-kit-v2.2.0-staging.6) (2025-02-04)
 
-
 ### Bug Fixes
 
-* simplify device list logic ([b06fea9](https://github.com/dyte-io/ui-kit/commit/b06fea937cee2229e91267e90aa5b6fa4ed9a4ec))
+- simplify device list logic ([b06fea9](https://github.com/dyte-io/ui-kit/commit/b06fea937cee2229e91267e90aa5b6fa4ed9a4ec))
 
 # [2.2.0-staging.5](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.0-staging.4...@dyte-in/ui-kit-v2.2.0-staging.5) (2025-02-03)
 
-
 ### Bug Fixes
 
-* hide troubleshooter for setup screen ([2db5506](https://github.com/dyte-io/ui-kit/commit/2db5506b6fe9dd96d60e8da19e72f438d618791d))
+- hide troubleshooter for setup screen ([2db5506](https://github.com/dyte-io/ui-kit/commit/2db5506b6fe9dd96d60e8da19e72f438d618791d))
 
 # [2.2.0-staging.4](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.0-staging.3...@dyte-in/ui-kit-v2.2.0-staging.4) (2025-02-03)
 
-
 ### Bug Fixes
 
-* **breakout-rooms:** breakout room button is not visible in some edge cases ([6505768](https://github.com/dyte-io/ui-kit/commit/650576815250a9b68c1b20df6ae43cf10716a55c))
+- **breakout-rooms:** breakout room button is not visible in some edge cases ([6505768](https://github.com/dyte-io/ui-kit/commit/650576815250a9b68c1b20df6ae43cf10716a55c))
 
 # [2.2.0-staging.3](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.0-staging.2...@dyte-in/ui-kit-v2.2.0-staging.3) (2025-02-03)
 
-
 ### Bug Fixes
 
-* **livestream:** added logic to recover from fatal errors ([673ebcb](https://github.com/dyte-io/ui-kit/commit/673ebcb7eb3f601d91213316e3b6a3b96d674529))
+- **livestream:** added logic to recover from fatal errors ([673ebcb](https://github.com/dyte-io/ui-kit/commit/673ebcb7eb3f601d91213316e3b6a3b96d674529))
 
 # [2.2.0-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.2.0-staging.1...@dyte-in/ui-kit-v2.2.0-staging.2) (2025-01-13)
 
-
 ### Bug Fixes
 
-* join in as text ([8f9ff5d](https://github.com/dyte-io/ui-kit/commit/8f9ff5dffdca7ea42e3c6e2102a8ef84dd1e1fc9))
+- join in as text ([8f9ff5d](https://github.com/dyte-io/ui-kit/commit/8f9ff5dffdca7ea42e3c6e2102a8ef84dd1e1fc9))
 
 # [2.2.0-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.3...@dyte-in/ui-kit-v2.2.0-staging.1) (2025-01-03)
 
-
 ### Bug Fixes
 
-* **build:** build was failing due to web-core and utils mismatch ([cb2f911](https://github.com/dyte-io/ui-kit/commit/cb2f911b0dd6a02caec4f3ff3149a2ce99b8fc54))
-* **livestream-viewer:** level selector and safari fixes ([07f0e99](https://github.com/dyte-io/ui-kit/commit/07f0e99cd2c9f981b95c3d245ea9940b04896d2c))
-* **livestream:** adding proper brand colors for player ([331d88a](https://github.com/dyte-io/ui-kit/commit/331d88ac036d1590e16cead5a3115c9471286fa9))
-* **livestream:** reduced fast forward width ([98385f0](https://github.com/dyte-io/ui-kit/commit/98385f0f1b372474d5cb0e5a2bcbee2467b82546))
-* **livestream:** removed hardcoded allowed qualities, fixed web-core package ([b847ed6](https://github.com/dyte-io/ui-kit/commit/b847ed6a34af9bc7ba6592c95fad1ed2bd146ceb))
-* **livestream:** video dimension fixes for poor quality ([b1b5e15](https://github.com/dyte-io/ui-kit/commit/b1b5e152923596dc113ca9424a46fa4caed628b7))
-* **player:** added fast forward, made some fixes ([f2bd2b2](https://github.com/dyte-io/ui-kit/commit/f2bd2b2d835c2f39e03ff5dab6bb2ef009d9b949))
-
+- **build:** build was failing due to web-core and utils mismatch ([cb2f911](https://github.com/dyte-io/ui-kit/commit/cb2f911b0dd6a02caec4f3ff3149a2ce99b8fc54))
+- **livestream-viewer:** level selector and safari fixes ([07f0e99](https://github.com/dyte-io/ui-kit/commit/07f0e99cd2c9f981b95c3d245ea9940b04896d2c))
+- **livestream:** adding proper brand colors for player ([331d88a](https://github.com/dyte-io/ui-kit/commit/331d88ac036d1590e16cead5a3115c9471286fa9))
+- **livestream:** reduced fast forward width ([98385f0](https://github.com/dyte-io/ui-kit/commit/98385f0f1b372474d5cb0e5a2bcbee2467b82546))
+- **livestream:** removed hardcoded allowed qualities, fixed web-core package ([b847ed6](https://github.com/dyte-io/ui-kit/commit/b847ed6a34af9bc7ba6592c95fad1ed2bd146ceb))
+- **livestream:** video dimension fixes for poor quality ([b1b5e15](https://github.com/dyte-io/ui-kit/commit/b1b5e152923596dc113ca9424a46fa4caed628b7))
+- **player:** added fast forward, made some fixes ([f2bd2b2](https://github.com/dyte-io/ui-kit/commit/f2bd2b2d835c2f39e03ff5dab6bb2ef009d9b949))
 
 ### Features
 
-* **livestream:** added ability to control livestream viewer quality ([9db7720](https://github.com/dyte-io/ui-kit/commit/9db77207e876c197a048755d3133cfe52c3f2c12))
-* **player:** adding custom hls based livestream player ([413bb3d](https://github.com/dyte-io/ui-kit/commit/413bb3d28c2004975f20e5e25e1d7657cfd76ad8))
+- **livestream:** added ability to control livestream viewer quality ([9db7720](https://github.com/dyte-io/ui-kit/commit/9db77207e876c197a048755d3133cfe52c3f2c12))
+- **player:** adding custom hls based livestream player ([413bb3d](https://github.com/dyte-io/ui-kit/commit/413bb3d28c2004975f20e5e25e1d7657cfd76ad8))
 
 ## [2.1.3](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.2...@dyte-in/ui-kit-v2.1.3) (2025-01-03)
 
-
 ### Bug Fixes
 
-* allow passing a pre-loaded audio element ([822d9c0](https://github.com/dyte-io/ui-kit/commit/822d9c028e607d66d875e164654dcb96a6bf6d0f))
-* **dyte-chat:** fixed code indentation for chat messages ([dae6425](https://github.com/dyte-io/ui-kit/commit/dae64258577a8e4e72eba31eeba4f40d82e7397e))
-* **ui-kit-addons:** fixed hand raise icon ordering issue ([8131e71](https://github.com/dyte-io/ui-kit/commit/8131e71a71189ee7011f82b798408248805a6de0))
+- allow passing a pre-loaded audio element ([822d9c0](https://github.com/dyte-io/ui-kit/commit/822d9c028e607d66d875e164654dcb96a6bf6d0f))
+- **dyte-chat:** fixed code indentation for chat messages ([dae6425](https://github.com/dyte-io/ui-kit/commit/dae64258577a8e4e72eba31eeba4f40d82e7397e))
+- **ui-kit-addons:** fixed hand raise icon ordering issue ([8131e71](https://github.com/dyte-io/ui-kit/commit/8131e71a71189ee7011f82b798408248805a6de0))
 
 ## [2.1.3-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.3-staging.1...@dyte-in/ui-kit-v2.1.3-staging.2) (2024-12-24)
 
-
 ### Bug Fixes
 
-* allow passing a pre-loaded audio element ([822d9c0](https://github.com/dyte-io/ui-kit/commit/822d9c028e607d66d875e164654dcb96a6bf6d0f))
+- allow passing a pre-loaded audio element ([822d9c0](https://github.com/dyte-io/ui-kit/commit/822d9c028e607d66d875e164654dcb96a6bf6d0f))
 
 ## [2.1.3-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.2...@dyte-in/ui-kit-v2.1.3-staging.1) (2024-12-13)
 
-
 ### Bug Fixes
 
-* **dyte-chat:** fixed code indentation for chat messages ([dae6425](https://github.com/dyte-io/ui-kit/commit/dae64258577a8e4e72eba31eeba4f40d82e7397e))
-* **ui-kit-addons:** fixed hand raise icon ordering issue ([8131e71](https://github.com/dyte-io/ui-kit/commit/8131e71a71189ee7011f82b798408248805a6de0))
+- **dyte-chat:** fixed code indentation for chat messages ([dae6425](https://github.com/dyte-io/ui-kit/commit/dae64258577a8e4e72eba31eeba4f40d82e7397e))
+- **ui-kit-addons:** fixed hand raise icon ordering issue ([8131e71](https://github.com/dyte-io/ui-kit/commit/8131e71a71189ee7011f82b798408248805a6de0))
 
 ## [2.1.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.1...@dyte-in/ui-kit-v2.1.2) (2024-12-10)
 
-
 ### Bug Fixes
 
-* **network-indicator:** show network indicator for self as well ([efff3f3](https://github.com/dyte-io/ui-kit/commit/efff3f3e96c3e358df6fb591cc84d9cc1fa933bc))
-* **tile:** add network-indicator part attr ([218f94f](https://github.com/dyte-io/ui-kit/commit/218f94f957c94fcbb1135f7b8a27ff5b97adcafa))
+- **network-indicator:** show network indicator for self as well ([efff3f3](https://github.com/dyte-io/ui-kit/commit/efff3f3e96c3e358df6fb591cc84d9cc1fa933bc))
+- **tile:** add network-indicator part attr ([218f94f](https://github.com/dyte-io/ui-kit/commit/218f94f957c94fcbb1135f7b8a27ff5b97adcafa))
 
 ## [2.1.2-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.2-staging.1...@dyte-in/ui-kit-v2.1.2-staging.2) (2024-12-05)
 
-
 ### Bug Fixes
 
-* **tile:** add network-indicator part attr ([218f94f](https://github.com/dyte-io/ui-kit/commit/218f94f957c94fcbb1135f7b8a27ff5b97adcafa))
+- **tile:** add network-indicator part attr ([218f94f](https://github.com/dyte-io/ui-kit/commit/218f94f957c94fcbb1135f7b8a27ff5b97adcafa))
 
 ## [2.1.2-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.1...@dyte-in/ui-kit-v2.1.2-staging.1) (2024-12-02)
 
-
 ### Bug Fixes
 
-* **network-indicator:** show network indicator for self as well ([efff3f3](https://github.com/dyte-io/ui-kit/commit/efff3f3e96c3e358df6fb591cc84d9cc1fa933bc))
+- **network-indicator:** show network indicator for self as well ([efff3f3](https://github.com/dyte-io/ui-kit/commit/efff3f3e96c3e358df6fb591cc84d9cc1fa933bc))
 
 ## [2.1.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0...@dyte-in/ui-kit-v2.1.1) (2024-11-20)
 
-
 ### Bug Fixes
 
-* **release:** adding empty commit to trigger re-release ([39d9e6f](https://github.com/dyte-io/ui-kit/commit/39d9e6fd5ec6722a954884c4c0b391f59388a46c))
+- **release:** adding empty commit to trigger re-release ([39d9e6f](https://github.com/dyte-io/ui-kit/commit/39d9e6fd5ec6722a954884c4c0b391f59388a46c))
 
 # [2.1.0](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.0.6...@dyte-in/ui-kit-v2.1.0) (2024-11-20)
 
-
 ### Bug Fixes
 
-* add event listener in componentDidLoad ([d99524a](https://github.com/dyte-io/ui-kit/commit/d99524ab2f2cdbdddb6671972c0169e724c53383))
-* add private chat filter ([4654cf9](https://github.com/dyte-io/ui-kit/commit/4654cf963f0b80d39625f098334388e9a74ce645))
-* **debugger-i18n:** fixed the lack of i18n in debugger files ([3962e80](https://github.com/dyte-io/ui-kit/commit/3962e803a9e3526a617f70b7cf0e1078a73d87a3))
-* **debugger:** added jitter unit ([20ace1d](https://github.com/dyte-io/ui-kit/commit/20ace1d3051ef961adbe22aac15ed60c63661577))
-* **debugger:** fixed colors post status label refactoring ([502bd49](https://github.com/dyte-io/ui-kit/commit/502bd49a7492c0990f00cbac0e5119c82e79db8a))
-* **debugger:** fixed label, rounding battery percentage ([760726e](https://github.com/dyte-io/ui-kit/commit/760726e8275f96cd648290e5a7fb36addbebf829))
-* github action for staging updatE ([852cd6f](https://github.com/dyte-io/ui-kit/commit/852cd6fa14aecef5d8903a4f6d3a00d63d7374e0))
-* **livestream-viewer:** fixed some edge cases around playback, added logs for tracking ([210309b](https://github.com/dyte-io/ui-kit/commit/210309bd690a09552fea837fadf96f61be9f9f1e))
-* **participant-count-badge:** badge/pill was not showing the background color ([423e1f6](https://github.com/dyte-io/ui-kit/commit/423e1f660f25c5b9d4c4400b98c958ff341f2ae1))
-* **participants-tab-i18n:** fixed i18n issues in the participants tab ([100dbc0](https://github.com/dyte-io/ui-kit/commit/100dbc072b841e1614958276804cf44e50eb8543))
-* **participants:** participant menu list was not closing, actions were invisible for last 2 ([15ab76a](https://github.com/dyte-io/ui-kit/commit/15ab76a7011650ba0e7240fed39764519838603e))
-* remove IVS ([4be485e](https://github.com/dyte-io/ui-kit/commit/4be485e0844e5dfb259ad2cb759da79988d996b6))
-* remove socket service check ([1e1f3ee](https://github.com/dyte-io/ui-kit/commit/1e1f3eee6323102c6f1d84fcc20fa4abc5944c9f))
-* scroll lock in transcriptions ([71a9ca5](https://github.com/dyte-io/ui-kit/commit/71a9ca54e0b77ef765bcd20de678f8531dd3f5c2))
-* update web-core ([d066ab0](https://github.com/dyte-io/ui-kit/commit/d066ab05e69f4ba0a3d14d5f497a52975f24d81f))
-
+- add event listener in componentDidLoad ([d99524a](https://github.com/dyte-io/ui-kit/commit/d99524ab2f2cdbdddb6671972c0169e724c53383))
+- add private chat filter ([4654cf9](https://github.com/dyte-io/ui-kit/commit/4654cf963f0b80d39625f098334388e9a74ce645))
+- **debugger-i18n:** fixed the lack of i18n in debugger files ([3962e80](https://github.com/dyte-io/ui-kit/commit/3962e803a9e3526a617f70b7cf0e1078a73d87a3))
+- **debugger:** added jitter unit ([20ace1d](https://github.com/dyte-io/ui-kit/commit/20ace1d3051ef961adbe22aac15ed60c63661577))
+- **debugger:** fixed colors post status label refactoring ([502bd49](https://github.com/dyte-io/ui-kit/commit/502bd49a7492c0990f00cbac0e5119c82e79db8a))
+- **debugger:** fixed label, rounding battery percentage ([760726e](https://github.com/dyte-io/ui-kit/commit/760726e8275f96cd648290e5a7fb36addbebf829))
+- github action for staging updatE ([852cd6f](https://github.com/dyte-io/ui-kit/commit/852cd6fa14aecef5d8903a4f6d3a00d63d7374e0))
+- **livestream-viewer:** fixed some edge cases around playback, added logs for tracking ([210309b](https://github.com/dyte-io/ui-kit/commit/210309bd690a09552fea837fadf96f61be9f9f1e))
+- **participant-count-badge:** badge/pill was not showing the background color ([423e1f6](https://github.com/dyte-io/ui-kit/commit/423e1f660f25c5b9d4c4400b98c958ff341f2ae1))
+- **participants-tab-i18n:** fixed i18n issues in the participants tab ([100dbc0](https://github.com/dyte-io/ui-kit/commit/100dbc072b841e1614958276804cf44e50eb8543))
+- **participants:** participant menu list was not closing, actions were invisible for last 2 ([15ab76a](https://github.com/dyte-io/ui-kit/commit/15ab76a7011650ba0e7240fed39764519838603e))
+- remove IVS ([4be485e](https://github.com/dyte-io/ui-kit/commit/4be485e0844e5dfb259ad2cb759da79988d996b6))
+- remove socket service check ([1e1f3ee](https://github.com/dyte-io/ui-kit/commit/1e1f3eee6323102c6f1d84fcc20fa4abc5944c9f))
+- scroll lock in transcriptions ([71a9ca5](https://github.com/dyte-io/ui-kit/commit/71a9ca54e0b77ef765bcd20de678f8531dd3f5c2))
+- update web-core ([d066ab0](https://github.com/dyte-io/ui-kit/commit/d066ab05e69f4ba0a3d14d5f497a52975f24d81f))
 
 ### Features
 
-* **debugger:** added systems tab for battery - works in chromium only, hidden for others ([6042e9f](https://github.com/dyte-io/ui-kit/commit/6042e9f973f447a953b13b26336734c89b9602a7))
-* **debugger:** adding cpu and bandwidth limitations in debugger ([849eed4](https://github.com/dyte-io/ui-kit/commit/849eed436d85be3fdf105edd37636f9ccbfbd46c))
-* **internal:** livestream viewer with stats ([945e2b5](https://github.com/dyte-io/ui-kit/commit/945e2b56a00acf42f8591e3f62c686bde7947b27))
-* **internal:** showing badges against the participant tabs with respective count ([d3c7844](https://github.com/dyte-io/ui-kit/commit/d3c784491015d8a6b78b1c3e57d9b5ae1d6a9ed1))
-* **livestream:** show livestream viewers and stage list ([23b4040](https://github.com/dyte-io/ui-kit/commit/23b4040125d0435e7b80fc2f2b0a58a22e8f7b20))
-* **troubleshooter:** added basic troubleshooter ([21d9253](https://github.com/dyte-io/ui-kit/commit/21d92530fb08d4a21e8a2d2f71913a0f05465840))
+- **debugger:** added systems tab for battery - works in chromium only, hidden for others ([6042e9f](https://github.com/dyte-io/ui-kit/commit/6042e9f973f447a953b13b26336734c89b9602a7))
+- **debugger:** adding cpu and bandwidth limitations in debugger ([849eed4](https://github.com/dyte-io/ui-kit/commit/849eed436d85be3fdf105edd37636f9ccbfbd46c))
+- **internal:** livestream viewer with stats ([945e2b5](https://github.com/dyte-io/ui-kit/commit/945e2b56a00acf42f8591e3f62c686bde7947b27))
+- **internal:** showing badges against the participant tabs with respective count ([d3c7844](https://github.com/dyte-io/ui-kit/commit/d3c784491015d8a6b78b1c3e57d9b5ae1d6a9ed1))
+- **livestream:** show livestream viewers and stage list ([23b4040](https://github.com/dyte-io/ui-kit/commit/23b4040125d0435e7b80fc2f2b0a58a22e8f7b20))
+- **troubleshooter:** added basic troubleshooter ([21d9253](https://github.com/dyte-io/ui-kit/commit/21d92530fb08d4a21e8a2d2f71913a0f05465840))
 
 # [2.1.0-staging.46](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.45...@dyte-in/ui-kit-v2.1.0-staging.46) (2024-11-19)
 
-
 ### Bug Fixes
 
-* **debugger:** fixed label, rounding battery percentage ([760726e](https://github.com/dyte-io/ui-kit/commit/760726e8275f96cd648290e5a7fb36addbebf829))
+- **debugger:** fixed label, rounding battery percentage ([760726e](https://github.com/dyte-io/ui-kit/commit/760726e8275f96cd648290e5a7fb36addbebf829))
 
 # [2.1.0-staging.45](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.44...@dyte-in/ui-kit-v2.1.0-staging.45) (2024-11-19)
 
-
 ### Bug Fixes
 
-* **participants:** participant menu list was not closing, actions were invisible for last 2 ([15ab76a](https://github.com/dyte-io/ui-kit/commit/15ab76a7011650ba0e7240fed39764519838603e))
+- **participants:** participant menu list was not closing, actions were invisible for last 2 ([15ab76a](https://github.com/dyte-io/ui-kit/commit/15ab76a7011650ba0e7240fed39764519838603e))
 
 # [2.1.0-staging.44](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.43...@dyte-in/ui-kit-v2.1.0-staging.44) (2024-11-19)
 
-
 ### Bug Fixes
 
-* remove socket service flag check ([b4b3289](https://github.com/dyte-io/ui-kit/commit/b4b32897bd2f3fbd4e2b4aea8172550b8727dcca))
+- remove socket service flag check ([b4b3289](https://github.com/dyte-io/ui-kit/commit/b4b32897bd2f3fbd4e2b4aea8172550b8727dcca))
 
 # [2.1.0-staging.43](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.42...@dyte-in/ui-kit-v2.1.0-staging.43) (2024-11-14)
 
 ### Bug Fixes
-* **livestream-viewer:** fixed some edge cases around playback, added logs for tracking ([210309b](https://github.com/dyte-io/ui-kit/commit/210309bd690a09552fea837fadf96f61be9f9f1e))
 
+- **livestream-viewer:** fixed some edge cases around playback, added logs for tracking ([210309b](https://github.com/dyte-io/ui-kit/commit/210309bd690a09552fea837fadf96f61be9f9f1e))
 
 ### Features
 
-* **internal:** livestream viewer with stats ([945e2b5](https://github.com/dyte-io/ui-kit/commit/945e2b56a00acf42f8591e3f62c686bde7947b27))
+- **internal:** livestream viewer with stats ([945e2b5](https://github.com/dyte-io/ui-kit/commit/945e2b56a00acf42f8591e3f62c686bde7947b27))
 
 # [2.1.0-staging.42](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.41...@dyte-in/ui-kit-v2.1.0-staging.42) (2024-11-14)
 
-
 ### Bug Fixes
 
-* add event listener in componentDidLoad ([d99524a](https://github.com/dyte-io/ui-kit/commit/d99524ab2f2cdbdddb6671972c0169e724c53383))
+- add event listener in componentDidLoad ([d99524a](https://github.com/dyte-io/ui-kit/commit/d99524ab2f2cdbdddb6671972c0169e724c53383))
 
 # [2.1.0-staging.41](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.40...@dyte-in/ui-kit-v2.1.0-staging.41) (2024-11-14)
 
-
 ### Bug Fixes
 
-* scroll lock in transcriptions ([71a9ca5](https://github.com/dyte-io/ui-kit/commit/71a9ca54e0b77ef765bcd20de678f8531dd3f5c2))
+- scroll lock in transcriptions ([71a9ca5](https://github.com/dyte-io/ui-kit/commit/71a9ca54e0b77ef765bcd20de678f8531dd3f5c2))
 
 # [2.1.0-staging.40](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.39...@dyte-in/ui-kit-v2.1.0-staging.40) (2024-11-07)
 
-
 ### Bug Fixes
 
-* **participants-tab-i18n:** fixed i18n issues in the participants tab ([100dbc0](https://github.com/dyte-io/ui-kit/commit/100dbc072b841e1614958276804cf44e50eb8543))
+- **participants-tab-i18n:** fixed i18n issues in the participants tab ([100dbc0](https://github.com/dyte-io/ui-kit/commit/100dbc072b841e1614958276804cf44e50eb8543))
 
 # [2.1.0-staging.39](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.38...@dyte-in/ui-kit-v2.1.0-staging.39) (2024-11-07)
 
-
 ### Bug Fixes
 
-* remove socket service check ([1e1f3ee](https://github.com/dyte-io/ui-kit/commit/1e1f3eee6323102c6f1d84fcc20fa4abc5944c9f))
+- remove socket service check ([1e1f3ee](https://github.com/dyte-io/ui-kit/commit/1e1f3eee6323102c6f1d84fcc20fa4abc5944c9f))
 
 # [2.1.0-staging.38](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.37...@dyte-in/ui-kit-v2.1.0-staging.38) (2024-11-06)
 
-
 ### Bug Fixes
 
-* github action for staging updatE ([852cd6f](https://github.com/dyte-io/ui-kit/commit/852cd6fa14aecef5d8903a4f6d3a00d63d7374e0))
+- github action for staging updatE ([852cd6f](https://github.com/dyte-io/ui-kit/commit/852cd6fa14aecef5d8903a4f6d3a00d63d7374e0))
 
 # [2.1.0-staging.37](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.36...@dyte-in/ui-kit-v2.1.0-staging.37) (2024-11-06)
 
-
 ### Bug Fixes
 
-* **debugger-i18n:** fixed the lack of i18n in debugger files ([3962e80](https://github.com/dyte-io/ui-kit/commit/3962e803a9e3526a617f70b7cf0e1078a73d87a3))
+- **debugger-i18n:** fixed the lack of i18n in debugger files ([3962e80](https://github.com/dyte-io/ui-kit/commit/3962e803a9e3526a617f70b7cf0e1078a73d87a3))
 
 # [2.1.0-staging.36](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.35...@dyte-in/ui-kit-v2.1.0-staging.36) (2024-11-05)
 
-
 ### Features
 
-* **livestream:** show livestream viewers and stage list ([23b4040](https://github.com/dyte-io/ui-kit/commit/23b4040125d0435e7b80fc2f2b0a58a22e8f7b20))
+- **livestream:** show livestream viewers and stage list ([23b4040](https://github.com/dyte-io/ui-kit/commit/23b4040125d0435e7b80fc2f2b0a58a22e8f7b20))
 
 # [2.1.0-staging.35](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.34...@dyte-in/ui-kit-v2.1.0-staging.35) (2024-11-04)
 
-
 ### Bug Fixes
 
-* update web-core ([d066ab0](https://github.com/dyte-io/ui-kit/commit/d066ab05e69f4ba0a3d14d5f497a52975f24d81f))
+- update web-core ([d066ab0](https://github.com/dyte-io/ui-kit/commit/d066ab05e69f4ba0a3d14d5f497a52975f24d81f))
 
 # [2.1.0-staging.34](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.33...@dyte-in/ui-kit-v2.1.0-staging.34) (2024-11-04)
 
-
 ### Bug Fixes
 
-* **debugger:** added jitter unit ([20ace1d](https://github.com/dyte-io/ui-kit/commit/20ace1d3051ef961adbe22aac15ed60c63661577))
-* **debugger:** fixed colors post status label refactoring ([502bd49](https://github.com/dyte-io/ui-kit/commit/502bd49a7492c0990f00cbac0e5119c82e79db8a))
-
+- **debugger:** added jitter unit ([20ace1d](https://github.com/dyte-io/ui-kit/commit/20ace1d3051ef961adbe22aac15ed60c63661577))
+- **debugger:** fixed colors post status label refactoring ([502bd49](https://github.com/dyte-io/ui-kit/commit/502bd49a7492c0990f00cbac0e5119c82e79db8a))
 
 ### Features
 
-* **debugger:** added systems tab for battery - works in chromium only, hidden for others ([6042e9f](https://github.com/dyte-io/ui-kit/commit/6042e9f973f447a953b13b26336734c89b9602a7))
-* **debugger:** adding cpu and bandwidth limitations in debugger ([849eed4](https://github.com/dyte-io/ui-kit/commit/849eed436d85be3fdf105edd37636f9ccbfbd46c))
-* **troubleshooter:** added basic troubleshooter ([21d9253](https://github.com/dyte-io/ui-kit/commit/21d92530fb08d4a21e8a2d2f71913a0f05465840))
+- **debugger:** added systems tab for battery - works in chromium only, hidden for others ([6042e9f](https://github.com/dyte-io/ui-kit/commit/6042e9f973f447a953b13b26336734c89b9602a7))
+- **debugger:** adding cpu and bandwidth limitations in debugger ([849eed4](https://github.com/dyte-io/ui-kit/commit/849eed436d85be3fdf105edd37636f9ccbfbd46c))
+- **troubleshooter:** added basic troubleshooter ([21d9253](https://github.com/dyte-io/ui-kit/commit/21d92530fb08d4a21e8a2d2f71913a0f05465840))
 
 # [2.1.0-staging.33](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.32...@dyte-in/ui-kit-v2.1.0-staging.33) (2024-10-30)
 
-
 ### Bug Fixes
 
-* add private chat filter ([4654cf9](https://github.com/dyte-io/ui-kit/commit/4654cf963f0b80d39625f098334388e9a74ce645))
+- add private chat filter ([4654cf9](https://github.com/dyte-io/ui-kit/commit/4654cf963f0b80d39625f098334388e9a74ce645))
 
 # [2.1.0-staging.32](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.31...@dyte-in/ui-kit-v2.1.0-staging.32) (2024-10-30)
 
-
 ### Bug Fixes
 
-* remove IVS ([4be485e](https://github.com/dyte-io/ui-kit/commit/4be485e0844e5dfb259ad2cb759da79988d996b6))
+- remove IVS ([4be485e](https://github.com/dyte-io/ui-kit/commit/4be485e0844e5dfb259ad2cb759da79988d996b6))
 
 # [2.1.0-staging.31](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.30...@dyte-in/ui-kit-v2.1.0-staging.31) (2024-10-24)
 
-
 ### Bug Fixes
 
-* **participant-count-badge:** badge/pill was not showing the background color ([423e1f6](https://github.com/dyte-io/ui-kit/commit/423e1f660f25c5b9d4c4400b98c958ff341f2ae1))
-
+- **participant-count-badge:** badge/pill was not showing the background color ([423e1f6](https://github.com/dyte-io/ui-kit/commit/423e1f660f25c5b9d4c4400b98c958ff341f2ae1))
 
 ### Features
 
-* **internal:** showing badges against the participant tabs with respective count ([d3c7844](https://github.com/dyte-io/ui-kit/commit/d3c784491015d8a6b78b1c3e57d9b5ae1d6a9ed1))
+- **internal:** showing badges against the participant tabs with respective count ([d3c7844](https://github.com/dyte-io/ui-kit/commit/d3c784491015d8a6b78b1c3e57d9b5ae1d6a9ed1))
 
 ## [2.0.6](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.0.5...@dyte-in/ui-kit-v2.0.6) (2024-11-04)
-* remove socket service flag check ([b4b3289](https://github.com/dyte-io/ui-kit/commit/b4b32897bd2f3fbd4e2b4aea8172550b8727dcca))
+
+- remove socket service flag check ([b4b3289](https://github.com/dyte-io/ui-kit/commit/b4b32897bd2f3fbd4e2b4aea8172550b8727dcca))
 
 ## [2.0.5](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.0.4...@dyte-in/ui-kit-v2.0.5) (2024-10-08)
 
-
 ### Bug Fixes
 
-* update device selector state as per media permission state ([655a505](https://github.com/dyte-io/ui-kit/commit/655a505f0c5fd01d71d4720b0d720b324fd126ff))
+- update device selector state as per media permission state ([655a505](https://github.com/dyte-io/ui-kit/commit/655a505f0c5fd01d71d4720b0d720b324fd126ff))
 
 # [2.1.0-staging.30](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.29...@dyte-in/ui-kit-v2.1.0-staging.30) (2024-10-07)
 
-
 ### Bug Fixes
 
-* build trigger ([4899df0](https://github.com/dyte-io/ui-kit/commit/4899df04225ab39e4bf0bce48f0d2ab3d208e1bc))
-* update device selector state as per media permission state ([655a505](https://github.com/dyte-io/ui-kit/commit/655a505f0c5fd01d71d4720b0d720b324fd126ff))
+- build trigger ([4899df0](https://github.com/dyte-io/ui-kit/commit/4899df04225ab39e4bf0bce48f0d2ab3d208e1bc))
+- update device selector state as per media permission state ([655a505](https://github.com/dyte-io/ui-kit/commit/655a505f0c5fd01d71d4720b0d720b324fd126ff))
 
 ## [2.0.4](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.0.3...@dyte-in/ui-kit-v2.0.4) (2024-10-02)
 
-
 ### Bug Fixes
 
-* build trigger ([4899df0](https://github.com/dyte-io/ui-kit/commit/4899df04225ab39e4bf0bce48f0d2ab3d208e1bc))
+- build trigger ([4899df0](https://github.com/dyte-io/ui-kit/commit/4899df04225ab39e4bf0bce48f0d2ab3d208e1bc))
 
 # 1.0.0 (2024-10-02)
 
-
 ### Bug Fixes
 
-* access to npm publish ([6508322](https://github.com/dyte-io/ui-kit/commit/6508322cd8ed3305e539c348505a8ac79cfd1a4a))
-* added action step to auto-update staging branch ([6ff7104](https://github.com/dyte-io/ui-kit/commit/6ff7104afd6aa94dad677f66cf8be4203bd6dd41))
-* added checkout on pr-comment ([50c11cb](https://github.com/dyte-io/ui-kit/commit/50c11cb0f0fc34f275e7d05bb59fe521d24fdf93))
-* always deploy staging web-core ([f0c4713](https://github.com/dyte-io/ui-kit/commit/f0c47138eecbc90090340cbb27e3fb0ed0c03159))
-* create patch release ([82237b1](https://github.com/dyte-io/ui-kit/commit/82237b1801540656ebc72466984ed71b29984c60))
-* create release ([c41905a](https://github.com/dyte-io/ui-kit/commit/c41905a7ad5c291b06a8b7479ae89c851dd797d5))
-* create release ([128b2a8](https://github.com/dyte-io/ui-kit/commit/128b2a8950dda0a6c16bc28d632a0b7c295181f9))
-* create release ([7c74b86](https://github.com/dyte-io/ui-kit/commit/7c74b864e839bc35557e46ace3eee02e0b5540e9))
-* create release ([eaafee2](https://github.com/dyte-io/ui-kit/commit/eaafee2642ae390f36e425743c23cb9c39e350d4))
-* github actions build step ([804d011](https://github.com/dyte-io/ui-kit/commit/804d0118847e9a2edfcdbffd31cfed3d3ac4e385))
-* github actions deploy ([c6f4e24](https://github.com/dyte-io/ui-kit/commit/c6f4e24f93749e9c153f012065ab1295a6be8dd0))
-* move pip controls to web-core ([1250d9a](https://github.com/dyte-io/ui-kit/commit/1250d9a991f5c4906d2ab9367b7f12d075b9de9f))
-* **off-stage-actions:** mic and camera toggle should not be shown off stage ([23ae96d](https://github.com/dyte-io/ui-kit/commit/23ae96d9fe494424d8cea0b0fd680de8b559eb25))
-* **offstage-screenshare:** permission update for screenshare was causing toggle to show up off stage ([4485515](https://github.com/dyte-io/ui-kit/commit/4485515faef3086d046e18ba652e89325f0764b7))
-* patch release ([db325af](https://github.com/dyte-io/ui-kit/commit/db325af9326cdf7487e7043b34b2852acf557a3b))
-* patch release ([c084560](https://github.com/dyte-io/ui-kit/commit/c084560861d4845b963e645a7eeb7a467c3d1049))
-* pip misc bugs ([8d3c213](https://github.com/dyte-io/ui-kit/commit/8d3c21382cc9b2101ca632b71245640b877cba0e))
-* public repo final release ([89190db](https://github.com/dyte-io/ui-kit/commit/89190dba661f84554de174af0a84d6573b74a76d))
-* publish using lerna ([1b072c2](https://github.com/dyte-io/ui-kit/commit/1b072c2de1a6154fd62510926637e06d6d0c5135))
-* push avatar behind the video element ([8a1b1d7](https://github.com/dyte-io/ui-kit/commit/8a1b1d7da68fe45642c8341b112f63b4b58f595c))
-* register video element on video re renders ([725fb96](https://github.com/dyte-io/ui-kit/commit/725fb968a883e734560597e20930a9402003c678))
-* render preview video with new render API ([66903a0](https://github.com/dyte-io/ui-kit/commit/66903a07a7fd174e79c4eba7cc4ccf62b2237eb5))
-* run npm i and npm i --ws ([46eeeae](https://github.com/dyte-io/ui-kit/commit/46eeeaeffa3abf86a054a44569cdf34dcb8fed0a))
-* run npm i inside workspaces ([4aa2968](https://github.com/dyte-io/ui-kit/commit/4aa2968fc42eb431a67043c1307211a76ebacd05))
-* toggle controlbar icon on dynamic permission change ([478e92d](https://github.com/dyte-io/ui-kit/commit/478e92d094a8608f32cb70dd883d7c294d924701))
-* update web-core version ([eb497d9](https://github.com/dyte-io/ui-kit/commit/eb497d958ad034b12931c38e3e56143fa3b690a6))
-* update z-index for dyte-avatar ([2f1ff72](https://github.com/dyte-io/ui-kit/commit/2f1ff7286af084310d8f4286e973eb066bcf55cf))
-* upgrade web-core ([3aebb6c](https://github.com/dyte-io/ui-kit/commit/3aebb6c58b6f9331b84c0ee8639b6942222a4fb1))
-* use absolute dimensions for avatar ([d9da4ed](https://github.com/dyte-io/ui-kit/commit/d9da4ed5eee984105b7efcf1eed94797a458c2d0))
-
+- access to npm publish ([6508322](https://github.com/dyte-io/ui-kit/commit/6508322cd8ed3305e539c348505a8ac79cfd1a4a))
+- added action step to auto-update staging branch ([6ff7104](https://github.com/dyte-io/ui-kit/commit/6ff7104afd6aa94dad677f66cf8be4203bd6dd41))
+- added checkout on pr-comment ([50c11cb](https://github.com/dyte-io/ui-kit/commit/50c11cb0f0fc34f275e7d05bb59fe521d24fdf93))
+- always deploy staging web-core ([f0c4713](https://github.com/dyte-io/ui-kit/commit/f0c47138eecbc90090340cbb27e3fb0ed0c03159))
+- create patch release ([82237b1](https://github.com/dyte-io/ui-kit/commit/82237b1801540656ebc72466984ed71b29984c60))
+- create release ([c41905a](https://github.com/dyte-io/ui-kit/commit/c41905a7ad5c291b06a8b7479ae89c851dd797d5))
+- create release ([128b2a8](https://github.com/dyte-io/ui-kit/commit/128b2a8950dda0a6c16bc28d632a0b7c295181f9))
+- create release ([7c74b86](https://github.com/dyte-io/ui-kit/commit/7c74b864e839bc35557e46ace3eee02e0b5540e9))
+- create release ([eaafee2](https://github.com/dyte-io/ui-kit/commit/eaafee2642ae390f36e425743c23cb9c39e350d4))
+- github actions build step ([804d011](https://github.com/dyte-io/ui-kit/commit/804d0118847e9a2edfcdbffd31cfed3d3ac4e385))
+- github actions deploy ([c6f4e24](https://github.com/dyte-io/ui-kit/commit/c6f4e24f93749e9c153f012065ab1295a6be8dd0))
+- move pip controls to web-core ([1250d9a](https://github.com/dyte-io/ui-kit/commit/1250d9a991f5c4906d2ab9367b7f12d075b9de9f))
+- **off-stage-actions:** mic and camera toggle should not be shown off stage ([23ae96d](https://github.com/dyte-io/ui-kit/commit/23ae96d9fe494424d8cea0b0fd680de8b559eb25))
+- **offstage-screenshare:** permission update for screenshare was causing toggle to show up off stage ([4485515](https://github.com/dyte-io/ui-kit/commit/4485515faef3086d046e18ba652e89325f0764b7))
+- patch release ([db325af](https://github.com/dyte-io/ui-kit/commit/db325af9326cdf7487e7043b34b2852acf557a3b))
+- patch release ([c084560](https://github.com/dyte-io/ui-kit/commit/c084560861d4845b963e645a7eeb7a467c3d1049))
+- pip misc bugs ([8d3c213](https://github.com/dyte-io/ui-kit/commit/8d3c21382cc9b2101ca632b71245640b877cba0e))
+- public repo final release ([89190db](https://github.com/dyte-io/ui-kit/commit/89190dba661f84554de174af0a84d6573b74a76d))
+- publish using lerna ([1b072c2](https://github.com/dyte-io/ui-kit/commit/1b072c2de1a6154fd62510926637e06d6d0c5135))
+- push avatar behind the video element ([8a1b1d7](https://github.com/dyte-io/ui-kit/commit/8a1b1d7da68fe45642c8341b112f63b4b58f595c))
+- register video element on video re renders ([725fb96](https://github.com/dyte-io/ui-kit/commit/725fb968a883e734560597e20930a9402003c678))
+- render preview video with new render API ([66903a0](https://github.com/dyte-io/ui-kit/commit/66903a07a7fd174e79c4eba7cc4ccf62b2237eb5))
+- run npm i and npm i --ws ([46eeeae](https://github.com/dyte-io/ui-kit/commit/46eeeaeffa3abf86a054a44569cdf34dcb8fed0a))
+- run npm i inside workspaces ([4aa2968](https://github.com/dyte-io/ui-kit/commit/4aa2968fc42eb431a67043c1307211a76ebacd05))
+- toggle controlbar icon on dynamic permission change ([478e92d](https://github.com/dyte-io/ui-kit/commit/478e92d094a8608f32cb70dd883d7c294d924701))
+- update web-core version ([eb497d9](https://github.com/dyte-io/ui-kit/commit/eb497d958ad034b12931c38e3e56143fa3b690a6))
+- update z-index for dyte-avatar ([2f1ff72](https://github.com/dyte-io/ui-kit/commit/2f1ff7286af084310d8f4286e973eb066bcf55cf))
+- upgrade web-core ([3aebb6c](https://github.com/dyte-io/ui-kit/commit/3aebb6c58b6f9331b84c0ee8639b6942222a4fb1))
+- use absolute dimensions for avatar ([d9da4ed](https://github.com/dyte-io/ui-kit/commit/d9da4ed5eee984105b7efcf1eed94797a458c2d0))
 
 ### Features
 
-* added ui-kit public source ([becdf7d](https://github.com/dyte-io/ui-kit/commit/becdf7d3eb6bdf5a2c023a426d10e8bc06852369))
-* feature release ([ca643ff](https://github.com/dyte-io/ui-kit/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
-* feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
-* feature release ([5dc0f57](https://github.com/dyte-io/ui-kit/commit/5dc0f575cca6a8918e1bd740a115ad0d842cdabc))
-* improve macos permission messages ([1dc9735](https://github.com/dyte-io/ui-kit/commit/1dc973560b076ad58515a41c223ef1031934f4f9))
-* initial commit ([a31f52c](https://github.com/dyte-io/ui-kit/commit/a31f52c2cab444fbd0f10d2219a790cf09ae23ea))
-* **internal:** added ability to show view only public chat ([17d8b7a](https://github.com/dyte-io/ui-kit/commit/17d8b7a80c9abd169cbfacda19c62177259dd20c))
-* npm publish set to true ([c4d367b](https://github.com/dyte-io/ui-kit/commit/c4d367b13d0dc48522fca7181b0e080d22ad3730))
-* **release:** created new package release ([f0eb31e](https://github.com/dyte-io/ui-kit/commit/f0eb31eca4e1bd6f04cfee1854f8ad195fee0959))
-* **release:** created new package release ([9ef1088](https://github.com/dyte-io/ui-kit/commit/9ef10883a7078730f3d099c6a62baec53eda7caa))
-* **release:** created new package release ([6bfa5df](https://github.com/dyte-io/ui-kit/commit/6bfa5dfe7ff1fd144b7b1bc0026ded492052f3d1))
-* **release:** update package version ([00b2690](https://github.com/dyte-io/ui-kit/commit/00b2690f6697f3fed5cf245a2b8f3994f0c2a87c))
+- added ui-kit public source ([becdf7d](https://github.com/dyte-io/ui-kit/commit/becdf7d3eb6bdf5a2c023a426d10e8bc06852369))
+- feature release ([ca643ff](https://github.com/dyte-io/ui-kit/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
+- feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
+- feature release ([5dc0f57](https://github.com/dyte-io/ui-kit/commit/5dc0f575cca6a8918e1bd740a115ad0d842cdabc))
+- improve macos permission messages ([1dc9735](https://github.com/dyte-io/ui-kit/commit/1dc973560b076ad58515a41c223ef1031934f4f9))
+- initial commit ([a31f52c](https://github.com/dyte-io/ui-kit/commit/a31f52c2cab444fbd0f10d2219a790cf09ae23ea))
+- **internal:** added ability to show view only public chat ([17d8b7a](https://github.com/dyte-io/ui-kit/commit/17d8b7a80c9abd169cbfacda19c62177259dd20c))
+- npm publish set to true ([c4d367b](https://github.com/dyte-io/ui-kit/commit/c4d367b13d0dc48522fca7181b0e080d22ad3730))
+- **release:** created new package release ([f0eb31e](https://github.com/dyte-io/ui-kit/commit/f0eb31eca4e1bd6f04cfee1854f8ad195fee0959))
+- **release:** created new package release ([9ef1088](https://github.com/dyte-io/ui-kit/commit/9ef10883a7078730f3d099c6a62baec53eda7caa))
+- **release:** created new package release ([6bfa5df](https://github.com/dyte-io/ui-kit/commit/6bfa5dfe7ff1fd144b7b1bc0026ded492052f3d1))
+- **release:** update package version ([00b2690](https://github.com/dyte-io/ui-kit/commit/00b2690f6697f3fed5cf245a2b8f3994f0c2a87c))
 
 # [2.1.0-staging.29](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.28...@dyte-in/ui-kit-v2.1.0-staging.29) (2024-10-02)
 
-
 ### Features
 
-* improve macos permission messages ([1dc9735](https://github.com/dyte-io/ui-kit/commit/1dc973560b076ad58515a41c223ef1031934f4f9))
+- improve macos permission messages ([1dc9735](https://github.com/dyte-io/ui-kit/commit/1dc973560b076ad58515a41c223ef1031934f4f9))
 
 # [2.1.0-staging.28](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.27...@dyte-in/ui-kit-v2.1.0-staging.28) (2024-10-01)
 
-
 ### Bug Fixes
 
-* use absolute dimensions for avatar ([d9da4ed](https://github.com/dyte-io/ui-kit/commit/d9da4ed5eee984105b7efcf1eed94797a458c2d0))
+- use absolute dimensions for avatar ([d9da4ed](https://github.com/dyte-io/ui-kit/commit/d9da4ed5eee984105b7efcf1eed94797a458c2d0))
 
 # [2.1.0-staging.27](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.26...@dyte-in/ui-kit-v2.1.0-staging.27) (2024-10-01)
 
-
 ### Bug Fixes
 
-* update z-index for dyte-avatar ([2f1ff72](https://github.com/dyte-io/ui-kit/commit/2f1ff7286af084310d8f4286e973eb066bcf55cf))
+- update z-index for dyte-avatar ([2f1ff72](https://github.com/dyte-io/ui-kit/commit/2f1ff7286af084310d8f4286e973eb066bcf55cf))
 
 # [2.1.0-staging.26](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.25...@dyte-in/ui-kit-v2.1.0-staging.26) (2024-10-01)
 
-
 ### Bug Fixes
 
-* always deploy staging web-core ([f0c4713](https://github.com/dyte-io/ui-kit/commit/f0c47138eecbc90090340cbb27e3fb0ed0c03159))
+- always deploy staging web-core ([f0c4713](https://github.com/dyte-io/ui-kit/commit/f0c47138eecbc90090340cbb27e3fb0ed0c03159))
 
 # [2.1.0-staging.25](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.24...@dyte-in/ui-kit-v2.1.0-staging.25) (2024-10-01)
 
-
 ### Bug Fixes
 
-* pip misc bugs ([8d3c213](https://github.com/dyte-io/ui-kit/commit/8d3c21382cc9b2101ca632b71245640b877cba0e))
+- pip misc bugs ([8d3c213](https://github.com/dyte-io/ui-kit/commit/8d3c21382cc9b2101ca632b71245640b877cba0e))
 
 # [2.1.0-staging.24](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.23...@dyte-in/ui-kit-v2.1.0-staging.24) (2024-09-28)
 
-
 ### Bug Fixes
 
-* render preview video with new render API ([66903a0](https://github.com/dyte-io/ui-kit/commit/66903a07a7fd174e79c4eba7cc4ccf62b2237eb5))
+- render preview video with new render API ([66903a0](https://github.com/dyte-io/ui-kit/commit/66903a07a7fd174e79c4eba7cc4ccf62b2237eb5))
 
 # [2.1.0-staging.23](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.22...@dyte-in/ui-kit-v2.1.0-staging.23) (2024-09-27)
 
-
 ### Bug Fixes
 
-* register video element on video re renders ([725fb96](https://github.com/dyte-io/ui-kit/commit/725fb968a883e734560597e20930a9402003c678))
+- register video element on video re renders ([725fb96](https://github.com/dyte-io/ui-kit/commit/725fb968a883e734560597e20930a9402003c678))
 
 # [2.1.0-staging.22](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.21...@dyte-in/ui-kit-v2.1.0-staging.22) (2024-09-27)
 
-
 ### Bug Fixes
 
-* upgrade web-core ([3aebb6c](https://github.com/dyte-io/ui-kit/commit/3aebb6c58b6f9331b84c0ee8639b6942222a4fb1))
+- upgrade web-core ([3aebb6c](https://github.com/dyte-io/ui-kit/commit/3aebb6c58b6f9331b84c0ee8639b6942222a4fb1))
 
 # [2.1.0-staging.21](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.20...@dyte-in/ui-kit-v2.1.0-staging.21) (2024-09-27)
 
-
 ### Bug Fixes
 
-* push avatar behind the video element ([8a1b1d7](https://github.com/dyte-io/ui-kit/commit/8a1b1d7da68fe45642c8341b112f63b4b58f595c))
+- push avatar behind the video element ([8a1b1d7](https://github.com/dyte-io/ui-kit/commit/8a1b1d7da68fe45642c8341b112f63b4b58f595c))
 
 # [2.1.0-staging.20](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.19...@dyte-in/ui-kit-v2.1.0-staging.20) (2024-09-26)
 
-
 ### Bug Fixes
 
-* run npm i and npm i --ws ([46eeeae](https://github.com/dyte-io/ui-kit/commit/46eeeaeffa3abf86a054a44569cdf34dcb8fed0a))
-* run npm i inside workspaces ([4aa2968](https://github.com/dyte-io/ui-kit/commit/4aa2968fc42eb431a67043c1307211a76ebacd05))
+- run npm i and npm i --ws ([46eeeae](https://github.com/dyte-io/ui-kit/commit/46eeeaeffa3abf86a054a44569cdf34dcb8fed0a))
+- run npm i inside workspaces ([4aa2968](https://github.com/dyte-io/ui-kit/commit/4aa2968fc42eb431a67043c1307211a76ebacd05))
 
 # [2.1.0-staging.19](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.18...@dyte-in/ui-kit-v2.1.0-staging.19) (2024-09-26)
 
-
 ### Bug Fixes
 
-* added checkout on pr-comment ([50c11cb](https://github.com/dyte-io/ui-kit/commit/50c11cb0f0fc34f275e7d05bb59fe521d24fdf93))
-* github actions build step ([804d011](https://github.com/dyte-io/ui-kit/commit/804d0118847e9a2edfcdbffd31cfed3d3ac4e385))
+- added checkout on pr-comment ([50c11cb](https://github.com/dyte-io/ui-kit/commit/50c11cb0f0fc34f275e7d05bb59fe521d24fdf93))
+- github actions build step ([804d011](https://github.com/dyte-io/ui-kit/commit/804d0118847e9a2edfcdbffd31cfed3d3ac4e385))
 
 # [2.1.0-staging.18](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.17...@dyte-in/ui-kit-v2.1.0-staging.18) (2024-09-26)
 
-
 ### Bug Fixes
 
-* github actions deploy ([c6f4e24](https://github.com/dyte-io/ui-kit/commit/c6f4e24f93749e9c153f012065ab1295a6be8dd0))
+- github actions deploy ([c6f4e24](https://github.com/dyte-io/ui-kit/commit/c6f4e24f93749e9c153f012065ab1295a6be8dd0))
 
 # [2.1.0-staging.17](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.16...@dyte-in/ui-kit-v2.1.0-staging.17) (2024-09-26)
 
-
 ### Bug Fixes
 
-* update web-core version ([eb497d9](https://github.com/dyte-io/ui-kit/commit/eb497d958ad034b12931c38e3e56143fa3b690a6))
+- update web-core version ([eb497d9](https://github.com/dyte-io/ui-kit/commit/eb497d958ad034b12931c38e3e56143fa3b690a6))
 
 # [2.1.0-staging.16](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.15...@dyte-in/ui-kit-v2.1.0-staging.16) (2024-09-25)
 
-
 ### Bug Fixes
 
-* move pip controls to web-core ([1250d9a](https://github.com/dyte-io/ui-kit/commit/1250d9a991f5c4906d2ab9367b7f12d075b9de9f))
+- move pip controls to web-core ([1250d9a](https://github.com/dyte-io/ui-kit/commit/1250d9a991f5c4906d2ab9367b7f12d075b9de9f))
 
 # [2.1.0-staging.15](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.14...@dyte-in/ui-kit-v2.1.0-staging.15) (2024-09-25)
 
-
 ### Bug Fixes
 
-* **off-stage-actions:** mic and camera toggle should not be shown off stage ([23ae96d](https://github.com/dyte-io/ui-kit/commit/23ae96d9fe494424d8cea0b0fd680de8b559eb25))
-* **offstage-screenshare:** permission update for screenshare was causing toggle to show up off stage ([4485515](https://github.com/dyte-io/ui-kit/commit/4485515faef3086d046e18ba652e89325f0764b7))
-
+- **off-stage-actions:** mic and camera toggle should not be shown off stage ([23ae96d](https://github.com/dyte-io/ui-kit/commit/23ae96d9fe494424d8cea0b0fd680de8b559eb25))
+- **offstage-screenshare:** permission update for screenshare was causing toggle to show up off stage ([4485515](https://github.com/dyte-io/ui-kit/commit/4485515faef3086d046e18ba652e89325f0764b7))
 
 ### Features
 
-* **internal:** added ability to show view only public chat ([17d8b7a](https://github.com/dyte-io/ui-kit/commit/17d8b7a80c9abd169cbfacda19c62177259dd20c))
+- **internal:** added ability to show view only public chat ([17d8b7a](https://github.com/dyte-io/ui-kit/commit/17d8b7a80c9abd169cbfacda19c62177259dd20c))
 
 # [2.1.0-staging.14](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.13...@dyte-in/ui-kit-v2.1.0-staging.14) (2024-09-23)
 
-
 ### Bug Fixes
 
-* toggle controlbar icon on dynamic permission change ([478e92d](https://github.com/dyte-io/ui-kit/commit/478e92d094a8608f32cb70dd883d7c294d924701))
+- toggle controlbar icon on dynamic permission change ([478e92d](https://github.com/dyte-io/ui-kit/commit/478e92d094a8608f32cb70dd883d7c294d924701))
 
 # [2.1.0-staging.13](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.12...@dyte-in/ui-kit-v2.1.0-staging.13) (2024-09-18)
 
-
 ### Bug Fixes
 
-* added action step to auto-update staging branch ([6ff7104](https://github.com/dyte-io/ui-kit/commit/6ff7104afd6aa94dad677f66cf8be4203bd6dd41))
+- added action step to auto-update staging branch ([6ff7104](https://github.com/dyte-io/ui-kit/commit/6ff7104afd6aa94dad677f66cf8be4203bd6dd41))
 
 # [2.1.0-staging.12](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.11...@dyte-in/ui-kit-v2.1.0-staging.12) (2024-09-18)
 
-
 ### Bug Fixes
 
-* public repo final release ([89190db](https://github.com/dyte-io/ui-kit/commit/89190dba661f84554de174af0a84d6573b74a76d))
+- public repo final release ([89190db](https://github.com/dyte-io/ui-kit/commit/89190dba661f84554de174af0a84d6573b74a76d))
 
 # [2.1.0-staging.11](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.10...@dyte-in/ui-kit-v2.1.0-staging.11) (2024-09-18)
 
-
 ### Bug Fixes
 
-* create release ([c41905a](https://github.com/dyte-io/ui-kit/commit/c41905a7ad5c291b06a8b7479ae89c851dd797d5))
+- create release ([c41905a](https://github.com/dyte-io/ui-kit/commit/c41905a7ad5c291b06a8b7479ae89c851dd797d5))
 
 # [2.1.0-staging.10](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.9...@dyte-in/ui-kit-v2.1.0-staging.10) (2024-09-18)
 
-
 ### Bug Fixes
 
-* access to npm publish ([6508322](https://github.com/dyte-io/ui-kit/commit/6508322cd8ed3305e539c348505a8ac79cfd1a4a))
+- access to npm publish ([6508322](https://github.com/dyte-io/ui-kit/commit/6508322cd8ed3305e539c348505a8ac79cfd1a4a))
 
 # [2.1.0-staging.9](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.8...@dyte-in/ui-kit-v2.1.0-staging.9) (2024-09-18)
 
-
 ### Bug Fixes
 
-* create release ([128b2a8](https://github.com/dyte-io/ui-kit/commit/128b2a8950dda0a6c16bc28d632a0b7c295181f9))
+- create release ([128b2a8](https://github.com/dyte-io/ui-kit/commit/128b2a8950dda0a6c16bc28d632a0b7c295181f9))
 
 # [2.1.0-staging.8](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.7...@dyte-in/ui-kit-v2.1.0-staging.8) (2024-09-17)
 
-
 ### Bug Fixes
 
-* create release ([7c74b86](https://github.com/dyte-io/ui-kit/commit/7c74b864e839bc35557e46ace3eee02e0b5540e9))
+- create release ([7c74b86](https://github.com/dyte-io/ui-kit/commit/7c74b864e839bc35557e46ace3eee02e0b5540e9))
 
 # [2.1.0-staging.7](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.6...@dyte-in/ui-kit-v2.1.0-staging.7) (2024-09-17)
 
-
 ### Bug Fixes
 
-* publish using lerna ([1b072c2](https://github.com/dyte-io/ui-kit/commit/1b072c2de1a6154fd62510926637e06d6d0c5135))
+- publish using lerna ([1b072c2](https://github.com/dyte-io/ui-kit/commit/1b072c2de1a6154fd62510926637e06d6d0c5135))
 
 # [2.1.0-staging.6](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.5...@dyte-in/ui-kit-v2.1.0-staging.6) (2024-09-17)
 
-
 ### Bug Fixes
 
-* create release ([eaafee2](https://github.com/dyte-io/ui-kit/commit/eaafee2642ae390f36e425743c23cb9c39e350d4))
+- create release ([eaafee2](https://github.com/dyte-io/ui-kit/commit/eaafee2642ae390f36e425743c23cb9c39e350d4))
 
 # [2.1.0-staging.5](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.4...@dyte-in/ui-kit-v2.1.0-staging.5) (2024-09-17)
 
-
 ### Features
 
-* **release:** created new package release ([f0eb31e](https://github.com/dyte-io/ui-kit/commit/f0eb31eca4e1bd6f04cfee1854f8ad195fee0959))
-* **release:** update package version ([00b2690](https://github.com/dyte-io/ui-kit/commit/00b2690f6697f3fed5cf245a2b8f3994f0c2a87c))
+- **release:** created new package release ([f0eb31e](https://github.com/dyte-io/ui-kit/commit/f0eb31eca4e1bd6f04cfee1854f8ad195fee0959))
+- **release:** update package version ([00b2690](https://github.com/dyte-io/ui-kit/commit/00b2690f6697f3fed5cf245a2b8f3994f0c2a87c))
 
 # [2.1.0-staging.4](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.3...@dyte-in/ui-kit-v2.1.0-staging.4) (2024-09-17)
 
-
 ### Features
 
-* feature release ([ca643ff](https://github.com/dyte-io/ui-kit/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
-* feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
-* **release:** created new package release ([9ef1088](https://github.com/dyte-io/ui-kit/commit/9ef10883a7078730f3d099c6a62baec53eda7caa))
-* **release:** created new package release ([6bfa5df](https://github.com/dyte-io/ui-kit/commit/6bfa5dfe7ff1fd144b7b1bc0026ded492052f3d1))
+- feature release ([ca643ff](https://github.com/dyte-io/ui-kit/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
+- feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
+- **release:** created new package release ([9ef1088](https://github.com/dyte-io/ui-kit/commit/9ef10883a7078730f3d099c6a62baec53eda7caa))
+- **release:** created new package release ([6bfa5df](https://github.com/dyte-io/ui-kit/commit/6bfa5dfe7ff1fd144b7b1bc0026ded492052f3d1))
 
 # [2.1.0-staging.4](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.3...@dyte-in/ui-kit-v2.1.0-staging.4) (2024-09-17)
 
-
 ### Features
 
-* feature release ([ca643ff](https://github.com/dyte-io/ui-kit/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
-* feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
-* **release:** created new package release ([6bfa5df](https://github.com/dyte-io/ui-kit/commit/6bfa5dfe7ff1fd144b7b1bc0026ded492052f3d1))
+- feature release ([ca643ff](https://github.com/dyte-io/ui-kit/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
+- feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
+- **release:** created new package release ([6bfa5df](https://github.com/dyte-io/ui-kit/commit/6bfa5dfe7ff1fd144b7b1bc0026ded492052f3d1))
 
 # [2.1.0-staging.4](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.3...@dyte-in/ui-kit-v2.1.0-staging.4) (2024-09-17)
 
-
 ### Features
 
-* feature release ([ca643ff](https://github.com/dyte-io/ui-kit/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
-* feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
+- feature release ([ca643ff](https://github.com/dyte-io/ui-kit/commit/ca643ffe0075e72b5e17b8f89dbb7f690a7f1b80))
+- feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
 
 # [2.1.0-staging.4](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.3...@dyte-in/ui-kit-v2.1.0-staging.4) (2024-09-17)
 
-
 ### Features
 
-* feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
+- feature release ([661ff63](https://github.com/dyte-io/ui-kit/commit/661ff633a363fcb5d1ee38b0dccdc28a124a0e4f))
 
 # [2.1.0-staging.3](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.2...@dyte-in/ui-kit-v2.1.0-staging.3) (2024-09-17)
 
-
 ### Features
 
-* feature release ([5dc0f57](https://github.com/dyte-io/ui-kit/commit/5dc0f575cca6a8918e1bd740a115ad0d842cdabc))
+- feature release ([5dc0f57](https://github.com/dyte-io/ui-kit/commit/5dc0f575cca6a8918e1bd740a115ad0d842cdabc))
 
 # [2.1.0-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.1...@dyte-in/ui-kit-v2.1.0-staging.2) (2024-09-17)
 
-
 ### Features
 
-* npm publish set to true ([c4d367b](https://github.com/dyte-io/ui-kit/commit/c4d367b13d0dc48522fca7181b0e080d22ad3730))
+- npm publish set to true ([c4d367b](https://github.com/dyte-io/ui-kit/commit/c4d367b13d0dc48522fca7181b0e080d22ad3730))
 
 # [2.1.0-staging.1](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v1.0.0-staging.2...@dyte-in/ui-kit-v2.1.0-staging.1) (2024-09-17)
 
-
 ### Bug Fixes
 
-* patch release ([db325af](https://github.com/dyte-io/ui-kit/commit/db325af9326cdf7487e7043b34b2852acf557a3b))
+- patch release ([db325af](https://github.com/dyte-io/ui-kit/commit/db325af9326cdf7487e7043b34b2852acf557a3b))
 
 # [1.0.0-staging.2](https://github.com/dyte-io/ui-kit/compare/@dyte-in/ui-kit-v1.0.0-staging.1...@dyte-in/ui-kit-v1.0.0-staging.2) (2024-09-17)
 
-
 ### Bug Fixes
 
-* create patch release ([82237b1](https://github.com/dyte-io/ui-kit/commit/82237b1801540656ebc72466984ed71b29984c60))
-* patch release ([c084560](https://github.com/dyte-io/ui-kit/commit/c084560861d4845b963e645a7eeb7a467c3d1049))
+- create patch release ([82237b1](https://github.com/dyte-io/ui-kit/commit/82237b1801540656ebc72466984ed71b29984c60))
+- patch release ([c084560](https://github.com/dyte-io/ui-kit/commit/c084560861d4845b963e645a7eeb7a467c3d1049))
 
 # 1.0.0-staging.1 (2024-09-17)
 
-
 ### Features
 
-* added ui-kit public source ([becdf7d](https://github.com/dyte-io/ui-kit/commit/becdf7d3eb6bdf5a2c023a426d10e8bc06852369))
-* initial commit ([a31f52c](https://github.com/dyte-io/ui-kit/commit/a31f52c2cab444fbd0f10d2219a790cf09ae23ea))
+- added ui-kit public source ([becdf7d](https://github.com/dyte-io/ui-kit/commit/becdf7d3eb6bdf5a2c023a426d10e8bc06852369))
+- initial commit ([a31f52c](https://github.com/dyte-io/ui-kit/commit/a31f52c2cab444fbd0f10d2219a790cf09ae23ea))
 
 # [2.1.0-staging.4](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.3...@dyte-in/ui-kit-v2.1.0-staging.4) (2024-09-12)
 
-
 ### Bug Fixes
 
-* disable spellcheck on setupscreen input ([004979a](https://github.com/dyte-in/ui-kit/commit/004979aa30aa3837f53c7194ef075e37910886bd))
+- disable spellcheck on setupscreen input ([004979a](https://github.com/dyte-in/ui-kit/commit/004979aa30aa3837f53c7194ef075e37910886bd))
 
 # [2.1.0-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.2...@dyte-in/ui-kit-v2.1.0-staging.3) (2024-09-10)
 
-
 ### Bug Fixes
 
-* upgrade web-core ([0f53fe8](https://github.com/dyte-in/ui-kit/commit/0f53fe8de28464f0cbaa4d1255b55a47ee5e7d78))
+- upgrade web-core ([0f53fe8](https://github.com/dyte-in/ui-kit/commit/0f53fe8de28464f0cbaa4d1255b55a47ee5e7d78))
 
 # [2.1.0-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.1.0-staging.1...@dyte-in/ui-kit-v2.1.0-staging.2) (2024-09-10)
 
-
 ### Bug Fixes
 
-* disabled button styling ([6107023](https://github.com/dyte-in/ui-kit/commit/6107023b55064ecd76e45d648f7f30afe1b378c6))
+- disabled button styling ([6107023](https://github.com/dyte-in/ui-kit/commit/6107023b55064ecd76e45d648f7f30afe1b378c6))
 
 # [2.1.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.0.2...@dyte-in/ui-kit-v2.1.0-staging.1) (2024-09-09)
 
-
 ### Features
 
-* use viewport aware video playback API ([7ea12e5](https://github.com/dyte-in/ui-kit/commit/7ea12e59cf6cd7f15aa7a6ff13a9e8e8a0b22d75))
+- use viewport aware video playback API ([7ea12e5](https://github.com/dyte-in/ui-kit/commit/7ea12e59cf6cd7f15aa7a6ff13a9e8e8a0b22d75))
 
 ## [2.0.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.0.1...@dyte-in/ui-kit-v2.0.2) (2024-09-09)
 
-
 ### Bug Fixes
 
-* minor UI fixes ([8f2a1dc](https://github.com/dyte-in/ui-kit/commit/8f2a1dc49913da92ec3040bdacd31d159a08f288))
-* only count unread messages from current session on user join ([1208a4f](https://github.com/dyte-in/ui-kit/commit/1208a4ff12e75546e020c6d400526176a0f19ee9))
+- minor UI fixes ([8f2a1dc](https://github.com/dyte-in/ui-kit/commit/8f2a1dc49913da92ec3040bdacd31d159a08f288))
+- only count unread messages from current session on user join ([1208a4f](https://github.com/dyte-in/ui-kit/commit/1208a4ff12e75546e020c6d400526176a0f19ee9))
 
 ## [2.0.2-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.0.1...@dyte-in/ui-kit-v2.0.2-staging.1) (2024-09-04)
 
-
 ### Bug Fixes
 
-* minor UI fixes ([8f2a1dc](https://github.com/dyte-in/ui-kit/commit/8f2a1dc49913da92ec3040bdacd31d159a08f288))
-* only count unread messages from current session on user join ([1208a4f](https://github.com/dyte-in/ui-kit/commit/1208a4ff12e75546e020c6d400526176a0f19ee9))
+- minor UI fixes ([8f2a1dc](https://github.com/dyte-in/ui-kit/commit/8f2a1dc49913da92ec3040bdacd31d159a08f288))
+- only count unread messages from current session on user join ([1208a4f](https://github.com/dyte-in/ui-kit/commit/1208a4ff12e75546e020c6d400526176a0f19ee9))
 
 ## [2.0.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.0.0...@dyte-in/ui-kit-v2.0.1) (2024-08-30)
 
-
 ### Bug Fixes
 
-* add listener for participantsCleared ([c87225e](https://github.com/dyte-in/ui-kit/commit/c87225e07e42156df5f887d57461acb7ed8aeb56))
-* **button:** disabled styling ([0e421ef](https://github.com/dyte-in/ui-kit/commit/0e421efbbfe886e136f03c32319140207851d6c1))
-* canAcceptProductionRequests changes for dyn preset ([d5eea04](https://github.com/dyte-in/ui-kit/commit/d5eea047b54079336ee04a7414f76a5cb4dfede5))
-* remove participant waitlisted notification on participant accepted ([555f909](https://github.com/dyte-in/ui-kit/commit/555f9094ca520b00314d5b32f67c0635da8d38d8))
-* run permission checks once meeting object is populated ([51338c4](https://github.com/dyte-in/ui-kit/commit/51338c491adee6995e8c454190fdc3a0195baf4e))
-* update package web-core ([7cb54f4](https://github.com/dyte-in/ui-kit/commit/7cb54f4c99952d2f9a2fa22ff47773434093dbc2))
+- add listener for participantsCleared ([c87225e](https://github.com/dyte-in/ui-kit/commit/c87225e07e42156df5f887d57461acb7ed8aeb56))
+- **button:** disabled styling ([0e421ef](https://github.com/dyte-in/ui-kit/commit/0e421efbbfe886e136f03c32319140207851d6c1))
+- canAcceptProductionRequests changes for dyn preset ([d5eea04](https://github.com/dyte-in/ui-kit/commit/d5eea047b54079336ee04a7414f76a5cb4dfede5))
+- remove participant waitlisted notification on participant accepted ([555f909](https://github.com/dyte-in/ui-kit/commit/555f9094ca520b00314d5b32f67c0635da8d38d8))
+- run permission checks once meeting object is populated ([51338c4](https://github.com/dyte-in/ui-kit/commit/51338c491adee6995e8c454190fdc3a0195baf4e))
+- update package web-core ([7cb54f4](https://github.com/dyte-in/ui-kit/commit/7cb54f4c99952d2f9a2fa22ff47773434093dbc2))
 
 ## [2.0.1-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.0.1-staging.2...@dyte-in/ui-kit-v2.0.1-staging.3) (2024-08-28)
 
-
 ### Bug Fixes
 
-* add listener for participantsCleared ([c87225e](https://github.com/dyte-in/ui-kit/commit/c87225e07e42156df5f887d57461acb7ed8aeb56))
-* canAcceptProductionRequests changes for dyn preset ([d5eea04](https://github.com/dyte-in/ui-kit/commit/d5eea047b54079336ee04a7414f76a5cb4dfede5))
-* run permission checks once meeting object is populated ([51338c4](https://github.com/dyte-in/ui-kit/commit/51338c491adee6995e8c454190fdc3a0195baf4e))
-* update package web-core ([7cb54f4](https://github.com/dyte-in/ui-kit/commit/7cb54f4c99952d2f9a2fa22ff47773434093dbc2))
+- add listener for participantsCleared ([c87225e](https://github.com/dyte-in/ui-kit/commit/c87225e07e42156df5f887d57461acb7ed8aeb56))
+- canAcceptProductionRequests changes for dyn preset ([d5eea04](https://github.com/dyte-in/ui-kit/commit/d5eea047b54079336ee04a7414f76a5cb4dfede5))
+- run permission checks once meeting object is populated ([51338c4](https://github.com/dyte-in/ui-kit/commit/51338c491adee6995e8c454190fdc3a0195baf4e))
+- update package web-core ([7cb54f4](https://github.com/dyte-in/ui-kit/commit/7cb54f4c99952d2f9a2fa22ff47773434093dbc2))
 
 ## [2.0.1-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.0.1-staging.1...@dyte-in/ui-kit-v2.0.1-staging.2) (2024-08-28)
 
-
 ### Bug Fixes
 
-* remove participant waitlisted notification on participant accepted ([555f909](https://github.com/dyte-in/ui-kit/commit/555f9094ca520b00314d5b32f67c0635da8d38d8))
+- remove participant waitlisted notification on participant accepted ([555f909](https://github.com/dyte-in/ui-kit/commit/555f9094ca520b00314d5b32f67c0635da8d38d8))
 
 ## [2.0.1-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v2.0.0...@dyte-in/ui-kit-v2.0.1-staging.1) (2024-08-27)
 
-
 ### Bug Fixes
 
-* **button:** disabled styling ([0e421ef](https://github.com/dyte-in/ui-kit/commit/0e421efbbfe886e136f03c32319140207851d6c1))
+- **button:** disabled styling ([0e421ef](https://github.com/dyte-in/ui-kit/commit/0e421efbbfe886e136f03c32319140207851d6c1))
 
 # [2.0.0](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.2...@dyte-in/ui-kit-v2.0.0) (2024-07-31)
 
-
 ### Bug Fixes
 
-* add null checks in media connection listener ([ca2c91b](https://github.com/dyte-in/ui-kit/commit/ca2c91b6c4c5085c3acc59da56c7a8cede9af570))
-* attach listener to each participant tile ([b7f3bbb](https://github.com/dyte-in/ui-kit/commit/b7f3bbb661b203e8bdc59abe84978bae1e80e72c))
-* bad merge ([0786b98](https://github.com/dyte-in/ui-kit/commit/0786b9817077d24334e8b66be84fa07b5cd00618))
-* bind this to media connection listener ([37c08b6](https://github.com/dyte-in/ui-kit/commit/37c08b636a9d7c9e56ea054c618dd160514bc597))
-* hide close button for media permission toggle ([164ba15](https://github.com/dyte-in/ui-kit/commit/164ba15c036aac8c295a4c72a80ec0cf310b9d34))
-* improve setup screen ([0752dc4](https://github.com/dyte-in/ui-kit/commit/0752dc4dc4cc85cf8ab5d6203f4b66691a3a17ea))
-* lint ([bee68c0](https://github.com/dyte-in/ui-kit/commit/bee68c0d0889153c8e78d55e033f1369ad10f8f3))
-* offline grid and reconnection notifications ([6f82118](https://github.com/dyte-in/ui-kit/commit/6f82118fda73c216eced43844dc39b0df559754e))
-* rename disconnectedStates ([35da8e5](https://github.com/dyte-in/ui-kit/commit/35da8e5f3d0c32d49151b846efc2d5d882c196c2))
-* reorder disconnectMeeting ([ea238f1](https://github.com/dyte-in/ui-kit/commit/ea238f12b190ca96e6a356e337d23f67e60c33ae))
-* **screenshare:** error when unmounting ([4122e5a](https://github.com/dyte-in/ui-kit/commit/4122e5a7a0f7e2e85c814fa25243230025fd9f79))
-* stage requests, notification and join room errors ([c44c983](https://github.com/dyte-in/ui-kit/commit/c44c983636461e6ed482bdfd9f2184f33f4111b0))
-* update web-core version ([3af5923](https://github.com/dyte-in/ui-kit/commit/3af592346f16c8acfcc5957fa0d7be78745457a8))
-* use default display name for users without permissions ([b5c35c1](https://github.com/dyte-in/ui-kit/commit/b5c35c140d15542e301ba425dc9b18a68365fac9))
-
+- add null checks in media connection listener ([ca2c91b](https://github.com/dyte-in/ui-kit/commit/ca2c91b6c4c5085c3acc59da56c7a8cede9af570))
+- attach listener to each participant tile ([b7f3bbb](https://github.com/dyte-in/ui-kit/commit/b7f3bbb661b203e8bdc59abe84978bae1e80e72c))
+- bad merge ([0786b98](https://github.com/dyte-in/ui-kit/commit/0786b9817077d24334e8b66be84fa07b5cd00618))
+- bind this to media connection listener ([37c08b6](https://github.com/dyte-in/ui-kit/commit/37c08b636a9d7c9e56ea054c618dd160514bc597))
+- hide close button for media permission toggle ([164ba15](https://github.com/dyte-in/ui-kit/commit/164ba15c036aac8c295a4c72a80ec0cf310b9d34))
+- improve setup screen ([0752dc4](https://github.com/dyte-in/ui-kit/commit/0752dc4dc4cc85cf8ab5d6203f4b66691a3a17ea))
+- lint ([bee68c0](https://github.com/dyte-in/ui-kit/commit/bee68c0d0889153c8e78d55e033f1369ad10f8f3))
+- offline grid and reconnection notifications ([6f82118](https://github.com/dyte-in/ui-kit/commit/6f82118fda73c216eced43844dc39b0df559754e))
+- rename disconnectedStates ([35da8e5](https://github.com/dyte-in/ui-kit/commit/35da8e5f3d0c32d49151b846efc2d5d882c196c2))
+- reorder disconnectMeeting ([ea238f1](https://github.com/dyte-in/ui-kit/commit/ea238f12b190ca96e6a356e337d23f67e60c33ae))
+- **screenshare:** error when unmounting ([4122e5a](https://github.com/dyte-in/ui-kit/commit/4122e5a7a0f7e2e85c814fa25243230025fd9f79))
+- stage requests, notification and join room errors ([c44c983](https://github.com/dyte-in/ui-kit/commit/c44c983636461e6ed482bdfd9f2184f33f4111b0))
+- update web-core version ([3af5923](https://github.com/dyte-in/ui-kit/commit/3af592346f16c8acfcc5957fa0d7be78745457a8))
+- use default display name for users without permissions ([b5c35c1](https://github.com/dyte-in/ui-kit/commit/b5c35c140d15542e301ba425dc9b18a68365fac9))
 
 ### Features
 
-* upgrade web core ([e9d1eae](https://github.com/dyte-in/ui-kit/commit/e9d1eae5487679f04e548db5b1a39be831231afc))
-
+- upgrade web core ([e9d1eae](https://github.com/dyte-in/ui-kit/commit/e9d1eae5487679f04e548db5b1a39be831231afc))
 
 ### BREAKING CHANGES
 
-* Remove support for v1 web-core
+- Remove support for v1 web-core
 
 # [2.0.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.3-staging.6...@dyte-in/ui-kit-v2.0.0-staging.1) (2024-07-31)
 
-
 ### Features
 
-* upgrade web core ([e9d1eae](https://github.com/dyte-in/ui-kit/commit/e9d1eae5487679f04e548db5b1a39be831231afc))
-
+- upgrade web core ([e9d1eae](https://github.com/dyte-in/ui-kit/commit/e9d1eae5487679f04e548db5b1a39be831231afc))
 
 ### BREAKING CHANGES
 
-* Remove support for v1 web-core
+- Remove support for v1 web-core
 
 ## [1.70.3-staging.6](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.3-staging.5...@dyte-in/ui-kit-v1.70.3-staging.6) (2024-07-31)
 
-
 ### Bug Fixes
 
-* add null checks in media connection listener ([ca2c91b](https://github.com/dyte-in/ui-kit/commit/ca2c91b6c4c5085c3acc59da56c7a8cede9af570))
-* bind this to media connection listener ([37c08b6](https://github.com/dyte-in/ui-kit/commit/37c08b636a9d7c9e56ea054c618dd160514bc597))
+- add null checks in media connection listener ([ca2c91b](https://github.com/dyte-in/ui-kit/commit/ca2c91b6c4c5085c3acc59da56c7a8cede9af570))
+- bind this to media connection listener ([37c08b6](https://github.com/dyte-in/ui-kit/commit/37c08b636a9d7c9e56ea054c618dd160514bc597))
 
 ## [1.70.3-staging.5](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.3-staging.4...@dyte-in/ui-kit-v1.70.3-staging.5) (2024-07-30)
 
-
 ### Bug Fixes
 
-* use default display name for users without permissions ([b5c35c1](https://github.com/dyte-in/ui-kit/commit/b5c35c140d15542e301ba425dc9b18a68365fac9))
+- use default display name for users without permissions ([b5c35c1](https://github.com/dyte-in/ui-kit/commit/b5c35c140d15542e301ba425dc9b18a68365fac9))
 
 ## [1.70.3-staging.4](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.3-staging.3...@dyte-in/ui-kit-v1.70.3-staging.4) (2024-07-30)
 
-
 ### Bug Fixes
 
-* attach listener to each participant tile ([b7f3bbb](https://github.com/dyte-in/ui-kit/commit/b7f3bbb661b203e8bdc59abe84978bae1e80e72c))
-* stage requests, notification and join room errors ([c44c983](https://github.com/dyte-in/ui-kit/commit/c44c983636461e6ed482bdfd9f2184f33f4111b0))
+- attach listener to each participant tile ([b7f3bbb](https://github.com/dyte-in/ui-kit/commit/b7f3bbb661b203e8bdc59abe84978bae1e80e72c))
+- stage requests, notification and join room errors ([c44c983](https://github.com/dyte-in/ui-kit/commit/c44c983636461e6ed482bdfd9f2184f33f4111b0))
 
 ## [1.70.3-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.3-staging.2...@dyte-in/ui-kit-v1.70.3-staging.3) (2024-07-30)
 
-
 ### Bug Fixes
 
-* **screenshare:** error when unmounting ([4122e5a](https://github.com/dyte-in/ui-kit/commit/4122e5a7a0f7e2e85c814fa25243230025fd9f79))
+- **screenshare:** error when unmounting ([4122e5a](https://github.com/dyte-in/ui-kit/commit/4122e5a7a0f7e2e85c814fa25243230025fd9f79))
 
 ## [1.70.3-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.3-staging.1...@dyte-in/ui-kit-v1.70.3-staging.2) (2024-07-25)
 
-
 ### Bug Fixes
 
-* hide close button for media permission toggle ([164ba15](https://github.com/dyte-in/ui-kit/commit/164ba15c036aac8c295a4c72a80ec0cf310b9d34))
+- hide close button for media permission toggle ([164ba15](https://github.com/dyte-in/ui-kit/commit/164ba15c036aac8c295a4c72a80ec0cf310b9d34))
 
 ## [1.70.3-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.2...@dyte-in/ui-kit-v1.70.3-staging.1) (2024-07-22)
 
-
 ### Bug Fixes
 
-* bad merge ([0786b98](https://github.com/dyte-in/ui-kit/commit/0786b9817077d24334e8b66be84fa07b5cd00618))
-* improve setup screen ([0752dc4](https://github.com/dyte-in/ui-kit/commit/0752dc4dc4cc85cf8ab5d6203f4b66691a3a17ea))
-* lint ([bee68c0](https://github.com/dyte-in/ui-kit/commit/bee68c0d0889153c8e78d55e033f1369ad10f8f3))
-* offline grid and reconnection notifications ([6f82118](https://github.com/dyte-in/ui-kit/commit/6f82118fda73c216eced43844dc39b0df559754e))
-* rename disconnectedStates ([35da8e5](https://github.com/dyte-in/ui-kit/commit/35da8e5f3d0c32d49151b846efc2d5d882c196c2))
-* reorder disconnectMeeting ([ea238f1](https://github.com/dyte-in/ui-kit/commit/ea238f12b190ca96e6a356e337d23f67e60c33ae))
-* update web-core version ([3af5923](https://github.com/dyte-in/ui-kit/commit/3af592346f16c8acfcc5957fa0d7be78745457a8))
+- bad merge ([0786b98](https://github.com/dyte-in/ui-kit/commit/0786b9817077d24334e8b66be84fa07b5cd00618))
+- improve setup screen ([0752dc4](https://github.com/dyte-in/ui-kit/commit/0752dc4dc4cc85cf8ab5d6203f4b66691a3a17ea))
+- lint ([bee68c0](https://github.com/dyte-in/ui-kit/commit/bee68c0d0889153c8e78d55e033f1369ad10f8f3))
+- offline grid and reconnection notifications ([6f82118](https://github.com/dyte-in/ui-kit/commit/6f82118fda73c216eced43844dc39b0df559754e))
+- rename disconnectedStates ([35da8e5](https://github.com/dyte-in/ui-kit/commit/35da8e5f3d0c32d49151b846efc2d5d882c196c2))
+- reorder disconnectMeeting ([ea238f1](https://github.com/dyte-in/ui-kit/commit/ea238f12b190ca96e6a356e337d23f67e60c33ae))
+- update web-core version ([3af5923](https://github.com/dyte-in/ui-kit/commit/3af592346f16c8acfcc5957fa0d7be78745457a8))
 
 ## [1.70.1-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.1-staging.2...@dyte-in/ui-kit-v1.70.1-staging.3) (2024-07-19)
-## [1.70.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.1...@dyte-in/ui-kit-v1.70.2) (2024-07-21)
 
+## [1.70.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.1...@dyte-in/ui-kit-v1.70.2) (2024-07-21)
 
 ### Bug Fixes
 
-* improve setup screen ([0752dc4](https://github.com/dyte-in/ui-kit/commit/0752dc4dc4cc85cf8ab5d6203f4b66691a3a17ea))
-* lint ([bee68c0](https://github.com/dyte-in/ui-kit/commit/bee68c0d0889153c8e78d55e033f1369ad10f8f3))
+- improve setup screen ([0752dc4](https://github.com/dyte-in/ui-kit/commit/0752dc4dc4cc85cf8ab5d6203f4b66691a3a17ea))
+- lint ([bee68c0](https://github.com/dyte-in/ui-kit/commit/bee68c0d0889153c8e78d55e033f1369ad10f8f3))
+
 ## [1.70.1-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.1-staging.1...@dyte-in/ui-kit-v1.70.1-staging.2) (2024-07-17)
-* improve setup screen ([be31f76](https://github.com/dyte-in/ui-kit/commit/be31f76a9cc1ddde7e33438107080843707be229))
-* show permission error only on DENIED / SYSTEM_DENIED ([b250e7c](https://github.com/dyte-in/ui-kit/commit/b250e7cd0cfab426e690255bb39d75b31d160e5e))
+
+- improve setup screen ([be31f76](https://github.com/dyte-in/ui-kit/commit/be31f76a9cc1ddde7e33438107080843707be229))
+- show permission error only on DENIED / SYSTEM_DENIED ([b250e7c](https://github.com/dyte-in/ui-kit/commit/b250e7cd0cfab426e690255bb39d75b31d160e5e))
 
 ## [1.70.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.0...@dyte-in/ui-kit-v1.70.1) (2024-07-17)
 
-
-
-* offline grid and reconnection notifications ([6f82118](https://github.com/dyte-in/ui-kit/commit/6f82118fda73c216eced43844dc39b0df559754e))
-* rename disconnectedStates ([35da8e5](https://github.com/dyte-in/ui-kit/commit/35da8e5f3d0c32d49151b846efc2d5d882c196c2))
-* reorder disconnectMeeting ([ea238f1](https://github.com/dyte-in/ui-kit/commit/ea238f12b190ca96e6a356e337d23f67e60c33ae))
+- offline grid and reconnection notifications ([6f82118](https://github.com/dyte-in/ui-kit/commit/6f82118fda73c216eced43844dc39b0df559754e))
+- rename disconnectedStates ([35da8e5](https://github.com/dyte-in/ui-kit/commit/35da8e5f3d0c32d49151b846efc2d5d882c196c2))
+- reorder disconnectMeeting ([ea238f1](https://github.com/dyte-in/ui-kit/commit/ea238f12b190ca96e6a356e337d23f67e60c33ae))
 
 ## [1.70.1-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.0...@dyte-in/ui-kit-v1.70.1-staging.1) (2024-07-05)
 
-
 ### Bug Fixes
 
-* update web-core version ([3af5923](https://github.com/dyte-in/ui-kit/commit/3af592346f16c8acfcc5957fa0d7be78745457a8))
-* chat limits ([cfb424c](https://github.com/dyte-in/ui-kit/commit/cfb424cd5269e9eb450a5265fffe9a795cb58922))
-* lint errors ([c8e5188](https://github.com/dyte-in/ui-kit/commit/c8e5188f0e182d5c5ea4c0d5950a4ab1bad76abf))
+- update web-core version ([3af5923](https://github.com/dyte-in/ui-kit/commit/3af592346f16c8acfcc5957fa0d7be78745457a8))
+- chat limits ([cfb424c](https://github.com/dyte-in/ui-kit/commit/cfb424cd5269e9eb450a5265fffe9a795cb58922))
+- lint errors ([c8e5188](https://github.com/dyte-in/ui-kit/commit/c8e5188f0e182d5c5ea4c0d5950a4ab1bad76abf))
 
 # [1.70.0](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.69.0...@dyte-in/ui-kit-v1.70.0) (2024-07-01)
 
-
 ### Bug Fixes
 
-* build ([89396dd](https://github.com/dyte-in/ui-kit/commit/89396dd35006d69db324438fa1733fcc1a013436))
-* build ([eed9402](https://github.com/dyte-in/ui-kit/commit/eed940227e3bfca7cfac63bc96dcceb9f9aad451))
-* lint ([1ac5747](https://github.com/dyte-in/ui-kit/commit/1ac574711cef3ba8c33bbc6d1a3ae0e612158a28))
-* remove deprecated APIs ([c7f30f8](https://github.com/dyte-in/ui-kit/commit/c7f30f84ded80c5b04f94dd8db30d627e2ce4bf2))
-* use limit values from web-core ([e2c4097](https://github.com/dyte-in/ui-kit/commit/e2c4097e84a48ac96597806461c3fe799f4edaa7))
-
+- build ([89396dd](https://github.com/dyte-in/ui-kit/commit/89396dd35006d69db324438fa1733fcc1a013436))
+- build ([eed9402](https://github.com/dyte-in/ui-kit/commit/eed940227e3bfca7cfac63bc96dcceb9f9aad451))
+- lint ([1ac5747](https://github.com/dyte-in/ui-kit/commit/1ac574711cef3ba8c33bbc6d1a3ae0e612158a28))
+- remove deprecated APIs ([c7f30f8](https://github.com/dyte-in/ui-kit/commit/c7f30f84ded80c5b04f94dd8db30d627e2ce4bf2))
+- use limit values from web-core ([e2c4097](https://github.com/dyte-in/ui-kit/commit/e2c4097e84a48ac96597806461c3fe799f4edaa7))
 
 ### Features
 
-* **chat:** add warnings on max length breach ([15d1f55](https://github.com/dyte-in/ui-kit/commit/15d1f5525730b7759403a98eb05b82a4544ec279))
-* implement chat rate limits ([2c1a949](https://github.com/dyte-in/ui-kit/commit/2c1a9496ecd1a2393be988bebe606d46d4086daf))
+- **chat:** add warnings on max length breach ([15d1f55](https://github.com/dyte-in/ui-kit/commit/15d1f5525730b7759403a98eb05b82a4544ec279))
+- implement chat rate limits ([2c1a949](https://github.com/dyte-in/ui-kit/commit/2c1a9496ecd1a2393be988bebe606d46d4086daf))
 
 # [1.70.0-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.0-staging.2...@dyte-in/ui-kit-v1.70.0-staging.3) (2024-06-28)
 
-
 ### Features
 
-* implement chat rate limits ([2c1a949](https://github.com/dyte-in/ui-kit/commit/2c1a9496ecd1a2393be988bebe606d46d4086daf))
+- implement chat rate limits ([2c1a949](https://github.com/dyte-in/ui-kit/commit/2c1a9496ecd1a2393be988bebe606d46d4086daf))
 
 # [1.70.0-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.70.0-staging.1...@dyte-in/ui-kit-v1.70.0-staging.2) (2024-06-28)
 
-
 ### Bug Fixes
 
-* build ([89396dd](https://github.com/dyte-in/ui-kit/commit/89396dd35006d69db324438fa1733fcc1a013436))
+- build ([89396dd](https://github.com/dyte-in/ui-kit/commit/89396dd35006d69db324438fa1733fcc1a013436))
 
 # [1.70.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.69.1-staging.1...@dyte-in/ui-kit-v1.70.0-staging.1) (2024-06-27)
 
-
 ### Bug Fixes
 
-* build ([eed9402](https://github.com/dyte-in/ui-kit/commit/eed940227e3bfca7cfac63bc96dcceb9f9aad451))
-* use limit values from web-core ([e2c4097](https://github.com/dyte-in/ui-kit/commit/e2c4097e84a48ac96597806461c3fe799f4edaa7))
-
+- build ([eed9402](https://github.com/dyte-in/ui-kit/commit/eed940227e3bfca7cfac63bc96dcceb9f9aad451))
+- use limit values from web-core ([e2c4097](https://github.com/dyte-in/ui-kit/commit/e2c4097e84a48ac96597806461c3fe799f4edaa7))
 
 ### Features
 
-* **chat:** add warnings on max length breach ([15d1f55](https://github.com/dyte-in/ui-kit/commit/15d1f5525730b7759403a98eb05b82a4544ec279))
+- **chat:** add warnings on max length breach ([15d1f55](https://github.com/dyte-in/ui-kit/commit/15d1f5525730b7759403a98eb05b82a4544ec279))
 
 ## [1.69.1-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.69.0...@dyte-in/ui-kit-v1.69.1-staging.1) (2024-06-26)
 
-
 ### Bug Fixes
 
-* lint ([1ac5747](https://github.com/dyte-in/ui-kit/commit/1ac574711cef3ba8c33bbc6d1a3ae0e612158a28))
-* remove deprecated APIs ([c7f30f8](https://github.com/dyte-in/ui-kit/commit/c7f30f84ded80c5b04f94dd8db30d627e2ce4bf2))
+- lint ([1ac5747](https://github.com/dyte-in/ui-kit/commit/1ac574711cef3ba8c33bbc6d1a3ae0e612158a28))
+- remove deprecated APIs ([c7f30f8](https://github.com/dyte-in/ui-kit/commit/c7f30f84ded80c5b04f94dd8db30d627e2ce4bf2))
 
 # [1.69.0](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.3...@dyte-in/ui-kit-v1.69.0) (2024-06-19)
 
-
 ### Bug Fixes
 
-* base fix ([9f4138f](https://github.com/dyte-in/ui-kit/commit/9f4138fc07bc58585a98b5302c20184654ad062d))
-* gap between contents in setupscreen ([21b5eea](https://github.com/dyte-in/ui-kit/commit/21b5eeaafae37aa077e114a79a36f019c247af5e))
-* gap between setup controls ([82d5af3](https://github.com/dyte-in/ui-kit/commit/82d5af3a6a7b038f4789a75f3c9aa83b1b947a5f))
-* handle situation where peer IDs are different ([355016e](https://github.com/dyte-in/ui-kit/commit/355016e626cf10aaef467181b340691412a84c91))
-* lint ([70d5939](https://github.com/dyte-in/ui-kit/commit/70d5939e02b4da6e87e3a328bc5898a78e9a489f))
-* other peer transcript ([1dddeda](https://github.com/dyte-in/ui-kit/commit/1dddedad90a92d4adf7d41f6a1b93b7f2f012a6f))
-* overflow in dialogs ([0af901f](https://github.com/dyte-in/ui-kit/commit/0af901f521617abba31232855ae125f8a36f9236))
-* **release:** adding a empty commit to create a ui-kit version ([e45b91c](https://github.com/dyte-in/ui-kit/commit/e45b91c7dd424afc3f15cca8e7a62a89e7381c81))
-* rendering complicacies ([7c5ec1d](https://github.com/dyte-in/ui-kit/commit/7c5ec1d577e961e66235387189e92069660af1a0))
-* rendering of transcripts in sidebar ([7d4571c](https://github.com/dyte-in/ui-kit/commit/7d4571c2e0d7922ac04a5562984c82110dbe480e))
-* spacing between setup participant tile toggles ([f303c1a](https://github.com/dyte-in/ui-kit/commit/f303c1a6786eca09b7714d4bbbad33a1d1083256))
-* update transcript when received same id ([3be4fef](https://github.com/dyte-in/ui-kit/commit/3be4fefcd44e7f4633a0f9db5b80259a4c09fd68))
-* update web-core version ([443adb8](https://github.com/dyte-in/ui-kit/commit/443adb82b870a730d8f0272cedbefbe9fd02cce5))
-* waiting room notification config ([2ae2680](https://github.com/dyte-in/ui-kit/commit/2ae2680d6f412476b8e97461943d7fdcfebdb425))
-
+- base fix ([9f4138f](https://github.com/dyte-in/ui-kit/commit/9f4138fc07bc58585a98b5302c20184654ad062d))
+- gap between contents in setupscreen ([21b5eea](https://github.com/dyte-in/ui-kit/commit/21b5eeaafae37aa077e114a79a36f019c247af5e))
+- gap between setup controls ([82d5af3](https://github.com/dyte-in/ui-kit/commit/82d5af3a6a7b038f4789a75f3c9aa83b1b947a5f))
+- handle situation where peer IDs are different ([355016e](https://github.com/dyte-in/ui-kit/commit/355016e626cf10aaef467181b340691412a84c91))
+- lint ([70d5939](https://github.com/dyte-in/ui-kit/commit/70d5939e02b4da6e87e3a328bc5898a78e9a489f))
+- other peer transcript ([1dddeda](https://github.com/dyte-in/ui-kit/commit/1dddedad90a92d4adf7d41f6a1b93b7f2f012a6f))
+- overflow in dialogs ([0af901f](https://github.com/dyte-in/ui-kit/commit/0af901f521617abba31232855ae125f8a36f9236))
+- **release:** adding a empty commit to create a ui-kit version ([e45b91c](https://github.com/dyte-in/ui-kit/commit/e45b91c7dd424afc3f15cca8e7a62a89e7381c81))
+- rendering complicacies ([7c5ec1d](https://github.com/dyte-in/ui-kit/commit/7c5ec1d577e961e66235387189e92069660af1a0))
+- rendering of transcripts in sidebar ([7d4571c](https://github.com/dyte-in/ui-kit/commit/7d4571c2e0d7922ac04a5562984c82110dbe480e))
+- spacing between setup participant tile toggles ([f303c1a](https://github.com/dyte-in/ui-kit/commit/f303c1a6786eca09b7714d4bbbad33a1d1083256))
+- update transcript when received same id ([3be4fef](https://github.com/dyte-in/ui-kit/commit/3be4fefcd44e7f4633a0f9db5b80259a4c09fd68))
+- update web-core version ([443adb8](https://github.com/dyte-in/ui-kit/commit/443adb82b870a730d8f0272cedbefbe9fd02cce5))
+- waiting room notification config ([2ae2680](https://github.com/dyte-in/ui-kit/commit/2ae2680d6f412476b8e97461943d7fdcfebdb425))
 
 ### Features
 
-* use viewport aware video playback API ([9784f58](https://github.com/dyte-in/ui-kit/commit/9784f58c6b708188531662b05afed73c96bacd15))
+- use viewport aware video playback API ([9784f58](https://github.com/dyte-in/ui-kit/commit/9784f58c6b708188531662b05afed73c96bacd15))
 
 # [1.69.0-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.69.0-staging.2...@dyte-in/ui-kit-v1.69.0-staging.3) (2024-06-18)
 
-
 ### Bug Fixes
 
-* gap between contents in setupscreen ([21b5eea](https://github.com/dyte-in/ui-kit/commit/21b5eeaafae37aa077e114a79a36f019c247af5e))
-* gap between setup controls ([82d5af3](https://github.com/dyte-in/ui-kit/commit/82d5af3a6a7b038f4789a75f3c9aa83b1b947a5f))
-* overflow in dialogs ([0af901f](https://github.com/dyte-in/ui-kit/commit/0af901f521617abba31232855ae125f8a36f9236))
+- gap between contents in setupscreen ([21b5eea](https://github.com/dyte-in/ui-kit/commit/21b5eeaafae37aa077e114a79a36f019c247af5e))
+- gap between setup controls ([82d5af3](https://github.com/dyte-in/ui-kit/commit/82d5af3a6a7b038f4789a75f3c9aa83b1b947a5f))
+- overflow in dialogs ([0af901f](https://github.com/dyte-in/ui-kit/commit/0af901f521617abba31232855ae125f8a36f9236))
 
 # [1.69.0-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.69.0-staging.1...@dyte-in/ui-kit-v1.69.0-staging.2) (2024-06-18)
 
-
 ### Bug Fixes
 
-* spacing between setup participant tile toggles ([f303c1a](https://github.com/dyte-in/ui-kit/commit/f303c1a6786eca09b7714d4bbbad33a1d1083256))
+- spacing between setup participant tile toggles ([f303c1a](https://github.com/dyte-in/ui-kit/commit/f303c1a6786eca09b7714d4bbbad33a1d1083256))
 
 # [1.69.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.4-staging.5...@dyte-in/ui-kit-v1.69.0-staging.1) (2024-06-11)
 
-
 ### Features
 
-* use viewport aware video playback API ([9784f58](https://github.com/dyte-in/ui-kit/commit/9784f58c6b708188531662b05afed73c96bacd15))
+- use viewport aware video playback API ([9784f58](https://github.com/dyte-in/ui-kit/commit/9784f58c6b708188531662b05afed73c96bacd15))
 
 ## [1.68.4-staging.5](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.4-staging.4...@dyte-in/ui-kit-v1.68.4-staging.5) (2024-05-31)
 
-
 ### Bug Fixes
 
-* **release:** adding a empty commit to create a ui-kit version ([e45b91c](https://github.com/dyte-in/ui-kit/commit/e45b91c7dd424afc3f15cca8e7a62a89e7381c81))
+- **release:** adding a empty commit to create a ui-kit version ([e45b91c](https://github.com/dyte-in/ui-kit/commit/e45b91c7dd424afc3f15cca8e7a62a89e7381c81))
 
 ## [1.68.4-staging.4](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.4-staging.3...@dyte-in/ui-kit-v1.68.4-staging.4) (2024-05-28)
 
-
 ### Bug Fixes
 
-* waiting room notification config ([2ae2680](https://github.com/dyte-in/ui-kit/commit/2ae2680d6f412476b8e97461943d7fdcfebdb425))
+- waiting room notification config ([2ae2680](https://github.com/dyte-in/ui-kit/commit/2ae2680d6f412476b8e97461943d7fdcfebdb425))
 
 ## [1.68.4-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.4-staging.2...@dyte-in/ui-kit-v1.68.4-staging.3) (2024-05-23)
 
-
 ### Bug Fixes
 
-* base fix ([9f4138f](https://github.com/dyte-in/ui-kit/commit/9f4138fc07bc58585a98b5302c20184654ad062d))
-* handle situation where peer IDs are different ([355016e](https://github.com/dyte-in/ui-kit/commit/355016e626cf10aaef467181b340691412a84c91))
-* other peer transcript ([1dddeda](https://github.com/dyte-in/ui-kit/commit/1dddedad90a92d4adf7d41f6a1b93b7f2f012a6f))
-* rendering complicacies ([7c5ec1d](https://github.com/dyte-in/ui-kit/commit/7c5ec1d577e961e66235387189e92069660af1a0))
-* rendering of transcripts in sidebar ([7d4571c](https://github.com/dyte-in/ui-kit/commit/7d4571c2e0d7922ac04a5562984c82110dbe480e))
+- base fix ([9f4138f](https://github.com/dyte-in/ui-kit/commit/9f4138fc07bc58585a98b5302c20184654ad062d))
+- handle situation where peer IDs are different ([355016e](https://github.com/dyte-in/ui-kit/commit/355016e626cf10aaef467181b340691412a84c91))
+- other peer transcript ([1dddeda](https://github.com/dyte-in/ui-kit/commit/1dddedad90a92d4adf7d41f6a1b93b7f2f012a6f))
+- rendering complicacies ([7c5ec1d](https://github.com/dyte-in/ui-kit/commit/7c5ec1d577e961e66235387189e92069660af1a0))
+- rendering of transcripts in sidebar ([7d4571c](https://github.com/dyte-in/ui-kit/commit/7d4571c2e0d7922ac04a5562984c82110dbe480e))
 
 ## [1.68.4-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.4-staging.1...@dyte-in/ui-kit-v1.68.4-staging.2) (2024-05-23)
 
-
 ### Bug Fixes
 
-* update web-core version ([443adb8](https://github.com/dyte-in/ui-kit/commit/443adb82b870a730d8f0272cedbefbe9fd02cce5))
+- update web-core version ([443adb8](https://github.com/dyte-in/ui-kit/commit/443adb82b870a730d8f0272cedbefbe9fd02cce5))
 
 ## [1.68.4-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.3...@dyte-in/ui-kit-v1.68.4-staging.1) (2024-05-22)
 
-
 ### Bug Fixes
 
-* lint ([70d5939](https://github.com/dyte-in/ui-kit/commit/70d5939e02b4da6e87e3a328bc5898a78e9a489f))
-* update transcript when received same id ([3be4fef](https://github.com/dyte-in/ui-kit/commit/3be4fefcd44e7f4633a0f9db5b80259a4c09fd68))
+- lint ([70d5939](https://github.com/dyte-in/ui-kit/commit/70d5939e02b4da6e87e3a328bc5898a78e9a489f))
+- update transcript when received same id ([3be4fef](https://github.com/dyte-in/ui-kit/commit/3be4fefcd44e7f4633a0f9db5b80259a4c09fd68))
 
 ## [1.68.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.2...@dyte-in/ui-kit-v1.68.3) (2024-05-22)
 
-
 ### Bug Fixes
 
-* **chat:** dynamic permissions ([84e092e](https://github.com/dyte-in/ui-kit/commit/84e092e4cfdb2a7c7331d065c064948af3c69dfd))
-* dynamic permission of dyte-recording-toggle ([8b08663](https://github.com/dyte-in/ui-kit/commit/8b0866329374868d489a7d2797201d50043bf02a))
-* dynamic permissions for breakout rooms ([1620dd2](https://github.com/dyte-in/ui-kit/commit/1620dd23d68a885a60ebdac29a93ff2812e9f53c))
-* dynamic permissions for dyte-caption-toggle ([1d40808](https://github.com/dyte-in/ui-kit/commit/1d40808c054ebb6639c84e131e2aa20b9689da23))
-* dynamic permissions for participant component in sidebar ([90952fd](https://github.com/dyte-in/ui-kit/commit/90952fdc05bcb3501b240d1ebf0d749bc30343eb))
-* leave-meeting dialog dynamic permissions ([e2cb877](https://github.com/dyte-in/ui-kit/commit/e2cb877b80c2ae3b05c33c8104b70d62b1baf6db))
-* mute-all button permissions ([d503ffe](https://github.com/dyte-in/ui-kit/commit/d503ffe08c2a044ed6f7cdb5ce9ae2fac631597d))
-* mute-all-toggle dynamic permissions ([687cd73](https://github.com/dyte-in/ui-kit/commit/687cd73cdb02e1a14a5812d7aeff02b074ffed4c))
-* **spotlight:** dynamic permissions ([ad239ae](https://github.com/dyte-in/ui-kit/commit/ad239aecd46631c485a128e5844ad859efa6ce34))
-* webinar-stage-toggle dynamic permissions ([af2fdc5](https://github.com/dyte-in/ui-kit/commit/af2fdc5b72549c393412149a6dca835b607f52f0))
+- **chat:** dynamic permissions ([84e092e](https://github.com/dyte-in/ui-kit/commit/84e092e4cfdb2a7c7331d065c064948af3c69dfd))
+- dynamic permission of dyte-recording-toggle ([8b08663](https://github.com/dyte-in/ui-kit/commit/8b0866329374868d489a7d2797201d50043bf02a))
+- dynamic permissions for breakout rooms ([1620dd2](https://github.com/dyte-in/ui-kit/commit/1620dd23d68a885a60ebdac29a93ff2812e9f53c))
+- dynamic permissions for dyte-caption-toggle ([1d40808](https://github.com/dyte-in/ui-kit/commit/1d40808c054ebb6639c84e131e2aa20b9689da23))
+- dynamic permissions for participant component in sidebar ([90952fd](https://github.com/dyte-in/ui-kit/commit/90952fdc05bcb3501b240d1ebf0d749bc30343eb))
+- leave-meeting dialog dynamic permissions ([e2cb877](https://github.com/dyte-in/ui-kit/commit/e2cb877b80c2ae3b05c33c8104b70d62b1baf6db))
+- mute-all button permissions ([d503ffe](https://github.com/dyte-in/ui-kit/commit/d503ffe08c2a044ed6f7cdb5ce9ae2fac631597d))
+- mute-all-toggle dynamic permissions ([687cd73](https://github.com/dyte-in/ui-kit/commit/687cd73cdb02e1a14a5812d7aeff02b074ffed4c))
+- **spotlight:** dynamic permissions ([ad239ae](https://github.com/dyte-in/ui-kit/commit/ad239aecd46631c485a128e5844ad859efa6ce34))
+- webinar-stage-toggle dynamic permissions ([af2fdc5](https://github.com/dyte-in/ui-kit/commit/af2fdc5b72549c393412149a6dca835b607f52f0))
 
 ## [1.68.3-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.3-staging.2...@dyte-in/ui-kit-v1.68.3-staging.3) (2024-05-22)
 
-
 ### Bug Fixes
 
-* mute-all button permissions ([d503ffe](https://github.com/dyte-in/ui-kit/commit/d503ffe08c2a044ed6f7cdb5ce9ae2fac631597d))
+- mute-all button permissions ([d503ffe](https://github.com/dyte-in/ui-kit/commit/d503ffe08c2a044ed6f7cdb5ce9ae2fac631597d))
 
 ## [1.68.3-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.3-staging.1...@dyte-in/ui-kit-v1.68.3-staging.2) (2024-05-22)
 
-
 ### Bug Fixes
 
-* dynamic permissions for participant component in sidebar ([90952fd](https://github.com/dyte-in/ui-kit/commit/90952fdc05bcb3501b240d1ebf0d749bc30343eb))
+- dynamic permissions for participant component in sidebar ([90952fd](https://github.com/dyte-in/ui-kit/commit/90952fdc05bcb3501b240d1ebf0d749bc30343eb))
 
 ## [1.68.3-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.2...@dyte-in/ui-kit-v1.68.3-staging.1) (2024-05-16)
 
-
 ### Bug Fixes
 
-* **chat:** dynamic permissions ([84e092e](https://github.com/dyte-in/ui-kit/commit/84e092e4cfdb2a7c7331d065c064948af3c69dfd))
-* dynamic permission of dyte-recording-toggle ([8b08663](https://github.com/dyte-in/ui-kit/commit/8b0866329374868d489a7d2797201d50043bf02a))
-* dynamic permissions for breakout rooms ([1620dd2](https://github.com/dyte-in/ui-kit/commit/1620dd23d68a885a60ebdac29a93ff2812e9f53c))
-* dynamic permissions for dyte-caption-toggle ([1d40808](https://github.com/dyte-in/ui-kit/commit/1d40808c054ebb6639c84e131e2aa20b9689da23))
-* leave-meeting dialog dynamic permissions ([e2cb877](https://github.com/dyte-in/ui-kit/commit/e2cb877b80c2ae3b05c33c8104b70d62b1baf6db))
-* mute-all-toggle dynamic permissions ([687cd73](https://github.com/dyte-in/ui-kit/commit/687cd73cdb02e1a14a5812d7aeff02b074ffed4c))
-* **spotlight:** dynamic permissions ([ad239ae](https://github.com/dyte-in/ui-kit/commit/ad239aecd46631c485a128e5844ad859efa6ce34))
-* webinar-stage-toggle dynamic permissions ([af2fdc5](https://github.com/dyte-in/ui-kit/commit/af2fdc5b72549c393412149a6dca835b607f52f0))
+- **chat:** dynamic permissions ([84e092e](https://github.com/dyte-in/ui-kit/commit/84e092e4cfdb2a7c7331d065c064948af3c69dfd))
+- dynamic permission of dyte-recording-toggle ([8b08663](https://github.com/dyte-in/ui-kit/commit/8b0866329374868d489a7d2797201d50043bf02a))
+- dynamic permissions for breakout rooms ([1620dd2](https://github.com/dyte-in/ui-kit/commit/1620dd23d68a885a60ebdac29a93ff2812e9f53c))
+- dynamic permissions for dyte-caption-toggle ([1d40808](https://github.com/dyte-in/ui-kit/commit/1d40808c054ebb6639c84e131e2aa20b9689da23))
+- leave-meeting dialog dynamic permissions ([e2cb877](https://github.com/dyte-in/ui-kit/commit/e2cb877b80c2ae3b05c33c8104b70d62b1baf6db))
+- mute-all-toggle dynamic permissions ([687cd73](https://github.com/dyte-in/ui-kit/commit/687cd73cdb02e1a14a5812d7aeff02b074ffed4c))
+- **spotlight:** dynamic permissions ([ad239ae](https://github.com/dyte-in/ui-kit/commit/ad239aecd46631c485a128e5844ad859efa6ce34))
+- webinar-stage-toggle dynamic permissions ([af2fdc5](https://github.com/dyte-in/ui-kit/commit/af2fdc5b72549c393412149a6dca835b607f52f0))
 
 ## [1.68.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.1...@dyte-in/ui-kit-v1.68.2) (2024-05-15)
 
-
 ### Bug Fixes
 
-* empty trigger build ([4b91629](https://github.com/dyte-in/ui-kit/commit/4b91629b9d965ed1c1787a5b9300f2999466087a))
+- empty trigger build ([4b91629](https://github.com/dyte-in/ui-kit/commit/4b91629b9d965ed1c1787a5b9300f2999466087a))
 
 ## [1.68.2-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.1...@dyte-in/ui-kit-v1.68.2-staging.1) (2024-05-15)
 
-
 ### Bug Fixes
 
-* empty trigger build ([4b91629](https://github.com/dyte-in/ui-kit/commit/4b91629b9d965ed1c1787a5b9300f2999466087a))
+- empty trigger build ([4b91629](https://github.com/dyte-in/ui-kit/commit/4b91629b9d965ed1c1787a5b9300f2999466087a))
 
 ## [1.68.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.0...@dyte-in/ui-kit-v1.68.1) (2024-05-15)
 
-
 ### Bug Fixes
 
-* hide empty polls when poll creation form is active ([43a31c6](https://github.com/dyte-in/ui-kit/commit/43a31c610ad0e67b69d84884a75fc4fe2e1b8720))
+- hide empty polls when poll creation form is active ([43a31c6](https://github.com/dyte-in/ui-kit/commit/43a31c610ad0e67b69d84884a75fc4fe2e1b8720))
 
 # [1.68.0](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.67.0...@dyte-in/ui-kit-v1.68.0) (2024-05-15)
 
-
 ### Bug Fixes
 
-* allow closing plugin if enabled by self ([f4e9a0b](https://github.com/dyte-in/ui-kit/commit/f4e9a0b4a0dc6ae1095e7506c1b6cf0013ce40b0))
-* **chat:** add code block formatting ([e04cd07](https://github.com/dyte-in/ui-kit/commit/e04cd0749ed9ec99b009cda22ebaed13cc6527b5))
-* chrome permission helper text ([61a5923](https://github.com/dyte-in/ui-kit/commit/61a5923f9211d60595c8736701e9ae8dbc01045a))
-* minor UI fixes (coaching) ([47a66f1](https://github.com/dyte-in/ui-kit/commit/47a66f1c0f5c999da99dc75308162c52cf4b5fa3))
-* **more-toggle-visibility:** fixed breakout rooms check for more-toggle ([9fdb56a](https://github.com/dyte-in/ui-kit/commit/9fdb56ab6f1a7acd2f251282cc77f11956c80e81))
-* trim title length ([6e02517](https://github.com/dyte-in/ui-kit/commit/6e02517d6c14acae1fdcea2c9b0a5896d897ac0c))
-
+- allow closing plugin if enabled by self ([f4e9a0b](https://github.com/dyte-in/ui-kit/commit/f4e9a0b4a0dc6ae1095e7506c1b6cf0013ce40b0))
+- **chat:** add code block formatting ([e04cd07](https://github.com/dyte-in/ui-kit/commit/e04cd0749ed9ec99b009cda22ebaed13cc6527b5))
+- chrome permission helper text ([61a5923](https://github.com/dyte-in/ui-kit/commit/61a5923f9211d60595c8736701e9ae8dbc01045a))
+- minor UI fixes (coaching) ([47a66f1](https://github.com/dyte-in/ui-kit/commit/47a66f1c0f5c999da99dc75308162c52cf4b5fa3))
+- **more-toggle-visibility:** fixed breakout rooms check for more-toggle ([9fdb56a](https://github.com/dyte-in/ui-kit/commit/9fdb56ab6f1a7acd2f251282cc77f11956c80e81))
+- trim title length ([6e02517](https://github.com/dyte-in/ui-kit/commit/6e02517d6c14acae1fdcea2c9b0a5896d897ac0c))
 
 ### Features
 
-* add illustrated permission guide ([3091b49](https://github.com/dyte-in/ui-kit/commit/3091b4981b25d407baa5ff1e6eb340b8ce632fc3))
+- add illustrated permission guide ([3091b49](https://github.com/dyte-in/ui-kit/commit/3091b4981b25d407baa5ff1e6eb340b8ce632fc3))
 
 # [1.68.0-staging.6](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.0-staging.5...@dyte-in/ui-kit-v1.68.0-staging.6) (2024-05-15)
 
-
 ### Bug Fixes
 
-* chrome permission helper text ([61a5923](https://github.com/dyte-in/ui-kit/commit/61a5923f9211d60595c8736701e9ae8dbc01045a))
+- chrome permission helper text ([61a5923](https://github.com/dyte-in/ui-kit/commit/61a5923f9211d60595c8736701e9ae8dbc01045a))
 
 # [1.68.0-staging.5](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.0-staging.4...@dyte-in/ui-kit-v1.68.0-staging.5) (2024-05-14)
 
-
 ### Bug Fixes
 
-* minor UI fixes (coaching) ([47a66f1](https://github.com/dyte-in/ui-kit/commit/47a66f1c0f5c999da99dc75308162c52cf4b5fa3))
+- minor UI fixes (coaching) ([47a66f1](https://github.com/dyte-in/ui-kit/commit/47a66f1c0f5c999da99dc75308162c52cf4b5fa3))
 
 # [1.68.0-staging.4](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.0-staging.3...@dyte-in/ui-kit-v1.68.0-staging.4) (2024-05-13)
 
-
 ### Bug Fixes
 
-* **more-toggle-visibility:** fixed breakout rooms check for more-toggle ([9fdb56a](https://github.com/dyte-in/ui-kit/commit/9fdb56ab6f1a7acd2f251282cc77f11956c80e81))
+- **more-toggle-visibility:** fixed breakout rooms check for more-toggle ([9fdb56a](https://github.com/dyte-in/ui-kit/commit/9fdb56ab6f1a7acd2f251282cc77f11956c80e81))
 
 # [1.68.0-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.0-staging.2...@dyte-in/ui-kit-v1.68.0-staging.3) (2024-05-13)
 
-
 ### Bug Fixes
 
-* **chat:** add code block formatting ([e04cd07](https://github.com/dyte-in/ui-kit/commit/e04cd0749ed9ec99b009cda22ebaed13cc6527b5))
+- **chat:** add code block formatting ([e04cd07](https://github.com/dyte-in/ui-kit/commit/e04cd0749ed9ec99b009cda22ebaed13cc6527b5))
 
 # [1.68.0-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.68.0-staging.1...@dyte-in/ui-kit-v1.68.0-staging.2) (2024-05-11)
 
-
 ### Bug Fixes
 
-* trim title length ([6e02517](https://github.com/dyte-in/ui-kit/commit/6e02517d6c14acae1fdcea2c9b0a5896d897ac0c))
+- trim title length ([6e02517](https://github.com/dyte-in/ui-kit/commit/6e02517d6c14acae1fdcea2c9b0a5896d897ac0c))
 
 # [1.68.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.67.1-staging.1...@dyte-in/ui-kit-v1.68.0-staging.1) (2024-05-10)
 
-
 ### Features
 
-* add illustrated permission guide ([3091b49](https://github.com/dyte-in/ui-kit/commit/3091b4981b25d407baa5ff1e6eb340b8ce632fc3))
+- add illustrated permission guide ([3091b49](https://github.com/dyte-in/ui-kit/commit/3091b4981b25d407baa5ff1e6eb340b8ce632fc3))
 
 ## [1.67.1-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.67.0...@dyte-in/ui-kit-v1.67.1-staging.1) (2024-05-10)
 
-
 ### Bug Fixes
 
-* allow closing plugin if enabled by self ([f4e9a0b](https://github.com/dyte-in/ui-kit/commit/f4e9a0b4a0dc6ae1095e7506c1b6cf0013ce40b0))
+- allow closing plugin if enabled by self ([f4e9a0b](https://github.com/dyte-in/ui-kit/commit/f4e9a0b4a0dc6ae1095e7506c1b6cf0013ce40b0))
 
 # [1.67.0](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.3...@dyte-in/ui-kit-v1.67.0) (2024-05-07)
 
-
 ### Bug Fixes
 
-* change notification button variant for waitilisted ([ee1165d](https://github.com/dyte-in/ui-kit/commit/ee1165d92948775112ea45c50eb7076b419104a4))
-* create only one input element while uploading files ([89258c4](https://github.com/dyte-in/ui-kit/commit/89258c46e3514b9e9482ef4590356d1066b4e33c))
-* double t() calls ([dbff32d](https://github.com/dyte-in/ui-kit/commit/dbff32d1c3220b991c726d88c1468f57d05b028a))
-
+- change notification button variant for waitilisted ([ee1165d](https://github.com/dyte-in/ui-kit/commit/ee1165d92948775112ea45c50eb7076b419104a4))
+- create only one input element while uploading files ([89258c4](https://github.com/dyte-in/ui-kit/commit/89258c46e3514b9e9482ef4590356d1066b4e33c))
+- double t() calls ([dbff32d](https://github.com/dyte-in/ui-kit/commit/dbff32d1c3220b991c726d88c1468f57d05b028a))
 
 ### Features
 
-* **permission-popup-message:** fix ugly permission denied message for unknown os or browsers ([edff122](https://github.com/dyte-in/ui-kit/commit/edff122e93381b677f02705cbfa3199e4a2b8a86))
+- **permission-popup-message:** fix ugly permission denied message for unknown os or browsers ([edff122](https://github.com/dyte-in/ui-kit/commit/edff122e93381b677f02705cbfa3199e4a2b8a86))
 
 # [1.67.0-staging.4](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.67.0-staging.3...@dyte-in/ui-kit-v1.67.0-staging.4) (2024-05-07)
 
-
 ### Bug Fixes
 
-* create only one input element while uploading files ([89258c4](https://github.com/dyte-in/ui-kit/commit/89258c46e3514b9e9482ef4590356d1066b4e33c))
-* disable chat pinning ([d968bd8](https://github.com/dyte-in/ui-kit/commit/d968bd8915c48ccf15d8794d475bb6a35ff8ef65))
+- create only one input element while uploading files ([89258c4](https://github.com/dyte-in/ui-kit/commit/89258c46e3514b9e9482ef4590356d1066b4e33c))
+- disable chat pinning ([d968bd8](https://github.com/dyte-in/ui-kit/commit/d968bd8915c48ccf15d8794d475bb6a35ff8ef65))
 
 # [1.67.0-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.67.0-staging.2...@dyte-in/ui-kit-v1.67.0-staging.3) (2024-05-06)
 
 ## [1.66.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2...@dyte-in/ui-kit-v1.66.3) (2024-04-30)
 
-
-
 ### Bug Fixes
 
-* change notification button variant for waitilisted ([ee1165d](https://github.com/dyte-in/ui-kit/commit/ee1165d92948775112ea45c50eb7076b419104a4))
+- change notification button variant for waitilisted ([ee1165d](https://github.com/dyte-in/ui-kit/commit/ee1165d92948775112ea45c50eb7076b419104a4))
 
 # [1.67.0-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.67.0-staging.1...@dyte-in/ui-kit-v1.67.0-staging.2) (2024-05-02)
 
-
 ### Bug Fixes
 
-* double t() calls ([dbff32d](https://github.com/dyte-in/ui-kit/commit/dbff32d1c3220b991c726d88c1468f57d05b028a))
+- double t() calls ([dbff32d](https://github.com/dyte-in/ui-kit/commit/dbff32d1c3220b991c726d88c1468f57d05b028a))
 
 # [1.67.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2...@dyte-in/ui-kit-v1.67.0-staging.1) (2024-04-25)
 
-
 ### Features
 
-* **permission-popup-message:** fix ugly permission denied message for unknown os or browsers ([edff122](https://github.com/dyte-in/ui-kit/commit/edff122e93381b677f02705cbfa3199e4a2b8a86))
+- **permission-popup-message:** fix ugly permission denied message for unknown os or browsers ([edff122](https://github.com/dyte-in/ui-kit/commit/edff122e93381b677f02705cbfa3199e4a2b8a86))
 
-* disable chat pinning ([d968bd8](https://github.com/dyte-in/ui-kit/commit/d968bd8915c48ccf15d8794d475bb6a35ff8ef65))
-
+- disable chat pinning ([d968bd8](https://github.com/dyte-in/ui-kit/commit/d968bd8915c48ccf15d8794d475bb6a35ff8ef65))
 
 ## [1.66.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1...@dyte-in/ui-kit-v1.66.2) (2024-04-24)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([ef79c3d](https://github.com/dyte-in/ui-kit/commit/ef79c3dc224cc30eb228432e9ec1a1968b0af273))
-* chat private preset filter prop rendering ([491c806](https://github.com/dyte-in/ui-kit/commit/491c806e393877e7fc0552f0c2d4e450ffd70bfe))
-* **chat:** message styles ([6a551ed](https://github.com/dyte-in/ui-kit/commit/6a551edbbd53c221be1fc5fe75551c5378fd7e35))
-* **chat:** pinned messages header ([84774ee](https://github.com/dyte-in/ui-kit/commit/84774eeb863200d57150bd76625b7ca1d7e111dc))
-* **chat:** pinned messages visibility and message ui ([261a993](https://github.com/dyte-in/ui-kit/commit/261a9932c56b7f357130d034bc095494d20fbc32))
-* **chat:** private messages listener ([6dae953](https://github.com/dyte-in/ui-kit/commit/6dae9536891b1cd773df6e872ecf792e8a9eae05))
-* **chat:** use paginated list for group call messages ([e3c7f9d](https://github.com/dyte-in/ui-kit/commit/e3c7f9d6c8126fc091b7a9f0cc56d7a371157138))
-* different logic for chat and normal meetings for chat avatar ([9b29f92](https://github.com/dyte-in/ui-kit/commit/9b29f92dfe59168a914cdd39e948c3d2922a4503))
-* do not toggle view mode for people with permission from preset ([a96a00c](https://github.com/dyte-in/ui-kit/commit/a96a00c255134d51fa92b4cb0da911ff020600e7))
-* emit notifications for audio device change even when audio is off ([e6c6408](https://github.com/dyte-in/ui-kit/commit/e6c6408ec001583acdb78621d8835c3427ca86ac))
-* **i18n:** fixed notifications, search and participant i18n ([e9f6909](https://github.com/dyte-in/ui-kit/commit/e9f690991af5cfe7dfbfaede90489ab622a229c9))
-* make default button type: button ([45b0f1b](https://github.com/dyte-in/ui-kit/commit/45b0f1baf8162446f3965d8898c0b95d739b4d90))
-* make dialog accessible ([037325e](https://github.com/dyte-in/ui-kit/commit/037325eda9ecc7b1611cd92b3a2e6aa445a5fb31))
-* pass proper picture in chat ([13066c3](https://github.com/dyte-in/ui-kit/commit/13066c3de7bf4a67784f673835183d9d02fac6ff))
-* plugin re-init error in vca ([27d318d](https://github.com/dyte-in/ui-kit/commit/27d318dc89af7233a603019111c0290df197a1ed))
-* **remote-i18n:** fixed i18n for remote control ([6563b62](https://github.com/dyte-in/ui-kit/commit/6563b62355c0d32062f923dd68ad4d267870f079))
-* remove participant list flag ([126978a](https://github.com/dyte-in/ui-kit/commit/126978a5f15874d82cbab023cdec7bcfab1ccc26))
-* revert demo app changes ([3aa7dfa](https://github.com/dyte-in/ui-kit/commit/3aa7dfa8350c031020f797e1d35cec136ce3d95b))
-* support angular 16 & 17 ([9f11958](https://github.com/dyte-in/ui-kit/commit/9f11958d04fd922e06228a6f51dfe8fc1431a3a5))
-* update browserslist ([d4c8af1](https://github.com/dyte-in/ui-kit/commit/d4c8af16fe5a558240db3b44bf7645168e02ac63))
-* update plugins view mode ([c7b6e58](https://github.com/dyte-in/ui-kit/commit/c7b6e58b02ceaf00f820959aad5d72f88c541bdb))
-* use devices from web-core to populate the device dropdown in settings ([4cf5bed](https://github.com/dyte-in/ui-kit/commit/4cf5bedd5971a25c4ad3e5fa586a7e60f5a91670))
-* use i18n ([fa1a492](https://github.com/dyte-in/ui-kit/commit/fa1a4923430e2a911f05a1bbd5afcf8d8d515db4))
-* use joined & waitlisted list instead of all in chat ([28478a5](https://github.com/dyte-in/ui-kit/commit/28478a59942d15cae546d3b2f0cb79839c2225a9))
+- @dytesdk/web-core auto-updated ([ef79c3d](https://github.com/dyte-in/ui-kit/commit/ef79c3dc224cc30eb228432e9ec1a1968b0af273))
+- chat private preset filter prop rendering ([491c806](https://github.com/dyte-in/ui-kit/commit/491c806e393877e7fc0552f0c2d4e450ffd70bfe))
+- **chat:** message styles ([6a551ed](https://github.com/dyte-in/ui-kit/commit/6a551edbbd53c221be1fc5fe75551c5378fd7e35))
+- **chat:** pinned messages header ([84774ee](https://github.com/dyte-in/ui-kit/commit/84774eeb863200d57150bd76625b7ca1d7e111dc))
+- **chat:** pinned messages visibility and message ui ([261a993](https://github.com/dyte-in/ui-kit/commit/261a9932c56b7f357130d034bc095494d20fbc32))
+- **chat:** private messages listener ([6dae953](https://github.com/dyte-in/ui-kit/commit/6dae9536891b1cd773df6e872ecf792e8a9eae05))
+- **chat:** use paginated list for group call messages ([e3c7f9d](https://github.com/dyte-in/ui-kit/commit/e3c7f9d6c8126fc091b7a9f0cc56d7a371157138))
+- different logic for chat and normal meetings for chat avatar ([9b29f92](https://github.com/dyte-in/ui-kit/commit/9b29f92dfe59168a914cdd39e948c3d2922a4503))
+- do not toggle view mode for people with permission from preset ([a96a00c](https://github.com/dyte-in/ui-kit/commit/a96a00c255134d51fa92b4cb0da911ff020600e7))
+- emit notifications for audio device change even when audio is off ([e6c6408](https://github.com/dyte-in/ui-kit/commit/e6c6408ec001583acdb78621d8835c3427ca86ac))
+- **i18n:** fixed notifications, search and participant i18n ([e9f6909](https://github.com/dyte-in/ui-kit/commit/e9f690991af5cfe7dfbfaede90489ab622a229c9))
+- make default button type: button ([45b0f1b](https://github.com/dyte-in/ui-kit/commit/45b0f1baf8162446f3965d8898c0b95d739b4d90))
+- make dialog accessible ([037325e](https://github.com/dyte-in/ui-kit/commit/037325eda9ecc7b1611cd92b3a2e6aa445a5fb31))
+- pass proper picture in chat ([13066c3](https://github.com/dyte-in/ui-kit/commit/13066c3de7bf4a67784f673835183d9d02fac6ff))
+- plugin re-init error in vca ([27d318d](https://github.com/dyte-in/ui-kit/commit/27d318dc89af7233a603019111c0290df197a1ed))
+- **remote-i18n:** fixed i18n for remote control ([6563b62](https://github.com/dyte-in/ui-kit/commit/6563b62355c0d32062f923dd68ad4d267870f079))
+- remove participant list flag ([126978a](https://github.com/dyte-in/ui-kit/commit/126978a5f15874d82cbab023cdec7bcfab1ccc26))
+- revert demo app changes ([3aa7dfa](https://github.com/dyte-in/ui-kit/commit/3aa7dfa8350c031020f797e1d35cec136ce3d95b))
+- support angular 16 & 17 ([9f11958](https://github.com/dyte-in/ui-kit/commit/9f11958d04fd922e06228a6f51dfe8fc1431a3a5))
+- update browserslist ([d4c8af1](https://github.com/dyte-in/ui-kit/commit/d4c8af16fe5a558240db3b44bf7645168e02ac63))
+- update plugins view mode ([c7b6e58](https://github.com/dyte-in/ui-kit/commit/c7b6e58b02ceaf00f820959aad5d72f88c541bdb))
+- use devices from web-core to populate the device dropdown in settings ([4cf5bed](https://github.com/dyte-in/ui-kit/commit/4cf5bedd5971a25c4ad3e5fa586a7e60f5a91670))
+- use i18n ([fa1a492](https://github.com/dyte-in/ui-kit/commit/fa1a4923430e2a911f05a1bbd5afcf8d8d515db4))
+- use joined & waitlisted list instead of all in chat ([28478a5](https://github.com/dyte-in/ui-kit/commit/28478a59942d15cae546d3b2f0cb79839c2225a9))
 
 ## [1.66.2-staging.15](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.14...@dyte-in/ui-kit-v1.66.2-staging.15) (2024-04-23)
 
-
 ### Bug Fixes
 
-* **chat:** message styles ([6a551ed](https://github.com/dyte-in/ui-kit/commit/6a551edbbd53c221be1fc5fe75551c5378fd7e35))
+- **chat:** message styles ([6a551ed](https://github.com/dyte-in/ui-kit/commit/6a551edbbd53c221be1fc5fe75551c5378fd7e35))
 
 ## [1.66.2-staging.14](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.13...@dyte-in/ui-kit-v1.66.2-staging.14) (2024-04-23)
 
-
 ### Bug Fixes
 
-* **chat:** pinned messages header ([84774ee](https://github.com/dyte-in/ui-kit/commit/84774eeb863200d57150bd76625b7ca1d7e111dc))
+- **chat:** pinned messages header ([84774ee](https://github.com/dyte-in/ui-kit/commit/84774eeb863200d57150bd76625b7ca1d7e111dc))
 
 ## [1.66.2-staging.13](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.12...@dyte-in/ui-kit-v1.66.2-staging.13) (2024-04-22)
 
-
 ### Bug Fixes
 
-* **chat:** pinned messages visibility and message ui ([261a993](https://github.com/dyte-in/ui-kit/commit/261a9932c56b7f357130d034bc095494d20fbc32))
-* **chat:** private messages listener ([6dae953](https://github.com/dyte-in/ui-kit/commit/6dae9536891b1cd773df6e872ecf792e8a9eae05))
+- **chat:** pinned messages visibility and message ui ([261a993](https://github.com/dyte-in/ui-kit/commit/261a9932c56b7f357130d034bc095494d20fbc32))
+- **chat:** private messages listener ([6dae953](https://github.com/dyte-in/ui-kit/commit/6dae9536891b1cd773df6e872ecf792e8a9eae05))
 
 ## [1.66.2-staging.12](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.11...@dyte-in/ui-kit-v1.66.2-staging.12) (2024-04-19)
 
-
 ### Bug Fixes
 
-* **chat:** use paginated list for group call messages ([e3c7f9d](https://github.com/dyte-in/ui-kit/commit/e3c7f9d6c8126fc091b7a9f0cc56d7a371157138))
+- **chat:** use paginated list for group call messages ([e3c7f9d](https://github.com/dyte-in/ui-kit/commit/e3c7f9d6c8126fc091b7a9f0cc56d7a371157138))
 
 ## [1.66.2-staging.11](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.10...@dyte-in/ui-kit-v1.66.2-staging.11) (2024-04-18)
 
-
 ### Bug Fixes
 
-* **i18n:** fixed notifications, search and participant i18n ([e9f6909](https://github.com/dyte-in/ui-kit/commit/e9f690991af5cfe7dfbfaede90489ab622a229c9))
-* **remote-i18n:** fixed i18n for remote control ([6563b62](https://github.com/dyte-in/ui-kit/commit/6563b62355c0d32062f923dd68ad4d267870f079))
+- **i18n:** fixed notifications, search and participant i18n ([e9f6909](https://github.com/dyte-in/ui-kit/commit/e9f690991af5cfe7dfbfaede90489ab622a229c9))
+- **remote-i18n:** fixed i18n for remote control ([6563b62](https://github.com/dyte-in/ui-kit/commit/6563b62355c0d32062f923dd68ad4d267870f079))
 
 ## [1.66.2-staging.10](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.9...@dyte-in/ui-kit-v1.66.2-staging.10) (2024-04-12)
 
-
 ### Bug Fixes
 
-* remove participant list flag ([126978a](https://github.com/dyte-in/ui-kit/commit/126978a5f15874d82cbab023cdec7bcfab1ccc26))
+- remove participant list flag ([126978a](https://github.com/dyte-in/ui-kit/commit/126978a5f15874d82cbab023cdec7bcfab1ccc26))
 
 ## [1.66.2-staging.9](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.8...@dyte-in/ui-kit-v1.66.2-staging.9) (2024-04-12)
 
-
 ### Bug Fixes
 
-* different logic for chat and normal meetings for chat avatar ([9b29f92](https://github.com/dyte-in/ui-kit/commit/9b29f92dfe59168a914cdd39e948c3d2922a4503))
-* use joined & waitlisted list instead of all in chat ([28478a5](https://github.com/dyte-in/ui-kit/commit/28478a59942d15cae546d3b2f0cb79839c2225a9))
+- different logic for chat and normal meetings for chat avatar ([9b29f92](https://github.com/dyte-in/ui-kit/commit/9b29f92dfe59168a914cdd39e948c3d2922a4503))
+- use joined & waitlisted list instead of all in chat ([28478a5](https://github.com/dyte-in/ui-kit/commit/28478a59942d15cae546d3b2f0cb79839c2225a9))
 
 ## [1.66.2-staging.8](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.7...@dyte-in/ui-kit-v1.66.2-staging.8) (2024-04-11)
 
-
 ### Bug Fixes
 
-* pass proper picture in chat ([13066c3](https://github.com/dyte-in/ui-kit/commit/13066c3de7bf4a67784f673835183d9d02fac6ff))
+- pass proper picture in chat ([13066c3](https://github.com/dyte-in/ui-kit/commit/13066c3de7bf4a67784f673835183d9d02fac6ff))
 
 ## [1.66.2-staging.7](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.6...@dyte-in/ui-kit-v1.66.2-staging.7) (2024-04-09)
 
-
 ### Bug Fixes
 
-* support angular 16 & 17 ([9f11958](https://github.com/dyte-in/ui-kit/commit/9f11958d04fd922e06228a6f51dfe8fc1431a3a5))
+- support angular 16 & 17 ([9f11958](https://github.com/dyte-in/ui-kit/commit/9f11958d04fd922e06228a6f51dfe8fc1431a3a5))
 
 ## [1.66.2-staging.6](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.5...@dyte-in/ui-kit-v1.66.2-staging.6) (2024-04-05)
 
-
 ### Bug Fixes
 
-* plugin re-init error in vca ([27d318d](https://github.com/dyte-in/ui-kit/commit/27d318dc89af7233a603019111c0290df197a1ed))
+- plugin re-init error in vca ([27d318d](https://github.com/dyte-in/ui-kit/commit/27d318dc89af7233a603019111c0290df197a1ed))
 
 ## [1.66.2-staging.5](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.4...@dyte-in/ui-kit-v1.66.2-staging.5) (2024-04-05)
 
-
 ### Bug Fixes
 
-* emit notifications for audio device change even when audio is off ([e6c6408](https://github.com/dyte-in/ui-kit/commit/e6c6408ec001583acdb78621d8835c3427ca86ac))
-* use devices from web-core to populate the device dropdown in settings ([4cf5bed](https://github.com/dyte-in/ui-kit/commit/4cf5bedd5971a25c4ad3e5fa586a7e60f5a91670))
+- emit notifications for audio device change even when audio is off ([e6c6408](https://github.com/dyte-in/ui-kit/commit/e6c6408ec001583acdb78621d8835c3427ca86ac))
+- use devices from web-core to populate the device dropdown in settings ([4cf5bed](https://github.com/dyte-in/ui-kit/commit/4cf5bedd5971a25c4ad3e5fa586a7e60f5a91670))
 
 ## [1.66.2-staging.4](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.3...@dyte-in/ui-kit-v1.66.2-staging.4) (2024-04-04)
 
-
 ### Bug Fixes
 
-* make default button type: button ([45b0f1b](https://github.com/dyte-in/ui-kit/commit/45b0f1baf8162446f3965d8898c0b95d739b4d90))
-* make dialog accessible ([037325e](https://github.com/dyte-in/ui-kit/commit/037325eda9ecc7b1611cd92b3a2e6aa445a5fb31))
-* update browserslist ([d4c8af1](https://github.com/dyte-in/ui-kit/commit/d4c8af16fe5a558240db3b44bf7645168e02ac63))
-* use i18n ([fa1a492](https://github.com/dyte-in/ui-kit/commit/fa1a4923430e2a911f05a1bbd5afcf8d8d515db4))
+- make default button type: button ([45b0f1b](https://github.com/dyte-in/ui-kit/commit/45b0f1baf8162446f3965d8898c0b95d739b4d90))
+- make dialog accessible ([037325e](https://github.com/dyte-in/ui-kit/commit/037325eda9ecc7b1611cd92b3a2e6aa445a5fb31))
+- update browserslist ([d4c8af1](https://github.com/dyte-in/ui-kit/commit/d4c8af16fe5a558240db3b44bf7645168e02ac63))
+- use i18n ([fa1a492](https://github.com/dyte-in/ui-kit/commit/fa1a4923430e2a911f05a1bbd5afcf8d8d515db4))
 
 ## [1.66.2-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.2...@dyte-in/ui-kit-v1.66.2-staging.3) (2024-04-02)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([ef79c3d](https://github.com/dyte-in/ui-kit/commit/ef79c3dc224cc30eb228432e9ec1a1968b0af273))
+- @dytesdk/web-core auto-updated ([ef79c3d](https://github.com/dyte-in/ui-kit/commit/ef79c3dc224cc30eb228432e9ec1a1968b0af273))
 
 ## [1.66.2-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.2-staging.1...@dyte-in/ui-kit-v1.66.2-staging.2) (2024-03-29)
 
-
 ### Bug Fixes
 
-* chat private preset filter prop rendering ([491c806](https://github.com/dyte-in/ui-kit/commit/491c806e393877e7fc0552f0c2d4e450ffd70bfe))
+- chat private preset filter prop rendering ([491c806](https://github.com/dyte-in/ui-kit/commit/491c806e393877e7fc0552f0c2d4e450ffd70bfe))
 
 ## [1.66.2-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1...@dyte-in/ui-kit-v1.66.2-staging.1) (2024-03-28)
 
-
 ### Bug Fixes
 
-* do not toggle view mode for people with permission from preset ([a96a00c](https://github.com/dyte-in/ui-kit/commit/a96a00c255134d51fa92b4cb0da911ff020600e7))
-* revert demo app changes ([3aa7dfa](https://github.com/dyte-in/ui-kit/commit/3aa7dfa8350c031020f797e1d35cec136ce3d95b))
-* update plugins view mode ([c7b6e58](https://github.com/dyte-in/ui-kit/commit/c7b6e58b02ceaf00f820959aad5d72f88c541bdb))
+- do not toggle view mode for people with permission from preset ([a96a00c](https://github.com/dyte-in/ui-kit/commit/a96a00c255134d51fa92b4cb0da911ff020600e7))
+- revert demo app changes ([3aa7dfa](https://github.com/dyte-in/ui-kit/commit/3aa7dfa8350c031020f797e1d35cec136ce3d95b))
+- update plugins view mode ([c7b6e58](https://github.com/dyte-in/ui-kit/commit/c7b6e58b02ceaf00f820959aad5d72f88c541bdb))
 
 ## [1.66.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.0...@dyte-in/ui-kit-v1.66.1) (2024-03-26)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([55d02f9](https://github.com/dyte-in/ui-kit/commit/55d02f930e5b6a890018a156abec8c947077364b))
-* @dytesdk/web-core auto-updated ([ea8c7cb](https://github.com/dyte-in/ui-kit/commit/ea8c7cb6a9ff270c2696f5081dc35a917b69c4b7))
-* **dyte-meeting:** make meeting prop optional ([94b69b8](https://github.com/dyte-in/ui-kit/commit/94b69b84d453757d32f4bdb22c4ddafd004aaf1d))
-* empty release trigger commit ([ac22885](https://github.com/dyte-in/ui-kit/commit/ac2288516f09c67f74cae9eac7d4b342c3af355f))
-* export breakout rooms manager util ([06c6f3d](https://github.com/dyte-in/ui-kit/commit/06c6f3d4578c891c24668b2d038ea8f6eab735da))
-* pass down icon pack in composer sub components ([6f13673](https://github.com/dyte-in/ui-kit/commit/6f1367330473700aef3f3990340124277ff5519a))
-* pass props to children and fix double renders ([c676259](https://github.com/dyte-in/ui-kit/commit/c676259137bfd2014a2256933e784e542cea223d))
-* re-re-revert stencil fix ([e3c5877](https://github.com/dyte-in/ui-kit/commit/e3c5877bd596a696ceb2553e2fec17a090c37a6a))
-* re-render tile on prefs change ([07771c5](https://github.com/dyte-in/ui-kit/commit/07771c51c18ebd771d4b6e0cce2e24636005b77b))
-* remove maxLength prop from name-tag ([9cd23c3](https://github.com/dyte-in/ui-kit/commit/9cd23c3a4a87679fc57c1982555b928335c0d49f))
-* remove older notifications when new device change event comes ([324d3fd](https://github.com/dyte-in/ui-kit/commit/324d3fd425fb35c19a497a5044e4d8a64fc3762f))
-
+- @dytesdk/web-core auto-updated ([55d02f9](https://github.com/dyte-in/ui-kit/commit/55d02f930e5b6a890018a156abec8c947077364b))
+- @dytesdk/web-core auto-updated ([ea8c7cb](https://github.com/dyte-in/ui-kit/commit/ea8c7cb6a9ff270c2696f5081dc35a917b69c4b7))
+- **dyte-meeting:** make meeting prop optional ([94b69b8](https://github.com/dyte-in/ui-kit/commit/94b69b84d453757d32f4bdb22c4ddafd004aaf1d))
+- empty release trigger commit ([ac22885](https://github.com/dyte-in/ui-kit/commit/ac2288516f09c67f74cae9eac7d4b342c3af355f))
+- export breakout rooms manager util ([06c6f3d](https://github.com/dyte-in/ui-kit/commit/06c6f3d4578c891c24668b2d038ea8f6eab735da))
+- pass down icon pack in composer sub components ([6f13673](https://github.com/dyte-in/ui-kit/commit/6f1367330473700aef3f3990340124277ff5519a))
+- pass props to children and fix double renders ([c676259](https://github.com/dyte-in/ui-kit/commit/c676259137bfd2014a2256933e784e542cea223d))
+- re-re-revert stencil fix ([e3c5877](https://github.com/dyte-in/ui-kit/commit/e3c5877bd596a696ceb2553e2fec17a090c37a6a))
+- re-render tile on prefs change ([07771c5](https://github.com/dyte-in/ui-kit/commit/07771c51c18ebd771d4b6e0cce2e24636005b77b))
+- remove maxLength prop from name-tag ([9cd23c3](https://github.com/dyte-in/ui-kit/commit/9cd23c3a4a87679fc57c1982555b928335c0d49f))
+- remove older notifications when new device change event comes ([324d3fd](https://github.com/dyte-in/ui-kit/commit/324d3fd425fb35c19a497a5044e4d8a64fc3762f))
 
 ### Reverts
 
-* redo stencil patch ([ccdcbab](https://github.com/dyte-in/ui-kit/commit/ccdcbabfce4f7d8b7c1beeb1da9abb5a0f2e598c))
+- redo stencil patch ([ccdcbab](https://github.com/dyte-in/ui-kit/commit/ccdcbabfce4f7d8b7c1beeb1da9abb5a0f2e598c))
 
 ## [1.66.1-staging.11](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.10...@dyte-in/ui-kit-v1.66.1-staging.11) (2024-03-26)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([55d02f9](https://github.com/dyte-in/ui-kit/commit/55d02f930e5b6a890018a156abec8c947077364b))
+- @dytesdk/web-core auto-updated ([55d02f9](https://github.com/dyte-in/ui-kit/commit/55d02f930e5b6a890018a156abec8c947077364b))
 
 ## [1.66.1-staging.10](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.9...@dyte-in/ui-kit-v1.66.1-staging.10) (2024-03-21)
 
-
 ### Bug Fixes
 
-* pass down icon pack in composer sub components ([6f13673](https://github.com/dyte-in/ui-kit/commit/6f1367330473700aef3f3990340124277ff5519a))
+- pass down icon pack in composer sub components ([6f13673](https://github.com/dyte-in/ui-kit/commit/6f1367330473700aef3f3990340124277ff5519a))
 
 ## [1.66.1-staging.9](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.8...@dyte-in/ui-kit-v1.66.1-staging.9) (2024-03-20)
 
-
 ### Bug Fixes
 
-* remove maxLength prop from name-tag ([9cd23c3](https://github.com/dyte-in/ui-kit/commit/9cd23c3a4a87679fc57c1982555b928335c0d49f))
+- remove maxLength prop from name-tag ([9cd23c3](https://github.com/dyte-in/ui-kit/commit/9cd23c3a4a87679fc57c1982555b928335c0d49f))
 
 ## [1.66.1-staging.8](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.7...@dyte-in/ui-kit-v1.66.1-staging.8) (2024-03-19)
 
-
 ### Bug Fixes
 
-* re-render tile on prefs change ([07771c5](https://github.com/dyte-in/ui-kit/commit/07771c51c18ebd771d4b6e0cce2e24636005b77b))
+- re-render tile on prefs change ([07771c5](https://github.com/dyte-in/ui-kit/commit/07771c51c18ebd771d4b6e0cce2e24636005b77b))
 
 ## [1.66.1-staging.7](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.6...@dyte-in/ui-kit-v1.66.1-staging.7) (2024-03-18)
 
-
 ### Bug Fixes
 
-* remove older notifications when new device change event comes ([324d3fd](https://github.com/dyte-in/ui-kit/commit/324d3fd425fb35c19a497a5044e4d8a64fc3762f))
+- remove older notifications when new device change event comes ([324d3fd](https://github.com/dyte-in/ui-kit/commit/324d3fd425fb35c19a497a5044e4d8a64fc3762f))
 
 ## [1.66.1-staging.6](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.5...@dyte-in/ui-kit-v1.66.1-staging.6) (2024-03-08)
 
-
 ### Bug Fixes
 
-* **dyte-meeting:** make meeting prop optional ([94b69b8](https://github.com/dyte-in/ui-kit/commit/94b69b84d453757d32f4bdb22c4ddafd004aaf1d))
+- **dyte-meeting:** make meeting prop optional ([94b69b8](https://github.com/dyte-in/ui-kit/commit/94b69b84d453757d32f4bdb22c4ddafd004aaf1d))
 
 ## [1.66.1-staging.5](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.4...@dyte-in/ui-kit-v1.66.1-staging.5) (2024-03-08)
 
-
 ### Bug Fixes
 
-* export breakout rooms manager util ([06c6f3d](https://github.com/dyte-in/ui-kit/commit/06c6f3d4578c891c24668b2d038ea8f6eab735da))
+- export breakout rooms manager util ([06c6f3d](https://github.com/dyte-in/ui-kit/commit/06c6f3d4578c891c24668b2d038ea8f6eab735da))
 
 ## [1.66.1-staging.4](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.3...@dyte-in/ui-kit-v1.66.1-staging.4) (2024-03-08)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([ea8c7cb](https://github.com/dyte-in/ui-kit/commit/ea8c7cb6a9ff270c2696f5081dc35a917b69c4b7))
+- @dytesdk/web-core auto-updated ([ea8c7cb](https://github.com/dyte-in/ui-kit/commit/ea8c7cb6a9ff270c2696f5081dc35a917b69c4b7))
 
 ## [1.66.1-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.2...@dyte-in/ui-kit-v1.66.1-staging.3) (2024-03-07)
 
-
 ### Bug Fixes
 
-* re-re-revert stencil fix ([e3c5877](https://github.com/dyte-in/ui-kit/commit/e3c5877bd596a696ceb2553e2fec17a090c37a6a))
+- re-re-revert stencil fix ([e3c5877](https://github.com/dyte-in/ui-kit/commit/e3c5877bd596a696ceb2553e2fec17a090c37a6a))
 
 ## [1.66.1-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.1-staging.1...@dyte-in/ui-kit-v1.66.1-staging.2) (2024-03-05)
 
-
 ### Bug Fixes
 
-* empty release trigger commit ([ac22885](https://github.com/dyte-in/ui-kit/commit/ac2288516f09c67f74cae9eac7d4b342c3af355f))
-
+- empty release trigger commit ([ac22885](https://github.com/dyte-in/ui-kit/commit/ac2288516f09c67f74cae9eac7d4b342c3af355f))
 
 ### Reverts
 
-* redo stencil patch ([ccdcbab](https://github.com/dyte-in/ui-kit/commit/ccdcbabfce4f7d8b7c1beeb1da9abb5a0f2e598c))
+- redo stencil patch ([ccdcbab](https://github.com/dyte-in/ui-kit/commit/ccdcbabfce4f7d8b7c1beeb1da9abb5a0f2e598c))
 
 ## [1.66.1-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.0...@dyte-in/ui-kit-v1.66.1-staging.1) (2024-03-03)
 
-
 ### Bug Fixes
 
-* pass props to children and fix double renders ([c676259](https://github.com/dyte-in/ui-kit/commit/c676259137bfd2014a2256933e784e542cea223d))
+- pass props to children and fix double renders ([c676259](https://github.com/dyte-in/ui-kit/commit/c676259137bfd2014a2256933e784e542cea223d))
 
 # [1.66.0](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.65.0...@dyte-in/ui-kit-v1.66.0) (2024-02-29)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([640dfc4](https://github.com/dyte-in/ui-kit/commit/640dfc4ac43d646de147962263ce1893a7f9119c))
-* @dytesdk/web-core auto-updated ([7de886d](https://github.com/dyte-in/ui-kit/commit/7de886dd6497b4009490728a141b395d7106f334))
-* chat sidebar responsiveness ([8298e4f](https://github.com/dyte-in/ui-kit/commit/8298e4f671fc2805e8b1228750d29eea47a98b2c))
-
+- @dytesdk/web-core auto-updated ([640dfc4](https://github.com/dyte-in/ui-kit/commit/640dfc4ac43d646de147962263ce1893a7f9119c))
+- @dytesdk/web-core auto-updated ([7de886d](https://github.com/dyte-in/ui-kit/commit/7de886dd6497b4009490728a141b395d7106f334))
+- chat sidebar responsiveness ([8298e4f](https://github.com/dyte-in/ui-kit/commit/8298e4f671fc2805e8b1228750d29eea47a98b2c))
 
 ### Features
 
-* enable dynamic permissions for chat, polls and plugins ([951970c](https://github.com/dyte-in/ui-kit/commit/951970c41fd1e42de0d52fdaead678754c908d17))
+- enable dynamic permissions for chat, polls and plugins ([951970c](https://github.com/dyte-in/ui-kit/commit/951970c41fd1e42de0d52fdaead678754c908d17))
 
 # [1.66.0-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.66.0-staging.1...@dyte-in/ui-kit-v1.66.0-staging.2) (2024-02-29)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([640dfc4](https://github.com/dyte-in/ui-kit/commit/640dfc4ac43d646de147962263ce1893a7f9119c))
+- @dytesdk/web-core auto-updated ([640dfc4](https://github.com/dyte-in/ui-kit/commit/640dfc4ac43d646de147962263ce1893a7f9119c))
 
 # [1.66.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.65.1-staging.2...@dyte-in/ui-kit-v1.66.0-staging.1) (2024-02-27)
 
-
 ### Features
 
-* enable dynamic permissions for chat, polls and plugins ([951970c](https://github.com/dyte-in/ui-kit/commit/951970c41fd1e42de0d52fdaead678754c908d17))
+- enable dynamic permissions for chat, polls and plugins ([951970c](https://github.com/dyte-in/ui-kit/commit/951970c41fd1e42de0d52fdaead678754c908d17))
 
 ## [1.65.1-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.65.1-staging.1...@dyte-in/ui-kit-v1.65.1-staging.2) (2024-02-21)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([7de886d](https://github.com/dyte-in/ui-kit/commit/7de886dd6497b4009490728a141b395d7106f334))
+- @dytesdk/web-core auto-updated ([7de886d](https://github.com/dyte-in/ui-kit/commit/7de886dd6497b4009490728a141b395d7106f334))
 
 ## [1.65.1-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.65.0...@dyte-in/ui-kit-v1.65.1-staging.1) (2024-02-15)
 
-
 ### Bug Fixes
 
-* chat sidebar responsiveness ([8298e4f](https://github.com/dyte-in/ui-kit/commit/8298e4f671fc2805e8b1228750d29eea47a98b2c))
+- chat sidebar responsiveness ([8298e4f](https://github.com/dyte-in/ui-kit/commit/8298e4f671fc2805e8b1228750d29eea47a98b2c))
 
 # [1.65.0](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.64.0...@dyte-in/ui-kit-v1.65.0) (2024-02-14)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([043dea2](https://github.com/dyte-in/ui-kit/commit/043dea24581051e46097401e451b5330b3b2cf95))
-* **ai:** dyte-ai-transcriptions component ([6845918](https://github.com/dyte-in/ui-kit/commit/68459183e97027b77ccd055b06f94dfdd1adcd3c))
-* break words instead of all ([bd6931c](https://github.com/dyte-in/ui-kit/commit/bd6931c70eabf5fa714b9f49424c704a54b97575))
-
+- @dytesdk/web-core auto-updated ([043dea2](https://github.com/dyte-in/ui-kit/commit/043dea24581051e46097401e451b5330b3b2cf95))
+- **ai:** dyte-ai-transcriptions component ([6845918](https://github.com/dyte-in/ui-kit/commit/68459183e97027b77ccd055b06f94dfdd1adcd3c))
+- break words instead of all ([bd6931c](https://github.com/dyte-in/ui-kit/commit/bd6931c70eabf5fa714b9f49424c704a54b97575))
 
 ### Features
 
-* **internal:** emit screensharePlay event ([bb224d7](https://github.com/dyte-in/ui-kit/commit/bb224d70619b5c2a3ca0e82f233827d0b14a79dc))
+- **internal:** emit screensharePlay event ([bb224d7](https://github.com/dyte-in/ui-kit/commit/bb224d70619b5c2a3ca0e82f233827d0b14a79dc))
 
 # [1.65.0-staging.4](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.65.0-staging.3...@dyte-in/ui-kit-v1.65.0-staging.4) (2024-02-14)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([043dea2](https://github.com/dyte-in/ui-kit/commit/043dea24581051e46097401e451b5330b3b2cf95))
+- @dytesdk/web-core auto-updated ([043dea2](https://github.com/dyte-in/ui-kit/commit/043dea24581051e46097401e451b5330b3b2cf95))
 
 # [1.65.0-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.65.0-staging.2...@dyte-in/ui-kit-v1.65.0-staging.3) (2024-02-14)
 
-
 ### Bug Fixes
 
-* **ai:** dyte-ai-transcriptions component ([6845918](https://github.com/dyte-in/ui-kit/commit/68459183e97027b77ccd055b06f94dfdd1adcd3c))
+- **ai:** dyte-ai-transcriptions component ([6845918](https://github.com/dyte-in/ui-kit/commit/68459183e97027b77ccd055b06f94dfdd1adcd3c))
 
 # [1.65.0-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.65.0-staging.1...@dyte-in/ui-kit-v1.65.0-staging.2) (2024-02-14)
 
-
 ### Bug Fixes
 
-* break words instead of all ([bd6931c](https://github.com/dyte-in/ui-kit/commit/bd6931c70eabf5fa714b9f49424c704a54b97575))
+- break words instead of all ([bd6931c](https://github.com/dyte-in/ui-kit/commit/bd6931c70eabf5fa714b9f49424c704a54b97575))
 
 # [1.65.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.64.0...@dyte-in/ui-kit-v1.65.0-staging.1) (2024-02-12)
 
-
 ### Features
 
-* **internal:** emit screensharePlay event ([bb224d7](https://github.com/dyte-in/ui-kit/commit/bb224d70619b5c2a3ca0e82f233827d0b14a79dc))
+- **internal:** emit screensharePlay event ([bb224d7](https://github.com/dyte-in/ui-kit/commit/bb224d70619b5c2a3ca0e82f233827d0b14a79dc))
 
 # [1.64.0](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.63.0...@dyte-in/ui-kit-v1.64.0) (2024-02-08)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([7904bc9](https://github.com/dyte-in/ui-kit/commit/7904bc966651934d334fb0346c015036591da16e))
-
+- @dytesdk/web-core auto-updated ([7904bc9](https://github.com/dyte-in/ui-kit/commit/7904bc966651934d334fb0346c015036591da16e))
 
 ### Features
 
-* add recording notification configuration ([0a36101](https://github.com/dyte-in/ui-kit/commit/0a361015a17a22cf5ec92b0b86ea1ed594b0c738))
+- add recording notification configuration ([0a36101](https://github.com/dyte-in/ui-kit/commit/0a361015a17a22cf5ec92b0b86ea1ed594b0c738))
 
 # [1.64.0-staging.2](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.64.0-staging.1...@dyte-in/ui-kit-v1.64.0-staging.2) (2024-02-08)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([7904bc9](https://github.com/dyte-in/ui-kit/commit/7904bc966651934d334fb0346c015036591da16e))
+- @dytesdk/web-core auto-updated ([7904bc9](https://github.com/dyte-in/ui-kit/commit/7904bc966651934d334fb0346c015036591da16e))
 
 # [1.64.0-staging.1](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.63.0...@dyte-in/ui-kit-v1.64.0-staging.1) (2024-02-08)
 
-
 ### Features
 
-* add recording notification configuration ([0a36101](https://github.com/dyte-in/ui-kit/commit/0a361015a17a22cf5ec92b0b86ea1ed594b0c738))
+- add recording notification configuration ([0a36101](https://github.com/dyte-in/ui-kit/commit/0a361015a17a22cf5ec92b0b86ea1ed594b0c738))
 
 # [1.63.0](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.62.3...@dyte-in/ui-kit-v1.63.0) (2024-02-07)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([36a5330](https://github.com/dyte-in/ui-kit/commit/36a53301782e96570e8407a94f78405cb2716629))
-* @dytesdk/web-core auto-updated ([5f78fed](https://github.com/dyte-in/ui-kit/commit/5f78fed89fdf0d769e800f519658aee3b14f5b4e))
-* @dytesdk/web-core auto-updated ([fc833d1](https://github.com/dyte-in/ui-kit/commit/fc833d12ad0f7562cc2261131edb789a401015a9))
-* @dytesdk/web-core auto-updated ([a832914](https://github.com/dyte-in/ui-kit/commit/a83291476f6a804ccee1ae08c96be005b0247c15))
-* @dytesdk/web-core auto-updated ([e3ed11d](https://github.com/dyte-in/ui-kit/commit/e3ed11d4a13e2e99b1ca2dac1688b22bc4f3c925))
-* @dytesdk/web-core auto-updated ([c6742a5](https://github.com/dyte-in/ui-kit/commit/c6742a5932614291e5c05a9e3837ea5fe5004e06))
-* breakout rooms toggle check ([36ec546](https://github.com/dyte-in/ui-kit/commit/36ec54606cc87da9485f3144cea55b1451fe5e1b))
-* build output, rename e2e test files to spec ([96c4592](https://github.com/dyte-in/ui-kit/commit/96c45925f9d9cf0bd745b0133f72d02078ae58f8))
-* **connected-meetings:** dialog closing error ([37d98cc](https://github.com/dyte-in/ui-kit/commit/37d98cc023cac410d7809dfa72b6091ab0d64949))
-* do not show permission modal when media permission is set to NOT_REQUESTED ([19ba877](https://github.com/dyte-in/ui-kit/commit/19ba877e03aea39416f0f2fdc874a417ad938195))
-* don't ignore types ([279c5e3](https://github.com/dyte-in/ui-kit/commit/279c5e321edf4e44232d2d2c31c795604f642fe1))
-* export breakout rooms manager lib ([4d570de](https://github.com/dyte-in/ui-kit/commit/4d570deccb664b14fa3b1ee03697f6d95cf99b69))
-* hidden avatar in small screen breakpoint ([0af7c93](https://github.com/dyte-in/ui-kit/commit/0af7c93643dbe599ef1d3e2a451399cc101c89d6))
-* left align all kinds of messages ([24c7470](https://github.com/dyte-in/ui-kit/commit/24c7470407e502139ab2f6002dfd88a580829720))
-* remove unused meeting object ([0e608d2](https://github.com/dyte-in/ui-kit/commit/0e608d2efef3817724ba14f838693c810789974a))
-* types names ([c313eed](https://github.com/dyte-in/ui-kit/commit/c313eedbafc21e2c341c2af349eeedbed1b88af4))
-* web core type issues ([518dd65](https://github.com/dyte-in/ui-kit/commit/518dd6555a197daaa68a524cb9cf92fa3d622a7b))
-
+- @dytesdk/web-core auto-updated ([36a5330](https://github.com/dyte-in/ui-kit/commit/36a53301782e96570e8407a94f78405cb2716629))
+- @dytesdk/web-core auto-updated ([5f78fed](https://github.com/dyte-in/ui-kit/commit/5f78fed89fdf0d769e800f519658aee3b14f5b4e))
+- @dytesdk/web-core auto-updated ([fc833d1](https://github.com/dyte-in/ui-kit/commit/fc833d12ad0f7562cc2261131edb789a401015a9))
+- @dytesdk/web-core auto-updated ([a832914](https://github.com/dyte-in/ui-kit/commit/a83291476f6a804ccee1ae08c96be005b0247c15))
+- @dytesdk/web-core auto-updated ([e3ed11d](https://github.com/dyte-in/ui-kit/commit/e3ed11d4a13e2e99b1ca2dac1688b22bc4f3c925))
+- @dytesdk/web-core auto-updated ([c6742a5](https://github.com/dyte-in/ui-kit/commit/c6742a5932614291e5c05a9e3837ea5fe5004e06))
+- breakout rooms toggle check ([36ec546](https://github.com/dyte-in/ui-kit/commit/36ec54606cc87da9485f3144cea55b1451fe5e1b))
+- build output, rename e2e test files to spec ([96c4592](https://github.com/dyte-in/ui-kit/commit/96c45925f9d9cf0bd745b0133f72d02078ae58f8))
+- **connected-meetings:** dialog closing error ([37d98cc](https://github.com/dyte-in/ui-kit/commit/37d98cc023cac410d7809dfa72b6091ab0d64949))
+- do not show permission modal when media permission is set to NOT_REQUESTED ([19ba877](https://github.com/dyte-in/ui-kit/commit/19ba877e03aea39416f0f2fdc874a417ad938195))
+- don't ignore types ([279c5e3](https://github.com/dyte-in/ui-kit/commit/279c5e321edf4e44232d2d2c31c795604f642fe1))
+- export breakout rooms manager lib ([4d570de](https://github.com/dyte-in/ui-kit/commit/4d570deccb664b14fa3b1ee03697f6d95cf99b69))
+- hidden avatar in small screen breakpoint ([0af7c93](https://github.com/dyte-in/ui-kit/commit/0af7c93643dbe599ef1d3e2a451399cc101c89d6))
+- left align all kinds of messages ([24c7470](https://github.com/dyte-in/ui-kit/commit/24c7470407e502139ab2f6002dfd88a580829720))
+- remove unused meeting object ([0e608d2](https://github.com/dyte-in/ui-kit/commit/0e608d2efef3817724ba14f838693c810789974a))
+- types names ([c313eed](https://github.com/dyte-in/ui-kit/commit/c313eedbafc21e2c341c2af349eeedbed1b88af4))
+- web core type issues ([518dd65](https://github.com/dyte-in/ui-kit/commit/518dd6555a197daaa68a524cb9cf92fa3d622a7b))
 
 ### Features
 
-* left aligned chat bubbles ([88f0b45](https://github.com/dyte-in/ui-kit/commit/88f0b456c9af395de01f7053742dd25cae751f96))
+- left aligned chat bubbles ([88f0b45](https://github.com/dyte-in/ui-kit/commit/88f0b456c9af395de01f7053742dd25cae751f96))
 
 # [1.63.0-staging.6](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.63.0-staging.5...@dyte-in/ui-kit-v1.63.0-staging.6) (2024-02-07)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([36a5330](https://github.com/dyte-in/ui-kit/commit/36a53301782e96570e8407a94f78405cb2716629))
+- @dytesdk/web-core auto-updated ([36a5330](https://github.com/dyte-in/ui-kit/commit/36a53301782e96570e8407a94f78405cb2716629))
 
 # [1.63.0-staging.5](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.63.0-staging.4...@dyte-in/ui-kit-v1.63.0-staging.5) (2024-02-07)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([5f78fed](https://github.com/dyte-in/ui-kit/commit/5f78fed89fdf0d769e800f519658aee3b14f5b4e))
+- @dytesdk/web-core auto-updated ([5f78fed](https://github.com/dyte-in/ui-kit/commit/5f78fed89fdf0d769e800f519658aee3b14f5b4e))
 
 # [1.63.0-staging.4](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.63.0-staging.3...@dyte-in/ui-kit-v1.63.0-staging.4) (2024-02-06)
 
-
 ### Bug Fixes
 
-* breakout rooms toggle check ([36ec546](https://github.com/dyte-in/ui-kit/commit/36ec54606cc87da9485f3144cea55b1451fe5e1b))
+- breakout rooms toggle check ([36ec546](https://github.com/dyte-in/ui-kit/commit/36ec54606cc87da9485f3144cea55b1451fe5e1b))
 
 # [1.63.0-staging.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.63.0-staging.2...@dyte-in/ui-kit-v1.63.0-staging.3) (2024-02-06)
 
-
 ### Bug Fixes
 
-* @dytesdk/web-core auto-updated ([fc833d1](https://github.com/dyte-in/ui-kit/commit/fc833d12ad0f7562cc2261131edb789a401015a9))
-* **settings-modal-translations:** fixed hardcoded settings modal translations ([fbbbf10](https://github.com/dyte-in/ui-kit/commit/fbbbf105664ccf7212e662a6e9bc0fb08ccdb1c1))
+- @dytesdk/web-core auto-updated ([fc833d1](https://github.com/dyte-in/ui-kit/commit/fc833d12ad0f7562cc2261131edb789a401015a9))
+- **settings-modal-translations:** fixed hardcoded settings modal translations ([fbbbf10](https://github.com/dyte-in/ui-kit/commit/fbbbf105664ccf7212e662a6e9bc0fb08ccdb1c1))
 
 ## [1.62.3](https://github.com/dyte-in/ui-kit/compare/@dyte-in/ui-kit-v1.62.2...@dyte-in/ui-kit-v1.62.3) (2024-01-28)
 
