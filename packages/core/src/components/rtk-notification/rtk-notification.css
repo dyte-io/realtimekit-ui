@@ -18,14 +18,13 @@
 img {
   @apply mr-2 h-0 w-0 rounded-full;
 }
-
+ 
 img.loaded {
   @apply h-6 w-6;
 }
 
 .message {
-  @apply max-w-72 mr-3;
-  @apply truncate;
+  @apply max-w-72 !text-text-md mr-3 h-auto;
 
   p {
     @apply m-0 mr-1;
