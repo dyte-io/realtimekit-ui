@@ -1,3 +1,10 @@
+## [1.0.2-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.1...@cloudflare/realtimekit-ui-v1.0.2-staging.1) (2025-06-19)
+
+
+### Bug Fixes
+
+* longer notifications get cut off ([eba4009](https://github.com/dyte-io/realtimekit-ui/commit/eba400946a4c9eb9eef53f7ceb6b577e16c8140e))
+
 ## [1.0.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0...@cloudflare/realtimekit-ui-v1.0.1) (2025-05-29)
 
 
