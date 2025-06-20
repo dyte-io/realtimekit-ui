@@ -1,3 +1,10 @@
+## [1.0.2-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2-staging.1...@cloudflare/realtimekit-ui-v1.0.2-staging.2) (2025-06-20)
+
+
+### Bug Fixes
+
+* downgrade to angular 13.3.11 ([9364330](https://github.com/dyte-io/realtimekit-ui/commit/93643304e02a9d29856ec54baa839b5c59f12693))
+
 ## [1.0.2-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.1...@cloudflare/realtimekit-ui-v1.0.2-staging.1) (2025-06-19)
 
 
