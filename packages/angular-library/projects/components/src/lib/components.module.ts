@@ -13,4 +13,4 @@ import { defineCustomElements } from '@cloudflare/realtimekit-ui/loader';
     },
   ],
 })
-export class ComponentLibraryModule {}
+export class RealtimeKitComponentsModule {}
