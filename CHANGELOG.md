@@ -1,3 +1,10 @@
+## [1.0.2-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2-staging.2...@cloudflare/realtimekit-ui-v1.0.2-staging.3) (2025-06-20)
+
+
+### Bug Fixes
+
+* component library export name ([59ba8e4](https://github.com/dyte-io/realtimekit-ui/commit/59ba8e48f6ce0ac5f66682f2a9ab43c067837309))
+
 ## [1.0.2-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2-staging.1...@cloudflare/realtimekit-ui-v1.0.2-staging.2) (2025-06-20)
 
 
