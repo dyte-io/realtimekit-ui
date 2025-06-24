@@ -125,7 +125,7 @@ export class RtkSetupScreen {
       t: this.t,
     };
 
-    const meetingTitle = this.meeting?.meta.meetingTitle.trim();
+    const meetingTitle = this.meeting?.meta?.meetingTitle?.trim();
 
     return (
       <Host>
