@@ -1,10 +1,10 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { defineCustomElements } from '@cloudflare/realtimekit-ui/loader';
 import { DIRECTIVES } from './stencil-generated';
+import { defineCustomElements } from '@cloudflare/realtimekit-ui/loader';
 
 @NgModule({
+  declarations: [...DIRECTIVES],
   exports: [...DIRECTIVES],
-  imports: [...DIRECTIVES],
   providers: [
     {
       provide: APP_INITIALIZER,

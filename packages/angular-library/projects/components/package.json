@@ -1,6 +1,6 @@
 {
   "name": "@cloudflare/realtimekit-angular-ui",
-  "version": "1.0.1",
+  "version": "1.0.2-staging.3",
   "description": "Pre-built, ready-to-use Angular UI components and utilities for integrating with Cloudflare RealtimeKit",
   "peerDependencies": {
     "@angular/common": ">=12",
@@ -24,15 +24,6 @@
   },
   "module": "dist/fesm2022/cloudflare-realtimekit-angular-ui.mjs",
   "typings": "dist/index.d.ts",
-  "exports": {
-    "./package.json": {
-      "default": "./package.json"
-    },
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/fesm2022/cloudflare-realtimekit-angular-ui.mjs"
-    }
-  },
   "bugs": {
     "url": "https://realtime.cloudflare.com/issues"
   },
