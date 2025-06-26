@@ -3,7 +3,7 @@ import { RtkI18n, defaultLanguage, useLanguage } from '../../lib/lang';
 import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { defaultIconPack, IconPack } from '../../lib/icons';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { Meeting } from '../../types/rtk-client';
 
@@ -17,7 +17,7 @@ import { Meeting } from '../../types/rtk-client';
 })
 export class RtkEndedScreen {
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;

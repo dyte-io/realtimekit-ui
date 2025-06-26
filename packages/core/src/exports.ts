@@ -23,7 +23,7 @@ export {
 export { Peer } from './types/rtk-client';
 
 // UIConfig, Icon Pack, i18n and Notification Sounds
-export { defaultConfig } from './lib/default-ui-config';
+export { defaultConfig, createDefaultConfig } from './lib/default-ui-config';
 export { IconPack, defaultIconPack } from './lib/icons';
 export { LangDict, defaultLanguage, RtkI18n, useLanguage } from './lib/lang';
 export { Sound, default as RtkNotificationsAudio } from './lib/notification';

@@ -19,7 +19,7 @@ import type {
   ChatUpdateParams,
   SocketConnectionState,
 } from '@cloudflare/realtimekit';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { parseMessageForTarget } from '../../utils/chat';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { showLivestream } from '../../utils/livestream';
@@ -94,7 +94,7 @@ export class RtkNotifications {
   states: States;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Language */
   @SyncWithStore()

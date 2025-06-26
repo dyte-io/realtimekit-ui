@@ -5,7 +5,7 @@ import { Meeting, Peer } from '../../types/rtk-client';
 import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { FlagsmithFeatureFlags } from '../../utils/flags';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { DefaultProps, Render } from '../../lib/render';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { RTKParticipant } from '@cloudflare/realtimekit';
@@ -54,7 +54,7 @@ export class RtkParticipantTile {
   states: States;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Variant */
   @Prop({ reflect: true }) variant: 'solid' | 'gradient' = 'solid';

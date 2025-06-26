@@ -2,7 +2,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 import { UIConfig } from '../../types/ui-config';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { IconPack, defaultIconPack } from '../../lib/icons';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { Meeting } from '../../types/rtk-client';
 
@@ -18,7 +18,7 @@ export class RtkWaitingScreen {
   meeting: Meeting;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()

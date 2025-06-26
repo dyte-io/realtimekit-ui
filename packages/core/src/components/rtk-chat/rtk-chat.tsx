@@ -29,7 +29,7 @@ import {
 import { chatUnreadTimestamps } from '../../utils/user-prefs';
 import { FlagsmithFeatureFlags, usePaginatedChat } from '../../utils/flags';
 import { RtkChannelHeaderCustomEvent } from '../../components';
-import { States, UIConfig, defaultConfig } from '../../exports';
+import { States, UIConfig, createDefaultConfig } from '../../exports';
 import { ChannelItem } from '../rtk-channel-selector-view/rtk-channel-selector-view';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { NewMessageEvent } from '../rtk-chat-composer-view/rtk-chat-composer-view';
@@ -68,7 +68,7 @@ export class RtkChat {
   meeting: Meeting;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;

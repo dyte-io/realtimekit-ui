@@ -6,7 +6,7 @@ import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RTKPlugin } from '@cloudflare/realtimekit';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 
 /**
  * A component which lists all available plugins from their preset,
@@ -25,7 +25,7 @@ export class RtkPlugins {
   meeting: Meeting;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;

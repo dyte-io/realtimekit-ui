@@ -4,7 +4,7 @@ import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { Component, Host, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
 import { RtkI18n, useLanguage } from '../../lib/lang';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { debounce } from 'lodash-es';
 
@@ -38,7 +38,7 @@ export class RtkParticipants {
   states: States;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;

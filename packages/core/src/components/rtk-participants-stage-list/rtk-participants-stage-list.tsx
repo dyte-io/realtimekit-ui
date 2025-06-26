@@ -5,7 +5,7 @@ import { UIConfig } from '../../types/ui-config';
 import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { ParticipantsViewMode } from '../rtk-participants/rtk-participants';
-import { defaultConfig, States } from '../../exports';
+import { createDefaultConfig, States } from '../../exports';
 import { Render } from '../../lib/render';
 import { SyncWithStore } from '../../utils/sync-with-store';
 
@@ -33,7 +33,7 @@ export class RtkParticipants {
   states: States;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;

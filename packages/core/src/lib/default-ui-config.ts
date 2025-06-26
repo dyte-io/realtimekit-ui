@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { UIConfig } from '../types/ui-config';
 
 /**
@@ -348,4 +349,8 @@ export const defaultConfig: UIConfig = {
     participant_chat_message_sound_notification_limit: 10,
     videoFit: 'cover',
   },
+};
+
+export const createDefaultConfig = (): UIConfig => {
+  return _.cloneDeep(defaultConfig);
 };

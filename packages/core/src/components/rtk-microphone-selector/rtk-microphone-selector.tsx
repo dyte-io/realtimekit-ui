@@ -97,7 +97,7 @@ export class RtkMicrophoneSelector {
       this.currentDevices = {
         audio: currentAudioDevice,
       };
-      this.canProduceAudio = this.meeting.self.permissions.canProduceAudio === 'ALLOWED';
+      this.canProduceAudio = meeting.self.permissions.canProduceAudio === 'ALLOWED';
 
       stage?.addListener('stageStatusUpdate', this.stageStateListener);
       self.addListener('deviceListUpdate', this.deviceListUpdateListener);

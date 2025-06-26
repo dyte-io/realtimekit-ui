@@ -14,7 +14,7 @@ import { RtkI18n, useLanguage } from '../../lib/lang';
 import { DefaultProps, lenChildren, Render } from '../../lib/render';
 import { Meeting, Participant, Peer } from '../../types/rtk-client';
 import { formatName, shorten } from '../../utils/string';
-import { defaultConfig, States, UIConfig } from '../../exports';
+import { createDefaultConfig, States, UIConfig } from '../../exports';
 import { FlagsmithFeatureFlags } from '../../utils/flags';
 import { autoPlacement, computePosition, hide, offset, shift } from '@floating-ui/dom';
 import { SyncWithStore } from '../../utils/sync-with-store';
@@ -78,7 +78,7 @@ export class RtkParticipant {
   t: RtkI18n = useLanguage();
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /**
    * Emit notifications

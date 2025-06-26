@@ -1,7 +1,7 @@
 import { RTKPlugin } from '@cloudflare/realtimekit';
 import type { ActiveTab, ActiveTabType } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, Element, State, Watch } from '@stencil/core';
-import { defaultConfig } from '../../lib/default-ui-config';
+import { createDefaultConfig } from '../../lib/default-ui-config';
 import { defaultGridSize } from '../../lib/grid';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
@@ -63,7 +63,7 @@ export class RtkMixedGrid {
   states: States;
 
   /** UI Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Icon Pack */
   @SyncWithStore()

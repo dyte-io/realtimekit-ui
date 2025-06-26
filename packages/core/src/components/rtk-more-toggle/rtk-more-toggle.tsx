@@ -55,17 +55,20 @@ export class RtkMoreToggle {
 
   private handleKeyDown = ({ key }: { key: string }) => {
     if (key === 'Escape') {
+      console.log('RtkMoreToggle: Emitting rtkStateUpdate (Escape key)');
       this.stateUpdate.emit({ activeMoreMenu: false });
     }
   };
 
   private handleOnClick = (e: MouseEvent) => {
     if (!e.composedPath().includes(this.host) && this.states.activeMoreMenu) {
+      console.log('RtkMoreToggle: Emitting rtkStateUpdate (outside click)');
       this.stateUpdate.emit({ activeMoreMenu: false });
     }
   };
 
   private toggleMoreMenu = () => {
+    console.log('RtkMoreToggle: Emitting rtkStateUpdate (toggle)', !this.states.activeMoreMenu);
     this.stateUpdate.emit({ activeMoreMenu: !this.states.activeMoreMenu });
   };
 

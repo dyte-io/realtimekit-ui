@@ -4,7 +4,7 @@ import { Meeting } from '../../types/rtk-client';
 import { Transcript, States } from '../../types/props';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { UIConfig } from '../../types/ui-config';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import clone from '../../utils/clone';
 
@@ -35,7 +35,7 @@ export class RtkTranscripts {
   states: States;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Language */
   @SyncWithStore()

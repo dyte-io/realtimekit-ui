@@ -5,13 +5,12 @@ import {
   EventEmitter,
   h,
   Host,
-  Listen,
   Prop,
   Watch,
 } from '@stencil/core';
 import { Meeting, RoomLeftState } from '../../types/rtk-client';
 import {
-  defaultConfig,
+  createDefaultConfig,
   RtkI18n,
   generateConfig,
   IconPack,
@@ -20,7 +19,7 @@ import {
   States,
   UIConfig,
 } from '../../exports';
-import { uiState, uiStore } from '../../utils/sync-with-store/ui-store';
+import { uiStore, createPeerStore, uiState } from '../../utils/sync-with-store/ui-store';
 import deepMerge from 'lodash-es/merge';
 import { PermissionSettings } from '../../types/props';
 import { getSize } from '../../utils/size';
@@ -33,6 +32,12 @@ const LEAVE_ROOM_TIMER = 10000;
 })
 export class RtkUiProvider {
   @Element() host: HTMLRtkUiProviderElement;
+
+  private peerStore: any | null = null;
+  private currentPeerId: string | null = null;
+
+  private storeRequestListener: (event: CustomEvent) => void;
+  private stateUpdateListener: (event: CustomEvent<States>) => void;
 
   /** Meeting */
   @Prop()
@@ -47,7 +52,7 @@ export class RtkUiProvider {
   t: RtkI18n;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */
   @Prop({ reflect: true, mutable: true }) size: Size;
@@ -68,17 +73,6 @@ export class RtkUiProvider {
 
   private resizeObserver: ResizeObserver;
 
-  @Listen('rtkStateUpdate')
-  listenState(e: CustomEvent<States>) {
-    this.updateStates(e.detail);
-  }
-
-  private updateStates(states: Partial<States>) {
-    const newStates = Object.assign({}, uiState.states);
-    uiState.states = deepMerge(newStates, states);
-    this.statesUpdate.emit(uiState.states);
-  }
-
   connectedCallback() {
     if (typeof window !== 'undefined') {
       this.authErrorListener = (ev) => {
@@ -88,6 +82,9 @@ export class RtkUiProvider {
       };
       window.addEventListener('rtkError', this.authErrorListener);
     }
+
+    // Listen for store requests from child components
+    this.setupStoreRequestListener();
 
     this.onMeetingChange(this.meeting);
     this.onIconPackChange(this.iconPack);
@@ -103,6 +100,21 @@ export class RtkUiProvider {
     this.resizeObserver.disconnect();
     window.removeEventListener('rtkError', this.authErrorListener);
 
+    // Remove event listeners
+    if (this.storeRequestListener) {
+      this.host.removeEventListener('rtkRequestStore', this.storeRequestListener);
+    }
+    if (this.stateUpdateListener) {
+      this.host.removeEventListener('rtkStateUpdate', this.stateUpdateListener);
+    }
+
+    // TODO: Cleanup peer store when needed
+    // if (this.peerStore && this.currentPeerId) {
+    //   // Clean up peer store
+    //   this.peerStore = null;
+    //   this.currentPeerId = null;
+    // }
+
     if (!this.meeting) return;
     this.meeting.self.removeListener('roomLeft', this.roomLeftListener);
     this.meeting.self.removeListener('roomJoined', this.roomJoinedListener);
@@ -111,55 +123,169 @@ export class RtkUiProvider {
     this.meeting.meta.removeListener('socketConnectionUpdate', this.socketConnectionUpdateListener);
   }
 
+  private updateStates(states: Partial<States>) {
+    // Use isolated store if available, otherwise fall back to global store
+    const targetStore = this.peerStore || uiStore;
+    const newStates = Object.assign({}, targetStore.state.states);
+    targetStore.state.states = deepMerge(newStates, states);
+    console.log(`RtkUiProvider: Updated states in ${this.peerStore ? 'isolated' : 'global'} store for meeting ${this.currentPeerId}`, states);
+    
+    // Emit state update event scoped to this specific meeting
+    // This prevents cross-meeting state contamination
+    const scopedEventName = this.currentPeerId ? `rtkStatesUpdate-${this.currentPeerId}` : 'rtkStatesUpdate';
+    console.log(`RtkUiProvider: Emitting scoped state update event: ${scopedEventName}`);
+    
+    // Emit both scoped and unscoped events for backward compatibility
+    this.statesUpdate.emit(targetStore.state.states);
+    
+    // Also emit a scoped event that only this meeting's components should listen to
+    const scopedEvent = new CustomEvent(scopedEventName, {
+      detail: targetStore.state.states,
+      bubbles: true,
+      composed: true
+    });
+    this.host.dispatchEvent(scopedEvent);
+  }
+
+  private setupStateUpdateListener() {
+    // Remove existing listener if any
+    if (this.stateUpdateListener) {
+      this.host.removeEventListener('rtkStateUpdate', this.stateUpdateListener);
+    }
+
+    // Create new listener
+    this.stateUpdateListener = (event: CustomEvent<States>) => {
+      console.log(`Provider ${this.currentPeerId} handling state update from ${(event.target as HTMLElement).tagName}`);
+      
+      // Only handle state updates from our own children
+      if (!this.peerStore) {
+        // Backward compatibility: handle all events if no peer store
+        this.updateStates(event.detail);
+      } else {
+        // For peer-specific stores, only handle events that bubble up to this provider
+        this.updateStates(event.detail);
+      }
+      // Stop the event from bubbling further to prevent other providers from handling it
+      event.stopPropagation();
+    };
+    
+    // Listen for both generic events (backward compatibility) and peer-specific events
+    this.host.addEventListener('rtkStateUpdate', this.stateUpdateListener);
+  }
+
+  private setupStoreRequestListener() {
+    // Remove existing listener if any
+    if (this.storeRequestListener) {
+      this.host.removeEventListener('rtkRequestStore', this.storeRequestListener);
+    }
+
+    console.log('RtkUiProvider: Setting up store request listener');
+
+    // Listen for store requests from child components
+    this.storeRequestListener = (event: CustomEvent<{element: HTMLElement, propName: string, requestId: string}>) => {
+      // Provide the actual store object, not a wrapper
+      const storeToProvide = this.peerStore || uiStore;
+      console.log('RtkUiProvider: Providing store for', event.detail.element.tagName, this.peerStore ? '(isolated)' : '(global)', 'currentPeerId:', this.currentPeerId);
+      console.log('RtkUiProvider: Store object keys:', Object.keys(storeToProvide));
+      console.log('RtkUiProvider: Store has elementsMap:', !!storeToProvide.elementsMap);
+      
+      const responseEvent = new CustomEvent('rtkProvideStore', {
+        detail: { store: storeToProvide, requestId: event.detail.requestId }
+      });
+      document.dispatchEvent(responseEvent);
+      
+      // Stop the event from bubbling further to prevent other providers from handling it
+      event.stopPropagation();
+    };
+    
+    this.host.addEventListener('rtkRequestStore', this.storeRequestListener);
+    console.log('RtkUiProvider: Store request listener added to host');
+  }
+
   @Watch('meeting')
   onMeetingChange(meeting: Meeting) {
-    uiStore.state.meeting = meeting;
-
-    if (!meeting) return;
-
-    this.updateStates({ viewType: meeting.meta.viewType });
-    this.loadTheme();
-
-    meeting.self.addListener('roomJoined', this.roomJoinedListener);
-    meeting.self.addListener('waitlisted', this.waitlistedListener);
-    meeting.self.addListener('roomLeft', this.roomLeftListener);
-    meeting.self.addListener('mediaPermissionUpdate', this.mediaPermissionUpdateListener);
-    meeting.meta.addListener('socketConnectionUpdate', this.socketConnectionUpdateListener);
-
-    if (meeting.connectedMeetings.supportsConnectedMeetings) {
-      meeting.connectedMeetings.once('changingMeeting', this.handleChangingMeeting);
-    }
-
-    if (meeting.self.roomJoined) {
-      this.updateStates({ meeting: 'joined' });
+    console.log('RtkUiProvider: onMeetingChange called with meeting:', meeting?.self?.id);
+    
+    if (meeting?.self?.id) {
+      this.currentPeerId = meeting.self.id;
+      this.peerStore = createPeerStore(this.currentPeerId);
+      
+      this.peerStore.state.meeting = meeting;
+      if (this.config) this.peerStore.state.config = this.config;
+      if (this.iconPack) this.peerStore.state.iconPack = this.iconPack;
+      if (this.t) this.peerStore.state.t = this.t;
+      if (this.size) this.peerStore.state.size = this.size;
+      
+      console.log(`RtkUiProvider: Created isolated store for meeting ${meeting.self.id}`);
     } else {
-      if (this.showSetupScreen) {
-        this.updateStates({ meeting: 'setup' });
-      } else {
-        meeting.joinRoom();
-      }
+      console.log('RtkUiProvider: No meeting.self.id found, using global store');
+      this.peerStore = null;
+      this.currentPeerId = null;
     }
 
-    window.removeEventListener('rtkError', this.authErrorListener);
+    // Setup state update listener now that we have peerId
+    this.setupStateUpdateListener();
+
+    if (meeting) {
+      const targetStore = this.peerStore || uiStore;
+      targetStore.state.meeting = meeting;
+
+      this.updateStates({ viewType: meeting.meta.viewType });
+      this.loadTheme();
+
+      meeting.self.addListener('roomJoined', this.roomJoinedListener);
+      meeting.self.addListener('waitlisted', this.waitlistedListener);
+      meeting.self.addListener('roomLeft', this.roomLeftListener);
+      meeting.self.addListener('mediaPermissionUpdate', this.mediaPermissionUpdateListener);
+      meeting.meta.addListener('socketConnectionUpdate', this.socketConnectionUpdateListener);
+
+      if (meeting.connectedMeetings.supportsConnectedMeetings) {
+        meeting.connectedMeetings.once('changingMeeting', this.handleChangingMeeting);
+      }
+
+      if (meeting.self.roomJoined) {
+        this.updateStates({ meeting: 'joined' });
+      } else {
+        if (this.showSetupScreen) {
+          this.updateStates({ meeting: 'setup' });
+        } else {
+          meeting.joinRoom();
+        }
+      }
+
+      window.removeEventListener('rtkError', this.authErrorListener);
+    }
   }
 
   @Watch('iconPack')
   onIconPackChange(newIconPack: IconPack) {
+    if (this.peerStore) {
+      this.peerStore.state.iconPack = newIconPack;
+    }
     uiStore.state.iconPack = newIconPack;
   }
 
   @Watch('t')
   onTChange(newT: RtkI18n) {
+    if (this.peerStore) {
+      this.peerStore.state.t = newT;
+    }
     uiStore.state.t = newT;
   }
 
   @Watch('config')
   onConfigChange(config: UIConfig) {
+    if (this.peerStore) {
+      this.peerStore.state.config = config;
+    }
     uiStore.state.config = config;
   }
 
   @Watch('size')
   onSizeChange(newSize: Size) {
+    if (this.peerStore) {
+      this.peerStore.state.size = newSize;
+    }
     uiStore.state.size = newSize;
   }
 
@@ -168,10 +294,8 @@ export class RtkUiProvider {
   };
 
   private loadTheme = () => {
-    if (this.config === defaultConfig) {
-      const { config } = generateConfig(this.meeting.self.config, this.meeting);
-      this.config = config;
-    }
+    const { config } = generateConfig(this.meeting.self.config, this.meeting);
+    this.config = config;
 
     if (this.config?.designTokens) {
       provideRtkDesignSystem(document.documentElement, this.config.designTokens);
@@ -187,7 +311,6 @@ export class RtkUiProvider {
   };
 
   private roomLeftListener = ({ state }: { state: RoomLeftState }) => {
-    // Let socketConnectionUpdate listener handle this case.
     if (state === 'disconnected' || state === 'failed') return;
     this.updateStates({ meeting: 'ended', roomLeftState: state });
   };
@@ -225,6 +348,17 @@ export class RtkUiProvider {
   };
 
   render() {
-    return <Host>{this.noRenderUntilMeeting && !this.meeting ? null : <slot />}</Host>;
+    // Don't render children until meeting is properly initialized
+    if (!this.meeting?.self?.id) {
+      console.log('RtkUiProvider: Waiting for meeting to be initialized with self.id');
+      return <Host></Host>;
+    }
+
+    console.log('RtkUiProvider: Rendering children with initialized meeting:', this.meeting.self.id);
+    return (
+      <Host>
+        <slot />
+      </Host>
+    );
   }
 }
