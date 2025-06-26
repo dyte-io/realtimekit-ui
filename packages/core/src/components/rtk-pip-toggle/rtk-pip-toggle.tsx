@@ -1,5 +1,12 @@
 import { Component, Host, h, Event, EventEmitter, Prop, Watch, State } from '@stencil/core';
-import { createDefaultConfig, defaultIconPack, IconPack, Size, States, UIConfig } from '../../exports';
+import {
+  createDefaultConfig,
+  defaultIconPack,
+  IconPack,
+  Size,
+  States,
+  UIConfig,
+} from '../../exports';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Meeting } from '../../types/rtk-client';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';

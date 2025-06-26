@@ -51,7 +51,9 @@ export class RtkMeeting {
     if (['audio', 'video'].includes(kind)) {
       if (
         (message === 'DENIED' || message === 'SYSTEM_DENIED') &&
-        (this.meetingStore ? this.meetingStore.state.states.activeDebugger !== true : uiState.states.activeDebugger !== true)
+        (this.meetingStore
+          ? this.meetingStore.state.states.activeDebugger !== true
+          : uiState.states.activeDebugger !== true)
       ) {
         const permissionModalSettings: PermissionSettings = {
           enabled: true,
@@ -144,7 +146,9 @@ export class RtkMeeting {
       this.applyDesignSystem &&
       this.config?.designTokens &&
       typeof document !== 'undefined' &&
-      (this.meetingStore ? this.meetingStore.state.states.activeDebugger !== true : uiState.states.activeDebugger !== true)
+      (this.meetingStore
+        ? this.meetingStore.state.states.activeDebugger !== true
+        : uiState.states.activeDebugger !== true)
     ) {
       provideRtkDesignSystem(document.documentElement, this.config.designTokens);
     }
@@ -182,20 +186,26 @@ export class RtkMeeting {
     console.log('RtkMeeting: Setting up store request listener');
 
     // Listen for store requests from child components
-    this.storeRequestListener = (event: CustomEvent<{element: HTMLElement, propName: string, requestId: string}>) => {
+    this.storeRequestListener = (
+      event: CustomEvent<{ element: HTMLElement; propName: string; requestId: string }>
+    ) => {
       // Provide isolated store if available, otherwise fall back to global store
       const storeToProvide = this.meetingStore || { state: uiState };
-      console.log('RtkMeeting: Providing store for', event.detail.element.tagName, this.meetingStore ? '(isolated)' : '(global)');
-      
+      console.log(
+        'RtkMeeting: Providing store for',
+        event.detail.element.tagName,
+        this.meetingStore ? '(isolated)' : '(global)'
+      );
+
       const responseEvent = new CustomEvent('rtkProvideStore', {
-        detail: { store: storeToProvide, requestId: event.detail.requestId }
+        detail: { store: storeToProvide, requestId: event.detail.requestId },
       });
       document.dispatchEvent(responseEvent);
-      
+
       // Stop the event from bubbling further to prevent other meetings from handling it
       event.stopPropagation();
     };
-    
+
     this.host.addEventListener('rtkRequestStore', this.storeRequestListener);
     console.log('RtkMeeting: Store request listener added to host');
   }
@@ -216,10 +226,10 @@ export class RtkMeeting {
       console.log(`RtkMeeting handling state update from ${eventTarget.tagName}. Going further.`);
 
       this.updateStates(event.detail);
-      
+
       event.stopPropagation();
     };
-    
+
     this.host.addEventListener('rtkStateUpdate', this.stateUpdateListener);
     console.log('RtkMeeting: Event listener added to host');
   }
@@ -259,7 +269,9 @@ export class RtkMeeting {
 
       if (
         meeting.connectedMeetings.supportsConnectedMeetings &&
-        (this.meetingStore ? this.meetingStore.state.states.activeBreakoutRoomsManager?.destinationMeetingId : uiState.states.activeBreakoutRoomsManager?.destinationMeetingId)
+        (this.meetingStore
+          ? this.meetingStore.state.states.activeBreakoutRoomsManager?.destinationMeetingId
+          : uiState.states.activeBreakoutRoomsManager?.destinationMeetingId)
       ) {
         this.showSetupScreen = false;
       }
@@ -269,7 +281,9 @@ export class RtkMeeting {
       this.applyDesignSystem &&
       this.config?.designTokens &&
       typeof document !== 'undefined' &&
-      (this.meetingStore ? this.meetingStore.state.states.activeDebugger !== true : uiState.states.activeDebugger !== true)
+      (this.meetingStore
+        ? this.meetingStore.state.states.activeDebugger !== true
+        : uiState.states.activeDebugger !== true)
     ) {
       provideRtkDesignSystem(document.documentElement, this.config.designTokens);
     }
@@ -315,7 +329,10 @@ export class RtkMeeting {
     const targetStore = this.meetingStore || { state: uiState };
     const newStates = Object.assign({}, targetStore.state.states);
     targetStore.state.states = deepMerge(newStates, states);
-    console.log(`RtkMeeting: Updated states in ${this.meetingStore ? 'isolated' : 'global'} store`, states);
+    console.log(
+      `RtkMeeting: Updated states in ${this.meetingStore ? 'isolated' : 'global'} store`,
+      states
+    );
     // Don't emit statesUpdate to prevent cross-contamination
     // this.statesUpdate.emit(targetStore.state.states);
   }
@@ -330,7 +347,11 @@ export class RtkMeeting {
       t: this.t,
     };
 
-    if (this.meetingStore ? this.meetingStore.state.states.viewType === 'CHAT' : uiState.states.viewType === 'CHAT') {
+    if (
+      this.meetingStore
+        ? this.meetingStore.state.states.viewType === 'CHAT'
+        : uiState.states.viewType === 'CHAT'
+    ) {
       return <rtk-chat {...defaults} />;
     }
 
