@@ -52,9 +52,6 @@ export class RtkUiProvider {
   /** Size */
   @Prop({ reflect: true, mutable: true }) size: Size;
 
-  /** Whether to apply the design system on the document root from config */
-  @Prop({ mutable: true }) applyDesignSystem: boolean = false;
-
   /** Whether to show setup screen or not */
   @Prop() showSetupScreen: boolean = false;
 
@@ -278,7 +275,7 @@ export class RtkUiProvider {
     (this.peerStore || legacyGlobalUIStore).state.config = config;
 
     // Apply design system if enabled
-    if (this.applyDesignSystem && config?.designTokens && typeof document !== 'undefined') {
+    if (config?.designTokens && typeof document !== 'undefined') {
       provideRtkDesignSystem(document.documentElement, config.designTokens);
     }
   }
@@ -286,12 +283,6 @@ export class RtkUiProvider {
   @Watch('size')
   onSizeChange(newSize: Size) {
     (this.peerStore || legacyGlobalUIStore).state.size = newSize;
-  }
-
-  @Watch('applyDesignSystem')
-  onApplyDesignSystemChange() {
-    // Re-apply config to trigger design system application
-    this.onConfigChange(this.config);
   }
 
   private handleResize = () => {
