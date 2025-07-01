@@ -1,5 +1,5 @@
-import _ from 'lodash';
 import { UIConfig } from '../types/ui-config';
+import clone from '../utils/clone';
 
 /**
  * The default UI Config
@@ -352,5 +352,5 @@ export const defaultConfig: UIConfig = {
 };
 
 export const createDefaultConfig = (): UIConfig => {
-  return _.cloneDeep(defaultConfig);
+  return clone(defaultConfig);
 };

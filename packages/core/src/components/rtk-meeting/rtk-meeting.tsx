@@ -55,7 +55,8 @@ export class RtkMeeting {
     if (['audio', 'video'].includes(kind)) {
       if (
         (message === 'DENIED' || message === 'SYSTEM_DENIED') &&
-        ((this.peerStore || legacyGlobalUIStore)? this.peerStore.state.states.activeDebugger !== true
+        (this.peerStore || legacyGlobalUIStore
+          ? this.peerStore.state.states.activeDebugger !== true
           : legacyGlobalUIStore.state.states.activeDebugger !== true)
       ) {
         const permissionModalSettings: PermissionSettings = {
@@ -273,7 +274,8 @@ export class RtkMeeting {
 
       if (
         meeting.connectedMeetings.supportsConnectedMeetings &&
-        ((this.peerStore || legacyGlobalUIStore).state.states.activeBreakoutRoomsManager?.destinationMeetingId)
+        (this.peerStore || legacyGlobalUIStore).state.states.activeBreakoutRoomsManager
+          ?.destinationMeetingId
       ) {
         this.showSetupScreen = false;
       }
@@ -283,7 +285,7 @@ export class RtkMeeting {
       this.applyDesignSystem &&
       this.config?.designTokens &&
       typeof document !== 'undefined' &&
-      ((this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true)
+      (this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true
     ) {
       provideRtkDesignSystem(document.documentElement, this.config.designTokens);
     }

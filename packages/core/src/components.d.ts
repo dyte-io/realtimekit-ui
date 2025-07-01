@@ -3862,10 +3862,6 @@ export namespace Components {
     }
     interface RtkUiProvider {
         /**
-          * Whether to apply the design system on the document root from config
-         */
-        "applyDesignSystem": boolean;
-        /**
           * Config
          */
         "config": UIConfig1;
@@ -10787,10 +10783,6 @@ declare namespace LocalJSX {
         "t"?: RtkI18n;
     }
     interface RtkUiProvider {
-        /**
-          * Whether to apply the design system on the document root from config
-         */
-        "applyDesignSystem"?: boolean;
         /**
           * Config
          */
