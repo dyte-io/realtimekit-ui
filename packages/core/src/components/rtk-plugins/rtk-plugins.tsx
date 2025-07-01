@@ -25,6 +25,7 @@ export class RtkPlugins {
   meeting: Meeting;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */

@@ -1,5 +1,5 @@
 import { getElement, ComponentInterface } from '@stencil/core';
-import { uiStore as store, appendElement, removeElement, type RtkUiStore } from './ui-store';
+import { uiStore as store, appendElement, removeElement, type RtkUiStore, type RtkUiStoreExtended } from './ui-store';
 
 // Cache to remember which elements should use global store (after timeout)
 const useGlobalStoreCache = new WeakSet<HTMLElement>();
@@ -20,17 +20,17 @@ export function SyncWithStore() {
         if (!value) {
           const storeValue = store.state[propName];
           host[propName as string] = storeValue;
-          appendElement(propName, host, store);
+          appendElement(propName, host, store as RtkUiStoreExtended);
         }
         return connectedCallback?.call(this);
       }
 
       // Try to get store from provider
-      let receivedStore: any = null;
+      let receivedStore: RtkUiStoreExtended | null = null;
       let responseReceived = false;
 
       // Listen for provider response
-      const storeResponseListener = (event: CustomEvent<{store: any, requestId: string}>) => {
+      const storeResponseListener = (event: CustomEvent<{store: RtkUiStoreExtended, requestId: string}>) => {
         const requestId = (host as any)._storeRequestId;
         if (event.detail.requestId === requestId) {
           console.info(`Received store for ${host.tagName}:${propName}`, event.detail.store);
@@ -74,7 +74,7 @@ export function SyncWithStore() {
         if (!value) {
           const storeValue = targetStore.state[propName];
           host[propName as string] = storeValue;
-          appendElement(propName, host, targetStore);
+          appendElement(propName, host, targetStore as RtkUiStoreExtended);
         }
       }, waitTime);
 
@@ -96,7 +96,7 @@ export function SyncWithStore() {
         targetStore = store;
       }
       
-      removeElement(propName, host, targetStore);
+      removeElement(propName, host, targetStore as RtkUiStoreExtended);
       
       // Clean up cache entry
       useGlobalStoreCache.delete(host);

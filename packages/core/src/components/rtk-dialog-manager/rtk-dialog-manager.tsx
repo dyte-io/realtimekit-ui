@@ -31,6 +31,7 @@ export class RtkDialogManager {
   meeting: Meeting;
 
   /** UI Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** States object */

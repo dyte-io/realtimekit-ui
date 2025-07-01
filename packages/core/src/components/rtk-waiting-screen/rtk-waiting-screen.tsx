@@ -18,6 +18,7 @@ export class RtkWaitingScreen {
   meeting: Meeting;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Icon pack */

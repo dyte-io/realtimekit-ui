@@ -22,6 +22,7 @@ export class RtkIdleScreen {
   meeting: Meeting;
 
   /** Config object */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Icon pack */

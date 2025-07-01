@@ -29,6 +29,7 @@ export class RtkAi {
   states: States;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Icon pack */

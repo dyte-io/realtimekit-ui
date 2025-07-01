@@ -10,7 +10,7 @@ import {
   States,
   UIConfig,
 } from '../../exports';
-import { uiStore, createPeerStore, uiState } from '../../utils/sync-with-store/ui-store';
+import { uiStore, createPeerStore, uiState, type RtkUiStoreExtended } from '../../utils/sync-with-store/ui-store';
 import deepMerge from 'lodash-es/merge';
 import { PermissionSettings } from '../../types/props';
 import { getSize } from '../../utils/size';
@@ -24,7 +24,7 @@ const LEAVE_ROOM_TIMER = 10000;
 export class RtkUiProvider {
   @Element() host: HTMLRtkUiProviderElement;
 
-  private peerStore: any | null = null;
+  private peerStore: RtkUiStoreExtended | null = null;
   private currentPeerId: string | null = null;
 
   private storeRequestListener: (event: CustomEvent) => void;
@@ -47,6 +47,9 @@ export class RtkUiProvider {
 
   /** Size */
   @Prop({ reflect: true, mutable: true }) size: Size;
+
+  /** Whether to apply the design system on the document root from config */
+  @Prop({ mutable: true }) applyDesignSystem: boolean = false;
 
   /** Whether to show setup screen or not */
   @Prop() showSetupScreen: boolean = false;
@@ -197,7 +200,7 @@ export class RtkUiProvider {
         this.currentPeerId
       );
       console.log('RtkUiProvider: Store object keys:', Object.keys(storeToProvide));
-      console.log('RtkUiProvider: Store has elementsMap:', !!storeToProvide.elementsMap);
+      console.log('RtkUiProvider: Store has elementsMap:', !!(storeToProvide as RtkUiStoreExtended).elementsMap);
 
       const responseEvent = new CustomEvent('rtkProvideStore', {
         detail: { store: storeToProvide, requestId: event.detail.requestId },
@@ -218,7 +221,7 @@ export class RtkUiProvider {
 
     if (meeting?.self?.id) {
       this.currentPeerId = meeting.self.id;
-      this.peerStore = createPeerStore(this.currentPeerId);
+      this.peerStore = createPeerStore(meeting) as RtkUiStoreExtended;
 
       this.peerStore.state.meeting = meeting;
       if (this.config) this.peerStore.state.config = this.config;
@@ -289,6 +292,15 @@ export class RtkUiProvider {
       this.peerStore.state.config = config;
     }
     uiStore.state.config = config;
+    
+    // Apply design system if enabled
+    if (
+      this.applyDesignSystem &&
+      config?.designTokens &&
+      typeof document !== 'undefined'
+    ) {
+      provideRtkDesignSystem(document.documentElement, config.designTokens);
+    }
   }
 
   @Watch('size')
@@ -297,6 +309,12 @@ export class RtkUiProvider {
       this.peerStore.state.size = newSize;
     }
     uiStore.state.size = newSize;
+  }
+
+  @Watch('applyDesignSystem')
+  onApplyDesignSystemChange() {
+    // Re-apply config to trigger design system application
+    this.onConfigChange(this.config);
   }
 
   private handleResize = () => {

@@ -30,6 +30,7 @@ export class RtkParticipantsViewers {
   meeting: Meeting;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */

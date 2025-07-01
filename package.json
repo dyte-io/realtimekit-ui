@@ -17,6 +17,7 @@
     "fastdev": "./fastdev ../web-core"
   },
   "devDependencies": {
+    "@cloudflare/realtimekit": "1.1.1",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@semantic-release/changelog": "^6.0.1",

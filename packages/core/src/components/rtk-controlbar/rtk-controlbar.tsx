@@ -29,6 +29,7 @@ export class RtkControlbar {
   meeting: Meeting;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** States */

@@ -54,6 +54,7 @@ export class RtkParticipantTile {
   states: States;
 
   /** Config object */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Variant */

@@ -80,6 +80,7 @@ export class RtkGrid {
   states: States;
 
   /** Config object */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Icon pack */

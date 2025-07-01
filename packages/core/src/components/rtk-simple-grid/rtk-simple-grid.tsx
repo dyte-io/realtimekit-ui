@@ -49,6 +49,7 @@ export class RtkSimpleGrid {
   states: States;
 
   /** UI Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Icon Pack */

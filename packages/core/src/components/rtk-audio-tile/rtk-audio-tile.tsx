@@ -21,6 +21,7 @@ export class RtkAudioTile {
   meeting: Meeting;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig;
 
   /** Size */

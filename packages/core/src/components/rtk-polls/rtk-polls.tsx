@@ -29,6 +29,7 @@ export class RtkPolls {
   meeting: Meeting;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */

@@ -78,6 +78,7 @@ export class RtkParticipant {
   t: RtkI18n = useLanguage();
 
   /** Config object */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /**

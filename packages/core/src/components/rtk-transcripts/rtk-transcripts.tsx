@@ -35,6 +35,7 @@ export class RtkTranscripts {
   states: States;
 
   /** Config object */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Language */

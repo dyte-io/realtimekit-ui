@@ -94,6 +94,7 @@ export class RtkNotifications {
   states: States;
 
   /** Config object */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Language */

@@ -18,6 +18,7 @@ export class RtkLogo {
   @Prop({ mutable: true }) logoUrl: string;
 
   /** Config object */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Meeting object */

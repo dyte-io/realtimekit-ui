@@ -68,6 +68,7 @@ export class RtkChat {
   meeting: Meeting;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */
@@ -818,7 +819,20 @@ export class RtkChat {
   };
 
   render() {
-    if (!this.meeting) return null;
+    console.log('[RtkChat] Render called with:', {
+      meeting: !!this.meeting,
+      config: !!this.config,
+      iconPack: !!this.iconPack,
+      t: !!this.t,
+      size: this.size,
+      selectedGroup: this.selectedGroup,
+      chatGroups: Object.keys(this.chatGroups)
+    });
+
+    if (!this.meeting) {
+      console.log('[RtkChat] Returning null because no meeting');
+      return null;
+    }
 
     const uiProps = { iconPack: this.iconPack, t: this.t, size: this.size };
 

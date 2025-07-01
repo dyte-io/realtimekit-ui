@@ -46,6 +46,7 @@ export class RtkSetupScreen {
   @SyncWithStore() @Prop({ reflect: true }) size: Size;
 
   /** Config object */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Emits updated state data */

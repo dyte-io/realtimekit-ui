@@ -33,6 +33,7 @@ export class RtkParticipants {
   states: States;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Size */

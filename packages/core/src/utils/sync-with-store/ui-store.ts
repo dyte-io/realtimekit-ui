@@ -1,5 +1,5 @@
 import { createStore } from '@stencil/store';
-import { Meeting } from '../../types/rtk-client';
+import { Meeting, RealtimeKitClient } from '../../types/rtk-client';
 import { useLanguage, type RtkI18n } from '../../lib/lang';
 import { defaultIconPack, type IconPack } from '../../lib/icons';
 import { type States } from '../../types/props';
@@ -7,9 +7,10 @@ import { getUserPreferences } from '../user-prefs';
 import { createDefaultConfig, UIConfig } from '../../exports';
 import { Size } from '../../exports';
 
-export const getInitialStates = (): States => ({
+export const getInitialStates = (peerId?: string): States => ({
   meeting: 'idle',
   prefs: getUserPreferences(),
+  peerId: peerId || 'LEGACY_GLOBAL_PEER',
 });
 
 export interface RtkUiStore {
@@ -21,6 +22,11 @@ export interface RtkUiStore {
   size: Size | undefined;
   peerId: string | null;
 }
+
+// Extended type for stores that have elementsMap attached
+export type RtkUiStoreExtended = ReturnType<typeof createStore<RtkUiStore>> & {
+  elementsMap: Map<string, HTMLElement[]>;
+};
 
 const uiStore = createStore<RtkUiStore>({
   meeting: undefined,
@@ -62,22 +68,22 @@ const uiState = uiStore.state;
 export { uiStore, uiState };
 
 // Function to create a new store instance for peer-specific stores
-export function createPeerStore(peerId: string): any {
-  console.log(`Creating peer store for: ${peerId}`);
+export function createPeerStore(meeting: RealtimeKitClient): RtkUiStoreExtended {
+  console.log(`Creating peer store for: ${meeting.self.id}`);
   const store = createStore<RtkUiStore>({
-    meeting: undefined,
+    meeting: meeting,
     t: useLanguage(),
     iconPack: defaultIconPack,
-    states: getInitialStates(),
+    states: getInitialStates(meeting.self.peerId),
     config: createDefaultConfig(),
     size: undefined,
-    peerId,
+    peerId: meeting.self.id,
   });
 
   const peerElementsMap = new Map<string, any[]>();
   
   // Attach elementsMap to store so appendElement/removeElement can access it
-  (store as any).elementsMap = peerElementsMap;
+  (store as RtkUiStoreExtended).elementsMap = peerElementsMap;
 
   store.use({
     set: (propName, newValue, oldValue) => {
@@ -99,11 +105,11 @@ export function createPeerStore(peerId: string): any {
     },
   });
 
-  console.log(`Created peer store for: ${peerId}`, store);
-  return store;
+  console.log(`Created peer store for: ${meeting.self.id}`, store);
+  return store as RtkUiStoreExtended;
 }
 
-function appendElement(propName: string, element: any, targetStore: any = uiStore) {
+function appendElement(propName: string, element: HTMLElement, targetStore: RtkUiStoreExtended = uiStore as RtkUiStoreExtended) {
   console.log(`appendElement called: propName=${propName}, element=${element.tagName}`);
   console.log(`appendElement: targetStore type:`, typeof targetStore);
   console.log(`appendElement: targetStore keys:`, Object.keys(targetStore));
@@ -159,7 +165,7 @@ function appendElement(propName: string, element: any, targetStore: any = uiStor
   console.log(`appendElement: Completed for ${propName}`);
 }
 
-function removeElement(propName: string, element: any, targetStore: any = uiStore) {
+function removeElement(propName: string, element: HTMLElement, targetStore: RtkUiStoreExtended = uiStore as RtkUiStoreExtended) {
   console.log(`removeElement called: propName=${propName}, element=${element.tagName}`);
   
   // All stores now have elementsMap attached

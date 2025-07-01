@@ -33,6 +33,7 @@ export class RtkCaptionToggle {
   states: States;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Icon pack */

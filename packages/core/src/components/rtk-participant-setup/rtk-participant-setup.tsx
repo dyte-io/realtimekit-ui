@@ -43,6 +43,7 @@ export class RtkParticipantSetup {
   states: States;
 
   /** Config object */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** Variant */

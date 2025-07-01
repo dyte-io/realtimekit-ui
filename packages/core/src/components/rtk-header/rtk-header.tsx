@@ -29,6 +29,7 @@ export class RtkHeader {
   meeting: Meeting;
 
   /** Config */
+  @SyncWithStore()
   @Prop() config: UIConfig = createDefaultConfig();
 
   /** States */
