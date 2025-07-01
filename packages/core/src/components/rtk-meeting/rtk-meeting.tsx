@@ -55,9 +55,7 @@ export class RtkMeeting {
     if (['audio', 'video'].includes(kind)) {
       if (
         (message === 'DENIED' || message === 'SYSTEM_DENIED') &&
-        (this.peerStore || legacyGlobalUIStore
-          ? this.peerStore.state.states.activeDebugger !== true
-          : legacyGlobalUIStore.state.states.activeDebugger !== true)
+        (this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true
       ) {
         const permissionModalSettings: PermissionSettings = {
           enabled: true,
