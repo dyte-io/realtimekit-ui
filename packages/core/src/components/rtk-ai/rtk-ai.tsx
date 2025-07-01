@@ -30,7 +30,8 @@ export class RtkAi {
 
   /** Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()

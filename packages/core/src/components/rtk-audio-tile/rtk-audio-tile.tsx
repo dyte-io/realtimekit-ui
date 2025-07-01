@@ -22,7 +22,8 @@ export class RtkAudioTile {
 
   /** Config */
   @SyncWithStore()
-  @Prop() config: UIConfig;
+  @Prop()
+  config: UIConfig;
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;

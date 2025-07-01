@@ -47,7 +47,8 @@ export class RtkSetupScreen {
 
   /** Config object */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Emits updated state data */
   @Event({ eventName: 'rtkStateUpdate' }) stateUpdate: EventEmitter<States>;

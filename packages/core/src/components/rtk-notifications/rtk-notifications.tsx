@@ -95,7 +95,8 @@ export class RtkNotifications {
 
   /** Config object */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Language */
   @SyncWithStore()

@@ -25,7 +25,8 @@ export class RtkParticipantsStaged {
 
   /** Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;

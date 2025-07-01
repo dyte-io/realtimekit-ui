@@ -33,7 +33,8 @@ export class RtkPipToggle {
 
   /** Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()

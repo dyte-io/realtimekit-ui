@@ -58,7 +58,8 @@ export class RtkSpotlightGrid {
 
   /** UI Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon Pack */
   @SyncWithStore()

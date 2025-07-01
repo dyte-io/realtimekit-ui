@@ -44,7 +44,8 @@ export class RtkParticipantSetup {
 
   /** Config object */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Variant */
   @Prop({ reflect: true }) variant: 'solid' | 'gradient' = 'solid';

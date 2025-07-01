@@ -38,7 +38,8 @@ export class RtkTabBar {
 
   /** UI Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Grid Layout */
   @Prop({ reflect: true }) layout: GridLayout = 'row';

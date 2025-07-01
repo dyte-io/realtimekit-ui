@@ -12,7 +12,11 @@ import { provideRtkDesignSystem } from '../../index';
 import { generateConfig } from '../../utils/config';
 import { GridLayout } from '../rtk-grid/rtk-grid';
 import ResizeObserver from 'resize-observer-polyfill';
-import { createPeerStore, uiState, type RtkUiStoreExtended } from '../../utils/sync-with-store/ui-store';
+import {
+  createPeerStore,
+  uiState,
+  type RtkUiStoreExtended,
+} from '../../utils/sync-with-store/ui-store';
 
 export type MeetingMode = 'fixed' | 'fill';
 

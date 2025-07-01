@@ -32,7 +32,8 @@ export class RtkDialogManager {
 
   /** UI Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** States object */
   @SyncWithStore()

@@ -79,7 +79,8 @@ export class RtkParticipant {
 
   /** Config object */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /**
    * Emit notifications

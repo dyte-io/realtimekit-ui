@@ -23,7 +23,8 @@ export class RtkIdleScreen {
 
   /** Config object */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()

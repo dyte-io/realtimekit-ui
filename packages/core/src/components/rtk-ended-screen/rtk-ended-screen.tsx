@@ -18,7 +18,8 @@ import { Meeting } from '../../types/rtk-client';
 export class RtkEndedScreen {
   /** Config object */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;

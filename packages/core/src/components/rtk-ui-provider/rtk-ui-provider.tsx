@@ -10,7 +10,12 @@ import {
   States,
   UIConfig,
 } from '../../exports';
-import { uiStore, createPeerStore, uiState, type RtkUiStoreExtended } from '../../utils/sync-with-store/ui-store';
+import {
+  uiStore,
+  createPeerStore,
+  uiState,
+  type RtkUiStoreExtended,
+} from '../../utils/sync-with-store/ui-store';
 import deepMerge from 'lodash-es/merge';
 import { PermissionSettings } from '../../types/props';
 import { getSize } from '../../utils/size';
@@ -200,7 +205,10 @@ export class RtkUiProvider {
         this.currentPeerId
       );
       console.log('RtkUiProvider: Store object keys:', Object.keys(storeToProvide));
-      console.log('RtkUiProvider: Store has elementsMap:', !!(storeToProvide as RtkUiStoreExtended).elementsMap);
+      console.log(
+        'RtkUiProvider: Store has elementsMap:',
+        !!(storeToProvide as RtkUiStoreExtended).elementsMap
+      );
 
       const responseEvent = new CustomEvent('rtkProvideStore', {
         detail: { store: storeToProvide, requestId: event.detail.requestId },
@@ -292,13 +300,9 @@ export class RtkUiProvider {
       this.peerStore.state.config = config;
     }
     uiStore.state.config = config;
-    
+
     // Apply design system if enabled
-    if (
-      this.applyDesignSystem &&
-      config?.designTokens &&
-      typeof document !== 'undefined'
-    ) {
+    if (this.applyDesignSystem && config?.designTokens && typeof document !== 'undefined') {
       provideRtkDesignSystem(document.documentElement, config.designTokens);
     }
   }

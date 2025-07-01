@@ -30,7 +30,8 @@ export class RtkControlbar {
 
   /** Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** States */
   @SyncWithStore()

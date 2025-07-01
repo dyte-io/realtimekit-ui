@@ -25,7 +25,8 @@ export class RtkAudioGrid {
 
   /** Config */
   @SyncWithStore()
-  @Prop() config: UIConfig;
+  @Prop()
+  config: UIConfig;
 
   /** States */
   @SyncWithStore()

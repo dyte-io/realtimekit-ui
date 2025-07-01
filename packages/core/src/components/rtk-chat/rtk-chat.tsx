@@ -69,7 +69,8 @@ export class RtkChat {
 
   /** Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;
@@ -826,7 +827,7 @@ export class RtkChat {
       t: !!this.t,
       size: this.size,
       selectedGroup: this.selectedGroup,
-      chatGroups: Object.keys(this.chatGroups)
+      chatGroups: Object.keys(this.chatGroups),
     });
 
     if (!this.meeting) {

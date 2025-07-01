@@ -48,7 +48,8 @@ export class RtkSidebar {
 
   /** Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()
@@ -81,7 +82,7 @@ export class RtkSidebar {
       states: this.states,
       config: !!this.config,
       iconPack: !!this.iconPack,
-      t: !!this.t
+      t: !!this.t,
     });
     this.viewChanged(this.view);
     this.statesChanged(this.states);
@@ -105,7 +106,7 @@ export class RtkSidebar {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if(!meeting){
+    if (!meeting) {
       console.log('[RtkSidebar] Meeting object not found, returning');
       return;
     }
@@ -129,13 +130,16 @@ export class RtkSidebar {
       newStates: s,
       activeSidebar: s?.activeSidebar,
       sidebar: s?.sidebar,
-      currentTab: this.currentTab
+      currentTab: this.currentTab,
     });
     const states = s;
     if (states?.sidebar) {
       console.log('[RtkSidebar] Setting currentTab to:', states.sidebar);
       this.currentTab = states.sidebar;
-      console.log('[RtkSidebar] After setting currentTab, should trigger render. currentTab is now:', this.currentTab);
+      console.log(
+        '[RtkSidebar] After setting currentTab, should trigger render. currentTab is now:',
+        this.currentTab
+      );
     }
   }
 
@@ -209,14 +213,14 @@ export class RtkSidebar {
       currentTab: this.currentTab,
       meeting: !!defaults.meeting,
       config: !!defaults.config,
-      states: defaults.states
+      states: defaults.states,
     });
 
     // NOTE(ishita1805): This makes it easier to use the sidebar component in isolation.
     if (defaults.states?.activeSidebar === false || !this.currentTab) {
       console.log('[RtkSidebar] Returning null because:', {
         activeSidebar: defaults.states?.activeSidebar,
-        currentTab: this.currentTab
+        currentTab: this.currentTab,
       });
       return null;
     }
@@ -244,15 +248,14 @@ export class RtkSidebar {
               </rtk-button>
             </div>
           )}
-          {defaults.states.sidebar === 'chat' && (
+          {defaults.states.sidebar === 'chat' &&
             (() => {
               console.log('[RtkSidebar] Rendering RtkChat because sidebar === "chat"', {
                 sidebar: defaults.states.sidebar,
-                defaults: defaults
+                defaults: defaults,
               });
               return <Render element="rtk-chat" defaults={defaults} props={{ slot: 'chat' }} />;
-            })()
-          )}
+            })()}
           {defaults.states.sidebar === 'polls' && <rtk-polls {...defaults} slot="polls" />}
           {defaults.states.sidebar === 'participants' && (
             <Render

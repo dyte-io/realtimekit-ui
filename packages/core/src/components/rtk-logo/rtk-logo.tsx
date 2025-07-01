@@ -19,7 +19,8 @@ export class RtkLogo {
 
   /** Config object */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Meeting object */
   @SyncWithStore()

@@ -30,7 +30,8 @@ export class RtkHeader {
 
   /** Config */
   @SyncWithStore()
-  @Prop() config: UIConfig = createDefaultConfig();
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** States */
   @SyncWithStore()
