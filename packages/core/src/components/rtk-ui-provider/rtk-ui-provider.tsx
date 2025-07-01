@@ -11,9 +11,8 @@ import {
   UIConfig,
 } from '../../exports';
 import {
-  uiStore,
+  uiStore as legacyGlobalUIStore,
   createPeerStore,
-  uiState,
   type RtkUiStoreExtended,
 } from '../../utils/sync-with-store/ui-store';
 import deepMerge from 'lodash-es/merge';
@@ -59,12 +58,6 @@ export class RtkUiProvider {
   /** Whether to show setup screen or not */
   @Prop() showSetupScreen: boolean = false;
 
-  /**
-   * Do not render children until meeting is initialized
-   * @default false
-   */
-  @Prop() noRenderUntilMeeting: boolean = false;
-
   /** States event */
   @Event({ eventName: 'rtkStatesUpdate' }) statesUpdate: EventEmitter<States>;
 
@@ -107,13 +100,6 @@ export class RtkUiProvider {
       this.host.removeEventListener('rtkStateUpdate', this.stateUpdateListener);
     }
 
-    // TODO: Cleanup peer store when needed
-    // if (this.peerStore && this.currentPeerId) {
-    //   // Clean up peer store
-    //   this.peerStore = null;
-    //   this.currentPeerId = null;
-    // }
-
     if (!this.meeting) return;
     this.meeting.self.removeListener('roomLeft', this.roomLeftListener);
     this.meeting.self.removeListener('roomJoined', this.roomJoinedListener);
@@ -124,7 +110,7 @@ export class RtkUiProvider {
 
   private updateStates(states: Partial<States>) {
     // Use isolated store if available, otherwise fall back to global store
-    const targetStore = this.peerStore || uiStore;
+    const targetStore = this.peerStore || legacyGlobalUIStore;
     const newStates = Object.assign({}, targetStore.state.states);
     targetStore.state.states = deepMerge(newStates, states);
     console.log(
@@ -167,14 +153,7 @@ export class RtkUiProvider {
         }`
       );
 
-      // Only handle state updates from our own children
-      if (!this.peerStore) {
-        // Backward compatibility: handle all events if no peer store
-        this.updateStates(event.detail);
-      } else {
-        // For peer-specific stores, only handle events that bubble up to this provider
-        this.updateStates(event.detail);
-      }
+      this.updateStates(event.detail);
       // Stop the event from bubbling further to prevent other providers from handling it
       event.stopPropagation();
     };
@@ -196,7 +175,7 @@ export class RtkUiProvider {
       event: CustomEvent<{ element: HTMLElement; propName: string; requestId: string }>
     ) => {
       // Provide the actual store object, not a wrapper
-      const storeToProvide = this.peerStore || uiStore;
+      const storeToProvide = this.peerStore || legacyGlobalUIStore;
       console.log(
         'RtkUiProvider: Providing store for',
         event.detail.element.tagName,
@@ -248,7 +227,7 @@ export class RtkUiProvider {
     this.setupStateUpdateListener();
 
     if (meeting) {
-      const targetStore = this.peerStore || uiStore;
+      const targetStore = this.peerStore || legacyGlobalUIStore;
       targetStore.state.meeting = meeting;
 
       this.updateStates({ viewType: meeting.meta.viewType });
@@ -280,10 +259,7 @@ export class RtkUiProvider {
 
   @Watch('iconPack')
   onIconPackChange(newIconPack: IconPack) {
-    if (this.peerStore) {
-      this.peerStore.state.iconPack = newIconPack;
-    }
-    uiStore.state.iconPack = newIconPack;
+    (this.peerStore || legacyGlobalUIStore).state.iconPack = newIconPack;
   }
 
   @Watch('t')
@@ -291,7 +267,7 @@ export class RtkUiProvider {
     if (this.peerStore) {
       this.peerStore.state.t = newT;
     }
-    uiStore.state.t = newT;
+    (this.peerStore || legacyGlobalUIStore).state.t = newT;
   }
 
   @Watch('config')
@@ -299,7 +275,7 @@ export class RtkUiProvider {
     if (this.peerStore) {
       this.peerStore.state.config = config;
     }
-    uiStore.state.config = config;
+    (this.peerStore || legacyGlobalUIStore).state.config = config;
 
     // Apply design system if enabled
     if (this.applyDesignSystem && config?.designTokens && typeof document !== 'undefined') {
@@ -309,10 +285,7 @@ export class RtkUiProvider {
 
   @Watch('size')
   onSizeChange(newSize: Size) {
-    if (this.peerStore) {
-      this.peerStore.state.size = newSize;
-    }
-    uiStore.state.size = newSize;
+    (this.peerStore || legacyGlobalUIStore).state.size = newSize;
   }
 
   @Watch('applyDesignSystem')
@@ -351,7 +324,7 @@ export class RtkUiProvider {
     if (['audio', 'video'].includes(kind)) {
       if (
         (message === 'DENIED' || message === 'SYSTEM_DENIED') &&
-        uiState.states.activeDebugger !== true
+        (this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true
       ) {
         const permissionModalSettings: PermissionSettings = {
           enabled: true,
@@ -373,7 +346,7 @@ export class RtkUiProvider {
   private handleChangingMeeting = (destinationMeetingId: string) => {
     this.updateStates({
       activeBreakoutRoomsManager: {
-        ...uiState.states.activeBreakoutRoomsManager,
+        ...(this.peerStore || legacyGlobalUIStore)?.state.states.activeBreakoutRoomsManager,
         destinationMeetingId,
       },
     });
@@ -381,15 +354,10 @@ export class RtkUiProvider {
 
   render() {
     // Don't render children until meeting is properly initialized
-    if (!this.meeting?.self?.id) {
-      console.log('RtkUiProvider: Waiting for meeting to be initialized with self.id');
+    if (!this.meeting) {
       return <Host></Host>;
     }
 
-    console.log(
-      'RtkUiProvider: Rendering children with initialized meeting:',
-      this.meeting.self.id
-    );
     return (
       <Host>
         <slot />

@@ -14,7 +14,7 @@ import { GridLayout } from '../rtk-grid/rtk-grid';
 import ResizeObserver from 'resize-observer-polyfill';
 import {
   createPeerStore,
-  uiState,
+  uiStore as legacyGlobalUIStore,
   type RtkUiStoreExtended,
 } from '../../utils/sync-with-store/ui-store';
 
@@ -55,9 +55,8 @@ export class RtkMeeting {
     if (['audio', 'video'].includes(kind)) {
       if (
         (message === 'DENIED' || message === 'SYSTEM_DENIED') &&
-        (this.peerStore
-          ? this.peerStore.state.states.activeDebugger !== true
-          : uiState.states.activeDebugger !== true)
+        ((this.peerStore || legacyGlobalUIStore)? this.peerStore.state.states.activeDebugger !== true
+          : legacyGlobalUIStore.state.states.activeDebugger !== true)
       ) {
         const permissionModalSettings: PermissionSettings = {
           enabled: true,
@@ -80,7 +79,7 @@ export class RtkMeeting {
 
   private stateUpdateListener: (event: CustomEvent<States>) => void;
   private storeRequestListener: (event: CustomEvent) => void;
-  private peerStore: RtkUiStoreExtended | null = null; // Isolated store for this meeting instance
+  private peerStore: RtkUiStoreExtended | null = null; // Isolated store for this meeting peer instance
 
   /** Whether to load config from preset */
   @Prop({ mutable: true }) loadConfigFromPreset: boolean = false;
@@ -135,8 +134,8 @@ export class RtkMeeting {
 
     // Initialize default values
     this.leaveRoomTimer = 10000;
-    this.loadConfigFromPreset = false;
-    this.applyDesignSystem = false;
+    this.loadConfigFromPreset = true;
+    this.applyDesignSystem = true;
 
     // Setup event listeners
     this.setupStoreRequestListener();
@@ -148,11 +147,11 @@ export class RtkMeeting {
     this.resizeObserver.observe(this.host);
     if (
       this.applyDesignSystem &&
-      this.config?.designTokens &&
+      this.config?.designTokens != null &&
       typeof document !== 'undefined' &&
       (this.peerStore
         ? this.peerStore.state.states.activeDebugger !== true
-        : uiState.states.activeDebugger !== true)
+        : legacyGlobalUIStore.state.states.activeDebugger !== true)
     ) {
       provideRtkDesignSystem(document.documentElement, this.config.designTokens);
     }
@@ -194,7 +193,7 @@ export class RtkMeeting {
       event: CustomEvent<{ element: HTMLElement; propName: string; requestId: string }>
     ) => {
       // Provide isolated store if available, otherwise fall back to global store
-      const storeToProvide = this.peerStore || { state: uiState };
+      const storeToProvide = this.peerStore || legacyGlobalUIStore;
       console.log(
         'RtkMeeting: Providing store for',
         event.detail.element.tagName,
@@ -251,8 +250,8 @@ export class RtkMeeting {
   meetingChanged(meeting: Meeting) {
     if (!meeting) return;
 
-    // Create isolated store for this meeting instance
-    if (meeting?.self?.id) {
+    // Create isolated store for this meeting peer instance
+    if (meeting) {
       this.peerStore = createPeerStore(meeting) as RtkUiStoreExtended;
       this.peerStore.state.meeting = meeting;
       console.log(`RtkMeeting: Created isolated store for meeting ${meeting.self.id}`);
@@ -267,15 +266,14 @@ export class RtkMeeting {
       const { config, data } = generateConfig(theme, meeting);
 
       this.config = config;
+
       if (this.showSetupScreen == null) {
         this.showSetupScreen = data.showSetupScreen;
       }
 
       if (
         meeting.connectedMeetings.supportsConnectedMeetings &&
-        (this.peerStore
-          ? this.peerStore.state.states.activeBreakoutRoomsManager?.destinationMeetingId
-          : uiState.states.activeBreakoutRoomsManager?.destinationMeetingId)
+        ((this.peerStore || legacyGlobalUIStore).state.states.activeBreakoutRoomsManager?.destinationMeetingId)
       ) {
         this.showSetupScreen = false;
       }
@@ -285,9 +283,7 @@ export class RtkMeeting {
       this.applyDesignSystem &&
       this.config?.designTokens &&
       typeof document !== 'undefined' &&
-      (this.peerStore
-        ? this.peerStore.state.states.activeDebugger !== true
-        : uiState.states.activeDebugger !== true)
+      ((this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true)
     ) {
       provideRtkDesignSystem(document.documentElement, this.config.designTokens);
     }
@@ -315,7 +311,7 @@ export class RtkMeeting {
   }
 
   private handleChangingMeeting = (destinationMeetingId: string) => {
-    const currentStates = this.peerStore ? this.peerStore.state.states : uiState.states;
+    const currentStates = (this.peerStore || legacyGlobalUIStore).state.states;
     this.updateStates({
       activeBreakoutRoomsManager: {
         ...currentStates.activeBreakoutRoomsManager,
@@ -330,22 +326,20 @@ export class RtkMeeting {
 
   private updateStates(states: Partial<States>) {
     // Use isolated store if available, otherwise fall back to global store
-    const targetStore = this.peerStore || { state: uiState };
+    const targetStore = this.peerStore || legacyGlobalUIStore;
     const newStates = Object.assign({}, targetStore.state.states);
     targetStore.state.states = deepMerge(newStates, states);
     console.log(
       `RtkMeeting: Updated states in ${this.peerStore ? 'isolated' : 'global'} store`,
       states
     );
-    // Don't emit statesUpdate to prevent cross-contamination
-    // this.statesUpdate.emit(targetStore.state.states);
   }
 
   render() {
     const defaults = {
       meeting: this.meeting,
       size: this.size,
-      states: this.peerStore ? this.peerStore.state.states : uiState.states,
+      states: (this.peerStore || legacyGlobalUIStore).state.states,
       config: this.config,
       iconPack: this.iconPack,
       t: this.t,
@@ -354,7 +348,7 @@ export class RtkMeeting {
     if (
       this.peerStore
         ? this.peerStore.state.states.viewType === 'CHAT'
-        : uiState.states.viewType === 'CHAT'
+        : legacyGlobalUIStore.state.states.viewType === 'CHAT'
     ) {
       return <rtk-chat {...defaults} />;
     }

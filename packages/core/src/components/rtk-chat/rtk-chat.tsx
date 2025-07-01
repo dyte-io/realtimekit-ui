@@ -820,18 +820,7 @@ export class RtkChat {
   };
 
   render() {
-    console.log('[RtkChat] Render called with:', {
-      meeting: !!this.meeting,
-      config: !!this.config,
-      iconPack: !!this.iconPack,
-      t: !!this.t,
-      size: this.size,
-      selectedGroup: this.selectedGroup,
-      chatGroups: Object.keys(this.chatGroups),
-    });
-
     if (!this.meeting) {
-      console.log('[RtkChat] Returning null because no meeting');
       return null;
     }
 

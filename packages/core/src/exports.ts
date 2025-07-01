@@ -5,7 +5,7 @@ export { provideRtkDesignSystem } from './utils/provide-design-system';
 export { extendConfig, generateConfig } from './utils/config';
 export { sendNotification } from './utils/notification';
 export { RtkUiBuilder } from './lib/builder';
-export { uiStore, getInitialStates } from './utils/sync-with-store/ui-store';
+export { uiStore, uiState, getInitialStates, createPeerStore } from './utils/sync-with-store/ui-store';
 
 // addons
 export { registerAddons, Addon } from './lib/addons';

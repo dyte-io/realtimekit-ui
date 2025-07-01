@@ -3878,11 +3878,6 @@ export namespace Components {
          */
         "meeting": Meeting;
         /**
-          * Do not render children until meeting is initialized
-          * @default false
-         */
-        "noRenderUntilMeeting": boolean;
-        /**
           * Whether to show setup screen or not
          */
         "showSetupScreen": boolean;
@@ -10808,11 +10803,6 @@ declare namespace LocalJSX {
           * Meeting
          */
         "meeting"?: Meeting;
-        /**
-          * Do not render children until meeting is initialized
-          * @default false
-         */
-        "noRenderUntilMeeting"?: boolean;
         /**
           * States event
          */

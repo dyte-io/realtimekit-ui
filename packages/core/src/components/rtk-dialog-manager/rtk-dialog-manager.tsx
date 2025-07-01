@@ -72,7 +72,6 @@ export class RtkDialogManager {
   }
 
   private updateStoreState = (state: keyof States, value: any) => {
-    console.log(`RtkDialogManager emitting rtkStateUpdate for ${state}:`, value);
     this.stateUpdate.emit({ [state]: value });
   };
 

@@ -3654,14 +3654,14 @@ export declare interface RtkTranscripts extends Components.RtkTranscripts {}
 
 
 @ProxyCmp({
-  inputs: ['applyDesignSystem', 'config', 'iconPack', 'meeting', 'noRenderUntilMeeting', 'showSetupScreen', 'size', 't']
+  inputs: ['applyDesignSystem', 'config', 'iconPack', 'meeting', 'showSetupScreen', 'size', 't']
 })
 @Component({
   selector: 'rtk-ui-provider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['applyDesignSystem', 'config', 'iconPack', 'meeting', 'noRenderUntilMeeting', 'showSetupScreen', 'size', 't'],
+  inputs: ['applyDesignSystem', 'config', 'iconPack', 'meeting', 'showSetupScreen', 'size', 't'],
 })
 export class RtkUiProvider {
   protected el: HTMLRtkUiProviderElement;

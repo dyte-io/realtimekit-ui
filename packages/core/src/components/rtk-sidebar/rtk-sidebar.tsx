@@ -77,13 +77,6 @@ export class RtkSidebar {
   @State() enablePinning: boolean = true;
 
   connectedCallback() {
-    console.log('[RtkSidebar] Connected with initial props:', {
-      meeting: !!this.meeting,
-      states: this.states,
-      config: !!this.config,
-      iconPack: !!this.iconPack,
-      t: !!this.t,
-    });
     this.viewChanged(this.view);
     this.statesChanged(this.states);
     this.meetingChanged(this.meeting);
@@ -91,23 +84,13 @@ export class RtkSidebar {
   }
 
   disconnectedCallback() {
-    console.log('[RtkSidebar] Component disconnected');
     this.meeting?.stage?.removeListener('stageStatusUpdate', this.onStageStatusUpdate);
     this.onStageStatusUpdate = null;
-  }
-
-  componentWillLoad() {
-    console.log('[RtkSidebar] Component will load');
-  }
-
-  componentDidLoad() {
-    console.log('[RtkSidebar] Component did load');
   }
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
     if (!meeting) {
-      console.log('[RtkSidebar] Meeting object not found, returning');
       return;
     }
     this.updateEnabledSections(meeting);
@@ -118,28 +101,11 @@ export class RtkSidebar {
     this.meeting?.stage?.on('stageStatusUpdate', this.onStageStatusUpdate);
   }
 
-  @Watch('currentTab')
-  currentTabChanged(newTab: RtkSidebarSection, oldTab: RtkSidebarSection) {
-    console.log('[RtkSidebar] currentTab changed from', oldTab, 'to', newTab);
-    console.log('[RtkSidebar] This should trigger a render...');
-  }
-
   @Watch('states')
   statesChanged(s?: States) {
-    console.log('[RtkSidebar] States changed:', {
-      newStates: s,
-      activeSidebar: s?.activeSidebar,
-      sidebar: s?.sidebar,
-      currentTab: this.currentTab,
-    });
     const states = s;
     if (states?.sidebar) {
-      console.log('[RtkSidebar] Setting currentTab to:', states.sidebar);
       this.currentTab = states.sidebar;
-      console.log(
-        '[RtkSidebar] After setting currentTab, should trigger render. currentTab is now:',
-        this.currentTab
-      );
     }
   }
 
@@ -153,7 +119,7 @@ export class RtkSidebar {
   }
 
   private getTabs = () => {
-    if (!this.meeting?.self?.config) {
+    if (!this.meeting.self.config) {
       return this.enabledSections;
     }
 
@@ -194,7 +160,6 @@ export class RtkSidebar {
 
   render() {
     if (!this.meeting) {
-      console.log('[RtkSidebar] No meeting object found, returning null');
       return null;
     }
 
@@ -207,21 +172,8 @@ export class RtkSidebar {
       iconPack: this.iconPack,
     };
 
-    console.log('[RtkSidebar] Render called with:', {
-      activeSidebar: defaults.states?.activeSidebar,
-      sidebar: defaults.states?.sidebar,
-      currentTab: this.currentTab,
-      meeting: !!defaults.meeting,
-      config: !!defaults.config,
-      states: defaults.states,
-    });
-
     // NOTE(ishita1805): This makes it easier to use the sidebar component in isolation.
     if (defaults.states?.activeSidebar === false || !this.currentTab) {
-      console.log('[RtkSidebar] Returning null because:', {
-        activeSidebar: defaults.states?.activeSidebar,
-        currentTab: this.currentTab,
-      });
       return null;
     }
 
@@ -248,14 +200,9 @@ export class RtkSidebar {
               </rtk-button>
             </div>
           )}
-          {defaults.states.sidebar === 'chat' &&
-            (() => {
-              console.log('[RtkSidebar] Rendering RtkChat because sidebar === "chat"', {
-                sidebar: defaults.states.sidebar,
-                defaults: defaults,
-              });
-              return <Render element="rtk-chat" defaults={defaults} props={{ slot: 'chat' }} />;
-            })()}
+          {defaults.states.sidebar === 'chat' && (
+            <Render element="rtk-chat" defaults={defaults} props={{ slot: 'chat' }} />
+          )}
           {defaults.states.sidebar === 'polls' && <rtk-polls {...defaults} slot="polls" />}
           {defaults.states.sidebar === 'participants' && (
             <Render
