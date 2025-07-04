@@ -1,4 +1,4 @@
-import { createStore } from '@stencil/store';
+import { createStore, ObservableMap } from '@stencil/store';
 import { Meeting, RealtimeKitClient } from '../../types/rtk-client';
 import { useLanguage, type RtkI18n } from '../../lib/lang';
 import { defaultIconPack, type IconPack } from '../../lib/icons';
@@ -24,7 +24,7 @@ export interface RtkUiStore {
 }
 
 // Extended type for stores that have elementsMap attached
-export type RtkUiStoreExtended = ReturnType<typeof createStore<RtkUiStore>> & {
+export type RtkUiStoreExtended = ObservableMap<RtkUiStore> & {
   elementsMap: Map<string, HTMLElement[]>;
 };
 
