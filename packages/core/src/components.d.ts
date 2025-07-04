@@ -42,6 +42,7 @@ import { RtkSidebarSection } from "./components/rtk-sidebar/rtk-sidebar";
 import { RtkSidebarTab as RtkSidebarTab1, RtkSidebarView as RtkSidebarView1 } from "./components/rtk-sidebar-ui/rtk-sidebar-ui";
 import { Tab } from "./components/rtk-tab-bar/rtk-tab-bar";
 import { TooltipKind, TooltipVariant } from "./components/rtk-tooltip/rtk-tooltip";
+import { MeetingMode as MeetingMode1 } from "./components/rtk-meeting/rtk-meeting";
 import { ViewerCountVariant } from "./components/rtk-viewer-count/rtk-viewer-count";
 import { Peer as Peer1 } from ".";
 export { Meeting, Peer, WaitlistedParticipant } from "./types/rtk-client";
@@ -81,6 +82,7 @@ export { RtkSidebarSection } from "./components/rtk-sidebar/rtk-sidebar";
 export { RtkSidebarTab as RtkSidebarTab1, RtkSidebarView as RtkSidebarView1 } from "./components/rtk-sidebar-ui/rtk-sidebar-ui";
 export { Tab } from "./components/rtk-tab-bar/rtk-tab-bar";
 export { TooltipKind, TooltipVariant } from "./components/rtk-tooltip/rtk-tooltip";
+export { MeetingMode as MeetingMode1 } from "./components/rtk-meeting/rtk-meeting";
 export { ViewerCountVariant } from "./components/rtk-viewer-count/rtk-viewer-count";
 export { Peer as Peer1 } from ".";
 export namespace Components {
@@ -3872,7 +3874,11 @@ export namespace Components {
         /**
           * Meeting
          */
-        "meeting": Meeting;
+        "meeting": Meeting | null;
+        /**
+          * Fill type
+         */
+        "mode": MeetingMode1;
         /**
           * Whether to show setup screen or not
          */
@@ -10794,7 +10800,11 @@ declare namespace LocalJSX {
         /**
           * Meeting
          */
-        "meeting"?: Meeting;
+        "meeting"?: Meeting | null;
+        /**
+          * Fill type
+         */
+        "mode"?: MeetingMode1;
         /**
           * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores Do not confuse this with `rtkStateUpdate` that other components emit
          */

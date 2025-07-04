@@ -115,6 +115,10 @@ export class RtkSetupScreen {
   };
 
   render() {
+    if(!this.meeting){
+      return;
+    }
+    
     const disabled =
       this.displayName?.trim() === '' || this.connectionState !== 'connected' || this.isJoining;
 

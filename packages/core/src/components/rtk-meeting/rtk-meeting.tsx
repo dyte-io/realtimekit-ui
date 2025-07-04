@@ -37,6 +37,9 @@ export class RtkMeeting {
 
   private leaveRoomTimer: number;
 
+  /** Since RtkMeeting by design works as a provider for component, to be in sync with other providers, added provider id */
+  private providerId: string = 'provider-' + Math.floor(Math.random() * 100);
+
   private roomJoinedListener = () => {
     this.updateStates({ meeting: 'joined' });
   };
@@ -78,7 +81,7 @@ export class RtkMeeting {
 
   private stateUpdateListener: (event: CustomEvent<States>) => void;
   private storeRequestListener: (event: CustomEvent) => void;
-  private peerStore: RtkUiStoreExtended | null = null; // Isolated store for this meeting peer instance
+  private peerStore: RtkUiStoreExtended | null = null; // peer specific store for this meeting peer instance
 
   /** Whether to load config from preset */
   @Prop({ mutable: true }) loadConfigFromPreset: boolean = false;
@@ -190,8 +193,10 @@ export class RtkMeeting {
     this.storeRequestListener = (
       event: CustomEvent<{ element: HTMLElement; propName: string; requestId: string }>
     ) => {
-      // Provide isolated store if available, otherwise fall back to global store
-      const storeToProvide = this.peerStore || legacyGlobalUIStore;
+      // Provide peer specific store if available, otherwise fall back to global store
+      if(!this.peerStore) return;
+      
+      const storeToProvide = this.peerStore;
 
       const responseEvent = new CustomEvent('rtkProvideStore', {
         detail: { store: storeToProvide, requestId: event.detail.requestId },
@@ -235,9 +240,23 @@ export class RtkMeeting {
   meetingChanged(meeting: Meeting) {
     if (!meeting) return;
 
-    // Create isolated store for this meeting peer instance
+    // Create peer specific store for this meeting peer instance
     if (meeting) {
-      this.peerStore = createPeerStore({ meeting }) as RtkUiStoreExtended;
+      this.peerStore = createPeerStore({
+        meeting,
+        config: this.config,
+        iconPack: this.iconPack,
+        t: this.t,
+        size: this.size,
+        providerId: this.providerId,
+      }) as RtkUiStoreExtended;
+      
+      // Notify components that peer specific store is now available
+      document.dispatchEvent(new CustomEvent('rtkPeerStoreReady', {
+        detail: { 
+          peerId: meeting.self.id,
+        }
+      }));
     } else {
       this.peerStore = null;
     }
@@ -309,7 +328,7 @@ export class RtkMeeting {
   }
 
   private updateStates(states: Partial<States>) {
-    // Use isolated store if available, otherwise fall back to global store
+    // Use peer specific store if available, otherwise fall back to global store
     const targetStore = this.peerStore || legacyGlobalUIStore;
     const newStates = Object.assign({}, targetStore.state.states);
     targetStore.state.states = deepMerge(newStates, states);

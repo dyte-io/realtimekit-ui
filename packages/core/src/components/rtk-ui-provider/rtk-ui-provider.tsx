@@ -1,4 +1,5 @@
 import { Component, Element, Event, EventEmitter, h, Host, Prop, Watch } from '@stencil/core';
+import { MeetingMode } from '../rtk-meeting/rtk-meeting';
 import { Meeting, RoomLeftState } from '../../types/rtk-client';
 import {
   createDefaultConfig,
@@ -9,6 +10,8 @@ import {
   Size,
   States,
   UIConfig,
+  useLanguage,
+  defaultIconPack,
 } from '../../exports';
 import {
   uiStore as legacyGlobalUIStore,
@@ -30,23 +33,28 @@ export class RtkUiProvider {
 
   private peerStore: RtkUiStoreExtended | null = null;
 
+  private providerId: string = 'provider-' + Math.floor(Math.random() * 100);
+
   private storeRequestListener: (event: CustomEvent) => void;
   private stateUpdateListener: (event: CustomEvent<States>) => void;
 
   /** Meeting */
   @Prop()
-  meeting: Meeting;
+  meeting: Meeting | null = null;
 
   /** Icon pack */
   @Prop()
-  iconPack: IconPack;
+  iconPack: IconPack = defaultIconPack;
 
   /** Language utility */
   @Prop()
-  t: RtkI18n;
+  t: RtkI18n = useLanguage();
 
   /** Config */
   @Prop() config: UIConfig = createDefaultConfig();
+
+  /** Fill type */
+  @Prop({ reflect: true }) mode: MeetingMode = 'fixed';
 
   /** Size */
   @Prop({ reflect: true, mutable: true }) size: Size;
@@ -108,7 +116,7 @@ export class RtkUiProvider {
   }
 
   private updateStates(states: Partial<States>) {
-    // Use isolated store if available, otherwise fall back to global store
+    // Use peer specific store if available, otherwise fall back to global store
     const targetStore = this.peerStore || legacyGlobalUIStore;
     const newStates = Object.assign({}, targetStore.state.states);
     targetStore.state.states = deepMerge(newStates, states);
@@ -150,11 +158,11 @@ export class RtkUiProvider {
     this.storeRequestListener = (
       event: CustomEvent<{ element: HTMLElement; propName: string; requestId: string }>
     ) => {
+      if(!this.peerStore) return;
       // Provide the actual store object, not a wrapper
-      const storeToProvide = this.peerStore || legacyGlobalUIStore;
 
       const responseEvent = new CustomEvent('rtkProvideStore', {
-        detail: { store: storeToProvide, requestId: event.detail.requestId },
+        detail: { store: this.peerStore, requestId: event.detail.requestId },
       });
       document.dispatchEvent(responseEvent);
 
@@ -168,15 +176,25 @@ export class RtkUiProvider {
   @Watch('meeting')
   onMeetingChange(meeting: Meeting) {
     if (meeting) {
-      this.peerStore = createPeerStore({ meeting, config: this.config }) as RtkUiStoreExtended;
 
-      this.peerStore.state.meeting = meeting;
-      if (this.config) this.peerStore.state.config = this.config;
-      if (this.iconPack) this.peerStore.state.iconPack = this.iconPack;
-      if (this.t) this.peerStore.state.t = this.t;
-      if (this.size) this.peerStore.state.size = this.size;
-    } else {
-      this.peerStore = null;
+      this.peerStore = createPeerStore({
+        meeting,
+        config: this.config,
+        iconPack: this.iconPack,
+        t: this.t,
+        size: this.size,
+        providerId: this.providerId
+      }) as RtkUiStoreExtended;
+
+      
+      // Notify components that peer specific store is now available
+      document.dispatchEvent(new CustomEvent('rtkPeerStoreReady', {
+        detail: { 
+          peerId: meeting.self.id,
+        }
+      }));
+
+
     }
 
     // Setup state update listener now that we have peerId
@@ -305,7 +323,7 @@ export class RtkUiProvider {
   render() {
     // Don't render children until meeting is properly initialized
     if (!this.meeting) {
-      return <Host></Host>;
+      return null;
     }
 
     return (

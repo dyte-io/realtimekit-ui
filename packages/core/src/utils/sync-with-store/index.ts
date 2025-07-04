@@ -1,18 +1,13 @@
 import { getElement, ComponentInterface } from '@stencil/core';
 import {
-  uiStore as store,
+  uiStore as legacyGlobalUIStore,
   appendElement,
   removeElement,
   type RtkUiStore,
   type RtkUiStoreExtended,
 } from './ui-store';
 
-// Cache to remember which elements should use global store (after timeout)
-const useGlobalStoreCache = new WeakSet<HTMLElement>();
-
 export function SyncWithStore() {
-  // Provider availability tracking per decorator instance (per component type)
-  let providerAvailable: boolean | null = null; // null = unknown, true = available, false = not available
 
   return function (proto: ComponentInterface, propName: keyof RtkUiStore) {
     const { connectedCallback, disconnectedCallback } = proto;
@@ -20,20 +15,19 @@ export function SyncWithStore() {
     proto.connectedCallback = function () {
       const host = getElement(this);
       const value = host[propName as string];
+      host[`_rtkStoreToCleanup-${propName}`] = legacyGlobalUIStore;
 
-      // If we've already determined this element should use global store, use it directly
-      if (useGlobalStoreCache.has(host) || providerAvailable === false) {
-        if (!value) {
-          const storeValue = store.state[propName];
-          host[propName as string] = storeValue;
-          appendElement(propName, host, store as RtkUiStoreExtended);
-        }
-        return connectedCallback?.call(this);
+      /**
+       * NOTE(ravindra-dyte):
+       * For backward compatibility, let's use global store.
+       * If rtk-ui-provider in parent hierarchy is available, we will use peer specific store.
+       * If provider is found, All states will be solely controlled by RtkUiProvider.
+       */
+      if (!value) {
+        const storeValue = legacyGlobalUIStore.state[propName];
+        host[propName as string] = storeValue;
+        appendElement(propName, host, legacyGlobalUIStore as RtkUiStoreExtended);
       }
-
-      // Try to get store from provider
-      let receivedStore: RtkUiStoreExtended | null = null;
-      let responseReceived = false;
 
       // Listen for provider response
       const storeResponseListener = (
@@ -41,9 +35,17 @@ export function SyncWithStore() {
       ) => {
         const requestId = (host as any)._storeRequestId;
         if (event.detail.requestId === requestId) {
-          receivedStore = event.detail.store;
-          responseReceived = true;
-          providerAvailable = true; // Mark provider as available for this decorator instance
+          
+          // Blindly put peer specific store's value for propName in host propName
+          const storeValue = event.detail.store.state[propName];
+          host[propName as string] = storeValue;
+          appendElement(propName, host, event.detail.store);
+          host[`_rtkStoreToCleanup-${propName}`] = event.detail.store;
+          // Since peer specific store is available, remove element prop from global store
+          removeElement(propName, host, legacyGlobalUIStore as RtkUiStoreExtended)
+
+
+
           document.removeEventListener('rtkProvideStore', storeResponseListener);
         }
       };
@@ -55,6 +57,7 @@ export function SyncWithStore() {
       (host as any)._storeRequestId = requestId;
 
       // Request store from provider
+
       const requestEvent = new CustomEvent('rtkRequestStore', {
         detail: { element: host, propName, requestId },
         bubbles: true,
@@ -62,28 +65,25 @@ export function SyncWithStore() {
       });
 
       host.dispatchEvent(requestEvent);
+      
+      // Listen for peer specific store ready event to use the correct store
+      const storeReadyListener = () => {
+        // Re-request store (peer specific store should now be available)
+        const newRequestId = `${host.tagName}-${Date.now()}-${Math.random().toString(36)}`;
+        (host as any)._storeRequestId = newRequestId;
+        const retryRequestEvent = new CustomEvent('rtkRequestStore', {
+          detail: { element: host, propName, requestId: newRequestId },
+          bubbles: true,
+          composed: true,
+        });
+        
+        host.dispatchEvent(retryRequestEvent);
+        document.removeEventListener('rtkPeerStoreReady', storeReadyListener);
+      };
 
-      // Wait 100ms for response only if we haven't determined provider availability yet
-      const waitTime = providerAvailable === null ? 100 : 0;
 
-      setTimeout(() => {
-        document.removeEventListener('rtkProvideStore', storeResponseListener);
-
-        const targetStore = receivedStore || store;
-
-        // If no response received and this was our first attempt, mark provider as unavailable
-        if (!responseReceived && providerAvailable === null) {
-          providerAvailable = false;
-
-          useGlobalStoreCache.add(host);
-        }
-
-        if (!value) {
-          const storeValue = targetStore.state[propName];
-          host[propName as string] = storeValue;
-          appendElement(propName, host, targetStore as RtkUiStoreExtended);
-        }
-      }, waitTime);
+      
+      document.addEventListener('rtkPeerStoreReady', storeReadyListener);
 
       return connectedCallback?.call(this);
     };
@@ -91,22 +91,7 @@ export function SyncWithStore() {
     proto.disconnectedCallback = function () {
       const host = getElement(this);
 
-      // Try to determine which store was used
-      let targetStore = store; // default fallback
-
-      // If we have a cached decision to use global store, use it
-      if (useGlobalStoreCache.has(host)) {
-        targetStore = store;
-      } else {
-        // Try to get current store (this might not work reliably, but we'll try)
-        // In most cases, removeElement with global store should handle cleanup
-        targetStore = store;
-      }
-
-      removeElement(propName, host, targetStore as RtkUiStoreExtended);
-
-      // Clean up cache entry
-      useGlobalStoreCache.delete(host);
+      removeElement(propName, host, host[`_rtkStoreToCleanup-${propName}`] as RtkUiStoreExtended);
 
       return disconnectedCallback?.call(this);
     };

@@ -14,13 +14,15 @@ export const getInitialStates = (peerId?: string): States => ({
 });
 
 export interface RtkUiStore {
-  meeting: Meeting | undefined;
+  meeting: Meeting | undefined | null;
   t: RtkI18n;
   iconPack: IconPack;
   states: States;
   config: UIConfig;
   size: Size | undefined;
   peerId: string | null;
+  storeType: 'global' | 'peer';
+  storeId: string;
 }
 
 // Extended type for stores that have elementsMap attached
@@ -29,14 +31,16 @@ export type RtkUiStoreExtended = ObservableMap<RtkUiStore> & {
 };
 
 const uiStore = createStore<RtkUiStore>({
-  meeting: undefined,
+  meeting: null,
   t: useLanguage(),
   iconPack: defaultIconPack,
   states: getInitialStates(),
   config: createDefaultConfig(),
   size: undefined,
-  peerId: null,
-});
+  peerId: 'global',
+  storeType: 'global',
+  storeId: 'store-global',
+}) as RtkUiStoreExtended;
 
 const elementsMap = new Map<string, any[]>();
 
@@ -71,18 +75,29 @@ export { uiStore, uiState };
 export function createPeerStore({
   meeting,
   config,
+  providerId,
+  iconPack,
+  t,
+  size
 }: {
   meeting: RealtimeKitClient;
   config?: UIConfig;
+  providerId: string;
+  iconPack: IconPack;
+  t: RtkI18n;
+  size: Size | undefined;
 }): RtkUiStoreExtended {
   const store = createStore<RtkUiStore>({
     meeting: meeting,
-    t: useLanguage(),
-    iconPack: defaultIconPack,
+    t,
+    iconPack,
     states: getInitialStates(meeting.self.peerId),
     config: config || createDefaultConfig(),
-    size: undefined,
+    size,
     peerId: meeting.self.id,
+    storeType: 'peer',
+    // Use provider id's numeric portion as store id for easier debugging
+    storeId: 'store-' + providerId.replace('provider-', ''),
   });
 
   const peerElementsMap = new Map<string, any[]>();
