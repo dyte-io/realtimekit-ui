@@ -65,7 +65,7 @@ export class RtkParticipantsToggle {
   }
 
   disconnectedCallback() {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
     this.meeting?.stage?.removeListener('stageStatusUpdate', this.updateCanView);
     this.waitlistedParticipantJoinedListener &&
       this.meeting.participants.waitlisted.removeListener(
@@ -100,7 +100,7 @@ export class RtkParticipantsToggle {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.canViewParticipants = canViewParticipants(meeting);
     meeting?.stage?.on('stageStatusUpdate', this.updateCanView);
     if (meeting.self.permissions.acceptWaitingRequests) {

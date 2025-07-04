@@ -52,7 +52,7 @@ export class RtkCameraSelector {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     meeting.self?.addListener('deviceListUpdate', this.deviceListUpdateListener);
     meeting.self?.addListener('deviceUpdate', this.deviceUpdateListener);
@@ -116,7 +116,7 @@ export class RtkCameraSelector {
   }
 
   render() {
-    if (this.meeting == null) return null;
+    if (!this.meeting) return null;
 
     let unnamedVideoCount = 0;
 

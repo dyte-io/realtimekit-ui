@@ -40,7 +40,7 @@ export class RtkLivestreamIndicator {
   }
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.setIsLivestreaming(this.meeting.livestream?.state);
     this.meeting.livestream?.on('livestreamUpdate', this.setIsLivestreaming);
   }

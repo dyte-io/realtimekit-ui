@@ -111,6 +111,7 @@ export class RtkEndedScreen {
   }
 
   render() {
+    if (!this.meeting) return null;
     const states = this.states;
     if (states.roomLeftState === 'connected-meeting') {
       return this.renderBreakoutRoomScreen();

@@ -4,9 +4,7 @@ import { Meeting, RoomLeftState } from '../../types/rtk-client';
 import {
   createDefaultConfig,
   RtkI18n,
-  generateConfig,
   IconPack,
-  provideRtkDesignSystem,
   Size,
   States,
   UIConfig,
@@ -203,7 +201,6 @@ export class RtkUiProvider {
       targetStore.state.meeting = meeting;
 
       this.updateStates({ viewType: meeting.meta.viewType });
-      this.loadTheme();
 
       meeting.self.addListener('roomJoined', this.roomJoinedListener);
       meeting.self.addListener('waitlisted', this.waitlistedListener);
@@ -231,7 +228,9 @@ export class RtkUiProvider {
 
   @Watch('iconPack')
   onIconPackChange(newIconPack: IconPack) {
-    (this.peerStore || legacyGlobalUIStore).state.iconPack = newIconPack;
+    if(this.peerStore){
+      this.peerStore.state.iconPack = newIconPack;
+    }
   }
 
   @Watch('t')
@@ -239,7 +238,6 @@ export class RtkUiProvider {
     if (this.peerStore) {
       this.peerStore.state.t = newT;
     }
-    (this.peerStore || legacyGlobalUIStore).state.t = newT;
   }
 
   @Watch('config')
@@ -247,30 +245,17 @@ export class RtkUiProvider {
     if (this.peerStore) {
       this.peerStore.state.config = config;
     }
-    (this.peerStore || legacyGlobalUIStore).state.config = config;
-
-    // Apply design system if enabled
-    if (config?.designTokens && typeof document !== 'undefined') {
-      provideRtkDesignSystem(document.documentElement, config.designTokens);
-    }
   }
 
   @Watch('size')
   onSizeChange(newSize: Size) {
-    (this.peerStore || legacyGlobalUIStore).state.size = newSize;
+    if(this.peerStore){
+      this.peerStore.state.size = newSize;
+    }
   }
 
   private handleResize = () => {
     this.size = getSize(this.host.clientWidth);
-  };
-
-  private loadTheme = () => {
-    const { config } = generateConfig(this.meeting.self.config, this.meeting);
-    this.config = config;
-
-    if (this.config?.designTokens) {
-      provideRtkDesignSystem(document.documentElement, this.config.designTokens);
-    }
   };
 
   private roomJoinedListener = () => {
@@ -310,9 +295,10 @@ export class RtkUiProvider {
   };
 
   private handleChangingMeeting = (destinationMeetingId: string) => {
+    const currentStates = this.peerStore.state.states;
     this.updateStates({
       activeBreakoutRoomsManager: {
-        ...(this.peerStore || legacyGlobalUIStore)?.state.states.activeBreakoutRoomsManager,
+        ...currentStates.activeBreakoutRoomsManager,
         destinationMeetingId,
       },
     });

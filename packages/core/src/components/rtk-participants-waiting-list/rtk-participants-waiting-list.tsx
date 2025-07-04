@@ -88,7 +88,7 @@ export class RtkParticipantsWaitlisted {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.waitlistedParticipants = meeting.participants.waitlisted.toArray();
 
     this.waitlistedParticipantJoinedListener = (participant: WaitlistedParticipant) => {

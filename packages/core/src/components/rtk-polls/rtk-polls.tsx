@@ -59,7 +59,7 @@ export class RtkPolls {
   }
 
   disconnectedCallback() {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
     this.meeting.polls?.removeListener('pollsUpdate', this.onPollsUpdate);
     this.meeting.self.permissions.removeListener('pollsUpdate', this.onUpdatePermissions);
   }

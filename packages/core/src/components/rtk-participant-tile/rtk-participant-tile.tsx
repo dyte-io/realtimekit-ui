@@ -178,6 +178,7 @@ export class RtkParticipantTile {
   };
 
   render() {
+    if (!this.meeting) return null;
     const defaults: DefaultProps = {
       meeting: this.meeting,
       size: this.size,

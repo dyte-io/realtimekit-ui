@@ -166,13 +166,14 @@ export class RtkRecordingToggle {
 
   private isLoading = () => {
     return (
-      this.meeting == null ||
+      !this.meeting ||
       this.recordingState === 'STARTING' ||
       this.recordingState === 'STOPPING'
     );
   };
 
   render() {
+    if (!this.meeting) return null;
     if (!this.canRecord) return;
     return (
       <Host

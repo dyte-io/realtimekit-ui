@@ -61,7 +61,7 @@ export class RtkParticipantsStaged {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     this.updateRequestList();
     meeting.participants.joined.on('stageStatusUpdate', this.updateStageRequestedParticipants);
@@ -134,6 +134,7 @@ export class RtkParticipantsStaged {
   };
 
   render() {
+    if (!this.meeting) return null;
     if (this.view !== 'sidebar' || !this.shouldShowStageRequests()) return;
     return (
       <div class="stage-requested-participants">

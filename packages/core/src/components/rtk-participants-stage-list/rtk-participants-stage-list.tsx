@@ -67,8 +67,8 @@ export class RtkParticipants {
   }
 
   disconnectedCallback() {
+    if (!this.meeting) return;
     const { participants, stage } = this.meeting;
-    if (this.meeting == null) return;
     this.participantJoinedListener &&
       this.meeting.participants.joined.removeListener(
         'participantJoined',
@@ -85,7 +85,7 @@ export class RtkParticipants {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     this.participantJoinedListener = (participant: Participant) => {
       if (participant.stageStatus !== 'ON_STAGE') return;

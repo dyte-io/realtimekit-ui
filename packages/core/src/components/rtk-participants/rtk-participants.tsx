@@ -74,7 +74,7 @@ export class RtkParticipants {
   }
 
   disconnectedCallback() {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
     this.meeting.participants.joined.off('participantJoined', this.updateParticipantCountsInTabs);
     this.meeting.participants.joined.off('participantsUpdate', this.updateParticipantCountsInTabs);
     this.meeting.participants.joined.off('participantLeft', this.updateParticipantCountsInTabs);
@@ -93,7 +93,7 @@ export class RtkParticipants {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     meeting.participants.joined.on('participantJoined', this.updateParticipantCountsInTabs);
     meeting.participants.joined.on('participantsUpdate', this.updateParticipantCountsInTabs);
     meeting.participants.joined.on('participantLeft', this.updateParticipantCountsInTabs);
@@ -234,6 +234,7 @@ export class RtkParticipants {
   };
 
   render() {
+    if (!this.meeting) return null;
     const defaults = {
       meeting: this.meeting,
       states: this.states,

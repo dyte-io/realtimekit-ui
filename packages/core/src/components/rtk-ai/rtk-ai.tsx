@@ -77,6 +77,7 @@ export class RtkAi {
   };
 
   render() {
+    if (!this.meeting) return null;
     if (
       !(this.meeting?.self?.permissions as RTKPermissionsPreset).transcriptionEnabled ||
       !this.states?.activeAI

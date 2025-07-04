@@ -77,7 +77,7 @@ export class RtkStageToggle {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.stageStatus = meeting.stage?.status;
     this.stageStatusHandler(meeting, meeting.stage?.status);
     this.meeting?.stage?.on('stageStatusUpdate', (status) =>

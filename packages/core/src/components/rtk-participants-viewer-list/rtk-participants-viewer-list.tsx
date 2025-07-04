@@ -64,7 +64,7 @@ export class RtkParticipantsViewers {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     this.participantJoinedListener = (participant: Participant) => {
       if (participant.stageStatus === 'ON_STAGE') return;
@@ -145,6 +145,7 @@ export class RtkParticipantsViewers {
   };
 
   render() {
+    if (!this.meeting) return null;
     if (this.view !== 'sidebar' || !this.shouldShowViewers()) return;
 
     return (

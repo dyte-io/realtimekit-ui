@@ -59,7 +59,7 @@ export class RtkLivestreamToggle {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.livestreamState = this.meeting.livestream?.state;
     this.meeting.livestream?.on('livestreamUpdate', this.livestreamStateListener);
   }
@@ -131,13 +131,14 @@ export class RtkLivestreamToggle {
 
   private isLoading = () => {
     return (
-      this.meeting == null ||
+      !this.meeting ||
       this.livestreamState === 'STARTING' ||
       this.livestreamState === 'STOPPING'
     );
   };
 
   render() {
+    if (!this.meeting) return null;
     if (!isLiveStreamHost(this.meeting)) return <Host data-hidden />;
     return (
       <Host>

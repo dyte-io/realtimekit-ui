@@ -81,6 +81,7 @@ export class RtkPipToggle {
   }
 
   render() {
+    if (!this.meeting) return null;
     if (!this.pipSupported) return <Host data-hidden />;
     const pipEnabled = this.meeting.participants.pip.isActive;
     return (

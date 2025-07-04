@@ -65,15 +65,15 @@ export class RtkTranscripts {
   }
 
   disconnectedCallback() {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
     this.clearListeners(this.meeting);
   }
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting, oldMeeting?: Meeting) {
     clearTimeout(this.disconnectTimeout);
-    if (oldMeeting !== undefined) this.clearListeners(oldMeeting);
-    if (meeting == null) return;
+    if (oldMeeting) this.clearListeners(oldMeeting);
+    if (!meeting) return;
 
     if (this.states.activeCaptions) {
       this.addListener(meeting);

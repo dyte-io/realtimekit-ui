@@ -51,7 +51,7 @@ export class RtkSettingsAudio {
   @Event({ eventName: 'rtkStateUpdate' }) stateUpdate: EventEmitter<States>;
 
   render() {
-    if (this.meeting == null) return null;
+    if (!this.meeting) return null;
 
     const defaults = {
       meeting: this.meeting,

@@ -118,6 +118,7 @@ export class RtkAudioTile {
   }
 
   render() {
+    if (!this.meeting) return null;
     const defaults = {
       meeting: this.meeting,
       size: this.size,

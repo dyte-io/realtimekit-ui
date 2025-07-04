@@ -91,6 +91,7 @@ export class RtkSimpleGrid {
   }
 
   render() {
+    if (!this.meeting) return null;
     const defaults = {
       meeting: this.meeting,
       config: this.config,

@@ -88,7 +88,7 @@ export class RtkMicrophoneSelector {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     writeTask(async () => {
       const { self, stage } = meeting;
@@ -129,7 +129,7 @@ export class RtkMicrophoneSelector {
   }
 
   render() {
-    if (this.meeting == null) return null;
+    if (!this.meeting) return null;
 
     let unnamedMicCount = 0;
 

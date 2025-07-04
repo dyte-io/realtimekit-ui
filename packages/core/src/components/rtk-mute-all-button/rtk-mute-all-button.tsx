@@ -64,6 +64,7 @@ export class RtkMuteAllButton {
   };
 
   render() {
+    if (!this.meeting) return null;
     if (!this.canDisable) {
       return null;
     }

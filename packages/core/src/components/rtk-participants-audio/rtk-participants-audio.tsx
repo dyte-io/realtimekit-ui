@@ -57,7 +57,7 @@ export class RtkParticipantsAudio {
   }
 
   disconnectedCallback() {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
 
     this.audioUpdateListener &&
       this.meeting.participants.joined.removeListener('audioUpdate', this.audioUpdateListener);
@@ -145,7 +145,7 @@ export class RtkParticipantsAudio {
 
   @Watch('meeting')
   async meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.setupAudio();
     if (isLiveStreamViewer(meeting)) {
       this.stageStatusUpdateListener = async (status: StageStatus) => {

@@ -60,6 +60,7 @@ export class RtkAiToggle {
   }
 
   render() {
+    if (!this.meeting) return null;
     const text = this.t('ai.meeting_ai');
 
     if (!(this.meeting?.self?.permissions as RTKPermissionsPreset).transcriptionEnabled) {

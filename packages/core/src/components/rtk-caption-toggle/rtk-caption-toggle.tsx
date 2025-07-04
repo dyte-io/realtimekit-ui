@@ -84,6 +84,7 @@ export class RtkCaptionToggle {
   }
 
   render() {
+    if (!this.meeting) return null;
     if (!this.captionEnabled) return null;
     const captionsEnabled = this.states.activeCaptions;
     return (

@@ -200,6 +200,7 @@ export class RtkMixedGrid {
   }
 
   render() {
+    if (!this.meeting) return null;
     const defaults = {
       meeting: this.meeting,
       config: this.config,

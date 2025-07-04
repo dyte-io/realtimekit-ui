@@ -111,7 +111,7 @@ export class RtkGrid {
   }
 
   private disconnectMeeting(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.participants = [];
     this.plugins = [];
 
@@ -303,7 +303,7 @@ export class RtkGrid {
   };
 
   private onViewModeChanged = () => {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
     this.updateActiveParticipants();
   };
 

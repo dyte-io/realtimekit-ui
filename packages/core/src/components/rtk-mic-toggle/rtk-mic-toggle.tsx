@@ -187,6 +187,7 @@ export class RtkMicToggle {
   }
 
   render() {
+    if (!this.meeting) return null;
     if (
       !this.canProduceAudio ||
       ['OFF_STAGE', 'REQUESTED_TO_JOIN_STAGE'].includes(this.stageStatus)
