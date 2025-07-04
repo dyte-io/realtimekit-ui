@@ -131,9 +131,7 @@ export class RtkLivestreamToggle {
 
   private isLoading = () => {
     return (
-      !this.meeting ||
-      this.livestreamState === 'STARTING' ||
-      this.livestreamState === 'STOPPING'
+      !this.meeting || this.livestreamState === 'STARTING' || this.livestreamState === 'STOPPING'
     );
   };
 

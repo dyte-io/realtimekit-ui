@@ -228,7 +228,7 @@ export class RtkUiProvider {
 
   @Watch('iconPack')
   onIconPackChange(newIconPack: IconPack) {
-    if(this.peerStore){
+    if (this.peerStore) {
       this.peerStore.state.iconPack = newIconPack;
     }
   }
@@ -249,7 +249,7 @@ export class RtkUiProvider {
 
   @Watch('size')
   onSizeChange(newSize: Size) {
-    if(this.peerStore){
+    if (this.peerStore) {
       this.peerStore.state.size = newSize;
     }
   }

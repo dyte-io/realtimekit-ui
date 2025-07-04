@@ -657,7 +657,7 @@ export class RtkNotifications {
   paused = false;
 
   render() {
-    if(!this.meeting){
+    if (!this.meeting) {
       return;
     }
 
