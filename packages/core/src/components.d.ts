@@ -8716,7 +8716,7 @@ declare namespace LocalJSX {
          */
         "mode"?: MeetingMode;
         /**
-          * States
+          * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores Do not confuse this with `rtkStateUpdate` that other components emit
          */
         "onRtkStatesUpdate"?: (event: RtkMeetingCustomEvent<States>) => void;
         /**
@@ -10796,7 +10796,7 @@ declare namespace LocalJSX {
          */
         "meeting"?: Meeting;
         /**
-          * States event
+          * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores Do not confuse this with `rtkStateUpdate` that other components emit
          */
         "onRtkStatesUpdate"?: (event: RtkUiProviderCustomEvent<States1>) => void;
         /**

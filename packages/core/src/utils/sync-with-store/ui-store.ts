@@ -68,14 +68,14 @@ const uiState = uiStore.state;
 export { uiStore, uiState };
 
 // Function to create a new store instance for peer-specific stores
-export function createPeerStore(meeting: RealtimeKitClient): RtkUiStoreExtended {
+export function createPeerStore({meeting, config}: {meeting: RealtimeKitClient, config?: UIConfig}): RtkUiStoreExtended {
   console.log(`Creating peer store for: ${meeting.self.id}`);
   const store = createStore<RtkUiStore>({
     meeting: meeting,
     t: useLanguage(),
     iconPack: defaultIconPack,
     states: getInitialStates(meeting.self.peerId),
-    config: createDefaultConfig(),
+    config: config || createDefaultConfig(),
     size: undefined,
     peerId: meeting.self.id,
   });

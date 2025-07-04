@@ -29,7 +29,6 @@ export class RtkUiProvider {
   @Element() host: HTMLRtkUiProviderElement;
 
   private peerStore: RtkUiStoreExtended | null = null;
-  private currentPeerId: string | null = null;
 
   private storeRequestListener: (event: CustomEvent) => void;
   private stateUpdateListener: (event: CustomEvent<States>) => void;
@@ -55,7 +54,10 @@ export class RtkUiProvider {
   /** Whether to show setup screen or not */
   @Prop() showSetupScreen: boolean = false;
 
-  /** States event */
+  /**
+   * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores
+   * Do not confuse this with `rtkStateUpdate` that other components emit
+   */
   @Event({ eventName: 'rtkStatesUpdate' }) statesUpdate: EventEmitter<States>;
 
   private authErrorListener: (ev: CustomEvent<Error>) => void;
@@ -113,22 +115,16 @@ export class RtkUiProvider {
     console.log(
       `RtkUiProvider: Updated states in ${
         this.peerStore ? 'isolated' : 'global'
-      } store for meeting ${this.currentPeerId}`,
+      } store for meeting ${targetStore.state.peerId}`,
       states
     );
 
-    // Emit state update event scoped to this specific meeting
-    // This prevents cross-meeting state contamination
-    const scopedEventName = this.currentPeerId
-      ? `rtkStatesUpdate-${this.currentPeerId}`
-      : 'rtkStatesUpdate';
-    console.log(`RtkUiProvider: Emitting scoped state update event: ${scopedEventName}`);
 
-    // Emit both scoped and unscoped events for backward compatibility
+    // Emit unscoped event for backward compatibility
     this.statesUpdate.emit(targetStore.state.states);
 
     // Also emit a scoped event that only this meeting's components should listen to
-    const scopedEvent = new CustomEvent(scopedEventName, {
+    const scopedEvent = new CustomEvent('rtkStatesUpdate', {
       detail: targetStore.state.states,
       bubbles: true,
       composed: true,
@@ -145,14 +141,12 @@ export class RtkUiProvider {
     // Create new listener
     this.stateUpdateListener = (event: CustomEvent<States>) => {
       console.log(
-        `Provider ${this.currentPeerId} handling state update from ${
+        `Provider ${(this.peerStore || legacyGlobalUIStore).state.peerId} handling state update from ${
           (event.target as HTMLElement).tagName
         }`
       );
 
       this.updateStates(event.detail);
-      // Stop the event from bubbling further to prevent other providers from handling it
-      event.stopPropagation();
     };
 
     // Listen for both generic events (backward compatibility) and peer-specific events
@@ -177,8 +171,8 @@ export class RtkUiProvider {
         'RtkUiProvider: Providing store for',
         event.detail.element.tagName,
         this.peerStore ? '(isolated)' : '(global)',
-        'currentPeerId:',
-        this.currentPeerId
+        'peerId:',
+        storeToProvide.state.peerId
       );
       console.log('RtkUiProvider: Store object keys:', Object.keys(storeToProvide));
       console.log(
@@ -203,9 +197,8 @@ export class RtkUiProvider {
   onMeetingChange(meeting: Meeting) {
     console.log('RtkUiProvider: onMeetingChange called with meeting:', meeting?.self?.id);
 
-    if (meeting?.self?.id) {
-      this.currentPeerId = meeting.self.id;
-      this.peerStore = createPeerStore(meeting) as RtkUiStoreExtended;
+    if (meeting) {
+      this.peerStore = createPeerStore({meeting, config: this.config}) as RtkUiStoreExtended;
 
       this.peerStore.state.meeting = meeting;
       if (this.config) this.peerStore.state.config = this.config;
@@ -217,7 +210,6 @@ export class RtkUiProvider {
     } else {
       console.log('RtkUiProvider: No meeting.self.id found, using global store');
       this.peerStore = null;
-      this.currentPeerId = null;
     }
 
     // Setup state update listener now that we have peerId

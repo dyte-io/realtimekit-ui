@@ -1954,7 +1954,8 @@ import type { States as IRtkMeetingStates } from '@cloudflare/realtimekit-ui';
 
 export declare interface RtkMeeting extends Components.RtkMeeting {
   /**
-   * States
+   * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores
+Do not confuse this with `rtkStateUpdate` that other components emit
    */
   rtkStatesUpdate: EventEmitter<CustomEvent<IRtkMeetingStates>>;
 }
@@ -3677,7 +3678,8 @@ import type { States as IRtkUiProviderStates } from '@cloudflare/realtimekit-ui'
 
 export declare interface RtkUiProvider extends Components.RtkUiProvider {
   /**
-   * States event
+   * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores
+Do not confuse this with `rtkStateUpdate` that other components emit
    */
   rtkStatesUpdate: EventEmitter<CustomEvent<IRtkUiProviderStates>>;
 }

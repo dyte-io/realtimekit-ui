@@ -116,7 +116,10 @@ export class RtkMeeting {
   @Prop()
   iconPack: IconPack = defaultIconPack;
 
-  /** States */
+  /**
+   * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores
+   * Do not confuse this with `rtkStateUpdate` that other components emit
+   */
   @Event({ eventName: 'rtkStatesUpdate' }) statesUpdate: EventEmitter<States>;
 
   private authErrorListener: (ev: CustomEvent<Error>) => void;
@@ -148,9 +151,7 @@ export class RtkMeeting {
       this.applyDesignSystem &&
       this.config?.designTokens != null &&
       typeof document !== 'undefined' &&
-      (this.peerStore
-        ? this.peerStore.state.states.activeDebugger !== true
-        : legacyGlobalUIStore.state.states.activeDebugger !== true)
+      ((this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true)
     ) {
       provideRtkDesignSystem(document.documentElement, this.config.designTokens);
     }
@@ -228,8 +229,6 @@ export class RtkMeeting {
       console.log(`RtkMeeting handling state update from ${eventTarget.tagName}. Going further.`);
 
       this.updateStates(event.detail);
-
-      event.stopPropagation();
     };
 
     this.host.addEventListener('rtkStateUpdate', this.stateUpdateListener);
@@ -251,8 +250,7 @@ export class RtkMeeting {
 
     // Create isolated store for this meeting peer instance
     if (meeting) {
-      this.peerStore = createPeerStore(meeting) as RtkUiStoreExtended;
-      this.peerStore.state.meeting = meeting;
+      this.peerStore = createPeerStore({meeting}) as RtkUiStoreExtended;
       console.log(`RtkMeeting: Created isolated store for meeting ${meeting.self.id}`);
     } else {
       this.peerStore = null;
@@ -281,7 +279,7 @@ export class RtkMeeting {
 
     if (
       this.applyDesignSystem &&
-      this.config?.designTokens &&
+      this.config?.designTokens != null &&
       typeof document !== 'undefined' &&
       (this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true
     ) {
@@ -333,6 +331,16 @@ export class RtkMeeting {
       `RtkMeeting: Updated states in ${this.peerStore ? 'isolated' : 'global'} store`,
       states
     );
+    // Emit unscoped event for backward compatibility
+    this.statesUpdate.emit(targetStore.state.states);
+
+    // Also emit a scoped event that only this meeting's components should listen to
+    const scopedEvent = new CustomEvent('rtkStatesUpdate', {
+      detail: targetStore.state.states,
+      bubbles: true,
+      composed: true,
+    });
+    this.host.dispatchEvent(scopedEvent);
   }
 
   render() {
@@ -340,15 +348,13 @@ export class RtkMeeting {
       meeting: this.meeting,
       size: this.size,
       states: (this.peerStore || legacyGlobalUIStore).state.states,
-      config: this.config,
+      config: this.config || createDefaultConfig(),
       iconPack: this.iconPack,
       t: this.t,
     };
 
     if (
-      this.peerStore
-        ? this.peerStore.state.states.viewType === 'CHAT'
-        : legacyGlobalUIStore.state.states.viewType === 'CHAT'
+      (this.peerStore || legacyGlobalUIStore).state.states.viewType === 'CHAT'
     ) {
       return <rtk-chat {...defaults} />;
     }
