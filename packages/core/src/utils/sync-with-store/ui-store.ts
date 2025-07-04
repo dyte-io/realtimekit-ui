@@ -68,8 +68,13 @@ const uiState = uiStore.state;
 export { uiStore, uiState };
 
 // Function to create a new store instance for peer-specific stores
-export function createPeerStore({meeting, config}: {meeting: RealtimeKitClient, config?: UIConfig}): RtkUiStoreExtended {
-  console.log(`Creating peer store for: ${meeting.self.id}`);
+export function createPeerStore({
+  meeting,
+  config,
+}: {
+  meeting: RealtimeKitClient;
+  config?: UIConfig;
+}): RtkUiStoreExtended {
   const store = createStore<RtkUiStore>({
     meeting: meeting,
     t: useLanguage(),
@@ -81,7 +86,7 @@ export function createPeerStore({meeting, config}: {meeting: RealtimeKitClient, 
   });
 
   const peerElementsMap = new Map<string, any[]>();
-  
+
   // Attach elementsMap to store so appendElement/removeElement can access it
   (store as RtkUiStoreExtended).elementsMap = peerElementsMap;
 
@@ -105,83 +110,48 @@ export function createPeerStore({meeting, config}: {meeting: RealtimeKitClient, 
     },
   });
 
-  console.log(`Created peer store for: ${meeting.self.id}`, store);
   return store as RtkUiStoreExtended;
 }
 
-function appendElement(propName: string, element: HTMLElement, targetStore: RtkUiStoreExtended = uiStore as RtkUiStoreExtended) {
-  console.log(`appendElement called: propName=${propName}, element=${element.tagName}`);
-  console.log(`appendElement: targetStore type:`, typeof targetStore);
-  console.log(`appendElement: targetStore keys:`, Object.keys(targetStore));
-  console.log(`appendElement: targetStore.elementsMap exists:`, !!targetStore.elementsMap);
-  console.log(`appendElement: targetStore === uiStore:`, targetStore === uiStore);
-  
-  // All stores now have elementsMap attached
-  let elementsMapToUse = targetStore.elementsMap;
-  
-  // Fallback: if elementsMap is not directly attached, try to find it
-  if (!elementsMapToUse) {
-    console.log(`appendElement: No direct elementsMap, checking alternatives...`);
-    
-    // Check if it's the global store
-    if (targetStore === uiStore) {
-      console.log(`appendElement: Using global elementsMap as fallback`);
-      elementsMapToUse = elementsMap;
-    } else {
-      // For peer stores, try to access the elementsMap that should be attached
-      console.log(`appendElement: Peer store without elementsMap, checking store structure:`, targetStore);
-      console.error(`appendElement: No elementsMap found on peer store`, targetStore);
-      return;
-    }
-  }
-  
+function appendElement(
+  propName: string,
+  element: HTMLElement,
+  targetStore: RtkUiStoreExtended = uiStore as RtkUiStoreExtended
+) {
+  const elementsMapToUse = targetStore.elementsMap;
+
   if (!elementsMapToUse) {
     console.error(`appendElement: No elementsMap found on store`, targetStore);
     return;
   }
-  
-  console.log(`appendElement: About to get elements for propName: ${propName}`);
+
   const elements = elementsMapToUse.get(propName);
-  console.log(`appendElement: Got elements:`, elements);
-  
+
   if (!elements) {
-    console.log(`appendElement: Creating new elements array for ${propName}`);
     try {
       elementsMapToUse.set(propName, [element]);
-      console.log(`appendElement: Successfully set new array for ${propName}`);
     } catch (error) {
       console.error(`appendElement: Error setting new array:`, error);
     }
   } else {
-    console.log(`appendElement: Adding element to existing array for ${propName}, current count: ${elements.length}`);
     try {
       elements.push(element);
-      console.log(`appendElement: Successfully added element, new count: ${elements.length}`);
     } catch (error) {
       console.error(`appendElement: Error adding element:`, error);
     }
   }
-  
-  console.log(`appendElement: Completed for ${propName}`);
 }
 
-function removeElement(propName: string, element: HTMLElement, targetStore: RtkUiStoreExtended = uiStore as RtkUiStoreExtended) {
-  console.log(`removeElement called: propName=${propName}, element=${element.tagName}`);
-  
-  // All stores now have elementsMap attached
-  let elementsMapToUse = targetStore.elementsMap;
-  
-  // Fallback: if elementsMap is not directly attached, try to find it
+function removeElement(
+  propName: string,
+  element: HTMLElement,
+  targetStore: RtkUiStoreExtended = uiStore as RtkUiStoreExtended
+) {
+  const elementsMapToUse = targetStore.elementsMap;
+
   if (!elementsMapToUse) {
-    console.log(`removeElement: No direct elementsMap, using fallback...`);
-    
-    // Check if it's the global store
-    if (targetStore === uiStore) {
-      elementsMapToUse = elementsMap;
-    } else {
-      console.error(`removeElement: No elementsMap found on peer store`, targetStore);
-      return;
-    }
+    console.error(`removeElement: No elementsMap found on store`, targetStore);
+    return;
   }
 
   const elements = elementsMapToUse.get(propName);
@@ -189,7 +159,6 @@ function removeElement(propName: string, element: HTMLElement, targetStore: RtkU
     const index = elements.indexOf(element);
     if (index > -1) {
       elements.splice(index, 1);
-      console.log(`removeElement: Removed element from ${propName}, remaining count: ${elements.length}`);
     }
   }
 }

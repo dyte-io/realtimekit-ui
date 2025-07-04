@@ -1,5 +1,11 @@
 import { getElement, ComponentInterface } from '@stencil/core';
-import { uiStore as store, appendElement, removeElement, type RtkUiStore, type RtkUiStoreExtended } from './ui-store';
+import {
+  uiStore as store,
+  appendElement,
+  removeElement,
+  type RtkUiStore,
+  type RtkUiStoreExtended,
+} from './ui-store';
 
 // Cache to remember which elements should use global store (after timeout)
 const useGlobalStoreCache = new WeakSet<HTMLElement>();
@@ -30,10 +36,11 @@ export function SyncWithStore() {
       let responseReceived = false;
 
       // Listen for provider response
-      const storeResponseListener = (event: CustomEvent<{store: RtkUiStoreExtended, requestId: string}>) => {
+      const storeResponseListener = (
+        event: CustomEvent<{ store: RtkUiStoreExtended; requestId: string }>
+      ) => {
         const requestId = (host as any)._storeRequestId;
         if (event.detail.requestId === requestId) {
-          console.info(`Received store for ${host.tagName}:${propName}`, event.detail.store);
           receivedStore = event.detail.store;
           responseReceived = true;
           providerAvailable = true; // Mark provider as available for this decorator instance
@@ -51,23 +58,23 @@ export function SyncWithStore() {
       const requestEvent = new CustomEvent('rtkRequestStore', {
         detail: { element: host, propName, requestId },
         bubbles: true,
-        composed: true // Allow event to cross shadow DOM boundaries
+        composed: true, // Allow event to cross shadow DOM boundaries
       });
-      console.info(`Requesting store for ${host.tagName}:${propName}`);
+
       host.dispatchEvent(requestEvent);
 
       // Wait 100ms for response only if we haven't determined provider availability yet
       const waitTime = providerAvailable === null ? 100 : 0;
-      
+
       setTimeout(() => {
         document.removeEventListener('rtkProvideStore', storeResponseListener);
-        
+
         const targetStore = receivedStore || store;
-        
+
         // If no response received and this was our first attempt, mark provider as unavailable
         if (!responseReceived && providerAvailable === null) {
           providerAvailable = false;
-          console.info(`No Store response received for ${host.tagName}:${propName}. Using global store.`);
+
           useGlobalStoreCache.add(host);
         }
 
@@ -83,10 +90,10 @@ export function SyncWithStore() {
 
     proto.disconnectedCallback = function () {
       const host = getElement(this);
-      
+
       // Try to determine which store was used
       let targetStore = store; // default fallback
-      
+
       // If we have a cached decision to use global store, use it
       if (useGlobalStoreCache.has(host)) {
         targetStore = store;
@@ -95,12 +102,12 @@ export function SyncWithStore() {
         // In most cases, removeElement with global store should handle cleanup
         targetStore = store;
       }
-      
+
       removeElement(propName, host, targetStore as RtkUiStoreExtended);
-      
+
       // Clean up cache entry
       useGlobalStoreCache.delete(host);
-      
+
       return disconnectedCallback?.call(this);
     };
   };

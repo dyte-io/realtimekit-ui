@@ -112,13 +112,6 @@ export class RtkUiProvider {
     const targetStore = this.peerStore || legacyGlobalUIStore;
     const newStates = Object.assign({}, targetStore.state.states);
     targetStore.state.states = deepMerge(newStates, states);
-    console.log(
-      `RtkUiProvider: Updated states in ${
-        this.peerStore ? 'isolated' : 'global'
-      } store for meeting ${targetStore.state.peerId}`,
-      states
-    );
-
 
     // Emit unscoped event for backward compatibility
     this.statesUpdate.emit(targetStore.state.states);
@@ -140,12 +133,6 @@ export class RtkUiProvider {
 
     // Create new listener
     this.stateUpdateListener = (event: CustomEvent<States>) => {
-      console.log(
-        `Provider ${(this.peerStore || legacyGlobalUIStore).state.peerId} handling state update from ${
-          (event.target as HTMLElement).tagName
-        }`
-      );
-
       this.updateStates(event.detail);
     };
 
@@ -159,26 +146,12 @@ export class RtkUiProvider {
       this.host.removeEventListener('rtkRequestStore', this.storeRequestListener);
     }
 
-    console.log('RtkUiProvider: Setting up store request listener');
-
     // Listen for store requests from child components
     this.storeRequestListener = (
       event: CustomEvent<{ element: HTMLElement; propName: string; requestId: string }>
     ) => {
       // Provide the actual store object, not a wrapper
       const storeToProvide = this.peerStore || legacyGlobalUIStore;
-      console.log(
-        'RtkUiProvider: Providing store for',
-        event.detail.element.tagName,
-        this.peerStore ? '(isolated)' : '(global)',
-        'peerId:',
-        storeToProvide.state.peerId
-      );
-      console.log('RtkUiProvider: Store object keys:', Object.keys(storeToProvide));
-      console.log(
-        'RtkUiProvider: Store has elementsMap:',
-        !!(storeToProvide as RtkUiStoreExtended).elementsMap
-      );
 
       const responseEvent = new CustomEvent('rtkProvideStore', {
         detail: { store: storeToProvide, requestId: event.detail.requestId },
@@ -190,25 +163,19 @@ export class RtkUiProvider {
     };
 
     this.host.addEventListener('rtkRequestStore', this.storeRequestListener);
-    console.log('RtkUiProvider: Store request listener added to host');
   }
 
   @Watch('meeting')
   onMeetingChange(meeting: Meeting) {
-    console.log('RtkUiProvider: onMeetingChange called with meeting:', meeting?.self?.id);
-
     if (meeting) {
-      this.peerStore = createPeerStore({meeting, config: this.config}) as RtkUiStoreExtended;
+      this.peerStore = createPeerStore({ meeting, config: this.config }) as RtkUiStoreExtended;
 
       this.peerStore.state.meeting = meeting;
       if (this.config) this.peerStore.state.config = this.config;
       if (this.iconPack) this.peerStore.state.iconPack = this.iconPack;
       if (this.t) this.peerStore.state.t = this.t;
       if (this.size) this.peerStore.state.size = this.size;
-
-      console.log(`RtkUiProvider: Created isolated store for meeting ${meeting.self.id}`);
     } else {
-      console.log('RtkUiProvider: No meeting.self.id found, using global store');
       this.peerStore = null;
     }
 

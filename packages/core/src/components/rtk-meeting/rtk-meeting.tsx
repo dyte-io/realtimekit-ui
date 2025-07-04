@@ -151,7 +151,7 @@ export class RtkMeeting {
       this.applyDesignSystem &&
       this.config?.designTokens != null &&
       typeof document !== 'undefined' &&
-      ((this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true)
+      (this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true
     ) {
       provideRtkDesignSystem(document.documentElement, this.config.designTokens);
     }
@@ -186,19 +186,12 @@ export class RtkMeeting {
       this.host.removeEventListener('rtkRequestStore', this.storeRequestListener);
     }
 
-    console.log('RtkMeeting: Setting up store request listener');
-
     // Listen for store requests from child components
     this.storeRequestListener = (
       event: CustomEvent<{ element: HTMLElement; propName: string; requestId: string }>
     ) => {
       // Provide isolated store if available, otherwise fall back to global store
       const storeToProvide = this.peerStore || legacyGlobalUIStore;
-      console.log(
-        'RtkMeeting: Providing store for',
-        event.detail.element.tagName,
-        this.peerStore ? '(isolated)' : '(global)'
-      );
 
       const responseEvent = new CustomEvent('rtkProvideStore', {
         detail: { store: storeToProvide, requestId: event.detail.requestId },
@@ -210,7 +203,6 @@ export class RtkMeeting {
     };
 
     this.host.addEventListener('rtkRequestStore', this.storeRequestListener);
-    console.log('RtkMeeting: Store request listener added to host');
   }
 
   private setupStateUpdateListener() {
@@ -218,21 +210,16 @@ export class RtkMeeting {
       this.host.removeEventListener('rtkStateUpdate', this.stateUpdateListener);
     }
 
-    console.log('RtkMeeting: Setting up state update listener');
-
     this.stateUpdateListener = (event: CustomEvent<States>) => {
       const eventTarget = event.target as HTMLElement;
-      console.log(`RtkMeeting handling state update from ${eventTarget.tagName}`);
       if (!this.host.contains(eventTarget)) {
         return;
       }
-      console.log(`RtkMeeting handling state update from ${eventTarget.tagName}. Going further.`);
 
       this.updateStates(event.detail);
     };
 
     this.host.addEventListener('rtkStateUpdate', this.stateUpdateListener);
-    console.log('RtkMeeting: Event listener added to host');
   }
 
   private clearListeners(meeting: Meeting) {
@@ -250,8 +237,7 @@ export class RtkMeeting {
 
     // Create isolated store for this meeting peer instance
     if (meeting) {
-      this.peerStore = createPeerStore({meeting}) as RtkUiStoreExtended;
-      console.log(`RtkMeeting: Created isolated store for meeting ${meeting.self.id}`);
+      this.peerStore = createPeerStore({ meeting }) as RtkUiStoreExtended;
     } else {
       this.peerStore = null;
     }
@@ -327,10 +313,7 @@ export class RtkMeeting {
     const targetStore = this.peerStore || legacyGlobalUIStore;
     const newStates = Object.assign({}, targetStore.state.states);
     targetStore.state.states = deepMerge(newStates, states);
-    console.log(
-      `RtkMeeting: Updated states in ${this.peerStore ? 'isolated' : 'global'} store`,
-      states
-    );
+
     // Emit unscoped event for backward compatibility
     this.statesUpdate.emit(targetStore.state.states);
 
@@ -353,9 +336,7 @@ export class RtkMeeting {
       t: this.t,
     };
 
-    if (
-      (this.peerStore || legacyGlobalUIStore).state.states.viewType === 'CHAT'
-    ) {
+    if ((this.peerStore || legacyGlobalUIStore).state.states.viewType === 'CHAT') {
       return <rtk-chat {...defaults} />;
     }
 
