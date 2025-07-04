@@ -94,10 +94,10 @@ export class RtkDialogManager {
   };
 
   render() {
-    if(!this.meeting){
+    if (!this.meeting) {
       return;
     }
-    
+
     const defaults = {
       meeting: this.meeting,
       states: this.states,

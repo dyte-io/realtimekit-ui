@@ -194,8 +194,8 @@ export class RtkMeeting {
       event: CustomEvent<{ element: HTMLElement; propName: string; requestId: string }>
     ) => {
       // Provide peer specific store if available, otherwise fall back to global store
-      if(!this.peerStore) return;
-      
+      if (!this.peerStore) return;
+
       const storeToProvide = this.peerStore;
 
       const responseEvent = new CustomEvent('rtkProvideStore', {
@@ -250,13 +250,15 @@ export class RtkMeeting {
         size: this.size,
         providerId: this.providerId,
       }) as RtkUiStoreExtended;
-      
+
       // Notify components that peer specific store is now available
-      document.dispatchEvent(new CustomEvent('rtkPeerStoreReady', {
-        detail: { 
-          peerId: meeting.self.id,
-        }
-      }));
+      document.dispatchEvent(
+        new CustomEvent('rtkPeerStoreReady', {
+          detail: {
+            peerId: meeting.self.id,
+          },
+        })
+      );
     } else {
       this.peerStore = null;
     }

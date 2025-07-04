@@ -158,7 +158,7 @@ export class RtkUiProvider {
     this.storeRequestListener = (
       event: CustomEvent<{ element: HTMLElement; propName: string; requestId: string }>
     ) => {
-      if(!this.peerStore) return;
+      if (!this.peerStore) return;
       // Provide the actual store object, not a wrapper
 
       const responseEvent = new CustomEvent('rtkProvideStore', {
@@ -176,25 +176,23 @@ export class RtkUiProvider {
   @Watch('meeting')
   onMeetingChange(meeting: Meeting) {
     if (meeting) {
-
       this.peerStore = createPeerStore({
         meeting,
         config: this.config,
         iconPack: this.iconPack,
         t: this.t,
         size: this.size,
-        providerId: this.providerId
+        providerId: this.providerId,
       }) as RtkUiStoreExtended;
 
-      
       // Notify components that peer specific store is now available
-      document.dispatchEvent(new CustomEvent('rtkPeerStoreReady', {
-        detail: { 
-          peerId: meeting.self.id,
-        }
-      }));
-
-
+      document.dispatchEvent(
+        new CustomEvent('rtkPeerStoreReady', {
+          detail: {
+            peerId: meeting.self.id,
+          },
+        })
+      );
     }
 
     // Setup state update listener now that we have peerId
