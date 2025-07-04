@@ -325,6 +325,13 @@ export class RtkMeeting {
     });
   };
 
+  @Watch('size')
+  onSizeChange(newSize: Size) {
+    if (this.peerStore) {
+      this.peerStore.state.size = newSize;
+    }
+  }
+
   private handleResize() {
     this.size = getSize(this.host.clientWidth);
   }
