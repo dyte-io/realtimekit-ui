@@ -1,3 +1,33 @@
+## [1.0.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.1...@cloudflare/realtimekit-ui-v1.0.2) (2025-06-24)
+
+
+### Bug Fixes
+
+* component library export name ([59ba8e4](https://github.com/dyte-io/realtimekit-ui/commit/59ba8e48f6ce0ac5f66682f2a9ab43c067837309))
+* downgrade to angular 13.3.11 ([9364330](https://github.com/dyte-io/realtimekit-ui/commit/93643304e02a9d29856ec54baa839b5c59f12693))
+* longer notifications get cut off ([eba4009](https://github.com/dyte-io/realtimekit-ui/commit/eba400946a4c9eb9eef53f7ceb6b577e16c8140e))
+
+## [1.0.2-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2-staging.2...@cloudflare/realtimekit-ui-v1.0.2-staging.3) (2025-06-20)
+
+
+### Bug Fixes
+
+* component library export name ([59ba8e4](https://github.com/dyte-io/realtimekit-ui/commit/59ba8e48f6ce0ac5f66682f2a9ab43c067837309))
+
+## [1.0.2-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2-staging.1...@cloudflare/realtimekit-ui-v1.0.2-staging.2) (2025-06-20)
+
+
+### Bug Fixes
+
+* downgrade to angular 13.3.11 ([9364330](https://github.com/dyte-io/realtimekit-ui/commit/93643304e02a9d29856ec54baa839b5c59f12693))
+
+## [1.0.2-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.1...@cloudflare/realtimekit-ui-v1.0.2-staging.1) (2025-06-19)
+
+
+### Bug Fixes
+
+* longer notifications get cut off ([eba4009](https://github.com/dyte-io/realtimekit-ui/commit/eba400946a4c9eb9eef53f7ceb6b577e16c8140e))
+
 ## [1.0.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.0...@cloudflare/realtimekit-ui-v1.0.1) (2025-05-29)
 
 
