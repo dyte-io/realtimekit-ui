@@ -1,5 +1,12 @@
 import { Component, Host, h, Event, EventEmitter, Prop, Watch, State } from '@stencil/core';
-import { defaultConfig, defaultIconPack, IconPack, Size, States, UIConfig } from '../../exports';
+import {
+  createDefaultConfig,
+  defaultIconPack,
+  IconPack,
+  Size,
+  States,
+  UIConfig,
+} from '../../exports';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Meeting } from '../../types/rtk-client';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';
@@ -25,7 +32,9 @@ export class RtkPipToggle {
   states: States;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()
@@ -72,6 +81,7 @@ export class RtkPipToggle {
   }
 
   render() {
+    if (!this.meeting) return null;
     if (!this.pipSupported) return <Host data-hidden />;
     const pipEnabled = this.meeting.participants.pip.isActive;
     return (

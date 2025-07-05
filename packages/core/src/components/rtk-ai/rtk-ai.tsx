@@ -4,7 +4,7 @@ import type { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
-import { defaultConfig } from '../../lib/default-ui-config';
+import { createDefaultConfig } from '../../lib/default-ui-config';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { RTKPermissionsPreset } from '@cloudflare/realtimekit';
 
@@ -29,7 +29,9 @@ export class RtkAi {
   states: States;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()
@@ -75,6 +77,7 @@ export class RtkAi {
   };
 
   render() {
+    if (!this.meeting) return null;
     if (
       !(this.meeting?.self?.permissions as RTKPermissionsPreset).transcriptionEnabled ||
       !this.states?.activeAI

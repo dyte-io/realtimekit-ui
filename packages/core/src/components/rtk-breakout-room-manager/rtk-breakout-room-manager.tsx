@@ -264,6 +264,7 @@ export class RtkBreakoutRoomManager {
   }
 
   render() {
+    if (!this.meeting) return null;
     return (
       <Host>
         <div

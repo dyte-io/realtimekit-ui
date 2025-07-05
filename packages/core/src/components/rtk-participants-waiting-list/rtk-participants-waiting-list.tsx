@@ -1,5 +1,12 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
-import { UIConfig, Size, IconPack, defaultIconPack, RtkI18n, defaultConfig } from '../../exports';
+import {
+  UIConfig,
+  Size,
+  IconPack,
+  defaultIconPack,
+  RtkI18n,
+  createDefaultConfig,
+} from '../../exports';
 import { useLanguage } from '../../lib/lang';
 import { Meeting, WaitlistedParticipant } from '../../types/rtk-client';
 import { SyncWithStore } from '../../utils/sync-with-store';
@@ -20,7 +27,9 @@ export class RtkParticipantsWaitlisted {
   @Prop()
   meeting: Meeting;
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;
@@ -79,7 +88,7 @@ export class RtkParticipantsWaitlisted {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.waitlistedParticipants = meeting.participants.waitlisted.toArray();
 
     this.waitlistedParticipantJoinedListener = (participant: WaitlistedParticipant) => {

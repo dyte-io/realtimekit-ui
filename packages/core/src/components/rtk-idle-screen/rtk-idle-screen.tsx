@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { IconPack, defaultIconPack } from '../../lib/icons';
 import { useLanguage, RtkI18n } from '../../lib/lang';
 import { UIConfig } from '../../types/ui-config';
@@ -22,7 +22,9 @@ export class RtkIdleScreen {
   meeting: Meeting;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()

@@ -91,7 +91,7 @@ export class RtkSpeakerSelector {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     writeTask(async () => {
       const { self } = meeting;
@@ -136,7 +136,7 @@ export class RtkSpeakerSelector {
   }
 
   render() {
-    if (this.meeting == null) return null;
+    if (!this.meeting) return null;
 
     let unnamedSpeakerCount = 0;
     return (

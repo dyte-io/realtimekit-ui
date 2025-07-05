@@ -1,5 +1,5 @@
 import type { RTKThemePreset, RTKPermissionsPreset } from '@cloudflare/realtimekit';
-import { defaultConfig } from '../lib/default-ui-config';
+import { createDefaultConfig } from '../lib/default-ui-config';
 import { UIConfig } from '../types/ui-config';
 import { DesignTokens } from '../types/ui-config/design-tokens';
 import { isValidHexColor } from './color';
@@ -12,7 +12,7 @@ import { isLiveStreamHost } from './livestream';
  * @param config Your extended UI Config
  * @returns New extended UI Config object
  */
-export const extendConfig = (config: UIConfig, baseConfig: UIConfig = defaultConfig) => {
+export const extendConfig = (config: UIConfig, baseConfig: UIConfig = createDefaultConfig()) => {
   let newConfig = Object.assign({}, baseConfig);
 
   deepMerge(newConfig, config);

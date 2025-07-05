@@ -21,7 +21,9 @@ export class RtkAudioTile {
   meeting: Meeting;
 
   /** Config */
-  @Prop() config: UIConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig;
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;
@@ -116,6 +118,7 @@ export class RtkAudioTile {
   }
 
   render() {
+    if (!this.meeting) return null;
     const defaults = {
       meeting: this.meeting,
       size: this.size,

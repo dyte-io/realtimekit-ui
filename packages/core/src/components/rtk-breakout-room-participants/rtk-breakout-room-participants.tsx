@@ -63,7 +63,7 @@ export class RtkBreakoutRoomParticipants {
   }
 
   disconnectedCallback() {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
   }
 
   private updateSelectedParticipants(participant: ConnectedPeer, selected: boolean) {
@@ -79,7 +79,7 @@ export class RtkBreakoutRoomParticipants {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.getParticipants(this.search);
   }
 

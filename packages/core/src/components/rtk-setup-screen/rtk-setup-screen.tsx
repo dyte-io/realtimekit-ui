@@ -13,7 +13,7 @@ import { Meeting } from '../../types/rtk-client';
 import { Size, States } from '../../types/props';
 import { shorten } from '../../utils/string';
 import { UIConfig } from '../../types/ui-config';
-import { defaultConfig } from '../../lib/default-ui-config';
+import { createDefaultConfig } from '../../lib/default-ui-config';
 import { Render } from '../../lib/render';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
@@ -46,7 +46,9 @@ export class RtkSetupScreen {
   @SyncWithStore() @Prop({ reflect: true }) size: Size;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Emits updated state data */
   @Event({ eventName: 'rtkStateUpdate' }) stateUpdate: EventEmitter<States>;
@@ -113,6 +115,10 @@ export class RtkSetupScreen {
   };
 
   render() {
+    if (!this.meeting) {
+      return;
+    }
+
     const disabled =
       this.displayName?.trim() === '' || this.connectionState !== 'connected' || this.isJoining;
 

@@ -4,7 +4,7 @@ import { Meeting } from '../../types/rtk-client';
 import { Transcript, States } from '../../types/props';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { UIConfig } from '../../types/ui-config';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import clone from '../../utils/clone';
 
@@ -35,7 +35,9 @@ export class RtkTranscripts {
   states: States;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Language */
   @SyncWithStore()
@@ -63,15 +65,15 @@ export class RtkTranscripts {
   }
 
   disconnectedCallback() {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
     this.clearListeners(this.meeting);
   }
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting, oldMeeting?: Meeting) {
     clearTimeout(this.disconnectTimeout);
-    if (oldMeeting !== undefined) this.clearListeners(oldMeeting);
-    if (meeting == null) return;
+    if (oldMeeting) this.clearListeners(oldMeeting);
+    if (!meeting) return;
 
     if (this.states.activeCaptions) {
       this.addListener(meeting);

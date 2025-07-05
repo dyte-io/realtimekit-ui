@@ -24,7 +24,9 @@ export class RtkAudioGrid {
   meeting: Meeting;
 
   /** Config */
-  @Prop() config: UIConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig;
 
   /** States */
   @SyncWithStore()

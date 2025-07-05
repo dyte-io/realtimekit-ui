@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
-import { defaultConfig } from '../../lib/default-ui-config';
+import { createDefaultConfig } from '../../lib/default-ui-config';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Meeting, Peer } from '../../types/rtk-client';
@@ -11,7 +11,6 @@ import { RTKPlugin, leaveRoomState } from '@cloudflare/realtimekit';
 import { isLiveStreamViewer } from '../../utils/livestream';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { defaultGridSize } from '../../lib/grid';
-import { uiState } from '../../utils/sync-with-store/ui-store';
 
 export type GridLayout = 'row' | 'column';
 
@@ -80,7 +79,9 @@ export class RtkGrid {
   states: States;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()
@@ -110,7 +111,7 @@ export class RtkGrid {
   }
 
   private disconnectMeeting(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.participants = [];
     this.plugins = [];
 
@@ -214,28 +215,28 @@ export class RtkGrid {
   @Watch('screenShareParticipants')
   screenShareParticipantsChanged(participants: Peer[]) {
     const activeScreenShare = participants.length > 0;
-    if (!!uiState.states.activeScreenShare === activeScreenShare) return;
+    if (!!this.states.activeScreenShare === activeScreenShare) return;
 
     this.stateUpdate.emit({ activeScreenShare });
-    uiState.states.activeScreenShare = activeScreenShare;
+    this.states.activeScreenShare = activeScreenShare;
   }
 
   @Watch('plugins')
   pluginsChanged(plugins: RTKPlugin[]) {
     const activePlugin = plugins.length > 0;
-    if (!!uiState.states.activePlugin === activePlugin) return;
+    if (!!this.states.activePlugin === activePlugin) return;
 
     this.stateUpdate.emit({ activePlugin });
-    uiState.states.activePlugin = activePlugin;
+    this.states.activePlugin = activePlugin;
   }
 
   @Watch('pinnedParticipants')
   pinnedParticipantsChanged(participants: Peer[]) {
     const activeSpotlight = participants.length > 0;
-    if (!!uiState.states.activeSpotlight === activeSpotlight) return;
+    if (!!this.states.activeSpotlight === activeSpotlight) return;
 
     this.stateUpdate.emit({ activeSpotlight });
-    uiState.states.activeSpotlight = activeSpotlight;
+    this.states.activeSpotlight = activeSpotlight;
   }
 
   private invalidRoomStates = ['init', 'waitlisted', 'ended', 'kicked', 'rejected'];
@@ -302,7 +303,7 @@ export class RtkGrid {
   };
 
   private onViewModeChanged = () => {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
     this.updateActiveParticipants();
   };
 

@@ -78,6 +78,7 @@ export class RtkBreakoutRoomsToggle {
   };
 
   render() {
+    if (!this.meeting) return null;
     if (!this.canToggle) return;
     return (
       <Host title={this.t('breakout_rooms')}>

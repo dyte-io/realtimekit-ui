@@ -93,7 +93,7 @@ export class RtkDebugger {
   }
 
   render() {
-    if (this.meeting == null) return null;
+    if (!this.meeting) return null;
 
     const defaults = {
       meeting: this.meeting,

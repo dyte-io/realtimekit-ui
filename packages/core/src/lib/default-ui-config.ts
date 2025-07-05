@@ -1,4 +1,5 @@
 import { UIConfig } from '../types/ui-config';
+import clone from '../utils/clone';
 
 /**
  * The default UI Config
@@ -348,4 +349,8 @@ export const defaultConfig: UIConfig = {
     participant_chat_message_sound_notification_limit: 10,
     videoFit: 'cover',
   },
+};
+
+export const createDefaultConfig = (): UIConfig => {
+  return clone(defaultConfig);
 };

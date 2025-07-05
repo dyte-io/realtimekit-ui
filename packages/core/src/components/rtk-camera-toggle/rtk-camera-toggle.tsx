@@ -186,6 +186,7 @@ export class RtkCameraToggle {
   }
 
   render() {
+    if (!this.meeting) return null;
     if (
       !this.canProduceVideo ||
       this.meeting?.meta.viewType === 'AUDIO_ROOM' ||

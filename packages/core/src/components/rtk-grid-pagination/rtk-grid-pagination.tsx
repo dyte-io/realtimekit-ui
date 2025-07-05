@@ -59,7 +59,7 @@ export class RtkGridPagination {
   }
 
   disconnectedCallback() {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
 
     const { participants, stage } = this.meeting;
 
@@ -134,7 +134,7 @@ export class RtkGridPagination {
   }, MASS_ACTIONS_DEBOUNCE_TIMER);
 
   private prevPage = () => {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
 
     const { participants } = this.meeting;
 
@@ -146,7 +146,7 @@ export class RtkGridPagination {
   };
 
   private nextPage = () => {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
 
     const { participants } = this.meeting;
 
@@ -158,6 +158,7 @@ export class RtkGridPagination {
   };
 
   render() {
+    if (!this.meeting) return null;
     const { meta } = this.meeting;
     const isAudioRoom = meta?.viewType === 'AUDIO_ROOM';
 
