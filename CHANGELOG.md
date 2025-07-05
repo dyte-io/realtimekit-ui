@@ -1,3 +1,10 @@
+## [1.0.3-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2...@cloudflare/realtimekit-ui-v1.0.3-staging.1) (2025-07-05)
+
+
+### Bug Fixes
+
+* handle missing meetingTitle to prevent trim error ([efaf743](https://github.com/dyte-io/realtimekit-ui/commit/efaf743c3b67035d1c3e13947121cbace750e84f))
+
 ## [1.0.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.1...@cloudflare/realtimekit-ui-v1.0.2) (2025-06-24)
 
 
