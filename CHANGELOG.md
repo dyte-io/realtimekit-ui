@@ -1,3 +1,10 @@
+## [1.0.3-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.3-staging.1...@cloudflare/realtimekit-ui-v1.0.3-staging.2) (2025-07-07)
+
+
+### Bug Fixes
+
+* truncate notifications after two lines ([6a95245](https://github.com/dyte-io/realtimekit-ui/commit/6a952456ff276f9100b49ffde13c4775f40918df))
+
 ## [1.0.3-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2...@cloudflare/realtimekit-ui-v1.0.3-staging.1) (2025-07-05)
 
 
