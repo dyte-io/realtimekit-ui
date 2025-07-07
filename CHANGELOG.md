@@ -1,3 +1,10 @@
+## [1.0.3-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.3-staging.2...@cloudflare/realtimekit-ui-v1.0.3-staging.3) (2025-07-07)
+
+
+### Bug Fixes
+
+* **chat:** chat UI has apt padding & bubbles are not full width now ([ef89867](https://github.com/dyte-io/realtimekit-ui/commit/ef89867440af174c4e6e9a7f0f426d8e17deef6a))
+
 ## [1.0.3-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.3-staging.1...@cloudflare/realtimekit-ui-v1.0.3-staging.2) (2025-07-07)
 
 
