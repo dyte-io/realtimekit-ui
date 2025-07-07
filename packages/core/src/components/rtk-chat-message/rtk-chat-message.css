@@ -112,7 +112,7 @@ rtk-menu {
 }
 
 p {
-  @apply mt-0 mb-3;
+  @apply m-0;
 }
 
 rtk-text-message,

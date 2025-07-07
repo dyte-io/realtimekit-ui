@@ -27,10 +27,10 @@
 
 .chat {
   .head {
-    @apply flex items-center;
+    @apply mb-2 flex items-center;
 
     .name {
-      @apply text-text-sm mr-4 font-bold;
+      @apply text-text-sm mr-2 font-bold;
     }
 
     .time {
@@ -39,7 +39,7 @@
   }
 
   .body {
-    @apply mt-2 break-words leading-snug;
+    @apply break-words leading-normal;
 
     .emoji {
       @apply text-heading-md;
@@ -48,11 +48,11 @@
 }
 
 p {
-  @apply mt-0 mb-3;
+  @apply m-0 leading-normal;
 }
 
 rtk-message-view {
-  @apply mt-4;
+  @apply mt-2;
   @apply text-text-900 block px-2;
   @apply box-border;
 }
