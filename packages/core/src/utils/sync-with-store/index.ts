@@ -44,12 +44,12 @@ export function SyncWithStore() {
           // Since peer specific store is available, remove element prop from global store
           removeElement(propName, host, legacyGlobalUIStore as RtkUiStoreExtended)
 
-
-
           document.removeEventListener('rtkProvideStore', storeResponseListener);
         }
       };
 
+      // Store listener reference for cleanup
+      host[`_rtkStoreResponseListener-${propName}`] = storeResponseListener;
       document.addEventListener('rtkProvideStore', storeResponseListener);
 
       // Generate unique request ID
@@ -81,8 +81,8 @@ export function SyncWithStore() {
         document.removeEventListener('rtkPeerStoreReady', storeReadyListener);
       };
 
-
-      
+      // Store listener reference for cleanup
+      host[`_rtkStoreReadyListener-${propName}`] = storeReadyListener;
       document.addEventListener('rtkPeerStoreReady', storeReadyListener);
 
       return connectedCallback?.call(this);
@@ -92,6 +92,19 @@ export function SyncWithStore() {
       const host = getElement(this);
 
       removeElement(propName, host, host[`_rtkStoreToCleanup-${propName}`] as RtkUiStoreExtended);
+
+      // Clean up event listeners to prevent memory leaks
+      const storeResponseListener = host[`_rtkStoreResponseListener-${propName}`];
+      if (storeResponseListener) {
+        document.removeEventListener('rtkProvideStore', storeResponseListener);
+        delete host[`_rtkStoreResponseListener-${propName}`];
+      }
+
+      const storeReadyListener = host[`_rtkStoreReadyListener-${propName}`];
+      if (storeReadyListener) {
+        document.removeEventListener('rtkPeerStoreReady', storeReadyListener);
+        delete host[`_rtkStoreReadyListener-${propName}`];
+      }
 
       return disconnectedCallback?.call(this);
     };
