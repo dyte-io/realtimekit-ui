@@ -488,7 +488,7 @@ export class RtkGrid {
           onlyChildren
         />
         <rtk-livestream-indicator meeting={this.meeting} size="sm" t={this.t} />
-        <rtk-viewer-count meeting={this.meeting} variant="embedded" />
+        <rtk-viewer-count meeting={this.meeting} variant="embedded" t={this.t}/>
       </Host>
     );
   }
