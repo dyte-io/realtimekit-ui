@@ -5,7 +5,7 @@
 }
 
 .player-container {
-  @apply relative m-4 flex grow items-center justify-center rounded-md;
+  @apply relative mt-4 mx-4 mb-0 flex grow items-center justify-center rounded-md;
 }
 
 .loader {
@@ -32,12 +32,17 @@ p {
 .control-bar {
   position: absolute;
   bottom: 0;
+  left: 16px;
+  right: 16px;
   display: flex;
   height: auto;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px 0px 10px;
-  z-index: 10; /* Ensures the control bar is above the video */
+  padding: 12px 16px;
+  z-index: 30; /* Higher z-index to ensure it's above the video */
+  @apply bg-background-900;
+  border-radius: 6px; /* rounded-md fallback */
+  @apply bg-background-900/80 rounded-md;
 }
 
 .timings {
@@ -73,11 +78,32 @@ p {
   justify-content: space-around;
 }
 
-#livestream-video {
-  aspect-ratio: 16/9;
-  max-width: 100%;
-  min-width: 100%;
-  @apply rounded-md left-0 w-auto aspect-video z-20 border-[0px];;
+#livestream-video,
+.livestream-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  object-fit: fill !important;
+  z-index: 10;
+  @apply rounded-md border-[0px];
+}
+
+/* Non-fullscreen: add padding to container for spacing (no bottom padding) */
+:host:not(:fullscreen) .video-container {
+  padding: 16px 16px 0 16px;
+}
+
+/* Fullscreen: remove padding and ensure full coverage */
+:host(:fullscreen) .video-container,
+:host(:-webkit-full-screen) .video-container,
+:host(:-moz-full-screen) .video-container {
+  padding: 0;
 }
 
 
