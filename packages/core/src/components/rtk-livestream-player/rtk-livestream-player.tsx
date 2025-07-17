@@ -388,7 +388,7 @@ export class RtkLivestreamPlayer {
             ref={async (el) => {
               this.videoContainerRef = el;
             }}
-            class="video-container relative flex h-full w-full flex-col items-center justify-center pb-20"
+            class="video-container relative flex h-full w-full flex-col items-center justify-center"
           >
             <video
               onMouseMove={this.onMouseMovePlayer}
@@ -397,7 +397,7 @@ export class RtkLivestreamPlayer {
                 await this.conditionallyStartLivestreamViewer();
               }}
               id="livestream-video"
-              style={{ height: `${this.el?.clientHeight}px` }}
+              class="livestream-video"
               controls={false} // Custom controls
               onPlay={() => {
                 if (this.playerState === PlayerState.PAUSED) {
@@ -408,7 +408,7 @@ export class RtkLivestreamPlayer {
             ></video>
             {this.playerState !== PlayerState.IDLE && !this.hideControls && (
               // <!-- Control Bar -->
-              <div class="control-bar" style={{ width: `${this.videoRef?.clientWidth}px` }}>
+              <div class="control-bar">
                 <div class="control-groups">
                   {/* <!-- Play/Pause Button --> */}
                   <rtk-icon

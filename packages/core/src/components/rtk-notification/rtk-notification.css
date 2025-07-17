@@ -24,7 +24,7 @@ img.loaded {
 }
 
 .message {
-  @apply max-w-72 !text-text-md mr-3 h-auto;
+  @apply !max-w-72 !text-text-md !line-clamp-2 mr-2;
 
   p {
     @apply m-0 mr-1;

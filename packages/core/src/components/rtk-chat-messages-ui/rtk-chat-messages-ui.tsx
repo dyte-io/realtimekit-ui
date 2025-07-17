@@ -262,40 +262,38 @@ export class RtkChatMessagesUi {
                           this.onMessageActionHandler(event.detail, message)
                         }
                       >
-                        <div>
-                          {!isContinued && (
-                            <div class="head">
-                              <div class="name">{message.displayName}</div>
-                              {!!message.time && (
-                                <div class="time" title={formatDateTime(message.time)}>
-                                  {elapsedDuration(message.time, new Date(Date.now()))}
-                                </div>
-                              )}
-                            </div>
-                          )}
-                          <div class="body">
-                            {message.type === 'text' && (
-                              <rtk-text-message-view
-                                text={message.message}
-                                isMarkdown
-                              ></rtk-text-message-view>
-                            )}
-                            {message.type === 'file' && (
-                              <rtk-file-message-view
-                                name={message.name}
-                                url={message.link}
-                                size={message.size}
-                              ></rtk-file-message-view>
-                            )}
-                            {message.type === 'image' && (
-                              <rtk-image-message-view
-                                url={message.link}
-                                onPreview={() => {
-                                  this.stateUpdate.emit({ image: message });
-                                }}
-                              ></rtk-image-message-view>
+                        {!isContinued && (
+                          <div class="head">
+                            <div class="name">{message.displayName}</div>
+                            {!!message.time && (
+                              <div class="time" title={formatDateTime(message.time)}>
+                                {elapsedDuration(message.time, new Date(Date.now()))}
+                              </div>
                             )}
                           </div>
+                        )}
+                        <div class="body">
+                          {message.type === 'text' && (
+                            <rtk-text-message-view
+                              text={message.message}
+                              isMarkdown
+                            ></rtk-text-message-view>
+                          )}
+                          {message.type === 'file' && (
+                            <rtk-file-message-view
+                              name={message.name}
+                              url={message.link}
+                              size={message.size}
+                            ></rtk-file-message-view>
+                          )}
+                          {message.type === 'image' && (
+                            <rtk-image-message-view
+                              url={message.link}
+                              onPreview={() => {
+                                this.stateUpdate.emit({ image: message });
+                              }}
+                            ></rtk-image-message-view>
+                          )}
                         </div>
                       </rtk-message-view>
                       {message.pinned && (

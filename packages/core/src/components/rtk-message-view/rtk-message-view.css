@@ -45,7 +45,7 @@
 
 .incoming {
   .bubble {
-    @apply bg-background-800 text-text-900;
+    @apply bg-background-800 text-text-900 w-fit;
   }
 }
 
