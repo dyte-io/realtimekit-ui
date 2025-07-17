@@ -1,3 +1,13 @@
+## [1.0.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2...@cloudflare/realtimekit-ui-v1.0.3) (2025-07-17)
+
+
+### Bug Fixes
+
+* **chat:** chat UI has apt padding & bubbles are not full width now ([ef89867](https://github.com/dyte-io/realtimekit-ui/commit/ef89867440af174c4e6e9a7f0f426d8e17deef6a))
+* handle missing meetingTitle to prevent trim error ([efaf743](https://github.com/dyte-io/realtimekit-ui/commit/efaf743c3b67035d1c3e13947121cbace750e84f))
+* **livestream-player:** fixed livestream player ui, fixed grid crashes ([d38151e](https://github.com/dyte-io/realtimekit-ui/commit/d38151e150b97f5e3eccc69372cdb9f55e2f9322))
+* truncate notifications after two lines ([6a95245](https://github.com/dyte-io/realtimekit-ui/commit/6a952456ff276f9100b49ffde13c4775f40918df))
+
 ## [1.0.3-staging.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.3-staging.3...@cloudflare/realtimekit-ui-v1.0.3-staging.4) (2025-07-11)
 
 
