@@ -6,7 +6,6 @@ import { Meeting } from '../../types/rtk-client';
 import { canRequestToJoinStage, canJoinStage } from '../../utils/stage';
 import { ControlBarVariant } from '../rtk-controlbar-button/rtk-controlbar-button';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { uiState } from '../../utils/sync-with-store/ui-store';
 
 interface DataState {
   label: string;
@@ -78,7 +77,7 @@ export class RtkStageToggle {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.stageStatus = meeting.stage?.status;
     this.stageStatusHandler(meeting, meeting.stage?.status);
     this.meeting?.stage?.on('stageStatusUpdate', (status) =>
@@ -95,7 +94,7 @@ export class RtkStageToggle {
     if (stageStatus === 'OFF_STAGE') {
       this?.meeting?.stage?.requestAccess();
       if (canJoinStage(this.meeting)) {
-        uiState.states.activeJoinStage = true;
+        this.states.activeJoinStage = true;
         this.stateUpdate.emit({ activeJoinStage: true });
       }
     }

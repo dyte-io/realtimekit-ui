@@ -3,7 +3,7 @@ import { Component, Host, h, Prop, Watch } from '@stencil/core';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Meeting } from '../../types/rtk-client';
 import { SyncWithStore } from '../../utils/sync-with-store';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 
 /**
  * A component which loads the logo from your config, or via the `logo-url` attribute.
@@ -18,7 +18,9 @@ export class RtkLogo {
   @Prop({ mutable: true }) logoUrl: string;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Meeting object */
   @SyncWithStore()

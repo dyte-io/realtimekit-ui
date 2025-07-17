@@ -1,6 +1,6 @@
 import { UIConfig } from '../../exports';
 import { UIRoot, Element as E, StyleProps } from '../../types/ui-config/root';
-import { defaultConfig } from '../default-ui-config';
+import { createDefaultConfig } from '../default-ui-config';
 
 type UIElem = UIRoot['string'];
 type FullUIElem = Exclude<UIElem, E[]>;
@@ -138,7 +138,7 @@ export class RtkUiBuilder {
   private config: UIConfig;
 
   constructor(config?: UIConfig) {
-    this.config = config || defaultConfig;
+    this.config = config || createDefaultConfig();
   }
 
   /**

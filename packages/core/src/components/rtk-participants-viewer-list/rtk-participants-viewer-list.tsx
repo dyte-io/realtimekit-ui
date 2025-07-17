@@ -1,5 +1,12 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
-import { UIConfig, Size, IconPack, defaultIconPack, RtkI18n, defaultConfig } from '../../exports';
+import {
+  UIConfig,
+  Size,
+  IconPack,
+  defaultIconPack,
+  RtkI18n,
+  createDefaultConfig,
+} from '../../exports';
 import { useLanguage } from '../../lib/lang';
 import { Meeting, Participant, Peer } from '../../types/rtk-client';
 import { SyncWithStore } from '../../utils/sync-with-store';
@@ -23,7 +30,9 @@ export class RtkParticipantsViewers {
   meeting: Meeting;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;
@@ -55,7 +64,7 @@ export class RtkParticipantsViewers {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     this.participantJoinedListener = (participant: Participant) => {
       if (participant.stageStatus === 'ON_STAGE') return;
@@ -136,6 +145,7 @@ export class RtkParticipantsViewers {
   };
 
   render() {
+    if (!this.meeting) return null;
     if (this.view !== 'sidebar' || !this.shouldShowViewers()) return;
 
     return (

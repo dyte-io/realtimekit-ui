@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Watch, State } from '@stencil/core';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { IconPack, defaultIconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Meeting } from '../../types/rtk-client';
@@ -29,7 +29,9 @@ export class RtkPolls {
   meeting: Meeting;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Size */
   @SyncWithStore() @Prop({ reflect: true }) size: Size;
@@ -57,7 +59,7 @@ export class RtkPolls {
   }
 
   disconnectedCallback() {
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
     this.meeting.polls?.removeListener('pollsUpdate', this.onPollsUpdate);
     this.meeting.self.permissions.removeListener('pollsUpdate', this.onUpdatePermissions);
   }
