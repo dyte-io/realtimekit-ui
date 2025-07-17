@@ -1,3 +1,10 @@
+## [1.0.4-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.3...@cloudflare/realtimekit-ui-v1.0.4-staging.1) (2025-07-17)
+
+
+### Bug Fixes
+
+* **singletons:** Removed UI Kit Singletons to support multiple meeting on a single page ([#27](https://github.com/dyte-io/realtimekit-ui/issues/27)) ([1793c22](https://github.com/dyte-io/realtimekit-ui/commit/1793c22ed7d01afa6c8e76641b49f96bd851150f))
+
 ## [1.0.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2...@cloudflare/realtimekit-ui-v1.0.3) (2025-07-17)
 
 
