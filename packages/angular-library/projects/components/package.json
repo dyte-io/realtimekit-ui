@@ -11,7 +11,8 @@
     "@cloudflare/realtimekit-ui": "*"
   },
   "publishConfig": {
-    "tag": "staging"
+    "access": "public",
+    "tag": "latest"
   },
   "files": [
     "dist/"
@@ -27,6 +28,10 @@
     "url": "https://realtime.cloudflare.com/issues"
   },
   "homepage": "https://realtime.cloudflare.com",
+  "es2020": "dist/fesm2020/cloudflare-realtimekit-angular-ui.mjs",
+  "esm2020": "dist/esm2020/cloudflare-realtimekit-angular-ui.mjs",
+  "fesm2020": "dist/fesm2020/cloudflare-realtimekit-angular-ui.mjs",
+  "fesm2015": "dist/fesm2015/cloudflare-realtimekit-angular-ui.mjs",
   "exports": {
     "./package.json": {
       "default": "./package.json"
