@@ -11,8 +11,7 @@
     "@cloudflare/realtimekit-ui": "*"
   },
   "publishConfig": {
-    "access": "public",
-    "tag": "latest"
+    "tag": "staging"
   },
   "files": [
     "dist/"
@@ -23,9 +22,22 @@
     "postpublish": "mv package.json.bak package.json"
   },
   "module": "dist/fesm2022/cloudflare-realtimekit-angular-ui.mjs",
-  "typings": "dist/index.d.ts",
+  "typings": "dist/cloudflare-realtimekit-angular-ui.d.ts",
   "bugs": {
     "url": "https://realtime.cloudflare.com/issues"
   },
-  "homepage": "https://realtime.cloudflare.com"
+  "homepage": "https://realtime.cloudflare.com",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./dist/cloudflare-realtimekit-angular-ui.d.ts",
+      "esm2020": "./dist/esm2020/cloudflare-realtimekit-angular-ui.mjs",
+      "es2020": "./dist/fesm2020/cloudflare-realtimekit-angular-ui.mjs",
+      "es2015": "./dist/fesm2015/cloudflare-realtimekit-angular-ui.mjs",
+      "node": "./dist/fesm2015/cloudflare-realtimekit-angular-ui.mjs",
+      "default": "./dist/fesm2020/cloudflare-realtimekit-angular-ui.mjs"
+    }
+  }
 }
