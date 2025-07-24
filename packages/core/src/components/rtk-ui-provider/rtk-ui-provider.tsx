@@ -10,6 +10,7 @@ import {
   UIConfig,
   useLanguage,
   defaultIconPack,
+  provideRtkDesignSystem,
 } from '../../exports';
 import {
   uiStore as legacyGlobalUIStore,
@@ -244,6 +245,14 @@ export class RtkUiProvider {
   onConfigChange(config: UIConfig) {
     if (this.peerStore) {
       this.peerStore.state.config = config;
+    }
+
+    if (
+      config?.designTokens &&
+      typeof document !== 'undefined' &&
+      (this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true
+    ) {
+      provideRtkDesignSystem(document.documentElement, config.designTokens);
     }
   }
 

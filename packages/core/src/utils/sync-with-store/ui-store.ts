@@ -48,14 +48,14 @@ const elementsMap = new Map<string, any[]>();
 (uiStore as any).elementsMap = elementsMap;
 
 uiStore.use({
-  set: (propName, newValue, oldValue) => {
+  set: (propName, newValue) => {
     const elements = elementsMap.get(propName as string);
     if (elements) {
       elementsMap.set(
         propName as string,
         elements.filter((element) => {
           const currentValue = element[propName];
-          if (currentValue === oldValue) {
+          if (currentValue !== newValue) {
             element[propName] = newValue;
             return true;
           } else {
@@ -106,14 +106,14 @@ export function createPeerStore({
   (store as RtkUiStoreExtended).elementsMap = peerElementsMap;
 
   store.use({
-    set: (propName, newValue, oldValue) => {
+    set: (propName, newValue) => {
       const elements = peerElementsMap.get(propName as string);
       if (elements) {
         peerElementsMap.set(
           propName as string,
           elements.filter((element) => {
             const currentValue = element[propName];
-            if (currentValue === oldValue) {
+            if (currentValue !== newValue) {
               element[propName] = newValue;
               return true;
             } else {
