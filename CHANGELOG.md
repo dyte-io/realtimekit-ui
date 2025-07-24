@@ -1,3 +1,10 @@
+## [1.0.4-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.1...@cloudflare/realtimekit-ui-v1.0.4-staging.2) (2025-07-24)
+
+
+### Bug Fixes
+
+* **angular:** module fields in package.json ([#34](https://github.com/dyte-io/realtimekit-ui/issues/34)) ([2d3da98](https://github.com/dyte-io/realtimekit-ui/commit/2d3da98c61c28bcc07acfd55981a4d2416cda072))
+
 ## [1.0.4-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.3...@cloudflare/realtimekit-ui-v1.0.4-staging.1) (2025-07-17)
 
 
