@@ -1,3 +1,10 @@
+## [1.0.4-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.2...@cloudflare/realtimekit-ui-v1.0.4-staging.3) (2025-07-25)
+
+
+### Bug Fixes
+
+* **double-listener-execution:** listeners for chat, participant joins were registered  twice ([#35](https://github.com/dyte-io/realtimekit-ui/issues/35)) ([c2ba49f](https://github.com/dyte-io/realtimekit-ui/commit/c2ba49f6b1d1e741d90f3172c35eb25bc00f06bc))
+
 ## [1.0.4-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.1...@cloudflare/realtimekit-ui-v1.0.4-staging.2) (2025-07-24)
 
 
