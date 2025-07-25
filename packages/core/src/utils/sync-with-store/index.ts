@@ -38,7 +38,15 @@ export function SyncWithStore() {
           
           // Blindly put peer specific store's value for propName in host propName
           const storeValue = event.detail.store.state[propName];
-          host[propName as string] = storeValue;
+          host.componentOnReady().then(() => {
+            /**
+             * NOTE(ravindra-dyte):
+             * https://stenciljs.com/docs/api#componentonready
+             * This psudo ready callback is to ensure that the component is ready to accept props
+             * Without this, changing the prop would not trigger @Watch of prop in the initial mount phase
+             *  */
+            host[propName as string] = storeValue;
+          });
           appendElement(propName, host, event.detail.store);
           host[`_rtkStoreToCleanup-${propName}`] = event.detail.store;
           // Since peer specific store is available, remove element prop from global store
