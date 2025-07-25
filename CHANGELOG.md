@@ -1,3 +1,10 @@
+## [1.0.4-staging.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.3...@cloudflare/realtimekit-ui-v1.0.4-staging.4) (2025-07-25)
+
+
+### Bug Fixes
+
+* **store-sync-issues:** in some cases, rtk-meeting was not syncing its state with peer store ([#36](https://github.com/dyte-io/realtimekit-ui/issues/36)) ([a447a73](https://github.com/dyte-io/realtimekit-ui/commit/a447a739a6dbc23949d1f7e6eff1cc5cea07ca15))
+
 ## [1.0.4-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.2...@cloudflare/realtimekit-ui-v1.0.4-staging.3) (2025-07-25)
 
 
