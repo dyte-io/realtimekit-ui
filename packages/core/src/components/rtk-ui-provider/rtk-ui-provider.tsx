@@ -84,11 +84,11 @@ export class RtkUiProvider {
     // Listen for store requests from child components
     this.setupStoreRequestListener();
 
-    this.onMeetingChange(this.meeting);
-    this.onIconPackChange(this.iconPack);
-    this.onTChange(this.t);
-    this.onConfigChange(this.config);
-    this.onSizeChange(this.size);
+    this.meetingChanged(this.meeting);
+    this.iconPackChanged(this.iconPack);
+    this.tChanged(this.t);
+    this.configChanged(this.config);
+    this.sizeChanged(this.size);
 
     this.resizeObserver = new ResizeObserver(() => this.handleResize());
     this.resizeObserver.observe(this.host);
@@ -173,7 +173,7 @@ export class RtkUiProvider {
   }
 
   @Watch('meeting')
-  onMeetingChange(meeting: Meeting) {
+  meetingChanged(meeting: Meeting) {
     if (meeting) {
       this.peerStore = createPeerStore({
         meeting,
@@ -228,21 +228,21 @@ export class RtkUiProvider {
   }
 
   @Watch('iconPack')
-  onIconPackChange(newIconPack: IconPack) {
+  iconPackChanged(newIconPack: IconPack) {
     if (this.peerStore) {
       this.peerStore.state.iconPack = newIconPack;
     }
   }
 
   @Watch('t')
-  onTChange(newT: RtkI18n) {
+  tChanged(newT: RtkI18n) {
     if (this.peerStore) {
       this.peerStore.state.t = newT;
     }
   }
 
   @Watch('config')
-  onConfigChange(config: UIConfig) {
+  configChanged(config: UIConfig) {
     if (this.peerStore) {
       this.peerStore.state.config = config;
     }
@@ -257,7 +257,7 @@ export class RtkUiProvider {
   }
 
   @Watch('size')
-  onSizeChange(newSize: Size) {
+  sizeChanged(newSize: Size) {
     if (this.peerStore) {
       this.peerStore.state.size = newSize;
     }
