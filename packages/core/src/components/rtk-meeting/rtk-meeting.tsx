@@ -147,6 +147,10 @@ export class RtkMeeting {
     this.setupStateUpdateListener();
 
     this.meetingChanged(this.meeting);
+    this.iconPackChanged(this.iconPack);
+    this.tChanged(this.t);
+    this.configChanged(this.config);
+    this.sizeChanged(this.size);
 
     this.resizeObserver = new ResizeObserver(() => this.handleResize());
     this.resizeObserver.observe(this.host);
@@ -325,10 +329,39 @@ export class RtkMeeting {
     });
   };
 
+  @Watch('iconPack')
+  iconPackChanged(newIconPack: IconPack) {
+    if (this.peerStore) {
+      this.peerStore.state.iconPack = newIconPack;
+    }
+  }
+
+  @Watch('t')
+  tChanged(newT: RtkI18n) {
+    if (this.peerStore) {
+      this.peerStore.state.t = newT;
+    }
+  }
+
   @Watch('size')
-  onSizeChange(newSize: Size) {
+  sizeChanged(newSize: Size) {
     if (this.peerStore) {
       this.peerStore.state.size = newSize;
+    }
+  }
+
+  @Watch('config')
+  configChanged(config: UIConfig) {
+    if (this.peerStore) {
+      this.peerStore.state.config = config;
+    }
+
+    if (
+      config?.designTokens &&
+      typeof document !== 'undefined' &&
+      (this.peerStore || legacyGlobalUIStore).state.states.activeDebugger !== true
+    ) {
+      provideRtkDesignSystem(document.documentElement, config.designTokens);
     }
   }
 
