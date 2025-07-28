@@ -38,7 +38,7 @@ export class RtkParticipants {
   config: UIConfig = createDefaultConfig();
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Hide Stage Participants Count Header */
   @Prop() hideHeader: boolean = false;

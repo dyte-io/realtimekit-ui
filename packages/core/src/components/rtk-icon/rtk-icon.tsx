@@ -1,6 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 import { Size } from '../../exports';
-import { SyncWithStore } from '../../utils/sync-with-store';
 
 const parseIcon = (icon: string) => {
   try {
@@ -28,7 +27,7 @@ export class RtkIcon {
   @Prop({ reflect: true }) variant: IconVariant = 'primary';
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size = 'lg';
+  @Prop({ reflect: true }) size: Size = 'lg';
 
   render() {
     return (

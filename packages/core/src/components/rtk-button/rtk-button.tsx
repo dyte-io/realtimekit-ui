@@ -1,6 +1,5 @@
 import { Size } from '../../types/props';
 import { Component, Host, h, Prop } from '@stencil/core';
-import { SyncWithStore } from '../../utils/sync-with-store';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'ghost';
 
@@ -20,7 +19,7 @@ export type ButtonKind = 'button' | 'icon' | 'wide';
 })
 export class RtkButton {
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Button variant */
   @Prop({ reflect: true }) variant: ButtonVariant = 'primary';

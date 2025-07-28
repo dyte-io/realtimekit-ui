@@ -24,7 +24,7 @@ export interface Tab {
 })
 export class RtkTabBar {
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Meeting object */
   @SyncWithStore()

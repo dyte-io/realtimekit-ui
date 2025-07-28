@@ -39,7 +39,7 @@ export class RtkAudioGrid {
   iconPack: IconPack = defaultIconPack;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Language */
   @SyncWithStore()

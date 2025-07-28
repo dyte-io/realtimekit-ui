@@ -3884,10 +3884,6 @@ export namespace Components {
          */
         "showSetupScreen": boolean;
         /**
-          * Size
-         */
-        "size": Size1;
-        /**
           * Language utility
          */
         "t": RtkI18n1;
@@ -10813,10 +10809,6 @@ declare namespace LocalJSX {
           * Whether to show setup screen or not
          */
         "showSetupScreen"?: boolean;
-        /**
-          * Size
-         */
-        "size"?: Size1;
         /**
           * Language utility
          */

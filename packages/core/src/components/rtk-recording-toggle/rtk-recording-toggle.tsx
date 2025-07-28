@@ -41,7 +41,7 @@ export class RtkRecordingToggle {
   iconPack: IconPack = defaultIconPack;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Disable the button */
   @Prop() disabled: boolean = false;

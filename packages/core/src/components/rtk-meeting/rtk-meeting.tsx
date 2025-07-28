@@ -150,7 +150,6 @@ export class RtkMeeting {
     this.iconPackChanged(this.iconPack);
     this.tChanged(this.t);
     this.configChanged(this.config);
-    this.sizeChanged(this.size);
 
     this.resizeObserver = new ResizeObserver(() => this.handleResize());
     this.resizeObserver.observe(this.host);
@@ -251,7 +250,6 @@ export class RtkMeeting {
         config: this.config,
         iconPack: this.iconPack,
         t: this.t,
-        size: this.size,
         providerId: this.providerId,
       }) as RtkUiStoreExtended;
 
@@ -340,13 +338,6 @@ export class RtkMeeting {
   tChanged(newT: RtkI18n) {
     if (this.peerStore) {
       this.peerStore.state.t = newT;
-    }
-  }
-
-  @Watch('size')
-  sizeChanged(newSize: Size) {
-    if (this.peerStore) {
-      this.peerStore.state.size = newSize;
     }
   }
 

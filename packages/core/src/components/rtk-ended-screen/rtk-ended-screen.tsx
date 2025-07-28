@@ -22,7 +22,7 @@ export class RtkEndedScreen {
   config: UIConfig = createDefaultConfig();
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon */
   @State() icon: IconPack = defaultIconPack;

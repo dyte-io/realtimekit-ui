@@ -18,7 +18,7 @@ export class RtkSpinner {
   iconPack: IconPack = defaultIconPack;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size = 'md';
+  @Prop({ reflect: true }) size: Size = 'md';
 
   render() {
     return (
