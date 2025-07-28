@@ -55,6 +55,13 @@ rtk-spinner {
   @apply text-text-1000;
 }
 
+:host([size="md"]) rtk-spinner {
+  --icon-size: theme('spacing.6');
+}
+:host([size="lg"]) rtk-spinner {
+  --icon-size: theme('spacing.8');
+}
+
 :host([size='sm']) .container,
 :host([size='md']) .container {
   @apply h-full flex-col justify-evenly;
