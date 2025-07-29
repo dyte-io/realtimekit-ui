@@ -1,3 +1,10 @@
+## [1.0.4-staging.5](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.4...@cloudflare/realtimekit-ui-v1.0.4-staging.5) (2025-07-29)
+
+
+### Bug Fixes
+
+* **size-store-sync:** do not sync size in favor of customizability ([#39](https://github.com/dyte-io/realtimekit-ui/issues/39)) ([7604824](https://github.com/dyte-io/realtimekit-ui/commit/760482489bbb4832928cf85ee01a91a4c5d70c1e))
+
 ## [1.0.4-staging.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.3...@cloudflare/realtimekit-ui-v1.0.4-staging.4) (2025-07-25)
 
 
