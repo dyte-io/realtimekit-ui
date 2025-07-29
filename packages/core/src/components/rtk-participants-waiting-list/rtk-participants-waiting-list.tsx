@@ -32,7 +32,7 @@ export class RtkParticipantsWaitlisted {
   config: UIConfig = createDefaultConfig();
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

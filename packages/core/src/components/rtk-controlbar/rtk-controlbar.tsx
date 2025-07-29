@@ -49,7 +49,7 @@ export class RtkControlbar {
   t: RtkI18n = useLanguage();
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   render() {
     const defaults = {

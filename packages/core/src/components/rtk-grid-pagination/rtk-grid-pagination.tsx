@@ -32,7 +32,7 @@ export class RtkGridPagination {
   states: States;
 
   /** Size Prop */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Variant */
   @Prop({ reflect: true }) variant: GridPaginationVariants = 'rounded';

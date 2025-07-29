@@ -35,7 +35,7 @@ export class RtkParticipantsViewers {
   config: UIConfig = createDefaultConfig();
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Hide Viewer Count Header */
   @Prop() hideHeader: boolean = false;

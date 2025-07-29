@@ -5,7 +5,6 @@ import { defaultIconPack, type IconPack } from '../../lib/icons';
 import { type States } from '../../types/props';
 import { getUserPreferences } from '../user-prefs';
 import { createDefaultConfig, UIConfig } from '../../exports';
-import { Size } from '../../exports';
 
 export const getInitialStates = (peerId?: string): States => ({
   meeting: 'idle',
@@ -19,7 +18,6 @@ export interface RtkUiStore {
   iconPack: IconPack;
   states: States;
   config: UIConfig;
-  size: Size | undefined;
   peerId: string | null;
   storeType: 'global' | 'peer';
   storeId: string;
@@ -36,7 +34,6 @@ const uiStore = createStore<RtkUiStore>({
   iconPack: defaultIconPack,
   states: getInitialStates(),
   config: createDefaultConfig(),
-  size: undefined,
   peerId: 'global',
   storeType: 'global',
   storeId: 'store-global',
@@ -77,15 +74,13 @@ export function createPeerStore({
   config,
   providerId,
   iconPack,
-  t,
-  size
+  t
 }: {
   meeting: RealtimeKitClient;
   config?: UIConfig;
   providerId: string;
   iconPack: IconPack;
   t: RtkI18n;
-  size: Size | undefined;
 }): RtkUiStoreExtended {
   const store = createStore<RtkUiStore>({
     meeting: meeting,
@@ -93,7 +88,6 @@ export function createPeerStore({
     iconPack,
     states: getInitialStates(meeting.self.peerId),
     config: config || createDefaultConfig(),
-    size,
     peerId: meeting.self.id,
     storeType: 'peer',
     // Use provider id's numeric portion as store id for easier debugging

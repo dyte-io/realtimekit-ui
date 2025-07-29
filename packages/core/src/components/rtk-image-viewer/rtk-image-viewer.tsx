@@ -20,7 +20,7 @@ export class RtkImageViewer {
   @Prop() image!: ImageMessage;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Language */
   @SyncWithStore()

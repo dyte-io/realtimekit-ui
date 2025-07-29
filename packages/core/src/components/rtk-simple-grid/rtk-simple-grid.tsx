@@ -36,7 +36,7 @@ export class RtkSimpleGrid {
   @Prop() gap: number = 8;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Meeting object */
   @SyncWithStore()

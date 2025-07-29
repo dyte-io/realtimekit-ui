@@ -24,7 +24,7 @@ export class RtkNotification {
   @Prop() paused: boolean;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

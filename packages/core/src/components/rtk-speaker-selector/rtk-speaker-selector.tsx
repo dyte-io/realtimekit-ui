@@ -42,7 +42,7 @@ export class RtkSpeakerSelector {
   @Prop() variant: 'full' | 'inline' = 'full';
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

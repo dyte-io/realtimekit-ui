@@ -71,7 +71,7 @@ export class RtkGrid {
   @Prop({ reflect: true }) gap: number = 8;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** States */
   @SyncWithStore()

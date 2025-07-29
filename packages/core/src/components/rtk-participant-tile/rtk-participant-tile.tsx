@@ -62,7 +62,7 @@ export class RtkParticipantTile {
   @Prop({ reflect: true }) variant: 'solid' | 'gradient' = 'solid';
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

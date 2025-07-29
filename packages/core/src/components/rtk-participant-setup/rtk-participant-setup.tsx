@@ -51,7 +51,7 @@ export class RtkParticipantSetup {
   @Prop({ reflect: true }) variant: 'solid' | 'gradient' = 'solid';
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

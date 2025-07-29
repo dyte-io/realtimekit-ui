@@ -5,7 +5,6 @@ import {
   createDefaultConfig,
   RtkI18n,
   IconPack,
-  Size,
   States,
   UIConfig,
   useLanguage,
@@ -19,7 +18,6 @@ import {
 } from '../../utils/sync-with-store/ui-store';
 import deepMerge from 'lodash-es/merge';
 import { PermissionSettings } from '../../types/props';
-import { getSize } from '../../utils/size';
 
 const LEAVE_ROOM_TIMER = 10000;
 
@@ -55,9 +53,6 @@ export class RtkUiProvider {
   /** Fill type */
   @Prop({ reflect: true }) mode: MeetingMode = 'fixed';
 
-  /** Size */
-  @Prop({ reflect: true, mutable: true }) size: Size;
-
   /** Whether to show setup screen or not */
   @Prop() showSetupScreen: boolean = false;
 
@@ -68,8 +63,6 @@ export class RtkUiProvider {
   @Event({ eventName: 'rtkStatesUpdate' }) statesUpdate: EventEmitter<States>;
 
   private authErrorListener: (ev: CustomEvent<Error>) => void;
-
-  private resizeObserver: ResizeObserver;
 
   connectedCallback() {
     if (typeof window !== 'undefined') {
@@ -88,14 +81,9 @@ export class RtkUiProvider {
     this.iconPackChanged(this.iconPack);
     this.tChanged(this.t);
     this.configChanged(this.config);
-    this.sizeChanged(this.size);
-
-    this.resizeObserver = new ResizeObserver(() => this.handleResize());
-    this.resizeObserver.observe(this.host);
   }
 
   disconnectedCallback() {
-    this.resizeObserver.disconnect();
     window.removeEventListener('rtkError', this.authErrorListener);
 
     // Remove event listeners
@@ -180,7 +168,6 @@ export class RtkUiProvider {
         config: this.config,
         iconPack: this.iconPack,
         t: this.t,
-        size: this.size,
         providerId: this.providerId,
       }) as RtkUiStoreExtended;
 
@@ -255,17 +242,6 @@ export class RtkUiProvider {
       provideRtkDesignSystem(document.documentElement, config.designTokens);
     }
   }
-
-  @Watch('size')
-  sizeChanged(newSize: Size) {
-    if (this.peerStore) {
-      this.peerStore.state.size = newSize;
-    }
-  }
-
-  private handleResize = () => {
-    this.size = getSize(this.host.clientWidth);
-  };
 
   private roomJoinedListener = () => {
     this.updateStates({ meeting: 'joined' });

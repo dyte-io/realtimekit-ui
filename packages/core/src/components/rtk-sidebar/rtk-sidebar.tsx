@@ -62,7 +62,7 @@ export class RtkSidebar {
   t: RtkI18n = useLanguage();
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** View type */
   @Prop({ reflect: true }) view: RtkSidebarView = 'sidebar';

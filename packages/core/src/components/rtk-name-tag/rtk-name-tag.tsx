@@ -26,7 +26,7 @@ export class RtkNameTag {
   meeting: Meeting;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Whether it is used in a screen share view */
   @Prop() isScreenShare: boolean = false;
