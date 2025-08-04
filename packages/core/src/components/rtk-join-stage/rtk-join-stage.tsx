@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Event, EventEmitter, State } from '@stencil/core';
-import { defaultConfig } from '../../lib/default-ui-config';
+import { createDefaultConfig } from '../../lib/default-ui-config';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Render } from '../../lib/render';
@@ -29,7 +29,9 @@ export class RtkJoinStage {
   meeting: Meeting;
 
   /** UI Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** States object */
   @SyncWithStore()
@@ -37,7 +39,7 @@ export class RtkJoinStage {
   states: States;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

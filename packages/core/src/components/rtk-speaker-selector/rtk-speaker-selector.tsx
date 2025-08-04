@@ -42,7 +42,7 @@ export class RtkSpeakerSelector {
   @Prop() variant: 'full' | 'inline' = 'full';
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -91,7 +91,7 @@ export class RtkSpeakerSelector {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     writeTask(async () => {
       const { self } = meeting;
@@ -136,7 +136,7 @@ export class RtkSpeakerSelector {
   }
 
   render() {
-    if (this.meeting == null) return null;
+    if (!this.meeting) return null;
 
     let unnamedSpeakerCount = 0;
     return (

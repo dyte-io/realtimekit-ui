@@ -18,7 +18,7 @@ export class RtkLeaveButton {
   @Prop({ reflect: true }) variant: ControlBarVariant = 'button';
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

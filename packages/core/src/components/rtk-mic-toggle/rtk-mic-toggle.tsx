@@ -48,7 +48,7 @@ export class RtkMicToggle {
   meeting: Meeting;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -187,6 +187,7 @@ export class RtkMicToggle {
   }
 
   render() {
+    if (!this.meeting) return null;
     if (
       !this.canProduceAudio ||
       ['OFF_STAGE', 'REQUESTED_TO_JOIN_STAGE'].includes(this.stageStatus)

@@ -1954,7 +1954,8 @@ import type { States as IRtkMeetingStates } from '@cloudflare/realtimekit-ui';
 
 export declare interface RtkMeeting extends Components.RtkMeeting {
   /**
-   * States
+   * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores
+Do not confuse this with `rtkStateUpdate` that other components emit
    */
   rtkStatesUpdate: EventEmitter<CustomEvent<IRtkMeetingStates>>;
 }
@@ -3654,14 +3655,14 @@ export declare interface RtkTranscripts extends Components.RtkTranscripts {}
 
 
 @ProxyCmp({
-  inputs: ['config', 'iconPack', 'meeting', 'noRenderUntilMeeting', 'showSetupScreen', 'size', 't']
+  inputs: ['config', 'iconPack', 'meeting', 'mode', 'showSetupScreen', 't']
 })
 @Component({
   selector: 'rtk-ui-provider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['config', 'iconPack', 'meeting', 'noRenderUntilMeeting', 'showSetupScreen', 'size', 't'],
+  inputs: ['config', 'iconPack', 'meeting', 'mode', 'showSetupScreen', 't'],
 })
 export class RtkUiProvider {
   protected el: HTMLRtkUiProviderElement;
@@ -3677,7 +3678,8 @@ import type { States as IRtkUiProviderStates } from '@cloudflare/realtimekit-ui'
 
 export declare interface RtkUiProvider extends Components.RtkUiProvider {
   /**
-   * States event
+   * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores
+Do not confuse this with `rtkStateUpdate` that other components emit
    */
   rtkStatesUpdate: EventEmitter<CustomEvent<IRtkUiProviderStates>>;
 }

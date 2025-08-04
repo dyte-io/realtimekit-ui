@@ -35,7 +35,7 @@ export class RtkSettingsVideo {
   states: States;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -58,7 +58,7 @@ export class RtkSettingsVideo {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     this.videoEnabled = meeting.self.videoEnabled;
     meeting.self?.addListener('videoUpdate', this.onVideoUpdate);
@@ -73,7 +73,7 @@ export class RtkSettingsVideo {
   };
 
   render() {
-    if (this.meeting == null) return null;
+    if (!this.meeting) return null;
 
     const defaults = {
       meeting: this.meeting,

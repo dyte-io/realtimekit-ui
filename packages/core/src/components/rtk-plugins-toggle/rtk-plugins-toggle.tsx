@@ -36,7 +36,7 @@ export class RtkPluginsToggle {
   states: States;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -64,7 +64,7 @@ export class RtkPluginsToggle {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.canViewPlugins = canViewPlugins(meeting);
     meeting?.stage?.on('stageStatusUpdate', this.updateCanView);
     meeting?.self?.permissions.addListener('pluginsUpdate', this.updateCanView);

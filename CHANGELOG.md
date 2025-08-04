@@ -1,3 +1,38 @@
+## [1.0.4-staging.5](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.4...@cloudflare/realtimekit-ui-v1.0.4-staging.5) (2025-07-29)
+
+
+### Bug Fixes
+
+* **size-store-sync:** do not sync size in favor of customizability ([#39](https://github.com/dyte-io/realtimekit-ui/issues/39)) ([7604824](https://github.com/dyte-io/realtimekit-ui/commit/760482489bbb4832928cf85ee01a91a4c5d70c1e))
+
+## [1.0.4-staging.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.3...@cloudflare/realtimekit-ui-v1.0.4-staging.4) (2025-07-25)
+
+
+### Bug Fixes
+
+* **store-sync-issues:** in some cases, rtk-meeting was not syncing its state with peer store ([#36](https://github.com/dyte-io/realtimekit-ui/issues/36)) ([a447a73](https://github.com/dyte-io/realtimekit-ui/commit/a447a739a6dbc23949d1f7e6eff1cc5cea07ca15))
+
+## [1.0.4-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.2...@cloudflare/realtimekit-ui-v1.0.4-staging.3) (2025-07-25)
+
+
+### Bug Fixes
+
+* **double-listener-execution:** listeners for chat, participant joins were registered  twice ([#35](https://github.com/dyte-io/realtimekit-ui/issues/35)) ([c2ba49f](https://github.com/dyte-io/realtimekit-ui/commit/c2ba49f6b1d1e741d90f3172c35eb25bc00f06bc))
+
+## [1.0.4-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4-staging.1...@cloudflare/realtimekit-ui-v1.0.4-staging.2) (2025-07-24)
+
+
+### Bug Fixes
+
+* **angular:** module fields in package.json ([#34](https://github.com/dyte-io/realtimekit-ui/issues/34)) ([2d3da98](https://github.com/dyte-io/realtimekit-ui/commit/2d3da98c61c28bcc07acfd55981a4d2416cda072))
+
+## [1.0.4-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.3...@cloudflare/realtimekit-ui-v1.0.4-staging.1) (2025-07-17)
+
+
+### Bug Fixes
+
+* **singletons:** Removed UI Kit Singletons to support multiple meeting on a single page ([#27](https://github.com/dyte-io/realtimekit-ui/issues/27)) ([1793c22](https://github.com/dyte-io/realtimekit-ui/commit/1793c22ed7d01afa6c8e76641b49f96bd851150f))
+
 ## [1.0.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.2...@cloudflare/realtimekit-ui-v1.0.3) (2025-07-17)
 
 

@@ -24,7 +24,7 @@ export class RtkAvatar {
   @Prop({ reflect: true }) variant: AvatarVariant = 'circular';
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

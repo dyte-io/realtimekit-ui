@@ -45,7 +45,7 @@ export class RtkLivestreamPlayer {
   meeting: Meeting;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Language */
   @SyncWithStore()
@@ -370,7 +370,7 @@ export class RtkLivestreamPlayer {
 
   @Watch('meeting')
   meetingChanged(meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
     this.playbackUrl = this.meeting.livestream.playbackUrl;
     this.livestreamState = this.meeting.livestream.state;
     this.meeting.livestream.on('livestreamUpdate', this.livestreamUpdateListener);

@@ -27,7 +27,7 @@ export class RtkAiToggle {
   meeting: Meeting;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -60,6 +60,7 @@ export class RtkAiToggle {
   }
 
   render() {
+    if (!this.meeting) return null;
     const text = this.t('ai.meeting_ai');
 
     if (!(this.meeting?.self?.permissions as RTKPermissionsPreset).transcriptionEnabled) {

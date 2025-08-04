@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Element, State, Watch } from '@stencil/core';
-import { defaultConfig } from '../../lib/default-ui-config';
+import { createDefaultConfig } from '../../lib/default-ui-config';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Render } from '../../lib/render';
@@ -36,7 +36,7 @@ export class RtkSimpleGrid {
   @Prop() gap: number = 8;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Meeting object */
   @SyncWithStore()
@@ -49,7 +49,9 @@ export class RtkSimpleGrid {
   states: States;
 
   /** UI Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon Pack */
   @SyncWithStore()
@@ -89,6 +91,7 @@ export class RtkSimpleGrid {
   }
 
   render() {
+    if (!this.meeting) return null;
     const defaults = {
       meeting: this.meeting,
       config: this.config,

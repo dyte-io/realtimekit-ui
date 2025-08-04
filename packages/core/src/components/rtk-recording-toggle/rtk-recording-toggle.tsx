@@ -41,7 +41,7 @@ export class RtkRecordingToggle {
   iconPack: IconPack = defaultIconPack;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Disable the button */
   @Prop() disabled: boolean = false;
@@ -166,13 +166,12 @@ export class RtkRecordingToggle {
 
   private isLoading = () => {
     return (
-      this.meeting == null ||
-      this.recordingState === 'STARTING' ||
-      this.recordingState === 'STOPPING'
+      !this.meeting || this.recordingState === 'STARTING' || this.recordingState === 'STOPPING'
     );
   };
 
   render() {
+    if (!this.meeting) return null;
     if (!this.canRecord) return;
     return (
       <Host

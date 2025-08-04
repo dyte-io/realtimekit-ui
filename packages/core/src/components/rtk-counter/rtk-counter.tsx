@@ -16,7 +16,7 @@ export class RtkCounter {
   @State() input: string = '1';
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Initial value */
   @Prop() value: number;

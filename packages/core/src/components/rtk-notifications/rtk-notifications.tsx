@@ -19,7 +19,7 @@ import type {
   ChatUpdateParams,
   SocketConnectionState,
 } from '@cloudflare/realtimekit';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { parseMessageForTarget } from '../../utils/chat';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { showLivestream } from '../../utils/livestream';
@@ -94,7 +94,9 @@ export class RtkNotifications {
   states: States;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Language */
   @SyncWithStore()
@@ -102,7 +104,7 @@ export class RtkNotifications {
   t: RtkI18n = useLanguage();
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -148,7 +150,7 @@ export class RtkNotifications {
       document?.removeEventListener('rtkNotification', this.onNotification);
     }
 
-    if (this.meeting == null) return;
+    if (!this.meeting) return;
     this.clearListeners(this.meeting);
     this.waitlistedParticipantJoinedListener &&
       this.meeting.participants.waitlisted.removeListener(
@@ -174,8 +176,8 @@ export class RtkNotifications {
   @Watch('meeting')
   meetingChanged(meeting: Meeting, oldMeeting?: Meeting) {
     clearTimeout(this.disconnectTimeout);
-    if (oldMeeting !== undefined) this.clearListeners(oldMeeting);
-    if (meeting == null) return;
+    if (oldMeeting) this.clearListeners(oldMeeting);
+    if (!meeting) return;
     const isLivestream = meeting.meta.viewType === 'LIVESTREAM';
     this.audio = new RTKNotificationsAudio(meeting);
     const { notifications, notification_duration, notification_sounds } = this.permissions;
@@ -655,6 +657,10 @@ export class RtkNotifications {
   paused = false;
 
   render() {
+    if (!this.meeting) {
+      return;
+    }
+
     return (
       <Host>
         <div

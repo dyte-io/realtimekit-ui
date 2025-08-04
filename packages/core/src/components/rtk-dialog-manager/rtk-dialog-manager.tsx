@@ -1,5 +1,5 @@
 import { Component, Watch, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
-import { defaultConfig } from '../../lib/default-ui-config';
+import { createDefaultConfig } from '../../lib/default-ui-config';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Meeting } from '../../types/rtk-client';
@@ -31,7 +31,9 @@ export class RtkDialogManager {
   meeting: Meeting;
 
   /** UI Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** States object */
   @SyncWithStore()
@@ -39,7 +41,7 @@ export class RtkDialogManager {
   states: States;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -92,6 +94,10 @@ export class RtkDialogManager {
   };
 
   render() {
+    if (!this.meeting) {
+      return;
+    }
+
     const defaults = {
       meeting: this.meeting,
       states: this.states,

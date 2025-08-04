@@ -48,7 +48,7 @@ export class RtkCameraToggle {
   meeting: Meeting;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -186,6 +186,7 @@ export class RtkCameraToggle {
   }
 
   render() {
+    if (!this.meeting) return null;
     if (
       !this.canProduceVideo ||
       this.meeting?.meta.viewType === 'AUDIO_ROOM' ||

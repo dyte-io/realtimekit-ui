@@ -1,7 +1,7 @@
 import { RTKPlugin } from '@cloudflare/realtimekit';
 import type { ActiveTab, ActiveTabType } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, Element, State, Watch } from '@stencil/core';
-import { defaultConfig } from '../../lib/default-ui-config';
+import { createDefaultConfig } from '../../lib/default-ui-config';
 import { defaultGridSize } from '../../lib/grid';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
@@ -50,7 +50,7 @@ export class RtkMixedGrid {
   @Prop() gap: number = 8;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Meeting object */
   @SyncWithStore()
@@ -63,7 +63,9 @@ export class RtkMixedGrid {
   states: States;
 
   /** UI Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon Pack */
   @SyncWithStore()
@@ -198,6 +200,7 @@ export class RtkMixedGrid {
   }
 
   render() {
+    if (!this.meeting) return null;
     const defaults = {
       meeting: this.meeting,
       config: this.config,

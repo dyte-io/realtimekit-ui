@@ -4,7 +4,7 @@ import { RtkI18n, useLanguage } from '../../lib/lang';
 import { Peer } from '../../types/rtk-client';
 import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
-import { defaultConfig } from '../../exports';
+import { createDefaultConfig } from '../../exports';
 import { SyncWithStore } from '../../utils/sync-with-store';
 import { RTKSelf } from '@cloudflare/realtimekit';
 
@@ -43,13 +43,15 @@ export class RtkParticipantSetup {
   states: States;
 
   /** Config object */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Variant */
   @Prop({ reflect: true }) variant: 'solid' | 'gradient' = 'solid';
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

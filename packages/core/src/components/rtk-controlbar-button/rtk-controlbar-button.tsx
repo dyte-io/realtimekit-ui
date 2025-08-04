@@ -21,7 +21,7 @@ export class RtkControlbarButton {
   @Prop() showWarning: boolean = false;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Label of button */
   @Prop() label: string;

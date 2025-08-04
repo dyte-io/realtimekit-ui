@@ -18,7 +18,7 @@ import { useLanguage, RtkI18n } from '../../lib/lang';
 })
 export class RtkMenuItem {
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()

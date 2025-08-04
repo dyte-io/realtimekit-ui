@@ -42,6 +42,7 @@ import { RtkSidebarSection } from "./components/rtk-sidebar/rtk-sidebar";
 import { RtkSidebarTab as RtkSidebarTab1, RtkSidebarView as RtkSidebarView1 } from "./components/rtk-sidebar-ui/rtk-sidebar-ui";
 import { Tab } from "./components/rtk-tab-bar/rtk-tab-bar";
 import { TooltipKind, TooltipVariant } from "./components/rtk-tooltip/rtk-tooltip";
+import { MeetingMode as MeetingMode1 } from "./components/rtk-meeting/rtk-meeting";
 import { ViewerCountVariant } from "./components/rtk-viewer-count/rtk-viewer-count";
 import { Peer as Peer1 } from ".";
 export { Meeting, Peer, WaitlistedParticipant } from "./types/rtk-client";
@@ -81,6 +82,7 @@ export { RtkSidebarSection } from "./components/rtk-sidebar/rtk-sidebar";
 export { RtkSidebarTab as RtkSidebarTab1, RtkSidebarView as RtkSidebarView1 } from "./components/rtk-sidebar-ui/rtk-sidebar-ui";
 export { Tab } from "./components/rtk-tab-bar/rtk-tab-bar";
 export { TooltipKind, TooltipVariant } from "./components/rtk-tooltip/rtk-tooltip";
+export { MeetingMode as MeetingMode1 } from "./components/rtk-meeting/rtk-meeting";
 export { ViewerCountVariant } from "./components/rtk-viewer-count/rtk-viewer-count";
 export { Peer as Peer1 } from ".";
 export namespace Components {
@@ -3872,20 +3874,15 @@ export namespace Components {
         /**
           * Meeting
          */
-        "meeting": Meeting;
+        "meeting": Meeting | null;
         /**
-          * Do not render children until meeting is initialized
-          * @default false
+          * Fill type
          */
-        "noRenderUntilMeeting": boolean;
+        "mode": MeetingMode1;
         /**
           * Whether to show setup screen or not
          */
         "showSetupScreen": boolean;
-        /**
-          * Size
-         */
-        "size": Size1;
         /**
           * Language utility
          */
@@ -8721,7 +8718,7 @@ declare namespace LocalJSX {
          */
         "mode"?: MeetingMode;
         /**
-          * States
+          * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores Do not confuse this with `rtkStateUpdate` that other components emit
          */
         "onRtkStatesUpdate"?: (event: RtkMeetingCustomEvent<States>) => void;
         /**
@@ -10799,24 +10796,19 @@ declare namespace LocalJSX {
         /**
           * Meeting
          */
-        "meeting"?: Meeting;
+        "meeting"?: Meeting | null;
         /**
-          * Do not render children until meeting is initialized
-          * @default false
+          * Fill type
          */
-        "noRenderUntilMeeting"?: boolean;
+        "mode"?: MeetingMode1;
         /**
-          * States event
+          * Emits `rtkStatesUpdate` so that developers can listen to onRtkStatesUpdate and update their own stores Do not confuse this with `rtkStateUpdate` that other components emit
          */
         "onRtkStatesUpdate"?: (event: RtkUiProviderCustomEvent<States1>) => void;
         /**
           * Whether to show setup screen or not
          */
         "showSetupScreen"?: boolean;
-        /**
-          * Size
-         */
-        "size"?: Size1;
         /**
           * Language utility
          */

@@ -39,7 +39,7 @@ export class RtkDebuggerToggle {
   @Event({ eventName: 'rtkStateUpdate' }) stateUpdate: EventEmitter<States>;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   private toggleDebugger() {
     this.stateUpdate.emit({

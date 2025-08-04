@@ -35,7 +35,7 @@ export class RtkParticipantCount {
   t: RtkI18n = useLanguage();
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   @State() participantCount: number = 0;
 

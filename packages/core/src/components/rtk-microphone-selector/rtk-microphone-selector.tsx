@@ -30,7 +30,7 @@ export class RtkMicrophoneSelector {
   meeting: Meeting;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -88,7 +88,7 @@ export class RtkMicrophoneSelector {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
-    if (meeting == null) return;
+    if (!meeting) return;
 
     writeTask(async () => {
       const { self, stage } = meeting;
@@ -97,7 +97,7 @@ export class RtkMicrophoneSelector {
       this.currentDevices = {
         audio: currentAudioDevice,
       };
-      this.canProduceAudio = this.meeting.self.permissions.canProduceAudio === 'ALLOWED';
+      this.canProduceAudio = meeting.self.permissions.canProduceAudio === 'ALLOWED';
 
       stage?.addListener('stageStatusUpdate', this.stageStateListener);
       self.addListener('deviceListUpdate', this.deviceListUpdateListener);
@@ -129,7 +129,7 @@ export class RtkMicrophoneSelector {
   }
 
   render() {
-    if (this.meeting == null) return null;
+    if (!this.meeting) return null;
 
     let unnamedMicCount = 0;
 

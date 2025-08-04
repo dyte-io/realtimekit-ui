@@ -20,7 +20,7 @@ export class RtkMuteAllButton {
   meeting: Meeting;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -64,6 +64,7 @@ export class RtkMuteAllButton {
   };
 
   render() {
+    if (!this.meeting) return null;
     if (!this.canDisable) {
       return null;
     }

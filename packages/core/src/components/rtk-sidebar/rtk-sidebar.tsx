@@ -4,7 +4,7 @@ import { Size, States } from '../../types/props';
 import { UIConfig } from '../../types/ui-config';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
-import { defaultConfig } from '../../lib/default-ui-config';
+import { createDefaultConfig } from '../../lib/default-ui-config';
 import {
   canViewChat,
   canViewParticipants,
@@ -47,7 +47,9 @@ export class RtkSidebar {
   states: States;
 
   /** Config */
-  @Prop() config: UIConfig = defaultConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig = createDefaultConfig();
 
   /** Icon pack */
   @SyncWithStore()
@@ -60,7 +62,7 @@ export class RtkSidebar {
   t: RtkI18n = useLanguage();
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** View type */
   @Prop({ reflect: true }) view: RtkSidebarView = 'sidebar';
@@ -88,6 +90,9 @@ export class RtkSidebar {
 
   @Watch('meeting')
   meetingChanged(meeting: Meeting) {
+    if (!meeting) {
+      return;
+    }
     this.updateEnabledSections(meeting);
     this.onStageStatusUpdate = (_status: StageStatus) => {
       this.updateEnabledSections(this.meeting);
@@ -154,6 +159,10 @@ export class RtkSidebar {
   };
 
   render() {
+    if (!this.meeting) {
+      return null;
+    }
+
     const defaults = {
       meeting: this.meeting,
       config: this.config,

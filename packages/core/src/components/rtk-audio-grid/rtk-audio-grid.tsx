@@ -24,7 +24,9 @@ export class RtkAudioGrid {
   meeting: Meeting;
 
   /** Config */
-  @Prop() config: UIConfig;
+  @SyncWithStore()
+  @Prop()
+  config: UIConfig;
 
   /** States */
   @SyncWithStore()
@@ -37,7 +39,7 @@ export class RtkAudioGrid {
   iconPack: IconPack = defaultIconPack;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Language */
   @SyncWithStore()

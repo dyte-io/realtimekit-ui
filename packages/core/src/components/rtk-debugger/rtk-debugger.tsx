@@ -32,7 +32,7 @@ export class RtkDebugger {
   states: States;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -93,7 +93,7 @@ export class RtkDebugger {
   }
 
   render() {
-    if (this.meeting == null) return null;
+    if (!this.meeting) return null;
 
     const defaults = {
       meeting: this.meeting,

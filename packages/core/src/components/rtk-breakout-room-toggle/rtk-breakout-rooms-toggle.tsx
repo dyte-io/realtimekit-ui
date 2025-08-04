@@ -32,7 +32,7 @@ export class RtkBreakoutRoomsToggle {
   states: States;
 
   /** Size */
-  @SyncWithStore() @Prop({ reflect: true }) size: Size;
+  @Prop({ reflect: true }) size: Size;
 
   /** Icon pack */
   @SyncWithStore()
@@ -78,6 +78,7 @@ export class RtkBreakoutRoomsToggle {
   };
 
   render() {
+    if (!this.meeting) return null;
     if (!this.canToggle) return;
     return (
       <Host title={this.t('breakout_rooms')}>
