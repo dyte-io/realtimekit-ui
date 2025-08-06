@@ -5,13 +5,17 @@
     "type": "git",
     "url": "git+https://github.com/dyte-io/realtimekit-ui.git"
   },
+  "files": [
+    "*",
+    "!prepublish.js"
+  ],
   "bugs": {
     "email": "support@dyte.io"
   },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && cp projects/components/prepublish.js projects/components/dist/prepublish.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

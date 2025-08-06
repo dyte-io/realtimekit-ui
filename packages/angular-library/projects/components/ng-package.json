@@ -4,5 +4,6 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
+  "keepLifecycleScripts": true,
   "allowedNonPeerDependencies": ["@cloudflare/realtimekit-ui"]
 }

@@ -1,6 +1,10 @@
 const fs = require('fs');
 const pkg = require('./package.json');
 
+if (!fs.existsSync('./package.json')) {
+  throw new Error('Angular UI Kit dist not found');
+}
+
 const dependencies = {
   ...pkg.dependencies,
   '@cloudflare/realtimekit-ui': pkg.version,
@@ -9,6 +13,8 @@ const dependencies = {
 const env = (process.env.ENVIRONMENT || 'staging').replace('refs/heads/', '');
 
 const tag = env == 'main' ? 'latest' : env;
+
+console.log('angular-ui-kit:prepublish:env', { env, tag });
 
 try {
   fs.unlinkSync('./dist/package.json');
