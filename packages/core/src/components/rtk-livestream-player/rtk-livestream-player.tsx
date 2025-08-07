@@ -88,7 +88,7 @@ export class RtkLivestreamPlayer {
   @State() isSeeking: boolean = false;
 
   private hideControlsTimeout: NodeJS.Timeout = null;
-  
+
   private seekingTimeout: NodeJS.Timeout = null;
 
   /**
@@ -191,31 +191,30 @@ export class RtkLivestreamPlayer {
 
   private seekToPosition = (position: number) => {
     if (!this.videoRef) return;
-    
+
     // Clamp position to valid range
     const clampedPosition = Math.max(0, Math.min(position, this.duration));
-    
+
     // Set seeking state to prevent currentTime fluctuations
     this.isSeeking = true;
-    
+
     // Update currentTime immediately for UI feedback
     this.currentTime = clampedPosition;
-    
+
     try {
       this.videoRef.currentTime = clampedPosition;
-      
+
       // Clear any existing timeout
       if (this.seekingTimeout) {
         clearTimeout(this.seekingTimeout);
       }
-      
+
       // Reset seeking state after a short delay to allow video to stabilize
       this.seekingTimeout = setTimeout(() => {
         this.isSeeking = false;
         // Update currentTime one final time to ensure accuracy
         this.currentTime = this.videoRef.currentTime;
       }, 200);
-      
     } catch (error) {
       this.isSeeking = false;
       this.meeting.__internals__.logger.warn('rtk-livestream-player:: Seek failed', { error });
@@ -226,7 +225,7 @@ export class RtkLivestreamPlayer {
     event.preventDefault();
     this.isDragging = true;
     this.updateSeekPosition(event);
-    
+
     document.addEventListener('mousemove', this.onSeekbarMouseMove);
     document.addEventListener('mouseup', this.onSeekbarMouseUp);
   };
@@ -238,18 +237,18 @@ export class RtkLivestreamPlayer {
 
   private onSeekbarMouseUp = (event: MouseEvent) => {
     if (!this.isDragging) return;
-    
+
     this.isDragging = false;
     this.updateSeekPosition(event);
     this.seekToPosition(this.seekPosition);
-    
+
     document.removeEventListener('mousemove', this.onSeekbarMouseMove);
     document.removeEventListener('mouseup', this.onSeekbarMouseUp);
   };
 
   private onSeekbarClick = (event: MouseEvent) => {
     if (this.isDragging) return;
-    
+
     this.updateSeekPosition(event);
     this.seekToPosition(this.seekPosition);
   };
@@ -259,7 +258,7 @@ export class RtkLivestreamPlayer {
     const rect = seekbar.getBoundingClientRect();
     const clickX = event.clientX - rect.left;
     const progress = Math.max(0, Math.min(1, clickX / rect.width));
-    
+
     // Map progress to duration
     this.seekPosition = progress * this.duration;
   };
@@ -268,7 +267,7 @@ export class RtkLivestreamPlayer {
     if (this.isDragging) {
       return this.duration > 0 ? this.seekPosition / this.duration : 0;
     }
-    
+
     return this.duration > 0 ? this.currentTime / this.duration : 0;
   };
 
@@ -542,27 +541,27 @@ export class RtkLivestreamPlayer {
                     {formatSecondsToHHMMSS(this.duration)}
                   </span>
                 </div>
-                
+
                 {/* <!-- Seekbar --> */}
                 <div class="seekbar-container">
-                  <div 
+                  <div
                     class="seekbar"
                     onMouseDown={this.onSeekbarMouseDown}
                     onClick={this.onSeekbarClick}
                   >
                     <div class="seekbar-track">
-                      <div 
-                        class="seekbar-progress" 
+                      <div
+                        class="seekbar-progress"
                         style={{ width: `${this.getSeekbarProgress() * 100}%` }}
                       ></div>
-                      <div 
-                        class="seekbar-handle" 
+                      <div
+                        class="seekbar-handle"
                         style={{ left: `${this.getSeekbarProgress() * 100}%` }}
                       ></div>
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="control-groups">
                   {/* <!-- Quality --> */}
                   <select
