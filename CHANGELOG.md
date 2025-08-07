@@ -1,3 +1,10 @@
+## [1.0.5-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4...@cloudflare/realtimekit-ui-v1.0.5-staging.1) (2025-08-07)
+
+
+### Bug Fixes
+
+* **duration:** on page refresh, duration was wrong, added seekbar also ([b443d4b](https://github.com/dyte-io/realtimekit-ui/commit/b443d4b8609088ec6a465baac6e16bebd19385a5))
+
 ## [1.0.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.3...@cloudflare/realtimekit-ui-v1.0.4) (2025-08-04)
 
 
