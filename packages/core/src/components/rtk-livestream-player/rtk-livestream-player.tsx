@@ -81,7 +81,15 @@ export class RtkLivestreamPlayer {
 
   @State() hideControls: boolean = true;
 
+  @State() isDragging: boolean = false;
+
+  @State() seekPosition: number = 0;
+
+  @State() isSeeking: boolean = false;
+
   private hideControlsTimeout: NodeJS.Timeout = null;
+  
+  private seekingTimeout: NodeJS.Timeout = null;
 
   /**
    * Emit API error events
@@ -97,16 +105,30 @@ export class RtkLivestreamPlayer {
   };
 
   private updateProgress = () => {
-    this.currentTime = this.videoRef.currentTime;
+    // During seeking, avoid updating currentTime to prevent fluctuations
+    if (!this.isSeeking) {
+      this.currentTime = this.videoRef.currentTime;
+    }
   };
 
   private updateHlsStatsPeriodically = () => {
-    // Total duration is where video is + the latency that is there
-    this.duration = (this.videoRef?.currentTime || 0) + (this.hls?.latency || 0);
+    // Use HLS seekable ranges to get actual duration instead of currentTime + latency
+    // This prevents duration from fluctuating when seeking
+    if (this.videoRef?.seekable && this.videoRef.seekable.length > 0) {
+      this.duration = this.videoRef.seekable.end(this.videoRef.seekable.length - 1);
+    } else {
+      // Fallback to currentTime + latency if seekable ranges aren't available
+      this.duration = (this.videoRef?.currentTime || 0) + (this.hls?.latency || 0);
+    }
   };
 
   private fastForwardToLatest = () => {
-    this.videoRef.currentTime = this.duration - 1; // Move to the latest time
+    // Use seekable range for more accurate live edge positioning
+    if (this.videoRef?.seekable && this.videoRef.seekable.length > 0) {
+      this.videoRef.currentTime = this.videoRef.seekable.end(this.videoRef.seekable.length - 1) - 1;
+    } else {
+      this.videoRef.currentTime = this.duration - 1; // Fallback
+    }
   };
 
   @Watch('livestreamState')
@@ -165,6 +187,89 @@ export class RtkLivestreamPlayer {
     this.hideControlsTimeout = setTimeout(() => {
       this.hideControls = true;
     }, 5000);
+  };
+
+  private seekToPosition = (position: number) => {
+    if (!this.videoRef) return;
+    
+    // Clamp position to valid range
+    const clampedPosition = Math.max(0, Math.min(position, this.duration));
+    
+    // Set seeking state to prevent currentTime fluctuations
+    this.isSeeking = true;
+    
+    // Update currentTime immediately for UI feedback
+    this.currentTime = clampedPosition;
+    
+    try {
+      this.videoRef.currentTime = clampedPosition;
+      
+      // Clear any existing timeout
+      if (this.seekingTimeout) {
+        clearTimeout(this.seekingTimeout);
+      }
+      
+      // Reset seeking state after a short delay to allow video to stabilize
+      this.seekingTimeout = setTimeout(() => {
+        this.isSeeking = false;
+        // Update currentTime one final time to ensure accuracy
+        this.currentTime = this.videoRef.currentTime;
+      }, 200);
+      
+    } catch (error) {
+      this.isSeeking = false;
+      this.meeting.__internals__.logger.warn('rtk-livestream-player:: Seek failed', { error });
+    }
+  };
+
+  private onSeekbarMouseDown = (event: MouseEvent) => {
+    event.preventDefault();
+    this.isDragging = true;
+    this.updateSeekPosition(event);
+    
+    document.addEventListener('mousemove', this.onSeekbarMouseMove);
+    document.addEventListener('mouseup', this.onSeekbarMouseUp);
+  };
+
+  private onSeekbarMouseMove = (event: MouseEvent) => {
+    if (!this.isDragging) return;
+    this.updateSeekPosition(event);
+  };
+
+  private onSeekbarMouseUp = (event: MouseEvent) => {
+    if (!this.isDragging) return;
+    
+    this.isDragging = false;
+    this.updateSeekPosition(event);
+    this.seekToPosition(this.seekPosition);
+    
+    document.removeEventListener('mousemove', this.onSeekbarMouseMove);
+    document.removeEventListener('mouseup', this.onSeekbarMouseUp);
+  };
+
+  private onSeekbarClick = (event: MouseEvent) => {
+    if (this.isDragging) return;
+    
+    this.updateSeekPosition(event);
+    this.seekToPosition(this.seekPosition);
+  };
+
+  private updateSeekPosition = (event: MouseEvent) => {
+    const seekbar = event.currentTarget as HTMLElement;
+    const rect = seekbar.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const progress = Math.max(0, Math.min(1, clickX / rect.width));
+    
+    // Map progress to duration
+    this.seekPosition = progress * this.duration;
+  };
+
+  private getSeekbarProgress = (): number => {
+    if (this.isDragging) {
+      return this.duration > 0 ? this.seekPosition / this.duration : 0;
+    }
+    
+    return this.duration > 0 ? this.currentTime / this.duration : 0;
   };
 
   private getLoadingState = () => {
@@ -244,7 +349,7 @@ export class RtkLivestreamPlayer {
         (window as any).rtk_hls = this.hls;
 
         this.meeting.__internals__.logger.info(`rtk-livestream-player:: Loading source`);
-        this.hls.loadSource(this.playbackUrl);
+        this.hls.loadSource(this.playbackUrl + '?dvrEnabled=true');
         this.meeting.__internals__.logger.info(
           `rtk-livestream-player:: Attaching video element to HLS`
         );
@@ -273,7 +378,7 @@ export class RtkLivestreamPlayer {
                   this.meeting.__internals__.logger.info(
                     'rtk-livestream-player:: Retrying playbackUrl'
                   );
-                  this.hls.loadSource(this.playbackUrl);
+                  this.hls.loadSource(this.playbackUrl + '?dvrEnabled=true');
                 }
               }, 5000);
               return;
@@ -361,6 +466,9 @@ export class RtkLivestreamPlayer {
     this.meeting.livestream.removeListener('livestreamUpdate', this.livestreamUpdateListener);
     this.videoRef.removeEventListener('timeupdate', this.updateProgress);
     clearInterval(this.statsIntervalTimer);
+    if (this.seekingTimeout) {
+      clearTimeout(this.seekingTimeout);
+    }
     this.videoRef = null;
     if (this.hls) {
       this.hls.destroy();
@@ -434,6 +542,27 @@ export class RtkLivestreamPlayer {
                     {formatSecondsToHHMMSS(this.duration)}
                   </span>
                 </div>
+                
+                {/* <!-- Seekbar --> */}
+                <div class="seekbar-container">
+                  <div 
+                    class="seekbar"
+                    onMouseDown={this.onSeekbarMouseDown}
+                    onClick={this.onSeekbarClick}
+                  >
+                    <div class="seekbar-track">
+                      <div 
+                        class="seekbar-progress" 
+                        style={{ width: `${this.getSeekbarProgress() * 100}%` }}
+                      ></div>
+                      <div 
+                        class="seekbar-handle" 
+                        style={{ left: `${this.getSeekbarProgress() * 100}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                
                 <div class="control-groups">
                   {/* <!-- Quality --> */}
                   <select
