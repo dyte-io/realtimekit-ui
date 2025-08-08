@@ -27,4 +27,6 @@
    * Make sure to test with Safari.
    */
   @apply max-w-full;
+  height: auto;
+  min-height: fit-content;
 }
