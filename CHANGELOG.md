@@ -1,3 +1,12 @@
+## [1.0.5-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.5-staging.1...@cloudflare/realtimekit-ui-v1.0.5-staging.2) (2025-08-08)
+
+
+### Bug Fixes
+
+* **safari-dialog:** modals & setting were not showing up ([f1e007d](https://github.com/dyte-io/realtimekit-ui/commit/f1e007dcd34934a77646391c3f2b108e1ac235e4))
+* **safari-dialog:** modals & setting were not showing up ([ac9a0ea](https://github.com/dyte-io/realtimekit-ui/commit/ac9a0ea298f37ea9b18f9e29149d7cc9d0449092))
+* **safari-dialog:** screen share permision error modal was shown in half ([8d0130e](https://github.com/dyte-io/realtimekit-ui/commit/8d0130e1d8dbba4db28af315b37f97f9694eceb2))
+
 ## [1.0.5-staging.1](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4...@cloudflare/realtimekit-ui-v1.0.5-staging.1) (2025-08-07)
 
 
