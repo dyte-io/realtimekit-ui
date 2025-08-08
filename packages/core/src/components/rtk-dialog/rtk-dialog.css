@@ -21,7 +21,8 @@
 
 ::slotted(*) {
   /*
-   * Safari's max-h-full calculation under native dialog component is faulty (div works).
+   * In Safari, 
+   * Adding max-h-full might break settings, audio_playback and troubleshooting modals.
    * If you ever have to add max-h-full back,
    * Make sure to test with Safari.
    */
