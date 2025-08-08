@@ -1,3 +1,10 @@
+## [1.0.5-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.5-staging.2...@cloudflare/realtimekit-ui-v1.0.5-staging.3) (2025-08-08)
+
+
+### Bug Fixes
+
+* **safari-dialog:** breakout rooms manager was not visible in safari ([08e438c](https://github.com/dyte-io/realtimekit-ui/commit/08e438c749ce218cc4998fa7d29668a34430e3c5))
+
 ## [1.0.5-staging.2](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.5-staging.1...@cloudflare/realtimekit-ui-v1.0.5-staging.2) (2025-08-08)
 
 
