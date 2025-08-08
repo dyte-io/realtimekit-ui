@@ -20,5 +20,10 @@
 }
 
 ::slotted(*) {
-  @apply max-h-full max-w-full;
+  /*
+   * Safari's max-h-full calculation under native dialog component is faulty (div works).
+   * If you ever have to add max-h-full back,
+   * Make sure to test with Safari.
+   */
+  @apply max-w-full;
 }
