@@ -33,7 +33,7 @@ const baseConfig = {
       '@semantic-release/npm',
       {
         npmPublish: false,
-        pkgRoot: './packages/angular-library/projects/components',
+        pkgRoot: './packages/angular-library/projects/components/dist',
         tarballDir: 'dist',
       },
     ],

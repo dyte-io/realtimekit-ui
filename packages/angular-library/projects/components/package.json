@@ -19,30 +19,10 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "prepublishOnly": "cp package.json package.json.bak && node prepublish.js",
-    "postpublish": "mv package.json.bak package.json"
+    "prepublishOnly": "node prepublish.js"
   },
-  "module": "dist/fesm2022/cloudflare-realtimekit-angular-ui.mjs",
-  "typings": "dist/cloudflare-realtimekit-angular-ui.d.ts",
   "bugs": {
     "url": "https://realtime.cloudflare.com/issues"
   },
-  "homepage": "https://realtime.cloudflare.com",
-  "es2020": "dist/fesm2020/cloudflare-realtimekit-angular-ui.mjs",
-  "esm2020": "dist/esm2020/cloudflare-realtimekit-angular-ui.mjs",
-  "fesm2020": "dist/fesm2020/cloudflare-realtimekit-angular-ui.mjs",
-  "fesm2015": "dist/fesm2015/cloudflare-realtimekit-angular-ui.mjs",
-  "exports": {
-    "./package.json": {
-      "default": "./package.json"
-    },
-    ".": {
-      "types": "./dist/cloudflare-realtimekit-angular-ui.d.ts",
-      "esm2020": "./dist/esm2020/cloudflare-realtimekit-angular-ui.mjs",
-      "es2020": "./dist/fesm2020/cloudflare-realtimekit-angular-ui.mjs",
-      "es2015": "./dist/fesm2015/cloudflare-realtimekit-angular-ui.mjs",
-      "node": "./dist/fesm2015/cloudflare-realtimekit-angular-ui.mjs",
-      "default": "./dist/fesm2020/cloudflare-realtimekit-angular-ui.mjs"
-    }
-  }
+  "homepage": "https://realtime.cloudflare.com"
 }
