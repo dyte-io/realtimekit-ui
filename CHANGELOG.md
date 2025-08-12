@@ -1,3 +1,10 @@
+## [1.0.5-staging.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.5-staging.3...@cloudflare/realtimekit-ui-v1.0.5-staging.4) (2025-08-12)
+
+
+### Bug Fixes
+
+* angular ui kit package & publish ([47a97f4](https://github.com/dyte-io/realtimekit-ui/commit/47a97f4c8a7c118c14a83e90f33c4d8c278e4834))
+
 ## [1.0.5-staging.3](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.5-staging.2...@cloudflare/realtimekit-ui-v1.0.5-staging.3) (2025-08-08)
 
 
