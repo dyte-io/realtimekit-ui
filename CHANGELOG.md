@@ -1,3 +1,10 @@
+## [1.0.5-staging.5](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.5-staging.4...@cloudflare/realtimekit-ui-v1.0.5-staging.5) (2025-08-12)
+
+
+### Bug Fixes
+
+* **angular:** include files property ([2984920](https://github.com/dyte-io/realtimekit-ui/commit/2984920918259a110e395b9de65929abf96d2232))
+
 ## [1.0.5-staging.4](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.5-staging.3...@cloudflare/realtimekit-ui-v1.0.5-staging.4) (2025-08-12)
 
 
