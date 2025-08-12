@@ -16,11 +16,6 @@ const tag = env == 'main' ? 'latest' : env;
 
 console.log('angular-ui-kit:prepublish:env', { env, tag });
 
-try {
-  fs.unlinkSync('./dist/package.json');
-  fs.unlinkSync('./dist/README.md');
-} catch {}
-
 fs.writeFileSync(
   './package.json',
   JSON.stringify(
