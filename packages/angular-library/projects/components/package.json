@@ -15,7 +15,8 @@
     "tag": "latest"
   },
   "files": [
-    "dist/"
+    "*",
+    "!prepublish.js"
   ],
   "sideEffects": false,
   "scripts": {
