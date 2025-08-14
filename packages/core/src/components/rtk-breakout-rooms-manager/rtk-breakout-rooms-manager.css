@@ -62,7 +62,7 @@ label {
 
 .participant-config-wrapper {
   width: 850px;
-  height: 595px;
+  min-height: 595px;
   max-width: 100%;
   max-height: 100%;
   @apply bg-background-900 rounded-md;

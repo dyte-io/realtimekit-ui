@@ -20,5 +20,13 @@
 }
 
 ::slotted(*) {
-  @apply max-h-full max-w-full;
+  /*
+   * In Safari, 
+   * Adding max-h-full might break settings, audio_playback and troubleshooting modals.
+   * If you ever have to add max-h-full back,
+   * Make sure to test with Safari.
+   */
+  @apply max-w-full;
+  height: auto;
+  min-height: fit-content;
 }
