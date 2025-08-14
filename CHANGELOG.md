@@ -1,3 +1,16 @@
+## [1.0.5](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.4...@cloudflare/realtimekit-ui-v1.0.5) (2025-08-14)
+
+
+### Bug Fixes
+
+* angular ui kit package & publish ([47a97f4](https://github.com/dyte-io/realtimekit-ui/commit/47a97f4c8a7c118c14a83e90f33c4d8c278e4834))
+* **angular:** include files property ([2984920](https://github.com/dyte-io/realtimekit-ui/commit/2984920918259a110e395b9de65929abf96d2232))
+* **duration:** on page refresh, duration was wrong, added seekbar also ([b443d4b](https://github.com/dyte-io/realtimekit-ui/commit/b443d4b8609088ec6a465baac6e16bebd19385a5))
+* **safari-dialog:** breakout rooms manager was not visible in safari ([08e438c](https://github.com/dyte-io/realtimekit-ui/commit/08e438c749ce218cc4998fa7d29668a34430e3c5))
+* **safari-dialog:** modals & setting were not showing up ([f1e007d](https://github.com/dyte-io/realtimekit-ui/commit/f1e007dcd34934a77646391c3f2b108e1ac235e4))
+* **safari-dialog:** modals & setting were not showing up ([ac9a0ea](https://github.com/dyte-io/realtimekit-ui/commit/ac9a0ea298f37ea9b18f9e29149d7cc9d0449092))
+* **safari-dialog:** screen share permision error modal was shown in half ([8d0130e](https://github.com/dyte-io/realtimekit-ui/commit/8d0130e1d8dbba4db28af315b37f97f9694eceb2))
+
 ## [1.0.5-staging.5](https://github.com/dyte-io/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v1.0.5-staging.4...@cloudflare/realtimekit-ui-v1.0.5-staging.5) (2025-08-12)
 
 
