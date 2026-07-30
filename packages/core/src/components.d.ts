@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Meeting, RTKParticipant as Participant, Peer, WaitlistedParticipant } from "./types/rtk-client";
+import { Meeting, Participant, Peer, WaitlistedParticipant } from "./types/rtk-client";
 import { Chat, Notification, PartialStateEvent, Poll, PollObject, Size, States, Transcript } from "./types/props";
 import { UIConfig } from "./types/ui-config";
 import { IconPack } from "./lib/icons";
@@ -18,7 +18,7 @@ import { AvatarVariant } from "./components/rtk-avatar/rtk-avatar";
 import { DraftMeeting } from "./utils/breakout-rooms-manager";
 import { ButtonKind, ButtonVariant } from "./components/rtk-button/rtk-button";
 import { Overrides } from "./lib/overrides";
-import { FileMessage, ImageMessage, Message, BasicParticipant as RTKBasicParticipant, RTKPermissionsPreset, RTKPlugin, TextMessage } from "@cloudflare/realtimekit";
+import { FileMessage, ImageMessage, Message, RTKBasicParticipant, RTKPermissionsPreset, RTKPlugin, TextMessage } from "@cloudflare/realtimekit";
 import { RtkNewMessageEvent } from "./components/rtk-chat-composer-ui/rtk-chat-composer-ui";
 import { NewMessageEvent } from "./components/rtk-chat-composer-view/rtk-chat-composer-view";
 import { ChatGroup, ChatGroupChangedType } from "./components/rtk-chat-selector-ui/rtk-chat-selector-ui";
@@ -45,7 +45,7 @@ import { TooltipKind, TooltipVariant } from "./components/rtk-tooltip/rtk-toolti
 import { MeetingMode as MeetingMode1 } from "./components/rtk-meeting/rtk-meeting";
 import { ViewerCountVariant } from "./components/rtk-viewer-count/rtk-viewer-count";
 import { Peer as Peer1 } from ".";
-export { Meeting, RTKParticipant as Participant, Peer, WaitlistedParticipant } from "./types/rtk-client";
+export { Meeting, Participant, Peer, WaitlistedParticipant } from "./types/rtk-client";
 export { Chat, Notification, PartialStateEvent, Poll, PollObject, Size, States, Transcript } from "./types/props";
 export { UIConfig } from "./types/ui-config";
 export { IconPack } from "./lib/icons";
@@ -58,7 +58,7 @@ export { AvatarVariant } from "./components/rtk-avatar/rtk-avatar";
 export { DraftMeeting } from "./utils/breakout-rooms-manager";
 export { ButtonKind, ButtonVariant } from "./components/rtk-button/rtk-button";
 export { Overrides } from "./lib/overrides";
-export { FileMessage, ImageMessage, Message, BasicParticipant as RTKBasicParticipant, RTKPermissionsPreset, RTKPlugin, TextMessage } from "@cloudflare/realtimekit";
+export { FileMessage, ImageMessage, Message, RTKBasicParticipant, RTKPermissionsPreset, RTKPlugin, TextMessage } from "@cloudflare/realtimekit";
 export { RtkNewMessageEvent } from "./components/rtk-chat-composer-ui/rtk-chat-composer-ui";
 export { NewMessageEvent } from "./components/rtk-chat-composer-view/rtk-chat-composer-view";
 export { ChatGroup, ChatGroupChangedType } from "./components/rtk-chat-selector-ui/rtk-chat-selector-ui";
@@ -94,10 +94,12 @@ export namespace Components {
     interface RtkAi {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -114,16 +116,19 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * View type
+          * @default 'sidebar'
          */
         "view": AIView;
     }
     interface RtkAiToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -140,16 +145,19 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
     interface RtkAiTranscriptions {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -162,6 +170,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -172,10 +181,12 @@ export namespace Components {
         "config": UIConfig1;
         /**
           * Whether to hide self in the grid
+          * @default false
          */
         "hideSelf": boolean;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -192,6 +203,7 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -202,6 +214,7 @@ export namespace Components {
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -222,6 +235,7 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -232,14 +246,17 @@ export namespace Components {
     interface RtkAudioVisualizer {
         /**
           * Hide the visualizer if audio is muted
+          * @default false
          */
         "hideMuted": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Audio visualizer for screensharing, it will use screenShareTracks.audio instead of audioTrack
+          * @default false
          */
         "isScreenShare": boolean;
         /**
@@ -252,10 +269,12 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'bars'
          */
         "variant": AudioVisualizerVariant;
     }
@@ -265,6 +284,7 @@ export namespace Components {
     interface RtkAvatar {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -277,16 +297,19 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Avatar type
+          * @default 'circular'
          */
         "variant": AvatarVariant;
     }
     interface RtkBreakoutRoomManager {
         /**
           * allow room delete
+          * @default true
          */
         "allowDelete": boolean;
         /**
@@ -295,14 +318,17 @@ export namespace Components {
         "assigningParticipants": boolean;
         /**
           * display expanded card by default
+          * @default false
          */
         "defaultExpanded": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Drag mode
+          * @default false
          */
         "isDragMode": boolean;
         /**
@@ -323,6 +349,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -333,6 +360,7 @@ export namespace Components {
     interface RtkBreakoutRoomParticipants {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -341,20 +369,24 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Participant ids
+          * @default []
          */
         "participantIds": string[];
         /**
           * selected participants
+          * @default []
          */
         "selectedParticipantIds": string[];
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkBreakoutRoomsManager {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -367,6 +399,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -377,6 +410,7 @@ export namespace Components {
     interface RtkBreakoutRoomsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -393,10 +427,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -408,6 +444,7 @@ export namespace Components {
     interface RtkBroadcastMessageModal {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -420,6 +457,7 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -429,14 +467,17 @@ export namespace Components {
     interface RtkButton {
         /**
           * Where the button is disabled or not
+          * @default false
          */
         "disabled": boolean;
         /**
           * Button type
+          * @default 'button'
          */
         "kind": ButtonKind;
         /**
           * Whether to reverse order of children
+          * @default false
          */
         "reverse": boolean;
         /**
@@ -445,10 +486,12 @@ export namespace Components {
         "size": Size;
         /**
           * Button type
+          * @default 'button'
          */
         "type": HTMLButtonElement['type'];
         /**
           * Button variant
+          * @default 'primary'
          */
         "variant": ButtonVariant;
     }
@@ -466,6 +509,7 @@ export namespace Components {
     interface RtkCameraSelector {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -478,10 +522,12 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * variant
+          * @default 'full'
          */
         "variant": 'full' | 'inline';
     }
@@ -491,6 +537,7 @@ export namespace Components {
     interface RtkCameraToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -503,20 +550,24 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
     interface RtkCaptionToggle {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -533,10 +584,12 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -546,10 +599,12 @@ export namespace Components {
     interface RtkChat {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -558,6 +613,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * UI Overrides
+          * @default {   disableEmojiPicker: false,   disablePrivateChat: false, }
          */
         "overrides": Overrides;
         /**
@@ -566,6 +622,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -575,26 +632,32 @@ export namespace Components {
     interface RtkChatComposerUi {
         /**
           * Whether user can send file messages
+          * @default false
          */
         "canSendFiles": boolean;
         /**
           * Whether user can send text messages
+          * @default false
          */
         "canSendTextMessage": boolean;
         /**
           * Whether to show emoji picker
+          * @default false
          */
         "disableEmojiPicker"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * list of members that can be mentioned
+          * @default []
          */
         "members"?: RTKBasicParticipant[];
         /**
           * prefill the composer
+          * @default {}
          */
         "prefill": {
     suggestedReplies?: string[];
@@ -607,6 +670,7 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -616,28 +680,37 @@ export namespace Components {
     interface RtkChatComposerView {
         /**
           * Whether user can send file messages
+          * @default true
          */
         "canSendFiles": boolean;
         /**
           * Whether user can send text messages
+          * @default true
          */
         "canSendTextMessage": boolean;
         /**
           * Whether to show emoji picker
+          * @default false
          */
         "disableEmojiPicker"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * Placeholder for text input
+          * @default 'Enter your message'
          */
         "inputTextPlaceholder": string;
         /**
           * Sets composer to edit mode
+          * @default false
          */
         "isEditing": boolean;
+        /**
+          * @default false
+         */
         "isSending": boolean;
         /**
           * Max length for text input
@@ -645,22 +718,27 @@ export namespace Components {
         "maxLength": number;
         /**
           * Message to be pre-populated
+          * @default ''
          */
         "message": string;
         /**
           * Quote message to be displayed
+          * @default ''
          */
         "quotedMessage": string;
         /**
           * Rate limits
+          * @default {     period: 60,     maxInvocations: 60,   }
          */
         "rateLimits": { period: number; maxInvocations: number; };
         /**
           * Key for storing message in localStorage
+          * @default 'rtk-text-message'
          */
         "storageKey": string;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -672,22 +750,27 @@ export namespace Components {
     interface RtkChatMessage {
         /**
           * aligns message to right
+          * @default false
          */
         "alignRight": boolean;
         /**
           * can delete message
+          * @default false
          */
         "canDelete": boolean;
         /**
           * can edit message
+          * @default false
          */
         "canEdit": boolean;
         /**
           * can pin this message
+          * @default false
          */
         "canPin": boolean;
         /**
           * can quote reply this message
+          * @default false
          */
         "canReply": boolean;
         /**
@@ -696,14 +779,17 @@ export namespace Components {
         "child": HTMLElement;
         /**
           * disables controls
+          * @default false
          */
         "disableControls": boolean;
         /**
           * hides avatar
+          * @default false
          */
         "hideAvatar": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -712,6 +798,7 @@ export namespace Components {
         "isContinued": boolean;
         /**
           * if sender is self
+          * @default false
          */
         "isSelf": boolean;
         /**
@@ -720,6 +807,7 @@ export namespace Components {
         "isUnread": boolean;
         /**
           * Whether to left align the chat bubbles
+          * @default false
          */
         "leftAlign": boolean;
         /**
@@ -736,6 +824,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -745,14 +834,17 @@ export namespace Components {
     interface RtkChatMessagesUi {
         /**
           * Can current user pin/unpin messages
+          * @default false
          */
         "canPinMessages": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * Chat Messages
+          * @default []
          */
         "messages": Chat[];
         /**
@@ -769,12 +861,14 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkChatMessagesUiPaginated {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -791,6 +885,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -804,6 +899,7 @@ export namespace Components {
         "channelId": string;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -816,6 +912,7 @@ export namespace Components {
         "query": string;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -823,10 +920,12 @@ export namespace Components {
         "close": () => Promise<void>;
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -835,6 +934,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * UI Overrides
+          * @default {   disableEmojiPicker: false,   disablePrivateChat: false, }
          */
         "overrides": Overrides1;
         /**
@@ -847,16 +947,19 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkChatSelectorUi {
         /**
           * Participants
+          * @default []
          */
         "groups": ChatGroup[];
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -869,10 +972,12 @@ export namespace Components {
         "selfUserId": string;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Unread counts
+          * @default {}
          */
         "unreadCounts": Record<string, number>;
     }
@@ -887,6 +992,7 @@ export namespace Components {
     interface RtkChatToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -903,10 +1009,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -916,6 +1024,7 @@ export namespace Components {
     interface RtkClock {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -933,6 +1042,7 @@ export namespace Components {
     interface RtkConfirmationModal {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -945,6 +1055,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -954,14 +1065,17 @@ export namespace Components {
     interface RtkControlbar {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Whether to render the default UI
+          * @default false
          */
         "disableRender": boolean;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -978,10 +1092,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant": 'solid' | 'boxed';
     }
@@ -991,10 +1107,12 @@ export namespace Components {
     interface RtkControlbarButton {
         /**
           * Whether icon requires brand color
+          * @default false
          */
         "brandIcon": boolean;
         /**
           * Whether button is disabled
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -1003,6 +1121,7 @@ export namespace Components {
         "icon": string;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1015,6 +1134,7 @@ export namespace Components {
         "label": string;
         /**
           * Whether to show warning icon
+          * @default false
          */
         "showWarning": boolean;
         /**
@@ -1023,6 +1143,7 @@ export namespace Components {
         "size": Size;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant1;
     }
@@ -1032,10 +1153,12 @@ export namespace Components {
     interface RtkCounter {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * Minimum value
+          * @default 0
          */
         "minValue": number;
         /**
@@ -1044,6 +1167,7 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
@@ -1057,6 +1181,7 @@ export namespace Components {
     interface RtkDebugger {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1073,12 +1198,14 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkDebuggerAudio {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1095,12 +1222,14 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
     interface RtkDebuggerScreenshare {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1117,12 +1246,14 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
     interface RtkDebuggerSystem {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1139,12 +1270,14 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
     interface RtkDebuggerToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1161,16 +1294,19 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
     interface RtkDebuggerVideo {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1187,6 +1323,7 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -1196,18 +1333,22 @@ export namespace Components {
     interface RtkDialog {
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Whether Escape key can close the modal
+          * @default false
          */
         "disableEscapeKey": boolean;
         /**
           * Whether to show the close button
+          * @default false
          */
         "hideCloseButton": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1216,6 +1357,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Whether a dialog is open or not
+          * @default true
          */
         "open": boolean;
         /**
@@ -1228,6 +1370,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1243,10 +1386,12 @@ export namespace Components {
     interface RtkDialogManager {
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1263,6 +1408,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1272,6 +1418,7 @@ export namespace Components {
     interface RtkDraftAttachmentView {
         /**
           * Attachment to display
+          * @default null
          */
         "attachment": {
     type: 'image' | 'file';
@@ -1279,10 +1426,12 @@ export namespace Components {
   };
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -1292,20 +1441,24 @@ export namespace Components {
     interface RtkEmojiPicker {
         /**
           * Controls whether or not to focus on mount
+          * @default true
          */
         "focusWhenOpened": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkEmojiPickerButton {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1314,6 +1467,7 @@ export namespace Components {
         "isActive": boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -1323,10 +1477,12 @@ export namespace Components {
     interface RtkEndedScreen {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1343,6 +1499,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1353,10 +1510,12 @@ export namespace Components {
         "hostEl": HTMLElement;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -1367,10 +1526,12 @@ export namespace Components {
     interface RtkFileMessage {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Whether the message is continued by same user
+          * @default false
          */
         "isContinued": boolean;
         /**
@@ -1379,14 +1540,17 @@ export namespace Components {
         "message": FileMessage;
         /**
           * Date object of now, to calculate distance between dates
+          * @default new Date()
          */
         "now": Date;
         /**
           * show message in bubble
+          * @default false
          */
         "showBubble": boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1396,6 +1560,7 @@ export namespace Components {
     interface RtkFileMessageView {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1418,10 +1583,12 @@ export namespace Components {
         "filter": string;
         /**
           * Icon
+          * @default 'attach'
          */
         "icon": keyof IconPack1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1430,6 +1597,7 @@ export namespace Components {
         "label": string;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -1440,6 +1608,7 @@ export namespace Components {
     interface RtkFullscreenToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1452,6 +1621,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
@@ -1460,6 +1630,7 @@ export namespace Components {
         "targetElement": HTMLElement;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -1469,26 +1640,32 @@ export namespace Components {
     interface RtkGrid {
         /**
           * The aspect ratio of each participant
+          * @default '16:9'
          */
         "aspectRatio": string;
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Gap between participants
+          * @default 8
          */
         "gap": number;
         /**
           * Grid size
+          * @default {   spotlight: 'sm',   mixed: 'sm', }
          */
         "gridSize": GridSize;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Grid Layout
+          * @default 'row'
          */
         "layout": GridLayout;
         /**
@@ -1496,7 +1673,8 @@ export namespace Components {
          */
         "meeting": Meeting;
         /**
-          * @deprecated
+          * @deprecated 
+          * @default {}
          */
         "overrides": any;
         /**
@@ -1509,6 +1687,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1519,6 +1698,7 @@ export namespace Components {
     interface RtkGridPagination {
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1535,10 +1715,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'rounded'
          */
         "variant": GridPaginationVariants;
     }
@@ -1548,14 +1730,17 @@ export namespace Components {
     interface RtkHeader {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Whether to render the default UI
+          * @default false
          */
         "disableRender": boolean;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1572,10 +1757,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant": 'solid' | 'boxed';
     }
@@ -1589,10 +1776,12 @@ export namespace Components {
         "icon": string;
         /**
           * Size
+          * @default 'lg'
          */
         "size": Size1;
         /**
           * Icon variant
+          * @default 'primary'
          */
         "variant": IconVariant;
     }
@@ -1603,10 +1792,12 @@ export namespace Components {
     interface RtkIdleScreen {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1619,6 +1810,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1629,10 +1821,12 @@ export namespace Components {
     interface RtkImageMessage {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Whether the message is continued by same user
+          * @default false
          */
         "isContinued": boolean;
         /**
@@ -1641,14 +1835,17 @@ export namespace Components {
         "message": ImageMessage;
         /**
           * Date object of now, to calculate distance between dates
+          * @default new Date()
          */
         "now": Date;
         /**
           * show message in bubble
+          * @default false
          */
         "showBubble": boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1658,10 +1855,12 @@ export namespace Components {
     interface RtkImageMessageView {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
         /**
@@ -1675,6 +1874,7 @@ export namespace Components {
     interface RtkImageViewer {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1687,26 +1887,31 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkInformationTooltip {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
     }
     interface RtkJoinStage {
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Content Config
+          * @default {     title: this.t('stage.join_title'),     label: {       accept: this.t('stage.join_confirm'),       reject: this.t('stage.join_cancel'),     },     description: this.t('stage.join_summary'),   }
          */
         "dataConfig": ModalDataConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1723,6 +1928,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1732,6 +1938,7 @@ export namespace Components {
     interface RtkLeaveButton {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1740,10 +1947,12 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -1754,6 +1963,7 @@ export namespace Components {
     interface RtkLeaveMeeting {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1766,12 +1976,14 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkLivestreamIndicator {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1784,12 +1996,14 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
     interface RtkLivestreamPlayer {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -1802,6 +2016,7 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -1813,6 +2028,7 @@ export namespace Components {
     interface RtkLivestreamToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1825,10 +2041,12 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -1838,6 +2056,7 @@ export namespace Components {
     interface RtkLogo {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
@@ -1850,12 +2069,14 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkMarkdownView {
         /**
           * max length of text to render as markdown
+          * @default 2000
          */
         "maxLength": number;
         /**
@@ -1872,26 +2093,32 @@ export namespace Components {
     interface RtkMeeting {
         /**
           * Whether to apply the design system on the document root from config
+          * @default false
          */
         "applyDesignSystem": boolean;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Grid layout
+          * @default 'row'
          */
         "gridLayout": GridLayout1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Whether participant should leave when this component gets unmounted
+          * @default false
          */
         "leaveOnUnmount": boolean;
         /**
           * Whether to load config from preset
+          * @default false
          */
         "loadConfigFromPreset": boolean;
         /**
@@ -1900,10 +2127,12 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Fill type
+          * @default 'fixed'
          */
         "mode": MeetingMode;
         /**
           * UI Kit Overrides
+          * @default {   disableEmojiPicker: false,   disablePrivateChat: false, }
          */
         "overrides": Overrides;
         /**
@@ -1916,6 +2145,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1925,6 +2155,7 @@ export namespace Components {
     interface RtkMeetingTitle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -1933,6 +2164,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1942,14 +2174,17 @@ export namespace Components {
     interface RtkMenu {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Offset in px
+          * @default 10
          */
         "offset": number;
         /**
           * Placement of menu
+          * @default 'bottom-end'
          */
         "placement": Placement;
         /**
@@ -1958,6 +2193,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1967,10 +2203,12 @@ export namespace Components {
     interface RtkMenuItem {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Variant
+          * @default 'secondary'
          */
         "menuVariant": 'primary' | 'secondary';
         /**
@@ -1979,6 +2217,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -1988,14 +2227,17 @@ export namespace Components {
     interface RtkMenuList {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Variant
+          * @default 'secondary'
          */
         "menuVariant": 'primary' | 'secondary';
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2005,10 +2247,12 @@ export namespace Components {
     interface RtkMessageListView {
         /**
           * Estimated height of an item
+          * @default 100
          */
         "estimateItemSize": number;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -2025,12 +2269,14 @@ export namespace Components {
         "renderer": (message: Message, index: number) => HTMLElement;
         /**
           * Maximum visible messages
+          * @default 20
          */
         "visibleItemsCount": number;
     }
     interface RtkMessageView {
         /**
           * List of actions to show in menu
+          * @default []
          */
         "actions": MessageAction[];
         /**
@@ -2043,18 +2289,22 @@ export namespace Components {
         "avatarUrl": string;
         /**
           * Hides author display label
+          * @default false
          */
         "hideAuthorName": boolean;
         /**
           * Hides avatar
+          * @default false
          */
         "hideAvatar": boolean;
         /**
           * Hides metadata (time)
+          * @default false
          */
         "hideMetadata": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -2063,6 +2313,7 @@ export namespace Components {
         "isEdited": boolean;
         /**
           * Is the message sent by the current user
+          * @default false
          */
         "isSelf": boolean;
         /**
@@ -2071,6 +2322,7 @@ export namespace Components {
         "messageType": Message['type'];
         /**
           * Is message pinned
+          * @default false
          */
         "pinned": boolean;
         /**
@@ -2079,10 +2331,12 @@ export namespace Components {
         "time": Date;
         /**
           * Appearance
+          * @default 'bubble'
          */
         "variant": 'plain' | 'bubble';
         /**
           * Render
+          * @default 'outgoing'
          */
         "viewType": 'incoming' | 'outgoing';
     }
@@ -2092,6 +2346,7 @@ export namespace Components {
     interface RtkMicToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2104,10 +2359,12 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -2125,6 +2382,7 @@ export namespace Components {
     interface RtkMicrophoneSelector {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2137,10 +2395,12 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * variant
+          * @default 'full'
          */
         "variant": 'full' | 'inline';
     }
@@ -2150,26 +2410,32 @@ export namespace Components {
     interface RtkMixedGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
+          * @default '16:9'
          */
         "aspectRatio": string;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Gap between participant tiles
+          * @default 8
          */
         "gap": number;
         /**
           * Grid size
+          * @default {   spotlight: 'sm',   mixed: 'sm', }
          */
         "gridSize": GridSize1;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Grid Layout
+          * @default 'row'
          */
         "layout": GridLayout1;
         /**
@@ -2178,18 +2444,22 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Participants
+          * @default []
          */
         "participants": Peer[];
         /**
           * Pinned Participants
+          * @default []
          */
         "pinnedParticipants": Peer[];
         /**
           * Active Plugins
+          * @default []
          */
         "plugins": RTKPlugin[];
         /**
           * Screenshare Participants
+          * @default []
          */
         "screenShareParticipants": Peer[];
         /**
@@ -2202,6 +2472,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2215,6 +2486,7 @@ export namespace Components {
     interface RtkMoreToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2227,12 +2499,14 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkMuteAllButton {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -2245,16 +2519,19 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
     interface RtkMuteAllConfirmation {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2267,6 +2544,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2276,10 +2554,12 @@ export namespace Components {
     interface RtkNameTag {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Whether it is used in a screen share view
+          * @default false
          */
         "isScreenShare": boolean;
         /**
@@ -2296,20 +2576,24 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Name tag variant
+          * @default 'default'
          */
         "variant": RtkNameTagVariant;
     }
     interface RtkNetworkIndicator {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * Is for screenshare
+          * @default false
          */
         "isScreenShare": boolean;
         /**
@@ -2322,6 +2606,7 @@ export namespace Components {
         "participant": Peer;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -2333,6 +2618,7 @@ export namespace Components {
     interface RtkNotification {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2349,6 +2635,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2360,10 +2647,12 @@ export namespace Components {
     interface RtkNotifications {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2380,6 +2669,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2389,6 +2679,7 @@ export namespace Components {
     interface RtkOverlayModal {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2401,6 +2692,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2415,6 +2707,7 @@ export namespace Components {
         "createNodes": (data: unknown[]) => VNode[];
         /**
           * label to show when empty
+          * @default null
          */
         "emptyListLabel": string;
         /**
@@ -2423,6 +2716,7 @@ export namespace Components {
         "fetchData": (timestamp: number, size: number, reversed: boolean) => Promise<unknown[]>;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2459,6 +2753,7 @@ export namespace Components {
         "reset": (timestamp?: number) => Promise<void>;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2470,10 +2765,12 @@ export namespace Components {
     interface RtkParticipant {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2490,10 +2787,12 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Show participant summary
+          * @default 'sidebar'
          */
         "view": ParticipantViewMode;
     }
@@ -2503,6 +2802,7 @@ export namespace Components {
     interface RtkParticipantCount {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2515,24 +2815,29 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkParticipantSetup {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Whether tile is used for preview
+          * @default false
          */
         "isPreview": boolean;
         /**
           * Position of name tag
+          * @default 'bottom-left'
          */
         "nameTagPosition": | 'bottom-left'
     | 'bottom-right'
@@ -2554,10 +2859,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant": 'solid' | 'gradient';
     }
@@ -2568,14 +2875,17 @@ export namespace Components {
     interface RtkParticipantTile {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Whether tile is used for preview
+          * @default false
          */
         "isPreview": boolean;
         /**
@@ -2584,6 +2894,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Position of name tag
+          * @default 'bottom-left'
          */
         "nameTagPosition": | 'bottom-left'
     | 'bottom-right'
@@ -2605,10 +2916,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant": 'solid' | 'gradient';
     }
@@ -2619,14 +2932,17 @@ export namespace Components {
     interface RtkParticipants {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Default section
+          * @default 'stage-list'
          */
         "defaultParticipantsTabId": ParticipantsTabId;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2643,6 +2959,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2652,6 +2969,7 @@ export namespace Components {
     interface RtkParticipantsAudio {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2660,10 +2978,12 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Pass existing audio element
+          * @default undefined
          */
         "preloadedAudioElem": HTMLAudioElement;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2674,14 +2994,17 @@ export namespace Components {
     interface RtkParticipantsStageList {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Hide Stage Participants Count Header
+          * @default false
          */
         "hideHeader": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2690,6 +3013,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Search
+          * @default ''
          */
         "search": string;
         /**
@@ -2702,10 +3026,12 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * View mode for participants list
+          * @default 'sidebar'
          */
         "view": ParticipantsViewMode;
     }
@@ -2717,10 +3043,12 @@ export namespace Components {
     interface RtkParticipantsStageQueue {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -2733,10 +3061,12 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
         /**
           * View mode for participants list
+          * @default 'sidebar'
          */
         "view": ParticipantsViewMode;
     }
@@ -2750,6 +3080,7 @@ export namespace Components {
     interface RtkParticipantsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2766,24 +3097,29 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
     interface RtkParticipantsViewerList {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Hide Viewer Count Header
+          * @default false
          */
         "hideHeader": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -2792,6 +3128,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Search
+          * @default ''
          */
         "search": string;
         /**
@@ -2800,20 +3137,24 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
         /**
           * View mode for participants list
+          * @default 'sidebar'
          */
         "view": ParticipantsViewMode;
     }
     interface RtkParticipantsWaitingList {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -2826,10 +3167,12 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
         /**
           * View mode for participants list
+          * @default 'sidebar'
          */
         "view": ParticipantsViewMode;
     }
@@ -2840,6 +3183,7 @@ export namespace Components {
     interface RtkPermissionsMessage {
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2852,6 +3196,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2859,6 +3204,7 @@ export namespace Components {
         "close": () => Promise<void>;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2867,6 +3213,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2878,10 +3225,12 @@ export namespace Components {
     interface RtkPipToggle {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -2898,10 +3247,12 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -2915,6 +3266,7 @@ export namespace Components {
     interface RtkPluginMain {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2927,6 +3279,7 @@ export namespace Components {
         "plugin": RTKPlugin;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2937,10 +3290,12 @@ export namespace Components {
     interface RtkPlugins {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2953,6 +3308,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -2966,6 +3322,7 @@ export namespace Components {
     interface RtkPluginsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -2982,10 +3339,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -2996,6 +3355,7 @@ export namespace Components {
     interface RtkPoll {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3012,6 +3372,7 @@ export namespace Components {
         "self": string;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3021,10 +3382,12 @@ export namespace Components {
     interface RtkPollForm {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3035,10 +3398,12 @@ export namespace Components {
     interface RtkPolls {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3051,6 +3416,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3065,6 +3431,7 @@ export namespace Components {
     interface RtkPollsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3081,10 +3448,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -3095,6 +3464,7 @@ export namespace Components {
     interface RtkRecordingIndicator {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3107,6 +3477,7 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3119,10 +3490,12 @@ export namespace Components {
     interface RtkRecordingToggle {
         /**
           * Disable the button
+          * @default false
          */
         "disabled": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3135,10 +3508,12 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -3148,6 +3523,7 @@ export namespace Components {
     interface RtkScreenShareToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3164,10 +3540,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -3179,10 +3557,12 @@ export namespace Components {
     interface RtkScreenshareView {
         /**
           * Hide full screen button
+          * @default false
          */
         "hideFullScreenButton": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3191,6 +3571,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Position of name tag
+          * @default 'bottom-left'
          */
         "nameTagPosition": | 'bottom-left'
     | 'bottom-right'
@@ -3208,10 +3589,12 @@ export namespace Components {
         "size": Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant": 'solid' | 'gradient';
     }
@@ -3222,6 +3605,7 @@ export namespace Components {
     interface RtkSettings {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3238,6 +3622,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3255,6 +3640,7 @@ export namespace Components {
     interface RtkSettingsAudio {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3271,6 +3657,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3284,6 +3671,7 @@ export namespace Components {
     interface RtkSettingsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3296,10 +3684,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -3317,6 +3707,7 @@ export namespace Components {
     interface RtkSettingsVideo {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3333,6 +3724,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3343,10 +3735,12 @@ export namespace Components {
     interface RtkSetupScreen {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3363,6 +3757,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3373,18 +3768,22 @@ export namespace Components {
     interface RtkSidebar {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Default section
+          * @default 'chat'
          */
         "defaultSection": RtkSidebarSection;
         /**
           * Enabled sections in sidebar
+          * @default []
          */
         "enabledSections": RtkSidebarTab[];
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3401,10 +3800,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * View type
+          * @default 'sidebar'
          */
         "view": RtkSidebarView;
     }
@@ -3420,30 +3821,37 @@ export namespace Components {
         "currentTab": string;
         /**
           * Option to focus close button when opened
+          * @default true
          */
         "focusCloseButton": boolean;
         /**
           * Hide Close Action
+          * @default false
          */
         "hideCloseAction": boolean;
         /**
           * Hide Main Header
+          * @default false
          */
         "hideHeader": boolean;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": { people: string; people_checked: string; chat: string; poll: string; participants: string; rocket: string; call_end: string; share: string; mic_on: string; mic_off: string; video_on: string; video_off: string; share_screen_start: string; share_screen_stop: string; share_screen_person: string; clock: string; dismiss: string; send: string; search: string; more_vertical: string; chevron_down: string; chevron_up: string; chevron_left: string; chevron_right: string; settings: string; wifi: string; speaker: string; speaker_off: string; download: string; full_screen_maximize: string; full_screen_minimize: string; copy: string; attach: string; image: string; emoji_multiple: string; image_off: string; disconnected: string; wand: string; recording: string; subtract: string; stop_recording: string; warning: string; pin: string; pin_off: string; spinner: string; breakout_rooms: string; add: string; shuffle: string; edit: string; delete: string; back: string; save: string; web: string; checkmark: string; spotlight: string; join_stage: string; leave_stage: string; pip_off: string; pip_on: string; signal_1: string; signal_2: string; signal_3: string; signal_4: string; signal_5: string; start_livestream: string; stop_livestream: string; viewers: string; debug: string; info: string; devices: string; horizontal_dots: string; ai_sparkle: string; meeting_ai: string; captionsOn: string; captionsOff: string; play: string; pause: string; fastForward: string; minimize: string; maximize: string; };
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
         /**
           * Tabs
+          * @default []
          */
         "tabs": RtkSidebarTab1[];
         /**
           * View
+          * @default 'sidebar'
          */
         "view": RtkSidebarView1;
     }
@@ -3453,18 +3861,22 @@ export namespace Components {
     interface RtkSimpleGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
+          * @default '16:9'
          */
         "aspectRatio": string;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Gap between participant tiles
+          * @default 8
          */
         "gap": number;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3473,6 +3885,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Participants
+          * @default []
          */
         "participants": Peer[];
         /**
@@ -3485,6 +3898,7 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3502,6 +3916,7 @@ export namespace Components {
     interface RtkSpeakerSelector {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3518,10 +3933,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * variant
+          * @default 'full'
          */
         "variant": 'full' | 'inline';
     }
@@ -3531,10 +3948,12 @@ export namespace Components {
     interface RtkSpinner {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Size
+          * @default 'md'
          */
         "size": Size1;
     }
@@ -3547,26 +3966,32 @@ export namespace Components {
     interface RtkSpotlightGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
+          * @default '16:9'
          */
         "aspectRatio": string;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Gap between participant tiles
+          * @default 8
          */
         "gap": number;
         /**
           * Grid size
+          * @default {   spotlight: 'sm',   mixed: 'sm', }
          */
         "gridSize": GridSize1;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Grid Layout
+          * @default 'row'
          */
         "layout": GridLayout1;
         /**
@@ -3575,10 +4000,12 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Participants
+          * @default []
          */
         "participants": Peer[];
         /**
           * Pinned Participants
+          * @default []
          */
         "pinnedParticipants": Peer[];
         /**
@@ -3591,12 +4018,14 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkSpotlightIndicator {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3609,6 +4038,7 @@ export namespace Components {
         "size": Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3619,16 +4049,19 @@ export namespace Components {
     interface RtkStage {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkStageToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
@@ -3645,10 +4078,12 @@ export namespace Components {
         "states": States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
         /**
           * Variant
+          * @default 'button'
          */
         "variant": ControlBarVariant;
     }
@@ -3658,22 +4093,27 @@ export namespace Components {
     interface RtkSwitch {
         /**
           * Whether the switch is enabled/checked
+          * @default false
          */
         "checked": boolean;
         /**
           * Whether switch is readonly
+          * @default false
          */
         "disabled": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Whether switch is readonly
+          * @default false
          */
         "readonly": boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3684,14 +4124,17 @@ export namespace Components {
         "activeTab": Tab;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Grid Layout
+          * @default 'row'
          */
         "layout": GridLayout1;
         /**
@@ -3708,10 +4151,12 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Tabs
+          * @default []
          */
         "tabs": Tab[];
     }
@@ -3721,14 +4166,17 @@ export namespace Components {
     interface RtkTextComposerView {
         /**
           * Disable the text input (default = false)
+          * @default false
          */
         "disabled": boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * Keydown event handler function
+          * @default () => {}
          */
         "keyDownHandler": (e: KeyboardEvent) => void;
         /**
@@ -3741,6 +4189,7 @@ export namespace Components {
         "placeholder": string;
         /**
           * Boolean to indicate if rate limit is breached
+          * @default false
          */
         "rateLimitBreached": boolean;
         /**
@@ -3749,6 +4198,7 @@ export namespace Components {
         "setText": (text: string, focus?: boolean) => Promise<void>;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n1;
         /**
@@ -3763,10 +4213,12 @@ export namespace Components {
     interface RtkTextMessage {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
           * Whether the message is continued by same user
+          * @default false
          */
         "isContinued": boolean;
         /**
@@ -3775,14 +4227,17 @@ export namespace Components {
         "message": TextMessage;
         /**
           * Date object of now, to calculate distance between dates
+          * @default new Date()
          */
         "now": Date;
         /**
           * show message in bubble
+          * @default false
          */
         "showBubble": boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -3792,6 +4247,7 @@ export namespace Components {
     interface RtkTextMessageView {
         /**
           * Renders text as markdown (default = true)
+          * @default false
          */
         "isMarkdown": boolean;
         /**
@@ -3805,26 +4261,32 @@ export namespace Components {
     interface RtkTooltip {
         /**
           * Delay before showing the tooltip
+          * @default 0
          */
         "delay": number;
         /**
           * Disabled
+          * @default false
          */
         "disabled": boolean;
         /**
           * Tooltip kind
+          * @default 'inline'
          */
         "kind": TooltipKind;
         /**
           * Tooltip label
+          * @default ''
          */
         "label": string;
         /**
           * Open
+          * @default false
          */
         "open": boolean;
         /**
           * Placement of menu
+          * @default 'top'
          */
         "placement": Placement;
         /**
@@ -3833,6 +4295,7 @@ export namespace Components {
         "size": Size;
         /**
           * Tooltip variant
+          * @default 'secondary'
          */
         "variant": TooltipVariant;
     }
@@ -3844,6 +4307,7 @@ export namespace Components {
     interface RtkTranscript {
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
@@ -3859,6 +4323,7 @@ export namespace Components {
     interface RtkTranscripts {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
@@ -3871,36 +4336,44 @@ export namespace Components {
         "states": States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
     interface RtkUiProvider {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack1;
         /**
           * Meeting
+          * @default null
          */
         "meeting": Meeting | null;
         /**
           * Fill type
+          * @default 'fixed'
          */
         "mode": MeetingMode1;
         /**
           * UI Kit Overrides
+          * @default {   disableEmojiPicker: false,   disablePrivateChat: false, }
          */
         "overrides": Overrides1;
         /**
           * Whether to show setup screen or not
+          * @default false
          */
         "showSetupScreen": boolean;
         /**
           * Language utility
+          * @default useLanguage()
          */
         "t": RtkI18n1;
     }
@@ -3910,6 +4383,7 @@ export namespace Components {
     interface RtkViewerCount {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3918,28 +4392,34 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
         /**
           * Viewer count variant
+          * @default 'primary'
          */
         "variant": ViewerCountVariant;
     }
     interface RtkVirtualizedParticipantList {
         /**
           * Buffer items to render before and after the visible area
+          * @default 5
          */
         "bufferedItemsCount": number;
         /**
           * Element to render if list is empty
+          * @default null
          */
         "emptyListElement": HTMLElement;
         /**
           * Height of each item in pixels (assumed fixed)
+          * @default 55
          */
         "itemHeight": number;
         /**
           * Items to be virtualized
+          * @default []
          */
         "items": Peer1[];
         /**
@@ -3950,10 +4430,12 @@ export namespace Components {
     interface RtkWaitingScreen {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config": UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack": IconPack;
         /**
@@ -3962,6 +4444,7 @@ export namespace Components {
         "meeting": Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t": RtkI18n;
     }
@@ -6549,6 +7032,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    type OneOf<K extends string, PropT, AttrT = PropT> = { [P in K]: PropT } & { [P in `attr:${K}` | `prop:${K}`]?: never } | { [P in `attr:${K}`]: AttrT } & { [P in K | `prop:${K}`]?: never } | { [P in `prop:${K}`]: PropT } & { [P in K | `attr:${K}`]?: never };
+
     /**
      * An AI assistant component for meeting interactions.
      * Provides AI-powered features like transcription, summarization, and
@@ -6557,10 +7042,12 @@ declare namespace LocalJSX {
     interface RtkAi {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -6577,16 +7064,19 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * View type
+          * @default 'sidebar'
          */
         "view"?: AIView;
     }
     interface RtkAiToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -6607,16 +7097,19 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
     interface RtkAiTranscriptions {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -6629,6 +7122,7 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -6639,10 +7133,12 @@ declare namespace LocalJSX {
         "config"?: UIConfig1;
         /**
           * Whether to hide self in the grid
+          * @default false
          */
         "hideSelf"?: boolean;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -6659,6 +7155,7 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -6669,6 +7166,7 @@ declare namespace LocalJSX {
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -6689,6 +7187,7 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -6699,14 +7198,17 @@ declare namespace LocalJSX {
     interface RtkAudioVisualizer {
         /**
           * Hide the visualizer if audio is muted
+          * @default false
          */
         "hideMuted"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Audio visualizer for screensharing, it will use screenShareTracks.audio instead of audioTrack
+          * @default false
          */
         "isScreenShare"?: boolean;
         /**
@@ -6719,10 +7221,12 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'bars'
          */
         "variant"?: AudioVisualizerVariant;
     }
@@ -6732,6 +7236,7 @@ declare namespace LocalJSX {
     interface RtkAvatar {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -6744,16 +7249,19 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Avatar type
+          * @default 'circular'
          */
         "variant"?: AvatarVariant;
     }
     interface RtkBreakoutRoomManager {
         /**
           * allow room delete
+          * @default true
          */
         "allowDelete"?: boolean;
         /**
@@ -6762,14 +7270,17 @@ declare namespace LocalJSX {
         "assigningParticipants"?: boolean;
         /**
           * display expanded card by default
+          * @default false
          */
         "defaultExpanded"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Drag mode
+          * @default false
          */
         "isDragMode"?: boolean;
         /**
@@ -6815,6 +7326,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -6825,6 +7337,7 @@ declare namespace LocalJSX {
     interface RtkBreakoutRoomParticipants {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -6845,20 +7358,24 @@ declare namespace LocalJSX {
         "onSelectedParticipantsUpdate"?: (event: RtkBreakoutRoomParticipantsCustomEvent<string[]>) => void;
         /**
           * Participant ids
+          * @default []
          */
         "participantIds"?: string[];
         /**
           * selected participants
+          * @default []
          */
         "selectedParticipantIds"?: string[];
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkBreakoutRoomsManager {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -6875,6 +7392,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -6885,6 +7403,7 @@ declare namespace LocalJSX {
     interface RtkBreakoutRoomsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -6905,10 +7424,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -6920,6 +7441,7 @@ declare namespace LocalJSX {
     interface RtkBroadcastMessageModal {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -6936,6 +7458,7 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -6945,14 +7468,17 @@ declare namespace LocalJSX {
     interface RtkButton {
         /**
           * Where the button is disabled or not
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Button type
+          * @default 'button'
          */
         "kind"?: ButtonKind;
         /**
           * Whether to reverse order of children
+          * @default false
          */
         "reverse"?: boolean;
         /**
@@ -6961,10 +7487,12 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Button type
+          * @default 'button'
          */
         "type"?: HTMLButtonElement['type'];
         /**
           * Button variant
+          * @default 'primary'
          */
         "variant"?: ButtonVariant;
     }
@@ -6982,6 +7510,7 @@ declare namespace LocalJSX {
     interface RtkCameraSelector {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -6994,10 +7523,12 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * variant
+          * @default 'full'
          */
         "variant"?: 'full' | 'inline';
     }
@@ -7007,6 +7538,7 @@ declare namespace LocalJSX {
     interface RtkCameraToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7023,20 +7555,24 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
     interface RtkCaptionToggle {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7057,10 +7593,12 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -7070,10 +7608,12 @@ declare namespace LocalJSX {
     interface RtkChat {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7086,6 +7626,7 @@ declare namespace LocalJSX {
         "onRtkStateUpdate"?: (event: RtkChatCustomEvent<States1>) => void;
         /**
           * UI Overrides
+          * @default {   disableEmojiPicker: false,   disablePrivateChat: false, }
          */
         "overrides"?: Overrides;
         /**
@@ -7094,6 +7635,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -7103,22 +7645,27 @@ declare namespace LocalJSX {
     interface RtkChatComposerUi {
         /**
           * Whether user can send file messages
+          * @default false
          */
         "canSendFiles"?: boolean;
         /**
           * Whether user can send text messages
+          * @default false
          */
         "canSendTextMessage"?: boolean;
         /**
           * Whether to show emoji picker
+          * @default false
          */
         "disableEmojiPicker"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
           * list of members that can be mentioned
+          * @default []
          */
         "members"?: RTKBasicParticipant[];
         /**
@@ -7138,6 +7685,7 @@ declare namespace LocalJSX {
         "onRtkNewMessage"?: (event: RtkChatComposerUiCustomEvent<RtkNewMessageEvent>) => void;
         /**
           * prefill the composer
+          * @default {}
          */
         "prefill"?: {
     suggestedReplies?: string[];
@@ -7150,6 +7698,7 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -7159,28 +7708,37 @@ declare namespace LocalJSX {
     interface RtkChatComposerView {
         /**
           * Whether user can send file messages
+          * @default true
          */
         "canSendFiles"?: boolean;
         /**
           * Whether user can send text messages
+          * @default true
          */
         "canSendTextMessage"?: boolean;
         /**
           * Whether to show emoji picker
+          * @default false
          */
         "disableEmojiPicker"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
           * Placeholder for text input
+          * @default 'Enter your message'
          */
         "inputTextPlaceholder"?: string;
         /**
           * Sets composer to edit mode
+          * @default false
          */
         "isEditing"?: boolean;
+        /**
+          * @default false
+         */
         "isSending"?: boolean;
         /**
           * Max length for text input
@@ -7188,6 +7746,7 @@ declare namespace LocalJSX {
         "maxLength"?: number;
         /**
           * Message to be pre-populated
+          * @default ''
          */
         "message"?: string;
         /**
@@ -7208,18 +7767,22 @@ declare namespace LocalJSX {
         "onQuotedMessageDismiss"?: (event: RtkChatComposerViewCustomEvent<void>) => void;
         /**
           * Quote message to be displayed
+          * @default ''
          */
         "quotedMessage"?: string;
         /**
           * Rate limits
+          * @default {     period: 60,     maxInvocations: 60,   }
          */
         "rateLimits"?: { period: number; maxInvocations: number; };
         /**
           * Key for storing message in localStorage
+          * @default 'rtk-text-message'
          */
         "storageKey"?: string;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -7231,22 +7794,27 @@ declare namespace LocalJSX {
     interface RtkChatMessage {
         /**
           * aligns message to right
+          * @default false
          */
         "alignRight"?: boolean;
         /**
           * can delete message
+          * @default false
          */
         "canDelete"?: boolean;
         /**
           * can edit message
+          * @default false
          */
         "canEdit"?: boolean;
         /**
           * can pin this message
+          * @default false
          */
         "canPin"?: boolean;
         /**
           * can quote reply this message
+          * @default false
          */
         "canReply"?: boolean;
         /**
@@ -7255,14 +7823,17 @@ declare namespace LocalJSX {
         "child"?: HTMLElement;
         /**
           * disables controls
+          * @default false
          */
         "disableControls"?: boolean;
         /**
           * hides avatar
+          * @default false
          */
         "hideAvatar"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7271,6 +7842,7 @@ declare namespace LocalJSX {
         "isContinued"?: boolean;
         /**
           * if sender is self
+          * @default false
          */
         "isSelf"?: boolean;
         /**
@@ -7279,6 +7851,7 @@ declare namespace LocalJSX {
         "isUnread"?: boolean;
         /**
           * Whether to left align the chat bubbles
+          * @default false
          */
         "leftAlign"?: boolean;
         /**
@@ -7311,6 +7884,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -7320,14 +7894,17 @@ declare namespace LocalJSX {
     interface RtkChatMessagesUi {
         /**
           * Can current user pin/unpin messages
+          * @default false
          */
         "canPinMessages"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
           * Chat Messages
+          * @default []
          */
         "messages"?: Chat[];
         /**
@@ -7352,12 +7929,14 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkChatMessagesUiPaginated {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7397,6 +7976,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -7410,6 +7990,7 @@ declare namespace LocalJSX {
         "channelId"?: string;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7422,16 +8003,19 @@ declare namespace LocalJSX {
         "query"?: string;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
     interface RtkChatSelector {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7442,6 +8026,7 @@ declare namespace LocalJSX {
         "onRtkDropdownToggle"?: (event: RtkChatSelectorCustomEvent<{ open: boolean }>) => void;
         /**
           * UI Overrides
+          * @default {   disableEmojiPicker: false,   disablePrivateChat: false, }
          */
         "overrides"?: Overrides1;
         /**
@@ -7454,16 +8039,19 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkChatSelectorUi {
         /**
           * Participants
+          * @default []
          */
         "groups"?: ChatGroup[];
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7480,10 +8068,12 @@ declare namespace LocalJSX {
         "selfUserId"?: string;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Unread counts
+          * @default {}
          */
         "unreadCounts"?: Record<string, number>;
     }
@@ -7498,6 +8088,7 @@ declare namespace LocalJSX {
     interface RtkChatToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7518,10 +8109,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -7531,6 +8124,7 @@ declare namespace LocalJSX {
     interface RtkClock {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7548,6 +8142,7 @@ declare namespace LocalJSX {
     interface RtkConfirmationModal {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7564,6 +8159,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -7573,14 +8169,17 @@ declare namespace LocalJSX {
     interface RtkControlbar {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Whether to render the default UI
+          * @default false
          */
         "disableRender"?: boolean;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7597,10 +8196,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant"?: 'solid' | 'boxed';
     }
@@ -7610,10 +8211,12 @@ declare namespace LocalJSX {
     interface RtkControlbarButton {
         /**
           * Whether icon requires brand color
+          * @default false
          */
         "brandIcon"?: boolean;
         /**
           * Whether button is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -7622,6 +8225,7 @@ declare namespace LocalJSX {
         "icon"?: string;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7634,6 +8238,7 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * Whether to show warning icon
+          * @default false
          */
         "showWarning"?: boolean;
         /**
@@ -7642,6 +8247,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant1;
     }
@@ -7651,10 +8257,12 @@ declare namespace LocalJSX {
     interface RtkCounter {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
           * Minimum value
+          * @default 0
          */
         "minValue"?: number;
         /**
@@ -7667,6 +8275,7 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
@@ -7680,6 +8289,7 @@ declare namespace LocalJSX {
     interface RtkDebugger {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7700,12 +8310,14 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkDebuggerAudio {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7722,12 +8334,14 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
     interface RtkDebuggerScreenshare {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7744,12 +8358,14 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
     interface RtkDebuggerSystem {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7766,12 +8382,14 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
     interface RtkDebuggerToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7792,16 +8410,19 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
     interface RtkDebuggerVideo {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7818,6 +8439,7 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -7827,18 +8449,22 @@ declare namespace LocalJSX {
     interface RtkDialog {
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Whether Escape key can close the modal
+          * @default false
          */
         "disableEscapeKey"?: boolean;
         /**
           * Whether to show the close button
+          * @default false
          */
         "hideCloseButton"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7851,6 +8477,7 @@ declare namespace LocalJSX {
         "onRtkDialogClose"?: (event: RtkDialogCustomEvent<any>) => void;
         /**
           * Whether a dialog is open or not
+          * @default true
          */
         "open"?: boolean;
         /**
@@ -7863,6 +8490,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -7878,10 +8506,12 @@ declare namespace LocalJSX {
     interface RtkDialogManager {
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7902,6 +8532,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -7911,6 +8542,7 @@ declare namespace LocalJSX {
     interface RtkDraftAttachmentView {
         /**
           * Attachment to display
+          * @default null
          */
         "attachment"?: {
     type: 'image' | 'file';
@@ -7918,6 +8550,7 @@ declare namespace LocalJSX {
   };
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7926,6 +8559,7 @@ declare namespace LocalJSX {
         "onDeleteAttachment"?: (event: RtkDraftAttachmentViewCustomEvent<any>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -7935,10 +8569,12 @@ declare namespace LocalJSX {
     interface RtkEmojiPicker {
         /**
           * Controls whether or not to focus on mount
+          * @default true
          */
         "focusWhenOpened"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7951,12 +8587,14 @@ declare namespace LocalJSX {
         "onRtkEmojiClicked"?: (event: RtkEmojiPickerCustomEvent<string>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkEmojiPickerButton {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -7965,6 +8603,7 @@ declare namespace LocalJSX {
         "isActive"?: boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -7974,10 +8613,12 @@ declare namespace LocalJSX {
     interface RtkEndedScreen {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -7994,6 +8635,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8004,6 +8646,7 @@ declare namespace LocalJSX {
         "hostEl"?: HTMLElement;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8012,6 +8655,7 @@ declare namespace LocalJSX {
         "onDropCallback"?: (event: RtkFileDropzoneCustomEvent<DragEvent>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -8022,10 +8666,12 @@ declare namespace LocalJSX {
     interface RtkFileMessage {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Whether the message is continued by same user
+          * @default false
          */
         "isContinued"?: boolean;
         /**
@@ -8034,14 +8680,17 @@ declare namespace LocalJSX {
         "message": FileMessage;
         /**
           * Date object of now, to calculate distance between dates
+          * @default new Date()
          */
         "now"?: Date;
         /**
           * show message in bubble
+          * @default false
          */
         "showBubble"?: boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8051,6 +8700,7 @@ declare namespace LocalJSX {
     interface RtkFileMessageView {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8073,10 +8723,12 @@ declare namespace LocalJSX {
         "filter"?: string;
         /**
           * Icon
+          * @default 'attach'
          */
         "icon"?: keyof IconPack1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8089,6 +8741,7 @@ declare namespace LocalJSX {
         "onFileChange"?: (event: RtkFilePickerButtonCustomEvent<File>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -8099,6 +8752,7 @@ declare namespace LocalJSX {
     interface RtkFullscreenToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8115,6 +8769,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
@@ -8123,6 +8778,7 @@ declare namespace LocalJSX {
         "targetElement"?: HTMLElement;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -8132,26 +8788,32 @@ declare namespace LocalJSX {
     interface RtkGrid {
         /**
           * The aspect ratio of each participant
+          * @default '16:9'
          */
         "aspectRatio"?: string;
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Gap between participants
+          * @default 8
          */
         "gap"?: number;
         /**
           * Grid size
+          * @default {   spotlight: 'sm',   mixed: 'sm', }
          */
         "gridSize"?: GridSize;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Grid Layout
+          * @default 'row'
          */
         "layout"?: GridLayout;
         /**
@@ -8163,7 +8825,8 @@ declare namespace LocalJSX {
          */
         "onRtkStateUpdate"?: (event: RtkGridCustomEvent<States>) => void;
         /**
-          * @deprecated
+          * @deprecated 
+          * @default {}
          */
         "overrides"?: any;
         /**
@@ -8176,6 +8839,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8186,6 +8850,7 @@ declare namespace LocalJSX {
     interface RtkGridPagination {
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8202,10 +8867,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'rounded'
          */
         "variant"?: GridPaginationVariants;
     }
@@ -8215,14 +8882,17 @@ declare namespace LocalJSX {
     interface RtkHeader {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Whether to render the default UI
+          * @default false
          */
         "disableRender"?: boolean;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8239,10 +8909,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant"?: 'solid' | 'boxed';
     }
@@ -8256,10 +8928,12 @@ declare namespace LocalJSX {
         "icon"?: string;
         /**
           * Size
+          * @default 'lg'
          */
         "size"?: Size1;
         /**
           * Icon variant
+          * @default 'primary'
          */
         "variant"?: IconVariant;
     }
@@ -8270,10 +8944,12 @@ declare namespace LocalJSX {
     interface RtkIdleScreen {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8286,6 +8962,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8296,10 +8973,12 @@ declare namespace LocalJSX {
     interface RtkImageMessage {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Whether the message is continued by same user
+          * @default false
          */
         "isContinued"?: boolean;
         /**
@@ -8308,6 +8987,7 @@ declare namespace LocalJSX {
         "message": ImageMessage;
         /**
           * Date object of now, to calculate distance between dates
+          * @default new Date()
          */
         "now"?: Date;
         /**
@@ -8316,10 +8996,12 @@ declare namespace LocalJSX {
         "onRtkStateUpdate"?: (event: RtkImageMessageCustomEvent<States>) => void;
         /**
           * show message in bubble
+          * @default false
          */
         "showBubble"?: boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8329,6 +9011,7 @@ declare namespace LocalJSX {
     interface RtkImageMessageView {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8337,6 +9020,7 @@ declare namespace LocalJSX {
         "onPreview"?: (event: RtkImageMessageViewCustomEvent<string>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
         /**
@@ -8350,6 +9034,7 @@ declare namespace LocalJSX {
     interface RtkImageViewer {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8366,26 +9051,31 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkInformationTooltip {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
     }
     interface RtkJoinStage {
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Content Config
+          * @default {     title: this.t('stage.join_title'),     label: {       accept: this.t('stage.join_confirm'),       reject: this.t('stage.join_cancel'),     },     description: this.t('stage.join_summary'),   }
          */
         "dataConfig"?: ModalDataConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8414,6 +9104,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8423,6 +9114,7 @@ declare namespace LocalJSX {
     interface RtkLeaveButton {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8435,10 +9127,12 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -8449,6 +9143,7 @@ declare namespace LocalJSX {
     interface RtkLeaveMeeting {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8465,12 +9160,14 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkLivestreamIndicator {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8483,12 +9180,14 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
     interface RtkLivestreamPlayer {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8508,6 +9207,7 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -8519,6 +9219,7 @@ declare namespace LocalJSX {
     interface RtkLivestreamToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8542,10 +9243,12 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -8555,6 +9258,7 @@ declare namespace LocalJSX {
     interface RtkLogo {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
@@ -8567,12 +9271,14 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkMarkdownView {
         /**
           * max length of text to render as markdown
+          * @default 2000
          */
         "maxLength"?: number;
         /**
@@ -8589,26 +9295,32 @@ declare namespace LocalJSX {
     interface RtkMeeting {
         /**
           * Whether to apply the design system on the document root from config
+          * @default false
          */
         "applyDesignSystem"?: boolean;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Grid layout
+          * @default 'row'
          */
         "gridLayout"?: GridLayout1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Whether participant should leave when this component gets unmounted
+          * @default false
          */
         "leaveOnUnmount"?: boolean;
         /**
           * Whether to load config from preset
+          * @default false
          */
         "loadConfigFromPreset"?: boolean;
         /**
@@ -8617,6 +9329,7 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Fill type
+          * @default 'fixed'
          */
         "mode"?: MeetingMode;
         /**
@@ -8625,6 +9338,7 @@ declare namespace LocalJSX {
         "onRtkStatesUpdate"?: (event: RtkMeetingCustomEvent<States>) => void;
         /**
           * UI Kit Overrides
+          * @default {   disableEmojiPicker: false,   disablePrivateChat: false, }
          */
         "overrides"?: Overrides;
         /**
@@ -8637,6 +9351,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8646,6 +9361,7 @@ declare namespace LocalJSX {
     interface RtkMeetingTitle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8654,6 +9370,7 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8663,14 +9380,17 @@ declare namespace LocalJSX {
     interface RtkMenu {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Offset in px
+          * @default 10
          */
         "offset"?: number;
         /**
           * Placement of menu
+          * @default 'bottom-end'
          */
         "placement"?: Placement;
         /**
@@ -8679,6 +9399,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8688,10 +9409,12 @@ declare namespace LocalJSX {
     interface RtkMenuItem {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Variant
+          * @default 'secondary'
          */
         "menuVariant"?: 'primary' | 'secondary';
         /**
@@ -8700,6 +9423,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8709,14 +9433,17 @@ declare namespace LocalJSX {
     interface RtkMenuList {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Variant
+          * @default 'secondary'
          */
         "menuVariant"?: 'primary' | 'secondary';
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8726,10 +9453,12 @@ declare namespace LocalJSX {
     interface RtkMessageListView {
         /**
           * Estimated height of an item
+          * @default 100
          */
         "estimateItemSize"?: number;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8746,12 +9475,14 @@ declare namespace LocalJSX {
         "renderer": (message: Message, index: number) => HTMLElement;
         /**
           * Maximum visible messages
+          * @default 20
          */
         "visibleItemsCount"?: number;
     }
     interface RtkMessageView {
         /**
           * List of actions to show in menu
+          * @default []
          */
         "actions"?: MessageAction[];
         /**
@@ -8764,18 +9495,22 @@ declare namespace LocalJSX {
         "avatarUrl"?: string;
         /**
           * Hides author display label
+          * @default false
          */
         "hideAuthorName"?: boolean;
         /**
           * Hides avatar
+          * @default false
          */
         "hideAvatar"?: boolean;
         /**
           * Hides metadata (time)
+          * @default false
          */
         "hideMetadata"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8784,6 +9519,7 @@ declare namespace LocalJSX {
         "isEdited"?: boolean;
         /**
           * Is the message sent by the current user
+          * @default false
          */
         "isSelf"?: boolean;
         /**
@@ -8796,6 +9532,7 @@ declare namespace LocalJSX {
         "onAction"?: (event: RtkMessageViewCustomEvent<string>) => void;
         /**
           * Is message pinned
+          * @default false
          */
         "pinned"?: boolean;
         /**
@@ -8804,10 +9541,12 @@ declare namespace LocalJSX {
         "time"?: Date;
         /**
           * Appearance
+          * @default 'bubble'
          */
         "variant"?: 'plain' | 'bubble';
         /**
           * Render
+          * @default 'outgoing'
          */
         "viewType"?: 'incoming' | 'outgoing';
     }
@@ -8817,6 +9556,7 @@ declare namespace LocalJSX {
     interface RtkMicToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8833,10 +9573,12 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -8854,6 +9596,7 @@ declare namespace LocalJSX {
     interface RtkMicrophoneSelector {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8866,10 +9609,12 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * variant
+          * @default 'full'
          */
         "variant"?: 'full' | 'inline';
     }
@@ -8879,26 +9624,32 @@ declare namespace LocalJSX {
     interface RtkMixedGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
+          * @default '16:9'
          */
         "aspectRatio"?: string;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Gap between participant tiles
+          * @default 8
          */
         "gap"?: number;
         /**
           * Grid size
+          * @default {   spotlight: 'sm',   mixed: 'sm', }
          */
         "gridSize"?: GridSize1;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Grid Layout
+          * @default 'row'
          */
         "layout"?: GridLayout1;
         /**
@@ -8907,18 +9658,22 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Participants
+          * @default []
          */
         "participants"?: Peer[];
         /**
           * Pinned Participants
+          * @default []
          */
         "pinnedParticipants"?: Peer[];
         /**
           * Active Plugins
+          * @default []
          */
         "plugins"?: RTKPlugin[];
         /**
           * Screenshare Participants
+          * @default []
          */
         "screenShareParticipants"?: Peer[];
         /**
@@ -8931,6 +9686,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -8944,6 +9700,7 @@ declare namespace LocalJSX {
     interface RtkMoreToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -8960,12 +9717,14 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkMuteAllButton {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -8982,16 +9741,19 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
     interface RtkMuteAllConfirmation {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9008,6 +9770,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9017,10 +9780,12 @@ declare namespace LocalJSX {
     interface RtkNameTag {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Whether it is used in a screen share view
+          * @default false
          */
         "isScreenShare"?: boolean;
         /**
@@ -9037,20 +9802,24 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Name tag variant
+          * @default 'default'
          */
         "variant"?: RtkNameTagVariant;
     }
     interface RtkNetworkIndicator {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
           * Is for screenshare
+          * @default false
          */
         "isScreenShare"?: boolean;
         /**
@@ -9063,6 +9832,7 @@ declare namespace LocalJSX {
         "participant"?: Peer;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -9074,6 +9844,7 @@ declare namespace LocalJSX {
     interface RtkNotification {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9094,6 +9865,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9105,10 +9877,12 @@ declare namespace LocalJSX {
     interface RtkNotifications {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9125,6 +9899,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9134,6 +9909,7 @@ declare namespace LocalJSX {
     interface RtkOverlayModal {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9150,6 +9926,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9164,6 +9941,7 @@ declare namespace LocalJSX {
         "createNodes"?: (data: unknown[]) => VNode[];
         /**
           * label to show when empty
+          * @default null
          */
         "emptyListLabel"?: string;
         /**
@@ -9172,6 +9950,7 @@ declare namespace LocalJSX {
         "fetchData"?: (timestamp: number, size: number, reversed: boolean) => Promise<unknown[]>;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9184,6 +9963,7 @@ declare namespace LocalJSX {
         "pagesAllowed"?: number;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9195,10 +9975,12 @@ declare namespace LocalJSX {
     interface RtkParticipant {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9222,10 +10004,12 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Show participant summary
+          * @default 'sidebar'
          */
         "view"?: ParticipantViewMode;
     }
@@ -9235,6 +10019,7 @@ declare namespace LocalJSX {
     interface RtkParticipantCount {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9247,24 +10032,29 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkParticipantSetup {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Whether tile is used for preview
+          * @default false
          */
         "isPreview"?: boolean;
         /**
           * Position of name tag
+          * @default 'bottom-left'
          */
         "nameTagPosition"?: | 'bottom-left'
     | 'bottom-right'
@@ -9286,10 +10076,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant"?: 'solid' | 'gradient';
     }
@@ -9300,14 +10092,17 @@ declare namespace LocalJSX {
     interface RtkParticipantTile {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Whether tile is used for preview
+          * @default false
          */
         "isPreview"?: boolean;
         /**
@@ -9316,6 +10111,7 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Position of name tag
+          * @default 'bottom-left'
          */
         "nameTagPosition"?: | 'bottom-left'
     | 'bottom-right'
@@ -9345,10 +10141,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant"?: 'solid' | 'gradient';
     }
@@ -9359,14 +10157,17 @@ declare namespace LocalJSX {
     interface RtkParticipants {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Default section
+          * @default 'stage-list'
          */
         "defaultParticipantsTabId"?: ParticipantsTabId;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9387,6 +10188,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9396,6 +10198,7 @@ declare namespace LocalJSX {
     interface RtkParticipantsAudio {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9408,10 +10211,12 @@ declare namespace LocalJSX {
         "onDialogClose"?: (event: RtkParticipantsAudioCustomEvent<void>) => void;
         /**
           * Pass existing audio element
+          * @default undefined
          */
         "preloadedAudioElem"?: HTMLAudioElement;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9422,14 +10227,17 @@ declare namespace LocalJSX {
     interface RtkParticipantsStageList {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Hide Stage Participants Count Header
+          * @default false
          */
         "hideHeader"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9438,6 +10246,7 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Search
+          * @default ''
          */
         "search"?: string;
         /**
@@ -9450,10 +10259,12 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * View mode for participants list
+          * @default 'sidebar'
          */
         "view"?: ParticipantsViewMode;
     }
@@ -9465,10 +10276,12 @@ declare namespace LocalJSX {
     interface RtkParticipantsStageQueue {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -9481,10 +10294,12 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
         /**
           * View mode for participants list
+          * @default 'sidebar'
          */
         "view"?: ParticipantsViewMode;
     }
@@ -9498,6 +10313,7 @@ declare namespace LocalJSX {
     interface RtkParticipantsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9518,24 +10334,29 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
     interface RtkParticipantsViewerList {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Hide Viewer Count Header
+          * @default false
          */
         "hideHeader"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -9544,6 +10365,7 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Search
+          * @default ''
          */
         "search"?: string;
         /**
@@ -9552,20 +10374,24 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
         /**
           * View mode for participants list
+          * @default 'sidebar'
          */
         "view"?: ParticipantsViewMode;
     }
     interface RtkParticipantsWaitingList {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -9578,10 +10404,12 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
         /**
           * View mode for participants list
+          * @default 'sidebar'
          */
         "view"?: ParticipantsViewMode;
     }
@@ -9592,6 +10420,7 @@ declare namespace LocalJSX {
     interface RtkPermissionsMessage {
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9608,12 +10437,14 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkPinnedMessageSelector {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9627,6 +10458,7 @@ declare namespace LocalJSX {
         "onRtkPinnedMessageSelect"?: (event: RtkPinnedMessageSelectorCustomEvent<Message>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9638,10 +10470,12 @@ declare namespace LocalJSX {
     interface RtkPipToggle {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -9662,10 +10496,12 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -9679,6 +10515,7 @@ declare namespace LocalJSX {
     interface RtkPluginMain {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9691,6 +10528,7 @@ declare namespace LocalJSX {
         "plugin": RTKPlugin;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9701,10 +10539,12 @@ declare namespace LocalJSX {
     interface RtkPlugins {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9721,6 +10561,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9734,6 +10575,7 @@ declare namespace LocalJSX {
     interface RtkPluginsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9754,10 +10596,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -9768,6 +10612,7 @@ declare namespace LocalJSX {
     interface RtkPoll {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9791,6 +10636,7 @@ declare namespace LocalJSX {
         "self"?: string;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9800,6 +10646,7 @@ declare namespace LocalJSX {
     interface RtkPollForm {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9808,6 +10655,7 @@ declare namespace LocalJSX {
         "onRtkCreatePoll"?: (event: RtkPollFormCustomEvent<PollObject>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9818,10 +10666,12 @@ declare namespace LocalJSX {
     interface RtkPolls {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9834,6 +10684,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9848,6 +10699,7 @@ declare namespace LocalJSX {
     interface RtkPollsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9868,10 +10720,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -9882,6 +10736,7 @@ declare namespace LocalJSX {
     interface RtkRecordingIndicator {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9894,6 +10749,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -9906,10 +10762,12 @@ declare namespace LocalJSX {
     interface RtkRecordingToggle {
         /**
           * Disable the button
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9929,10 +10787,12 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -9942,6 +10802,7 @@ declare namespace LocalJSX {
     interface RtkScreenShareToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9969,10 +10830,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -9984,10 +10847,12 @@ declare namespace LocalJSX {
     interface RtkScreenshareView {
         /**
           * Hide full screen button
+          * @default false
          */
         "hideFullScreenButton"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -9996,6 +10861,7 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Position of name tag
+          * @default 'bottom-left'
          */
         "nameTagPosition"?: | 'bottom-left'
     | 'bottom-right'
@@ -10024,10 +10890,12 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'solid'
          */
         "variant"?: 'solid' | 'gradient';
     }
@@ -10038,6 +10906,7 @@ declare namespace LocalJSX {
     interface RtkSettings {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10058,6 +10927,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -10075,6 +10945,7 @@ declare namespace LocalJSX {
     interface RtkSettingsAudio {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10095,6 +10966,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -10108,6 +10980,7 @@ declare namespace LocalJSX {
     interface RtkSettingsToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10124,10 +10997,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -10145,6 +11020,7 @@ declare namespace LocalJSX {
     interface RtkSettingsVideo {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10165,6 +11041,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -10175,10 +11052,12 @@ declare namespace LocalJSX {
     interface RtkSetupScreen {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10199,6 +11078,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -10209,18 +11089,22 @@ declare namespace LocalJSX {
     interface RtkSidebar {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Default section
+          * @default 'chat'
          */
         "defaultSection"?: RtkSidebarSection;
         /**
           * Enabled sections in sidebar
+          * @default []
          */
         "enabledSections"?: RtkSidebarTab[];
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10241,10 +11125,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * View type
+          * @default 'sidebar'
          */
         "view"?: RtkSidebarView;
     }
@@ -10260,18 +11146,22 @@ declare namespace LocalJSX {
         "currentTab"?: string;
         /**
           * Option to focus close button when opened
+          * @default true
          */
         "focusCloseButton"?: boolean;
         /**
           * Hide Close Action
+          * @default false
          */
         "hideCloseAction"?: boolean;
         /**
           * Hide Main Header
+          * @default false
          */
         "hideHeader"?: boolean;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: { people: string; people_checked: string; chat: string; poll: string; participants: string; rocket: string; call_end: string; share: string; mic_on: string; mic_off: string; video_on: string; video_off: string; share_screen_start: string; share_screen_stop: string; share_screen_person: string; clock: string; dismiss: string; send: string; search: string; more_vertical: string; chevron_down: string; chevron_up: string; chevron_left: string; chevron_right: string; settings: string; wifi: string; speaker: string; speaker_off: string; download: string; full_screen_maximize: string; full_screen_minimize: string; copy: string; attach: string; image: string; emoji_multiple: string; image_off: string; disconnected: string; wand: string; recording: string; subtract: string; stop_recording: string; warning: string; pin: string; pin_off: string; spinner: string; breakout_rooms: string; add: string; shuffle: string; edit: string; delete: string; back: string; save: string; web: string; checkmark: string; spotlight: string; join_stage: string; leave_stage: string; pip_off: string; pip_on: string; signal_1: string; signal_2: string; signal_3: string; signal_4: string; signal_5: string; start_livestream: string; stop_livestream: string; viewers: string; debug: string; info: string; devices: string; horizontal_dots: string; ai_sparkle: string; meeting_ai: string; captionsOn: string; captionsOff: string; play: string; pause: string; fastForward: string; minimize: string; maximize: string; };
         /**
@@ -10284,14 +11174,17 @@ declare namespace LocalJSX {
         "onTabChange"?: (event: RtkSidebarUiCustomEvent<string>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
         /**
           * Tabs
+          * @default []
          */
         "tabs"?: RtkSidebarTab1[];
         /**
           * View
+          * @default 'sidebar'
          */
         "view"?: RtkSidebarView1;
     }
@@ -10301,18 +11194,22 @@ declare namespace LocalJSX {
     interface RtkSimpleGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
+          * @default '16:9'
          */
         "aspectRatio"?: string;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Gap between participant tiles
+          * @default 8
          */
         "gap"?: number;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10321,6 +11218,7 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Participants
+          * @default []
          */
         "participants"?: Peer[];
         /**
@@ -10333,6 +11231,7 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -10350,6 +11249,7 @@ declare namespace LocalJSX {
     interface RtkSpeakerSelector {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10366,10 +11266,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * variant
+          * @default 'full'
          */
         "variant"?: 'full' | 'inline';
     }
@@ -10379,10 +11281,12 @@ declare namespace LocalJSX {
     interface RtkSpinner {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Size
+          * @default 'md'
          */
         "size"?: Size1;
     }
@@ -10395,26 +11299,32 @@ declare namespace LocalJSX {
     interface RtkSpotlightGrid {
         /**
           * Aspect Ratio of participant tile  Format: `width:height`
+          * @default '16:9'
          */
         "aspectRatio"?: string;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Gap between participant tiles
+          * @default 8
          */
         "gap"?: number;
         /**
           * Grid size
+          * @default {   spotlight: 'sm',   mixed: 'sm', }
          */
         "gridSize"?: GridSize1;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Grid Layout
+          * @default 'row'
          */
         "layout"?: GridLayout1;
         /**
@@ -10423,10 +11333,12 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Participants
+          * @default []
          */
         "participants"?: Peer[];
         /**
           * Pinned Participants
+          * @default []
          */
         "pinnedParticipants"?: Peer[];
         /**
@@ -10439,12 +11351,14 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkSpotlightIndicator {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10457,6 +11371,7 @@ declare namespace LocalJSX {
         "size"?: Size1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -10467,6 +11382,7 @@ declare namespace LocalJSX {
     interface RtkStage {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10475,12 +11391,14 @@ declare namespace LocalJSX {
         "onRtkStateUpdate"?: (event: RtkStageCustomEvent<States>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkStageToggle {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
@@ -10501,10 +11419,12 @@ declare namespace LocalJSX {
         "states"?: States1;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
         /**
           * Variant
+          * @default 'button'
          */
         "variant"?: ControlBarVariant;
     }
@@ -10514,14 +11434,17 @@ declare namespace LocalJSX {
     interface RtkSwitch {
         /**
           * Whether the switch is enabled/checked
+          * @default false
          */
         "checked"?: boolean;
         /**
           * Whether switch is readonly
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10530,10 +11453,12 @@ declare namespace LocalJSX {
         "onRtkChange"?: (event: RtkSwitchCustomEvent<boolean>) => void;
         /**
           * Whether switch is readonly
+          * @default false
          */
         "readonly"?: boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -10544,14 +11469,17 @@ declare namespace LocalJSX {
         "activeTab"?: Tab;
         /**
           * UI Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon Pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Grid Layout
+          * @default 'row'
          */
         "layout"?: GridLayout1;
         /**
@@ -10572,10 +11500,12 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Tabs
+          * @default []
          */
         "tabs"?: Tab[];
     }
@@ -10585,14 +11515,17 @@ declare namespace LocalJSX {
     interface RtkTextComposerView {
         /**
           * Disable the text input (default = false)
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
           * Keydown event handler function
+          * @default () => {}
          */
         "keyDownHandler"?: (e: KeyboardEvent) => void;
         /**
@@ -10609,10 +11542,12 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         /**
           * Boolean to indicate if rate limit is breached
+          * @default false
          */
         "rateLimitBreached"?: boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
         /**
@@ -10627,10 +11562,12 @@ declare namespace LocalJSX {
     interface RtkTextMessage {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
           * Whether the message is continued by same user
+          * @default false
          */
         "isContinued"?: boolean;
         /**
@@ -10639,14 +11576,17 @@ declare namespace LocalJSX {
         "message": TextMessage;
         /**
           * Date object of now, to calculate distance between dates
+          * @default new Date()
          */
         "now"?: Date;
         /**
           * show message in bubble
+          * @default false
          */
         "showBubble"?: boolean;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
@@ -10656,6 +11596,7 @@ declare namespace LocalJSX {
     interface RtkTextMessageView {
         /**
           * Renders text as markdown (default = true)
+          * @default false
          */
         "isMarkdown"?: boolean;
         /**
@@ -10669,18 +11610,22 @@ declare namespace LocalJSX {
     interface RtkTooltip {
         /**
           * Delay before showing the tooltip
+          * @default 0
          */
         "delay"?: number;
         /**
           * Disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Tooltip kind
+          * @default 'inline'
          */
         "kind"?: TooltipKind;
         /**
           * Tooltip label
+          * @default ''
          */
         "label"?: string;
         /**
@@ -10689,10 +11634,12 @@ declare namespace LocalJSX {
         "onRtkOpenChange"?: (event: RtkTooltipCustomEvent<boolean>) => void;
         /**
           * Open
+          * @default false
          */
         "open"?: boolean;
         /**
           * Placement of menu
+          * @default 'top'
          */
         "placement"?: Placement;
         /**
@@ -10701,6 +11648,7 @@ declare namespace LocalJSX {
         "size"?: Size;
         /**
           * Tooltip variant
+          * @default 'secondary'
          */
         "variant"?: TooltipVariant;
     }
@@ -10719,6 +11667,7 @@ declare namespace LocalJSX {
   }>) => void;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
@@ -10734,6 +11683,7 @@ declare namespace LocalJSX {
     interface RtkTranscripts {
         /**
           * Config object
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
@@ -10746,24 +11696,29 @@ declare namespace LocalJSX {
         "states"?: States;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
     interface RtkUiProvider {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig1;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack1;
         /**
           * Meeting
+          * @default null
          */
         "meeting"?: Meeting | null;
         /**
           * Fill type
+          * @default 'fixed'
          */
         "mode"?: MeetingMode1;
         /**
@@ -10772,14 +11727,17 @@ declare namespace LocalJSX {
         "onRtkStatesUpdate"?: (event: RtkUiProviderCustomEvent<States1>) => void;
         /**
           * UI Kit Overrides
+          * @default {   disableEmojiPicker: false,   disablePrivateChat: false, }
          */
         "overrides"?: Overrides1;
         /**
           * Whether to show setup screen or not
+          * @default false
          */
         "showSetupScreen"?: boolean;
         /**
           * Language utility
+          * @default useLanguage()
          */
         "t"?: RtkI18n1;
     }
@@ -10789,6 +11747,7 @@ declare namespace LocalJSX {
     interface RtkViewerCount {
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10797,28 +11756,34 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
         /**
           * Viewer count variant
+          * @default 'primary'
          */
         "variant"?: ViewerCountVariant;
     }
     interface RtkVirtualizedParticipantList {
         /**
           * Buffer items to render before and after the visible area
+          * @default 5
          */
         "bufferedItemsCount"?: number;
         /**
           * Element to render if list is empty
+          * @default null
          */
         "emptyListElement"?: HTMLElement;
         /**
           * Height of each item in pixels (assumed fixed)
+          * @default 55
          */
         "itemHeight"?: number;
         /**
           * Items to be virtualized
+          * @default []
          */
         "items"?: Peer1[];
         /**
@@ -10829,10 +11794,12 @@ declare namespace LocalJSX {
     interface RtkWaitingScreen {
         /**
           * Config
+          * @default createDefaultConfig()
          */
         "config"?: UIConfig;
         /**
           * Icon pack
+          * @default defaultIconPack
          */
         "iconPack"?: IconPack;
         /**
@@ -10841,145 +11808,675 @@ declare namespace LocalJSX {
         "meeting"?: Meeting;
         /**
           * Language
+          * @default useLanguage()
          */
         "t"?: RtkI18n;
     }
+
+    interface RtkAiAttributes {
+        "size": Size;
+        "view": AIView;
+    }
+    interface RtkAiToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkAudioGridAttributes {
+        "size": Size;
+        "hideSelf": boolean;
+    }
+    interface RtkAudioTileAttributes {
+        "size": Size;
+    }
+    interface RtkAudioVisualizerAttributes {
+        "variant": AudioVisualizerVariant;
+        "size": Size;
+        "hideMuted": boolean;
+        "isScreenShare": boolean;
+    }
+    interface RtkAvatarAttributes {
+        "variant": AvatarVariant;
+        "size": Size;
+    }
+    interface RtkBreakoutRoomManagerAttributes {
+        "assigningParticipants": boolean;
+        "mode": 'edit' | 'create';
+        "allowDelete": boolean;
+        "isDragMode": boolean;
+        "defaultExpanded": boolean;
+    }
+    interface RtkBreakoutRoomsToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkButtonAttributes {
+        "size": Size;
+        "variant": ButtonVariant;
+        "kind": ButtonKind;
+        "reverse": boolean;
+        "disabled": boolean;
+        "type": HTMLButtonElement['type'];
+    }
+    interface RtkCameraSelectorAttributes {
+        "size": Size;
+        "variant": 'full' | 'inline';
+    }
+    interface RtkCameraToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkCaptionToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkChatAttributes {
+        "size": Size;
+    }
+    interface RtkChatComposerUiAttributes {
+        "canSendTextMessage": boolean;
+        "canSendFiles": boolean;
+        "size": Size;
+        "disableEmojiPicker": boolean;
+    }
+    interface RtkChatComposerViewAttributes {
+        "canSendTextMessage": boolean;
+        "isSending": boolean;
+        "canSendFiles": boolean;
+        "message": string;
+        "quotedMessage": string;
+        "storageKey": string;
+        "inputTextPlaceholder": string;
+        "isEditing": boolean;
+        "maxLength": number;
+        "disableEmojiPicker": boolean;
+    }
+    interface RtkChatMessageAttributes {
+        "isContinued": boolean;
+        "isUnread": boolean;
+        "size": Size;
+        "isSelf": boolean;
+        "canEdit": boolean;
+        "canDelete": boolean;
+        "canReply": boolean;
+        "canPin": boolean;
+        "disableControls": boolean;
+        "alignRight": boolean;
+        "senderDisplayPicture": string;
+        "hideAvatar": boolean;
+        "leftAlign": boolean;
+    }
+    interface RtkChatMessagesUiAttributes {
+        "selectedGroup": string;
+        "selfUserId": string;
+        "canPinMessages": boolean;
+        "size": Size;
+    }
+    interface RtkChatMessagesUiPaginatedAttributes {
+        "size": Size;
+    }
+    interface RtkChatSearchResultsAttributes {
+        "query": string;
+        "channelId": string;
+    }
+    interface RtkChatSelectorAttributes {
+        "size": Size;
+    }
+    interface RtkChatSelectorUiAttributes {
+        "selfUserId": string;
+        "selectedGroupId": string;
+    }
+    interface RtkChatToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkClockAttributes {
+        "size": Size;
+    }
+    interface RtkControlbarAttributes {
+        "variant": 'solid' | 'boxed';
+        "disableRender": boolean;
+        "size": Size;
+    }
+    interface RtkControlbarButtonAttributes {
+        "variant": ControlBarVariant;
+        "showWarning": boolean;
+        "size": Size;
+        "label": string;
+        "icon": string;
+        "isLoading": boolean;
+        "disabled": boolean;
+        "brandIcon": boolean;
+    }
+    interface RtkCounterAttributes {
+        "size": Size;
+        "value": number;
+        "minValue": number;
+    }
+    interface RtkDebuggerAttributes {
+        "size": Size;
+    }
+    interface RtkDebuggerAudioAttributes {
+        "size": Size;
+    }
+    interface RtkDebuggerScreenshareAttributes {
+        "size": Size;
+    }
+    interface RtkDebuggerSystemAttributes {
+        "size": Size;
+    }
+    interface RtkDebuggerToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkDebuggerVideoAttributes {
+        "size": Size;
+    }
+    interface RtkDialogAttributes {
+        "hideCloseButton": boolean;
+        "disableEscapeKey": boolean;
+        "size": Size;
+        "open": boolean;
+    }
+    interface RtkDialogManagerAttributes {
+        "size": Size;
+    }
+    interface RtkEmojiPickerAttributes {
+        "focusWhenOpened": boolean;
+    }
+    interface RtkEmojiPickerButtonAttributes {
+        "isActive": boolean;
+    }
+    interface RtkEndedScreenAttributes {
+        "size": Size;
+    }
+    interface RtkFileMessageAttributes {
+        "isContinued": boolean;
+        "showBubble": boolean;
+    }
+    interface RtkFileMessageViewAttributes {
+        "name": string;
+        "size": number;
+        "url": string;
+    }
+    interface RtkFilePickerButtonAttributes {
+        "filter": string;
+        "label": string;
+        "icon": keyof IconPack;
+    }
+    interface RtkFullscreenToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkGridAttributes {
+        "layout": GridLayout;
+        "aspectRatio": string;
+        "gap": number;
+        "size": Size;
+        "overrides": string;
+    }
+    interface RtkGridPaginationAttributes {
+        "size": Size;
+        "variant": GridPaginationVariants;
+    }
+    interface RtkHeaderAttributes {
+        "variant": 'solid' | 'boxed';
+        "disableRender": boolean;
+        "size": Size;
+    }
+    interface RtkIconAttributes {
+        "icon": string;
+        "variant": IconVariant;
+        "size": Size;
+    }
+    interface RtkImageMessageAttributes {
+        "isContinued": boolean;
+        "showBubble": boolean;
+    }
+    interface RtkImageMessageViewAttributes {
+        "url": string;
+    }
+    interface RtkImageViewerAttributes {
+        "size": Size;
+    }
+    interface RtkJoinStageAttributes {
+        "size": Size;
+    }
+    interface RtkLeaveButtonAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkLivestreamIndicatorAttributes {
+        "size": Size;
+    }
+    interface RtkLivestreamPlayerAttributes {
+        "size": Size;
+    }
+    interface RtkLivestreamToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkLogoAttributes {
+        "logoUrl": string;
+    }
+    interface RtkMarkdownViewAttributes {
+        "text": string;
+        "maxLength": number;
+    }
+    interface RtkMeetingAttributes {
+        "loadConfigFromPreset": boolean;
+        "applyDesignSystem": boolean;
+        "mode": MeetingMode;
+        "leaveOnUnmount": boolean;
+        "showSetupScreen": boolean;
+        "size": Size;
+        "gridLayout": GridLayout;
+    }
+    interface RtkMenuAttributes {
+        "size": Size;
+        "placement": Placement;
+        "offset": number;
+    }
+    interface RtkMenuItemAttributes {
+        "size": Size;
+        "menuVariant": 'primary' | 'secondary';
+    }
+    interface RtkMenuListAttributes {
+        "menuVariant": 'primary' | 'secondary';
+    }
+    interface RtkMessageListViewAttributes {
+        "visibleItemsCount": number;
+        "estimateItemSize": number;
+    }
+    interface RtkMessageViewAttributes {
+        "messageType": Message['type'];
+        "isEdited": boolean;
+        "variant": 'plain' | 'bubble';
+        "pinned": boolean;
+        "viewType": 'incoming' | 'outgoing';
+        "avatarUrl": string;
+        "hideAvatar": boolean;
+        "authorName": string;
+        "isSelf": boolean;
+        "hideAuthorName": boolean;
+        "hideMetadata": boolean;
+    }
+    interface RtkMicToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkMicrophoneSelectorAttributes {
+        "size": Size;
+        "variant": 'full' | 'inline';
+    }
+    interface RtkMixedGridAttributes {
+        "layout": GridLayout;
+        "aspectRatio": string;
+        "gap": number;
+        "size": Size;
+    }
+    interface RtkMoreToggleAttributes {
+        "size": Size;
+    }
+    interface RtkMuteAllButtonAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkNameTagAttributes {
+        "size": Size;
+        "isScreenShare": boolean;
+        "variant": RtkNameTagVariant;
+    }
+    interface RtkNetworkIndicatorAttributes {
+        "isScreenShare": boolean;
+    }
+    interface RtkNotificationAttributes {
+        "paused": boolean;
+        "size": Size;
+    }
+    interface RtkNotificationsAttributes {
+        "size": Size;
+    }
+    interface RtkPaginatedListAttributes {
+        "pageSize": number;
+        "pagesAllowed": number;
+        "emptyListLabel": string;
+        "autoScroll": boolean;
+    }
+    interface RtkParticipantAttributes {
+        "view": ParticipantViewMode;
+    }
+    interface RtkParticipantCountAttributes {
+        "size": Size;
+    }
+    interface RtkParticipantSetupAttributes {
+        "nameTagPosition": | 'bottom-left'
+    | 'bottom-right'
+    | 'bottom-center'
+    | 'top-left'
+    | 'top-right'
+    | 'top-center';
+        "isPreview": boolean;
+        "variant": 'solid' | 'gradient';
+        "size": Size;
+    }
+    interface RtkParticipantTileAttributes {
+        "nameTagPosition": | 'bottom-left'
+    | 'bottom-right'
+    | 'bottom-center'
+    | 'top-left'
+    | 'top-right'
+    | 'top-center';
+        "isPreview": boolean;
+        "variant": 'solid' | 'gradient';
+        "size": Size;
+    }
+    interface RtkParticipantsAttributes {
+        "size": Size;
+        "defaultParticipantsTabId": ParticipantsTabId;
+    }
+    interface RtkParticipantsStageListAttributes {
+        "size": Size;
+        "hideHeader": boolean;
+        "view": ParticipantsViewMode;
+        "search": string;
+    }
+    interface RtkParticipantsStageQueueAttributes {
+        "size": Size;
+        "view": ParticipantsViewMode;
+    }
+    interface RtkParticipantsToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkParticipantsViewerListAttributes {
+        "size": Size;
+        "hideHeader": boolean;
+        "view": ParticipantsViewMode;
+        "search": string;
+    }
+    interface RtkParticipantsWaitingListAttributes {
+        "size": Size;
+        "view": ParticipantsViewMode;
+    }
+    interface RtkPipToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkPluginsAttributes {
+        "size": Size;
+    }
+    interface RtkPluginsToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkPollAttributes {
+        "self": string;
+    }
+    interface RtkPollsAttributes {
+        "size": Size;
+    }
+    interface RtkPollsToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkRecordingIndicatorAttributes {
+        "size": Size;
+    }
+    interface RtkRecordingToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+        "disabled": boolean;
+    }
+    interface RtkScreenShareToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkScreenshareViewAttributes {
+        "hideFullScreenButton": boolean;
+        "nameTagPosition": | 'bottom-left'
+    | 'bottom-right'
+    | 'bottom-center'
+    | 'top-left'
+    | 'top-right'
+    | 'top-center';
+        "variant": 'solid' | 'gradient';
+        "size": Size;
+    }
+    interface RtkSettingsAttributes {
+        "size": Size;
+    }
+    interface RtkSettingsAudioAttributes {
+        "size": Size;
+    }
+    interface RtkSettingsToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkSettingsVideoAttributes {
+        "size": Size;
+    }
+    interface RtkSetupScreenAttributes {
+        "size": Size;
+    }
+    interface RtkSidebarAttributes {
+        "defaultSection": RtkSidebarSection;
+        "size": Size;
+        "view": RtkSidebarView;
+    }
+    interface RtkSidebarUiAttributes {
+        "view": RtkSidebarView;
+        "hideHeader": boolean;
+        "hideCloseAction": boolean;
+        "currentTab": string;
+        "focusCloseButton": boolean;
+    }
+    interface RtkSimpleGridAttributes {
+        "aspectRatio": string;
+        "gap": number;
+        "size": Size;
+    }
+    interface RtkSpeakerSelectorAttributes {
+        "variant": 'full' | 'inline';
+        "size": Size;
+    }
+    interface RtkSpinnerAttributes {
+        "size": Size;
+    }
+    interface RtkSpotlightGridAttributes {
+        "layout": GridLayout;
+        "aspectRatio": string;
+        "gap": number;
+        "size": Size;
+    }
+    interface RtkSpotlightIndicatorAttributes {
+        "size": Size;
+    }
+    interface RtkStageToggleAttributes {
+        "variant": ControlBarVariant;
+        "size": Size;
+    }
+    interface RtkSwitchAttributes {
+        "checked": boolean;
+        "readonly": boolean;
+        "disabled": boolean;
+    }
+    interface RtkTabBarAttributes {
+        "size": Size;
+        "layout": GridLayout;
+    }
+    interface RtkTextComposerViewAttributes {
+        "disabled": boolean;
+        "placeholder": string;
+        "value": string;
+        "maxLength": number;
+        "rateLimitBreached": boolean;
+    }
+    interface RtkTextMessageAttributes {
+        "isContinued": boolean;
+        "showBubble": boolean;
+    }
+    interface RtkTextMessageViewAttributes {
+        "text": string;
+        "isMarkdown": boolean;
+    }
+    interface RtkTooltipAttributes {
+        "label": string;
+        "variant": TooltipVariant;
+        "disabled": boolean;
+        "open": boolean;
+        "kind": TooltipKind;
+        "size": Size;
+        "placement": Placement;
+        "delay": number;
+    }
+    interface RtkUiProviderAttributes {
+        "mode": MeetingMode;
+        "showSetupScreen": boolean;
+    }
+    interface RtkViewerCountAttributes {
+        "variant": ViewerCountVariant;
+    }
+    interface RtkVirtualizedParticipantListAttributes {
+        "itemHeight": number;
+        "bufferedItemsCount": number;
+    }
+
     interface IntrinsicElements {
-        "rtk-ai": RtkAi;
-        "rtk-ai-toggle": RtkAiToggle;
+        "rtk-ai": Omit<RtkAi, keyof RtkAiAttributes> & { [K in keyof RtkAi & keyof RtkAiAttributes]?: RtkAi[K] } & { [K in keyof RtkAi & keyof RtkAiAttributes as `attr:${K}`]?: RtkAiAttributes[K] } & { [K in keyof RtkAi & keyof RtkAiAttributes as `prop:${K}`]?: RtkAi[K] };
+        "rtk-ai-toggle": Omit<RtkAiToggle, keyof RtkAiToggleAttributes> & { [K in keyof RtkAiToggle & keyof RtkAiToggleAttributes]?: RtkAiToggle[K] } & { [K in keyof RtkAiToggle & keyof RtkAiToggleAttributes as `attr:${K}`]?: RtkAiToggleAttributes[K] } & { [K in keyof RtkAiToggle & keyof RtkAiToggleAttributes as `prop:${K}`]?: RtkAiToggle[K] };
         "rtk-ai-transcriptions": RtkAiTranscriptions;
-        "rtk-audio-grid": RtkAudioGrid;
-        "rtk-audio-tile": RtkAudioTile;
-        "rtk-audio-visualizer": RtkAudioVisualizer;
-        "rtk-avatar": RtkAvatar;
-        "rtk-breakout-room-manager": RtkBreakoutRoomManager;
+        "rtk-audio-grid": Omit<RtkAudioGrid, keyof RtkAudioGridAttributes> & { [K in keyof RtkAudioGrid & keyof RtkAudioGridAttributes]?: RtkAudioGrid[K] } & { [K in keyof RtkAudioGrid & keyof RtkAudioGridAttributes as `attr:${K}`]?: RtkAudioGridAttributes[K] } & { [K in keyof RtkAudioGrid & keyof RtkAudioGridAttributes as `prop:${K}`]?: RtkAudioGrid[K] };
+        "rtk-audio-tile": Omit<RtkAudioTile, keyof RtkAudioTileAttributes> & { [K in keyof RtkAudioTile & keyof RtkAudioTileAttributes]?: RtkAudioTile[K] } & { [K in keyof RtkAudioTile & keyof RtkAudioTileAttributes as `attr:${K}`]?: RtkAudioTileAttributes[K] } & { [K in keyof RtkAudioTile & keyof RtkAudioTileAttributes as `prop:${K}`]?: RtkAudioTile[K] };
+        "rtk-audio-visualizer": Omit<RtkAudioVisualizer, keyof RtkAudioVisualizerAttributes> & { [K in keyof RtkAudioVisualizer & keyof RtkAudioVisualizerAttributes]?: RtkAudioVisualizer[K] } & { [K in keyof RtkAudioVisualizer & keyof RtkAudioVisualizerAttributes as `attr:${K}`]?: RtkAudioVisualizerAttributes[K] } & { [K in keyof RtkAudioVisualizer & keyof RtkAudioVisualizerAttributes as `prop:${K}`]?: RtkAudioVisualizer[K] };
+        "rtk-avatar": Omit<RtkAvatar, keyof RtkAvatarAttributes> & { [K in keyof RtkAvatar & keyof RtkAvatarAttributes]?: RtkAvatar[K] } & { [K in keyof RtkAvatar & keyof RtkAvatarAttributes as `attr:${K}`]?: RtkAvatarAttributes[K] } & { [K in keyof RtkAvatar & keyof RtkAvatarAttributes as `prop:${K}`]?: RtkAvatar[K] };
+        "rtk-breakout-room-manager": Omit<RtkBreakoutRoomManager, keyof RtkBreakoutRoomManagerAttributes> & { [K in keyof RtkBreakoutRoomManager & keyof RtkBreakoutRoomManagerAttributes]?: RtkBreakoutRoomManager[K] } & { [K in keyof RtkBreakoutRoomManager & keyof RtkBreakoutRoomManagerAttributes as `attr:${K}`]?: RtkBreakoutRoomManagerAttributes[K] } & { [K in keyof RtkBreakoutRoomManager & keyof RtkBreakoutRoomManagerAttributes as `prop:${K}`]?: RtkBreakoutRoomManager[K] };
         "rtk-breakout-room-participants": RtkBreakoutRoomParticipants;
         "rtk-breakout-rooms-manager": RtkBreakoutRoomsManager;
-        "rtk-breakout-rooms-toggle": RtkBreakoutRoomsToggle;
+        "rtk-breakout-rooms-toggle": Omit<RtkBreakoutRoomsToggle, keyof RtkBreakoutRoomsToggleAttributes> & { [K in keyof RtkBreakoutRoomsToggle & keyof RtkBreakoutRoomsToggleAttributes]?: RtkBreakoutRoomsToggle[K] } & { [K in keyof RtkBreakoutRoomsToggle & keyof RtkBreakoutRoomsToggleAttributes as `attr:${K}`]?: RtkBreakoutRoomsToggleAttributes[K] } & { [K in keyof RtkBreakoutRoomsToggle & keyof RtkBreakoutRoomsToggleAttributes as `prop:${K}`]?: RtkBreakoutRoomsToggle[K] };
         "rtk-broadcast-message-modal": RtkBroadcastMessageModal;
-        "rtk-button": RtkButton;
-        "rtk-camera-selector": RtkCameraSelector;
-        "rtk-camera-toggle": RtkCameraToggle;
-        "rtk-caption-toggle": RtkCaptionToggle;
-        "rtk-chat": RtkChat;
-        "rtk-chat-composer-ui": RtkChatComposerUi;
-        "rtk-chat-composer-view": RtkChatComposerView;
+        "rtk-button": Omit<RtkButton, keyof RtkButtonAttributes> & { [K in keyof RtkButton & keyof RtkButtonAttributes]?: RtkButton[K] } & { [K in keyof RtkButton & keyof RtkButtonAttributes as `attr:${K}`]?: RtkButtonAttributes[K] } & { [K in keyof RtkButton & keyof RtkButtonAttributes as `prop:${K}`]?: RtkButton[K] };
+        "rtk-camera-selector": Omit<RtkCameraSelector, keyof RtkCameraSelectorAttributes> & { [K in keyof RtkCameraSelector & keyof RtkCameraSelectorAttributes]?: RtkCameraSelector[K] } & { [K in keyof RtkCameraSelector & keyof RtkCameraSelectorAttributes as `attr:${K}`]?: RtkCameraSelectorAttributes[K] } & { [K in keyof RtkCameraSelector & keyof RtkCameraSelectorAttributes as `prop:${K}`]?: RtkCameraSelector[K] };
+        "rtk-camera-toggle": Omit<RtkCameraToggle, keyof RtkCameraToggleAttributes> & { [K in keyof RtkCameraToggle & keyof RtkCameraToggleAttributes]?: RtkCameraToggle[K] } & { [K in keyof RtkCameraToggle & keyof RtkCameraToggleAttributes as `attr:${K}`]?: RtkCameraToggleAttributes[K] } & { [K in keyof RtkCameraToggle & keyof RtkCameraToggleAttributes as `prop:${K}`]?: RtkCameraToggle[K] };
+        "rtk-caption-toggle": Omit<RtkCaptionToggle, keyof RtkCaptionToggleAttributes> & { [K in keyof RtkCaptionToggle & keyof RtkCaptionToggleAttributes]?: RtkCaptionToggle[K] } & { [K in keyof RtkCaptionToggle & keyof RtkCaptionToggleAttributes as `attr:${K}`]?: RtkCaptionToggleAttributes[K] } & { [K in keyof RtkCaptionToggle & keyof RtkCaptionToggleAttributes as `prop:${K}`]?: RtkCaptionToggle[K] };
+        "rtk-chat": Omit<RtkChat, keyof RtkChatAttributes> & { [K in keyof RtkChat & keyof RtkChatAttributes]?: RtkChat[K] } & { [K in keyof RtkChat & keyof RtkChatAttributes as `attr:${K}`]?: RtkChatAttributes[K] } & { [K in keyof RtkChat & keyof RtkChatAttributes as `prop:${K}`]?: RtkChat[K] };
+        "rtk-chat-composer-ui": Omit<RtkChatComposerUi, keyof RtkChatComposerUiAttributes> & { [K in keyof RtkChatComposerUi & keyof RtkChatComposerUiAttributes]?: RtkChatComposerUi[K] } & { [K in keyof RtkChatComposerUi & keyof RtkChatComposerUiAttributes as `attr:${K}`]?: RtkChatComposerUiAttributes[K] } & { [K in keyof RtkChatComposerUi & keyof RtkChatComposerUiAttributes as `prop:${K}`]?: RtkChatComposerUi[K] };
+        "rtk-chat-composer-view": Omit<RtkChatComposerView, keyof RtkChatComposerViewAttributes> & { [K in keyof RtkChatComposerView & keyof RtkChatComposerViewAttributes]?: RtkChatComposerView[K] } & { [K in keyof RtkChatComposerView & keyof RtkChatComposerViewAttributes as `attr:${K}`]?: RtkChatComposerViewAttributes[K] } & { [K in keyof RtkChatComposerView & keyof RtkChatComposerViewAttributes as `prop:${K}`]?: RtkChatComposerView[K] };
         "rtk-chat-header": RtkChatHeader;
-        "rtk-chat-message": RtkChatMessage;
-        "rtk-chat-messages-ui": RtkChatMessagesUi;
-        "rtk-chat-messages-ui-paginated": RtkChatMessagesUiPaginated;
-        "rtk-chat-search-results": RtkChatSearchResults;
-        "rtk-chat-selector": RtkChatSelector;
-        "rtk-chat-selector-ui": RtkChatSelectorUi;
-        "rtk-chat-toggle": RtkChatToggle;
-        "rtk-clock": RtkClock;
+        "rtk-chat-message": Omit<RtkChatMessage, keyof RtkChatMessageAttributes> & { [K in keyof RtkChatMessage & keyof RtkChatMessageAttributes]?: RtkChatMessage[K] } & { [K in keyof RtkChatMessage & keyof RtkChatMessageAttributes as `attr:${K}`]?: RtkChatMessageAttributes[K] } & { [K in keyof RtkChatMessage & keyof RtkChatMessageAttributes as `prop:${K}`]?: RtkChatMessage[K] };
+        "rtk-chat-messages-ui": Omit<RtkChatMessagesUi, keyof RtkChatMessagesUiAttributes> & { [K in keyof RtkChatMessagesUi & keyof RtkChatMessagesUiAttributes]?: RtkChatMessagesUi[K] } & { [K in keyof RtkChatMessagesUi & keyof RtkChatMessagesUiAttributes as `attr:${K}`]?: RtkChatMessagesUiAttributes[K] } & { [K in keyof RtkChatMessagesUi & keyof RtkChatMessagesUiAttributes as `prop:${K}`]?: RtkChatMessagesUi[K] };
+        "rtk-chat-messages-ui-paginated": Omit<RtkChatMessagesUiPaginated, keyof RtkChatMessagesUiPaginatedAttributes> & { [K in keyof RtkChatMessagesUiPaginated & keyof RtkChatMessagesUiPaginatedAttributes]?: RtkChatMessagesUiPaginated[K] } & { [K in keyof RtkChatMessagesUiPaginated & keyof RtkChatMessagesUiPaginatedAttributes as `attr:${K}`]?: RtkChatMessagesUiPaginatedAttributes[K] } & { [K in keyof RtkChatMessagesUiPaginated & keyof RtkChatMessagesUiPaginatedAttributes as `prop:${K}`]?: RtkChatMessagesUiPaginated[K] };
+        "rtk-chat-search-results": Omit<RtkChatSearchResults, keyof RtkChatSearchResultsAttributes> & { [K in keyof RtkChatSearchResults & keyof RtkChatSearchResultsAttributes]?: RtkChatSearchResults[K] } & { [K in keyof RtkChatSearchResults & keyof RtkChatSearchResultsAttributes as `attr:${K}`]?: RtkChatSearchResultsAttributes[K] } & { [K in keyof RtkChatSearchResults & keyof RtkChatSearchResultsAttributes as `prop:${K}`]?: RtkChatSearchResults[K] };
+        "rtk-chat-selector": Omit<RtkChatSelector, keyof RtkChatSelectorAttributes> & { [K in keyof RtkChatSelector & keyof RtkChatSelectorAttributes]?: RtkChatSelector[K] } & { [K in keyof RtkChatSelector & keyof RtkChatSelectorAttributes as `attr:${K}`]?: RtkChatSelectorAttributes[K] } & { [K in keyof RtkChatSelector & keyof RtkChatSelectorAttributes as `prop:${K}`]?: RtkChatSelector[K] };
+        "rtk-chat-selector-ui": Omit<RtkChatSelectorUi, keyof RtkChatSelectorUiAttributes> & { [K in keyof RtkChatSelectorUi & keyof RtkChatSelectorUiAttributes]?: RtkChatSelectorUi[K] } & { [K in keyof RtkChatSelectorUi & keyof RtkChatSelectorUiAttributes as `attr:${K}`]?: RtkChatSelectorUiAttributes[K] } & { [K in keyof RtkChatSelectorUi & keyof RtkChatSelectorUiAttributes as `prop:${K}`]?: RtkChatSelectorUi[K] };
+        "rtk-chat-toggle": Omit<RtkChatToggle, keyof RtkChatToggleAttributes> & { [K in keyof RtkChatToggle & keyof RtkChatToggleAttributes]?: RtkChatToggle[K] } & { [K in keyof RtkChatToggle & keyof RtkChatToggleAttributes as `attr:${K}`]?: RtkChatToggleAttributes[K] } & { [K in keyof RtkChatToggle & keyof RtkChatToggleAttributes as `prop:${K}`]?: RtkChatToggle[K] };
+        "rtk-clock": Omit<RtkClock, keyof RtkClockAttributes> & { [K in keyof RtkClock & keyof RtkClockAttributes]?: RtkClock[K] } & { [K in keyof RtkClock & keyof RtkClockAttributes as `attr:${K}`]?: RtkClockAttributes[K] } & { [K in keyof RtkClock & keyof RtkClockAttributes as `prop:${K}`]?: RtkClock[K] };
         "rtk-confirmation-modal": RtkConfirmationModal;
-        "rtk-controlbar": RtkControlbar;
-        "rtk-controlbar-button": RtkControlbarButton;
-        "rtk-counter": RtkCounter;
-        "rtk-debugger": RtkDebugger;
-        "rtk-debugger-audio": RtkDebuggerAudio;
-        "rtk-debugger-screenshare": RtkDebuggerScreenshare;
-        "rtk-debugger-system": RtkDebuggerSystem;
-        "rtk-debugger-toggle": RtkDebuggerToggle;
-        "rtk-debugger-video": RtkDebuggerVideo;
-        "rtk-dialog": RtkDialog;
-        "rtk-dialog-manager": RtkDialogManager;
+        "rtk-controlbar": Omit<RtkControlbar, keyof RtkControlbarAttributes> & { [K in keyof RtkControlbar & keyof RtkControlbarAttributes]?: RtkControlbar[K] } & { [K in keyof RtkControlbar & keyof RtkControlbarAttributes as `attr:${K}`]?: RtkControlbarAttributes[K] } & { [K in keyof RtkControlbar & keyof RtkControlbarAttributes as `prop:${K}`]?: RtkControlbar[K] };
+        "rtk-controlbar-button": Omit<RtkControlbarButton, keyof RtkControlbarButtonAttributes> & { [K in keyof RtkControlbarButton & keyof RtkControlbarButtonAttributes]?: RtkControlbarButton[K] } & { [K in keyof RtkControlbarButton & keyof RtkControlbarButtonAttributes as `attr:${K}`]?: RtkControlbarButtonAttributes[K] } & { [K in keyof RtkControlbarButton & keyof RtkControlbarButtonAttributes as `prop:${K}`]?: RtkControlbarButton[K] };
+        "rtk-counter": Omit<RtkCounter, keyof RtkCounterAttributes> & { [K in keyof RtkCounter & keyof RtkCounterAttributes]?: RtkCounter[K] } & { [K in keyof RtkCounter & keyof RtkCounterAttributes as `attr:${K}`]?: RtkCounterAttributes[K] } & { [K in keyof RtkCounter & keyof RtkCounterAttributes as `prop:${K}`]?: RtkCounter[K] };
+        "rtk-debugger": Omit<RtkDebugger, keyof RtkDebuggerAttributes> & { [K in keyof RtkDebugger & keyof RtkDebuggerAttributes]?: RtkDebugger[K] } & { [K in keyof RtkDebugger & keyof RtkDebuggerAttributes as `attr:${K}`]?: RtkDebuggerAttributes[K] } & { [K in keyof RtkDebugger & keyof RtkDebuggerAttributes as `prop:${K}`]?: RtkDebugger[K] };
+        "rtk-debugger-audio": Omit<RtkDebuggerAudio, keyof RtkDebuggerAudioAttributes> & { [K in keyof RtkDebuggerAudio & keyof RtkDebuggerAudioAttributes]?: RtkDebuggerAudio[K] } & { [K in keyof RtkDebuggerAudio & keyof RtkDebuggerAudioAttributes as `attr:${K}`]?: RtkDebuggerAudioAttributes[K] } & { [K in keyof RtkDebuggerAudio & keyof RtkDebuggerAudioAttributes as `prop:${K}`]?: RtkDebuggerAudio[K] };
+        "rtk-debugger-screenshare": Omit<RtkDebuggerScreenshare, keyof RtkDebuggerScreenshareAttributes> & { [K in keyof RtkDebuggerScreenshare & keyof RtkDebuggerScreenshareAttributes]?: RtkDebuggerScreenshare[K] } & { [K in keyof RtkDebuggerScreenshare & keyof RtkDebuggerScreenshareAttributes as `attr:${K}`]?: RtkDebuggerScreenshareAttributes[K] } & { [K in keyof RtkDebuggerScreenshare & keyof RtkDebuggerScreenshareAttributes as `prop:${K}`]?: RtkDebuggerScreenshare[K] };
+        "rtk-debugger-system": Omit<RtkDebuggerSystem, keyof RtkDebuggerSystemAttributes> & { [K in keyof RtkDebuggerSystem & keyof RtkDebuggerSystemAttributes]?: RtkDebuggerSystem[K] } & { [K in keyof RtkDebuggerSystem & keyof RtkDebuggerSystemAttributes as `attr:${K}`]?: RtkDebuggerSystemAttributes[K] } & { [K in keyof RtkDebuggerSystem & keyof RtkDebuggerSystemAttributes as `prop:${K}`]?: RtkDebuggerSystem[K] };
+        "rtk-debugger-toggle": Omit<RtkDebuggerToggle, keyof RtkDebuggerToggleAttributes> & { [K in keyof RtkDebuggerToggle & keyof RtkDebuggerToggleAttributes]?: RtkDebuggerToggle[K] } & { [K in keyof RtkDebuggerToggle & keyof RtkDebuggerToggleAttributes as `attr:${K}`]?: RtkDebuggerToggleAttributes[K] } & { [K in keyof RtkDebuggerToggle & keyof RtkDebuggerToggleAttributes as `prop:${K}`]?: RtkDebuggerToggle[K] };
+        "rtk-debugger-video": Omit<RtkDebuggerVideo, keyof RtkDebuggerVideoAttributes> & { [K in keyof RtkDebuggerVideo & keyof RtkDebuggerVideoAttributes]?: RtkDebuggerVideo[K] } & { [K in keyof RtkDebuggerVideo & keyof RtkDebuggerVideoAttributes as `attr:${K}`]?: RtkDebuggerVideoAttributes[K] } & { [K in keyof RtkDebuggerVideo & keyof RtkDebuggerVideoAttributes as `prop:${K}`]?: RtkDebuggerVideo[K] };
+        "rtk-dialog": Omit<RtkDialog, keyof RtkDialogAttributes> & { [K in keyof RtkDialog & keyof RtkDialogAttributes]?: RtkDialog[K] } & { [K in keyof RtkDialog & keyof RtkDialogAttributes as `attr:${K}`]?: RtkDialogAttributes[K] } & { [K in keyof RtkDialog & keyof RtkDialogAttributes as `prop:${K}`]?: RtkDialog[K] };
+        "rtk-dialog-manager": Omit<RtkDialogManager, keyof RtkDialogManagerAttributes> & { [K in keyof RtkDialogManager & keyof RtkDialogManagerAttributes]?: RtkDialogManager[K] } & { [K in keyof RtkDialogManager & keyof RtkDialogManagerAttributes as `attr:${K}`]?: RtkDialogManagerAttributes[K] } & { [K in keyof RtkDialogManager & keyof RtkDialogManagerAttributes as `prop:${K}`]?: RtkDialogManager[K] };
         "rtk-draft-attachment-view": RtkDraftAttachmentView;
-        "rtk-emoji-picker": RtkEmojiPicker;
-        "rtk-emoji-picker-button": RtkEmojiPickerButton;
-        "rtk-ended-screen": RtkEndedScreen;
+        "rtk-emoji-picker": Omit<RtkEmojiPicker, keyof RtkEmojiPickerAttributes> & { [K in keyof RtkEmojiPicker & keyof RtkEmojiPickerAttributes]?: RtkEmojiPicker[K] } & { [K in keyof RtkEmojiPicker & keyof RtkEmojiPickerAttributes as `attr:${K}`]?: RtkEmojiPickerAttributes[K] } & { [K in keyof RtkEmojiPicker & keyof RtkEmojiPickerAttributes as `prop:${K}`]?: RtkEmojiPicker[K] };
+        "rtk-emoji-picker-button": Omit<RtkEmojiPickerButton, keyof RtkEmojiPickerButtonAttributes> & { [K in keyof RtkEmojiPickerButton & keyof RtkEmojiPickerButtonAttributes]?: RtkEmojiPickerButton[K] } & { [K in keyof RtkEmojiPickerButton & keyof RtkEmojiPickerButtonAttributes as `attr:${K}`]?: RtkEmojiPickerButtonAttributes[K] } & { [K in keyof RtkEmojiPickerButton & keyof RtkEmojiPickerButtonAttributes as `prop:${K}`]?: RtkEmojiPickerButton[K] };
+        "rtk-ended-screen": Omit<RtkEndedScreen, keyof RtkEndedScreenAttributes> & { [K in keyof RtkEndedScreen & keyof RtkEndedScreenAttributes]?: RtkEndedScreen[K] } & { [K in keyof RtkEndedScreen & keyof RtkEndedScreenAttributes as `attr:${K}`]?: RtkEndedScreenAttributes[K] } & { [K in keyof RtkEndedScreen & keyof RtkEndedScreenAttributes as `prop:${K}`]?: RtkEndedScreen[K] };
         "rtk-file-dropzone": RtkFileDropzone;
-        "rtk-file-message": RtkFileMessage;
-        "rtk-file-message-view": RtkFileMessageView;
-        "rtk-file-picker-button": RtkFilePickerButton;
-        "rtk-fullscreen-toggle": RtkFullscreenToggle;
-        "rtk-grid": RtkGrid;
-        "rtk-grid-pagination": RtkGridPagination;
-        "rtk-header": RtkHeader;
-        "rtk-icon": RtkIcon;
+        "rtk-file-message": Omit<RtkFileMessage, keyof RtkFileMessageAttributes> & { [K in keyof RtkFileMessage & keyof RtkFileMessageAttributes]?: RtkFileMessage[K] } & { [K in keyof RtkFileMessage & keyof RtkFileMessageAttributes as `attr:${K}`]?: RtkFileMessageAttributes[K] } & { [K in keyof RtkFileMessage & keyof RtkFileMessageAttributes as `prop:${K}`]?: RtkFileMessage[K] };
+        "rtk-file-message-view": Omit<RtkFileMessageView, keyof RtkFileMessageViewAttributes> & { [K in keyof RtkFileMessageView & keyof RtkFileMessageViewAttributes]?: RtkFileMessageView[K] } & { [K in keyof RtkFileMessageView & keyof RtkFileMessageViewAttributes as `attr:${K}`]?: RtkFileMessageViewAttributes[K] } & { [K in keyof RtkFileMessageView & keyof RtkFileMessageViewAttributes as `prop:${K}`]?: RtkFileMessageView[K] } & OneOf<"name", RtkFileMessageView["name"], RtkFileMessageViewAttributes["name"]> & OneOf<"size", RtkFileMessageView["size"], RtkFileMessageViewAttributes["size"]> & OneOf<"url", RtkFileMessageView["url"], RtkFileMessageViewAttributes["url"]>;
+        "rtk-file-picker-button": Omit<RtkFilePickerButton, keyof RtkFilePickerButtonAttributes> & { [K in keyof RtkFilePickerButton & keyof RtkFilePickerButtonAttributes]?: RtkFilePickerButton[K] } & { [K in keyof RtkFilePickerButton & keyof RtkFilePickerButtonAttributes as `attr:${K}`]?: RtkFilePickerButtonAttributes[K] } & { [K in keyof RtkFilePickerButton & keyof RtkFilePickerButtonAttributes as `prop:${K}`]?: RtkFilePickerButton[K] };
+        "rtk-fullscreen-toggle": Omit<RtkFullscreenToggle, keyof RtkFullscreenToggleAttributes> & { [K in keyof RtkFullscreenToggle & keyof RtkFullscreenToggleAttributes]?: RtkFullscreenToggle[K] } & { [K in keyof RtkFullscreenToggle & keyof RtkFullscreenToggleAttributes as `attr:${K}`]?: RtkFullscreenToggleAttributes[K] } & { [K in keyof RtkFullscreenToggle & keyof RtkFullscreenToggleAttributes as `prop:${K}`]?: RtkFullscreenToggle[K] };
+        "rtk-grid": Omit<RtkGrid, keyof RtkGridAttributes> & { [K in keyof RtkGrid & keyof RtkGridAttributes]?: RtkGrid[K] } & { [K in keyof RtkGrid & keyof RtkGridAttributes as `attr:${K}`]?: RtkGridAttributes[K] } & { [K in keyof RtkGrid & keyof RtkGridAttributes as `prop:${K}`]?: RtkGrid[K] };
+        "rtk-grid-pagination": Omit<RtkGridPagination, keyof RtkGridPaginationAttributes> & { [K in keyof RtkGridPagination & keyof RtkGridPaginationAttributes]?: RtkGridPagination[K] } & { [K in keyof RtkGridPagination & keyof RtkGridPaginationAttributes as `attr:${K}`]?: RtkGridPaginationAttributes[K] } & { [K in keyof RtkGridPagination & keyof RtkGridPaginationAttributes as `prop:${K}`]?: RtkGridPagination[K] };
+        "rtk-header": Omit<RtkHeader, keyof RtkHeaderAttributes> & { [K in keyof RtkHeader & keyof RtkHeaderAttributes]?: RtkHeader[K] } & { [K in keyof RtkHeader & keyof RtkHeaderAttributes as `attr:${K}`]?: RtkHeaderAttributes[K] } & { [K in keyof RtkHeader & keyof RtkHeaderAttributes as `prop:${K}`]?: RtkHeader[K] };
+        "rtk-icon": Omit<RtkIcon, keyof RtkIconAttributes> & { [K in keyof RtkIcon & keyof RtkIconAttributes]?: RtkIcon[K] } & { [K in keyof RtkIcon & keyof RtkIconAttributes as `attr:${K}`]?: RtkIconAttributes[K] } & { [K in keyof RtkIcon & keyof RtkIconAttributes as `prop:${K}`]?: RtkIcon[K] };
         "rtk-idle-screen": RtkIdleScreen;
-        "rtk-image-message": RtkImageMessage;
-        "rtk-image-message-view": RtkImageMessageView;
-        "rtk-image-viewer": RtkImageViewer;
+        "rtk-image-message": Omit<RtkImageMessage, keyof RtkImageMessageAttributes> & { [K in keyof RtkImageMessage & keyof RtkImageMessageAttributes]?: RtkImageMessage[K] } & { [K in keyof RtkImageMessage & keyof RtkImageMessageAttributes as `attr:${K}`]?: RtkImageMessageAttributes[K] } & { [K in keyof RtkImageMessage & keyof RtkImageMessageAttributes as `prop:${K}`]?: RtkImageMessage[K] };
+        "rtk-image-message-view": Omit<RtkImageMessageView, keyof RtkImageMessageViewAttributes> & { [K in keyof RtkImageMessageView & keyof RtkImageMessageViewAttributes]?: RtkImageMessageView[K] } & { [K in keyof RtkImageMessageView & keyof RtkImageMessageViewAttributes as `attr:${K}`]?: RtkImageMessageViewAttributes[K] } & { [K in keyof RtkImageMessageView & keyof RtkImageMessageViewAttributes as `prop:${K}`]?: RtkImageMessageView[K] } & OneOf<"url", RtkImageMessageView["url"], RtkImageMessageViewAttributes["url"]>;
+        "rtk-image-viewer": Omit<RtkImageViewer, keyof RtkImageViewerAttributes> & { [K in keyof RtkImageViewer & keyof RtkImageViewerAttributes]?: RtkImageViewer[K] } & { [K in keyof RtkImageViewer & keyof RtkImageViewerAttributes as `attr:${K}`]?: RtkImageViewerAttributes[K] } & { [K in keyof RtkImageViewer & keyof RtkImageViewerAttributes as `prop:${K}`]?: RtkImageViewer[K] };
         "rtk-information-tooltip": RtkInformationTooltip;
-        "rtk-join-stage": RtkJoinStage;
-        "rtk-leave-button": RtkLeaveButton;
+        "rtk-join-stage": Omit<RtkJoinStage, keyof RtkJoinStageAttributes> & { [K in keyof RtkJoinStage & keyof RtkJoinStageAttributes]?: RtkJoinStage[K] } & { [K in keyof RtkJoinStage & keyof RtkJoinStageAttributes as `attr:${K}`]?: RtkJoinStageAttributes[K] } & { [K in keyof RtkJoinStage & keyof RtkJoinStageAttributes as `prop:${K}`]?: RtkJoinStage[K] };
+        "rtk-leave-button": Omit<RtkLeaveButton, keyof RtkLeaveButtonAttributes> & { [K in keyof RtkLeaveButton & keyof RtkLeaveButtonAttributes]?: RtkLeaveButton[K] } & { [K in keyof RtkLeaveButton & keyof RtkLeaveButtonAttributes as `attr:${K}`]?: RtkLeaveButtonAttributes[K] } & { [K in keyof RtkLeaveButton & keyof RtkLeaveButtonAttributes as `prop:${K}`]?: RtkLeaveButton[K] };
         "rtk-leave-meeting": RtkLeaveMeeting;
-        "rtk-livestream-indicator": RtkLivestreamIndicator;
-        "rtk-livestream-player": RtkLivestreamPlayer;
-        "rtk-livestream-toggle": RtkLivestreamToggle;
-        "rtk-logo": RtkLogo;
-        "rtk-markdown-view": RtkMarkdownView;
-        "rtk-meeting": RtkMeeting;
+        "rtk-livestream-indicator": Omit<RtkLivestreamIndicator, keyof RtkLivestreamIndicatorAttributes> & { [K in keyof RtkLivestreamIndicator & keyof RtkLivestreamIndicatorAttributes]?: RtkLivestreamIndicator[K] } & { [K in keyof RtkLivestreamIndicator & keyof RtkLivestreamIndicatorAttributes as `attr:${K}`]?: RtkLivestreamIndicatorAttributes[K] } & { [K in keyof RtkLivestreamIndicator & keyof RtkLivestreamIndicatorAttributes as `prop:${K}`]?: RtkLivestreamIndicator[K] };
+        "rtk-livestream-player": Omit<RtkLivestreamPlayer, keyof RtkLivestreamPlayerAttributes> & { [K in keyof RtkLivestreamPlayer & keyof RtkLivestreamPlayerAttributes]?: RtkLivestreamPlayer[K] } & { [K in keyof RtkLivestreamPlayer & keyof RtkLivestreamPlayerAttributes as `attr:${K}`]?: RtkLivestreamPlayerAttributes[K] } & { [K in keyof RtkLivestreamPlayer & keyof RtkLivestreamPlayerAttributes as `prop:${K}`]?: RtkLivestreamPlayer[K] };
+        "rtk-livestream-toggle": Omit<RtkLivestreamToggle, keyof RtkLivestreamToggleAttributes> & { [K in keyof RtkLivestreamToggle & keyof RtkLivestreamToggleAttributes]?: RtkLivestreamToggle[K] } & { [K in keyof RtkLivestreamToggle & keyof RtkLivestreamToggleAttributes as `attr:${K}`]?: RtkLivestreamToggleAttributes[K] } & { [K in keyof RtkLivestreamToggle & keyof RtkLivestreamToggleAttributes as `prop:${K}`]?: RtkLivestreamToggle[K] };
+        "rtk-logo": Omit<RtkLogo, keyof RtkLogoAttributes> & { [K in keyof RtkLogo & keyof RtkLogoAttributes]?: RtkLogo[K] } & { [K in keyof RtkLogo & keyof RtkLogoAttributes as `attr:${K}`]?: RtkLogoAttributes[K] } & { [K in keyof RtkLogo & keyof RtkLogoAttributes as `prop:${K}`]?: RtkLogo[K] };
+        "rtk-markdown-view": Omit<RtkMarkdownView, keyof RtkMarkdownViewAttributes> & { [K in keyof RtkMarkdownView & keyof RtkMarkdownViewAttributes]?: RtkMarkdownView[K] } & { [K in keyof RtkMarkdownView & keyof RtkMarkdownViewAttributes as `attr:${K}`]?: RtkMarkdownViewAttributes[K] } & { [K in keyof RtkMarkdownView & keyof RtkMarkdownViewAttributes as `prop:${K}`]?: RtkMarkdownView[K] };
+        "rtk-meeting": Omit<RtkMeeting, keyof RtkMeetingAttributes> & { [K in keyof RtkMeeting & keyof RtkMeetingAttributes]?: RtkMeeting[K] } & { [K in keyof RtkMeeting & keyof RtkMeetingAttributes as `attr:${K}`]?: RtkMeetingAttributes[K] } & { [K in keyof RtkMeeting & keyof RtkMeetingAttributes as `prop:${K}`]?: RtkMeeting[K] };
         "rtk-meeting-title": RtkMeetingTitle;
-        "rtk-menu": RtkMenu;
-        "rtk-menu-item": RtkMenuItem;
-        "rtk-menu-list": RtkMenuList;
-        "rtk-message-list-view": RtkMessageListView;
-        "rtk-message-view": RtkMessageView;
-        "rtk-mic-toggle": RtkMicToggle;
-        "rtk-microphone-selector": RtkMicrophoneSelector;
-        "rtk-mixed-grid": RtkMixedGrid;
-        "rtk-more-toggle": RtkMoreToggle;
-        "rtk-mute-all-button": RtkMuteAllButton;
+        "rtk-menu": Omit<RtkMenu, keyof RtkMenuAttributes> & { [K in keyof RtkMenu & keyof RtkMenuAttributes]?: RtkMenu[K] } & { [K in keyof RtkMenu & keyof RtkMenuAttributes as `attr:${K}`]?: RtkMenuAttributes[K] } & { [K in keyof RtkMenu & keyof RtkMenuAttributes as `prop:${K}`]?: RtkMenu[K] };
+        "rtk-menu-item": Omit<RtkMenuItem, keyof RtkMenuItemAttributes> & { [K in keyof RtkMenuItem & keyof RtkMenuItemAttributes]?: RtkMenuItem[K] } & { [K in keyof RtkMenuItem & keyof RtkMenuItemAttributes as `attr:${K}`]?: RtkMenuItemAttributes[K] } & { [K in keyof RtkMenuItem & keyof RtkMenuItemAttributes as `prop:${K}`]?: RtkMenuItem[K] };
+        "rtk-menu-list": Omit<RtkMenuList, keyof RtkMenuListAttributes> & { [K in keyof RtkMenuList & keyof RtkMenuListAttributes]?: RtkMenuList[K] } & { [K in keyof RtkMenuList & keyof RtkMenuListAttributes as `attr:${K}`]?: RtkMenuListAttributes[K] } & { [K in keyof RtkMenuList & keyof RtkMenuListAttributes as `prop:${K}`]?: RtkMenuList[K] };
+        "rtk-message-list-view": Omit<RtkMessageListView, keyof RtkMessageListViewAttributes> & { [K in keyof RtkMessageListView & keyof RtkMessageListViewAttributes]?: RtkMessageListView[K] } & { [K in keyof RtkMessageListView & keyof RtkMessageListViewAttributes as `attr:${K}`]?: RtkMessageListViewAttributes[K] } & { [K in keyof RtkMessageListView & keyof RtkMessageListViewAttributes as `prop:${K}`]?: RtkMessageListView[K] };
+        "rtk-message-view": Omit<RtkMessageView, keyof RtkMessageViewAttributes> & { [K in keyof RtkMessageView & keyof RtkMessageViewAttributes]?: RtkMessageView[K] } & { [K in keyof RtkMessageView & keyof RtkMessageViewAttributes as `attr:${K}`]?: RtkMessageViewAttributes[K] } & { [K in keyof RtkMessageView & keyof RtkMessageViewAttributes as `prop:${K}`]?: RtkMessageView[K] };
+        "rtk-mic-toggle": Omit<RtkMicToggle, keyof RtkMicToggleAttributes> & { [K in keyof RtkMicToggle & keyof RtkMicToggleAttributes]?: RtkMicToggle[K] } & { [K in keyof RtkMicToggle & keyof RtkMicToggleAttributes as `attr:${K}`]?: RtkMicToggleAttributes[K] } & { [K in keyof RtkMicToggle & keyof RtkMicToggleAttributes as `prop:${K}`]?: RtkMicToggle[K] };
+        "rtk-microphone-selector": Omit<RtkMicrophoneSelector, keyof RtkMicrophoneSelectorAttributes> & { [K in keyof RtkMicrophoneSelector & keyof RtkMicrophoneSelectorAttributes]?: RtkMicrophoneSelector[K] } & { [K in keyof RtkMicrophoneSelector & keyof RtkMicrophoneSelectorAttributes as `attr:${K}`]?: RtkMicrophoneSelectorAttributes[K] } & { [K in keyof RtkMicrophoneSelector & keyof RtkMicrophoneSelectorAttributes as `prop:${K}`]?: RtkMicrophoneSelector[K] };
+        "rtk-mixed-grid": Omit<RtkMixedGrid, keyof RtkMixedGridAttributes> & { [K in keyof RtkMixedGrid & keyof RtkMixedGridAttributes]?: RtkMixedGrid[K] } & { [K in keyof RtkMixedGrid & keyof RtkMixedGridAttributes as `attr:${K}`]?: RtkMixedGridAttributes[K] } & { [K in keyof RtkMixedGrid & keyof RtkMixedGridAttributes as `prop:${K}`]?: RtkMixedGrid[K] };
+        "rtk-more-toggle": Omit<RtkMoreToggle, keyof RtkMoreToggleAttributes> & { [K in keyof RtkMoreToggle & keyof RtkMoreToggleAttributes]?: RtkMoreToggle[K] } & { [K in keyof RtkMoreToggle & keyof RtkMoreToggleAttributes as `attr:${K}`]?: RtkMoreToggleAttributes[K] } & { [K in keyof RtkMoreToggle & keyof RtkMoreToggleAttributes as `prop:${K}`]?: RtkMoreToggle[K] };
+        "rtk-mute-all-button": Omit<RtkMuteAllButton, keyof RtkMuteAllButtonAttributes> & { [K in keyof RtkMuteAllButton & keyof RtkMuteAllButtonAttributes]?: RtkMuteAllButton[K] } & { [K in keyof RtkMuteAllButton & keyof RtkMuteAllButtonAttributes as `attr:${K}`]?: RtkMuteAllButtonAttributes[K] } & { [K in keyof RtkMuteAllButton & keyof RtkMuteAllButtonAttributes as `prop:${K}`]?: RtkMuteAllButton[K] };
         "rtk-mute-all-confirmation": RtkMuteAllConfirmation;
-        "rtk-name-tag": RtkNameTag;
-        "rtk-network-indicator": RtkNetworkIndicator;
-        "rtk-notification": RtkNotification;
-        "rtk-notifications": RtkNotifications;
+        "rtk-name-tag": Omit<RtkNameTag, keyof RtkNameTagAttributes> & { [K in keyof RtkNameTag & keyof RtkNameTagAttributes]?: RtkNameTag[K] } & { [K in keyof RtkNameTag & keyof RtkNameTagAttributes as `attr:${K}`]?: RtkNameTagAttributes[K] } & { [K in keyof RtkNameTag & keyof RtkNameTagAttributes as `prop:${K}`]?: RtkNameTag[K] };
+        "rtk-network-indicator": Omit<RtkNetworkIndicator, keyof RtkNetworkIndicatorAttributes> & { [K in keyof RtkNetworkIndicator & keyof RtkNetworkIndicatorAttributes]?: RtkNetworkIndicator[K] } & { [K in keyof RtkNetworkIndicator & keyof RtkNetworkIndicatorAttributes as `attr:${K}`]?: RtkNetworkIndicatorAttributes[K] } & { [K in keyof RtkNetworkIndicator & keyof RtkNetworkIndicatorAttributes as `prop:${K}`]?: RtkNetworkIndicator[K] };
+        "rtk-notification": Omit<RtkNotification, keyof RtkNotificationAttributes> & { [K in keyof RtkNotification & keyof RtkNotificationAttributes]?: RtkNotification[K] } & { [K in keyof RtkNotification & keyof RtkNotificationAttributes as `attr:${K}`]?: RtkNotificationAttributes[K] } & { [K in keyof RtkNotification & keyof RtkNotificationAttributes as `prop:${K}`]?: RtkNotification[K] };
+        "rtk-notifications": Omit<RtkNotifications, keyof RtkNotificationsAttributes> & { [K in keyof RtkNotifications & keyof RtkNotificationsAttributes]?: RtkNotifications[K] } & { [K in keyof RtkNotifications & keyof RtkNotificationsAttributes as `attr:${K}`]?: RtkNotificationsAttributes[K] } & { [K in keyof RtkNotifications & keyof RtkNotificationsAttributes as `prop:${K}`]?: RtkNotifications[K] };
         "rtk-overlay-modal": RtkOverlayModal;
-        "rtk-paginated-list": RtkPaginatedList;
-        "rtk-participant": RtkParticipant;
-        "rtk-participant-count": RtkParticipantCount;
-        "rtk-participant-setup": RtkParticipantSetup;
-        "rtk-participant-tile": RtkParticipantTile;
-        "rtk-participants": RtkParticipants;
+        "rtk-paginated-list": Omit<RtkPaginatedList, keyof RtkPaginatedListAttributes> & { [K in keyof RtkPaginatedList & keyof RtkPaginatedListAttributes]?: RtkPaginatedList[K] } & { [K in keyof RtkPaginatedList & keyof RtkPaginatedListAttributes as `attr:${K}`]?: RtkPaginatedListAttributes[K] } & { [K in keyof RtkPaginatedList & keyof RtkPaginatedListAttributes as `prop:${K}`]?: RtkPaginatedList[K] };
+        "rtk-participant": Omit<RtkParticipant, keyof RtkParticipantAttributes> & { [K in keyof RtkParticipant & keyof RtkParticipantAttributes]?: RtkParticipant[K] } & { [K in keyof RtkParticipant & keyof RtkParticipantAttributes as `attr:${K}`]?: RtkParticipantAttributes[K] } & { [K in keyof RtkParticipant & keyof RtkParticipantAttributes as `prop:${K}`]?: RtkParticipant[K] };
+        "rtk-participant-count": Omit<RtkParticipantCount, keyof RtkParticipantCountAttributes> & { [K in keyof RtkParticipantCount & keyof RtkParticipantCountAttributes]?: RtkParticipantCount[K] } & { [K in keyof RtkParticipantCount & keyof RtkParticipantCountAttributes as `attr:${K}`]?: RtkParticipantCountAttributes[K] } & { [K in keyof RtkParticipantCount & keyof RtkParticipantCountAttributes as `prop:${K}`]?: RtkParticipantCount[K] };
+        "rtk-participant-setup": Omit<RtkParticipantSetup, keyof RtkParticipantSetupAttributes> & { [K in keyof RtkParticipantSetup & keyof RtkParticipantSetupAttributes]?: RtkParticipantSetup[K] } & { [K in keyof RtkParticipantSetup & keyof RtkParticipantSetupAttributes as `attr:${K}`]?: RtkParticipantSetupAttributes[K] } & { [K in keyof RtkParticipantSetup & keyof RtkParticipantSetupAttributes as `prop:${K}`]?: RtkParticipantSetup[K] };
+        "rtk-participant-tile": Omit<RtkParticipantTile, keyof RtkParticipantTileAttributes> & { [K in keyof RtkParticipantTile & keyof RtkParticipantTileAttributes]?: RtkParticipantTile[K] } & { [K in keyof RtkParticipantTile & keyof RtkParticipantTileAttributes as `attr:${K}`]?: RtkParticipantTileAttributes[K] } & { [K in keyof RtkParticipantTile & keyof RtkParticipantTileAttributes as `prop:${K}`]?: RtkParticipantTile[K] };
+        "rtk-participants": Omit<RtkParticipants, keyof RtkParticipantsAttributes> & { [K in keyof RtkParticipants & keyof RtkParticipantsAttributes]?: RtkParticipants[K] } & { [K in keyof RtkParticipants & keyof RtkParticipantsAttributes as `attr:${K}`]?: RtkParticipantsAttributes[K] } & { [K in keyof RtkParticipants & keyof RtkParticipantsAttributes as `prop:${K}`]?: RtkParticipants[K] };
         "rtk-participants-audio": RtkParticipantsAudio;
-        "rtk-participants-stage-list": RtkParticipantsStageList;
-        "rtk-participants-stage-queue": RtkParticipantsStageQueue;
-        "rtk-participants-toggle": RtkParticipantsToggle;
-        "rtk-participants-viewer-list": RtkParticipantsViewerList;
-        "rtk-participants-waiting-list": RtkParticipantsWaitingList;
+        "rtk-participants-stage-list": Omit<RtkParticipantsStageList, keyof RtkParticipantsStageListAttributes> & { [K in keyof RtkParticipantsStageList & keyof RtkParticipantsStageListAttributes]?: RtkParticipantsStageList[K] } & { [K in keyof RtkParticipantsStageList & keyof RtkParticipantsStageListAttributes as `attr:${K}`]?: RtkParticipantsStageListAttributes[K] } & { [K in keyof RtkParticipantsStageList & keyof RtkParticipantsStageListAttributes as `prop:${K}`]?: RtkParticipantsStageList[K] };
+        "rtk-participants-stage-queue": Omit<RtkParticipantsStageQueue, keyof RtkParticipantsStageQueueAttributes> & { [K in keyof RtkParticipantsStageQueue & keyof RtkParticipantsStageQueueAttributes]?: RtkParticipantsStageQueue[K] } & { [K in keyof RtkParticipantsStageQueue & keyof RtkParticipantsStageQueueAttributes as `attr:${K}`]?: RtkParticipantsStageQueueAttributes[K] } & { [K in keyof RtkParticipantsStageQueue & keyof RtkParticipantsStageQueueAttributes as `prop:${K}`]?: RtkParticipantsStageQueue[K] };
+        "rtk-participants-toggle": Omit<RtkParticipantsToggle, keyof RtkParticipantsToggleAttributes> & { [K in keyof RtkParticipantsToggle & keyof RtkParticipantsToggleAttributes]?: RtkParticipantsToggle[K] } & { [K in keyof RtkParticipantsToggle & keyof RtkParticipantsToggleAttributes as `attr:${K}`]?: RtkParticipantsToggleAttributes[K] } & { [K in keyof RtkParticipantsToggle & keyof RtkParticipantsToggleAttributes as `prop:${K}`]?: RtkParticipantsToggle[K] };
+        "rtk-participants-viewer-list": Omit<RtkParticipantsViewerList, keyof RtkParticipantsViewerListAttributes> & { [K in keyof RtkParticipantsViewerList & keyof RtkParticipantsViewerListAttributes]?: RtkParticipantsViewerList[K] } & { [K in keyof RtkParticipantsViewerList & keyof RtkParticipantsViewerListAttributes as `attr:${K}`]?: RtkParticipantsViewerListAttributes[K] } & { [K in keyof RtkParticipantsViewerList & keyof RtkParticipantsViewerListAttributes as `prop:${K}`]?: RtkParticipantsViewerList[K] };
+        "rtk-participants-waiting-list": Omit<RtkParticipantsWaitingList, keyof RtkParticipantsWaitingListAttributes> & { [K in keyof RtkParticipantsWaitingList & keyof RtkParticipantsWaitingListAttributes]?: RtkParticipantsWaitingList[K] } & { [K in keyof RtkParticipantsWaitingList & keyof RtkParticipantsWaitingListAttributes as `attr:${K}`]?: RtkParticipantsWaitingListAttributes[K] } & { [K in keyof RtkParticipantsWaitingList & keyof RtkParticipantsWaitingListAttributes as `prop:${K}`]?: RtkParticipantsWaitingList[K] };
         "rtk-permissions-message": RtkPermissionsMessage;
         "rtk-pinned-message-selector": RtkPinnedMessageSelector;
-        "rtk-pip-toggle": RtkPipToggle;
+        "rtk-pip-toggle": Omit<RtkPipToggle, keyof RtkPipToggleAttributes> & { [K in keyof RtkPipToggle & keyof RtkPipToggleAttributes]?: RtkPipToggle[K] } & { [K in keyof RtkPipToggle & keyof RtkPipToggleAttributes as `attr:${K}`]?: RtkPipToggleAttributes[K] } & { [K in keyof RtkPipToggle & keyof RtkPipToggleAttributes as `prop:${K}`]?: RtkPipToggle[K] };
         "rtk-plugin-main": RtkPluginMain;
-        "rtk-plugins": RtkPlugins;
-        "rtk-plugins-toggle": RtkPluginsToggle;
-        "rtk-poll": RtkPoll;
+        "rtk-plugins": Omit<RtkPlugins, keyof RtkPluginsAttributes> & { [K in keyof RtkPlugins & keyof RtkPluginsAttributes]?: RtkPlugins[K] } & { [K in keyof RtkPlugins & keyof RtkPluginsAttributes as `attr:${K}`]?: RtkPluginsAttributes[K] } & { [K in keyof RtkPlugins & keyof RtkPluginsAttributes as `prop:${K}`]?: RtkPlugins[K] };
+        "rtk-plugins-toggle": Omit<RtkPluginsToggle, keyof RtkPluginsToggleAttributes> & { [K in keyof RtkPluginsToggle & keyof RtkPluginsToggleAttributes]?: RtkPluginsToggle[K] } & { [K in keyof RtkPluginsToggle & keyof RtkPluginsToggleAttributes as `attr:${K}`]?: RtkPluginsToggleAttributes[K] } & { [K in keyof RtkPluginsToggle & keyof RtkPluginsToggleAttributes as `prop:${K}`]?: RtkPluginsToggle[K] };
+        "rtk-poll": Omit<RtkPoll, keyof RtkPollAttributes> & { [K in keyof RtkPoll & keyof RtkPollAttributes]?: RtkPoll[K] } & { [K in keyof RtkPoll & keyof RtkPollAttributes as `attr:${K}`]?: RtkPollAttributes[K] } & { [K in keyof RtkPoll & keyof RtkPollAttributes as `prop:${K}`]?: RtkPoll[K] };
         "rtk-poll-form": RtkPollForm;
-        "rtk-polls": RtkPolls;
-        "rtk-polls-toggle": RtkPollsToggle;
-        "rtk-recording-indicator": RtkRecordingIndicator;
-        "rtk-recording-toggle": RtkRecordingToggle;
-        "rtk-screen-share-toggle": RtkScreenShareToggle;
-        "rtk-screenshare-view": RtkScreenshareView;
-        "rtk-settings": RtkSettings;
-        "rtk-settings-audio": RtkSettingsAudio;
-        "rtk-settings-toggle": RtkSettingsToggle;
-        "rtk-settings-video": RtkSettingsVideo;
-        "rtk-setup-screen": RtkSetupScreen;
-        "rtk-sidebar": RtkSidebar;
-        "rtk-sidebar-ui": RtkSidebarUi;
-        "rtk-simple-grid": RtkSimpleGrid;
-        "rtk-speaker-selector": RtkSpeakerSelector;
-        "rtk-spinner": RtkSpinner;
-        "rtk-spotlight-grid": RtkSpotlightGrid;
-        "rtk-spotlight-indicator": RtkSpotlightIndicator;
+        "rtk-polls": Omit<RtkPolls, keyof RtkPollsAttributes> & { [K in keyof RtkPolls & keyof RtkPollsAttributes]?: RtkPolls[K] } & { [K in keyof RtkPolls & keyof RtkPollsAttributes as `attr:${K}`]?: RtkPollsAttributes[K] } & { [K in keyof RtkPolls & keyof RtkPollsAttributes as `prop:${K}`]?: RtkPolls[K] };
+        "rtk-polls-toggle": Omit<RtkPollsToggle, keyof RtkPollsToggleAttributes> & { [K in keyof RtkPollsToggle & keyof RtkPollsToggleAttributes]?: RtkPollsToggle[K] } & { [K in keyof RtkPollsToggle & keyof RtkPollsToggleAttributes as `attr:${K}`]?: RtkPollsToggleAttributes[K] } & { [K in keyof RtkPollsToggle & keyof RtkPollsToggleAttributes as `prop:${K}`]?: RtkPollsToggle[K] };
+        "rtk-recording-indicator": Omit<RtkRecordingIndicator, keyof RtkRecordingIndicatorAttributes> & { [K in keyof RtkRecordingIndicator & keyof RtkRecordingIndicatorAttributes]?: RtkRecordingIndicator[K] } & { [K in keyof RtkRecordingIndicator & keyof RtkRecordingIndicatorAttributes as `attr:${K}`]?: RtkRecordingIndicatorAttributes[K] } & { [K in keyof RtkRecordingIndicator & keyof RtkRecordingIndicatorAttributes as `prop:${K}`]?: RtkRecordingIndicator[K] };
+        "rtk-recording-toggle": Omit<RtkRecordingToggle, keyof RtkRecordingToggleAttributes> & { [K in keyof RtkRecordingToggle & keyof RtkRecordingToggleAttributes]?: RtkRecordingToggle[K] } & { [K in keyof RtkRecordingToggle & keyof RtkRecordingToggleAttributes as `attr:${K}`]?: RtkRecordingToggleAttributes[K] } & { [K in keyof RtkRecordingToggle & keyof RtkRecordingToggleAttributes as `prop:${K}`]?: RtkRecordingToggle[K] };
+        "rtk-screen-share-toggle": Omit<RtkScreenShareToggle, keyof RtkScreenShareToggleAttributes> & { [K in keyof RtkScreenShareToggle & keyof RtkScreenShareToggleAttributes]?: RtkScreenShareToggle[K] } & { [K in keyof RtkScreenShareToggle & keyof RtkScreenShareToggleAttributes as `attr:${K}`]?: RtkScreenShareToggleAttributes[K] } & { [K in keyof RtkScreenShareToggle & keyof RtkScreenShareToggleAttributes as `prop:${K}`]?: RtkScreenShareToggle[K] };
+        "rtk-screenshare-view": Omit<RtkScreenshareView, keyof RtkScreenshareViewAttributes> & { [K in keyof RtkScreenshareView & keyof RtkScreenshareViewAttributes]?: RtkScreenshareView[K] } & { [K in keyof RtkScreenshareView & keyof RtkScreenshareViewAttributes as `attr:${K}`]?: RtkScreenshareViewAttributes[K] } & { [K in keyof RtkScreenshareView & keyof RtkScreenshareViewAttributes as `prop:${K}`]?: RtkScreenshareView[K] };
+        "rtk-settings": Omit<RtkSettings, keyof RtkSettingsAttributes> & { [K in keyof RtkSettings & keyof RtkSettingsAttributes]?: RtkSettings[K] } & { [K in keyof RtkSettings & keyof RtkSettingsAttributes as `attr:${K}`]?: RtkSettingsAttributes[K] } & { [K in keyof RtkSettings & keyof RtkSettingsAttributes as `prop:${K}`]?: RtkSettings[K] };
+        "rtk-settings-audio": Omit<RtkSettingsAudio, keyof RtkSettingsAudioAttributes> & { [K in keyof RtkSettingsAudio & keyof RtkSettingsAudioAttributes]?: RtkSettingsAudio[K] } & { [K in keyof RtkSettingsAudio & keyof RtkSettingsAudioAttributes as `attr:${K}`]?: RtkSettingsAudioAttributes[K] } & { [K in keyof RtkSettingsAudio & keyof RtkSettingsAudioAttributes as `prop:${K}`]?: RtkSettingsAudio[K] };
+        "rtk-settings-toggle": Omit<RtkSettingsToggle, keyof RtkSettingsToggleAttributes> & { [K in keyof RtkSettingsToggle & keyof RtkSettingsToggleAttributes]?: RtkSettingsToggle[K] } & { [K in keyof RtkSettingsToggle & keyof RtkSettingsToggleAttributes as `attr:${K}`]?: RtkSettingsToggleAttributes[K] } & { [K in keyof RtkSettingsToggle & keyof RtkSettingsToggleAttributes as `prop:${K}`]?: RtkSettingsToggle[K] };
+        "rtk-settings-video": Omit<RtkSettingsVideo, keyof RtkSettingsVideoAttributes> & { [K in keyof RtkSettingsVideo & keyof RtkSettingsVideoAttributes]?: RtkSettingsVideo[K] } & { [K in keyof RtkSettingsVideo & keyof RtkSettingsVideoAttributes as `attr:${K}`]?: RtkSettingsVideoAttributes[K] } & { [K in keyof RtkSettingsVideo & keyof RtkSettingsVideoAttributes as `prop:${K}`]?: RtkSettingsVideo[K] };
+        "rtk-setup-screen": Omit<RtkSetupScreen, keyof RtkSetupScreenAttributes> & { [K in keyof RtkSetupScreen & keyof RtkSetupScreenAttributes]?: RtkSetupScreen[K] } & { [K in keyof RtkSetupScreen & keyof RtkSetupScreenAttributes as `attr:${K}`]?: RtkSetupScreenAttributes[K] } & { [K in keyof RtkSetupScreen & keyof RtkSetupScreenAttributes as `prop:${K}`]?: RtkSetupScreen[K] };
+        "rtk-sidebar": Omit<RtkSidebar, keyof RtkSidebarAttributes> & { [K in keyof RtkSidebar & keyof RtkSidebarAttributes]?: RtkSidebar[K] } & { [K in keyof RtkSidebar & keyof RtkSidebarAttributes as `attr:${K}`]?: RtkSidebarAttributes[K] } & { [K in keyof RtkSidebar & keyof RtkSidebarAttributes as `prop:${K}`]?: RtkSidebar[K] };
+        "rtk-sidebar-ui": Omit<RtkSidebarUi, keyof RtkSidebarUiAttributes> & { [K in keyof RtkSidebarUi & keyof RtkSidebarUiAttributes]?: RtkSidebarUi[K] } & { [K in keyof RtkSidebarUi & keyof RtkSidebarUiAttributes as `attr:${K}`]?: RtkSidebarUiAttributes[K] } & { [K in keyof RtkSidebarUi & keyof RtkSidebarUiAttributes as `prop:${K}`]?: RtkSidebarUi[K] };
+        "rtk-simple-grid": Omit<RtkSimpleGrid, keyof RtkSimpleGridAttributes> & { [K in keyof RtkSimpleGrid & keyof RtkSimpleGridAttributes]?: RtkSimpleGrid[K] } & { [K in keyof RtkSimpleGrid & keyof RtkSimpleGridAttributes as `attr:${K}`]?: RtkSimpleGridAttributes[K] } & { [K in keyof RtkSimpleGrid & keyof RtkSimpleGridAttributes as `prop:${K}`]?: RtkSimpleGrid[K] };
+        "rtk-speaker-selector": Omit<RtkSpeakerSelector, keyof RtkSpeakerSelectorAttributes> & { [K in keyof RtkSpeakerSelector & keyof RtkSpeakerSelectorAttributes]?: RtkSpeakerSelector[K] } & { [K in keyof RtkSpeakerSelector & keyof RtkSpeakerSelectorAttributes as `attr:${K}`]?: RtkSpeakerSelectorAttributes[K] } & { [K in keyof RtkSpeakerSelector & keyof RtkSpeakerSelectorAttributes as `prop:${K}`]?: RtkSpeakerSelector[K] };
+        "rtk-spinner": Omit<RtkSpinner, keyof RtkSpinnerAttributes> & { [K in keyof RtkSpinner & keyof RtkSpinnerAttributes]?: RtkSpinner[K] } & { [K in keyof RtkSpinner & keyof RtkSpinnerAttributes as `attr:${K}`]?: RtkSpinnerAttributes[K] } & { [K in keyof RtkSpinner & keyof RtkSpinnerAttributes as `prop:${K}`]?: RtkSpinner[K] };
+        "rtk-spotlight-grid": Omit<RtkSpotlightGrid, keyof RtkSpotlightGridAttributes> & { [K in keyof RtkSpotlightGrid & keyof RtkSpotlightGridAttributes]?: RtkSpotlightGrid[K] } & { [K in keyof RtkSpotlightGrid & keyof RtkSpotlightGridAttributes as `attr:${K}`]?: RtkSpotlightGridAttributes[K] } & { [K in keyof RtkSpotlightGrid & keyof RtkSpotlightGridAttributes as `prop:${K}`]?: RtkSpotlightGrid[K] };
+        "rtk-spotlight-indicator": Omit<RtkSpotlightIndicator, keyof RtkSpotlightIndicatorAttributes> & { [K in keyof RtkSpotlightIndicator & keyof RtkSpotlightIndicatorAttributes]?: RtkSpotlightIndicator[K] } & { [K in keyof RtkSpotlightIndicator & keyof RtkSpotlightIndicatorAttributes as `attr:${K}`]?: RtkSpotlightIndicatorAttributes[K] } & { [K in keyof RtkSpotlightIndicator & keyof RtkSpotlightIndicatorAttributes as `prop:${K}`]?: RtkSpotlightIndicator[K] };
         "rtk-stage": RtkStage;
-        "rtk-stage-toggle": RtkStageToggle;
-        "rtk-switch": RtkSwitch;
-        "rtk-tab-bar": RtkTabBar;
-        "rtk-text-composer-view": RtkTextComposerView;
-        "rtk-text-message": RtkTextMessage;
-        "rtk-text-message-view": RtkTextMessageView;
-        "rtk-tooltip": RtkTooltip;
+        "rtk-stage-toggle": Omit<RtkStageToggle, keyof RtkStageToggleAttributes> & { [K in keyof RtkStageToggle & keyof RtkStageToggleAttributes]?: RtkStageToggle[K] } & { [K in keyof RtkStageToggle & keyof RtkStageToggleAttributes as `attr:${K}`]?: RtkStageToggleAttributes[K] } & { [K in keyof RtkStageToggle & keyof RtkStageToggleAttributes as `prop:${K}`]?: RtkStageToggle[K] };
+        "rtk-switch": Omit<RtkSwitch, keyof RtkSwitchAttributes> & { [K in keyof RtkSwitch & keyof RtkSwitchAttributes]?: RtkSwitch[K] } & { [K in keyof RtkSwitch & keyof RtkSwitchAttributes as `attr:${K}`]?: RtkSwitchAttributes[K] } & { [K in keyof RtkSwitch & keyof RtkSwitchAttributes as `prop:${K}`]?: RtkSwitch[K] };
+        "rtk-tab-bar": Omit<RtkTabBar, keyof RtkTabBarAttributes> & { [K in keyof RtkTabBar & keyof RtkTabBarAttributes]?: RtkTabBar[K] } & { [K in keyof RtkTabBar & keyof RtkTabBarAttributes as `attr:${K}`]?: RtkTabBarAttributes[K] } & { [K in keyof RtkTabBar & keyof RtkTabBarAttributes as `prop:${K}`]?: RtkTabBar[K] };
+        "rtk-text-composer-view": Omit<RtkTextComposerView, keyof RtkTextComposerViewAttributes> & { [K in keyof RtkTextComposerView & keyof RtkTextComposerViewAttributes]?: RtkTextComposerView[K] } & { [K in keyof RtkTextComposerView & keyof RtkTextComposerViewAttributes as `attr:${K}`]?: RtkTextComposerViewAttributes[K] } & { [K in keyof RtkTextComposerView & keyof RtkTextComposerViewAttributes as `prop:${K}`]?: RtkTextComposerView[K] };
+        "rtk-text-message": Omit<RtkTextMessage, keyof RtkTextMessageAttributes> & { [K in keyof RtkTextMessage & keyof RtkTextMessageAttributes]?: RtkTextMessage[K] } & { [K in keyof RtkTextMessage & keyof RtkTextMessageAttributes as `attr:${K}`]?: RtkTextMessageAttributes[K] } & { [K in keyof RtkTextMessage & keyof RtkTextMessageAttributes as `prop:${K}`]?: RtkTextMessage[K] };
+        "rtk-text-message-view": Omit<RtkTextMessageView, keyof RtkTextMessageViewAttributes> & { [K in keyof RtkTextMessageView & keyof RtkTextMessageViewAttributes]?: RtkTextMessageView[K] } & { [K in keyof RtkTextMessageView & keyof RtkTextMessageViewAttributes as `attr:${K}`]?: RtkTextMessageViewAttributes[K] } & { [K in keyof RtkTextMessageView & keyof RtkTextMessageViewAttributes as `prop:${K}`]?: RtkTextMessageView[K] } & OneOf<"text", RtkTextMessageView["text"], RtkTextMessageViewAttributes["text"]>;
+        "rtk-tooltip": Omit<RtkTooltip, keyof RtkTooltipAttributes> & { [K in keyof RtkTooltip & keyof RtkTooltipAttributes]?: RtkTooltip[K] } & { [K in keyof RtkTooltip & keyof RtkTooltipAttributes as `attr:${K}`]?: RtkTooltipAttributes[K] } & { [K in keyof RtkTooltip & keyof RtkTooltipAttributes as `prop:${K}`]?: RtkTooltip[K] };
         "rtk-transcript": RtkTranscript;
         "rtk-transcripts": RtkTranscripts;
-        "rtk-ui-provider": RtkUiProvider;
-        "rtk-viewer-count": RtkViewerCount;
-        "rtk-virtualized-participant-list": RtkVirtualizedParticipantList;
+        "rtk-ui-provider": Omit<RtkUiProvider, keyof RtkUiProviderAttributes> & { [K in keyof RtkUiProvider & keyof RtkUiProviderAttributes]?: RtkUiProvider[K] } & { [K in keyof RtkUiProvider & keyof RtkUiProviderAttributes as `attr:${K}`]?: RtkUiProviderAttributes[K] } & { [K in keyof RtkUiProvider & keyof RtkUiProviderAttributes as `prop:${K}`]?: RtkUiProvider[K] };
+        "rtk-viewer-count": Omit<RtkViewerCount, keyof RtkViewerCountAttributes> & { [K in keyof RtkViewerCount & keyof RtkViewerCountAttributes]?: RtkViewerCount[K] } & { [K in keyof RtkViewerCount & keyof RtkViewerCountAttributes as `attr:${K}`]?: RtkViewerCountAttributes[K] } & { [K in keyof RtkViewerCount & keyof RtkViewerCountAttributes as `prop:${K}`]?: RtkViewerCount[K] };
+        "rtk-virtualized-participant-list": Omit<RtkVirtualizedParticipantList, keyof RtkVirtualizedParticipantListAttributes> & { [K in keyof RtkVirtualizedParticipantList & keyof RtkVirtualizedParticipantListAttributes]?: RtkVirtualizedParticipantList[K] } & { [K in keyof RtkVirtualizedParticipantList & keyof RtkVirtualizedParticipantListAttributes as `attr:${K}`]?: RtkVirtualizedParticipantListAttributes[K] } & { [K in keyof RtkVirtualizedParticipantList & keyof RtkVirtualizedParticipantListAttributes as `prop:${K}`]?: RtkVirtualizedParticipantList[K] };
         "rtk-waiting-screen": RtkWaitingScreen;
     }
 }
@@ -10992,42 +12489,42 @@ declare module "@stencil/core" {
              * Provides AI-powered features like transcription, summarization, and
              * intelligent meeting assistance. Rendered inside rtk-sidebar as the 'ai' section.
              */
-            "rtk-ai": LocalJSX.RtkAi & JSXBase.HTMLAttributes<HTMLRtkAiElement>;
-            "rtk-ai-toggle": LocalJSX.RtkAiToggle & JSXBase.HTMLAttributes<HTMLRtkAiToggleElement>;
-            "rtk-ai-transcriptions": LocalJSX.RtkAiTranscriptions & JSXBase.HTMLAttributes<HTMLRtkAiTranscriptionsElement>;
-            "rtk-audio-grid": LocalJSX.RtkAudioGrid & JSXBase.HTMLAttributes<HTMLRtkAudioGridElement>;
-            "rtk-audio-tile": LocalJSX.RtkAudioTile & JSXBase.HTMLAttributes<HTMLRtkAudioTileElement>;
+            "rtk-ai": LocalJSX.IntrinsicElements["rtk-ai"] & JSXBase.HTMLAttributes<HTMLRtkAiElement>;
+            "rtk-ai-toggle": LocalJSX.IntrinsicElements["rtk-ai-toggle"] & JSXBase.HTMLAttributes<HTMLRtkAiToggleElement>;
+            "rtk-ai-transcriptions": LocalJSX.IntrinsicElements["rtk-ai-transcriptions"] & JSXBase.HTMLAttributes<HTMLRtkAiTranscriptionsElement>;
+            "rtk-audio-grid": LocalJSX.IntrinsicElements["rtk-audio-grid"] & JSXBase.HTMLAttributes<HTMLRtkAudioGridElement>;
+            "rtk-audio-tile": LocalJSX.IntrinsicElements["rtk-audio-tile"] & JSXBase.HTMLAttributes<HTMLRtkAudioTileElement>;
             /**
              * An audio visualizer component which visualizes a participants audio.
              * Commonly used inside `rtk-name-tag`.
              */
-            "rtk-audio-visualizer": LocalJSX.RtkAudioVisualizer & JSXBase.HTMLAttributes<HTMLRtkAudioVisualizerElement>;
+            "rtk-audio-visualizer": LocalJSX.IntrinsicElements["rtk-audio-visualizer"] & JSXBase.HTMLAttributes<HTMLRtkAudioVisualizerElement>;
             /**
              * Avatar component which renders a participant's image or their initials.
              */
-            "rtk-avatar": LocalJSX.RtkAvatar & JSXBase.HTMLAttributes<HTMLRtkAvatarElement>;
-            "rtk-breakout-room-manager": LocalJSX.RtkBreakoutRoomManager & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomManagerElement>;
+            "rtk-avatar": LocalJSX.IntrinsicElements["rtk-avatar"] & JSXBase.HTMLAttributes<HTMLRtkAvatarElement>;
+            "rtk-breakout-room-manager": LocalJSX.IntrinsicElements["rtk-breakout-room-manager"] & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomManagerElement>;
             /**
              * A component which lists all participants, with ability to
              * run privileged actions on each participant according to your permissions.
              */
-            "rtk-breakout-room-participants": LocalJSX.RtkBreakoutRoomParticipants & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomParticipantsElement>;
-            "rtk-breakout-rooms-manager": LocalJSX.RtkBreakoutRoomsManager & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomsManagerElement>;
+            "rtk-breakout-room-participants": LocalJSX.IntrinsicElements["rtk-breakout-room-participants"] & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomParticipantsElement>;
+            "rtk-breakout-rooms-manager": LocalJSX.IntrinsicElements["rtk-breakout-rooms-manager"] & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomsManagerElement>;
             /**
              * A button which toggles visibility of breakout rooms.
              * You need to pass the `meeting` object to it.
              */
-            "rtk-breakout-rooms-toggle": LocalJSX.RtkBreakoutRoomsToggle & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomsToggleElement>;
+            "rtk-breakout-rooms-toggle": LocalJSX.IntrinsicElements["rtk-breakout-rooms-toggle"] & JSXBase.HTMLAttributes<HTMLRtkBreakoutRoomsToggleElement>;
             /**
              * A modal for sending broadcast messages to all meeting participants.
              * Allows hosts and moderators to send important announcements that
              * appear prominently to all users in the meeting.
              */
-            "rtk-broadcast-message-modal": LocalJSX.RtkBroadcastMessageModal & JSXBase.HTMLAttributes<HTMLRtkBroadcastMessageModalElement>;
+            "rtk-broadcast-message-modal": LocalJSX.IntrinsicElements["rtk-broadcast-message-modal"] & JSXBase.HTMLAttributes<HTMLRtkBroadcastMessageModalElement>;
             /**
              * A button that follows RTK Design System.
              */
-            "rtk-button": LocalJSX.RtkButton & JSXBase.HTMLAttributes<HTMLRtkButtonElement>;
+            "rtk-button": LocalJSX.IntrinsicElements["rtk-button"] & JSXBase.HTMLAttributes<HTMLRtkButtonElement>;
             /**
              * A component which lets to manage your audio devices and audio preferences.
              * Emits `rtkStateUpdate` event with data for muting notification sounds:
@@ -11039,40 +12536,40 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "rtk-camera-selector": LocalJSX.RtkCameraSelector & JSXBase.HTMLAttributes<HTMLRtkCameraSelectorElement>;
+            "rtk-camera-selector": LocalJSX.IntrinsicElements["rtk-camera-selector"] & JSXBase.HTMLAttributes<HTMLRtkCameraSelectorElement>;
             /**
              * A button which toggles your camera.
              */
-            "rtk-camera-toggle": LocalJSX.RtkCameraToggle & JSXBase.HTMLAttributes<HTMLRtkCameraToggleElement>;
-            "rtk-caption-toggle": LocalJSX.RtkCaptionToggle & JSXBase.HTMLAttributes<HTMLRtkCaptionToggleElement>;
+            "rtk-camera-toggle": LocalJSX.IntrinsicElements["rtk-camera-toggle"] & JSXBase.HTMLAttributes<HTMLRtkCameraToggleElement>;
+            "rtk-caption-toggle": LocalJSX.IntrinsicElements["rtk-caption-toggle"] & JSXBase.HTMLAttributes<HTMLRtkCaptionToggleElement>;
             /**
              * Fully featured chat component with image & file upload, emoji picker and auto-scroll.
              */
-            "rtk-chat": LocalJSX.RtkChat & JSXBase.HTMLAttributes<HTMLRtkChatElement>;
+            "rtk-chat": LocalJSX.IntrinsicElements["rtk-chat"] & JSXBase.HTMLAttributes<HTMLRtkChatElement>;
             /**
              * @deprecated . This component is deprecated, please use rtk-chat-composer-view instead.
              */
-            "rtk-chat-composer-ui": LocalJSX.RtkChatComposerUi & JSXBase.HTMLAttributes<HTMLRtkChatComposerUiElement>;
+            "rtk-chat-composer-ui": LocalJSX.IntrinsicElements["rtk-chat-composer-ui"] & JSXBase.HTMLAttributes<HTMLRtkChatComposerUiElement>;
             /**
              * A component which renders a chat composer
              */
-            "rtk-chat-composer-view": LocalJSX.RtkChatComposerView & JSXBase.HTMLAttributes<HTMLRtkChatComposerViewElement>;
-            "rtk-chat-header": LocalJSX.RtkChatHeader & JSXBase.HTMLAttributes<HTMLRtkChatHeaderElement>;
+            "rtk-chat-composer-view": LocalJSX.IntrinsicElements["rtk-chat-composer-view"] & JSXBase.HTMLAttributes<HTMLRtkChatComposerViewElement>;
+            "rtk-chat-header": LocalJSX.IntrinsicElements["rtk-chat-header"] & JSXBase.HTMLAttributes<HTMLRtkChatHeaderElement>;
             /**
              * @deprecated `rtk-chat-message` is deprecated and will be removed soon. Use `rtk-message-view` instead.
              */
-            "rtk-chat-message": LocalJSX.RtkChatMessage & JSXBase.HTMLAttributes<HTMLRtkChatMessageElement>;
+            "rtk-chat-message": LocalJSX.IntrinsicElements["rtk-chat-message"] & JSXBase.HTMLAttributes<HTMLRtkChatMessageElement>;
             /**
              * @deprecated Use `rtk-chat-messages-ui-paginated` instead.
              */
-            "rtk-chat-messages-ui": LocalJSX.RtkChatMessagesUi & JSXBase.HTMLAttributes<HTMLRtkChatMessagesUiElement>;
-            "rtk-chat-messages-ui-paginated": LocalJSX.RtkChatMessagesUiPaginated & JSXBase.HTMLAttributes<HTMLRtkChatMessagesUiPaginatedElement>;
+            "rtk-chat-messages-ui": LocalJSX.IntrinsicElements["rtk-chat-messages-ui"] & JSXBase.HTMLAttributes<HTMLRtkChatMessagesUiElement>;
+            "rtk-chat-messages-ui-paginated": LocalJSX.IntrinsicElements["rtk-chat-messages-ui-paginated"] & JSXBase.HTMLAttributes<HTMLRtkChatMessagesUiPaginatedElement>;
             /**
              * @deprecated `rtk-chat-search-results` is deprecated and will be removed soon. Use `rtk-chat-messages-ui-paginated` instead. -
              */
-            "rtk-chat-search-results": LocalJSX.RtkChatSearchResults & JSXBase.HTMLAttributes<HTMLRtkChatSearchResultsElement>;
-            "rtk-chat-selector": LocalJSX.RtkChatSelector & JSXBase.HTMLAttributes<HTMLRtkChatSelectorElement>;
-            "rtk-chat-selector-ui": LocalJSX.RtkChatSelectorUi & JSXBase.HTMLAttributes<HTMLRtkChatSelectorUiElement>;
+            "rtk-chat-search-results": LocalJSX.IntrinsicElements["rtk-chat-search-results"] & JSXBase.HTMLAttributes<HTMLRtkChatSearchResultsElement>;
+            "rtk-chat-selector": LocalJSX.IntrinsicElements["rtk-chat-selector"] & JSXBase.HTMLAttributes<HTMLRtkChatSelectorElement>;
+            "rtk-chat-selector-ui": LocalJSX.IntrinsicElements["rtk-chat-selector-ui"] & JSXBase.HTMLAttributes<HTMLRtkChatSelectorUiElement>;
             /**
              * A button which toggles visibility of chat.
              * You need to pass the `meeting` object to it to see the unread messages count badge.
@@ -11081,40 +12578,40 @@ declare module "@stencil/core" {
              * { activeSidebar: boolean; sidebar: 'chat' }
              * ```
              */
-            "rtk-chat-toggle": LocalJSX.RtkChatToggle & JSXBase.HTMLAttributes<HTMLRtkChatToggleElement>;
+            "rtk-chat-toggle": LocalJSX.IntrinsicElements["rtk-chat-toggle"] & JSXBase.HTMLAttributes<HTMLRtkChatToggleElement>;
             /**
              * Shows the time elapsed in a meeting.
              */
-            "rtk-clock": LocalJSX.RtkClock & JSXBase.HTMLAttributes<HTMLRtkClockElement>;
+            "rtk-clock": LocalJSX.IntrinsicElements["rtk-clock"] & JSXBase.HTMLAttributes<HTMLRtkClockElement>;
             /**
              * A confirmation modal.
              */
-            "rtk-confirmation-modal": LocalJSX.RtkConfirmationModal & JSXBase.HTMLAttributes<HTMLRtkConfirmationModalElement>;
+            "rtk-confirmation-modal": LocalJSX.IntrinsicElements["rtk-confirmation-modal"] & JSXBase.HTMLAttributes<HTMLRtkConfirmationModalElement>;
             /**
              * Controlbar component provides you with various designs as variants.
              */
-            "rtk-controlbar": LocalJSX.RtkControlbar & JSXBase.HTMLAttributes<HTMLRtkControlbarElement>;
+            "rtk-controlbar": LocalJSX.IntrinsicElements["rtk-controlbar"] & JSXBase.HTMLAttributes<HTMLRtkControlbarElement>;
             /**
              * A skeleton component used for composing custom controlbar buttons.
              */
-            "rtk-controlbar-button": LocalJSX.RtkControlbarButton & JSXBase.HTMLAttributes<HTMLRtkControlbarButtonElement>;
+            "rtk-controlbar-button": LocalJSX.IntrinsicElements["rtk-controlbar-button"] & JSXBase.HTMLAttributes<HTMLRtkControlbarButtonElement>;
             /**
              * A number picker with increment and decrement buttons.
              */
-            "rtk-counter": LocalJSX.RtkCounter & JSXBase.HTMLAttributes<HTMLRtkCounterElement>;
+            "rtk-counter": LocalJSX.IntrinsicElements["rtk-counter"] & JSXBase.HTMLAttributes<HTMLRtkCounterElement>;
             /**
              * A troubleshooting component to identify and fix any issues in the meeting.
              */
-            "rtk-debugger": LocalJSX.RtkDebugger & JSXBase.HTMLAttributes<HTMLRtkDebuggerElement>;
-            "rtk-debugger-audio": LocalJSX.RtkDebuggerAudio & JSXBase.HTMLAttributes<HTMLRtkDebuggerAudioElement>;
-            "rtk-debugger-screenshare": LocalJSX.RtkDebuggerScreenshare & JSXBase.HTMLAttributes<HTMLRtkDebuggerScreenshareElement>;
-            "rtk-debugger-system": LocalJSX.RtkDebuggerSystem & JSXBase.HTMLAttributes<HTMLRtkDebuggerSystemElement>;
-            "rtk-debugger-toggle": LocalJSX.RtkDebuggerToggle & JSXBase.HTMLAttributes<HTMLRtkDebuggerToggleElement>;
-            "rtk-debugger-video": LocalJSX.RtkDebuggerVideo & JSXBase.HTMLAttributes<HTMLRtkDebuggerVideoElement>;
+            "rtk-debugger": LocalJSX.IntrinsicElements["rtk-debugger"] & JSXBase.HTMLAttributes<HTMLRtkDebuggerElement>;
+            "rtk-debugger-audio": LocalJSX.IntrinsicElements["rtk-debugger-audio"] & JSXBase.HTMLAttributes<HTMLRtkDebuggerAudioElement>;
+            "rtk-debugger-screenshare": LocalJSX.IntrinsicElements["rtk-debugger-screenshare"] & JSXBase.HTMLAttributes<HTMLRtkDebuggerScreenshareElement>;
+            "rtk-debugger-system": LocalJSX.IntrinsicElements["rtk-debugger-system"] & JSXBase.HTMLAttributes<HTMLRtkDebuggerSystemElement>;
+            "rtk-debugger-toggle": LocalJSX.IntrinsicElements["rtk-debugger-toggle"] & JSXBase.HTMLAttributes<HTMLRtkDebuggerToggleElement>;
+            "rtk-debugger-video": LocalJSX.IntrinsicElements["rtk-debugger-video"] & JSXBase.HTMLAttributes<HTMLRtkDebuggerVideoElement>;
             /**
              * A dialog component.
              */
-            "rtk-dialog": LocalJSX.RtkDialog & JSXBase.HTMLAttributes<HTMLRtkDialogElement>;
+            "rtk-dialog": LocalJSX.IntrinsicElements["rtk-dialog"] & JSXBase.HTMLAttributes<HTMLRtkDialogElement>;
             /**
              * A component which handles all dialog elements in a component such as:
              * - rtk-settings
@@ -11124,127 +12621,127 @@ declare module "@stencil/core" {
              * - rtk-breakout-rooms-manager
              * This components depends on the values from `states` object.
              */
-            "rtk-dialog-manager": LocalJSX.RtkDialogManager & JSXBase.HTMLAttributes<HTMLRtkDialogManagerElement>;
+            "rtk-dialog-manager": LocalJSX.IntrinsicElements["rtk-dialog-manager"] & JSXBase.HTMLAttributes<HTMLRtkDialogManagerElement>;
             /**
              * A component which renders the draft attachment to send
              */
-            "rtk-draft-attachment-view": LocalJSX.RtkDraftAttachmentView & JSXBase.HTMLAttributes<HTMLRtkDraftAttachmentViewElement>;
+            "rtk-draft-attachment-view": LocalJSX.IntrinsicElements["rtk-draft-attachment-view"] & JSXBase.HTMLAttributes<HTMLRtkDraftAttachmentViewElement>;
             /**
              * A very simple emoji picker component.
              */
-            "rtk-emoji-picker": LocalJSX.RtkEmojiPicker & JSXBase.HTMLAttributes<HTMLRtkEmojiPickerElement>;
-            "rtk-emoji-picker-button": LocalJSX.RtkEmojiPickerButton & JSXBase.HTMLAttributes<HTMLRtkEmojiPickerButtonElement>;
+            "rtk-emoji-picker": LocalJSX.IntrinsicElements["rtk-emoji-picker"] & JSXBase.HTMLAttributes<HTMLRtkEmojiPickerElement>;
+            "rtk-emoji-picker-button": LocalJSX.IntrinsicElements["rtk-emoji-picker-button"] & JSXBase.HTMLAttributes<HTMLRtkEmojiPickerButtonElement>;
             /**
              * A screen which shows a meeting has ended.
              */
-            "rtk-ended-screen": LocalJSX.RtkEndedScreen & JSXBase.HTMLAttributes<HTMLRtkEndedScreenElement>;
-            "rtk-file-dropzone": LocalJSX.RtkFileDropzone & JSXBase.HTMLAttributes<HTMLRtkFileDropzoneElement>;
+            "rtk-ended-screen": LocalJSX.IntrinsicElements["rtk-ended-screen"] & JSXBase.HTMLAttributes<HTMLRtkEndedScreenElement>;
+            "rtk-file-dropzone": LocalJSX.IntrinsicElements["rtk-file-dropzone"] & JSXBase.HTMLAttributes<HTMLRtkFileDropzoneElement>;
             /**
              * @deprecated `rtk-file-message` is deprecated and will be removed soon. Use `rtk-file-message-view` instead.
              * A component which renders a file message from chat.
              */
-            "rtk-file-message": LocalJSX.RtkFileMessage & JSXBase.HTMLAttributes<HTMLRtkFileMessageElement>;
+            "rtk-file-message": LocalJSX.IntrinsicElements["rtk-file-message"] & JSXBase.HTMLAttributes<HTMLRtkFileMessageElement>;
             /**
              * A component which renders a file message.
              */
-            "rtk-file-message-view": LocalJSX.RtkFileMessageView & JSXBase.HTMLAttributes<HTMLRtkFileMessageViewElement>;
-            "rtk-file-picker-button": LocalJSX.RtkFilePickerButton & JSXBase.HTMLAttributes<HTMLRtkFilePickerButtonElement>;
+            "rtk-file-message-view": LocalJSX.IntrinsicElements["rtk-file-message-view"] & JSXBase.HTMLAttributes<HTMLRtkFileMessageViewElement>;
+            "rtk-file-picker-button": LocalJSX.IntrinsicElements["rtk-file-picker-button"] & JSXBase.HTMLAttributes<HTMLRtkFilePickerButtonElement>;
             /**
              * A button which toggles full screen mode for any
              * existing `rtk-meeting` component in the DOM.
              */
-            "rtk-fullscreen-toggle": LocalJSX.RtkFullscreenToggle & JSXBase.HTMLAttributes<HTMLRtkFullscreenToggleElement>;
+            "rtk-fullscreen-toggle": LocalJSX.IntrinsicElements["rtk-fullscreen-toggle"] & JSXBase.HTMLAttributes<HTMLRtkFullscreenToggleElement>;
             /**
              * The main grid component which abstracts all the grid handling logic and renders it for you.
              */
-            "rtk-grid": LocalJSX.RtkGrid & JSXBase.HTMLAttributes<HTMLRtkGridElement>;
+            "rtk-grid": LocalJSX.IntrinsicElements["rtk-grid"] & JSXBase.HTMLAttributes<HTMLRtkGridElement>;
             /**
              * A component which allows you to change current page and view mode
              * of active participants list. This is reflected in the `rtk-grid` component.
              */
-            "rtk-grid-pagination": LocalJSX.RtkGridPagination & JSXBase.HTMLAttributes<HTMLRtkGridPaginationElement>;
+            "rtk-grid-pagination": LocalJSX.IntrinsicElements["rtk-grid-pagination"] & JSXBase.HTMLAttributes<HTMLRtkGridPaginationElement>;
             /**
              * A component that houses all the header components.
              */
-            "rtk-header": LocalJSX.RtkHeader & JSXBase.HTMLAttributes<HTMLRtkHeaderElement>;
+            "rtk-header": LocalJSX.IntrinsicElements["rtk-header"] & JSXBase.HTMLAttributes<HTMLRtkHeaderElement>;
             /**
              * An icon component which accepts an svg string and renders it.
              */
-            "rtk-icon": LocalJSX.RtkIcon & JSXBase.HTMLAttributes<HTMLRtkIconElement>;
+            "rtk-icon": LocalJSX.IntrinsicElements["rtk-icon"] & JSXBase.HTMLAttributes<HTMLRtkIconElement>;
             /**
              * A screen that handles the idle state,
              * i.e; when you are waiting for data about the meeting, specifically the `meeting` object.
              */
-            "rtk-idle-screen": LocalJSX.RtkIdleScreen & JSXBase.HTMLAttributes<HTMLRtkIdleScreenElement>;
+            "rtk-idle-screen": LocalJSX.IntrinsicElements["rtk-idle-screen"] & JSXBase.HTMLAttributes<HTMLRtkIdleScreenElement>;
             /**
              * @deprecated `rtk-image-message` is deprecated and will be removed soon. Use `rtk-image-message-view` instead.
              * A component which renders an image message from chat.
              */
-            "rtk-image-message": LocalJSX.RtkImageMessage & JSXBase.HTMLAttributes<HTMLRtkImageMessageElement>;
+            "rtk-image-message": LocalJSX.IntrinsicElements["rtk-image-message"] & JSXBase.HTMLAttributes<HTMLRtkImageMessageElement>;
             /**
              * A component which renders an image message.
              */
-            "rtk-image-message-view": LocalJSX.RtkImageMessageView & JSXBase.HTMLAttributes<HTMLRtkImageMessageViewElement>;
+            "rtk-image-message-view": LocalJSX.IntrinsicElements["rtk-image-message-view"] & JSXBase.HTMLAttributes<HTMLRtkImageMessageViewElement>;
             /**
              * A component which shows an image sent via chat.
              */
-            "rtk-image-viewer": LocalJSX.RtkImageViewer & JSXBase.HTMLAttributes<HTMLRtkImageViewerElement>;
-            "rtk-information-tooltip": LocalJSX.RtkInformationTooltip & JSXBase.HTMLAttributes<HTMLRtkInformationTooltipElement>;
-            "rtk-join-stage": LocalJSX.RtkJoinStage & JSXBase.HTMLAttributes<HTMLRtkJoinStageElement>;
+            "rtk-image-viewer": LocalJSX.IntrinsicElements["rtk-image-viewer"] & JSXBase.HTMLAttributes<HTMLRtkImageViewerElement>;
+            "rtk-information-tooltip": LocalJSX.IntrinsicElements["rtk-information-tooltip"] & JSXBase.HTMLAttributes<HTMLRtkInformationTooltipElement>;
+            "rtk-join-stage": LocalJSX.IntrinsicElements["rtk-join-stage"] & JSXBase.HTMLAttributes<HTMLRtkJoinStageElement>;
             /**
              * A button which toggles visilibility of the leave confirmation dialog.
              */
-            "rtk-leave-button": LocalJSX.RtkLeaveButton & JSXBase.HTMLAttributes<HTMLRtkLeaveButtonElement>;
+            "rtk-leave-button": LocalJSX.IntrinsicElements["rtk-leave-button"] & JSXBase.HTMLAttributes<HTMLRtkLeaveButtonElement>;
             /**
              * A component which allows you to leave a meeting or
              * end meeting for all, if you have the permission.
              */
-            "rtk-leave-meeting": LocalJSX.RtkLeaveMeeting & JSXBase.HTMLAttributes<HTMLRtkLeaveMeetingElement>;
-            "rtk-livestream-indicator": LocalJSX.RtkLivestreamIndicator & JSXBase.HTMLAttributes<HTMLRtkLivestreamIndicatorElement>;
-            "rtk-livestream-player": LocalJSX.RtkLivestreamPlayer & JSXBase.HTMLAttributes<HTMLRtkLivestreamPlayerElement>;
+            "rtk-leave-meeting": LocalJSX.IntrinsicElements["rtk-leave-meeting"] & JSXBase.HTMLAttributes<HTMLRtkLeaveMeetingElement>;
+            "rtk-livestream-indicator": LocalJSX.IntrinsicElements["rtk-livestream-indicator"] & JSXBase.HTMLAttributes<HTMLRtkLivestreamIndicatorElement>;
+            "rtk-livestream-player": LocalJSX.IntrinsicElements["rtk-livestream-player"] & JSXBase.HTMLAttributes<HTMLRtkLivestreamPlayerElement>;
             /**
              * A toggle button for starting/stopping livestream broadcasting.
              * Only visible to users with livestream permissions. Allows hosts to
              * broadcast the meeting to external streaming platforms.
              */
-            "rtk-livestream-toggle": LocalJSX.RtkLivestreamToggle & JSXBase.HTMLAttributes<HTMLRtkLivestreamToggleElement>;
+            "rtk-livestream-toggle": LocalJSX.IntrinsicElements["rtk-livestream-toggle"] & JSXBase.HTMLAttributes<HTMLRtkLivestreamToggleElement>;
             /**
              * A component which loads the logo from your config, or via the `logo-url` attribute.
              */
-            "rtk-logo": LocalJSX.RtkLogo & JSXBase.HTMLAttributes<HTMLRtkLogoElement>;
-            "rtk-markdown-view": LocalJSX.RtkMarkdownView & JSXBase.HTMLAttributes<HTMLRtkMarkdownViewElement>;
+            "rtk-logo": LocalJSX.IntrinsicElements["rtk-logo"] & JSXBase.HTMLAttributes<HTMLRtkLogoElement>;
+            "rtk-markdown-view": LocalJSX.IntrinsicElements["rtk-markdown-view"] & JSXBase.HTMLAttributes<HTMLRtkMarkdownViewElement>;
             /**
              * A single component which renders an entire meeting UI.
              * It loads your preset and renders the UI based on it.
              * With this component, you don't have to handle all the states,
              * dialogs and other smaller bits of managing the application.
              */
-            "rtk-meeting": LocalJSX.RtkMeeting & JSXBase.HTMLAttributes<HTMLRtkMeetingElement>;
+            "rtk-meeting": LocalJSX.IntrinsicElements["rtk-meeting"] & JSXBase.HTMLAttributes<HTMLRtkMeetingElement>;
             /**
              * Displays the title of the meeting.
              */
-            "rtk-meeting-title": LocalJSX.RtkMeetingTitle & JSXBase.HTMLAttributes<HTMLRtkMeetingTitleElement>;
+            "rtk-meeting-title": LocalJSX.IntrinsicElements["rtk-meeting-title"] & JSXBase.HTMLAttributes<HTMLRtkMeetingTitleElement>;
             /**
              * A menu component.
              */
-            "rtk-menu": LocalJSX.RtkMenu & JSXBase.HTMLAttributes<HTMLRtkMenuElement>;
+            "rtk-menu": LocalJSX.IntrinsicElements["rtk-menu"] & JSXBase.HTMLAttributes<HTMLRtkMenuElement>;
             /**
              * A menu item component.
              */
-            "rtk-menu-item": LocalJSX.RtkMenuItem & JSXBase.HTMLAttributes<HTMLRtkMenuItemElement>;
+            "rtk-menu-item": LocalJSX.IntrinsicElements["rtk-menu-item"] & JSXBase.HTMLAttributes<HTMLRtkMenuItemElement>;
             /**
              * A menu list component.
              */
-            "rtk-menu-list": LocalJSX.RtkMenuList & JSXBase.HTMLAttributes<HTMLRtkMenuListElement>;
+            "rtk-menu-list": LocalJSX.IntrinsicElements["rtk-menu-list"] & JSXBase.HTMLAttributes<HTMLRtkMenuListElement>;
             /**
              * A component which renders list of messages.
              */
-            "rtk-message-list-view": LocalJSX.RtkMessageListView & JSXBase.HTMLAttributes<HTMLRtkMessageListViewElement>;
-            "rtk-message-view": LocalJSX.RtkMessageView & JSXBase.HTMLAttributes<HTMLRtkMessageViewElement>;
+            "rtk-message-list-view": LocalJSX.IntrinsicElements["rtk-message-list-view"] & JSXBase.HTMLAttributes<HTMLRtkMessageListViewElement>;
+            "rtk-message-view": LocalJSX.IntrinsicElements["rtk-message-view"] & JSXBase.HTMLAttributes<HTMLRtkMessageViewElement>;
             /**
              * A button which toggles your microphone.
              */
-            "rtk-mic-toggle": LocalJSX.RtkMicToggle & JSXBase.HTMLAttributes<HTMLRtkMicToggleElement>;
+            "rtk-mic-toggle": LocalJSX.IntrinsicElements["rtk-mic-toggle"] & JSXBase.HTMLAttributes<HTMLRtkMicToggleElement>;
             /**
              * A component which lets to manage your audio devices and audio preferences.
              * Emits `rtkStateUpdate` event with data for muting notification sounds:
@@ -11256,11 +12753,11 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "rtk-microphone-selector": LocalJSX.RtkMicrophoneSelector & JSXBase.HTMLAttributes<HTMLRtkMicrophoneSelectorElement>;
+            "rtk-microphone-selector": LocalJSX.IntrinsicElements["rtk-microphone-selector"] & JSXBase.HTMLAttributes<HTMLRtkMicrophoneSelectorElement>;
             /**
              * A grid component which handles screenshares, plugins and participants.
              */
-            "rtk-mixed-grid": LocalJSX.RtkMixedGrid & JSXBase.HTMLAttributes<HTMLRtkMixedGridElement>;
+            "rtk-mixed-grid": LocalJSX.IntrinsicElements["rtk-mixed-grid"] & JSXBase.HTMLAttributes<HTMLRtkMixedGridElement>;
             /**
              * A button which toggles visibility of a more menu.
              * When clicked it emits a `rtkStateUpdate` event with the data:
@@ -11268,67 +12765,67 @@ declare module "@stencil/core" {
              * { activeMoreMenu: boolean; }
              * ```
              */
-            "rtk-more-toggle": LocalJSX.RtkMoreToggle & JSXBase.HTMLAttributes<HTMLRtkMoreToggleElement>;
-            "rtk-mute-all-button": LocalJSX.RtkMuteAllButton & JSXBase.HTMLAttributes<HTMLRtkMuteAllButtonElement>;
-            "rtk-mute-all-confirmation": LocalJSX.RtkMuteAllConfirmation & JSXBase.HTMLAttributes<HTMLRtkMuteAllConfirmationElement>;
+            "rtk-more-toggle": LocalJSX.IntrinsicElements["rtk-more-toggle"] & JSXBase.HTMLAttributes<HTMLRtkMoreToggleElement>;
+            "rtk-mute-all-button": LocalJSX.IntrinsicElements["rtk-mute-all-button"] & JSXBase.HTMLAttributes<HTMLRtkMuteAllButtonElement>;
+            "rtk-mute-all-confirmation": LocalJSX.IntrinsicElements["rtk-mute-all-confirmation"] & JSXBase.HTMLAttributes<HTMLRtkMuteAllConfirmationElement>;
             /**
              * A component which shows a participant's name.
              */
-            "rtk-name-tag": LocalJSX.RtkNameTag & JSXBase.HTMLAttributes<HTMLRtkNameTagElement>;
-            "rtk-network-indicator": LocalJSX.RtkNetworkIndicator & JSXBase.HTMLAttributes<HTMLRtkNetworkIndicatorElement>;
+            "rtk-name-tag": LocalJSX.IntrinsicElements["rtk-name-tag"] & JSXBase.HTMLAttributes<HTMLRtkNameTagElement>;
+            "rtk-network-indicator": LocalJSX.IntrinsicElements["rtk-network-indicator"] & JSXBase.HTMLAttributes<HTMLRtkNetworkIndicatorElement>;
             /**
              * A component which shows a notification.
              * You need to remove the element after you receive the
              * `rtkNotificationDismiss` event.
              */
-            "rtk-notification": LocalJSX.RtkNotification & JSXBase.HTMLAttributes<HTMLRtkNotificationElement>;
+            "rtk-notification": LocalJSX.IntrinsicElements["rtk-notification"] & JSXBase.HTMLAttributes<HTMLRtkNotificationElement>;
             /**
              * A component which handles notifications.
              * You can configure which notifications you want to see and which ones you want to hear.
              * There are also certain limits which you can set as well.
              */
-            "rtk-notifications": LocalJSX.RtkNotifications & JSXBase.HTMLAttributes<HTMLRtkNotificationsElement>;
+            "rtk-notifications": LocalJSX.IntrinsicElements["rtk-notifications"] & JSXBase.HTMLAttributes<HTMLRtkNotificationsElement>;
             /**
              * A confirmation modal.
              */
-            "rtk-overlay-modal": LocalJSX.RtkOverlayModal & JSXBase.HTMLAttributes<HTMLRtkOverlayModalElement>;
-            "rtk-paginated-list": LocalJSX.RtkPaginatedList & JSXBase.HTMLAttributes<HTMLRtkPaginatedListElement>;
+            "rtk-overlay-modal": LocalJSX.IntrinsicElements["rtk-overlay-modal"] & JSXBase.HTMLAttributes<HTMLRtkOverlayModalElement>;
+            "rtk-paginated-list": LocalJSX.IntrinsicElements["rtk-paginated-list"] & JSXBase.HTMLAttributes<HTMLRtkPaginatedListElement>;
             /**
              * A participant entry component used inside `rtk-participants` which shows data like:
              * name, picture and media device status.
              * You can perform privileged actions on the participant too.
              */
-            "rtk-participant": LocalJSX.RtkParticipant & JSXBase.HTMLAttributes<HTMLRtkParticipantElement>;
+            "rtk-participant": LocalJSX.IntrinsicElements["rtk-participant"] & JSXBase.HTMLAttributes<HTMLRtkParticipantElement>;
             /**
              * A component which shows count of total joined participants in a meeting.
              */
-            "rtk-participant-count": LocalJSX.RtkParticipantCount & JSXBase.HTMLAttributes<HTMLRtkParticipantCountElement>;
-            "rtk-participant-setup": LocalJSX.RtkParticipantSetup & JSXBase.HTMLAttributes<HTMLRtkParticipantSetupElement>;
+            "rtk-participant-count": LocalJSX.IntrinsicElements["rtk-participant-count"] & JSXBase.HTMLAttributes<HTMLRtkParticipantCountElement>;
+            "rtk-participant-setup": LocalJSX.IntrinsicElements["rtk-participant-setup"] & JSXBase.HTMLAttributes<HTMLRtkParticipantSetupElement>;
             /**
              * A component which plays a participants video and allows for placement
              * of components like `rtk-name-tag`, `rtk-audio-visualizer` or any other component.
              */
-            "rtk-participant-tile": LocalJSX.RtkParticipantTile & JSXBase.HTMLAttributes<HTMLRtkParticipantTileElement>;
+            "rtk-participant-tile": LocalJSX.IntrinsicElements["rtk-participant-tile"] & JSXBase.HTMLAttributes<HTMLRtkParticipantTileElement>;
             /**
              * A component which lists all participants, with ability to
              * run privileged actions on each participant according to your permissions.
              */
-            "rtk-participants": LocalJSX.RtkParticipants & JSXBase.HTMLAttributes<HTMLRtkParticipantsElement>;
+            "rtk-participants": LocalJSX.IntrinsicElements["rtk-participants"] & JSXBase.HTMLAttributes<HTMLRtkParticipantsElement>;
             /**
              * A component which plays all the audio from participants and screenshares.
              */
-            "rtk-participants-audio": LocalJSX.RtkParticipantsAudio & JSXBase.HTMLAttributes<HTMLRtkParticipantsAudioElement>;
+            "rtk-participants-audio": LocalJSX.IntrinsicElements["rtk-participants-audio"] & JSXBase.HTMLAttributes<HTMLRtkParticipantsAudioElement>;
             /**
              * A component which lists all participants, with ability to
              * run privileged actions on each participant according to your permissions.
              */
-            "rtk-participants-stage-list": LocalJSX.RtkParticipantsStageList & JSXBase.HTMLAttributes<HTMLRtkParticipantsStageListElement>;
+            "rtk-participants-stage-list": LocalJSX.IntrinsicElements["rtk-participants-stage-list"] & JSXBase.HTMLAttributes<HTMLRtkParticipantsStageListElement>;
             /**
              * A component that displays participants waiting in the stage queue.
              * Shows users who are waiting to be promoted to the stage in meetings
              * with stage functionality enabled.
              */
-            "rtk-participants-stage-queue": LocalJSX.RtkParticipantsStageQueue & JSXBase.HTMLAttributes<HTMLRtkParticipantsStageQueueElement>;
+            "rtk-participants-stage-queue": LocalJSX.IntrinsicElements["rtk-participants-stage-queue"] & JSXBase.HTMLAttributes<HTMLRtkParticipantsStageQueueElement>;
             /**
              * A button which toggles visibility of participants.
              * When clicked it emits a `rtkStateUpdate` event with the data:
@@ -11336,21 +12833,21 @@ declare module "@stencil/core" {
              * { activeSidebar: boolean; sidebar: 'participants' }
              * ```
              */
-            "rtk-participants-toggle": LocalJSX.RtkParticipantsToggle & JSXBase.HTMLAttributes<HTMLRtkParticipantsToggleElement>;
-            "rtk-participants-viewer-list": LocalJSX.RtkParticipantsViewerList & JSXBase.HTMLAttributes<HTMLRtkParticipantsViewerListElement>;
-            "rtk-participants-waiting-list": LocalJSX.RtkParticipantsWaitingList & JSXBase.HTMLAttributes<HTMLRtkParticipantsWaitingListElement>;
+            "rtk-participants-toggle": LocalJSX.IntrinsicElements["rtk-participants-toggle"] & JSXBase.HTMLAttributes<HTMLRtkParticipantsToggleElement>;
+            "rtk-participants-viewer-list": LocalJSX.IntrinsicElements["rtk-participants-viewer-list"] & JSXBase.HTMLAttributes<HTMLRtkParticipantsViewerListElement>;
+            "rtk-participants-waiting-list": LocalJSX.IntrinsicElements["rtk-participants-waiting-list"] & JSXBase.HTMLAttributes<HTMLRtkParticipantsWaitingListElement>;
             /**
              * A component which shows permission related troubleshooting
              * information.
              */
-            "rtk-permissions-message": LocalJSX.RtkPermissionsMessage & JSXBase.HTMLAttributes<HTMLRtkPermissionsMessageElement>;
-            "rtk-pinned-message-selector": LocalJSX.RtkPinnedMessageSelector & JSXBase.HTMLAttributes<HTMLRtkPinnedMessageSelectorElement>;
+            "rtk-permissions-message": LocalJSX.IntrinsicElements["rtk-permissions-message"] & JSXBase.HTMLAttributes<HTMLRtkPermissionsMessageElement>;
+            "rtk-pinned-message-selector": LocalJSX.IntrinsicElements["rtk-pinned-message-selector"] & JSXBase.HTMLAttributes<HTMLRtkPinnedMessageSelectorElement>;
             /**
              * A toggle button for enabling/disabling Picture-in-Picture mode.
              * Allows users to switch the video display to a floating window that stays
              * on top of other applications.
              */
-            "rtk-pip-toggle": LocalJSX.RtkPipToggle & JSXBase.HTMLAttributes<HTMLRtkPipToggleElement>;
+            "rtk-pip-toggle": LocalJSX.IntrinsicElements["rtk-pip-toggle"] & JSXBase.HTMLAttributes<HTMLRtkPipToggleElement>;
             /**
              * A component which renders a plugin's UI.
              * The plugin's `component` (an HTMLElement) is placed into this element's
@@ -11358,12 +12855,12 @@ declare module "@stencil/core" {
              * This ensures external CSS from the consuming application continues
              * to apply to the plugin content.
              */
-            "rtk-plugin-main": LocalJSX.RtkPluginMain & JSXBase.HTMLAttributes<HTMLRtkPluginMainElement>;
+            "rtk-plugin-main": LocalJSX.IntrinsicElements["rtk-plugin-main"] & JSXBase.HTMLAttributes<HTMLRtkPluginMainElement>;
             /**
              * A component which lists all available plugins from their preset,
              * and ability to enable or disable plugins.
              */
-            "rtk-plugins": LocalJSX.RtkPlugins & JSXBase.HTMLAttributes<HTMLRtkPluginsElement>;
+            "rtk-plugins": LocalJSX.IntrinsicElements["rtk-plugins"] & JSXBase.HTMLAttributes<HTMLRtkPluginsElement>;
             /**
              * A button which toggles visibility of plugins.
              * When clicked it emits a `rtkStateUpdate` event with the data:
@@ -11371,21 +12868,21 @@ declare module "@stencil/core" {
              * { activeSidebar: boolean; sidebar: 'plugins' }
              * ```
              */
-            "rtk-plugins-toggle": LocalJSX.RtkPluginsToggle & JSXBase.HTMLAttributes<HTMLRtkPluginsToggleElement>;
+            "rtk-plugins-toggle": LocalJSX.IntrinsicElements["rtk-plugins-toggle"] & JSXBase.HTMLAttributes<HTMLRtkPluginsToggleElement>;
             /**
              * A poll component.
              * Shows a poll where a user can vote.
              */
-            "rtk-poll": LocalJSX.RtkPoll & JSXBase.HTMLAttributes<HTMLRtkPollElement>;
+            "rtk-poll": LocalJSX.IntrinsicElements["rtk-poll"] & JSXBase.HTMLAttributes<HTMLRtkPollElement>;
             /**
              * A component that lets you create a poll.
              */
-            "rtk-poll-form": LocalJSX.RtkPollForm & JSXBase.HTMLAttributes<HTMLRtkPollFormElement>;
+            "rtk-poll-form": LocalJSX.IntrinsicElements["rtk-poll-form"] & JSXBase.HTMLAttributes<HTMLRtkPollFormElement>;
             /**
              * A component which lists all available plugins a user can access with
              * the ability to enable or disable them as per their permissions.
              */
-            "rtk-polls": LocalJSX.RtkPolls & JSXBase.HTMLAttributes<HTMLRtkPollsElement>;
+            "rtk-polls": LocalJSX.IntrinsicElements["rtk-polls"] & JSXBase.HTMLAttributes<HTMLRtkPollsElement>;
             /**
              * A button which toggles visibility of polls.
              * You need to pass the `meeting` object to it to see the unread polls count badge.
@@ -11394,34 +12891,34 @@ declare module "@stencil/core" {
              * { activeSidebar: boolean; sidebar: 'polls' }
              * ```
              */
-            "rtk-polls-toggle": LocalJSX.RtkPollsToggle & JSXBase.HTMLAttributes<HTMLRtkPollsToggleElement>;
+            "rtk-polls-toggle": LocalJSX.IntrinsicElements["rtk-polls-toggle"] & JSXBase.HTMLAttributes<HTMLRtkPollsToggleElement>;
             /**
              * A component which indicates the recording status of a meeting.
              * It will not render anything if no recording is taking place.
              */
-            "rtk-recording-indicator": LocalJSX.RtkRecordingIndicator & JSXBase.HTMLAttributes<HTMLRtkRecordingIndicatorElement>;
+            "rtk-recording-indicator": LocalJSX.IntrinsicElements["rtk-recording-indicator"] & JSXBase.HTMLAttributes<HTMLRtkRecordingIndicatorElement>;
             /**
              * A button which toggles recording state of a meeting.
              * Only a privileged user can perform this action,
              * thus the button will not be visible for participants
              * who don't have the permission to record a meeting.
              */
-            "rtk-recording-toggle": LocalJSX.RtkRecordingToggle & JSXBase.HTMLAttributes<HTMLRtkRecordingToggleElement>;
+            "rtk-recording-toggle": LocalJSX.IntrinsicElements["rtk-recording-toggle"] & JSXBase.HTMLAttributes<HTMLRtkRecordingToggleElement>;
             /**
              * A button which toggles your screenshare.
              */
-            "rtk-screen-share-toggle": LocalJSX.RtkScreenShareToggle & JSXBase.HTMLAttributes<HTMLRtkScreenShareToggleElement>;
+            "rtk-screen-share-toggle": LocalJSX.IntrinsicElements["rtk-screen-share-toggle"] & JSXBase.HTMLAttributes<HTMLRtkScreenShareToggleElement>;
             /**
              * A component which plays a participant's screenshared video.
              * It also allows for placement of other components similar to `rtk-participant-tile`.
              * This component will not render anything if the participant hasn't start screensharing.
              */
-            "rtk-screenshare-view": LocalJSX.RtkScreenshareView & JSXBase.HTMLAttributes<HTMLRtkScreenshareViewElement>;
+            "rtk-screenshare-view": LocalJSX.IntrinsicElements["rtk-screenshare-view"] & JSXBase.HTMLAttributes<HTMLRtkScreenshareViewElement>;
             /**
              * A settings component to see and change your audio/video devices
              * as well as see your connection quality.
              */
-            "rtk-settings": LocalJSX.RtkSettings & JSXBase.HTMLAttributes<HTMLRtkSettingsElement>;
+            "rtk-settings": LocalJSX.IntrinsicElements["rtk-settings"] & JSXBase.HTMLAttributes<HTMLRtkSettingsElement>;
             /**
              * A component which lets to manage your audio devices and audio preferences.
              * Emits `rtkStateUpdate` event with data for muting notification sounds:
@@ -11433,7 +12930,7 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "rtk-settings-audio": LocalJSX.RtkSettingsAudio & JSXBase.HTMLAttributes<HTMLRtkSettingsAudioElement>;
+            "rtk-settings-audio": LocalJSX.IntrinsicElements["rtk-settings-audio"] & JSXBase.HTMLAttributes<HTMLRtkSettingsAudioElement>;
             /**
              * A button which toggles visibility of settings module.
              * When clicked it emits a `rtkStateUpdate` event with the data:
@@ -11441,7 +12938,7 @@ declare module "@stencil/core" {
              * { activeSettings: boolean; }
              * ```
              */
-            "rtk-settings-toggle": LocalJSX.RtkSettingsToggle & JSXBase.HTMLAttributes<HTMLRtkSettingsToggleElement>;
+            "rtk-settings-toggle": LocalJSX.IntrinsicElements["rtk-settings-toggle"] & JSXBase.HTMLAttributes<HTMLRtkSettingsToggleElement>;
             /**
              * A component which lets to manage your camera devices and your video preferences.
              * Emits `rtkStateUpdate` event with data for toggling mirroring of self video:
@@ -11453,27 +12950,27 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "rtk-settings-video": LocalJSX.RtkSettingsVideo & JSXBase.HTMLAttributes<HTMLRtkSettingsVideoElement>;
+            "rtk-settings-video": LocalJSX.IntrinsicElements["rtk-settings-video"] & JSXBase.HTMLAttributes<HTMLRtkSettingsVideoElement>;
             /**
              * A screen shown before joining the meeting, where you can edit your display name,
              * and media settings.
              */
-            "rtk-setup-screen": LocalJSX.RtkSetupScreen & JSXBase.HTMLAttributes<HTMLRtkSetupScreenElement>;
+            "rtk-setup-screen": LocalJSX.IntrinsicElements["rtk-setup-screen"] & JSXBase.HTMLAttributes<HTMLRtkSetupScreenElement>;
             /**
              * A component which handles the sidebar and
              * you can customize which sections you want, and which section you want as the default.
              */
-            "rtk-sidebar": LocalJSX.RtkSidebar & JSXBase.HTMLAttributes<HTMLRtkSidebarElement>;
+            "rtk-sidebar": LocalJSX.IntrinsicElements["rtk-sidebar"] & JSXBase.HTMLAttributes<HTMLRtkSidebarElement>;
             /**
              * A sidebar UI component with tabbed navigation.
              * Provides a container for sidebar content with tab switching functionality.
              * Can be displayed as a sidebar or in full-screen mode.
              */
-            "rtk-sidebar-ui": LocalJSX.RtkSidebarUi & JSXBase.HTMLAttributes<HTMLRtkSidebarUiElement>;
+            "rtk-sidebar-ui": LocalJSX.IntrinsicElements["rtk-sidebar-ui"] & JSXBase.HTMLAttributes<HTMLRtkSidebarUiElement>;
             /**
              * A grid component which renders only the participants in a simple grid.
              */
-            "rtk-simple-grid": LocalJSX.RtkSimpleGrid & JSXBase.HTMLAttributes<HTMLRtkSimpleGridElement>;
+            "rtk-simple-grid": LocalJSX.IntrinsicElements["rtk-simple-grid"] & JSXBase.HTMLAttributes<HTMLRtkSimpleGridElement>;
             /**
              * A component which lets to manage your audio devices and audio preferences.
              * Emits `rtkStateUpdate` event with data for muting notification sounds:
@@ -11485,66 +12982,66 @@ declare module "@stencil/core" {
              * }
              * ```
              */
-            "rtk-speaker-selector": LocalJSX.RtkSpeakerSelector & JSXBase.HTMLAttributes<HTMLRtkSpeakerSelectorElement>;
+            "rtk-speaker-selector": LocalJSX.IntrinsicElements["rtk-speaker-selector"] & JSXBase.HTMLAttributes<HTMLRtkSpeakerSelectorElement>;
             /**
              * A component which shows an animating spinner.
              */
-            "rtk-spinner": LocalJSX.RtkSpinner & JSXBase.HTMLAttributes<HTMLRtkSpinnerElement>;
+            "rtk-spinner": LocalJSX.IntrinsicElements["rtk-spinner"] & JSXBase.HTMLAttributes<HTMLRtkSpinnerElement>;
             /**
              * A grid component that renders two lists of participants: `pinnedParticipants` and `participants`.
              * You can customize the layout to a `column` view, by default is is `row`.
              * - Participants from `pinnedParticipants[]` are rendered inside a larger grid.
              * - Participants from `participants[]` array are rendered in a smaller grid.
              */
-            "rtk-spotlight-grid": LocalJSX.RtkSpotlightGrid & JSXBase.HTMLAttributes<HTMLRtkSpotlightGridElement>;
-            "rtk-spotlight-indicator": LocalJSX.RtkSpotlightIndicator & JSXBase.HTMLAttributes<HTMLRtkSpotlightIndicatorElement>;
+            "rtk-spotlight-grid": LocalJSX.IntrinsicElements["rtk-spotlight-grid"] & JSXBase.HTMLAttributes<HTMLRtkSpotlightGridElement>;
+            "rtk-spotlight-indicator": LocalJSX.IntrinsicElements["rtk-spotlight-indicator"] & JSXBase.HTMLAttributes<HTMLRtkSpotlightIndicatorElement>;
             /**
              * A component used as a stage that commonly houses
              * the `grid` and `sidebar` components.
              */
-            "rtk-stage": LocalJSX.RtkStage & JSXBase.HTMLAttributes<HTMLRtkStageElement>;
-            "rtk-stage-toggle": LocalJSX.RtkStageToggle & JSXBase.HTMLAttributes<HTMLRtkStageToggleElement>;
+            "rtk-stage": LocalJSX.IntrinsicElements["rtk-stage"] & JSXBase.HTMLAttributes<HTMLRtkStageElement>;
+            "rtk-stage-toggle": LocalJSX.IntrinsicElements["rtk-stage-toggle"] & JSXBase.HTMLAttributes<HTMLRtkStageToggleElement>;
             /**
              * A switch component which follows RTK Design System.
              */
-            "rtk-switch": LocalJSX.RtkSwitch & JSXBase.HTMLAttributes<HTMLRtkSwitchElement>;
-            "rtk-tab-bar": LocalJSX.RtkTabBar & JSXBase.HTMLAttributes<HTMLRtkTabBarElement>;
+            "rtk-switch": LocalJSX.IntrinsicElements["rtk-switch"] & JSXBase.HTMLAttributes<HTMLRtkSwitchElement>;
+            "rtk-tab-bar": LocalJSX.IntrinsicElements["rtk-tab-bar"] & JSXBase.HTMLAttributes<HTMLRtkTabBarElement>;
             /**
              * A component which renders a text composer
              */
-            "rtk-text-composer-view": LocalJSX.RtkTextComposerView & JSXBase.HTMLAttributes<HTMLRtkTextComposerViewElement>;
+            "rtk-text-composer-view": LocalJSX.IntrinsicElements["rtk-text-composer-view"] & JSXBase.HTMLAttributes<HTMLRtkTextComposerViewElement>;
             /**
              * @deprecated `rtk-text-message` is deprecated and will be removed soon. Use `rtk-text-message-view` instead.
              * A component which renders a text message from chat.
              */
-            "rtk-text-message": LocalJSX.RtkTextMessage & JSXBase.HTMLAttributes<HTMLRtkTextMessageElement>;
+            "rtk-text-message": LocalJSX.IntrinsicElements["rtk-text-message"] & JSXBase.HTMLAttributes<HTMLRtkTextMessageElement>;
             /**
              * A component which renders a text message from chat.
              */
-            "rtk-text-message-view": LocalJSX.RtkTextMessageView & JSXBase.HTMLAttributes<HTMLRtkTextMessageViewElement>;
+            "rtk-text-message-view": LocalJSX.IntrinsicElements["rtk-text-message-view"] & JSXBase.HTMLAttributes<HTMLRtkTextMessageViewElement>;
             /**
              * Tooltip component which follows RTK Design System.
              */
-            "rtk-tooltip": LocalJSX.RtkTooltip & JSXBase.HTMLAttributes<HTMLRtkTooltipElement>;
+            "rtk-tooltip": LocalJSX.IntrinsicElements["rtk-tooltip"] & JSXBase.HTMLAttributes<HTMLRtkTooltipElement>;
             /**
              * A component which shows a transcript.
              * You need to remove the element after you receive the
              * `rtkTranscriptDismiss` event.
              */
-            "rtk-transcript": LocalJSX.RtkTranscript & JSXBase.HTMLAttributes<HTMLRtkTranscriptElement>;
+            "rtk-transcript": LocalJSX.IntrinsicElements["rtk-transcript"] & JSXBase.HTMLAttributes<HTMLRtkTranscriptElement>;
             /**
              * A component which handles transcripts.
              * You can configure which transcripts you want to see and which ones you want to hear.
              * There are also certain limits which you can set as well.
              */
-            "rtk-transcripts": LocalJSX.RtkTranscripts & JSXBase.HTMLAttributes<HTMLRtkTranscriptsElement>;
-            "rtk-ui-provider": LocalJSX.RtkUiProvider & JSXBase.HTMLAttributes<HTMLRtkUiProviderElement>;
+            "rtk-transcripts": LocalJSX.IntrinsicElements["rtk-transcripts"] & JSXBase.HTMLAttributes<HTMLRtkTranscriptsElement>;
+            "rtk-ui-provider": LocalJSX.IntrinsicElements["rtk-ui-provider"] & JSXBase.HTMLAttributes<HTMLRtkUiProviderElement>;
             /**
              * A component which shows count of total joined participants in a meeting.
              */
-            "rtk-viewer-count": LocalJSX.RtkViewerCount & JSXBase.HTMLAttributes<HTMLRtkViewerCountElement>;
-            "rtk-virtualized-participant-list": LocalJSX.RtkVirtualizedParticipantList & JSXBase.HTMLAttributes<HTMLRtkVirtualizedParticipantListElement>;
-            "rtk-waiting-screen": LocalJSX.RtkWaitingScreen & JSXBase.HTMLAttributes<HTMLRtkWaitingScreenElement>;
+            "rtk-viewer-count": LocalJSX.IntrinsicElements["rtk-viewer-count"] & JSXBase.HTMLAttributes<HTMLRtkViewerCountElement>;
+            "rtk-virtualized-participant-list": LocalJSX.IntrinsicElements["rtk-virtualized-participant-list"] & JSXBase.HTMLAttributes<HTMLRtkVirtualizedParticipantListElement>;
+            "rtk-waiting-screen": LocalJSX.IntrinsicElements["rtk-waiting-screen"] & JSXBase.HTMLAttributes<HTMLRtkWaitingScreenElement>;
         }
     }
 }
