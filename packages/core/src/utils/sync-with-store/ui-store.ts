@@ -4,7 +4,8 @@ import { useLanguage, type RtkI18n } from '../../lib/lang';
 import { defaultIconPack, type IconPack } from '../../lib/icons';
 import { type States } from '../../types/props';
 import { getUserPreferences } from '../user-prefs';
-import { createDefaultConfig, UIConfig } from '../../exports';
+import { createDefaultConfig } from '../../lib/default-ui-config';
+import type { UIConfig } from '../../types/ui-config';
 import { type Overrides, defaultOverrides } from '../../lib/overrides';
 
 export const getInitialStates = (peerId?: string): States => ({
