@@ -70,7 +70,7 @@
     "@stencil-community/eslint-plugin": "^0.10.0",
     "@stencil-community/postcss": "^2.2.0",
     "@stencil/angular-output-target": "^0.10.2",
-    "@stencil/core": "4.27.2",
+    "@stencil/core": "4.43.5",
     "@stencil/react-output-target": "^0.5.3",
     "@stencil/store": "^2.1.2",
     "@stencil/vue-output-target": "^0.9.6",
