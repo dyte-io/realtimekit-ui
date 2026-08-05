@@ -1,0 +1,13 @@
+diff --git a/node_modules/@stencil/core/internal/stencil-public-runtime.d.ts b/node_modules/@stencil/core/internal/stencil-public-runtime.d.ts
+index e7471a8..822fae8 100644
+--- a/node_modules/@stencil/core/internal/stencil-public-runtime.d.ts
++++ b/node_modules/@stencil/core/internal/stencil-public-runtime.d.ts
+@@ -464,7 +464,7 @@ export type MixedInCtor<T = {}> = new (...args: any[]) => T;
+  * @param mixinFactories mixin factory functions that return a class which extends from the provided class.
+  * @returns a class that is composed from extending each of the provided classes in the order they were provided.
+  */
+-export declare function Mixin<const TMixins extends readonly MixinFactory[]>(...mixinFactories: TMixins): abstract new (...args: any[]) => UnionToIntersection<MixinInstance<TMixins[number]>>;
++export declare function Mixin<TMixins extends readonly MixinFactory[]>(...mixinFactories: TMixins): abstract new (...args: any[]) => UnionToIntersection<MixinInstance<TMixins[number]>>;
+ /**
+  * This file gets copied to all distributions of stencil component collections.
+  * - no imports
