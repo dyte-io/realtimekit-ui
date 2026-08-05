@@ -5,6 +5,7 @@
     "packages/angular-library"
   ],
   "scripts": {
+    "postinstall": "patch-package",
     "prepare": "is-ci || husky install",
     "start": "npm start -w @cloudflare/realtimekit-ui",
     "dev": "npm start",
@@ -33,6 +34,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^7.0.0",
     "is-ci": "^3.0.1",
+    "patch-package": "8.0.1",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.4",
     "semantic-release": "^19.0.2",
