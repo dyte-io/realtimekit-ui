@@ -1,0 +1,19 @@
+patches/@stencil+core+4.43.5.patch
+  s_50dff4ebddcbd6::t_dd8a129b7a1672 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "19d8bf99dfaa1961e151793225c263c46dfee57d",
+  "prompts": {},
+  "sessions": {
+    "s_50dff4ebddcbd6": {
+      "agent_id": {
+        "tool": "windsurf",
+        "id": "aromatic-swan",
+        "model": "unknown"
+      },
+      "human_author": "Ravindra Singh Rathor <rsrathor@cloudflare.com>"
+    }
+  }
+}
