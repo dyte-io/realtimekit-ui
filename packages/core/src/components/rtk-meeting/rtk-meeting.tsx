@@ -137,8 +137,10 @@ export class RtkMeeting {
   connectedCallback() {
     if (typeof window !== 'undefined') {
       this.initErrorListener = (ev) => {
-        const { message, code } = getInitErrorInfo(this.t, ev.detail);
-        this.updateStates({ preJoinError: { message, code } });
+        const errorInfo = getInitErrorInfo(this.t, ev.detail);
+        if (errorInfo) {
+          this.updateStates({ preJoinError: errorInfo });
+        }
       };
       window.addEventListener('ClientError', this.initErrorListener);
     }
