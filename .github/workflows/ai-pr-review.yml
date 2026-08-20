@@ -30,17 +30,20 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Bonk
-        uses: ask-bonk/ask-bonk/github@main
+        uses: Cloudflare-Studio/ask-bonk/github@5d4fe8f4a557afb1b73ec8c0ffcf60359a28865f # main
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_AI_GATEWAY_ACCOUNT_ID }}
           CLOUDFLARE_GATEWAY_ID: ${{ secrets.CF_AI_GATEWAY_NAME }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_AI_GATEWAY_TOKEN }}
         with:
           oidc_base_url: https://ask-bonk.cloudflare-exponent.workers.dev/auth
-          model: 'cloudflare-ai-gateway/anthropic/claude-opus-4-6'
+          model: 'cloudflare-ai-gateway/anthropic/claude-opus-5'
+          variant: 'high'
           forks: 'false'
           permissions: write
-          opencode_version: '1.2.27'
+          # Pin for reproducible runs; bump deliberately after verifying
+          # no ProviderModelNotFoundError/ProviderInitError regressions.
+          opencode_version: '1.18.21'
           # The auto-reviewer must never push to PR branches. NO_PUSH
           # enforces contents: read at the token level so it holds even
           # if the model ignores prompt instructions.
