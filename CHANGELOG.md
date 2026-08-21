@@ -1,3 +1,10 @@
+## [2.0.2-staging.2](https://github.com/cloudflare/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v2.0.2-staging.1...@cloudflare/realtimekit-ui-v2.0.2-staging.2) (2026-08-21)
+
+
+### Bug Fixes
+
+* ignore non-fatal ClientError codes in init error listener ([419a025](https://github.com/cloudflare/realtimekit-ui/commit/419a025190553d56003af23b62e79cde2e1de85e))
+
 ## [2.0.2-staging.1](https://github.com/cloudflare/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v2.0.1...@cloudflare/realtimekit-ui-v2.0.2-staging.1) (2026-08-05)
 
 
