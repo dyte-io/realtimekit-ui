@@ -35,10 +35,9 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_AI_GATEWAY_ACCOUNT_ID }}
           CLOUDFLARE_GATEWAY_ID: ${{ secrets.CF_AI_GATEWAY_NAME }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_AI_GATEWAY_TOKEN }}
-          # Deny external_directory/doom_loop permission prompts outright so the
-          # agent never blocks on an unattended approval; it can still read/edit
-          # files within the checked-out repo.
-          OPENCODE_CONFIG_CONTENT: '{"permission":{"external_directory":"deny","doom_loop":"deny"}}'
+          # Deny permission prompts because the reviewer runs unattended.
+          # Allow only OpenCode's scratch directory outside the repository.
+          OPENCODE_CONFIG_CONTENT: '{"permission":{"external_directory":{"*":"deny","/tmp/opencode":"allow","/tmp/opencode/**":"allow"},"doom_loop":"deny"}}'
         with:
           oidc_base_url: https://ask-bonk.cloudflare-exponent.workers.dev/auth
           model: 'cloudflare-ai-gateway/anthropic/claude-opus-5'
