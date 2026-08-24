@@ -1,3 +1,10 @@
+## [2.0.2-staging.3](https://github.com/cloudflare/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v2.0.2-staging.2...@cloudflare/realtimekit-ui-v2.0.2-staging.3) (2026-08-24)
+
+
+### Bug Fixes
+
+* **rtk-recording-toggle:** show accurate error when a recording is already in progress ([7b74d65](https://github.com/cloudflare/realtimekit-ui/commit/7b74d65bebdf0cf1ce71b60677eaef371b89289c))
+
 ## [2.0.2-staging.2](https://github.com/cloudflare/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v2.0.2-staging.1...@cloudflare/realtimekit-ui-v2.0.2-staging.2) (2026-08-21)
 
 
