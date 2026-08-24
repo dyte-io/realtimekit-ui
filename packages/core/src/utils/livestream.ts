@@ -19,7 +19,7 @@ export const isLiveStreamHost = (meeting: RealtimeKitClient) => {
 };
 
 export const showLivestream = (meeting: RealtimeKitClient) => {
-  return meeting?.livestream;
+  return !!meeting?.livestream;
 };
 
 export enum PlayerState {

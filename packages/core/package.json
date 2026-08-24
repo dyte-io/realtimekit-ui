@@ -1,6 +1,6 @@
 {
   "name": "@cloudflare/realtimekit-ui",
-  "version": "2.0.1",
+  "version": "2.0.2-staging.3",
   "description": "Pre-built, ready-to-use UI components and utilities for integrating with Cloudflare RealtimeKit",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -63,14 +63,14 @@
     "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {
-    "@cloudflare/realtimekit": "^1.5.2-staging.9",
+    "@cloudflare/realtimekit": "^2.0.2-staging.6",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@stencil-community/eslint-plugin": "^0.10.0",
     "@stencil-community/postcss": "^2.2.0",
     "@stencil/angular-output-target": "^0.10.2",
-    "@stencil/core": "4.27.2",
+    "@stencil/core": "4.43.5",
     "@stencil/react-output-target": "^0.5.3",
     "@stencil/store": "^2.1.2",
     "@stencil/vue-output-target": "^0.9.6",

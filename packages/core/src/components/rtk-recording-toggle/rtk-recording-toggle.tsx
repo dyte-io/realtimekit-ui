@@ -1,4 +1,4 @@
-import type { RecordingState } from '@cloudflare/realtimekit';
+import type { ClientError, RecordingState } from '@cloudflare/realtimekit';
 import { Component, Host, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
 import { defaultIconPack, IconPack } from '../../lib/icons';
 import { RtkI18n, useLanguage } from '../../lib/lang';
@@ -98,10 +98,13 @@ export class RtkRecordingToggle {
         try {
           await this.meeting?.recording.start();
           return;
-        } catch {
+        } catch (error) {
+          const alreadyRecording = (error as ClientError)?.code === '1005';
           this.apiError.emit({
             trace: this.t('recording.start'),
-            message: this.t('recording.error.start'),
+            message: this.t(
+              alreadyRecording ? 'recording.error.already_recording' : 'recording.error.start'
+            ),
           });
         }
         return;

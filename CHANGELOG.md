@@ -1,3 +1,28 @@
+## [2.0.2-staging.3](https://github.com/cloudflare/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v2.0.2-staging.2...@cloudflare/realtimekit-ui-v2.0.2-staging.3) (2026-08-24)
+
+
+### Bug Fixes
+
+* **rtk-recording-toggle:** show accurate error when a recording is already in progress ([7b74d65](https://github.com/cloudflare/realtimekit-ui/commit/7b74d65bebdf0cf1ce71b60677eaef371b89289c))
+
+## [2.0.2-staging.2](https://github.com/cloudflare/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v2.0.2-staging.1...@cloudflare/realtimekit-ui-v2.0.2-staging.2) (2026-08-21)
+
+
+### Bug Fixes
+
+* ignore non-fatal ClientError codes in init error listener ([419a025](https://github.com/cloudflare/realtimekit-ui/commit/419a025190553d56003af23b62e79cde2e1de85e))
+
+## [2.0.2-staging.1](https://github.com/cloudflare/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v2.0.1...@cloudflare/realtimekit-ui-v2.0.2-staging.1) (2026-08-05)
+
+
+### Bug Fixes
+
+* **angular-build:** removing const from stenil core using patch package for angular 13/14/15 support ([19d8bf9](https://github.com/cloudflare/realtimekit-ui/commit/19d8bf99dfaa1961e151793225c263c46dfee57d))
+* bump @stencil/core to latest ([bd16fb3](https://github.com/cloudflare/realtimekit-ui/commit/bd16fb35d65f1303aca2ae1395240f9c21feae5f))
+* **core:** make `showLivestream` method correctly compute return type ([06775bd](https://github.com/cloudflare/realtimekit-ui/commit/06775bd15c73a253279998bd102e5f69d8e9e7c2))
+* **core:** widen the type for `selectedParticipant` in rtk-chat ([7159887](https://github.com/cloudflare/realtimekit-ui/commit/71598879497adb95e838d7b060519afdb0aabc2f))
+* regenerate Stencil component types ([a58f545](https://github.com/cloudflare/realtimekit-ui/commit/a58f5454138ac7bb58919aab8f62c38612f397cc))
+
 ## [2.0.1](https://github.com/cloudflare/realtimekit-ui/compare/@cloudflare/realtimekit-ui-v2.0.0...@cloudflare/realtimekit-ui-v2.0.1) (2026-07-17)
 
 

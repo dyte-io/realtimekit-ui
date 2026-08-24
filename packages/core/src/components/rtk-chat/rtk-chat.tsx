@@ -88,7 +88,7 @@ export class RtkChat {
 
   @State() participants: Peer[] = [];
 
-  @State() selectedParticipant: Peer;
+  @State() selectedParticipant: Participant | null = null;
 
   @State() editingMessage: TextMessage | null = null;
 
